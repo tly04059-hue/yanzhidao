@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>选校工具 · 浏览详情 · 按系统</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-base: #F5EFE7; --bg-card: #FFFFFF; --bg-soft: #F0E9DD;
+  --text-1: #2A251E; --text-2: #6B6258; --text-3: #8A8175;
+  --accent: #CF7140; --accent-soft: #F1E0D3;
+  --success: #5F8C6E; --success-soft: #DAE5DC;
+  --divider: #E8E1D5; --border: #ECE5D8;
+  --serif: "Noto Serif SC", serif; --sans: "Noto Sans SC", sans-serif;
+  --shadow: 0 2px 8px rgba(60,50,40,0.04);
+  --shadow-cta: 0 6px 20px rgba(207,113,64,0.22);
+}
+body { background: #2a2a2a; padding: 40px; font-family: var(--sans); }
+.screen { width: 750px; background: var(--bg-base); margin: 0 auto; color: var(--text-1); position: relative; padding-bottom: 130px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.topbar { background: var(--bg-card); padding: 32px 32px 24px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+.tb-btn { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; }
+.tb-btn svg { width: 28px; height: 28px; stroke: var(--text-1); stroke-width: 2.4; fill: none; }
+.tb-title { font-family: var(--sans); font-weight: 500; font-size: 28px; }
+
+.hero { padding: 32px 32px 24px; }
+.kicker { font-family: var(--sans); font-weight: 500; font-size: 18px; color: var(--accent); letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 8px; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 1.3; margin-bottom: 16px; }
+.hero h1 .accent { color: var(--accent); }
+.hero p { font-family: var(--sans); font-size: 19px; line-height: 1.7; color: var(--text-2); }
+
+/* 三系并排对比 */
+.system-section { padding: 24px 32px; }
+.section-head { margin-bottom: 16px; padding: 0 4px; }
+.section-head h2 { font-family: var(--serif); font-weight: 600; font-size: 28px; }
+.section-head .sub { font-family: var(--sans); font-size: 16px; color: var(--text-3); margin-top: 4px; }
+.sys-card { background: var(--bg-card); border-radius: 18px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 28px 28px; margin-bottom: 14px; }
+.sys-row1 { display: flex; align-items: start; gap: 14px; margin-bottom: 14px; }
+.sys-icon { width: 60px; height: 60px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent); flex-shrink: 0; }
+.sys-icon.green { background: var(--success-soft); color: var(--success); }
+.sys-info { flex: 1; }
+.sys-name { font-family: var(--serif); font-weight: 600; font-size: 26px; margin-bottom: 4px; }
+.sys-tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.sys-tag { font-family: var(--sans); font-size: 14px; color: var(--accent); background: var(--accent-soft); padding: 3px 10px; border-radius: 999px; letter-spacing: 0.04em; }
+.sys-tag.green { color: var(--success); background: var(--success-soft); }
+.sys-row2 { padding: 14px 0; border-top: 0.5px solid var(--divider); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.sys-fact { text-align: center; }
+.sys-fact .v { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--text-1); }
+.sys-fact .l { font-family: var(--sans); font-size: 14px; color: var(--text-3); margin-top: 2px; letter-spacing: 0.04em; }
+.sys-row3 { padding-top: 14px; border-top: 0.5px solid var(--divider); font-family: var(--sans); font-size: 17px; line-height: 1.65; color: var(--text-2); }
+
+/* 选择建议 */
+.advice { background: var(--bg-card); padding: 32px 32px; border-top: 8px solid var(--bg-base); }
+.advice-card { background: var(--bg-base); border-radius: 16px; padding: 24px 26px; margin-bottom: 12px; display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; }
+.advice-icon { width: 56px; height: 56px; border-radius: 12px; background: var(--bg-card); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent); border: 0.5px solid var(--border); }
+.advice-content .t { font-family: var(--serif); font-weight: 600; font-size: 20px; margin-bottom: 4px; }
+.advice-content .d { font-family: var(--sans); font-size: 16px; color: var(--text-2); line-height: 1.6; }
+
+/* 来源 */
+.source { padding: 24px 32px 32px; font-family: var(--sans); font-size: 15px; color: var(--text-3); line-height: 1.7; }
+.source strong { color: var(--text-2); }
+
+/* CTA */
+.cta-bar { position: absolute; bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 0.5px solid var(--border); padding: 18px 24px 30px; }
+.cta { width: 100%; background: var(--accent); color: white; border: none; height: 88px; border-radius: 999px; box-shadow: var(--shadow-cta); font-family: var(--sans); font-weight: 700; font-size: 22px; letter-spacing: 0.1em; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.cta svg { width: 22px; height: 22px; stroke: white; stroke-width: 2.4; fill: none; }
+</style>
+</head>
+<body>
+
+<div class="screen">
+
+  <div class="topbar">
+    <div class="tb-btn"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg></div>
+    <div class="tb-title">按系统了解</div>
+    <div class="tb-btn"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+
+  <div class="hero">
+    <div class="kicker">SYSTEM</div>
+    <h1>三个系统 ·<br><span class="accent">三条路</span></h1>
+    <p>体制内学历提升,本质上只有三套规则——党校系、管综系、同等学力。先看清它们的差异。</p>
+  </div>
+
+  <div class="system-section">
+    <div class="section-head">
+      <h2>三系对比</h2>
+      <div class="sub">核心差异:免不免联考 / 是否双证 / 含金量</div>
+    </div>
+
+    <div class="sys-card">
+      <div class="sys-row1">
+        <div class="sys-icon green">党</div>
+        <div class="sys-info">
+          <div class="sys-name">党校系</div>
+          <div class="sys-tag-row">
+            <span class="sys-tag green">免联考</span>
+            <span class="sys-tag">单证</span>
+            <span class="sys-tag">体制内友好</span>
+          </div>
+        </div>
+      </div>
+      <div class="sys-row2">
+        <div class="sys-fact"><div class="v">¥ 3-5 万</div><div class="l">学费</div></div>
+        <div class="sys-fact"><div class="v">2-3 年</div><div class="l">学制</div></div>
+        <div class="sys-fact"><div class="v">非全</div><div class="l">模式</div></div>
+      </div>
+      <p class="sys-row3">党校系研究生学位证书,体制内提拔时被广泛认可。但社会就业市场认可度有限——适合"已经在体制内,要拿学历做硬条件"。</p>
+    </div>
+
+    <div class="sys-card">
+      <div class="sys-row1">
+        <div class="sys-icon">管</div>
+        <div class="sys-info">
+          <div class="sys-name">管综系(MPA / MBA / MEM)</div>
+          <div class="sys-tag-row">
+            <span class="sys-tag">联考</span>
+            <span class="sys-tag green">双证</span>
+            <span class="sys-tag">全国统招</span>
+          </div>
+        </div>
+      </div>
+      <div class="sys-row2">
+        <div class="sys-fact"><div class="v">¥ 6-12 万</div><div class="l">学费</div></div>
+        <div class="sys-fact"><div class="v">2.5-3 年</div><div class="l">学制</div></div>
+        <div class="sys-fact"><div class="v">非全/全日</div><div class="l">模式</div></div>
+      </div>
+      <p class="sys-row3">学历证 + 学位证双证,全国统招,认可度最高。需通过 199 管理类联考——适合"想拿一个含金量更高的学历,愿意花时间备考"。</p>
+    </div>
+
+    <div class="sys-card">
+      <div class="sys-row1">
+        <div class="sys-icon">学</div>
+        <div class="sys-info">
+          <div class="sys-name">同等学力申硕</div>
+          <div class="sys-tag-row">
+            <span class="sys-tag green">免联考</span>
+            <span class="sys-tag">单证</span>
+            <span class="sys-tag">先入学</span>
+          </div>
+        </div>
+      </div>
+      <div class="sys-row2">
+        <div class="sys-fact"><div class="v">¥ 2-4 万</div><div class="l">学费</div></div>
+        <div class="sys-fact"><div class="v">2 年</div><div class="l">学制</div></div>
+        <div class="sys-fact"><div class="v">非全</div><div class="l">模式</div></div>
+      </div>
+      <p class="sys-row3">先入学修学分,后申硕学位。门槛低,但只有学位无学历。适合"想要硕士学位补充,但不在意有没有学历证"。</p>
+    </div>
+  </div>
+
+  <div class="advice">
+    <div class="section-head"><h2>怎么选?</h2></div>
+    <div class="advice-card">
+      <div class="advice-icon">①</div>
+      <div class="advice-content">
+        <div class="t">要硬要求 + 不想考</div>
+        <div class="d">→ 党校系(性价比最高)</div>
+      </div>
+    </div>
+    <div class="advice-card">
+      <div class="advice-icon">②</div>
+      <div class="advice-content">
+        <div class="t">要双证 + 含金量</div>
+        <div class="d">→ 管综系 MPA/MBA(投入大但回报高)</div>
+      </div>
+    </div>
+    <div class="advice-card">
+      <div class="advice-icon">③</div>
+      <div class="advice-content">
+        <div class="t">不在意学历证</div>
+        <div class="d">→ 同等学力(最快最便宜)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="source">
+    <strong>数据来源</strong>:川渝党校联合公开招生简章 / 教育部学位中心备案数据 / 研知道编辑部 2026 年实地调研。<br>
+    最后更新:2026.05.12
+  </div>
+
+  <div class="cta-bar">
+    <button class="cta">
+      <span>看完想测? · 3 分钟测一测</span>
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>

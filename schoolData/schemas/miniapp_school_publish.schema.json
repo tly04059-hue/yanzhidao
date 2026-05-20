@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Miniapp School Publish",
+  "description": "院校库 L2 发布层。仅包含小程序一期展示和筛选需要的字段；合并展示文本来自 L1 的 label 字段。",
+  "type": "object",
+  "required": [
+    "id",
+    "school_id",
+    "program_id",
+    "school_name",
+    "program_type",
+    "province",
+    "city",
+    "tuition_min",
+    "tuition_max",
+    "duration",
+    "study_mode",
+    "class_time",
+    "latest_score",
+    "publish"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "school_id": { "type": "string" },
+    "program_id": { "type": "string" },
+    "school_name": { "type": "string" },
+    "school_label": { "type": "string" },
+    "short_name": { "type": "string" },
+    "program_type": { "type": "string" },
+    "degree_type": { "type": "string" },
+    "exam_type": { "type": "string" },
+    "province": { "type": "string" },
+    "city": { "type": "string" },
+    "school_level": { "type": "string" },
+    "school_level_display": { "type": "string", "description": "管综前台展示可映射为 985/211/双非。" },
+    "department_label": { "type": "string" },
+    "major_category_label": { "type": "string" },
+    "major_label": { "type": "string" },
+    "direction": { "type": "string" },
+    "enrollment": { "type": ["number", "string", "null"] },
+    "tuition_min": { "type": "number" },
+    "tuition_max": { "type": "number" },
+    "duration": { "type": ["number", "string"] },
+    "study_mode": { "type": "string" },
+    "class_time": { "type": "string" },
+    "class_location": { "type": "string" },
+    "latest_score": { "type": "string" },
+    "total_score": { "type": ["number", "string", "null"] },
+    "english_score": { "type": ["number", "string", "null"] },
+    "comprehensive_score": { "type": ["number", "string", "null"] },
+    "score_year": { "type": ["number", "string"] },
+    "adjustment": { "type": "string" },
+    "junior_college_allowed": { "type": "string" },
+    "retired_soldier_plan": { "type": "string" },
+    "minority_backbone_plan": { "type": "string" },
+    "notes": { "type": "string" },
+    "description": { "type": "string" },
+    "admission_analysis": { "type": "string" },
+    "retest_info": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "filter_tags": { "type": "array", "items": { "type": "string" } },
+    "sort_signals": {
+      "type": "object",
+      "properties": {
+        "cost_score": { "type": "number" },
+        "difficulty_score": { "type": "number" },
+        "work_friendly_score": { "type": "number" },
+        "recognition_score": { "type": "number" }
+      }
+    },
+    "publish": {
+      "type": "object",
+      "required": ["phase", "version", "published_at"],
+      "properties": {
+        "phase": { "type": "string" },
+        "version": { "type": "string" },
+        "published_at": { "type": "string" },
+        "source_record_id": { "type": "string" }
+      }
+    }
+  }
+}

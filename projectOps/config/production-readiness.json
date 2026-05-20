@@ -1,0 +1,19 @@
+{
+  "expected_api_base_url": "https://yanzhidao.com/api",
+  "wechat_request_domain": "https://yanzhidao.com",
+  "required_checks": [
+    "api_base_url_https",
+    "api_base_url_no_localhost",
+    "mp_weixin_appid_present",
+    "mp_weixin_url_check_enabled",
+    "mp_weixin_build_exists"
+  ],
+  "manual_checks": [
+    "yanzhidao.com DNS A record points to production server",
+    "yanzhidao.com HTTPS certificate is valid",
+    "Wechat Mini Program backend request legal domain includes https://yanzhidao.com",
+    "iOS real-device test passed",
+    "Android real-device test passed",
+    "Lead submission record is visible to sales or operations"
+  ]
+}

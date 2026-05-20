@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "dataset": "recommendation_strategy_seed",
+    "version": "2026-05-minimum",
+    "description": "测一测推荐策略种子。人工可编辑，发布前由脚本转为 L1/L2。"
+  },
+  "strategies": [
+    {
+      "strategy_id": "strategy_mpa_public_weak_base",
+      "priority": 90,
+      "status": "active",
+      "primary_path": "MPA 双证稳妥路径",
+      "program_type": "MPA",
+      "match": {
+        "systems": ["党政机关", "公检法纪检", "乡镇街道", "教育医疗", "民族地区"],
+        "goals": ["晋升", "遴选", "防御", "职称"],
+        "math_bases": ["weak", "unknown", "normal"],
+        "study_times": ["小于等于1h", "1h-2h", "时间不固定"],
+        "budget_min": 30000
+      },
+      "reason": "你的目标更偏体制内晋升、遴选或稳定拿双证。MPA 与公共管理场景更接近，建议优先用地区、分数线、招生人数和学费做稳妥筛选。",
+      "school_query": {
+        "program_type": "MPA",
+        "province_from_answer": true,
+        "budget_from_answer": true
+      },
+      "school_priorities": ["先看分数线稳定性", "优先招生人数较多的院校", "预算内再比较院校层次和上课方式"],
+      "risk_cards": [
+        "数学弱基础时不要只看名校，先确认分数线和复试压力。",
+        "每天 1-2 小时是常见状态，关键是把周计划拆小并稳定执行。"
+      ],
+      "weekly_plan": [
+        "每天 30 分钟英语词汇和阅读基础。",
+        "每天 45 分钟数学基础题，保留错题。",
+        "周末 2 小时完成 3 所院校的分数线、学费、招生人数比较。"
+      ],
+      "tags": ["管综系", "MPA", "双证", "体制内", "稳妥"]
+    },
+    {
+      "strategy_id": "strategy_mpa_low_budget",
+      "priority": 80,
+      "status": "active",
+      "primary_path": "MPA 低预算保底路径",
+      "program_type": "MPA",
+      "match": {
+        "systems": ["党政机关", "公检法纪检", "乡镇街道", "教育医疗", "民族地区"],
+        "goals": ["晋升", "防御", "职称"],
+        "budget_max": 30000
+      },
+      "reason": "你的预算约束比较强，建议优先找低学费、低通勤成本、分数线稳定的 MPA 项目；如果预算无法覆盖双证项目，需要同步比较党校路径。",
+      "school_query": {
+        "program_type": "MPA",
+        "province_from_answer": true,
+        "budget_from_answer": true
+      },
+      "school_priorities": ["先排除明显超预算项目", "优先低学费和本地通勤", "保留党校作为备选路径"],
+      "risk_cards": [
+        "低预算会缩小院校范围，需要更早确定保底选择。",
+        "不要为了省学费忽略上课地点和通勤成本。"
+      ],
+      "weekly_plan": [
+        "列出预算内院校清单。",
+        "确认每所院校学费、学制和上课方式。",
+        "同步咨询党校路径是否符合你的使用场景。"
+      ],
+      "tags": ["管综系", "MPA", "低预算", "保底"]
+    },
+    {
+      "strategy_id": "strategy_mem_enterprise_project",
+      "priority": 76,
+      "status": "active",
+      "primary_path": "MEM 项目管理路径",
+      "program_type": "MEM",
+      "match": {
+        "systems": ["国有企业"],
+        "goals": ["职称", "转行", "晋升"],
+        "budget_min": 50000
+      },
+      "reason": "你的背景更接近企业管理、项目管理或职称提升场景。MEM 更强调工程管理、项目管理和供应链等方向，适合把岗位能力和学历提升放在一起考虑。",
+      "school_query": {
+        "program_type": "MEM",
+        "province_from_answer": true,
+        "budget_from_answer": true
+      },
+      "school_priorities": ["先看 MEM 细分专业方向", "确认全日制/非全日制和上课方式", "再比较学费、招生人数和城市"],
+      "risk_cards": [
+        "MEM 当前部分院校字段仍待补齐，报名前必须复核官网简章。",
+        "如果目标只是体制内公共管理，MPA 可能比 MEM 更直观。"
+      ],
+      "weekly_plan": [
+        "先区分工程管理、项目管理、工业工程、物流工程四类方向。",
+        "筛出所在省份或高铁可达城市的 MEM 院校。",
+        "向顾问确认目标岗位是否认可该方向。"
+      ],
+      "tags": ["管综系", "MEM", "项目管理", "国企"]
+    },
+    {
+      "strategy_id": "strategy_mba_enterprise_management",
+      "priority": 72,
+      "status": "active",
+      "primary_path": "MBA 管理提升路径",
+      "program_type": "MBA",
+      "match": {
+        "systems": ["国有企业"],
+        "goals": ["转行", "晋升"],
+        "budget_min": 80000
+      },
+      "reason": "你更偏企业管理、转岗或管理能力提升。MBA 的适配度更高，但学费、提前面试和复试压力需要提前评估。",
+      "school_query": {
+        "program_type": "MBA",
+        "province_from_answer": true,
+        "budget_from_answer": true
+      },
+      "school_priorities": ["先确认预算上限", "优先本地或周末授课项目", "同步评估提前面试和院校层次"],
+      "risk_cards": [
+        "MBA 学费跨度大，预算不足时不建议盲目冲名校。",
+        "如果只是体制内学历硬条件，MPA 或党校可能更经济。"
+      ],
+      "weekly_plan": [
+        "确定学费上限和可接受城市。",
+        "筛出 3 所预算内 MBA 院校。",
+        "确认是否需要提前面试准备。"
+      ],
+      "tags": ["管综系", "MBA", "管理提升", "国企"]
+    },
+    {
+      "strategy_id": "strategy_dx_in_service",
+      "priority": 100,
+      "status": "active",
+      "primary_path": "党校在职研究生路径",
+      "program_type": "党校",
+      "match": {
+        "systems": ["党政机关", "公检法纪检", "乡镇街道", "民族地区"],
+        "goals": ["晋升", "防御"],
+        "age_bands": ["35-40", "40+"],
+        "budget_max": 30000
+      },
+      "reason": "你的诉求更像体制内硬条件补齐，且预算偏谨慎。党校路径不参加全国管理类联考、成本较低，更适合已经在体制内且主要用于单位内部认可的场景。",
+      "school_query": {
+        "program_type": "党校",
+        "province_from_answer": true,
+        "budget_from_answer": false
+      },
+      "school_priorities": ["先确认单位认可场景", "比较四川党校和重庆党校报考门槛", "再看是否仍需要 MPA 双证路径"],
+      "risk_cards": [
+        "党校在职研究生通常是单证，学信网不可查，全国社会就业认可度不等同于统招双证。",
+        "四川党校要求党员/预备党员和 3 年工作经验；重庆党校不限党员，通常门槛更宽。"
+      ],
+      "weekly_plan": [
+        "确认单位是否认可党校学历或学位。",
+        "整理岗位晋升、遴选、职级条件中的学历要求。",
+        "对比党校和 MPA 的证书、成本、考试压力。"
+      ],
+      "tags": ["党校系", "免联考", "低预算", "体制内"]
+    },
+    {
+      "strategy_id": "strategy_dx_chongqing_open_entry",
+      "priority": 96,
+      "status": "active",
+      "primary_path": "重庆党校低门槛在职路径",
+      "program_type": "党校",
+      "match": {
+        "systems": ["党政机关", "公检法纪检", "乡镇街道", "教育医疗", "国有企业"],
+        "goals": ["晋升", "防御", "职称"],
+        "age_bands": ["30-35", "35-40", "40+"],
+        "budget_max": 30000
+      },
+      "reason": "如果你在川渝工作、预算有限，又暂时不想走全国联考，重庆党校值得优先比较：不限党员身份，2 年工作经验即可报，2026 年招生 900 人，专业也更细分。",
+      "school_query": {
+        "program_type": "党校",
+        "province_from_answer": false,
+        "budget_from_answer": false
+      },
+      "school_priorities": ["优先看重庆党校报考资格是否满足", "在公共管理、党政管理、战略管理中按岗位选择", "同步确认单位是否认可党校在职研究生"],
+      "risk_cards": [
+        "重庆党校题型为全主观题，更考理解、表达和背诵输出，不是完全不用准备。",
+        "党校证书适合单位内部认可场景，如果未来可能跳出体制，应同步比较 MPA。"
+      ],
+      "weekly_plan": [
+        "确认自己是否满足本科和工作满 2 年条件。",
+        "从公共管理、党政管理、战略管理中选 1 个主专业。",
+        "拿重庆党校和本地 MPA 做证书、学费、考试压力三项对比。"
+      ],
+      "tags": ["党校系", "重庆党校", "免联考", "低门槛"]
+    },
+    {
+      "strategy_id": "strategy_dx_sichuan_party_member_ethnic",
+      "priority": 94,
+      "status": "active",
+      "primary_path": "四川党校党员干部提升路径",
+      "program_type": "党校",
+      "match": {
+        "systems": ["党政机关", "公检法纪检", "乡镇街道", "民族地区"],
+        "goals": ["晋升", "防御"],
+        "age_bands": ["35-40", "40+"],
+        "budget_max": 30000
+      },
+      "reason": "如果你在四川体制内、具备党员或预备党员身份，并且主要用于单位内部学历条件补齐，四川党校更贴近本省干部培养场景；民族地区用户还要重点核对专项和加分政策。",
+      "school_query": {
+        "program_type": "党校",
+        "province_from_answer": true,
+        "budget_from_answer": false
+      },
+      "school_priorities": ["先核对党员身份和 3 年工作经验", "民族地区用户优先确认专项、加分和录取顺序", "在经济学、政治学、法学中按岗位方向选择"],
+      "risk_cards": [
+        "四川党校 2026 年计划 600 人，法学仅 100 人，专业选择不能只凭兴趣。",
+        "集中住校封闭学习对请假和工作安排要求更高，要提前和单位沟通。"
+      ],
+      "weekly_plan": [
+        "确认党员/预备党员、本科、3 年工作经验三项硬条件。",
+        "整理自己是否属于民族专项或加分适用地区。",
+        "把经济学、政治学、法学分别对应到当前岗位和未来 3 年岗位。"
+      ],
+      "tags": ["党校系", "四川党校", "党员干部", "民族专项"]
+    },
+    {
+      "strategy_id": "strategy_default_mpa",
+      "priority": 10,
+      "status": "active",
+      "primary_path": "MPA 双证综合比较路径",
+      "program_type": "MPA",
+      "match": {},
+      "reason": "你的信息暂时没有明显指向单一路径，建议先以 MPA 双证作为主线，再把 MEM、MBA 或党校作为对比项。",
+      "school_query": {
+        "program_type": "MPA",
+        "province_from_answer": true,
+        "budget_from_answer": true
+      },
+      "school_priorities": ["先选专业路径", "再按地区和预算筛院校", "最后看分数线、上课方式和相似案例"],
+      "risk_cards": [
+        "路径不清时，不要直接按院校名气决策。",
+        "先缩小范围，再咨询具体院校风险。"
+      ],
+      "weekly_plan": [
+        "用院校库筛出所在省份的 MPA/MEM/MBA。",
+        "挑出预算内 3 所重点院校。",
+        "结合案例库看同年龄、同基础用户怎么选。"
+      ],
+      "tags": ["管综系", "MPA", "默认策略"]
+    }
+  ]
+}

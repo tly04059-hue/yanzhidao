@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>选校工具 · UI 样张组(用户主流程)</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #1a1a1a; color: #e8e6e3; padding: 56px 32px 96px; font-family: "Noto Sans SC", sans-serif; }
+.h { max-width: 3500px; margin: 0 auto 36px; padding: 0 16px; }
+.h h1 { font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 30px; margin-bottom: 10px; }
+.h .meta { font-size: 14px; color: #999; line-height: 1.8; }
+.h strong { color: #CF7140; }
+.legend { max-width: 3500px; margin: 0 auto 48px; padding: 22px 28px; background: #252525; border-left: 3px solid #CF7140; font-size: 13px; line-height: 1.85; color: #ccc; }
+.legend strong { color: #CF7140; }
+.stage { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 16px; max-width: 3500px; margin: 0 auto; }
+.frame { background: #2a2a2a; border-radius: 6px; overflow: hidden; }
+.frame-head { padding: 16px 20px; border-bottom: 1px solid #404040; }
+.frame-head .num { font-family: monospace; font-size: 11px; color: #CF7140; letter-spacing: 0.16em; margin-bottom: 4px; }
+.frame-head h2 { font-family: "Noto Serif SC", serif; font-weight: 600; font-size: 17px; color: #fff; margin-bottom: 4px; }
+.frame-head .desc { font-size: 11px; color: #999; line-height: 1.5; }
+.frame-body { padding: 16px; background: #141414; overflow: hidden; }
+iframe { width: 750px; border: none; background: white; transform-origin: 0 0; transform: scale(0.42); margin-right: -435px; }
+.iframe-h-fix { height: 1624px; margin-bottom: -942px; }
+.iframe-h-tall { height: 2200px; margin-bottom: -1276px; }
+.iframe-h-vtall { height: 2800px; margin-bottom: -1624px; }
+.note { max-width: 3500px; margin: 56px auto 0; background: #252525; border-left: 3px solid #5F8C6E; padding: 24px 28px; font-size: 13px; line-height: 1.85; color: #ccc; }
+.note strong { color: #88c0d0; }
+</style>
+</head>
+<body>
+
+<div class="h">
+  <h1>选校工具 · 核心用户主流程 5 屏</h1>
+  <div class="meta">
+    基于 <strong>02-产品需求文档-V1.md</strong> 设计 · 完全遵循 <strong>研知道 design.md</strong> token<br>
+    主流程:<strong>首页 → 了解(犹豫期)/ 测一测(决策期)→ 答题 → 结果 → 院校列表</strong>
+  </div>
+</div>
+
+<div class="legend">
+  <strong>核心 token</strong>:主色 #CF7140 · 第二色 #5F8C6E(收益 / 匹配/已上岸)· 米白 #F5EFE7 · 圆角 16-20px · 0 2px 8px 极轻阴影 · pill CTA · 中文刊头/刊尾<br>
+  <strong>页面尺寸</strong>:全部 750×N 移动端(微信小程序原生比例)
+</div>
+
+<div class="stage">
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P1 · TAB 1</div><h2>① 首页</h2><div class="desc">三类用户分流 · 入口 + 信任锚 + 备考方案 + 底部 Tab</div></div>
+    <div class="frame-body"><iframe class="iframe-h-vtall" src="01_首页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P2 · TAB 2</div><h2>② 了解 Tab</h2><div class="desc">4 维度浏览 + 路径对比 + 院校库 + 案例库 · 引导测一测</div></div>
+    <div class="frame-body"><iframe class="iframe-h-tall" src="02_了解Tab.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P3 · 流程</div><h2>③ 测一测答题</h2><div class="desc">顶部进度 3/8 · 4 个圆角白卡选项 · 隐私 chip</div></div>
+    <div class="frame-body"><iframe class="iframe-h-fix" src="03_测一测答题页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P4 · 流程</div><h2>④ 诊断结果页</h2><div class="desc">推荐路径 + 投入/收益评估 + 匹配院校 + 同类案例 + 底部 CTA</div></div>
+    <div class="frame-body"><iframe class="iframe-h-vtall" src="04_诊断结果页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P5 · 工具</div><h2>⑤ 院校列表</h2><div class="desc">搜索 + 横向 chip 筛选 + 排序 + 院校卡(含匹配度 + 学费/学制/上课)</div></div>
+    <div class="frame-body"><iframe class="iframe-h-tall" src="05_院校列表页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P6 · 浏览</div><h2>⑥ 浏览详情 · 按系统</h2><div class="desc">三系对比(党校/管综/同等学力)+ 选择建议 + 数据来源 + 引导测一测</div></div>
+    <div class="frame-body"><iframe class="iframe-h-vtall" src="06_浏览详情_按系统.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P7 · 浏览</div><h2>⑦ 路径对比页</h2><div class="desc">党校 vs MPA · 9 维度对比表 + 适合谁 + 编辑部点评 + CTA</div></div>
+    <div class="frame-body"><iframe class="iframe-h-tall" src="07_路径对比页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P8 · 工具</div><h2>⑧ 院校详情</h2><div class="desc">校徽 + 匹配度 + 5 维评估 + 招生信息 + 同行案例 + 编辑部观察</div></div>
+    <div class="frame-body"><iframe class="iframe-h-vtall" src="08_院校详情页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P9 · 流程</div><h2>⑨ 加载过渡页</h2><div class="desc">答题完成后 3 秒加载 · 旋转圆环 + 4 阶段进度提示</div></div>
+    <div class="frame-body"><iframe class="iframe-h-fix" src="09_加载过渡页.html"></iframe></div>
+  </div>
+
+  <div class="frame">
+    <div class="frame-head"><div class="num">P10 · 组件</div><h2>⑩ 弹窗 + 分享海报</h2><div class="desc">底部弹起留资弹窗 + 1080×1620 分享海报(含 QR 码)</div></div>
+    <div class="frame-body"><iframe class="iframe-h-tall" src="10_弹窗与分享海报.html" style="width: 1700px; margin-right: -1385px;"></iframe></div>
+  </div>
+
+</div>
+
+<div class="note">
+  <strong>系统统一性验证</strong>
+  <ul style="margin-left: 24px; margin-top: 8px; line-height: 1.85;">
+    <li>5 个页面共用相同 token(主色 / 第二色 / 米白 / 圆角 / 阴影 / 字体)</li>
+    <li>第二色 #5F8C6E 仅出现在"积极/收益/已上岸/匹配"语义(决策报告收益条 / 案例上岸标签 / 院校匹配度)</li>
+    <li>CTA 永远 pill 药丸 + 主色填充</li>
+    <li>中文标题用衬线宋体,UI 元素用思源黑体</li>
+    <li>中英文之间半角空格(38 课时 / 1,100+ 学员)</li>
+  </ul>
+  <br>
+  <strong>剩余 15 页待做(V1 MVP 完整 = 20 页)</strong>:浏览详情 ×4 / 路径对比 / 院校详情 / 案例库 / 加载过渡 / 备考方案 ×2 / 资料领取 / 使用说明 / 数据来源 / 关于研知道 / 留资弹窗 / 分享海报
+</div>
+
+</body>
+</html>

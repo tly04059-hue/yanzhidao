@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>选校工具 · 备考方案 · 管综(MPA/MBA/MEM)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-base: #F5EFE7; --bg-card: #FFFFFF; --bg-soft: #F0E9DD;
+  --text-1: #2A251E; --text-2: #6B6258; --text-3: #8A8175;
+  --accent: #CF7140; --accent-soft: #F1E0D3;
+  --success: #5F8C6E; --success-soft: #DAE5DC;
+  --divider: #E8E1D5; --border: #ECE5D8;
+  --serif: "Noto Serif SC", serif; --sans: "Noto Sans SC", sans-serif;
+  --shadow: 0 2px 8px rgba(60,50,40,0.04);
+  --shadow-cta: 0 6px 20px rgba(207,113,64,0.22);
+}
+body { background: #2a2a2a; padding: 40px; font-family: var(--sans); }
+.screen { width: 750px; background: var(--bg-base); margin: 0 auto; color: var(--text-1); position: relative; padding-bottom: 130px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+
+/* 顶部 */
+.topbar { background: var(--bg-card); padding: 32px 32px 24px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+.tb-btn { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; }
+.tb-btn svg { width: 28px; height: 28px; stroke: var(--text-1); stroke-width: 2.4; fill: none; }
+.tb-title { font-family: var(--sans); font-weight: 500; font-size: 28px; }
+
+/* Hero */
+.hero { padding: 32px 32px 24px; }
+.hero-card { background: var(--accent); color: white; border-radius: 24px; padding: 44px 36px; position: relative; overflow: hidden; }
+.hero-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%); }
+.hero-card > * { position: relative; z-index: 1; }
+.hero-tag { display: inline-block; background: rgba(255,255,255,0.18); padding: 5px 14px; border-radius: 999px; font-size: 17px; letter-spacing: 0.16em; margin-bottom: 20px; }
+.hero-title { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 1.28; margin-bottom: 14px; }
+.hero-sub { font-family: var(--serif); font-size: 19px; color: rgba(255,255,255,0.85); line-height: 1.65; margin-bottom: 22px; }
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.22); }
+.hero-stat { text-align: center; }
+.hero-stat .v { font-family: var(--serif); font-weight: 600; font-size: 26px; }
+.hero-stat .l { font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 4px; letter-spacing: 0.06em; }
+
+/* 备考时间轴 HUD */
+.timeline-section { padding: 8px 32px 16px; }
+.section-head { margin-bottom: 16px; padding: 0 4px; }
+.kicker { font-family: var(--sans); font-weight: 500; font-size: 18px; color: var(--accent); letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 8px; }
+.section-head h2 { font-family: var(--serif); font-weight: 600; font-size: 30px; }
+.timeline-card { background: var(--bg-card); border-radius: 18px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 32px 28px; }
+.timeline-track { position: relative; height: 12px; background: var(--divider); border-radius: 999px; margin: 8px 12px 24px; }
+.timeline-track .fill { width: 25%; height: 100%; background: var(--accent); border-radius: 999px; }
+.timeline-nodes { position: absolute; inset: -12px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+.node-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-card); border: 3px solid var(--accent); margin: 0 auto; }
+.node-dot.future { border-color: var(--text-3); }
+.node-info { text-align: center; }
+.node-info .d { font-family: var(--sans); font-weight: 600; font-size: 17px; margin-top: 12px; }
+.node-info .s { font-family: var(--serif); font-size: 17px; color: var(--text-2); margin-top: 4px; }
+
+/* 阶段卡 */
+.stages { padding: 16px 32px; display: flex; flex-direction: column; gap: 16px; }
+.stage-card { background: var(--bg-card); border-radius: 18px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 30px 30px; }
+.stage-head { display: flex; gap: 16px; align-items: start; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 0.5px solid var(--divider); }
+.stage-num { width: 56px; height: 56px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--accent); flex-shrink: 0; }
+.stage-info { flex: 1; }
+.stage-name { font-family: var(--serif); font-weight: 600; font-size: 26px; margin-bottom: 4px; }
+.stage-time { font-family: var(--sans); font-size: 16px; color: var(--text-3); letter-spacing: 0.04em; }
+.stage-goal { font-family: var(--sans); font-weight: 500; font-size: 18px; color: var(--text-2); line-height: 1.6; margin-bottom: 16px; }
+.stage-goal .accent { color: var(--accent); font-weight: 600; }
+.stage-list { display: flex; flex-direction: column; gap: 8px; }
+.stage-item { display: flex; gap: 12px; padding: 8px 0; font-family: var(--sans); font-size: 17px; line-height: 1.6; color: var(--text-1); }
+.stage-item .ico { width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 13px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+
+/* 推荐资料(简版) */
+.recommend { background: var(--bg-card); padding: 32px; border-top: 8px solid var(--bg-base); }
+.recommend .section-head { padding: 0 4px; }
+.rec-list { display: flex; flex-direction: column; gap: 12px; }
+.rec-card { background: var(--bg-base); border-radius: 14px; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; }
+.rec-l .name { font-family: var(--serif); font-weight: 600; font-size: 20px; margin-bottom: 4px; }
+.rec-l .meta { font-family: var(--sans); font-size: 15px; color: var(--text-3); }
+.rec-tag { background: var(--accent-soft); color: var(--accent); padding: 5px 14px; border-radius: 999px; font-family: var(--sans); font-weight: 500; font-size: 15px; letter-spacing: 0.04em; }
+.rec-tag.green { background: var(--success-soft); color: var(--success); }
+
+/* 同行案例 */
+.case { padding: 24px 32px; }
+.case-card { background: var(--bg-card); border-radius: 16px; border: 0.5px solid var(--border); padding: 24px 26px; }
+.case-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.case-name { font-family: var(--sans); font-weight: 500; font-size: 17px; }
+.case-stat { font-family: var(--sans); font-size: 14px; color: var(--success); background: var(--success-soft); padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em; }
+.case-t { font-family: var(--serif); font-size: 19px; line-height: 1.7; color: var(--text-1); }
+
+/* P.S. */
+.ps-block { padding: 24px 32px; background: var(--bg-base); }
+.ps-card { background: var(--bg-card); border-radius: 16px; border: 0.5px solid var(--border); padding: 28px 28px; }
+.ps-tag { font-family: var(--sans); font-size: 16px; color: var(--accent); letter-spacing: 0.28em; margin-bottom: 12px; }
+.ps-text { font-family: var(--serif); font-weight: 500; font-size: 19px; line-height: 1.9; color: var(--text-1); margin-bottom: 10px; }
+.ps-sign { font-family: var(--serif); font-weight: 500; font-size: 15px; color: var(--text-3); text-align: right; letter-spacing: 0.06em; }
+
+/* 底部 CTA */
+.cta-bar { position: absolute; bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 0.5px solid var(--border); padding: 18px 24px 30px; display: grid; grid-template-columns: 90px 1fr; gap: 14px; align-items: center; }
+.bb-side { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.bb-side .ico { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--text-2); }
+.bb-side .lbl { font-family: var(--sans); font-size: 14px; color: var(--text-2); }
+.cta { background: var(--accent); color: white; border: none; height: 76px; border-radius: 999px; box-shadow: var(--shadow-cta); font-family: var(--sans); font-weight: 700; font-size: 22px; letter-spacing: 0.1em; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.cta svg { width: 22px; height: 22px; stroke: white; stroke-width: 2.4; fill: none; }
+</style>
+</head>
+<body>
+
+<div class="screen">
+
+  <div class="topbar">
+    <div class="tb-btn"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke-linecap="round"/></svg></div>
+    <div class="tb-title">备考方案</div>
+    <div class="tb-btn"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-card">
+      <span class="hero-tag">管综系 · MPA / MBA / MEM</span>
+      <h1 class="hero-title">非全日制管综<br>备考路线图</h1>
+      <p class="hero-sub">12 个月时间表 · 周末 1 天 / 周 · 适合体制内在职 28-40 岁</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="v">12 月</div><div class="l">周期</div></div>
+        <div class="hero-stat"><div class="v">4 阶段</div><div class="l">节奏</div></div>
+        <div class="hero-stat"><div class="v">¥ 6-12 万</div><div class="l">学费</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 时间轴 -->
+  <div class="timeline-section">
+    <div class="section-head">
+      <div class="kicker">Timeline · 4 阶段</div>
+      <h2>备考时间轴</h2>
+    </div>
+    <div class="timeline-card">
+      <div class="timeline-track">
+        <div class="fill"></div>
+        <div class="timeline-nodes">
+          <div><div class="node-dot"></div></div>
+          <div><div class="node-dot future"></div></div>
+          <div><div class="node-dot future"></div></div>
+          <div><div class="node-dot future"></div></div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+        <div class="node-info"><div class="d">06-08</div><div class="s">基础</div></div>
+        <div class="node-info"><div class="d">09-10</div><div class="s">强化</div></div>
+        <div class="node-info"><div class="d">11</div><div class="s">冲刺</div></div>
+        <div class="node-info"><div class="d">12</div><div class="s">联考</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 阶段卡 -->
+  <div class="stages">
+    <div class="stage-card">
+      <div class="stage-head">
+        <div class="stage-num">01</div>
+        <div class="stage-info">
+          <div class="stage-name">基础阶段</div>
+          <div class="stage-time">6-8 月 · 12 周 · 每周 6h</div>
+        </div>
+      </div>
+      <p class="stage-goal">先把<span class="accent">英语二词汇</span>过一遍 + 数学公式建立体系——<strong>"听得懂、做得对"</strong>。</p>
+      <div class="stage-list">
+        <div class="stage-item"><div class="ico">✓</div><div>英语二 5500 词刷 2 遍(每天 50 个)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>数学公式手册 + 例题入门(算术 / 代数 / 几何)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>逻辑 0 基础课(形式逻辑 + 论证逻辑)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>提前面试材料准备(目标院校 · 周末上交)</div></div>
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-head">
+        <div class="stage-num">02</div>
+        <div class="stage-info">
+          <div class="stage-name">强化阶段</div>
+          <div class="stage-time">9-10 月 · 8 周 · 每周 8h</div>
+        </div>
+      </div>
+      <p class="stage-goal">真题切片 · <span class="accent">高频考点</span>逐个突破——<strong>"做得快、做得稳"</strong>。</p>
+      <div class="stage-list">
+        <div class="stage-item"><div class="ico">✓</div><div>近 10 年联考真题分章节训练</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>逻辑专项(每周 30 题 · 错题归类)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>写作模板搭建(论说文 + 论证有效性分析)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>提前面试现场(目标院校优先批)</div></div>
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-head">
+        <div class="stage-num">03</div>
+        <div class="stage-info">
+          <div class="stage-name">冲刺阶段</div>
+          <div class="stage-time">11 月 · 4 周 · 每周 10h</div>
+        </div>
+      </div>
+      <p class="stage-goal">挑命中率最高的 <span class="accent">30% 高频考点</span>集中讲透——<strong>"押中分数"</strong>。</p>
+      <div class="stage-list">
+        <div class="stage-item"><div class="ico">✓</div><div>近 5 年真题第 2 / 3 轮(限时 · 计分)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>三轮模考(全真模拟 · 含一对一改卷)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>写作背诵 10 个万能开头 + 5 个万能结尾</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>政治大题 20 个考点背诵(11 月底启动)</div></div>
+      </div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-head">
+        <div class="stage-num">04</div>
+        <div class="stage-info">
+          <div class="stage-name">联考冲线</div>
+          <div class="stage-time">12 月 · 2 周 · 心态收尾</div>
+        </div>
+      </div>
+      <p class="stage-goal">最后 2 周 <span class="accent">不学新东西</span>——<strong>"保住已学的 · 不焦虑"</strong>。</p>
+      <div class="stage-list">
+        <div class="stage-item"><div class="ico">✓</div><div>每天复习一份错题本</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>政治冲刺背诵(每天 1h)</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>提前 3 天看考场 + 准备身份证 / 笔</div></div>
+        <div class="stage-item"><div class="ico">✓</div><div>考前晚 8 点前关书,12 点前睡</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 推荐资料 -->
+  <div class="recommend">
+    <div class="section-head">
+      <div class="kicker">Materials</div>
+      <h2>推荐资料 / 课程</h2>
+    </div>
+    <div class="rec-list">
+      <div class="rec-card">
+        <div class="rec-l">
+          <div class="name">研知道管综基础班</div>
+          <div class="meta">12 周 · 含全套讲义 + 答疑</div>
+        </div>
+        <div class="rec-tag">¥ X,XXX</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-l">
+          <div class="name">研知道冲刺班(8 周)</div>
+          <div class="meta">含三轮模考 + 一对一批注</div>
+        </div>
+        <div class="rec-tag">¥ X,XXX</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-l">
+          <div class="name">提前面试材料包</div>
+          <div class="meta">12 所目标院校模板 + 复盘</div>
+        </div>
+        <div class="rec-tag green">免费领取</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 同行案例 -->
+  <div class="case">
+    <div class="section-head"><h2 style="font-size: 26px;">按这套节奏上岸的同行</h2></div>
+    <div class="case-card">
+      <div class="case-h">
+        <span class="case-name">王 X X · 市直机关 · 34 岁</span>
+        <span class="case-stat">2024 已上岸</span>
+      </div>
+      <p class="case-t">"周末 1 天 / 周,半年备考、第一次联考超国家线 32 分。完全按这个 12 月时间表跑下来的。"</p>
+    </div>
+  </div>
+
+  <!-- P.S. -->
+  <div class="ps-block">
+    <div class="ps-card">
+      <div class="ps-tag">[ P.S. ] 编辑部的话</div>
+      <div class="ps-text">这套方案是给"周末 1 天/周"在职人定制的——不要拿全职考生 6h/天的方案套自己。每周 6-10h,持续 12 个月,比每周 30h 持续 3 个月有效得多。</div>
+      <div class="ps-sign">— 研知道·编辑部</div>
+    </div>
+  </div>
+
+  <!-- 底部 CTA -->
+  <div class="cta-bar">
+    <div class="bb-side"><span class="ico">★</span><span class="lbl">收藏</span></div>
+    <button class="cta">
+      <span>领取免费材料包</span>
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>

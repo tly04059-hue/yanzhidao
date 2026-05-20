@@ -1,0 +1,23 @@
+{
+  "version": "2026-05-release-checklist-minimum",
+  "p0_before_test": [
+    "读取 project_docs/00-项目更新前必读规则.md",
+    "运行 projectOps/scripts/update-all.py",
+    "运行 projectOps/scripts/sync-miniapp-data.py",
+    "运行 projectOps/scripts/check-all.py",
+    "运行 miniapp 类型检查",
+    "运行 H5 或微信小程序构建",
+    "检查首页、了解页、院校库、院校详情、案例库、测一测、结果页是否能打开",
+    "确认学生案例发布层不包含姓名、电话、身份证号、地址",
+    "确认院校库发布层包含 MPA、MEM、MBA",
+    "确认推荐方案库发布层包含 MPA、MEM、MBA、党校",
+    "确认本次更新记录写入 project_docs"
+  ],
+  "known_followups": [
+    "MEM 学费、学制、复试线、上课地点、调剂字段继续补齐",
+    "党校完整数据整理完成后并入小程序院校库",
+    "推荐方案库需根据真实咨询反馈继续扩充策略数量",
+    "测一测命中策略后的用户反馈待写入数据飞轮",
+    "后续增加自动化页面冒烟测试"
+  ]
+}

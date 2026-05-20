@@ -1,0 +1,398 @@
+﻿school_name,province,province_source,school_code,school_code_source,status,confidence,row_count,programs,cities,current_provinces,current_school_codes,source_rows_sample,review_notes
+三峡大学,湖北,city_mapping,,,needs_review,medium,14,MBA、MPA,宜昌,,,183、184、185、186、187、188、189、190、191、192,school_code 待人工补齐
+上海交通大学,上海,city_mapping,,,needs_review,medium,9,MBA、MPA,"上海、上海,北京,成都,海口,深圳,重庆,长沙、上海,北京,深圳",,,197、198、199、200、201、202、203、204、205,school_code 待人工补齐
+上海体育大学,上海,city_mapping,,,needs_review,medium,4,MBA,上海,,,206、207、208、209,school_code 待人工补齐
+上海商学院,上海,city_mapping,,,needs_review,medium,1,MBA,上海辖区,,,210,school_code 待人工补齐
+上海外国语大学,上海,city_mapping,,,needs_review,medium,6,MBA、MPA,上海,,,211、212、213、214、215、216,school_code 待人工补齐
+上海大学,上海,city_mapping,,,needs_review,medium,12,MBA,上海,,,217、218、219、220、221、222、223、224、225、226,school_code 待人工补齐
+上海对外经贸大学,上海,city_mapping,,,needs_review,medium,14,MBA、MPA,上海,,,229、230、231、232、233、234、235、236、237、238,school_code 待人工补齐
+上海工程技术大学,上海,city_mapping,,,needs_review,medium,10,MBA、MPA,上海,,,243、244、245、246、247、248、249、250、251、252,school_code 待人工补齐
+上海师范大学,上海,city_mapping,,,needs_review,medium,12,MBA、MPA,上海,,,253、254、255、256、257、258、259、260、261、262,school_code 待人工补齐
+上海应用技术大学,上海,city_mapping,,,needs_review,medium,3,MPA,上海辖区,,,265、266、267,school_code 待人工补齐
+上海海事大学,上海,city_mapping,,,needs_review,medium,2,MBA,上海,,,268、269,school_code 待人工补齐
+上海海关学院,上海,city_mapping,,,needs_review,medium,1,MPA,上海,,,270,school_code 待人工补齐
+上海海洋大学,上海,city_mapping,,,needs_review,medium,1,MPA,上海,,,271,school_code 待人工补齐
+上海理工大学,上海,city_mapping,,,needs_review,medium,26,MBA、MPA,上海,,,272、273、274、275、276、277、278、279、280、281,school_code 待人工补齐
+上海财经大学,上海,city_mapping,,,needs_review,medium,14,MBA、MPA,上海,,,298、299、300、301、302、303、304、305、306、307,school_code 待人工补齐
+东北农业大学,黑龙江,city_mapping,,,needs_review,medium,5,MBA、MPA,哈尔滨、黑龙江省哈尔滨市,,,312、313、314、315、316,school_code 待人工补齐
+东北大学,辽宁,city_mapping,,,needs_review,medium,10,MBA、MPA,沈阳,,,317、318、319、320、321、322、323、324、325、326,school_code 待人工补齐
+东北师范大学,吉林,city_mapping,,,needs_review,medium,3,MBA、MPA,长春,,,327、328、329,school_code 待人工补齐
+东北林业大学,黑龙江,city_mapping,,,needs_review,medium,2,MBA,哈尔滨,,,330、331,school_code 待人工补齐
+东北电力大学,吉林,city_mapping,,,needs_review,medium,4,MBA,吉林,,,332、333、334、335,school_code 待人工补齐
+东北石油大学,黑龙江,city_mapping,,,needs_review,medium,6,MBA,大庆,,,336、337、338、339、340、341,school_code 待人工补齐
+东北财经大学,辽宁,city_mapping,,,needs_review,medium,6,MBA、MPA,"大连、大连,沈阳",,,342、343、344、345、346、347,school_code 待人工补齐
+东华大学,上海,city_mapping,,,needs_review,medium,9,MBA、MPA,上海,,,348、349、350、351、352、353、354、355、356,school_code 待人工补齐
+东华理工大学,江西,city_mapping,,,needs_review,medium,2,MBA,南昌,,,357、358,school_code 待人工补齐
+东南大学,江苏,city_mapping,,,needs_review,medium,10,MBA、MPA,"南京、南京,无锡",,,359、360、361、362、363、364、365、366、367、368,school_code 待人工补齐
+中共上海市委党校,上海,city_mapping,,,needs_review,medium,1,MPA,上海,,,369,school_code 待人工补齐
+中共北京市委党校,北京,city_mapping,,,needs_review,medium,2,MPA,北京,,,370、371,school_code 待人工补齐
+中共吉林省委党校(吉林省行政学院),吉林,city_mapping,,,needs_review,medium,1,MPA,长春,,,372,school_code 待人工补齐
+中共四川省委党校,四川,source_region,89651,source_school_code,auto_ready,high,3,MPA,成都,四川,89651,44、45、46,
+中共山东省委党校(山东行政学院）,山东,city_mapping,,,needs_review,medium,1,MPA,济南,,,373,school_code 待人工补齐
+中共广东省委党校,广东,city_mapping,,,needs_review,medium,2,MPA,广州,,,374、375,school_code 待人工补齐
+中共江苏省委党校,江苏,city_mapping,,,needs_review,medium,3,MPA,南京,,,376、377、378,school_code 待人工补齐
+中共浙江省委党校,浙江,city_mapping,,,needs_review,medium,3,MPA,杭州,,,379、380、381,school_code 待人工补齐
+中共湖北省委党校,湖北,city_mapping,,,needs_review,medium,2,MPA,武汉,,,382、383,school_code 待人工补齐
+中共湖南省委党校,湖南,city_mapping,,,needs_review,medium,2,MPA,长沙,,,384、385,school_code 待人工补齐
+中共重庆市委党校,重庆,source_region,89650,source_school_code,auto_ready,high,1,MPA,重庆,重庆,89650,105,
+中共陕西省委党校,陕西,AIAgent/schools_basic_info,,,needs_review,medium,1,MPA,西安,,,386,school_code 待人工补齐
+中南大学,湖南,city_mapping,,,needs_review,medium,4,MBA、MPA,"深圳,苏州,长沙、长沙",,,387、388、389、390,school_code 待人工补齐
+中南林业科技大学,湖南,city_mapping,,,needs_review,medium,1,MBA,长沙,,,391,school_code 待人工补齐
+中南民族大学,湖北,city_mapping,,,needs_review,medium,3,MBA、MPA,武汉,,,392、393、394,school_code 待人工补齐
+中南财经政法大学,湖北,city_mapping,,,needs_review,medium,5,MBA、MPA,武汉,,,395、396、397、398、399,school_code 待人工补齐
+中原工学院,河南,city_mapping,,,needs_review,medium,2,MBA,郑州,,,400、401,school_code 待人工补齐
+中国人民公安大学,北京,city_mapping,,,needs_review,medium,2,MPA,北京,,,402、403,school_code 待人工补齐
+中国人民大学,北京,city_mapping,,,needs_review,medium,17,MBA、MPA,北京,,,404、405、406、407、408、409、410、411、412、413,school_code 待人工补齐
+中国传媒大学,北京,city_mapping,,,needs_review,medium,15,MBA、MPA,北京,,,421、422、423、424、425、426、427、428、429、430,school_code 待人工补齐
+中国农业大学,北京,city_mapping,,,needs_review,medium,5,MBA、MPA,北京,,,436、437、438、439、440,school_code 待人工补齐
+中国刑事警察学院,辽宁,city_mapping,,,needs_review,medium,1,MPA,沈阳,,,441,school_code 待人工补齐
+中国劳动关系学院,北京,city_mapping,,,needs_review,medium,4,MBA、MPA,北京、北京城区,,,442、443、444、445,school_code 待人工补齐
+中国地质大学(北京),北京,city_mapping,,,needs_review,medium,13,MBA、MPA,北京,,,446、447、448、449、450、451、452、453、454、455,school_code 待人工补齐
+中国地质大学(武汉),湖北,city_mapping,,,needs_review,medium,11,MBA、MPA,武汉,,,459、460、461、462、463、464、465、466、467、468,school_code 待人工补齐
+中国政法大学,北京,city_mapping,,,needs_review,medium,6,MBA、MPA,北京,,,470、471、472、473、474、475,school_code 待人工补齐
+中国民用航空飞行学院,四川,source_region,10624,source_school_code,auto_ready,high,3,MBA,德阳,四川,10624,66、67、68,
+中国民航大学,天津,city_mapping,,,needs_review,medium,10,MBA、MPA,天津,,,476、477、478、479、480、481、482、483、484、485,school_code 待人工补齐
+中国海洋大学,山东,city_mapping,,,needs_review,medium,4,MBA、MPA,青岛,,,486、487、488、489,school_code 待人工补齐
+中国石油大学(北京),,,,,needs_review,low,24,MBA,克拉玛依、北京,,,490、491、492、493、494、495、496、497、498、499,城市跨省或多校区: 克拉玛依:city_mapping; 北京:city_mapping；province 待人工确认；school_code 待人工补齐
+中国石油大学(华东),山东,city_mapping,,,needs_review,medium,1,MBA,青岛,,,514,school_code 待人工补齐
+中国矿业大学,江苏,city_mapping,,,needs_review,medium,3,MBA、MPA,徐州,,,515、516、517,school_code 待人工补齐
+中国矿业大学(北京),北京,city_mapping,,,needs_review,medium,11,MBA、MPA,北京,,,518、519、520、521、522、523、524、525、526、527,school_code 待人工补齐
+中国社会科学院大学,北京,city_mapping,,,needs_review,medium,7,MBA、MPA,北京,,,529、530、531、532、533、534、535,school_code 待人工补齐
+中国科学技术大学,安徽,city_mapping,,,needs_review,medium,11,MBA、MPA,"上海,合肥,苏州、合肥",,,536、537、538、539、540、541、542、543、544、545,school_code 待人工补齐
+中国科学院大学,北京,city_mapping,,,needs_review,medium,16,MBA、MPA,北京,,,547、548、549、550、551、552、553、554、555、556,school_code 待人工补齐
+中国药科大学,江苏,city_mapping,,,needs_review,medium,5,MPA,南京,,,563、564、565、566、567,school_code 待人工补齐
+中国计量大学,浙江,city_mapping,,,needs_review,medium,4,MBA,杭州,,,568、569、570、571,school_code 待人工补齐
+中国辽宁省委党校,辽宁,city_mapping,,,needs_review,medium,1,MPA,沈阳,,,572,school_code 待人工补齐
+中央民族大学,北京,city_mapping,,,needs_review,medium,4,MBA、MPA,北京,,,573、574、575、576,school_code 待人工补齐
+中央财经大学,北京,city_mapping,,,needs_review,medium,28,MBA、MPA,北京、北京城区,,,577、578、579、580、581、582、583、584、585、586,school_code 待人工补齐
+中山大学,广东,city_mapping,,,needs_review,medium,5,MBA、MPA,广州、深圳,,,605、606、607、608、609,school_code 待人工补齐
+云南中医药大学,云南,source_region,10680,source_school_code,auto_ready,high,2,MPA,昆明,云南,10680,137、138,
+云南农业大学,云南,source_region,10676,source_school_code,auto_ready,high,1,MPA,昆明,云南,10676,135,
+云南大学,云南,source_region,10673,source_school_code,auto_ready,high,8,MBA、MPA,昆明,云南,10673,129、130、131、132、133、134、146、147,
+云南师范大学,云南,source_region,10681,source_school_code,auto_ready,high,6,MBA、MPA,昆明,云南,10681,139、140、141、142、150、151,
+云南民族大学,云南,source_region,10691,source_school_code,auto_ready,high,2,MBA、MPA,昆明,云南,10691,145、155,
+云南财经大学,云南,source_region,10689,source_school_code,auto_ready,high,5,MBA、MPA,昆明,云南,10689,143、144、152、153、154,
+信阳师范大学,河南,city_mapping,,,needs_review,medium,1,MBA,河南信阳,,,610,school_code 待人工补齐
+兰州交通大学,甘肃,city_mapping,,,needs_review,medium,2,MBA,兰州,,,611、612,school_code 待人工补齐
+兰州大学,甘肃,AIAgent/schools_basic_info,,,needs_review,medium,8,MBA、MPA,"兰州,深圳",,,613、614、615、616、617、618、619、620,school_code 待人工补齐
+兰州理工大学,甘肃,city_mapping,,,needs_review,medium,2,MBA,兰州,,,621、622,school_code 待人工补齐
+兰州财经大学,甘肃,AIAgent/schools_basic_info,,,needs_review,medium,15,MBA、MPA,兰州,,,623、624、625、626、627、628、629、630、631、632,school_code 待人工补齐
+内蒙古农业大学,内蒙古,city_mapping,,,needs_review,medium,1,MPA,呼和浩特,,,638,school_code 待人工补齐
+内蒙古医科大学,内蒙古,city_mapping,,,needs_review,medium,1,MPA,呼和浩特,,,639,school_code 待人工补齐
+内蒙古大学,内蒙古,city_mapping,,,needs_review,medium,3,MBA、MPA,呼和浩特,,,640、641、642,school_code 待人工补齐
+内蒙古工业大学,内蒙古,city_mapping,,,needs_review,medium,2,MBA,呼和浩特,,,643、644,school_code 待人工补齐
+内蒙古师范大学,内蒙古,city_mapping,,,needs_review,medium,10,MBA、MPA,呼和浩特,,,645、646、647、648、649、650、651、652、653、654,school_code 待人工补齐
+内蒙古民族大学,内蒙古,city_mapping,,,needs_review,medium,10,MPA,通辽,,,655、656、657、658、659、660、661、662、663、664,school_code 待人工补齐
+内蒙古财经大学,内蒙古,city_mapping,,,needs_review,medium,4,MBA、MPA,呼和浩特,,,665、666、667、668,school_code 待人工补齐
+北京中医药大学,北京,city_mapping,,,needs_review,medium,2,MPA,北京城区,,,669、670,school_code 待人工补齐
+北京交通大学,北京,city_mapping,,,needs_review,medium,6,MBA,北京,,,671、672、673、674、675、676,school_code 待人工补齐
+北京体育大学,北京,city_mapping,,,needs_review,medium,12,MBA,北京,,,677、678、679、680、681、682、683、684、685、686,school_code 待人工补齐
+北京信息科技大学,北京,city_mapping,,,needs_review,medium,16,MBA,北京,,,689、690、691、692、693、694、695、696、697、698,school_code 待人工补齐
+北京化工大学,北京,city_mapping,,,needs_review,medium,6,MBA、MPA,北京,,,705、706、707、708、709、710,school_code 待人工补齐
+北京城市学院,北京,city_mapping,,,needs_review,medium,3,MPA,北京,,,711、712、713,school_code 待人工补齐
+北京外国语大学,北京,city_mapping,,,needs_review,medium,3,MBA,北京,,,714、715、716,school_code 待人工补齐
+北京大学,,,,,needs_review,low,22,MBA、MPA,"上海,北京,深圳,香港、北京、北京,北京城区、北京,新疆、深圳",,,717、718、719、720、721、722、723、724、725、726,"城市跨省或多校区: 上海,北京,深圳,香港:multi_province_city_needs_review; 北京:city_mapping; 北京,北京城区:city_mapping; 北京,新疆:city_mapping_with_unknown_tokens:新疆; 深圳:city_mapping；province 待人工确认；school_code 待人工补齐"
+北京工业大学,北京,city_mapping,,,needs_review,medium,8,MBA、MPA,北京,,,739、740、741、742、743、744、745、746,school_code 待人工补齐
+北京工商大学,北京,city_mapping,,,needs_review,medium,4,MBA,北京,,,747、748、749、750,school_code 待人工补齐
+北京师范大学,,,,,needs_review,low,21,MBA、MPA,"北京、北京,新疆,珠海、珠海",,,751、752、753、754、755、756、757、758、759、760,"城市跨省或多校区: 北京:city_mapping; 北京,新疆,珠海:multi_province_city_needs_review; 珠海:city_mapping；province 待人工确认；school_code 待人工补齐"
+北京建筑大学,北京,city_mapping,,,needs_review,medium,6,MBA,北京,,,772、773、774、775、776、777,school_code 待人工补齐
+北京林业大学,北京,city_mapping,,,needs_review,medium,4,MBA、MPA,北京,,,778、779、780、781,school_code 待人工补齐
+北京物资学院,北京,city_mapping,,,needs_review,medium,7,MBA、MPA,北京,,,782、783、784、785、786、787、788,school_code 待人工补齐
+北京理工大学,,,,,needs_review,low,7,MBA、MPA,北京、北京城区、珠海,,,789、790、791、792、793、794、795,城市跨省或多校区: 北京:city_mapping; 北京城区:city_mapping; 珠海:city_mapping；province 待人工确认；school_code 待人工补齐
+北京电子科技学院,北京,city_mapping,,,needs_review,medium,2,MPA,北京,,,796、797,school_code 待人工补齐
+北京科技大学,北京,city_mapping,,,needs_review,medium,35,MBA、MPA,北京,,,798、799、800、801、802、803、804、805、806、807,school_code 待人工补齐
+北京第二外国语学院,北京,city_mapping,,,needs_review,medium,2,MBA,北京,,,833、834,school_code 待人工补齐
+北京联合大学,北京,city_mapping,,,needs_review,medium,8,MBA,北京,,,835、836、837、838、839、840、841、842,school_code 待人工补齐
+北京航空航天大学,北京,city_mapping,,,needs_review,medium,4,MBA、MPA,北京,,,843、844、845、846,school_code 待人工补齐
+北京邮电大学,北京,city_mapping,,,needs_review,medium,4,MBA、MPA,北京,,,847、848、849、850,school_code 待人工补齐
+北华大学,吉林,city_mapping,,,needs_review,medium,2,MPA,吉林,,,851、852,school_code 待人工补齐
+北方工业大学,北京,city_mapping,,,needs_review,medium,18,MBA,北京,,,853、854、855、856、857、858、859、860、861、862,school_code 待人工补齐
+北方民族大学,宁夏,city_mapping,,,needs_review,medium,4,MBA、MPA,银川,,,871、872、873、874,school_code 待人工补齐
+华东交通大学,江西,city_mapping,,,needs_review,medium,16,MBA、MPA,南昌,,,875、876、877、878、879、880、881、882、883、884,school_code 待人工补齐
+华东师范大学,上海,city_mapping,,,needs_review,medium,15,MBA、MPA,上海、上海辖区,,,891、892、893、894、895、896、897、898、899、900,school_code 待人工补齐
+华东政法大学,上海,city_mapping,,,needs_review,medium,1,MPA,上海,,,906,school_code 待人工补齐
+华东理工大学,上海,city_mapping,,,needs_review,medium,22,MBA、MPA,上海,,,907、908、909、910、911、912、913、914、915、916,school_code 待人工补齐
+华中农业大学,湖北,city_mapping,,,needs_review,medium,3,MBA、MPA,武汉,,,929、930、931,school_code 待人工补齐
+华中师范大学,湖北,city_mapping,,,needs_review,medium,4,MBA、MPA,武汉,,,932、933、934、935,school_code 待人工补齐
+华中科技大学,湖北,city_mapping,,,needs_review,medium,9,MBA、MPA,武汉,,,936、937、938、939、940、941、942、943、944,school_code 待人工补齐
+华侨大学,福建,city_mapping,,,needs_review,medium,4,MBA、MPA,泉州,,,945、946、947、948,school_code 待人工补齐
+华北水利水电大学,河南,city_mapping,,,needs_review,medium,8,MBA、MPA,郑州,,,949、950、951、952、953、954、955、956,school_code 待人工补齐
+华北理工大学,河北,city_mapping,,,needs_review,medium,10,MPA,唐山,,,957、958、959、960、961、962、963、964、965、966,school_code 待人工补齐
+华北电力大学,北京,city_mapping,,,needs_review,medium,16,MBA、MPA,北京,,,967、968、969、970、971、972、973、974、975、976,school_code 待人工补齐
+华北电力大学(保定),河北,city_mapping,,,needs_review,medium,8,MPA,保定,,,983、984、985、986、987、988、989、990,school_code 待人工补齐
+华南农业大学,广东,city_mapping,,,needs_review,medium,4,MBA、MPA,广州,,,991、992、993、994,school_code 待人工补齐
+华南师范大学,广东,city_mapping,,,needs_review,medium,14,MBA、MPA,广州,,,995、996、997、998、999、1000、1001、1002、1003、1004,school_code 待人工补齐
+华南理工大学,广东,city_mapping,,,needs_review,medium,5,MBA、MPA,广州,,,1009、1010、1011、1012、1013,school_code 待人工补齐
+南京中医药大学,江苏,city_mapping,,,needs_review,medium,2,MPA,江苏省南京市,,,1014、1015,school_code 待人工补齐
+南京信息工程大学,江苏,city_mapping,,,needs_review,medium,6,MBA、MPA,南京,,,1016、1017、1018、1019、1020、1021,school_code 待人工补齐
+南京农业大学,江苏,city_mapping,,,needs_review,medium,10,MBA、MPA,南京,,,1022、1023、1024、1025、1026、1027、1028、1029、1030、1031,school_code 待人工补齐
+南京医科大学,江苏,city_mapping,,,needs_review,medium,16,MPA,南京,,,1032、1033、1034、1035、1036、1037、1038、1039、1040、1041,school_code 待人工补齐
+南京大学,江苏,city_mapping,,,needs_review,medium,3,MBA、MPA,南京,,,1048、1049、1050,school_code 待人工补齐
+南京审计大学,江苏,city_mapping,,,needs_review,medium,17,MBA、MPA,南京,,,1051、1052、1053、1054、1055、1056、1057、1058、1059、1060,school_code 待人工补齐
+南京工业大学,江苏,city_mapping,,,needs_review,medium,6,MBA,南京,,,1068、1069、1070、1071、1072、1073,school_code 待人工补齐
+南京师范大学,江苏,city_mapping,,,needs_review,medium,11,MBA、MPA,南京,,,1074、1075、1076、1077、1078、1079、1080、1081、1082、1083,school_code 待人工补齐
+南京林业大学,江苏,city_mapping,,,needs_review,medium,2,MBA,南京,,,1085、1086,school_code 待人工补齐
+南京理工大学,江苏,city_mapping,,,needs_review,medium,14,MBA、MPA,南京,,,1087、1088、1089、1090、1091、1092、1093、1094、1095、1096,school_code 待人工补齐
+南京航空航天大学,江苏,city_mapping,,,needs_review,medium,2,MBA,南京,,,1101、1102,school_code 待人工补齐
+南京财经大学,江苏,city_mapping,,,needs_review,medium,16,MBA、MPA,南京,,,1103、1104、1105、1106、1107、1108、1109、1110、1111、1112,school_code 待人工补齐
+南京邮电大学,江苏,city_mapping,,,needs_review,medium,16,MBA,南京,,,1119、1120、1121、1122、1123、1124、1125、1126、1127、1128,school_code 待人工补齐
+南华大学,湖南,city_mapping,,,needs_review,medium,18,MBA、MPA,衡阳,,,1135、1136、1137、1138、1139、1140、1141、1142、1143、1144,school_code 待人工补齐
+南宁师范大学,广西,city_mapping,,,needs_review,medium,6,MPA,南宁,,,1153、1154、1155、1156、1157、1158,school_code 待人工补齐
+南开大学,天津,city_mapping,,,needs_review,medium,4,MBA、MPA,天津,,,1159、1160、1161、1162,school_code 待人工补齐
+南方医科大学,广东,city_mapping,,,needs_review,medium,2,MPA,广州,,,1163、1164,school_code 待人工补齐
+南方科技大学,广东,city_mapping,,,needs_review,medium,2,MBA,深圳,,,1165、1166,school_code 待人工补齐
+南昌大学,江西,city_mapping,,,needs_review,medium,10,MBA、MPA,南昌,,,1167、1168、1169、1170、1171、1172、1173、1174、1175、1176,school_code 待人工补齐
+南昌航空大学,江西,city_mapping,,,needs_review,medium,9,MPA,南昌,,,1177、1178、1179、1180、1181、1182、1183、1184、1185,school_code 待人工补齐
+南通大学,江苏,city_mapping,,,needs_review,medium,4,MPA,南通,,,1186、1187、1188、1189,school_code 待人工补齐
+厦门大学,福建,city_mapping,,,needs_review,medium,6,MBA、MPA,厦门,,,1190、1191、1192、1193、1194、1195,school_code 待人工补齐
+右江民族医学院,广西,city_mapping,,,needs_review,medium,6,MPA,百色,,,1196、1197、1198、1199、1200、1201,school_code 待人工补齐
+合肥工业大学,安徽,city_mapping,,,needs_review,medium,4,MBA、MPA,合肥,,,1202、1203、1204、1205,school_code 待人工补齐
+吉林农业大学,吉林,city_mapping,,,needs_review,medium,2,MBA,长春,,,1206、1207,school_code 待人工补齐
+吉林外国语大学,吉林,city_mapping,,,needs_review,medium,2,MBA,长春,,,1208、1209,school_code 待人工补齐
+吉林大学,吉林,city_mapping,,,needs_review,medium,6,MBA、MPA,长春,,,1210、1211、1212、1213、1214、1215,school_code 待人工补齐
+吉林财经大学,吉林,city_mapping,,,needs_review,medium,4,MBA、MPA,长春,,,1216、1217、1218、1219,school_code 待人工补齐
+吉首大学,湖南,city_mapping,,,needs_review,medium,4,MBA、MPA,"张家界,湘西、湘西",,,1220、1221、1222、1223,school_code 待人工补齐
+同济大学,上海,city_mapping,,,needs_review,medium,14,MBA、MPA,上海,,,1224、1225、1226、1227、1228、1229、1230、1231、1232、1233,school_code 待人工补齐
+哈尔滨商业大学,黑龙江,city_mapping,,,needs_review,medium,21,MBA、MPA,哈尔滨,,,1238、1239、1240、1241、1242、1243、1244、1245、1246、1247,school_code 待人工补齐
+哈尔滨工业大学,黑龙江,city_mapping,,,needs_review,medium,23,MBA、MPA,"上海,哈尔滨,广州,深圳、哈尔滨",,,1259、1260、1261、1262、1263、1264、1265、1266、1267、1268,school_code 待人工补齐
+哈尔滨工程大学,黑龙江,city_mapping,,,needs_review,medium,6,MBA、MPA,哈尔滨,,,1282、1283、1284、1285、1286、1287,school_code 待人工补齐
+哈尔滨师范大学,黑龙江,city_mapping,,,needs_review,medium,2,MPA,哈尔滨,,,1288、1289,school_code 待人工补齐
+哈尔滨理工大学,黑龙江,city_mapping,,,needs_review,medium,2,MBA,哈尔滨,,,1290、1291,school_code 待人工补齐
+商务部国际贸易经济合作研究院,北京,city_mapping,,,needs_review,medium,31,MBA,北京,,,1292、1293、1294、1295、1296、1297、1298、1299、1300、1301,school_code 待人工补齐
+四川农业大学,四川,source_region,10626,source_school_code,auto_ready,high,3,MPA,雅安,四川,10626,18、19、20,
+四川外国语大学,重庆,source_region,10650,source_school_code,auto_ready,high,1,MPA,重庆,重庆,10650,92,
+四川大学,四川,source_region,10610,source_school_code,auto_ready,high,14,MBA、MPA,成都,四川,10610,2、3、4、5、6、7、8、9、10、11,
+四川师范大学,四川,source_region,10636,source_school_code,auto_ready,high,2,MBA、MPA,成都,四川,10636,26、69,
+四川省社会科学院,四川,source_region,89101,source_school_code,auto_ready,high,4,MBA,成都,四川,89101,81、82、83、84,
+国防科技大学,湖南,city_mapping,,,needs_review,medium,4,MPA,长沙,,,1323、1324、1325、1326,school_code 待人工补齐
+复旦大学,上海,city_mapping,,,needs_review,medium,16,MBA、MPA,"上海、上海,深圳",,,1327、1328、1329、1330、1331、1332、1333、1334、1335、1336,school_code 待人工补齐
+大连海事大学,辽宁,city_mapping,,,needs_review,medium,7,MBA、MPA,大连,,,1343、1344、1345、1346、1347、1348、1349,school_code 待人工补齐
+大连理工大学,辽宁,city_mapping,,,needs_review,medium,12,MBA、MPA,"大连、大连,深圳",,,1350、1351、1352、1353、1354、1355、1356、1357、1358、1359,school_code 待人工补齐
+天津商业大学,天津,city_mapping,,,needs_review,medium,4,MBA、MPA,天津,,,1362、1363、1364、1365,school_code 待人工补齐
+天津城建大学,天津,city_mapping,,,needs_review,medium,7,MPA,天津,,,1366、1367、1368、1369、1370、1371、1372,school_code 待人工补齐
+天津大学,,,,,needs_review,low,6,MBA、MPA,"天津,深圳",,,1373、1374、1375、1376、1377、1378,province 待人工确认；school_code 待人工补齐
+天津工业大学,天津,city_mapping,,,needs_review,medium,12,MBA,天津,,,1379、1380、1381、1382、1383、1384、1385、1386、1387、1388,school_code 待人工补齐
+天津师范大学,天津,city_mapping,,,needs_review,medium,4,MBA、MPA,天津,,,1391、1392、1393、1394,school_code 待人工补齐
+天津理工大学,天津,city_mapping,,,needs_review,medium,2,MBA,天津,,,1395、1396,school_code 待人工补齐
+天津科技大学,天津,city_mapping,,,needs_review,medium,4,MBA、MPA,天津,,,1397、1398、1399、1400,school_code 待人工补齐
+天津财经大学,天津,city_mapping,,,needs_review,medium,6,MBA、MPA,天津,,,1401、1402、1403、1404、1405、1406,school_code 待人工补齐
+太原理工大学,山西,city_mapping,,,needs_review,medium,4,MBA、MPA,太原,,,1407、1408、1409、1410,school_code 待人工补齐
+太原科技大学,山西,city_mapping,,,needs_review,medium,2,MBA,太原,,,1411、1412,school_code 待人工补齐
+宁夏大学,宁夏,city_mapping,,,needs_review,medium,4,MBA、MPA,银川,,,1413、1414、1415、1416,school_code 待人工补齐
+宁波大学,浙江,city_mapping,,,needs_review,medium,3,MBA、MPA,宁波,,,1417、1418、1419,school_code 待人工补齐
+安徽中医药大学,安徽,city_mapping,,,needs_review,medium,4,MPA,合肥,,,1420、1421、1422、1423,school_code 待人工补齐
+安徽农业大学,安徽,city_mapping,,,needs_review,medium,2,MBA,合肥,,,1424、1425,school_code 待人工补齐
+安徽大学,安徽,city_mapping,,,needs_review,medium,4,MBA、MPA,合肥,,,1426、1427、1428、1429,school_code 待人工补齐
+安徽工业大学,安徽,city_mapping,,,needs_review,medium,8,MBA、MPA,马鞍山,,,1430、1431、1432、1433、1434、1435、1436、1437,school_code 待人工补齐
+安徽工程大学,安徽,city_mapping,,,needs_review,medium,18,MBA、MPA,芜湖,,,1438、1439、1440、1441、1442、1443、1444、1445、1446、1447,school_code 待人工补齐
+安徽师范大学,安徽,city_mapping,,,needs_review,medium,5,MBA、MPA,芜湖,,,1456、1457、1458、1459、1460,school_code 待人工补齐
+安徽建筑大学,安徽,city_mapping,,,needs_review,medium,3,MPA,合肥,,,1461、1462、1463,school_code 待人工补齐
+安徽理工大学,安徽,city_mapping,,,needs_review,medium,8,MBA、MPA,淮南,,,1464、1465、1466、1467、1468、1469、1470、1471,school_code 待人工补齐
+安徽财经大学,安徽,city_mapping,,,needs_review,medium,6,MBA、MPA,蚌埠,,,1472、1473、1474、1475、1476、1477,school_code 待人工补齐
+对外经济贸易大学,北京,city_mapping,,,needs_review,medium,18,MBA、MPA,北京,,,1478、1479、1480、1481、1482、1483、1484、1485、1486、1487,school_code 待人工补齐
+山东农业大学,山东,city_mapping,,,needs_review,medium,2,MPA,泰安,,,1496、1497,school_code 待人工补齐
+山东大学,山东,city_mapping,,,needs_review,medium,6,MBA、MPA,济南,,,1498、1499、1500、1501、1502、1503,school_code 待人工补齐
+山东工商学院,山东,city_mapping,,,needs_review,medium,3,MBA、MPA,烟台,,,1504、1505、1506,school_code 待人工补齐
+山东师范大学,山东,city_mapping,,,needs_review,medium,12,MBA、MPA,济南,,,1507、1508、1509、1510、1511、1512、1513、1514、1515、1516,school_code 待人工补齐
+山东建筑大学,山东,city_mapping,,,needs_review,medium,2,MBA,济南,,,1519、1520,school_code 待人工补齐
+山东理工大学,山东,city_mapping,,,needs_review,medium,4,MBA,淄博,,,1521、1522、1523、1524,school_code 待人工补齐
+山东科技大学,山东,city_mapping,,,needs_review,medium,7,MBA、MPA,青岛,,,1525、1526、1527、1528、1529、1530、1531,school_code 待人工补齐
+山东第一医科大学,山东,city_mapping,,,needs_review,medium,2,MPA,济南,,,1532、1533,school_code 待人工补齐
+山东第二医科大学,山东,city_mapping,,,needs_review,medium,6,MPA,潍坊,,,1534、1535、1536、1537、1538、1539,school_code 待人工补齐
+山东财经大学,山东,city_mapping,,,needs_review,medium,6,MBA、MPA,济南、青岛,,,1540、1541、1542、1543、1544、1545,school_code 待人工补齐
+山西农业大学,山西,city_mapping,,,needs_review,medium,1,MPA,太原,,,1546,school_code 待人工补齐
+山西大学,山西,city_mapping,,,needs_review,medium,4,MBA、MPA,太原,,,1547、1548、1549、1550,school_code 待人工补齐
+山西师范大学,山西,city_mapping,,,needs_review,medium,3,MPA,太原,,,1551、1552、1553,school_code 待人工补齐
+山西财经大学,山西,city_mapping,,,needs_review,medium,13,MBA、MPA,太原,,,1554、1555、1556、1557、1558、1559、1560、1561、1562、1563,school_code 待人工补齐
+川北医学院,四川,source_region,10634,source_school_code,auto_ready,high,2,MPA,南充,四川,10634,24、25,
+常州大学,江苏,city_mapping,,,needs_review,medium,13,MBA、MPA,常州,,,1567、1568、1569、1570、1571、1572、1573、1574、1575、1576,school_code 待人工补齐
+广东医科大学,广东,city_mapping,,,needs_review,medium,2,MPA,"东莞,湛江",,,1580、1581,school_code 待人工补齐
+广东外语外贸大学,广东,city_mapping,,,needs_review,medium,11,MBA、MPA,广州,,,1582、1583、1584、1585、1586、1587、1588、1589、1590、1591,school_code 待人工补齐
+广东工业大学,广东,city_mapping,,,needs_review,medium,6,MBA,广州,,,1593、1594、1595、1596、1597、1598,school_code 待人工补齐
+广东海洋大学,广东,city_mapping,,,needs_review,medium,12,MPA,湛江,,,1599、1600、1601、1602、1603、1604、1605、1606、1607、1608,school_code 待人工补齐
+广东财经大学,广东,city_mapping,,,needs_review,medium,8,MBA、MPA,"佛山、佛山,广州、广州",,,1611、1612、1613、1614、1615、1616、1617、1618,school_code 待人工补齐
+广东金融学院,广东,city_mapping,,,needs_review,medium,2,MBA,广州,,,1619、1620,school_code 待人工补齐
+广州医科大学,广东,city_mapping,,,needs_review,medium,1,MPA,广州,,,1621,school_code 待人工补齐
+广州大学,广东,city_mapping,,,needs_review,medium,6,MBA、MPA,广州,,,1622、1623、1624、1625、1626、1627,school_code 待人工补齐
+广西医科大学,广西,city_mapping,,,needs_review,medium,4,MPA,南宁,,,1628、1629、1630、1631,school_code 待人工补齐
+广西大学,广西,city_mapping,,,needs_review,medium,10,MBA、MPA,南宁,,,1632、1633、1634、1635、1636、1637、1638、1639、1640、1641,school_code 待人工补齐
+广西师范大学,广西,city_mapping,,,needs_review,medium,11,MBA、MPA,南宁、桂林,,,1642、1643、1644、1645、1646、1647、1648、1649、1650、1651,school_code 待人工补齐
+广西民族大学,广西,city_mapping,,,needs_review,medium,3,MBA、MPA,南宁,,,1653、1654、1655,school_code 待人工补齐
+广西财经学院,广西,city_mapping,,,needs_review,medium,4,MPA,南宁,,,1656、1657、1658、1659,school_code 待人工补齐
+延安大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,6,MBA、MPA,延安,,,1660、1661、1662、1663、1664、1665,school_code 待人工补齐
+延边大学,吉林,city_mapping,,,needs_review,medium,5,MBA、MPA,延边朝鲜族自治州,,,1666、1667、1668、1669、1670,school_code 待人工补齐
+徐州医科大学,江苏,city_mapping,,,needs_review,medium,4,MPA,徐州,,,1671、1672、1673、1674,school_code 待人工补齐
+成都中医药大学,四川,source_region,10633,source_school_code,auto_ready,high,1,MPA,成都,四川,10633,23,
+成都信息工程大学,四川,source_region,10621,source_school_code,auto_ready,high,2,MBA,成都,四川,10621,64、65,
+成都医学院,四川,source_region,13705,source_school_code,auto_ready,high,3,MPA,成都,四川,13705,41、42、43,
+成都大学,四川,source_region,11079,source_school_code,auto_ready,high,6,MBA,成都,四川,11079,75、76、77、78、79、80,
+扬州大学,江苏,city_mapping,,,needs_review,medium,9,MBA、MPA,扬州,,,1675、1676、1677、1678、1679、1680、1681、1682、1683,school_code 待人工补齐
+新乡医学院,河南,city_mapping,,,needs_review,medium,6,MPA,新乡,,,1684、1685、1686、1687、1688、1689,school_code 待人工补齐
+新疆农业大学,新疆,city_mapping,,,needs_review,medium,2,MPA,乌鲁木齐,,,1690、1691,school_code 待人工补齐
+新疆大学,新疆,city_mapping,,,needs_review,medium,6,MBA、MPA,乌鲁木齐,,,1692、1693、1694、1695、1696、1697,school_code 待人工补齐
+新疆师范大学,新疆,city_mapping,,,needs_review,medium,2,MPA,乌鲁木齐,,,1698、1699,school_code 待人工补齐
+新疆财经大学,新疆,city_mapping,,,needs_review,medium,16,MBA、MPA,乌鲁木齐,,,1700、1701、1702、1703、1704、1705、1706、1707、1708、1709,school_code 待人工补齐
+昆明理工大学,云南,source_region,10674,source_school_code,auto_ready,high,2,MBA,昆明,云南,10674,148、149,
+暨南大学,广东,city_mapping,,,needs_review,medium,10,MBA、MPA,"广州、广州,深圳,珠海",,,1716、1717、1718、1719、1720、1721、1722、1723、1724、1725,school_code 待人工补齐
+曲阜师范大学,山东,city_mapping,,,needs_review,medium,4,MPA,曲阜,,,1726、1727、1728、1729,school_code 待人工补齐
+杭州师范大学,浙江,city_mapping,,,needs_review,medium,2,MBA、MPA,杭州、浙江杭州,,,1730、1731,school_code 待人工补齐
+杭州电子科技大学,浙江,city_mapping,,,needs_review,medium,6,MBA,杭州,,,1732、1733、1734、1735、1736、1737,school_code 待人工补齐
+桂林医学院,广西,city_mapping,,,needs_review,medium,4,MPA,桂林,,,1738、1739、1740、1741,school_code 待人工补齐
+桂林理工大学,广西,city_mapping,,,needs_review,medium,16,MBA、MPA,桂林,,,1742、1743、1744、1745、1746、1747、1748、1749、1750、1751,school_code 待人工补齐
+桂林电子科技大学,广西,city_mapping,,,needs_review,medium,4,MBA,桂林,,,1758、1759、1760、1761,school_code 待人工补齐
+武汉大学,湖北,city_mapping,,,needs_review,medium,5,MBA、MPA,武汉,,,1762、1763、1764、1765、1766,school_code 待人工补齐
+武汉工程大学,湖北,city_mapping,,,needs_review,medium,10,MBA、MPA,武汉,,,1767、1768、1769、1770、1771、1772、1773、1774、1775、1776,school_code 待人工补齐
+武汉理工大学,湖北,city_mapping,,,needs_review,medium,10,MBA、MPA,武汉,,,1777、1778、1779、1780、1781、1782、1783、1784、1785、1786,school_code 待人工补齐
+武汉科技大学,湖北,city_mapping,,,needs_review,medium,24,MBA、MPA,武汉,,,1787、1788、1789、1790、1791、1792、1793、1794、1795、1796,school_code 待人工补齐
+武汉纺织大学,湖北,city_mapping,,,needs_review,medium,7,MBA,武汉,,,1811、1812、1813、1814、1815、1816、1817,school_code 待人工补齐
+汕头大学,广东,city_mapping,,,needs_review,medium,7,MBA、MPA,汕头,,,1818、1819、1820、1821、1822、1823、1824,school_code 待人工补齐
+江南大学,江苏,city_mapping,,,needs_review,medium,8,MBA,无锡,,,1825、1826、1827、1828、1829、1830、1831、1832,school_code 待人工补齐
+江苏大学,江苏,city_mapping,,,needs_review,medium,11,MBA、MPA,镇江,,,1833、1834、1835、1836、1837、1838、1839、1840、1841、1842,school_code 待人工补齐
+江苏师范大学,江苏,city_mapping,,,needs_review,medium,4,MPA,徐州,,,1844、1845、1846、1847,school_code 待人工补齐
+江苏海洋大学,江苏,city_mapping,,,needs_review,medium,6,MPA,连云港,,,1848、1849、1850、1851、1852、1853,school_code 待人工补齐
+江苏科技大学,江苏,city_mapping,,,needs_review,medium,14,MBA、MPA,镇江,,,1854、1855、1856、1857、1858、1859、1860、1861、1862、1863,school_code 待人工补齐
+江西农业大学,江西,city_mapping,,,needs_review,medium,3,MPA,南昌,,,1868、1869、1870,school_code 待人工补齐
+江西师范大学,江西,city_mapping,,,needs_review,medium,4,MBA、MPA,南昌,,,1871、1872、1873、1874,school_code 待人工补齐
+江西水利电力大学,江西,city_mapping,,,needs_review,medium,3,MBA,南昌,,,1875、1876、1877,school_code 待人工补齐
+江西理工大学,,,,,needs_review,low,5,MBA、MPA,深圳、赣州,,,1878、1879、1880、1881、1882,城市跨省或多校区: 深圳:city_mapping; 赣州:city_mapping；province 待人工确认；school_code 待人工补齐
+江西财经大学,,,,,needs_review,low,27,MBA、MPA,南昌、深圳,,,1883、1884、1885、1886、1887、1888、1889、1890、1891、1892,城市跨省或多校区: 南昌:city_mapping; 深圳:city_mapping；province 待人工确认；school_code 待人工补齐
+沈阳农业大学,辽宁,city_mapping,,,needs_review,medium,4,MBA、MPA,沈阳,,,1910、1911、1912、1913,school_code 待人工补齐
+沈阳大学,辽宁,city_mapping,,,needs_review,medium,1,MBA,沈阳,,,1914,school_code 待人工补齐
+沈阳工业大学,辽宁,city_mapping,,,needs_review,medium,16,MBA,沈阳,,,1915、1916、1917、1918、1919、1920、1921、1922、1923、1924,school_code 待人工补齐
+沈阳师范大学,辽宁,city_mapping,,,needs_review,medium,3,MPA,大连,,,1931、1932、1933,school_code 待人工补齐
+沈阳理工大学,辽宁,city_mapping,,,needs_review,medium,9,MBA,沈阳,,,1934、1935、1936、1937、1938、1939、1940、1941、1942,school_code 待人工补齐
+河北地质大学,河北,city_mapping,,,needs_review,medium,34,MBA、MPA,石家庄,,,1943、1944、1945、1946、1947、1948、1949、1950、1951、1952,school_code 待人工补齐
+河北大学,河北,city_mapping,,,needs_review,medium,47,MBA、MPA,保定,,,1977、1978、1979、1980、1981、1982、1983、1984、1985、1986,school_code 待人工补齐
+河北工业大学,天津,city_mapping,,,needs_review,medium,20,MBA、MPA,"天津、天津,石家庄",,,2024、2025、2026、2027、2028、2029、2030、2031、2032、2033,school_code 待人工补齐
+河北工程大学,河北,city_mapping,,,needs_review,medium,2,MBA,邯郸,,,2044、2045,school_code 待人工补齐
+河北师范大学,河北,city_mapping,,,needs_review,medium,12,MBA、MPA,石家庄,,,2046、2047、2048、2049、2050、2051、2052、2053、2054、2055,school_code 待人工补齐
+河北科技大学,河北,city_mapping,,,needs_review,medium,16,MBA、MPA,石家庄,,,2058、2059、2060、2061、2062、2063、2064、2065、2066、2067,school_code 待人工补齐
+河北经贸大学,河北,city_mapping,,,needs_review,medium,4,MBA、MPA,石家庄,,,2074、2075、2076、2077,school_code 待人工补齐
+河南中医药大学,河南,city_mapping,,,needs_review,medium,3,MPA,郑州,,,2078、2079、2080,school_code 待人工补齐
+河南大学,河南,city_mapping,,,needs_review,medium,6,MBA、MPA,"开封,郑州、郑州",,,2081、2082、2083、2084、2085、2086,school_code 待人工补齐
+河南工业大学,河南,city_mapping,,,needs_review,medium,20,MBA、MPA,郑州,,,2087、2088、2089、2090、2091、2092、2093、2094、2095、2096,school_code 待人工补齐
+河南师范大学,河南,city_mapping,,,needs_review,medium,10,MBA、MPA,新乡,,,2107、2108、2109、2110、2111、2112、2113、2114、2115、2116,school_code 待人工补齐
+河南理工大学,河南,city_mapping,,,needs_review,medium,9,MBA、MPA,焦作,,,2117、2118、2119、2120、2121、2122、2123、2124、2125,school_code 待人工补齐
+河南科技大学,河南,city_mapping,,,needs_review,medium,4,MBA、MPA,洛阳,,,2126、2127、2128、2129,school_code 待人工补齐
+河南财经政法大学,河南,city_mapping,,,needs_review,medium,8,MBA、MPA,郑州,,,2130、2131、2132、2133、2134、2135、2136、2137,school_code 待人工补齐
+河海大学,江苏,city_mapping,,,needs_review,medium,15,MBA、MPA,南京,,,2138、2139、2140、2141、2142、2143、2144、2145、2146、2147,school_code 待人工补齐
+济南大学,山东,city_mapping,,,needs_review,medium,8,MBA、MPA,济南,,,2153、2154、2155、2156、2157、2158、2159、2160,school_code 待人工补齐
+浙江中医药大学,浙江,city_mapping,,,needs_review,medium,1,MPA,杭州,,,2161,school_code 待人工补齐
+浙江农林大学,浙江,city_mapping,,,needs_review,medium,1,MPA,杭州,,,2162,school_code 待人工补齐
+浙江大学,浙江,city_mapping,,,needs_review,medium,8,MBA、MPA,"杭州、杭州,海宁,深圳",,,2163、2164、2165、2166、2167、2168、2169、2170,school_code 待人工补齐
+浙江工业大学,浙江,city_mapping,,,needs_review,medium,9,MBA、MPA,杭州,,,2171、2172、2173、2174、2175、2176、2177、2178、2179,school_code 待人工补齐
+浙江工商大学,浙江,city_mapping,,,needs_review,medium,7,MBA、MPA,杭州,,,2180、2181、2182、2183、2184、2185、2186,school_code 待人工补齐
+浙江师范大学,浙江,city_mapping,,,needs_review,medium,5,MBA、MPA,金华,,,2187、2188、2189、2190、2191,school_code 待人工补齐
+浙江海洋大学,浙江,city_mapping,,,needs_review,medium,2,MPA,舟山,,,2192、2193,school_code 待人工补齐
+浙江理工大学,浙江,city_mapping,,,needs_review,medium,15,MBA、MPA,杭州,,,2194、2195、2196、2197、2198、2199、2200、2201、2202、2203,school_code 待人工补齐
+浙江财经大学,浙江,city_mapping,,,needs_review,medium,3,MBA、MPA,杭州,,,2209、2210、2211,school_code 待人工补齐
+海南医科大学,海南,city_mapping,,,needs_review,medium,1,MPA,海南省海口市,,,2212,school_code 待人工补齐
+海南大学,海南,city_mapping,,,needs_review,medium,12,MBA、MPA,海口,,,2213、2214、2215、2216、2217、2218、2219、2220、2221、2222,school_code 待人工补齐
+海南师范大学,海南,city_mapping,,,needs_review,medium,4,MBA,海口,,,2225、2226、2227、2228,school_code 待人工补齐
+淮北师范大学,安徽,city_mapping,,,needs_review,medium,2,MPA,淮北,,,2229、2230,school_code 待人工补齐
+深圳大学,广东,city_mapping,,,needs_review,medium,6,MBA、MPA,深圳,,,2231、2232、2233、2234、2235、2236,school_code 待人工补齐
+清华大学,北京,city_mapping,,,needs_review,medium,14,MBA、MPA,"上海,北京,深圳、北京、北京,新疆、北京,深圳",,,2237、2238、2239、2240、2241、2242、2243、2244、2245、2246,school_code 待人工补齐
+温州大学,浙江,city_mapping,,,needs_review,medium,1,MPA,温州,,,2251,school_code 待人工补齐
+湖北中医药大学,湖北,city_mapping,,,needs_review,medium,6,MPA,武汉,,,2252、2253、2254、2255、2256、2257,school_code 待人工补齐
+湖北医药学院,湖北,city_mapping,,,needs_review,medium,4,MPA,十堰,,,2258、2259、2260、2261,school_code 待人工补齐
+湖北大学,湖北,city_mapping,,,needs_review,medium,4,MBA、MPA,武汉,,,2262、2263、2264、2265,school_code 待人工补齐
+湖北工业大学,湖北,city_mapping,,,needs_review,medium,9,MBA、MPA,武汉,,,2266、2267、2268、2269、2270、2271、2272、2273、2274,school_code 待人工补齐
+湖北师范大学,湖北,city_mapping,,,needs_review,medium,4,MPA,黄石,,,2275、2276、2277、2278,school_code 待人工补齐
+湖北经济学院,湖北,city_mapping,,,needs_review,medium,2,MPA,武汉,,,2279、2280,school_code 待人工补齐
+湖南中医药大学,湖南,city_mapping,,,needs_review,medium,7,MPA,长沙,,,2281、2282、2283、2284、2285、2286、2287,school_code 待人工补齐
+湖南农业大学,湖南,city_mapping,,,needs_review,medium,6,MBA、MPA,长沙,,,2288、2289、2290、2291、2292、2293,school_code 待人工补齐
+湖南大学,湖南,city_mapping,,,needs_review,medium,3,MBA、MPA,长沙,,,2294、2295、2296,school_code 待人工补齐
+湖南工业大学,湖南,city_mapping,,,needs_review,medium,12,MBA、MPA,株洲,,,2297、2298、2299、2300、2301、2302、2303、2304、2305、2306,school_code 待人工补齐
+湖南工商大学,湖南,city_mapping,,,needs_review,medium,8,MBA、MPA,长沙,,,2309、2310、2311、2312、2313、2314、2315、2316,school_code 待人工补齐
+湖南师范大学,湖南,city_mapping,,,needs_review,medium,14,MBA、MPA,长沙,,,2317、2318、2319、2320、2321、2322、2323、2324、2325、2326,school_code 待人工补齐
+湖南科技大学,湖南,city_mapping,,,needs_review,medium,14,MBA、MPA,湘潭,,,2331、2332、2333、2334、2335、2336、2337、2338、2339、2340,school_code 待人工补齐
+湘潭大学,湖南,city_mapping,,,needs_review,medium,6,MBA、MPA,湘潭,,,2345、2346、2347、2348、2349、2350,school_code 待人工补齐
+滨州医学院,山东,city_mapping,,,needs_review,medium,4,MPA,滨州,,,2351、2352、2353、2354,school_code 待人工补齐
+燕山大学,河北,city_mapping,,,needs_review,medium,4,MBA、MPA,秦皇岛,,,2355、2356、2357、2358,school_code 待人工补齐
+甘肃农业大学,甘肃,city_mapping,,,needs_review,medium,2,MBA,兰州,,,2359、2360,school_code 待人工补齐
+甘肃政法大学,甘肃,AIAgent/schools_basic_info,,,needs_review,medium,6,MBA、MPA,兰州,,,2361、2362、2363、2364、2365、2366,school_code 待人工补齐
+电子科技大学,四川,source_region,10614,source_school_code,auto_ready,high,5,MBA、MPA,成都,四川,10614,16、58、59、60、61,
+石家庄铁道大学,河北,city_mapping,,,needs_review,medium,2,MBA,石家庄,,,2367、2368,school_code 待人工补齐
+石河子大学,新疆,city_mapping,,,needs_review,medium,4,MBA、MPA,石河子,,,2369、2370、2371、2372,school_code 待人工补齐
+福州大学,福建,city_mapping,,,needs_review,medium,4,MBA、MPA,福州,,,2373、2374、2375、2376,school_code 待人工补齐
+福建中医药大学,福建,city_mapping,,,needs_review,medium,1,MPA,福州,,,2377,school_code 待人工补齐
+福建农林大学,福建,city_mapping,,,needs_review,medium,8,MBA、MPA,福州,,,2378、2379、2380、2381、2382、2383、2384、2385,school_code 待人工补齐
+福建医科大学,福建,city_mapping,,,needs_review,medium,4,MPA,福州,,,2386、2387、2388、2389,school_code 待人工补齐
+福建师范大学,福建,city_mapping,,,needs_review,medium,9,MBA、MPA,福州,,,2390、2391、2392、2393、2394、2395、2396、2397、2398,school_code 待人工补齐
+福建理工大学,福建,city_mapping,,,needs_review,medium,6,MPA,福州,,,2399、2400、2401、2402、2403、2404,school_code 待人工补齐
+绍兴文理学院,浙江,city_mapping,,,needs_review,medium,2,MPA,绍兴,,,2405、2406,school_code 待人工补齐
+聊城大学,山东,city_mapping,,,needs_review,medium,4,MBA、MPA,聊城,,,2407、2408、2409、2410,school_code 待人工补齐
+苏州大学,江苏,city_mapping,,,needs_review,medium,3,MBA、MPA,苏州,,,2411、2412、2413,school_code 待人工补齐
+苏州科技大学,江苏,city_mapping,,,needs_review,medium,2,MBA,苏州,,,2414、2415,school_code 待人工补齐
+西北农林科技大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,4,MBA、MPA,西安,,,2416、2417、2418、2419,school_code 待人工补齐
+西北大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,6,MBA、MPA,西安,,,2420、2421、2422、2423、2424、2425,school_code 待人工补齐
+西北工业大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,3,MBA、MPA,"西安、西安,青岛,深圳,宁波,苏州",,,2426、2427、2428,school_code 待人工补齐
+西北师范大学,甘肃,AIAgent/schools_basic_info,,,needs_review,medium,23,MBA、MPA,兰州,,,2429、2430、2431、2432、2433、2434、2435、2436、2437、2438,school_code 待人工补齐
+西北政法大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,2,MPA,西安,,,2452、2453,school_code 待人工补齐
+西北民族大学,甘肃,AIAgent/schools_basic_info,,,needs_review,medium,1,MPA,兰州,,,2454,school_code 待人工补齐
+西华师范大学,四川,source_region,10638,source_school_code,auto_ready,high,2,MBA、MPA,南充,四川,10638,27、70,
+西南交通大学,四川,source_region,10613,source_school_code,auto_ready,high,11,MBA、MPA,"唐山,成都、成都",四川,10613,14、15、49、50、51、52、53、54、55、56,
+西南医科大学,四川,source_region,10632,source_school_code,auto_ready,high,1,MPA,泸州,四川,10632,22,
+西南大学,重庆,source_region,10635,source_school_code,auto_ready,high,2,MBA、MPA,重庆,重庆,10635,90、114,
+西南政法大学,重庆,source_region,10652,source_school_code,auto_ready,high,2,MBA、MPA,重庆,重庆,10652,93、117,
+西南林业大学,云南,source_region,10677,source_school_code,auto_ready,high,1,MPA,昆明,云南,10677,136,
+西南民族大学,四川,source_region,10656,source_school_code,auto_ready,high,2,MBA、MPA,成都,四川,10656,40、74,
+西南石油大学,四川,source_region,10615,source_school_code,auto_ready,high,1,MBA,成都,四川,10615,62,
+西南科技大学,四川,source_region,10619,source_school_code,auto_ready,high,2,MBA、MPA,绵阳,四川,10619,17、63,
+西南财经大学,四川,source_region,10651,source_school_code,auto_ready,high,15,MBA、MPA,成都,四川,10651,28、29、30、31、32、33、34、35、36、37,
+西安交通大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,17,MBA、MPA,"西安、西安,深圳,青岛,郑州,苏州",,,2455、2456、2457、2458、2459、2460、2461、2462、2463、2464,school_code 待人工补齐
+西安工业大学,陕西,city_mapping,,,needs_review,medium,7,MBA,西安,,,2472、2473、2474、2475、2476、2477、2478,school_code 待人工补齐
+西安工程大学,陕西,city_mapping,,,needs_review,medium,4,MBA,西安,,,2479、2480、2481、2482,school_code 待人工补齐
+西安建筑科技大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,6,MBA、MPA,西安,,,2483、2484、2485、2486、2487、2488,school_code 待人工补齐
+西安理工大学,陕西,city_mapping,,,needs_review,medium,4,MBA,西安,,,2489、2490、2491、2492,school_code 待人工补齐
+西安电子科技大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,3,MBA、MPA,西安,,,2493、2494、2495,school_code 待人工补齐
+西安石油大学,陕西,city_mapping,,,needs_review,medium,2,MBA,西安,,,2496、2497,school_code 待人工补齐
+西安科技大学,陕西,city_mapping,,,needs_review,medium,19,MBA,西安,,,2498、2499、2500、2501、2502、2503、2504、2505、2506、2507,school_code 待人工补齐
+西安财经大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,5,MBA、MPA,西安,,,2517、2518、2519、2520、2521,school_code 待人工补齐
+西安邮电大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,4,MBA、MPA,西安,,,2522、2523、2524、2525,school_code 待人工补齐
+西昌学院,四川,source_region,10628,source_school_code,auto_ready,high,1,MPA,凉山彝族自治州,四川,10628,21,
+西藏大学,西藏,city_mapping,,,needs_review,medium,2,MPA,拉萨,,,2526、2527,school_code 待人工补齐
+西藏民族大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,8,MBA、MPA,咸阳,,,2528、2529、2530、2531、2532、2533、2534、2535,school_code 待人工补齐
+贵州中医药大学,贵州,source_region,10662,source_school_code,auto_ready,high,3,MPA,贵阳,贵州,10662,157、158、159,
+贵州大学,贵州,source_region,10657,source_school_code,auto_ready,high,3,MBA、MPA,贵阳,贵州,10657,156、171、172,
+贵州师范大学,贵州,source_region,10663,source_school_code,auto_ready,high,1,MBA,贵阳,贵州,10663,173,
+贵州民族大学,贵州,source_region,10672,source_school_code,auto_ready,high,2,MBA、MPA,贵阳,贵州,10672,170、182,
+贵州财经大学,贵州,source_region,10671,source_school_code,auto_ready,high,18,MBA、MPA,贵阳,贵州,10671,160、161、162、163、164、165、166、167、168、169,
+辽宁大学,辽宁,city_mapping,,,needs_review,medium,3,MBA、MPA,沈阳,,,2536、2537、2538,school_code 待人工补齐
+辽宁工程技术大学,辽宁,city_mapping,,,needs_review,medium,9,MBA、MPA,"葫芦岛,阜新、阜新",,,2539、2540、2541、2542、2543、2544、2545、2546、2547,school_code 待人工补齐
+辽宁师范大学,辽宁,city_mapping,,,needs_review,medium,1,MPA,大连,,,2548,school_code 待人工补齐
+辽宁石油化工大学,辽宁,city_mapping,,,needs_review,medium,2,MBA,抚顺,,,2549、2550,school_code 待人工补齐
+辽宁科技大学,辽宁,city_mapping,,,needs_review,medium,6,MBA,鞍山,,,2551、2552、2553、2554、2555、2556,school_code 待人工补齐
+郑州大学,河南,city_mapping,,,needs_review,medium,9,MBA、MPA,郑州,,,2557、2558、2559、2560、2561、2562、2563、2564、2565,school_code 待人工补齐
+郑州航空工业管理学院,河南,city_mapping,,,needs_review,medium,5,MBA、MPA,郑州,,,2566、2567、2568、2569、2570,school_code 待人工补齐
+郑州轻工业大学,河南,city_mapping,,,needs_review,medium,5,MBA、MPA,郑州,,,2571、2572、2573、2574、2575,school_code 待人工补齐
+重庆三峡学院,重庆,source_region,10643,source_school_code,auto_ready,high,1,MPA,重庆,重庆,10643,91,
+重庆交通大学,重庆,source_region,10618,source_school_code,auto_ready,high,5,MBA,重庆,重庆,10618,109、110、111、112、113,
+重庆大学,重庆,source_region,10611,source_school_code,auto_ready,high,7,MBA、MPA,重庆,重庆,10611,85、86、87、88、89、106、107,
+重庆工商大学,重庆,source_region,11799,source_school_code,auto_ready,high,4,MBA、MPA,重庆,重庆,11799,104、126、127、128,
+重庆师范大学,重庆,source_region,10637,source_school_code,auto_ready,high,2,MBA,重庆,重庆,10637,115、116,
+重庆理工大学,重庆,source_region,11660,source_school_code,auto_ready,high,11,MBA、MPA,重庆,重庆,11660,101、102、103、118、119、120、121、122、123、124,
+重庆科技大学,重庆,source_region,11551,source_school_code,auto_ready,high,7,MPA,重庆、重庆城区,重庆,11551,94、95、96、97、98、99、100,
+重庆邮电大学,重庆,source_region,10617,source_school_code,auto_ready,high,1,MBA,重庆,重庆,10617,108,
+长安大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,8,MBA、MPA,西安,,,2576、2577、2578、2579、2580、2581、2582、2583,school_code 待人工补齐
+长春工业大学,吉林,city_mapping,,,needs_review,medium,19,MBA、MPA,长春,,,2584、2585、2586、2587、2588、2589、2590、2591、2592、2593,school_code 待人工补齐
+长春师范大学,吉林,city_mapping,,,needs_review,medium,3,MPA,长春,,,2603、2604、2605,school_code 待人工补齐
+长春理工大学,吉林,city_mapping,,,needs_review,medium,2,MBA,长春,,,2606、2607,school_code 待人工补齐
+长江商学院,,,,,needs_review,low,6,MBA,"上海,北京,深圳",,,2608、2609、2610、2611、2612、2613,province 待人工确认；school_code 待人工补齐
+长江大学,湖北,city_mapping,,,needs_review,medium,2,MBA,"武汉,荆州",,,2614、2615,school_code 待人工补齐
+长沙理工大学,湖南,city_mapping,,,needs_review,medium,2,MBA,长沙,,,2616、2617,school_code 待人工补齐
+闽江学院,福建,city_mapping,,,needs_review,medium,4,MBA,福州,,,2618、2619、2620、2621,school_code 待人工补齐
+陕西师范大学,陕西,AIAgent/schools_basic_info,,,needs_review,medium,5,MBA、MPA,西安,,,2622、2623、2624、2625、2626,school_code 待人工补齐
+陕西理工大学,陕西,city_mapping,,,needs_review,medium,4,MBA,汉中,,,2627、2628、2629、2630,school_code 待人工补齐
+陕西科技大学,陕西,city_mapping,,,needs_review,medium,2,MBA,西安,,,2631、2632,school_code 待人工补齐
+集美大学,福建,city_mapping,,,needs_review,medium,1,MBA,厦门,,,2633,school_code 待人工补齐
+青岛大学,山东,city_mapping,,,needs_review,medium,6,MBA、MPA,山东省青岛市、青岛,,,2634、2635、2636、2637、2638、2639,school_code 待人工补齐
+青岛理工大学,山东,city_mapping,,,needs_review,medium,3,MBA,青岛,,,2640、2641、2642,school_code 待人工补齐
+青岛科技大学,山东,city_mapping,,,needs_review,medium,2,MBA,青岛,,,2643、2644,school_code 待人工补齐
+青海师范大学,青海,city_mapping,,,needs_review,medium,2,MPA,西宁,,,2645、2646,school_code 待人工补齐
+青海民族大学,青海,city_mapping,,,needs_review,medium,4,MBA、MPA,西宁,,,2647、2648、2649、2650,school_code 待人工补齐
+首都师范大学,北京,city_mapping,,,needs_review,medium,2,MPA,北京,,,2651、2652,school_code 待人工补齐
+首都经济贸易大学,北京,city_mapping,,,needs_review,medium,8,MBA、MPA,北京,,,2653、2654、2655、2656、2657、2658、2659、2660,school_code 待人工补齐
+鲁东大学,山东,city_mapping,,,needs_review,medium,3,MPA,曲阜,,,2661、2662、2663,school_code 待人工补齐
+黑龙江大学,黑龙江,city_mapping,,,needs_review,medium,7,MBA、MPA,哈尔滨,,,2664、2665、2666、2667、2668、2669、2670,school_code 待人工补齐
+黑龙江科技大学,黑龙江,city_mapping,,,needs_review,medium,4,MBA,哈尔滨,,,2671、2672、2673、2674,school_code 待人工补齐

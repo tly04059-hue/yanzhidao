@@ -1,0 +1,4 @@
+﻿task_id,priority,task_group,target_path,current_coverage_display,match_status,source_columns,task_type,suggested_source,owner_role,owner,status,due_batch,reason,acceptance_criteria,notes
+199-BF-001,P0,报考条件字段,junior_college_allowed,27.50%,auto,是否接受大专报考,人工确认,院校招生简章、专业目录、研招网备注、学校研究生院官网,教研/数据同事,待分配,todo,2026-05-data-cleaning,是否接受大专报考是用户路径判断和测一测推荐的重要限制条件。,字段值统一为 是/否/需条件/未确认；未确认不得默认写否。,
+199-BF-002,P0,地域基础字段,province,6.77%,auto,地区,补齐/查表,学校名称-省份对照表、研招网学校库、现有云贵川渝清单、学校官网,数据同事,待分配,todo,2026-05-data-cleaning,省份是小程序第二筛选维度，也是推荐策略的基础过滤字段。,所有记录 province 不为空；同一学校省份一致；省份值使用标准省级行政区名称。,
+199-BF-003,P0,学校编码字段,school_code,6.77%,auto,学校代码,补齐/查表,研招网院校库、全量院校表研招网主表部分、学校代码公开表,数据同事,待分配,todo,2026-05-data-cleaning,学校代码用于 school_id、去重、后续数据更新和 code/name/label 规则。,能查到研招网代码的学校必须补齐；无法确认时保留空值并标记 needs_review，不允许臆造代码。,

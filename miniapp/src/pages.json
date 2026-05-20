@@ -1,0 +1,78 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "研知道"
+			}
+		},
+		{
+		  "path": "pages/learn/index",
+		  "style": {
+			"navigationBarTitleText": "了解"
+		  }
+		},
+		{
+		  "path": "pages/schools/index",
+		  "style": {
+			"navigationBarTitleText": "院校库",
+			"enablePullDownRefresh": false
+		  }
+		},
+		{
+		  "path": "pages/school-detail/index",
+		  "style": {
+		    "navigationBarTitleText": "院校详情"
+		  }
+		},
+		{
+		  "path": "pages/comparison/index",
+		  "style": {
+		    "navigationBarTitleText": "路径对比"
+		  }
+		},
+		{
+		  "path": "pages/cases/index",
+		  "style": {
+		    "navigationBarTitleText": "案例库"
+		  }
+		},
+		{
+		  "path": "pages/test/index",
+		  "style": {
+		    "navigationBarTitleText": "测一测"
+		  }
+		},
+		{
+		  "path": "pages/result/index",
+		  "style": {
+		    "navigationBarTitleText": "推荐结果"
+		  }
+		},
+		{
+		  "path": "pages/timeline/index",
+		  "style": {
+		    "navigationBarTitleText": "备考时间"
+		  }
+		},
+		{
+		  "path": "pages/estimate/index",
+		  "style": {
+		    "navigationBarTitleText": "估分工具"
+		  }
+		},
+		{
+		  "path": "pages/contact/index",
+		  "style": {
+		    "navigationBarTitleText": "联系我们"
+		  }
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationStyle": "custom",
+		"backgroundColor": "#F8F8F8"
+	}
+}

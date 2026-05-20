@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研知道院校库</title>
+    <link rel="stylesheet" href="yanzhidao_schooldata.css?v=202605180940">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="topbar-row">
+                <div class="tb-mark">研</div>
+                <div class="tb-title">院校库</div>
+                <div class="tb-meta">内部数据浏览</div>
+            </div>
+        </header>
+
+        <main class="container">
+        <!-- 标签页 -->
+        <div class="tabs-container">
+            <!-- 第一级：类别标签 -->
+            <div class="category-tabs-wrapper">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="mpa">MPA</button>
+                    <button class="category-tab" data-category="mem">MEM</button>
+                    <button class="category-tab" data-category="mba">MBA</button>
+                    <button class="category-tab" data-category="dx">党校</button>
+                </div>
+            </div>
+            <!-- 第二级：地区标签 -->
+            <div class="region-tabs-wrapper">
+                <div class="region-tabs">
+                    <button class="region-tab active" data-region="sc">四川</button>
+                    <button class="region-tab" data-region="cq">重庆</button>
+                    <button class="region-tab" data-region="yn">云南</button>
+                    <button class="region-tab" data-region="gz">贵州</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 内容区域 -->
+        <div id="content-area">
+        </div>
+        </main>
+    </div>
+
+    <script src="yanzhidao_schooldata.js?v=202605180940"></script>
+</body>
+</html>

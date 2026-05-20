@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-05-20T09:48:13",
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "json_checks": [
+    {
+      "path": "schoolData/publish/199exam_miniapp_school_publish_sc_cq.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "schoolData/publish/party_school_miniapp_publish.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "miniapp/src/data/party-school-miniapp-publish.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "studentCases/publish/student_cases_miniapp_publish.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "miniapp/src/data/student-cases-publish.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "studentCases/standardized/student_cases_l1_anonymized.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json",
+      "ok": true,
+      "top_level_type": "dict"
+    },
+    {
+      "path": "miniapp/src/data/recommendation-strategies-publish.json",
+      "ok": true,
+      "top_level_type": "dict"
+    }
+  ],
+  "school_summary": {
+    "record_count": 234,
+    "party_school_record_count": 8,
+    "combined_record_count": 242,
+    "program_counts": {
+      "MPA": 95,
+      "MEM": 97,
+      "MBA": 42,
+      "党校": 8
+    },
+    "province_counts": {
+      "四川": 103,
+      "重庆": 79,
+      "云南": 37,
+      "贵州": 23
+    }
+  },
+  "case_summary": {
+    "case_count": 60,
+    "system_counts": {
+      "管综系": 18,
+      "党校系": 42
+    }
+  },
+  "recommendation_strategy_summary": {
+    "strategy_count": 8,
+    "program_counts": {
+      "党校": 3,
+      "MPA": 3,
+      "MEM": 1,
+      "MBA": 1
+    }
+  },
+  "privacy_scan": {
+    "studentCases/publish/student_cases_miniapp_publish.json": 0,
+    "miniapp/src/data/student-cases-publish.json": 0,
+    "studentCases/standardized/student_cases_l1_anonymized.json": 0
+  }
+}

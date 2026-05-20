@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-18",
+  "source_count": 8,
+  "publish_count": 8,
+  "program_counts": {
+    "党校": 3,
+    "MPA": 3,
+    "MEM": 1,
+    "MBA": 1
+  },
+  "strategy_ids": [
+    "strategy_dx_in_service",
+    "strategy_dx_chongqing_open_entry",
+    "strategy_dx_sichuan_party_member_ethnic",
+    "strategy_mpa_public_weak_base",
+    "strategy_mpa_low_budget",
+    "strategy_mem_enterprise_project",
+    "strategy_mba_enterprise_management",
+    "strategy_default_mpa"
+  ],
+  "outputs": [
+    "courseRecommendationStrategy/standardized/recommendation_strategy_l1.json",
+    "courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json",
+    "miniapp/src/data/recommendation-strategies-publish.json"
+  ]
+}

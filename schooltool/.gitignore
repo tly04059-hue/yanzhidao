@@ -1,0 +1,8 @@
+.DS_Store
+
+node_modules/
+apps/miniapp/node_modules/
+apps/miniapp/dist/
+
+data/*.db-shm
+data/*.db-wal

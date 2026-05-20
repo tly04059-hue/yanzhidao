@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-05-20T09:48:13",
+  "ok": true,
+  "checks": [
+    {
+      "key": "api_base_url_present",
+      "ok": true,
+      "level": "ok",
+      "message": "miniapp/.env.production VITE_API_BASE_URL=https://yanzhidao.com/api"
+    },
+    {
+      "key": "api_base_url_https",
+      "ok": true,
+      "level": "ok",
+      "message": "生产 API 必须使用 HTTPS"
+    },
+    {
+      "key": "api_base_url_no_localhost",
+      "ok": true,
+      "level": "ok",
+      "message": "生产 API 不能使用本地地址"
+    },
+    {
+      "key": "api_base_url_expected",
+      "ok": true,
+      "level": "ok",
+      "message": "建议生产 API 固定为 https://yanzhidao.com/api"
+    },
+    {
+      "key": "mp_weixin_appid_present",
+      "ok": true,
+      "level": "ok",
+      "message": "miniapp/src/manifest.json 需要填写微信小程序 AppID"
+    },
+    {
+      "key": "mp_weixin_url_check_enabled",
+      "ok": true,
+      "level": "ok",
+      "message": "真机提测前建议开启微信 URL 合法域名校验，并在微信后台配置 request 合法域名"
+    },
+    {
+      "key": "mp_weixin_build_exists",
+      "ok": true,
+      "level": "ok",
+      "message": "微信小程序构建目录 miniapp/dist/build/mp-weixin 存在"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "manual_checks": [
+    "yanzhidao.com DNS A record points to production server",
+    "yanzhidao.com HTTPS certificate is valid",
+    "Wechat Mini Program backend request legal domain includes https://yanzhidao.com",
+    "iOS real-device test passed",
+    "Android real-device test passed",
+    "Lead submission record is visible to sales or operations"
+  ]
+}

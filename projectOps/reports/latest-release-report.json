@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-05-15T14:19:06",
+  "target": "h5",
+  "ok": true,
+  "results": [
+    {
+      "command": [
+        "python3",
+        "projectOps/scripts/update-all.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-update-report.json\"\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python3",
+        "projectOps/scripts/sync-miniapp-data.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-sync-report.json\",\n  \"items\": [\n    {\n      \"source\": \"schoolData/publish/199exam_miniapp_school_publish_sc_cq.json\",\n      \"dest\": \"miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 618248\n    },\n    {\n      \"source\": \"studentCases/publish/student_cases_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/student-cases-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 59791\n    },\n    {\n      \"source\": \"courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/recommendation-strategies-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 9622\n    }\n  ]\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python3",
+        "projectOps/scripts/check-all.py"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-check-report.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": [
+        "python3",
+        "projectOps/scripts/build-miniapp.py",
+        "--target",
+        "h5"
+      ],
+      "returncode": 0,
+      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-build-report.json\",\n  \"target\": \"h5\"\n}\n",
+      "stderr_tail": ""
+    }
+  ]
+}

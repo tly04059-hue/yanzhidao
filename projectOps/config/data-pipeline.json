@@ -1,0 +1,75 @@
+{
+  "version": "2026-05-projectops-minimum",
+  "description": "研知道大项目最小数据更新流水线。projectOps 只调度，不承载业务数据。",
+  "steps": [
+    {
+      "id": "build_mem",
+      "name": "重建 MEM 数据",
+      "command": ["python3", "AIAgent/scripts/build_mem_from_199exam_html.py"],
+      "outputs": [
+        "schoolData/mem.json",
+        "schoolData/standardized/199exam/199exam_mem_school_program_master.json"
+      ]
+    },
+    {
+      "id": "build_199exam_l2",
+      "name": "生成管综院校 L2 发布数据",
+      "command": ["python3", "AIAgent/scripts/build_199exam_l2_publish.py"],
+      "outputs": [
+        "schoolData/publish/199exam_miniapp_school_publish_sc_cq.json",
+        "miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json"
+      ]
+    },
+    {
+      "id": "build_party_school_v2",
+      "name": "生成党校 V2 L1/L2 发布数据",
+      "command": ["python3", "AIAgent/scripts/build_party_school_v2.py"],
+      "outputs": [
+        "schoolData/standardized/party/party_school_l1_v2.json",
+        "schoolData/publish/party_school_miniapp_publish.json",
+        "miniapp/src/data/party-school-miniapp-publish.json",
+        "schoolData/dx_data.json"
+      ]
+    },
+    {
+      "id": "build_student_cases",
+      "name": "生成学生案例 L1/L2",
+      "command": ["python3", "AIAgent/scripts/build_student_cases_from_sources.py"],
+      "outputs": [
+        "studentCases/standardized/student_cases_l1_anonymized.json",
+        "studentCases/publish/student_cases_miniapp_publish.json",
+        "miniapp/src/data/student-cases-publish.json"
+      ]
+    },
+    {
+      "id": "build_recommendation_strategies",
+      "name": "生成推荐方案库 L1/L2",
+      "command": ["python3", "AIAgent/scripts/build_recommendation_strategies_l2.py"],
+      "outputs": [
+        "courseRecommendationStrategy/standardized/recommendation_strategy_l1.json",
+        "courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json",
+        "miniapp/src/data/recommendation-strategies-publish.json"
+      ]
+    },
+    {
+      "id": "sync_miniapp_data",
+      "name": "同步发布数据到小程序",
+      "command": ["python3", "projectOps/scripts/sync-miniapp-data.py"],
+      "outputs": [
+        "miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json",
+        "miniapp/src/data/party-school-miniapp-publish.json",
+        "miniapp/src/data/student-cases-publish.json",
+        "miniapp/src/data/recommendation-strategies-publish.json"
+      ]
+    }
+  ],
+  "minimum_checks": {
+    "school_publish_records_min": 200,
+    "school_program_types_required": ["MPA", "MEM", "MBA"],
+    "school_provinces_required": ["四川", "重庆", "云南", "贵州"],
+    "student_publish_cases_min": 50,
+    "student_case_systems_required": ["管综系", "党校系"],
+    "recommendation_strategy_min": 5,
+    "recommendation_program_types_required": ["MPA", "MEM", "MBA", "党校"]
+  }
+}

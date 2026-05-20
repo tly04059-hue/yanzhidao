@@ -1,0 +1,448 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-14",
+    "source_report": "schoolData/standardized/199exam/199exam_source_completeness_report.json",
+    "task_count": 18,
+    "status_values": [
+      "todo",
+      "doing",
+      "review",
+      "done",
+      "blocked"
+    ],
+    "priority_values": [
+      "P0",
+      "P1",
+      "P2",
+      "P3"
+    ],
+    "note": "管综 L1 字段补齐任务表；owner 字段由实际项目负责人分配。"
+  },
+  "summary": {
+    "by_priority": {
+      "P0": 3,
+      "P1": 8,
+      "P2": 6,
+      "P3": 1
+    },
+    "by_owner_role": {
+      "教研/数据同事": 7,
+      "数据同事": 10,
+      "运营/数据同事": 1
+    },
+    "by_task_group": {
+      "报考条件字段": 1,
+      "地域基础字段": 1,
+      "学校编码字段": 1,
+      "上课安排字段": 1,
+      "院系编码字段": 1,
+      "录取分析字段": 2,
+      "专项计划字段": 2,
+      "复试考情字段": 1,
+      "院校标签字段": 2,
+      "调剂录取字段": 1,
+      "研究方向字段": 1,
+      "历史分数线字段": 3,
+      "展示资源字段": 1
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "199-BF-001",
+      "priority": "P0",
+      "task_group": "报考条件字段",
+      "target_path": "junior_college_allowed",
+      "current_coverage": 0.275,
+      "current_coverage_display": "27.50%",
+      "match_status": "auto",
+      "source_columns": [
+        "是否接受大专报考"
+      ],
+      "task_type": "人工确认",
+      "suggested_source": "院校招生简章、专业目录、研招网备注、学校研究生院官网",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "是否接受大专报考是用户路径判断和测一测推荐的重要限制条件。",
+      "acceptance_criteria": "字段值统一为 是/否/需条件/未确认；未确认不得默认写否。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-002",
+      "priority": "P0",
+      "task_group": "地域基础字段",
+      "target_path": "province",
+      "current_coverage": 0.0677,
+      "current_coverage_display": "6.77%",
+      "match_status": "auto",
+      "source_columns": [
+        "地区"
+      ],
+      "task_type": "补齐/查表",
+      "suggested_source": "学校名称-省份对照表、研招网学校库、现有云贵川渝清单、学校官网",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "省份是小程序第二筛选维度，也是推荐策略的基础过滤字段。",
+      "acceptance_criteria": "所有记录 province 不为空；同一学校省份一致；省份值使用标准省级行政区名称。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-003",
+      "priority": "P0",
+      "task_group": "学校编码字段",
+      "target_path": "school_code",
+      "current_coverage": 0.0677,
+      "current_coverage_display": "6.77%",
+      "match_status": "auto",
+      "source_columns": [
+        "学校代码"
+      ],
+      "task_type": "补齐/查表",
+      "suggested_source": "研招网院校库、全量院校表研招网主表部分、学校代码公开表",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "学校代码用于 school_id、去重、后续数据更新和 code/name/label 规则。",
+      "acceptance_criteria": "能查到研招网代码的学校必须补齐；无法确认时保留空值并标记 needs_review，不允许臆造代码。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-004",
+      "priority": "P1",
+      "task_group": "上课安排字段",
+      "target_path": "class_time",
+      "current_coverage": 0.7624,
+      "current_coverage_display": "76.24%",
+      "match_status": "auto",
+      "source_columns": [
+        "上课方式"
+      ],
+      "task_type": "补齐/标准化",
+      "suggested_source": "MBA大师详情库、学校招生简章、项目官网",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "上课方式直接影响在职用户选择，是前台一期核心字段。",
+      "acceptance_criteria": "覆盖率提升到 90% 以上；保留原文，同时可派生 周末/集中/平时/线上 等标签。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-005",
+      "priority": "P1",
+      "task_group": "院系编码字段",
+      "target_path": "department_code",
+      "current_coverage": 0.0677,
+      "current_coverage_display": "6.77%",
+      "match_status": "auto",
+      "source_columns": [
+        "院系"
+      ],
+      "task_type": "补齐/查表",
+      "suggested_source": "研招网招生专业目录、院校招生目录、全量院校表研招网主表部分",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "院系代码有利于招生目录更新对齐，但一期前台可以先展示院系名称。",
+      "acceptance_criteria": "有研招网院系编号则补齐 department_code；无编号时 department_name 和 department_label 必须保留，department_code 可为空。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-006",
+      "priority": "P1",
+      "task_group": "录取分析字段",
+      "target_path": "first_choice_admission_by_year.2025.score_band_analysis",
+      "current_coverage": 0.9925,
+      "current_coverage_display": "99.25%",
+      "match_status": "partial",
+      "source_columns": [
+        "录取分析",
+        "分数段统计"
+      ],
+      "task_type": "二次解析",
+      "suggested_source": "录取分析、分数段统计、录取名单、MBA大师分数段库",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "这是后续推荐策略、风险提示和案例对比的重要输入。",
+      "acceptance_criteria": "先保留原文；后续拆分复试人数、录取人数、复录比、录取率、分数段。",
+      "notes": "可保留深度文本，但复试人数、录取人数、复录比等结构化字段需要解析或人工确认。"
+    },
+    {
+      "task_id": "199-BF-007",
+      "priority": "P1",
+      "task_group": "专项计划字段",
+      "target_path": "minority_backbone_plan",
+      "current_coverage": 0.0677,
+      "current_coverage_display": "6.77%",
+      "match_status": "auto",
+      "source_columns": [
+        "少民计划"
+      ],
+      "task_type": "人工确认/文本解析",
+      "suggested_source": "研招网专业目录、招生简章、备注字段",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "少骨/少干计划影响特殊用户路径和备注展示。",
+      "acceptance_criteria": "字段值统一为 是/否/未确认；来源备注中提到少骨/少干计划时必须标注来源。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-008",
+      "priority": "P1",
+      "task_group": "复试考情字段",
+      "target_path": "retest_info_by_year.2025.notes",
+      "current_coverage": 0.9712,
+      "current_coverage_display": "97.12%",
+      "match_status": "partial",
+      "source_columns": [
+        "复试信息"
+      ],
+      "task_type": "二次解析",
+      "suggested_source": "复试信息、学校复试细则、招生学院官网",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "复试信息覆盖高，但还不是结构化字段，适合二期解析。",
+      "acceptance_criteria": "先保留 notes 原文；后续拆分 written_exam/interview_content/interview_format/reference_books/score_calculation。",
+      "notes": "复试内容较完整，但尚未拆成笔试、面试、形式、参考书等字段。"
+    },
+    {
+      "task_id": "199-BF-009",
+      "priority": "P1",
+      "task_group": "专项计划字段",
+      "target_path": "retired_soldier_plan",
+      "current_coverage": 0.0677,
+      "current_coverage_display": "6.77%",
+      "match_status": "auto",
+      "source_columns": [
+        "退役计划"
+      ],
+      "task_type": "人工确认/文本解析",
+      "suggested_source": "研招网专业目录、招生简章、备注字段",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "专项计划影响部分用户可报考路径，不能简单默认。",
+      "acceptance_criteria": "字段值统一为 是/否/未确认；来源备注中提到退役计划时必须标注来源。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-010",
+      "priority": "P1",
+      "task_group": "院校标签字段",
+      "target_path": "school_level",
+      "current_coverage": 0.4194,
+      "current_coverage_display": "41.94%",
+      "match_status": "auto",
+      "source_columns": [
+        "院校性质",
+        "学校标签"
+      ],
+      "task_type": "规则补齐",
+      "suggested_source": "现有学校标签、985/211/双一流名单、教育部公开名单",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "院校标签用于推荐排序、名校认可型策略和前台筛选。",
+      "acceptance_criteria": "L1 可保留 985/211/双一流/普通等完整标签；同一学校标签一致。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-011",
+      "priority": "P1",
+      "task_group": "院校标签字段",
+      "target_path": "school_level_display",
+      "current_coverage": 0.4194,
+      "current_coverage_display": "41.94%",
+      "match_status": "derived",
+      "source_columns": [
+        "院校性质",
+        "学校标签"
+      ],
+      "task_type": "自动推导/复核",
+      "suggested_source": "由 school_level 规则映射",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "这是前台展示和筛选字段，需要与老板确认的三个选项一致。",
+      "acceptance_criteria": "管综前台展示值只使用 985/211/双非；985 优先于 211。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-012",
+      "priority": "P2",
+      "task_group": "调剂录取字段",
+      "target_path": "adjustment_admission_by_year.*.quota",
+      "current_coverage": 0.0,
+      "current_coverage_display": "0.00%",
+      "match_status": "manual",
+      "source_columns": [],
+      "task_type": "人工补充/另找来源",
+      "suggested_source": "调剂公告、复试调剂名单、学校研究生院官网、研招网调剂系统公告",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "全量主表无年度调剂名额，属于策略增强字段，不阻塞一期但对调剂机会型策略很重要。",
+      "acceptance_criteria": "按年度补 quota/rounds/qualification_line；quota > 0 时 adjustment 应推导为 是。",
+      "notes": "全量主表只有是否接受调剂，没有年度调剂名额、轮次和复试资格线。"
+    },
+    {
+      "task_id": "199-BF-013",
+      "priority": "P2",
+      "task_group": "录取分析字段",
+      "target_path": "admission_rate",
+      "current_coverage": 0.0228,
+      "current_coverage_display": "2.28%",
+      "match_status": "auto",
+      "source_columns": [
+        "录取率"
+      ],
+      "task_type": "二次解析/人工复核",
+      "suggested_source": "录取情况、分数段统计、MBA大师详情库、院校复试录取名单",
+      "owner_role": "教研/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "录取率用于策略和风险提示，准确性优先于覆盖率。",
+      "acceptance_criteria": "能够从复试人数和录取人数计算时自动生成；无法确认时保留为空，不要用不可靠文本估算。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-014",
+      "priority": "P2",
+      "task_group": "研究方向字段",
+      "target_path": "direction_code",
+      "current_coverage": 0.7561,
+      "current_coverage_display": "75.61%",
+      "match_status": "auto",
+      "source_columns": [
+        "方向"
+      ],
+      "task_type": "补齐/标准化",
+      "suggested_source": "研招网专业目录、源表方向字段",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "方向编号有助于目录对齐，但对一期前台展示不是强阻塞。",
+      "acceptance_criteria": "方向有编号时保留 direction_code；无编号时允许为空，但 direction 和 direction_label 不得丢失。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-015",
+      "priority": "P2",
+      "task_group": "历史分数线字段",
+      "target_path": "first_choice_admission_by_year.2022.score_line",
+      "current_coverage": 0.7269,
+      "current_coverage_display": "72.69%",
+      "match_status": "auto",
+      "source_columns": [
+        "2022分数线"
+      ],
+      "task_type": "补齐/查表",
+      "suggested_source": "2022分数线、学校官网、MBA大师详情库",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "历史分数线支持趋势判断，但一期可先展示最新分数线。",
+      "acceptance_criteria": "覆盖率提升到 85% 以上；无法确认时标记未确认。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-016",
+      "priority": "P2",
+      "task_group": "历史分数线字段",
+      "target_path": "first_choice_admission_by_year.2023.score_line",
+      "current_coverage": 0.7707,
+      "current_coverage_display": "77.07%",
+      "match_status": "auto",
+      "source_columns": [
+        "2023分数线"
+      ],
+      "task_type": "补齐/查表",
+      "suggested_source": "2023分数线、学校官网、MBA大师详情库",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "历史分数线支持趋势判断，但一期可先展示最新分数线。",
+      "acceptance_criteria": "覆盖率提升到 85% 以上；无法确认时标记未确认。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-017",
+      "priority": "P2",
+      "task_group": "历史分数线字段",
+      "target_path": "first_choice_admission_by_year.2024.score_line",
+      "current_coverage": 0.7871,
+      "current_coverage_display": "78.71%",
+      "match_status": "auto",
+      "source_columns": [
+        "2024分数线"
+      ],
+      "task_type": "补齐/查表",
+      "suggested_source": "2024分数线、学校官网、MBA大师详情库",
+      "owner_role": "数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "历史分数线支持趋势判断，但一期可先展示最新分数线。",
+      "acceptance_criteria": "覆盖率提升到 85% 以上；无法确认时标记未确认。",
+      "notes": ""
+    },
+    {
+      "task_id": "199-BF-018",
+      "priority": "P3",
+      "task_group": "展示资源字段",
+      "target_path": "logo_url",
+      "current_coverage": 0.0677,
+      "current_coverage_display": "6.77%",
+      "match_status": "auto",
+      "source_columns": [
+        "学校Logo"
+      ],
+      "task_type": "补齐/可后置",
+      "suggested_source": "研招网学校 logo、学校官网、现有学校Logo字段",
+      "owner_role": "运营/数据同事",
+      "owner": "待分配",
+      "status": "todo",
+      "phase": "L1_backfill",
+      "due_batch": "2026-05-data-cleaning",
+      "reason": "展示体验字段，不应阻塞 L1 主数据清洗。",
+      "acceptance_criteria": "前台需要展示 logo 时再补；不影响一期核心数据发布。",
+      "notes": ""
+    }
+  ]
+}

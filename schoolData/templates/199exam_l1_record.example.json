@@ -1,0 +1,116 @@
+{
+  "record_id": "199-mpa-10610-101-1252-125200-01-nonfull-2026",
+  "school_id": "10610",
+  "program_id": "199-mpa-10610-2026",
+  "track_id": "10610-101-125200-01-nonfull",
+  "program_type": "MPA",
+  "province": "四川",
+  "city": "成都",
+  "study_mode": "非全日制",
+  "duration": 3,
+  "tuition_min": 84000,
+  "tuition_max": 84000,
+  "junior_college_allowed": "",
+  "school_code": "10610",
+  "school_name": "四川大学",
+  "school_label": "(10610)四川大学",
+  "school_level": "985",
+  "school_level_display": "985",
+  "department_code": "101",
+  "department_name": "经济学院",
+  "department_label": "(101)经济学院",
+  "major_category_code": "1252",
+  "major_category_name": "公共管理",
+  "major_category_label": "(1252)公共管理",
+  "major_code": "125200",
+  "major_name": "公共管理",
+  "major_label": "(125200)公共管理",
+  "direction_code": "01",
+  "direction": "公共经济与政府管理",
+  "direction_label": "(01)公共经济与政府管理",
+  "enrollment": 160,
+  "latest_score": "185/55/110",
+  "total_score": 185,
+  "english_score": 55,
+  "comprehensive_score": 110,
+  "latest_retest_count": null,
+  "latest_admitted_count": null,
+  "admission_rate": "",
+  "class_location": "武侯区望江校区",
+  "class_time": "周末授课",
+  "adjustment": "否",
+  "retired_soldier_plan": "否",
+  "minority_backbone_plan": "否",
+  "notes": "",
+  "retest_info_by_year": {
+    "2026": {
+      "written_exam": "",
+      "interview_content": "",
+      "interview_format": "",
+      "score_calculation": "",
+      "reference_books": "",
+      "notes": "",
+      "total_score_calculation": ""
+    },
+    "2025": {
+      "written_exam": "",
+      "interview_content": "",
+      "interview_format": "",
+      "score_calculation": "",
+      "reference_books": "",
+      "notes": "",
+      "total_score_calculation": ""
+    },
+    "2024": {
+      "written_exam": "",
+      "interview_content": "",
+      "interview_format": "",
+      "score_calculation": "",
+      "reference_books": "",
+      "notes": "",
+      "total_score_calculation": ""
+    }
+  },
+  "first_choice_admission_by_year": {
+    "2026": {
+      "score_line": "185/55/110",
+      "national_line_gap": "17/16/32",
+      "retest_count": null,
+      "admitted_count": null,
+      "retest_admission_ratio": "",
+      "admission_rate": "",
+      "score_band_analysis": ""
+    },
+    "2025": {},
+    "2024": {}
+  },
+  "adjustment_admission_by_year": {
+    "2026": {
+      "quota": 0,
+      "rounds": "",
+      "qualification_line": "",
+      "first_choice_gap": "",
+      "retest_count": null,
+      "admitted_count": null,
+      "retest_admission_ratio": "",
+      "admission_rate": "",
+      "score_band_analysis": ""
+    },
+    "2025": {},
+    "2024": {}
+  },
+  "tags": ["管综", "MPA", "四川", "成都", "985", "非全日制", "周末授课"],
+  "source": {
+    "source_file": "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+    "source_sheet": "Sheet1",
+    "source_row": 6,
+    "batch_id": "2026-05-field-template",
+    "updated_at": "2026-05-14"
+  },
+  "quality": {
+    "completeness_score": 0.86,
+    "missing_fields": ["junior_college_allowed", "latest_retest_count", "latest_admitted_count", "admission_rate"],
+    "review_status": "draft",
+    "publish_ready": false
+  }
+}

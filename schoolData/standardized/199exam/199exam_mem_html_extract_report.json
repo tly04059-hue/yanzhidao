@@ -1,0 +1,161 @@
+{
+  "generated_at": "2026-05-18",
+  "source_file_count": 14,
+  "source_files": [
+    "schoolData/sourceData/199exam/html/(125601)工程管理cq.html",
+    "schoolData/sourceData/199exam/html/(125601)工程管理qz.html",
+    "schoolData/sourceData/199exam/html/(125601)工程管理sc.html",
+    "schoolData/sourceData/199exam/html/(125601)工程管理yn.html",
+    "schoolData/sourceData/199exam/html/(125602)项目管理cq.html",
+    "schoolData/sourceData/199exam/html/(125602)项目管理sc.html",
+    "schoolData/sourceData/199exam/html/(125602)项目管理yn.html",
+    "schoolData/sourceData/199exam/html/(125603)工业工程与管理cq.html",
+    "schoolData/sourceData/199exam/html/(125603)工业工程与管理sc.html",
+    "schoolData/sourceData/199exam/html/(125603)工业工程与管理yn.html",
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理cq.html",
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理gz.html",
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理sc.html",
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理yn.html"
+  ],
+  "region_summary": {
+    "scData": {
+      "school_count": 8,
+      "program_count": 32,
+      "mem_by_major": {
+        "工程管理": 9,
+        "项目管理": 5,
+        "工业工程与管理": 8,
+        "物流工程与管理": 10
+      }
+    },
+    "cqData": {
+      "school_count": 5,
+      "program_count": 39,
+      "mem_by_major": {
+        "工程管理": 16,
+        "项目管理": 6,
+        "工业工程与管理": 4,
+        "物流工程与管理": 13
+      }
+    },
+    "ynData": {
+      "school_count": 4,
+      "program_count": 19,
+      "mem_by_major": {
+        "工程管理": 7,
+        "项目管理": 6,
+        "工业工程与管理": 2,
+        "物流工程与管理": 4
+      }
+    },
+    "gzData": {
+      "school_count": 2,
+      "program_count": 7,
+      "mem_by_major": {
+        "工程管理": 4,
+        "物流工程与管理": 3
+      }
+    }
+  },
+  "file_summary": {
+    "schoolData/sourceData/199exam/html/(125601)工程管理cq.html": {
+      "region": "重庆",
+      "major_code": "125601",
+      "major_name": "工程管理",
+      "school_count": 3,
+      "program_count": 16
+    },
+    "schoolData/sourceData/199exam/html/(125601)工程管理qz.html": {
+      "region": "贵州",
+      "major_code": "125601",
+      "major_name": "工程管理",
+      "school_count": 2,
+      "program_count": 4
+    },
+    "schoolData/sourceData/199exam/html/(125601)工程管理sc.html": {
+      "region": "四川",
+      "major_code": "125601",
+      "major_name": "工程管理",
+      "school_count": 7,
+      "program_count": 9
+    },
+    "schoolData/sourceData/199exam/html/(125601)工程管理yn.html": {
+      "region": "云南",
+      "major_code": "125601",
+      "major_name": "工程管理",
+      "school_count": 3,
+      "program_count": 7
+    },
+    "schoolData/sourceData/199exam/html/(125602)项目管理cq.html": {
+      "region": "重庆",
+      "major_code": "125602",
+      "major_name": "项目管理",
+      "school_count": 2,
+      "program_count": 6
+    },
+    "schoolData/sourceData/199exam/html/(125602)项目管理sc.html": {
+      "region": "四川",
+      "major_code": "125602",
+      "major_name": "项目管理",
+      "school_count": 4,
+      "program_count": 5
+    },
+    "schoolData/sourceData/199exam/html/(125602)项目管理yn.html": {
+      "region": "云南",
+      "major_code": "125602",
+      "major_name": "项目管理",
+      "school_count": 3,
+      "program_count": 6
+    },
+    "schoolData/sourceData/199exam/html/(125603)工业工程与管理cq.html": {
+      "region": "重庆",
+      "major_code": "125603",
+      "major_name": "工业工程与管理",
+      "school_count": 2,
+      "program_count": 4
+    },
+    "schoolData/sourceData/199exam/html/(125603)工业工程与管理sc.html": {
+      "region": "四川",
+      "major_code": "125603",
+      "major_name": "工业工程与管理",
+      "school_count": 6,
+      "program_count": 8
+    },
+    "schoolData/sourceData/199exam/html/(125603)工业工程与管理yn.html": {
+      "region": "云南",
+      "major_code": "125603",
+      "major_name": "工业工程与管理",
+      "school_count": 2,
+      "program_count": 2
+    },
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理cq.html": {
+      "region": "重庆",
+      "major_code": "125604",
+      "major_name": "物流工程与管理",
+      "school_count": 4,
+      "program_count": 13
+    },
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理gz.html": {
+      "region": "贵州",
+      "major_code": "125604",
+      "major_name": "物流工程与管理",
+      "school_count": 1,
+      "program_count": 3
+    },
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理sc.html": {
+      "region": "四川",
+      "major_code": "125604",
+      "major_name": "物流工程与管理",
+      "school_count": 5,
+      "program_count": 10
+    },
+    "schoolData/sourceData/199exam/html/(125604)物流工程与管理yn.html": {
+      "region": "云南",
+      "major_code": "125604",
+      "major_name": "物流工程与管理",
+      "school_count": 3,
+      "program_count": 4
+    }
+  },
+  "l1_record_count": 97
+}

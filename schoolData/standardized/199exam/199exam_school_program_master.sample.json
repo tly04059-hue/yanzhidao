@@ -1,0 +1,348 @@
+{
+  "metadata": {
+    "dataset": "199exam_school_program_master_sample",
+    "version": "2026-05-sample",
+    "source_files": [
+      "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+      "schoolData/mappings/199exam_field_mapping.json"
+    ],
+    "record_grain": "program_school_department_major_direction_study_mode",
+    "source_data_start_row": 6,
+    "sample_limit": 5,
+    "generated_at": "2026-05-14",
+    "record_count": 5,
+    "notes": "Sample output generated from 管综院校字段表.xlsx example rows. Not for frontend publishing."
+  },
+  "records": [
+    {
+      "record_id": "199-mpa-10610-101-125200-01-nonfull-r6",
+      "school_id": "10610",
+      "program_id": "199-mpa-10610-2026",
+      "track_id": "10610-101-125200-01-nonfull",
+      "program_type": "MPA",
+      "province": "四川",
+      "city": "成都",
+      "study_mode": "非全日制",
+      "duration": 3,
+      "tuition_min": 84000,
+      "tuition_max": 84000,
+      "school_code": "10610",
+      "school_name": "四川大学",
+      "school_label": "(10610)四川大学",
+      "school_level": "985",
+      "school_level_display": "985",
+      "department_code": "101",
+      "department_name": "经济学院",
+      "department_label": "(101)经济学院",
+      "department": "(101)经济学院",
+      "major_category_code": "1252",
+      "major_category_name": "公共管理",
+      "major_category_label": "(1252)公共管理",
+      "major_code": "125200",
+      "major_name": "公共管理",
+      "major_label": "(125200)公共管理",
+      "direction_code": "01",
+      "direction": "公共经济与政府管理",
+      "direction_label": "(01)公共经济与政府管理",
+      "enrollment": 160,
+      "latest_score": "185/55/110",
+      "total_score": 185,
+      "english_score": 55,
+      "comprehensive_score": 110,
+      "class_location": "武侯区望江校区",
+      "class_time": "周末授课",
+      "adjustment": "否",
+      "retired_soldier_plan": "否",
+      "minority_backbone_plan": "否",
+      "retest_info_by_year": {
+        "2026": {
+          "notes": "同等学力加试科目及参考书"
+        },
+        "2025": {
+          "notes": "同等学力加试科目及参考书"
+        },
+        "2024": {
+          "notes": "同等学力加试科目及参考书"
+        }
+      },
+      "first_choice_admission_by_year": {
+        "2026": {
+          "score_line": "185/55/110",
+          "national_line_gap": "17/16/32"
+        }
+      },
+      "tags": [
+        "管综",
+        "MPA",
+        "四川",
+        "成都",
+        "985",
+        "非全日制",
+        "周末授课"
+      ],
+      "source": {
+        "source_file": "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+        "source_sheet": "Sheet1",
+        "source_row": 6,
+        "batch_id": "2026-05-sample",
+        "updated_at": "2026-05-14"
+      },
+      "quality": {
+        "completeness_score": 1.0,
+        "missing_fields": [],
+        "review_status": "draft",
+        "publish_ready": false,
+        "phase1_completeness_pass": true
+      }
+    },
+    {
+      "record_id": "199-mem-10610-502-125601-01-nonfull-r7",
+      "school_id": "10610",
+      "program_id": "199-mem-10610-2026",
+      "track_id": "10610-502-125601-01-nonfull",
+      "program_type": "MEM",
+      "province": "四川",
+      "city": "成都",
+      "study_mode": "非全日制",
+      "duration": 2.5,
+      "tuition_min": 120000,
+      "tuition_max": 120000,
+      "school_code": "10610",
+      "school_name": "四川大学",
+      "school_label": "(10610)四川大学",
+      "school_level": "985",
+      "school_level_display": "985",
+      "department_code": "502",
+      "department_name": "商学院",
+      "department_label": "(502)商学院",
+      "department": "(502)商学院",
+      "major_category_code": "1256",
+      "major_category_name": "工程管理",
+      "major_category_label": "(1256)工程管理",
+      "major_code": "125601",
+      "major_name": "工程管理",
+      "major_label": "(125601)工程管理",
+      "direction_code": "01",
+      "direction": "本领域不设研究方向",
+      "direction_label": "(01)本领域不设研究方向",
+      "enrollment": 50,
+      "latest_score": "",
+      "adjustment": "",
+      "tags": [
+        "管综",
+        "MEM",
+        "四川",
+        "成都",
+        "985",
+        "非全日制"
+      ],
+      "source": {
+        "source_file": "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+        "source_sheet": "Sheet1",
+        "source_row": 7,
+        "batch_id": "2026-05-sample",
+        "updated_at": "2026-05-14"
+      },
+      "quality": {
+        "completeness_score": 0.8519,
+        "missing_fields": [
+          "latest_score",
+          "class_location",
+          "class_time",
+          "adjustment"
+        ],
+        "review_status": "draft",
+        "publish_ready": false,
+        "phase1_completeness_pass": true
+      }
+    },
+    {
+      "record_id": "199-mem-10610-502-125603-01-full-r8",
+      "school_id": "10610",
+      "program_id": "199-mem-10610-2026",
+      "track_id": "10610-502-125603-01-full",
+      "program_type": "MEM",
+      "province": "四川",
+      "city": "成都",
+      "study_mode": "全日制",
+      "duration": 3,
+      "tuition_min": 24000,
+      "tuition_max": 24000,
+      "school_code": "10610",
+      "school_name": "四川大学",
+      "school_label": "(10610)四川大学",
+      "school_level": "985",
+      "school_level_display": "985",
+      "department_code": "502",
+      "department_name": "商学院",
+      "department_label": "(502)商学院",
+      "department": "(502)商学院",
+      "major_category_code": "1256",
+      "major_category_name": "工程管理",
+      "major_category_label": "(1256)工程管理",
+      "major_code": "125603",
+      "major_name": "工业工程与管理",
+      "major_label": "(125603)工业工程与管理",
+      "direction_code": "01",
+      "direction": "本领域不设研究方向",
+      "direction_label": "(01)本领域不设研究方向",
+      "enrollment": 34,
+      "latest_score": "",
+      "adjustment": "",
+      "tags": [
+        "管综",
+        "MEM",
+        "四川",
+        "成都",
+        "985",
+        "全日制"
+      ],
+      "source": {
+        "source_file": "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+        "source_sheet": "Sheet1",
+        "source_row": 8,
+        "batch_id": "2026-05-sample",
+        "updated_at": "2026-05-14"
+      },
+      "quality": {
+        "completeness_score": 0.8519,
+        "missing_fields": [
+          "latest_score",
+          "class_location",
+          "class_time",
+          "adjustment"
+        ],
+        "review_status": "draft",
+        "publish_ready": false,
+        "phase1_completeness_pass": true
+      }
+    },
+    {
+      "record_id": "199-mem-10610-502-125604-01-full-r9",
+      "school_id": "10610",
+      "program_id": "199-mem-10610-2026",
+      "track_id": "10610-502-125604-01-full",
+      "program_type": "MEM",
+      "province": "四川",
+      "city": "成都",
+      "study_mode": "全日制",
+      "duration": 3,
+      "tuition_min": 24000,
+      "tuition_max": 24000,
+      "school_code": "10610",
+      "school_name": "四川大学",
+      "school_label": "(10610)四川大学",
+      "school_level": "985",
+      "school_level_display": "985",
+      "department_code": "502",
+      "department_name": "商学院",
+      "department_label": "(502)商学院",
+      "department": "(502)商学院",
+      "major_category_code": "1256",
+      "major_category_name": "工程管理",
+      "major_category_label": "(1256)工程管理",
+      "major_code": "125604",
+      "major_name": "物流工程与管理",
+      "major_label": "(125604)物流工程与管理",
+      "direction_code": "01",
+      "direction": "本领域不设研究方向",
+      "direction_label": "(01)本领域不设研究方向",
+      "enrollment": 24,
+      "latest_score": "",
+      "adjustment": "",
+      "tags": [
+        "管综",
+        "MEM",
+        "四川",
+        "成都",
+        "985",
+        "全日制"
+      ],
+      "source": {
+        "source_file": "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+        "source_sheet": "Sheet1",
+        "source_row": 9,
+        "batch_id": "2026-05-sample",
+        "updated_at": "2026-05-14"
+      },
+      "quality": {
+        "completeness_score": 0.8519,
+        "missing_fields": [
+          "latest_score",
+          "class_location",
+          "class_time",
+          "adjustment"
+        ],
+        "review_status": "draft",
+        "publish_ready": false,
+        "phase1_completeness_pass": true
+      }
+    },
+    {
+      "record_id": "199-mba-10610-502-125100-02-nonfull-r10",
+      "school_id": "10610",
+      "program_id": "199-mba-10610-2026",
+      "track_id": "10610-502-125100-02-nonfull",
+      "program_type": "MBA",
+      "province": "四川",
+      "city": "成都",
+      "study_mode": "非全日制",
+      "duration": 2.5,
+      "tuition_min": 280000,
+      "tuition_max": 280000,
+      "school_code": "10610",
+      "school_name": "四川大学",
+      "school_label": "(10610)四川大学",
+      "school_level": "985",
+      "school_level_display": "985",
+      "department_code": "502",
+      "department_name": "商学院",
+      "department_label": "(502)商学院",
+      "department": "(502)商学院",
+      "major_category_code": "1251",
+      "major_category_name": "工商管理",
+      "major_category_label": "(1251)工商管理",
+      "major_code": "125100",
+      "major_name": "工商管理",
+      "major_label": "(125100)工商管理",
+      "direction_code": "02",
+      "direction": "EMBA",
+      "direction_label": "(02)EMBA",
+      "enrollment": 550,
+      "latest_score": "",
+      "adjustment": "",
+      "tags": [
+        "管综",
+        "MBA",
+        "四川",
+        "成都",
+        "985",
+        "非全日制"
+      ],
+      "source": {
+        "source_file": "schoolData/sourceData/199exam/管综院校字段表.xlsx",
+        "source_sheet": "Sheet1",
+        "source_row": 10,
+        "batch_id": "2026-05-sample",
+        "updated_at": "2026-05-14"
+      },
+      "quality": {
+        "completeness_score": 0.8519,
+        "missing_fields": [
+          "latest_score",
+          "class_location",
+          "class_time",
+          "adjustment"
+        ],
+        "review_status": "draft",
+        "publish_ready": false,
+        "phase1_completeness_pass": true
+      }
+    }
+  ],
+  "validation": {
+    "all_records_keep_code_name_label": true,
+    "tuition_converted_to_yuan": true,
+    "records_passing_phase1_completeness": 5
+  }
+}

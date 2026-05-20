@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "School Program Master",
+  "description": "院校库 L1 标准化层。保留学校、项目、方向、来源、审核和完整度信息。前台可展示合并文本，但 L1 必须同时保留 code/name/label。",
+  "type": "object",
+  "required": [
+    "record_id",
+    "school_id",
+    "program_id",
+    "school_name",
+    "program_type",
+    "province",
+    "city",
+    "source",
+    "quality"
+  ],
+  "properties": {
+    "record_id": { "type": "string", "description": "当前记录稳定 ID，建议 school_id + program_id + track_id。" },
+    "school_id": { "type": "string", "description": "稳定学校 ID，可来自研招网学校代码或内部生成。" },
+    "program_id": { "type": "string", "description": "稳定项目 ID。" },
+    "track_id": { "type": "string", "description": "方向/学习方式粒度 ID。" },
+    "school_name": { "type": "string" },
+    "school_code": { "type": "string" },
+    "school_label": { "type": "string", "description": "前台可展示的学校合并文本，例如：(10610)四川大学。" },
+    "program_type": { "type": "string", "enum": ["MPA", "MBA", "MEM", "党校", "其他"] },
+    "degree_type": { "type": "string", "description": "双证、单证、党校学历等。" },
+    "exam_type": { "type": "string", "description": "全国联考、党校自主考试、免联考等。" },
+    "province": { "type": "string" },
+    "city": { "type": "string" },
+    "school_level": { "type": "string", "description": "标准化层可保留 985/211/双一流/普通/党校等；管综发布层可映射为 985/211/双非。" },
+    "school_level_display": { "type": "string", "description": "发布展示用院校性质，管综前台可使用 985/211/双非。" },
+    "department_code": { "type": "string" },
+    "department_name": { "type": "string" },
+    "department_label": { "type": "string", "description": "前台可展示的院系合并文本，例如：(101)经济学院。" },
+    "department": { "type": "string", "description": "兼容旧字段；新数据优先使用 department_code/name/label。" },
+    "major_category_code": { "type": "string" },
+    "major_category_name": { "type": "string" },
+    "major_category_label": { "type": "string", "description": "前台可展示的专业类别合并文本，例如：(1252)公共管理。" },
+    "major_code": { "type": "string" },
+    "major_name": { "type": "string" },
+    "major_label": { "type": "string", "description": "前台可展示的专业合并文本，例如：(125200)公共管理。" },
+    "direction_code": { "type": "string" },
+    "direction": { "type": "string", "description": "研究方向不包含全日制/非全日制字样，学习方式单独放入 study_mode。" },
+    "direction_label": { "type": "string", "description": "研究方向原始展示文本，例如：(01)公共经济与政府管理。" },
+    "study_mode": { "type": "string", "description": "全日制/非全日制。" },
+    "duration": { "type": ["number", "string"] },
+    "tuition_min": { "type": ["number", "null"], "description": "单位：元。" },
+    "tuition_max": { "type": ["number", "null"], "description": "单位：元。" },
+    "class_time": { "type": "string" },
+    "class_location": { "type": "string" },
+    "enrollment": { "type": ["number", "string", "null"] },
+    "exam_subjects": { "type": "string" },
+    "latest_score": { "type": "string" },
+    "score_year": { "type": ["number", "string", "null"] },
+    "total_score": { "type": ["number", "string", "null"] },
+    "english_score": { "type": ["number", "string", "null"] },
+    "comprehensive_score": { "type": ["number", "string", "null"] },
+    "admission": { "type": "string" },
+    "latest_retest_count": { "type": ["number", "string", "null"] },
+    "latest_admitted_count": { "type": ["number", "string", "null"] },
+    "admission_rate": { "type": ["number", "string", "null"] },
+    "admission_analysis": { "type": "string" },
+    "retest_info": { "type": "string" },
+    "retest_info_by_year": {
+      "type": "object",
+      "description": "按年度保存复试考情，服务二阶段展示和策略生成。",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "written_exam": { "type": "string" },
+          "interview_content": { "type": "string" },
+          "interview_format": { "type": "string" },
+          "score_calculation": { "type": "string" },
+          "reference_books": { "type": "string" },
+          "total_score_calculation": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "first_choice_admission_by_year": {
+      "type": "object",
+      "description": "按年度保存一志愿录取分析。",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "score_line": { "type": "string" },
+          "national_line_gap": { "type": "string" },
+          "retest_count": { "type": ["number", "string", "null"] },
+          "admitted_count": { "type": ["number", "string", "null"] },
+          "retest_admission_ratio": { "type": ["number", "string", "null"] },
+          "admission_rate": { "type": ["number", "string", "null"] },
+          "score_band_analysis": { "type": "string" }
+        }
+      }
+    },
+    "adjustment_admission_by_year": {
+      "type": "object",
+      "description": "按年度保存调剂录取分析；如果名额为正数，adjustment 应推导为 是。",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "quota": { "type": ["number", "string", "null"] },
+          "rounds": { "type": ["number", "string", "null"] },
+          "qualification_line": { "type": "string" },
+          "first_choice_gap": { "type": "string" },
+          "retest_count": { "type": ["number", "string", "null"] },
+          "admitted_count": { "type": ["number", "string", "null"] },
+          "retest_admission_ratio": { "type": ["number", "string", "null"] },
+          "admission_rate": { "type": ["number", "string", "null"] },
+          "score_band_analysis": { "type": "string" }
+        }
+      }
+    },
+    "adjustment": { "type": "string" },
+    "interview": { "type": "string" },
+    "junior_college_allowed": { "type": "string" },
+    "retired_soldier_plan": { "type": "string" },
+    "minority_backbone_plan": { "type": "string" },
+    "notes": { "type": "string" },
+    "website": { "type": "string" },
+    "logo_url": { "type": "string" },
+    "description": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "source": {
+      "type": "object",
+      "required": ["source_file", "batch_id"],
+      "properties": {
+        "source_file": { "type": "string" },
+        "source_sheet": { "type": "string" },
+        "source_row": { "type": ["number", "string", "null"] },
+        "source_url": { "type": "string" },
+        "batch_id": { "type": "string" },
+        "updated_at": { "type": "string" }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "required": ["completeness_score", "review_status", "publish_ready"],
+      "properties": {
+        "completeness_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "missing_fields": { "type": "array", "items": { "type": "string" } },
+        "review_status": { "type": "string", "enum": ["draft", "needs_review", "reviewed", "published"] },
+        "publish_ready": { "type": "boolean" }
+      }
+    }
+  }
+}

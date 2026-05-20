@@ -1,0 +1,4088 @@
+{
+  "metadata": {
+    "dataset": "student_cases_l1_anonymized",
+    "generated_at": "2026-05-18",
+    "source_files": [
+      "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx"
+    ],
+    "record_count": 75,
+    "privacy_note": "L1 不复制姓名、电话、联系方式、身份证号、邮寄地址；仅保留匿名 case_id 和画像字段。"
+  },
+  "records": [
+    {
+      "case_id": "case-199-1415a95c8d",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 18,
+      "display_alias": "陈先生",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 24,
+        "age_band": "25岁以下",
+        "graduated_school": "重庆警察学院",
+        "undergraduate_major": "交通管理",
+        "work_function": "交通管理",
+        "class_type": "专业班",
+        "enrollment_date": "2025-05-29"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "重庆院校",
+        "motivation": "体制内公务员,学历提升,提高学习能力"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "理科/高考良好(110~130分)",
+        "english_base": "大学英语四级",
+        "test_total": 80,
+        "test_math": 24,
+        "test_logic": 18,
+        "test_english": 38
+      },
+      "goals": {
+        "target_total": 210,
+        "target_math": 54,
+        "target_logic": 50,
+        "target_writing": 45,
+        "target_english": 70
+      },
+      "study_time": {
+        "weekly": "44.5h/周",
+        "daily": "5.7h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "25岁以下",
+        "数学基础可用",
+        "英语有基础",
+        "时间充足",
+        "首次备考",
+        "体制内",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-190a03fdff",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 9,
+      "display_alias": "德女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "graduated_school": "四川大学锦城学院",
+        "undergraduate_major": "金融学",
+        "work_function": "金融监管",
+        "class_type": "专业班",
+        "enrollment_date": "2025-07-09"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "西南财经大学/中共四川省委党校",
+        "motivation": "人民银行工作,提升发展空间,充实自我"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "理科/高考中下(90~110分)",
+        "english_base": "高考良好(110~130分)/大学英语六级",
+        "test_total": 76,
+        "test_math": 21,
+        "test_logic": 16,
+        "test_english": 39
+      },
+      "goals": {
+        "target_total": 200,
+        "target_math": 48,
+        "target_logic": 48,
+        "target_writing": 45,
+        "target_english": 70
+      },
+      "study_time": {
+        "weekly": "29.5h/周",
+        "daily": "3.6h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学中下",
+        "英语待提升",
+        "时间充足",
+        "首次备考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-22a782aac4",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 10,
+      "display_alias": "王女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 30,
+        "age_band": "25-30",
+        "graduated_school": "川北医学院",
+        "undergraduate_major": "护理",
+        "work_function": "监管服务",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-02-05"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "好上岸的学校",
+        "motivation": "提升学历,为调任晋升做准备"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "薄弱,中专→大专→自考本科",
+        "english_base": "薄弱,未参加英语考级",
+        "test_total": 33,
+        "test_math": 12,
+        "test_logic": 14,
+        "test_english": 7
+      },
+      "goals": {
+        "target_total": 175,
+        "target_math": 39,
+        "target_logic": 46,
+        "target_writing": 48,
+        "target_english": 46
+      },
+      "study_time": {
+        "weekly": "20h/周",
+        "daily": "2.8h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "25-30",
+        "数学基础可用",
+        "英语待提升",
+        "时间适中",
+        "首次备考",
+        "晋升",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-35e3c1350c",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 8,
+      "display_alias": "彭先生",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 32,
+        "age_band": "30-35",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "资环与城乡规划",
+        "work_function": "街道办",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-03-11"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "四川大学",
+        "motivation": "体制内公务员,提升学历为遴选做准备"
+      },
+      "baseline": {
+        "experience": "非首次备考",
+        "math_base": "文科/高考良好(110~130分)",
+        "english_base": "高考良好(110~130分)/大学英语四级",
+        "test_total": 61,
+        "test_math": 21,
+        "test_logic": 18,
+        "test_english": 22
+      },
+      "goals": {
+        "target_total": 200,
+        "target_math": 48,
+        "target_logic": 50,
+        "target_writing": 48,
+        "target_english": 55
+      },
+      "study_time": {
+        "weekly": "21.5h/周",
+        "daily": "2.5h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学基础可用",
+        "英语有基础",
+        "时间适中",
+        "非首次备考",
+        "遴选",
+        "体制内",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-3f33d5059c",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 17,
+      "display_alias": "陈先生",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 30,
+        "age_band": "25-30",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "法学(网教)",
+        "work_function": "项目管理",
+        "class_type": "专业班",
+        "enrollment_date": "2025-07-06"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "成都/上岸为第一优先",
+        "motivation": "体制内公务员,党校单证学历不够用"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "理科/高考未及格(90分以下)",
+        "english_base": "高考中下(90~110分),未参加学位英语考试",
+        "test_total": 49,
+        "test_math": 18,
+        "test_logic": 18,
+        "test_english": 13
+      },
+      "goals": {
+        "target_total": 175,
+        "target_math": 39,
+        "target_logic": 48,
+        "target_writing": 45,
+        "target_english": 46
+      },
+      "study_time": {
+        "weekly": "33.5h/周",
+        "daily": "4.2h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "25-30",
+        "数学基础弱",
+        "英语有基础",
+        "时间充足",
+        "首次备考",
+        "体制内",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-4390dd21e4",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 5,
+      "display_alias": "唐女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 33,
+        "age_band": "30-35",
+        "graduated_school": "成都大学",
+        "undergraduate_major": "广播电视编导",
+        "work_function": "干部培训",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-07-23"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "四川大学公共管理学院",
+        "motivation": "武侯区委党校工作,学历提升,学习知识"
+      },
+      "baseline": {
+        "experience": "非首次备考",
+        "math_base": "理科/高考中下(90~110分)",
+        "english_base": "高考良好(110~130分)",
+        "test_total": 66,
+        "test_math": 24,
+        "test_logic": 12,
+        "test_english": 30
+      },
+      "goals": {
+        "target_total": 200,
+        "target_math": 48,
+        "target_logic": 48,
+        "target_writing": 48,
+        "target_english": 60
+      },
+      "study_time": {
+        "weekly": "22h/周",
+        "daily": "2.5h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学中下",
+        "英语待提升",
+        "时间适中",
+        "非首次备考",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-4cbeb74cd2",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 15,
+      "display_alias": "辜女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "graduated_school": "四川师范大学",
+        "undergraduate_major": "小学教育",
+        "work_function": "机关部门",
+        "class_type": "专业班",
+        "enrollment_date": "2025-06-30"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "好上岸,学费低,离雅安近",
+        "motivation": "体制内事业编,为晋升做准备"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "文科/高考未及格(90分以下)",
+        "english_base": "高考未及格(90分以下)",
+        "test_total": 17,
+        "test_math": 3,
+        "test_logic": 10,
+        "test_english": 4
+      },
+      "goals": {
+        "target_total": 175,
+        "target_math": 39,
+        "target_logic": 46,
+        "target_writing": 48,
+        "target_english": 46
+      },
+      "study_time": {
+        "weekly": "18.5h/周",
+        "daily": "2.0h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学基础弱",
+        "英语基础弱",
+        "时间适中",
+        "首次备考",
+        "晋升",
+        "体制内"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-51ddbda586",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 16,
+      "display_alias": "陈先生",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 38,
+        "age_band": "35+",
+        "graduated_school": "西南科技大学",
+        "undergraduate_major": "机械自动化",
+        "work_function": "授课教师",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-07-03"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "川渝院校",
+        "motivation": "高职院校任职,提升学历,为后续做准备"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "理科/高考中下(90-110分)",
+        "english_base": "大学英语四级",
+        "test_total": 33,
+        "test_math": 12,
+        "test_logic": 14,
+        "test_english": 7
+      },
+      "goals": {
+        "target_total": 180,
+        "target_math": 39,
+        "target_logic": 48,
+        "target_writing": 48,
+        "target_english": 46
+      },
+      "study_time": {
+        "weekly": "36.5h/周",
+        "daily": "4.6h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "35+",
+        "数学中下",
+        "英语有基础",
+        "时间充足",
+        "首次备考",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-5c6e7a0add",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 14,
+      "display_alias": "许先生",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 24,
+        "age_band": "25岁以下",
+        "graduated_school": "四川警察学校",
+        "undergraduate_major": "法学",
+        "work_function": "事务性",
+        "class_type": "通关班",
+        "enrollment_date": "2025-07-02"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "四川大学/西南交通大学",
+        "motivation": "体制内公务员,为发展提前准备,人脉拓展"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "文科/高考未及格(90分以下)",
+        "english_base": "高考优秀(130分以上)/大学英语六级",
+        "test_total": 74,
+        "test_math": 21,
+        "test_logic": 14,
+        "test_english": 39
+      },
+      "goals": {
+        "target_total": 200,
+        "target_math": 48,
+        "target_logic": 48,
+        "target_writing": 45,
+        "target_english": 70
+      },
+      "study_time": {
+        "weekly": "29.5h/周",
+        "daily": "3.6h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "25岁以下",
+        "数学基础弱",
+        "英语待提升",
+        "时间充足",
+        "首次备考",
+        "体制内"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-92841ffa4e",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 4,
+      "display_alias": "刘女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "graduated_school": "川北医学院",
+        "undergraduate_major": "医学检验技术",
+        "work_function": "宣传",
+        "class_type": "通关班",
+        "enrollment_date": "2025-07-26"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "四川医学类院校",
+        "motivation": "弥补遗憾,提升自己"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "文科/高考未及格(90分以下)",
+        "english_base": "高考中下(90-110分)",
+        "test_total": 17,
+        "test_math": 6,
+        "test_logic": 6,
+        "test_english": 5
+      },
+      "goals": {
+        "target_total": 180,
+        "target_math": 39,
+        "target_logic": 48,
+        "target_writing": 48,
+        "target_english": 46
+      },
+      "study_time": {
+        "weekly": "36.5h/周",
+        "daily": "4.6h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学基础弱",
+        "英语待提升",
+        "时间充足",
+        "首次备考",
+        "自我提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-950428c789",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 12,
+      "display_alias": "胡先生",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 31,
+        "age_band": "30-35",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "汉语言文学",
+        "work_function": "公路管理",
+        "class_type": "专业班",
+        "enrollment_date": "2025-07-01"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "成都/绵阳名校",
+        "motivation": "体制内事业编,学历提升,为未来提前准备"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "理科/高考未及格(90分以下)",
+        "english_base": "高考中下(90~110分)/成教专升本学位英语",
+        "test_total": 55,
+        "test_math": 15,
+        "test_logic": 12,
+        "test_english": 28
+      },
+      "goals": {
+        "target_total": 180,
+        "target_math": 42,
+        "target_logic": 44,
+        "target_writing": 45,
+        "target_english": 49
+      },
+      "study_time": {
+        "weekly": "36h/周",
+        "daily": "4.5h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学基础弱",
+        "英语有基础",
+        "时间充足",
+        "首次备考",
+        "体制内",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-9b8f5b2c21",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 13,
+      "display_alias": "范女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 28,
+        "age_band": "25-30",
+        "graduated_school": "西华师范大学",
+        "undergraduate_major": "人力资源",
+        "work_function": "企业培训",
+        "class_type": "专业班",
+        "enrollment_date": "2025-08-06"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "西南医科大学",
+        "motivation": "国企任职,提升学历,增加晋升或跳槽附加值"
+      },
+      "baseline": {
+        "experience": "首次备考管综",
+        "math_base": "理科/高考良好(110~130分)",
+        "english_base": "高考良好(110~130分)/大学英语四级",
+        "test_total": 70,
+        "test_math": 24,
+        "test_logic": 16,
+        "test_english": 30
+      },
+      "goals": {
+        "target_total": 200,
+        "target_math": 54,
+        "target_logic": 48,
+        "target_writing": 48,
+        "target_english": 60
+      },
+      "study_time": {
+        "weekly": "30h/周",
+        "daily": "3.7h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "25-30",
+        "数学基础可用",
+        "英语有基础",
+        "时间充足",
+        "首次备考管综",
+        "晋升",
+        "国企",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-a3bb6b8ad2",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 19,
+      "display_alias": "黄女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 28,
+        "age_band": "25-30",
+        "graduated_school": "四川工商学院",
+        "undergraduate_major": "人力资源管理",
+        "work_function": "人事",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2024-12-30"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "成都985/重庆985/新疆",
+        "motivation": "事业单位编外,想在体制内向上发展"
+      },
+      "baseline": {
+        "experience": "非首次备考",
+        "math_base": "文科/高考未及格(90分以下)",
+        "english_base": "大学英语四级",
+        "test_total": 62,
+        "test_math": 21,
+        "test_logic": 16,
+        "test_english": 25
+      },
+      "goals": {
+        "target_total": 180,
+        "target_math": 45,
+        "target_logic": 48,
+        "target_writing": 45,
+        "target_english": 50
+      },
+      "study_time": {
+        "weekly": "27h/周",
+        "daily": "3.3h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "25-30",
+        "数学基础弱",
+        "英语有基础",
+        "时间充足",
+        "非首次备考",
+        "体制内"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-bb881466fe",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 11,
+      "display_alias": "王女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 35,
+        "age_band": "30-35",
+        "graduated_school": "四川师范大学",
+        "undergraduate_major": "艺术设计",
+        "work_function": "市场营销",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-03-07"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "西南医科大学",
+        "motivation": "国企子公司高管,为职业发展提升学历"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "文科/高考未及格(90分以下)",
+        "english_base": "高考良好(110~130分)/大学英语三级",
+        "test_total": 53,
+        "test_math": 18,
+        "test_logic": 16,
+        "test_english": 19
+      },
+      "goals": {
+        "target_total": 190,
+        "target_math": 45,
+        "target_logic": 48,
+        "target_writing": 48,
+        "target_english": 50
+      },
+      "study_time": {
+        "weekly": "20.5h/周",
+        "daily": "2.3h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学基础弱",
+        "英语待提升",
+        "时间适中",
+        "首次备考",
+        "国企",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-dde10fc97d",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 3,
+      "display_alias": "刘女士",
+      "system": "管综系",
+      "program_type": "MPA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 33,
+        "age_band": "30-35",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "汉语言文学",
+        "work_function": "精神文明建设",
+        "class_type": "专业班",
+        "enrollment_date": "2025-07-04"
+      },
+      "target": {
+        "target_program": "MPA",
+        "target_school": "四川大学",
+        "motivation": "体制内公务员,提升学历为遴选做准备"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "文科/高考未及格(90分以下)",
+        "english_base": "高考中下(90-110分)/通过学位英语考试",
+        "test_total": 44,
+        "test_math": 9,
+        "test_logic": 14,
+        "test_english": 21
+      },
+      "goals": {
+        "target_total": 180,
+        "target_math": 36,
+        "target_logic": 42,
+        "target_writing": 48,
+        "target_english": 55
+      },
+      "study_time": {
+        "weekly": "39.5h/周",
+        "daily": "5.0h/天"
+      },
+      "tags": [
+        "管综系",
+        "MPA",
+        "30-35",
+        "数学基础弱",
+        "英语有基础",
+        "时间充足",
+        "首次备考",
+        "遴选",
+        "体制内",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-34fcb67df0",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 2,
+      "display_alias": "何女士",
+      "system": "管综系",
+      "program_type": "MBA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "女",
+        "age": 27,
+        "age_band": "25-30",
+        "graduated_school": "重庆师范大学",
+        "undergraduate_major": "人力资源",
+        "work_function": "人力资源",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-03-20"
+      },
+      "target": {
+        "target_program": "MBA",
+        "target_school": "西南交通大学",
+        "motivation": "国企任职,提升学历为后续做准备"
+      },
+      "baseline": {
+        "experience": "首次备考",
+        "math_base": "理科/高考中下(90~110分)",
+        "english_base": "高考中下(90~110分)/大学英语四级",
+        "test_total": 67,
+        "test_math": 24,
+        "test_logic": 20,
+        "test_english": 23
+      },
+      "goals": {
+        "target_total": 190,
+        "target_math": 48,
+        "target_logic": 48,
+        "target_writing": 45,
+        "target_english": 50
+      },
+      "study_time": {
+        "weekly": "22.5h/周",
+        "daily": "2.6h/天"
+      },
+      "tags": [
+        "管综系",
+        "MBA",
+        "25-30",
+        "数学中下",
+        "英语有基础",
+        "时间适中",
+        "首次备考",
+        "国企",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-5260ab3fe9",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 6,
+      "display_alias": "廖先生",
+      "system": "管综系",
+      "program_type": "MBA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 41,
+        "age_band": "35+",
+        "graduated_school": "河海大学",
+        "undergraduate_major": "国际经贸",
+        "work_function": "营销管理",
+        "class_type": "通关班",
+        "enrollment_date": "2025-08-13"
+      },
+      "target": {
+        "target_program": "MBA",
+        "target_school": "河海大学",
+        "motivation": "学历提升,为职业发展做准备"
+      },
+      "baseline": {
+        "experience": "非首次备考(2012年首次参考)",
+        "math_base": "文科/高考中下(90~110分)",
+        "english_base": "高考中下(90~110分)/大学英语四级",
+        "test_total": 58,
+        "test_math": 15,
+        "test_logic": 10,
+        "test_english": 33
+      },
+      "goals": {
+        "target_total": 200,
+        "target_math": 45,
+        "target_logic": 48,
+        "target_writing": 45,
+        "target_english": 70
+      },
+      "study_time": {
+        "weekly": "31.5h/周",
+        "daily": "3.9h/天"
+      },
+      "tags": [
+        "管综系",
+        "MBA",
+        "35+",
+        "数学中下",
+        "英语有基础",
+        "时间充足",
+        "非首次备考(2012年首次参考)",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-199-b86c9beed5",
+      "source_file": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 7,
+      "display_alias": "张先生",
+      "system": "管综系",
+      "program_type": "MBA",
+      "admission_status": "已上岸",
+      "profile": {
+        "gender": "男",
+        "age": 49,
+        "age_band": "35+",
+        "graduated_school": "昆明理工大学",
+        "undergraduate_major": "管理工程",
+        "work_function": "内部审计",
+        "class_type": "通关VIP班",
+        "enrollment_date": "2025-07-02"
+      },
+      "target": {
+        "target_program": "MBA",
+        "target_school": "成都及附近",
+        "motivation": "学历提升,需要双证,为后续发展提前准备"
+      },
+      "baseline": {
+        "experience": "非首次备考",
+        "math_base": "理科/高考未及格(90分以下)",
+        "english_base": "高考良好(110~130分)",
+        "test_total": 90,
+        "test_math": 24,
+        "test_logic": 20,
+        "test_english": 46
+      },
+      "goals": {
+        "target_total": 210,
+        "target_math": 54,
+        "target_logic": 50,
+        "target_writing": 45,
+        "target_english": 70
+      },
+      "study_time": {
+        "weekly": "42h/周",
+        "daily": "5.4h/天"
+      },
+      "tags": [
+        "管综系",
+        "MBA",
+        "35+",
+        "数学基础弱",
+        "英语待提升",
+        "时间充足",
+        "非首次备考",
+        "学历提升"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-109a1802d1",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 58,
+      "display_alias": "余先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 31,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201606",
+        "graduated_school": "成都东软学院",
+        "undergraduate_major": "电子商务",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-02-08"
+      },
+      "target": {
+        "target_program": "法学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 190.0,
+        "politics_theory": 76.5,
+        "politics_major": 113.5,
+        "minority_bonus": null,
+        "total_study_duration": "4099"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "法学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-10a343d166",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 35,
+      "display_alias": "王女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 33,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201706",
+        "graduated_school": "宜宾学院",
+        "undergraduate_major": "汉语言文学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-17"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 168.5,
+        "politics_theory": 73.5,
+        "politics_major": 95.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "659"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-12045ed07b",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 34,
+      "display_alias": "欧先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 31,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "2024年",
+        "graduated_school": "西昌学院",
+        "undergraduate_major": "少数民族语言文学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-08"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 183.5,
+        "politics_theory": 73.5,
+        "politics_major": 95.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "3615"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-1691579c06",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 3,
+      "display_alias": "曾先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 29,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201712",
+        "graduated_school": "西南科技大学",
+        "undergraduate_major": "建筑经济管理",
+        "work_unit_type": "国企/企业",
+        "enrollment_date": "2025-01-09"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 184.0,
+        "politics_theory": 82.0,
+        "politics_major": 102.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4337"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-1f40a97e0d",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 55,
+      "display_alias": "廖女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 41,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "200706",
+        "graduated_school": "攀枝花学院",
+        "undergraduate_major": "工商管理",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-18"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 220.0,
+        "politics_theory": 71.5,
+        "politics_major": 148.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3819"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-21d1f54606",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 27,
+      "display_alias": "王女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 37,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "2016 12",
+        "graduated_school": "四川大学",
+        "undergraduate_major": "行政管理学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-20"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 224.0,
+        "politics_theory": 76.5,
+        "politics_major": 132.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "2785"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-23a9eff212",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 50,
+      "display_alias": "张先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 33,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201307",
+        "graduated_school": "攀枝花学院",
+        "undergraduate_major": "大学本科",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-14"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 234.0,
+        "politics_theory": 78.0,
+        "politics_major": 156.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "2541"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-242ff182db",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 11,
+      "display_alias": "鲁先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 30,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201707",
+        "graduated_school": "四川大学锦江学院",
+        "undergraduate_major": "土木工程",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-27"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 198.5,
+        "politics_theory": 74.0,
+        "politics_major": 124.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4608"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-28f1eb20a8",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 30,
+      "display_alias": "邬女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 33,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "2014.01",
+        "graduated_school": "中国医科大学",
+        "undergraduate_major": "护理",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 181.0,
+        "politics_theory": 74.0,
+        "politics_major": 107.0,
+        "minority_bonus": null,
+        "total_study_duration": "2819"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-2e1283527a",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 41,
+      "display_alias": "钱先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 42,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "200503",
+        "graduated_school": "四川大学",
+        "undergraduate_major": "水利水电工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-18"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 169.5,
+        "politics_theory": 73.5,
+        "politics_major": 96.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4482"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-357851ed8f",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 8,
+      "display_alias": "李女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 28,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201906",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "生物工程",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 182.5,
+        "politics_theory": 79.5,
+        "politics_major": 103.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "5709"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-35b9a53308",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 13,
+      "display_alias": "李先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 45,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201807",
+        "graduated_school": "重庆大学",
+        "undergraduate_major": "土木工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-16"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 192.0,
+        "politics_theory": 71.5,
+        "politics_major": 120.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3157"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-3940223e37",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 25,
+      "display_alias": "李女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 27,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "2020.06",
+        "graduated_school": "阿坝师范学院",
+        "undergraduate_major": "汉语言文学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-26"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 189.0,
+        "politics_theory": 83.0,
+        "politics_major": 91.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "1895"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-3b083731e1",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 19,
+      "display_alias": "陈先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 31,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "202206",
+        "graduated_school": "五邑大学",
+        "undergraduate_major": "交通工程",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-08"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 190.0,
+        "politics_theory": 69.5,
+        "politics_major": 120.5,
+        "minority_bonus": null,
+        "total_study_duration": "2319"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-44d2d36281",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 6,
+      "display_alias": "吴先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 28,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202406",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "工商管理",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-02-20"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 203.5,
+        "politics_theory": 88.5,
+        "politics_major": 115.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "5911"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-59e90d9a1f",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 5,
+      "display_alias": "吴先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 28,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202406",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "工商管理",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-02-20"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 203.5,
+        "politics_theory": 88.5,
+        "politics_major": 115.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "5911"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-5aee550b0e",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 12,
+      "display_alias": "唐女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 25,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202206",
+        "graduated_school": "西华师范大学",
+        "undergraduate_major": "英语（师范）和会计学双学位",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-31"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 205.0,
+        "politics_theory": 82.0,
+        "politics_major": 123.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3317"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-5bb5ef4780",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 43,
+      "display_alias": "冉女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 38,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "2008.12",
+        "graduated_school": "三峡大学",
+        "undergraduate_major": "土地资源管理",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-10"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 247.5,
+        "politics_theory": 71.0,
+        "politics_major": 161.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "2396"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-5fb6d14fb9",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 14,
+      "display_alias": "曹先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 43,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "200406",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "园林工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-14"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 204.5,
+        "politics_theory": 93.5,
+        "politics_major": 111.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3905"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-62c24935c9",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 20,
+      "display_alias": "阮女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 36,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201207",
+        "graduated_school": "乐山师范学院",
+        "undergraduate_major": "计算机网络工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-15"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 191.0,
+        "politics_theory": 75.0,
+        "politics_major": 116.0,
+        "minority_bonus": null,
+        "total_study_duration": "3416"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-639ef92fcf",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 48,
+      "display_alias": "伏先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 32,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201606",
+        "graduated_school": "南通大学",
+        "undergraduate_major": "本科",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-24"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 236.5,
+        "politics_theory": 72.5,
+        "politics_major": 164.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4547"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-672c072e66",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 17,
+      "display_alias": "申先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 37,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "2012.06.30",
+        "graduated_school": "郑州大学",
+        "undergraduate_major": "本科",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-25"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 191.0,
+        "politics_theory": 76.0,
+        "politics_major": 100.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "3422"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-714b0efff0",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 54,
+      "display_alias": "袁女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 39,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "202102",
+        "graduated_school": "西南财经大学",
+        "undergraduate_major": "会计学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-02-15"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 227.5,
+        "politics_theory": 81.0,
+        "politics_major": 131.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "5301"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-71bd0f51c3",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 24,
+      "display_alias": "朱先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 29,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201612",
+        "graduated_school": "成都师范学院",
+        "undergraduate_major": "美术教育",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-24"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 168.5,
+        "politics_theory": 65.5,
+        "politics_major": 88.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "2091"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-7d0bd741b3",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 9,
+      "display_alias": "彭女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 39,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "200906",
+        "graduated_school": "西华师范大学",
+        "undergraduate_major": "本科",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 182.5,
+        "politics_theory": 76.0,
+        "politics_major": 106.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "2931"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-7df6ecfe47",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 31,
+      "display_alias": "王先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 33,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201506",
+        "graduated_school": "四川大学锦江学院",
+        "undergraduate_major": "汉语言文学，文学学士学位",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 159.0,
+        "politics_theory": 73.5,
+        "politics_major": 85.3,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3283"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-81aeac97f2",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 15,
+      "display_alias": "周女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 29,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201805",
+        "graduated_school": "四川民族学院",
+        "undergraduate_major": "社会体育指导与管理",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-20"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 184.0,
+        "politics_theory": 73.0,
+        "politics_major": 96.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "2091"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-839cbeaf4a",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 52,
+      "display_alias": "蒋女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 31,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "2016",
+        "graduated_school": "四川农业大学",
+        "undergraduate_major": "艺术设计",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-28"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 232.0,
+        "politics_theory": 75.5,
+        "politics_major": 156.5,
+        "minority_bonus": null,
+        "total_study_duration": "5416"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-84d82eff3f",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 28,
+      "display_alias": "梁先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 26,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202207",
+        "graduated_school": "成都体育学院",
+        "undergraduate_major": "体育教育",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-20"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 235.0,
+        "politics_theory": 85.0,
+        "politics_major": 135.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "5495"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-8a596a0d06",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 2,
+      "display_alias": "甲女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201306",
+        "graduated_school": "四川民族学院",
+        "undergraduate_major": "藏汉翻译专业",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2024-12-23"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 203.5,
+        "politics_theory": 80.0,
+        "politics_major": 108.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "3120"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-8cddd1ae0b",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 46,
+      "display_alias": "代先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 28,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201909",
+        "graduated_school": "成都信息工程大学",
+        "undergraduate_major": "计算机科学与技术",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2024-11-18"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 237.0,
+        "politics_theory": 78.5,
+        "politics_major": 158.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4846"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-8f1aa8338a",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 45,
+      "display_alias": "李女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 36,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201401",
+        "graduated_school": "西南财经大学",
+        "undergraduate_major": "会计",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-21"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 243.0,
+        "politics_theory": 81.0,
+        "politics_major": 162.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "9334"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-9330af241b",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 42,
+      "display_alias": "殷女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 40,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201810",
+        "graduated_school": "川北医学院",
+        "undergraduate_major": "护理学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-11"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 248.0,
+        "politics_theory": 82.0,
+        "politics_major": 166.0,
+        "minority_bonus": null,
+        "total_study_duration": "3769"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-9b6cffc079",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 49,
+      "display_alias": "何先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 31,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201507",
+        "graduated_school": "西南科技大学",
+        "undergraduate_major": "材料科学与工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-26"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 235.5,
+        "politics_theory": 76.5,
+        "politics_major": 159.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "1346"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-9db52bb284",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 10,
+      "display_alias": "丹女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 30,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202206",
+        "graduated_school": "四川民族学院",
+        "undergraduate_major": "法学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 185.0,
+        "politics_theory": 78.0,
+        "politics_major": 92.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "5016"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-9f6abc7c4d",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 7,
+      "display_alias": "黄先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 36,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201406",
+        "graduated_school": "中国人民武装警察部队学院",
+        "undergraduate_major": "消防指挥",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-19"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 201.5,
+        "politics_theory": 73.0,
+        "politics_major": 128.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "1236"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-a8d792bd06",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 57,
+      "display_alias": "刘先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 35,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201206",
+        "graduated_school": "湖南工业大学",
+        "undergraduate_major": "土木工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-31"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 210.0,
+        "politics_theory": 53.5,
+        "politics_major": 141.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "1084"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "经济学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-b08e8dc4b0",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 21,
+      "display_alias": "泽女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "202107",
+        "graduated_school": "西安电子科技大学",
+        "undergraduate_major": "人力资源管理",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-14"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 181.0,
+        "politics_theory": 79.0,
+        "politics_major": 87.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "4168"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-babae4c831",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 4,
+      "display_alias": "陈女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 27,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202006",
+        "graduated_school": "成都信息工程大学",
+        "undergraduate_major": "本科",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-02-10"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 171.5,
+        "politics_theory": 72.5,
+        "politics_major": 99.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4643"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-c6500aae65",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 44,
+      "display_alias": "刘女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 28,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "2019.06",
+        "graduated_school": "西南科技大学",
+        "undergraduate_major": "通信工程",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-26"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 244.0,
+        "politics_theory": 78.0,
+        "politics_major": 166.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4094"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-c65c5e9f40",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 29,
+      "display_alias": "任女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 24,
+        "age_band": "25岁以下",
+        "education_level": "本科",
+        "graduation_time": "202206",
+        "graduated_school": "绵阳师范学院",
+        "undergraduate_major": "秘书学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 131.0,
+        "politics_theory": 60.5,
+        "politics_major": 55.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "1562"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25岁以下",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-c8b9028656",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 51,
+      "display_alias": "苏女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 36,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "2011年7月",
+        "graduated_school": "成都大学",
+        "undergraduate_major": "本科",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-02-07"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 232.0,
+        "politics_theory": 75.5,
+        "politics_major": 156.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "5744"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-cd596eaf05",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 33,
+      "display_alias": "岳女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 33,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201512",
+        "graduated_school": "四川师范大学",
+        "undergraduate_major": "汉语言文学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-25"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 184.0,
+        "politics_theory": 74.0,
+        "politics_major": 110.0,
+        "minority_bonus": null,
+        "total_study_duration": "5169"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-cf24027fa0",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 53,
+      "display_alias": "王女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201901",
+        "graduated_school": "西南财经大学",
+        "undergraduate_major": "会计学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 230.0,
+        "politics_theory": 73.5,
+        "politics_major": 156.5,
+        "minority_bonus": null,
+        "total_study_duration": "4333"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-d0a547e229",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 38,
+      "display_alias": "刘先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 29,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202006",
+        "graduated_school": "成都中医药大学",
+        "undergraduate_major": "预防医学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-29"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 159.0,
+        "politics_theory": 66.0,
+        "politics_major": 93.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3166"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-d68a75409f",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 23,
+      "display_alias": "陈先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 42,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "2006年12月30日",
+        "graduated_school": "四川师范大学",
+        "undergraduate_major": "法律",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-16"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 199.0,
+        "politics_theory": 72.0,
+        "politics_major": 127.0,
+        "minority_bonus": null,
+        "total_study_duration": "3734"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-dc56049e0b",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 32,
+      "display_alias": "谭先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 32,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201509",
+        "graduated_school": "四川民族学院",
+        "undergraduate_major": "土木工程",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 189.0,
+        "politics_theory": 73.5,
+        "politics_major": 100.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "3553"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-e29c48cc5c",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 39,
+      "display_alias": "王先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 41,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "202309",
+        "graduated_school": "川大",
+        "undergraduate_major": "工商管理",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-05-01"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 165.5,
+        "politics_theory": 65.0,
+        "politics_major": 100.5,
+        "minority_bonus": 0.0,
+        "total_study_duration": "1908"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-e625611381",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 22,
+      "display_alias": "薛先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 34,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201407",
+        "graduated_school": "西南科技大学",
+        "undergraduate_major": "法学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-13"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 179.0,
+        "politics_theory": 77.0,
+        "politics_major": 102.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "3990"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-e83fdc250c",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 47,
+      "display_alias": "钱女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 30,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "201806",
+        "graduated_school": "电子科技大学",
+        "undergraduate_major": "会计",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 237.0,
+        "politics_theory": 71.0,
+        "politics_major": 166.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "4774"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "经济学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-e9f8cd9578",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 40,
+      "display_alias": "唐先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 38,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "202207",
+        "graduated_school": "国家开放大学",
+        "undergraduate_major": "法学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-31"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 104.0,
+        "politics_theory": 34.0,
+        "politics_major": 53.0,
+        "minority_bonus": 15.0,
+        "total_study_duration": "1196"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-ed9b4b66c7",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 18,
+      "display_alias": "刘女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 31,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201906",
+        "graduated_school": "东北师范大学",
+        "undergraduate_major": "汉语言文学",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-03-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 191.5,
+        "politics_theory": 80.5,
+        "politics_major": 111.0,
+        "minority_bonus": null,
+        "total_study_duration": "4986"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-ef6c632a36",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 36,
+      "display_alias": "李女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 26,
+        "age_band": "25-30",
+        "education_level": "本科",
+        "graduation_time": "202206",
+        "graduated_school": "成都工业学院",
+        "undergraduate_major": "电子信息工程",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-21"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 195.5,
+        "politics_theory": 82.5,
+        "politics_major": 113.0,
+        "minority_bonus": null,
+        "total_study_duration": "4740"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "25-30",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-f22915a792",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 16,
+      "display_alias": "陈先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "已录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 42,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "200606",
+        "graduated_school": "中国人民武装警察部队学院",
+        "undergraduate_major": "本科",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-24"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 197.0,
+        "politics_theory": 79.5,
+        "politics_major": 102.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "3553"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "已录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-f2485b6138",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 37,
+      "display_alias": "邹女士",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "女",
+        "age": 32,
+        "age_band": "30-35",
+        "education_level": "本科",
+        "graduation_time": "201612",
+        "graduated_school": "四川师范大学",
+        "undergraduate_major": "汉语言文学",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-04-22"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 146.5,
+        "politics_theory": 63.0,
+        "politics_major": 68.5,
+        "minority_bonus": 15.0,
+        "total_study_duration": "2012"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "30-35",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-f61098cc1c",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 26,
+      "display_alias": "王先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 37,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201507",
+        "graduated_school": "中央广播电视大学",
+        "undergraduate_major": "公共管理（卫生事业方向）",
+        "work_unit_type": "体制内/机关事业单位",
+        "enrollment_date": "2025-02-20"
+      },
+      "target": {
+        "target_program": "政治学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 142.0,
+        "politics_theory": 63.0,
+        "politics_major": 79.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "1117"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "政治学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    },
+    {
+      "case_id": "case-dx-fa27e7b719",
+      "source_file": "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
+      "source_row_number": 56,
+      "display_alias": "左先生",
+      "system": "党校系",
+      "program_type": "党校",
+      "party_school": "四川党校",
+      "admission_status": "未录取",
+      "exam_status": "已参考",
+      "profile": {
+        "gender": "男",
+        "age": 36,
+        "age_band": "35+",
+        "education_level": "本科",
+        "graduation_time": "201612",
+        "graduated_school": "电子科技大学",
+        "undergraduate_major": "本科",
+        "work_unit_type": "单位类型待确认",
+        "enrollment_date": "2025-04-25"
+      },
+      "target": {
+        "target_program": "经济学",
+        "target_school": "四川党校"
+      },
+      "result": {
+        "total_score": 210.5,
+        "politics_theory": 69.5,
+        "politics_major": 141.0,
+        "minority_bonus": 0.0,
+        "total_study_duration": "2632"
+      },
+      "tags": [
+        "党校系",
+        "四川党校",
+        "35+",
+        "本科",
+        "经济学",
+        "未录取",
+        "已参考"
+      ],
+      "privacy": {
+        "anonymized": true,
+        "removed_fields": [
+          "姓名",
+          "电话",
+          "联系方式",
+          "身份证号",
+          "邮寄地址"
+        ]
+      }
+    }
+  ]
+}

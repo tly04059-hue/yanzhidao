@@ -1,0 +1,2749 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-14",
+    "source_file": "schoolData/sourceData/199exam/全量院校表_研招网主表补全.xlsx",
+    "source_sheet": "全量院校表",
+    "data_rows": 2673,
+    "school_count": 397,
+    "school_with_code_count": 45,
+    "headers": [
+      "地区",
+      "项目",
+      "学校代码",
+      "学校名称",
+      "学校所在地",
+      "学校标签",
+      "院系",
+      "考试类型",
+      "专业代码",
+      "学习方式",
+      "学费",
+      "方向",
+      "招生人数",
+      "考试科目",
+      "去年分数线",
+      "今年分数线",
+      "录取情况",
+      "录取率",
+      "退役计划",
+      "少民计划",
+      "备注",
+      "学校Logo",
+      "数据来源",
+      "匹配状态",
+      "主表来源行号",
+      "项目ID",
+      "请求专业类型",
+      "学校",
+      "学院",
+      "学校简介",
+      "院校分数线类别",
+      "项目名称",
+      "标准项目名称",
+      "项目类型",
+      "学制",
+      "上课地点",
+      "上课方式",
+      "城市",
+      "院校性质",
+      "官网",
+      "是否提前面试",
+      "是否接受调剂",
+      "是否接受大专报考",
+      "2025分数线",
+      "2024分数线",
+      "2023分数线",
+      "2022分数线",
+      "最新分数线年份",
+      "最新分数线",
+      "总分",
+      "英语",
+      "综合",
+      "复试信息",
+      "录取分析",
+      "更新时间",
+      "学校概览_大学ID",
+      "学校概览_详情页",
+      "学校概览_大学名称",
+      "学校概览_学院专业列表",
+      "学校概览_学院招生年份",
+      "分数段年份",
+      "录取分析标题",
+      "总成绩计算方式",
+      "分数段统计",
+      "分数段来源网站",
+      "分数段更新时间"
+    ],
+    "program_distribution": {
+      "MPA": 1186,
+      "MBA": 1487
+    }
+  },
+  "summary": {
+    "field_count": 51,
+    "auto_or_derived_fields": 48,
+    "partial_fields": 2,
+    "manual_fields": 1,
+    "phase1_field_count": 27,
+    "phase1_fields_coverage_ge_80": 21,
+    "phase1_min_coverage": 0.0677
+  },
+  "field_results": [
+    {
+      "target_path": "program_type",
+      "source_columns": [
+        "项目"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "MPA"
+        },
+        {
+          "row": 3,
+          "value": "MPA"
+        },
+        {
+          "row": 4,
+          "value": "MPA"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "province",
+      "source_columns": [
+        "地区"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川"
+        },
+        {
+          "row": 3,
+          "value": "四川"
+        },
+        {
+          "row": 4,
+          "value": "四川"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "city",
+      "source_columns": [
+        "城市"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "成都"
+        },
+        {
+          "row": 3,
+          "value": "成都"
+        },
+        {
+          "row": 4,
+          "value": "成都"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "study_mode",
+      "source_columns": [
+        "学习方式"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "非全日制"
+        },
+        {
+          "row": 3,
+          "value": "非全日制"
+        },
+        {
+          "row": 4,
+          "value": "非全日制"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "duration",
+      "source_columns": [
+        "学制",
+        "学费"
+      ],
+      "match_status": "auto",
+      "transform": "parse years from 学制, fallback 学费",
+      "non_empty_count": 2670,
+      "total_count": 2673,
+      "coverage": 0.9989,
+      "examples": [
+        {
+          "row": 2,
+          "value": 3
+        },
+        {
+          "row": 3,
+          "value": 3
+        },
+        {
+          "row": 4,
+          "value": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "tuition_min",
+      "source_columns": [
+        "学费"
+      ],
+      "match_status": "auto",
+      "transform": "parse W/万 to yuan",
+      "non_empty_count": 2623,
+      "total_count": 2673,
+      "coverage": 0.9813,
+      "examples": [
+        {
+          "row": 2,
+          "value": 84000
+        },
+        {
+          "row": 3,
+          "value": 84000
+        },
+        {
+          "row": 4,
+          "value": 84000
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "tuition_max",
+      "source_columns": [
+        "学费"
+      ],
+      "match_status": "auto",
+      "transform": "same as tuition_min when single value",
+      "non_empty_count": 2623,
+      "total_count": 2673,
+      "coverage": 0.9813,
+      "examples": [
+        {
+          "row": 2,
+          "value": 84000
+        },
+        {
+          "row": 3,
+          "value": 84000
+        },
+        {
+          "row": 4,
+          "value": 84000
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "junior_college_allowed",
+      "source_columns": [
+        "是否接受大专报考"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 735,
+      "total_count": 2673,
+      "coverage": 0.275,
+      "examples": [
+        {
+          "row": 14,
+          "value": "是"
+        },
+        {
+          "row": 15,
+          "value": "是"
+        },
+        {
+          "row": 16,
+          "value": "是"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_code",
+      "source_columns": [
+        "学校代码"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "10610"
+        },
+        {
+          "row": 3,
+          "value": "10610"
+        },
+        {
+          "row": 4,
+          "value": "10610"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_name",
+      "source_columns": [
+        "学校名称"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川大学"
+        },
+        {
+          "row": 3,
+          "value": "四川大学"
+        },
+        {
+          "row": 4,
+          "value": "四川大学"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_label",
+      "source_columns": [
+        "学校代码",
+        "学校名称"
+      ],
+      "match_status": "derived",
+      "transform": "combine code and name",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(10610)四川大学"
+        },
+        {
+          "row": 3,
+          "value": "(10610)四川大学"
+        },
+        {
+          "row": 4,
+          "value": "(10610)四川大学"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_level",
+      "source_columns": [
+        "院校性质",
+        "学校标签"
+      ],
+      "match_status": "auto",
+      "transform": "prefer 院校性质",
+      "non_empty_count": 1121,
+      "total_count": 2673,
+      "coverage": 0.4194,
+      "examples": [
+        {
+          "row": 2,
+          "value": "985,211,双一流"
+        },
+        {
+          "row": 3,
+          "value": "985,211,双一流"
+        },
+        {
+          "row": 4,
+          "value": "985,211,双一流"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_level_display",
+      "source_columns": [
+        "院校性质",
+        "学校标签"
+      ],
+      "match_status": "derived",
+      "transform": "map to 985/211/双非",
+      "non_empty_count": 1121,
+      "total_count": 2673,
+      "coverage": 0.4194,
+      "examples": [
+        {
+          "row": 2,
+          "value": "985"
+        },
+        {
+          "row": 3,
+          "value": "985"
+        },
+        {
+          "row": 4,
+          "value": "985"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "department_code",
+      "source_columns": [
+        "院系"
+      ],
+      "match_status": "auto",
+      "transform": "parse label",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "101"
+        },
+        {
+          "row": 3,
+          "value": "101"
+        },
+        {
+          "row": 4,
+          "value": "101"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "department_name",
+      "source_columns": [
+        "院系"
+      ],
+      "match_status": "auto",
+      "transform": "parse label",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "经济学院"
+        },
+        {
+          "row": 3,
+          "value": "经济学院"
+        },
+        {
+          "row": 4,
+          "value": "经济学院"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "department_label",
+      "source_columns": [
+        "院系"
+      ],
+      "match_status": "auto",
+      "transform": "preserve label",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(101)经济学院"
+        },
+        {
+          "row": 3,
+          "value": "(101)经济学院"
+        },
+        {
+          "row": 4,
+          "value": "(101)经济学院"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_category_code",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "derive from major code prefix, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "1252"
+        },
+        {
+          "row": 3,
+          "value": "1252"
+        },
+        {
+          "row": 4,
+          "value": "1252"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_category_name",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "derive from major code prefix, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "公共管理"
+        },
+        {
+          "row": 3,
+          "value": "公共管理"
+        },
+        {
+          "row": 4,
+          "value": "公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_category_label",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "derive from major code prefix, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(1252)公共管理"
+        },
+        {
+          "row": 3,
+          "value": "(1252)公共管理"
+        },
+        {
+          "row": 4,
+          "value": "(1252)公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_code",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "parse label, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "125200"
+        },
+        {
+          "row": 3,
+          "value": "125200"
+        },
+        {
+          "row": 4,
+          "value": "125200"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_name",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "parse label, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "公共管理"
+        },
+        {
+          "row": 3,
+          "value": "公共管理"
+        },
+        {
+          "row": 4,
+          "value": "公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_label",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "preserve label, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(125200)公共管理"
+        },
+        {
+          "row": 3,
+          "value": "(125200)公共管理"
+        },
+        {
+          "row": 4,
+          "value": "(125200)公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "direction_code",
+      "source_columns": [
+        "方向"
+      ],
+      "match_status": "auto",
+      "transform": "parse leading direction code",
+      "non_empty_count": 2021,
+      "total_count": 2673,
+      "coverage": 0.7561,
+      "examples": [
+        {
+          "row": 2,
+          "value": "01"
+        },
+        {
+          "row": 3,
+          "value": "02"
+        },
+        {
+          "row": 4,
+          "value": "03"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "direction",
+      "source_columns": [
+        "方向",
+        "标准项目名称"
+      ],
+      "match_status": "auto",
+      "transform": "parse and remove study-mode words",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "()公共经济与政府管理"
+        },
+        {
+          "row": 3,
+          "value": "()区域经济和城市管理"
+        },
+        {
+          "row": 4,
+          "value": "()金融发展与管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "direction_label",
+      "source_columns": [
+        "方向"
+      ],
+      "match_status": "auto",
+      "transform": "preserve label",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(01)(非全)公共经济与政府管理"
+        },
+        {
+          "row": 3,
+          "value": "(02)(非全)区域经济和城市管理"
+        },
+        {
+          "row": 4,
+          "value": "(03)(非全)金融发展与管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "enrollment",
+      "source_columns": [
+        "招生人数"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2665,
+      "total_count": 2673,
+      "coverage": 0.997,
+      "examples": [
+        {
+          "row": 2,
+          "value": 160
+        },
+        {
+          "row": 3,
+          "value": 160
+        },
+        {
+          "row": 4,
+          "value": 160
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "exam_subjects",
+      "source_columns": [
+        "考试科目",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "source value, fallback common 199 exam subjects",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "199管理类综合能力+204英语(二)"
+        },
+        {
+          "row": 3,
+          "value": "199管理类综合能力+204英语(二)"
+        },
+        {
+          "row": 4,
+          "value": "199管理类综合能力+204英语(二)"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "latest_score",
+      "source_columns": [
+        "最新分数线",
+        "今年分数线"
+      ],
+      "match_status": "auto",
+      "transform": "prefer latest score",
+      "non_empty_count": 2646,
+      "total_count": 2673,
+      "coverage": 0.9899,
+      "examples": [
+        {
+          "row": 2,
+          "value": "180/100/50"
+        },
+        {
+          "row": 3,
+          "value": "180/100/50"
+        },
+        {
+          "row": 4,
+          "value": "180/100/50"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "score_year",
+      "source_columns": [
+        "最新分数线年份"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2638,
+      "total_count": 2673,
+      "coverage": 0.9869,
+      "examples": [
+        {
+          "row": 2,
+          "value": "2025"
+        },
+        {
+          "row": 3,
+          "value": "2025"
+        },
+        {
+          "row": 4,
+          "value": "2025"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "total_score",
+      "source_columns": [
+        "总分"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2637,
+      "total_count": 2673,
+      "coverage": 0.9865,
+      "examples": [
+        {
+          "row": 2,
+          "value": 180
+        },
+        {
+          "row": 3,
+          "value": 180
+        },
+        {
+          "row": 4,
+          "value": 180
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "english_score",
+      "source_columns": [
+        "英语"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2637,
+      "total_count": 2673,
+      "coverage": 0.9865,
+      "examples": [
+        {
+          "row": 2,
+          "value": 50
+        },
+        {
+          "row": 3,
+          "value": 50
+        },
+        {
+          "row": 4,
+          "value": 50
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "comprehensive_score",
+      "source_columns": [
+        "综合"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2637,
+      "total_count": 2673,
+      "coverage": 0.9865,
+      "examples": [
+        {
+          "row": 2,
+          "value": 100
+        },
+        {
+          "row": 3,
+          "value": 100
+        },
+        {
+          "row": 4,
+          "value": 100
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "admission",
+      "source_columns": [
+        "录取情况"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2526,
+      "total_count": 2673,
+      "coverage": 0.945,
+      "examples": [
+        {
+          "row": 2,
+          "value": "复207录170"
+        },
+        {
+          "row": 3,
+          "value": "复207录170"
+        },
+        {
+          "row": 4,
+          "value": "复207录170"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "admission_rate",
+      "source_columns": [
+        "录取率"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 61,
+      "total_count": 2673,
+      "coverage": 0.0228,
+      "examples": [
+        {
+          "row": 2,
+          "value": "82.10%"
+        },
+        {
+          "row": 3,
+          "value": "82.10%"
+        },
+        {
+          "row": 4,
+          "value": "82.10%"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "class_location",
+      "source_columns": [
+        "上课地点"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2668,
+      "total_count": 2673,
+      "coverage": 0.9981,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川省成都市"
+        },
+        {
+          "row": 3,
+          "value": "四川省成都市"
+        },
+        {
+          "row": 4,
+          "value": "四川省成都市"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "class_time",
+      "source_columns": [
+        "上课方式"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2038,
+      "total_count": 2673,
+      "coverage": 0.7624,
+      "examples": [
+        {
+          "row": 2,
+          "value": "周末集中授课"
+        },
+        {
+          "row": 3,
+          "value": "周末集中授课"
+        },
+        {
+          "row": 4,
+          "value": "周末集中授课"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "adjustment",
+      "source_columns": [
+        "是否接受调剂"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2665,
+      "total_count": 2673,
+      "coverage": 0.997,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "retired_soldier_plan",
+      "source_columns": [
+        "退役计划"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "minority_backbone_plan",
+      "source_columns": [
+        "少民计划"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "notes",
+      "source_columns": [
+        "备注"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2519,
+      "total_count": 2673,
+      "coverage": 0.9424,
+      "examples": [
+        {
+          "row": 2,
+          "value": "复试：思想政治、管理综合。学制：3年。学费：28000元/生.年。"
+        },
+        {
+          "row": 3,
+          "value": "复试：思想政治、管理综合。学制：3年。学费：28000元/生.年。"
+        },
+        {
+          "row": 4,
+          "value": "复试：思想政治、管理综合。学制：3年。学费：28000元/生.年。"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "description",
+      "source_columns": [
+        "学校简介"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川大学（Sichuan University），简称“川大”，位于四川省成都市，是中华人民共和国教育部直属全国重点大学 ，位列国家”双一流“ 、985工程、212工程 。"
+        },
+        {
+          "row": 3,
+          "value": "四川大学（Sichuan University），简称“川大”，位于四川省成都市，是中华人民共和国教育部直属全国重点大学 ，位列国家”双一流“ 、985工程、212工程 。"
+        },
+        {
+          "row": 4,
+          "value": "四川大学（Sichuan University），简称“川大”，位于四川省成都市，是中华人民共和国教育部直属全国重点大学 ，位列国家”双一流“ 、985工程、212工程 。"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "website",
+      "source_columns": [
+        "官网"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2632,
+      "total_count": 2673,
+      "coverage": 0.9847,
+      "examples": [
+        {
+          "row": 2,
+          "value": "https://sesu.scu.edu.cn/"
+        },
+        {
+          "row": 3,
+          "value": "https://sesu.scu.edu.cn/"
+        },
+        {
+          "row": 4,
+          "value": "https://sesu.scu.edu.cn/"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "logo_url",
+      "source_columns": [
+        "学校Logo"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "https://t1.chei.com.cn/common/xh/10610.jpg"
+        },
+        {
+          "row": 3,
+          "value": "https://t1.chei.com.cn/common/xh/10610.jpg"
+        },
+        {
+          "row": 4,
+          "value": "https://t1.chei.com.cn/common/xh/10610.jpg"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "interview",
+      "source_columns": [
+        "是否提前面试"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2591,
+      "total_count": 2673,
+      "coverage": 0.9693,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "retest_info_by_year.2025.notes",
+      "source_columns": [
+        "复试信息"
+      ],
+      "match_status": "partial",
+      "transform": "store unstructured retest info under 2025 notes",
+      "non_empty_count": 2596,
+      "total_count": 2673,
+      "coverage": 0.9712,
+      "examples": [
+        {
+          "row": 2,
+          "value": "思想政治/面试/专业知识\n1、笔试具体安排 笔试形式：闭卷考试 复试科目：请查阅“四川大学2025年硕士研究生招生目录” 、“经济学院2025年硕士研究生招生复试参考书目”\n2、综合面试：主要包含考生个人陈述（请准备5分钟的PPT）、专业知识问答（随机抽题）、英语口试和专家现场提问。"
+        },
+        {
+          "row": 3,
+          "value": "思想政治/面试/专业知识\n复试内容：复试：思想政治、管理综合。 参考书目： 1、《习近平新时代中国特色社会主义思想学习纲要》（最新版），学习出版社、人民出版社 2、近三年党和国家重要会议文件精神、党和国家领导人重要讲话 3、《管理学》编写组：《管理学》（马克思主义理论研究和建设工程重点教材），高等教育出版社最新版;；"
+        },
+        {
+          "row": 4,
+          "value": "思想政治/面试/专业知识\n复试内容：复试：思想政治、管理综合。 参考书目： 1、《习近平新时代中国特色社会主义思想学习纲要》（最新版），学习出版社、人民出版社 2、近三年党和国家重要会议文件精神、党和国家领导人重要讲话 3、《管理学》编写组：《管理学》（马克思主义理论研究和建设工程重点教材），高等教育出版社最新版;；"
+        }
+      ],
+      "note": "复试内容较完整，但尚未拆成笔试、面试、形式、参考书等字段。"
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2025.score_line",
+      "source_columns": [
+        "2025分数线",
+        "最新分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2342,
+      "total_count": 2673,
+      "coverage": 0.8762,
+      "examples": [
+        {
+          "row": 2,
+          "value": "180/100/50"
+        },
+        {
+          "row": 3,
+          "value": "180/100/50"
+        },
+        {
+          "row": 4,
+          "value": "180/100/50"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2024.score_line",
+      "source_columns": [
+        "2024分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2104,
+      "total_count": 2673,
+      "coverage": 0.7871,
+      "examples": [
+        {
+          "row": 2,
+          "value": "185/110/55"
+        },
+        {
+          "row": 3,
+          "value": "185/110/55"
+        },
+        {
+          "row": 4,
+          "value": "185/110/55"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2023.score_line",
+      "source_columns": [
+        "2023分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2060,
+      "total_count": 2673,
+      "coverage": 0.7707,
+      "examples": [
+        {
+          "row": 2,
+          "value": "185/110/55"
+        },
+        {
+          "row": 3,
+          "value": "185/110/55"
+        },
+        {
+          "row": 4,
+          "value": "185/110/55"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2022.score_line",
+      "source_columns": [
+        "2022分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 1943,
+      "total_count": 2673,
+      "coverage": 0.7269,
+      "examples": [
+        {
+          "row": 2,
+          "value": "190/110/55"
+        },
+        {
+          "row": 3,
+          "value": "190/110/55"
+        },
+        {
+          "row": 4,
+          "value": "190/110/55"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2025.score_band_analysis",
+      "source_columns": [
+        "录取分析",
+        "分数段统计"
+      ],
+      "match_status": "partial",
+      "transform": "store unstructured admission analysis",
+      "non_empty_count": 2653,
+      "total_count": 2673,
+      "coverage": 0.9925,
+      "examples": [
+        {
+          "row": 2,
+          "value": "2025年 | 拟录取总人数：171人 | 180-189分：拟录取41人 | 190-199分：拟录取41人 | 200-209分：拟录取37人 | 210-219分：拟录取28人 | 220-229分：拟录取11人 | 230-239分：拟录取11人 | 240以上分：拟录取2人 | 规则：S总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)\n2025：非全日制180-189:拟录41/复试0/录取率0.0，非全日制190-199:拟录41/复试0/录取率0.0，非全日制200-209:拟录37/复试0/录取率0.0，非全日制210-219:拟录28/复试0/录取率0.0，非全日制220-229:拟录11/复试0/录取率0.0，非全日制230-239:拟录11/复试0/录取率0.0，非全日制240以上:拟录2/复试0/录取率0.0\nS总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)"
+        },
+        {
+          "row": 3,
+          "value": "2025年 | 拟录取总人数：171人 | 180-189分：拟录取41人 | 190-199分：拟录取41人 | 200-209分：拟录取37人 | 210-219分：拟录取28人 | 220-229分：拟录取11人 | 230-239分：拟录取11人 | 240以上分：拟录取2人 | 规则：S总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)\n2025：非全日制180-189:拟录41/复试0/录取率0.0，非全日制190-199:拟录41/复试0/录取率0.0，非全日制200-209:拟录37/复试0/录取率0.0，非全日制210-219:拟录28/复试0/录取率0.0，非全日制220-229:拟录11/复试0/录取率0.0，非全日制230-239:拟录11/复试0/录取率0.0，非全日制240以上:拟录2/复试0/录取率0.0\nS总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)"
+        },
+        {
+          "row": 4,
+          "value": "2025年 | 拟录取总人数：171人 | 180-189分：拟录取41人 | 190-199分：拟录取41人 | 200-209分：拟录取37人 | 210-219分：拟录取28人 | 220-229分：拟录取11人 | 230-239分：拟录取11人 | 240以上分：拟录取2人 | 规则：S总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)\n2025：非全日制180-189:拟录41/复试0/录取率0.0，非全日制190-199:拟录41/复试0/录取率0.0，非全日制200-209:拟录37/复试0/录取率0.0，非全日制210-219:拟录28/复试0/录取率0.0，非全日制220-229:拟录11/复试0/录取率0.0，非全日制230-239:拟录11/复试0/录取率0.0，非全日制240以上:拟录2/复试0/录取率0.0\nS总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)"
+        }
+      ],
+      "note": "可保留深度文本，但复试人数、录取人数、复录比等结构化字段需要解析或人工确认。"
+    },
+    {
+      "target_path": "adjustment_admission_by_year.*.quota",
+      "source_columns": [],
+      "match_status": "manual",
+      "transform": "no stable source column",
+      "non_empty_count": 0,
+      "total_count": 2673,
+      "coverage": 0.0,
+      "examples": [],
+      "note": "全量主表只有是否接受调剂，没有年度调剂名额、轮次和复试资格线。"
+    }
+  ],
+  "auto_cleanable_fields": [
+    {
+      "target_path": "program_type",
+      "source_columns": [
+        "项目"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "MPA"
+        },
+        {
+          "row": 3,
+          "value": "MPA"
+        },
+        {
+          "row": 4,
+          "value": "MPA"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "city",
+      "source_columns": [
+        "城市"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "成都"
+        },
+        {
+          "row": 3,
+          "value": "成都"
+        },
+        {
+          "row": 4,
+          "value": "成都"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "study_mode",
+      "source_columns": [
+        "学习方式"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "非全日制"
+        },
+        {
+          "row": 3,
+          "value": "非全日制"
+        },
+        {
+          "row": 4,
+          "value": "非全日制"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "duration",
+      "source_columns": [
+        "学制",
+        "学费"
+      ],
+      "match_status": "auto",
+      "transform": "parse years from 学制, fallback 学费",
+      "non_empty_count": 2670,
+      "total_count": 2673,
+      "coverage": 0.9989,
+      "examples": [
+        {
+          "row": 2,
+          "value": 3
+        },
+        {
+          "row": 3,
+          "value": 3
+        },
+        {
+          "row": 4,
+          "value": 3
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "tuition_min",
+      "source_columns": [
+        "学费"
+      ],
+      "match_status": "auto",
+      "transform": "parse W/万 to yuan",
+      "non_empty_count": 2623,
+      "total_count": 2673,
+      "coverage": 0.9813,
+      "examples": [
+        {
+          "row": 2,
+          "value": 84000
+        },
+        {
+          "row": 3,
+          "value": 84000
+        },
+        {
+          "row": 4,
+          "value": 84000
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "tuition_max",
+      "source_columns": [
+        "学费"
+      ],
+      "match_status": "auto",
+      "transform": "same as tuition_min when single value",
+      "non_empty_count": 2623,
+      "total_count": 2673,
+      "coverage": 0.9813,
+      "examples": [
+        {
+          "row": 2,
+          "value": 84000
+        },
+        {
+          "row": 3,
+          "value": 84000
+        },
+        {
+          "row": 4,
+          "value": 84000
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_name",
+      "source_columns": [
+        "学校名称"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川大学"
+        },
+        {
+          "row": 3,
+          "value": "四川大学"
+        },
+        {
+          "row": 4,
+          "value": "四川大学"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_label",
+      "source_columns": [
+        "学校代码",
+        "学校名称"
+      ],
+      "match_status": "derived",
+      "transform": "combine code and name",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(10610)四川大学"
+        },
+        {
+          "row": 3,
+          "value": "(10610)四川大学"
+        },
+        {
+          "row": 4,
+          "value": "(10610)四川大学"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "department_name",
+      "source_columns": [
+        "院系"
+      ],
+      "match_status": "auto",
+      "transform": "parse label",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "经济学院"
+        },
+        {
+          "row": 3,
+          "value": "经济学院"
+        },
+        {
+          "row": 4,
+          "value": "经济学院"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "department_label",
+      "source_columns": [
+        "院系"
+      ],
+      "match_status": "auto",
+      "transform": "preserve label",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(101)经济学院"
+        },
+        {
+          "row": 3,
+          "value": "(101)经济学院"
+        },
+        {
+          "row": 4,
+          "value": "(101)经济学院"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_category_code",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "derive from major code prefix, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "1252"
+        },
+        {
+          "row": 3,
+          "value": "1252"
+        },
+        {
+          "row": 4,
+          "value": "1252"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_category_name",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "derive from major code prefix, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "公共管理"
+        },
+        {
+          "row": 3,
+          "value": "公共管理"
+        },
+        {
+          "row": 4,
+          "value": "公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_category_label",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "derive from major code prefix, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(1252)公共管理"
+        },
+        {
+          "row": 3,
+          "value": "(1252)公共管理"
+        },
+        {
+          "row": 4,
+          "value": "(1252)公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_code",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "parse label, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "125200"
+        },
+        {
+          "row": 3,
+          "value": "125200"
+        },
+        {
+          "row": 4,
+          "value": "125200"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_name",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "parse label, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "公共管理"
+        },
+        {
+          "row": 3,
+          "value": "公共管理"
+        },
+        {
+          "row": 4,
+          "value": "公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "major_label",
+      "source_columns": [
+        "专业代码",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "preserve label, fallback program type",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(125200)公共管理"
+        },
+        {
+          "row": 3,
+          "value": "(125200)公共管理"
+        },
+        {
+          "row": 4,
+          "value": "(125200)公共管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "direction",
+      "source_columns": [
+        "方向",
+        "标准项目名称"
+      ],
+      "match_status": "auto",
+      "transform": "parse and remove study-mode words",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "()公共经济与政府管理"
+        },
+        {
+          "row": 3,
+          "value": "()区域经济和城市管理"
+        },
+        {
+          "row": 4,
+          "value": "()金融发展与管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "direction_label",
+      "source_columns": [
+        "方向"
+      ],
+      "match_status": "auto",
+      "transform": "preserve label",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "(01)(非全)公共经济与政府管理"
+        },
+        {
+          "row": 3,
+          "value": "(02)(非全)区域经济和城市管理"
+        },
+        {
+          "row": 4,
+          "value": "(03)(非全)金融发展与管理"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "enrollment",
+      "source_columns": [
+        "招生人数"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2665,
+      "total_count": 2673,
+      "coverage": 0.997,
+      "examples": [
+        {
+          "row": 2,
+          "value": 160
+        },
+        {
+          "row": 3,
+          "value": 160
+        },
+        {
+          "row": 4,
+          "value": 160
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "exam_subjects",
+      "source_columns": [
+        "考试科目",
+        "项目"
+      ],
+      "match_status": "derived",
+      "transform": "source value, fallback common 199 exam subjects",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "199管理类综合能力+204英语(二)"
+        },
+        {
+          "row": 3,
+          "value": "199管理类综合能力+204英语(二)"
+        },
+        {
+          "row": 4,
+          "value": "199管理类综合能力+204英语(二)"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "latest_score",
+      "source_columns": [
+        "最新分数线",
+        "今年分数线"
+      ],
+      "match_status": "auto",
+      "transform": "prefer latest score",
+      "non_empty_count": 2646,
+      "total_count": 2673,
+      "coverage": 0.9899,
+      "examples": [
+        {
+          "row": 2,
+          "value": "180/100/50"
+        },
+        {
+          "row": 3,
+          "value": "180/100/50"
+        },
+        {
+          "row": 4,
+          "value": "180/100/50"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "score_year",
+      "source_columns": [
+        "最新分数线年份"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2638,
+      "total_count": 2673,
+      "coverage": 0.9869,
+      "examples": [
+        {
+          "row": 2,
+          "value": "2025"
+        },
+        {
+          "row": 3,
+          "value": "2025"
+        },
+        {
+          "row": 4,
+          "value": "2025"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "total_score",
+      "source_columns": [
+        "总分"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2637,
+      "total_count": 2673,
+      "coverage": 0.9865,
+      "examples": [
+        {
+          "row": 2,
+          "value": 180
+        },
+        {
+          "row": 3,
+          "value": 180
+        },
+        {
+          "row": 4,
+          "value": 180
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "english_score",
+      "source_columns": [
+        "英语"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2637,
+      "total_count": 2673,
+      "coverage": 0.9865,
+      "examples": [
+        {
+          "row": 2,
+          "value": 50
+        },
+        {
+          "row": 3,
+          "value": 50
+        },
+        {
+          "row": 4,
+          "value": 50
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "comprehensive_score",
+      "source_columns": [
+        "综合"
+      ],
+      "match_status": "auto",
+      "transform": "number_or_string",
+      "non_empty_count": 2637,
+      "total_count": 2673,
+      "coverage": 0.9865,
+      "examples": [
+        {
+          "row": 2,
+          "value": 100
+        },
+        {
+          "row": 3,
+          "value": 100
+        },
+        {
+          "row": 4,
+          "value": 100
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "admission",
+      "source_columns": [
+        "录取情况"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2526,
+      "total_count": 2673,
+      "coverage": 0.945,
+      "examples": [
+        {
+          "row": 2,
+          "value": "复207录170"
+        },
+        {
+          "row": 3,
+          "value": "复207录170"
+        },
+        {
+          "row": 4,
+          "value": "复207录170"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "class_location",
+      "source_columns": [
+        "上课地点"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2668,
+      "total_count": 2673,
+      "coverage": 0.9981,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川省成都市"
+        },
+        {
+          "row": 3,
+          "value": "四川省成都市"
+        },
+        {
+          "row": 4,
+          "value": "四川省成都市"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "adjustment",
+      "source_columns": [
+        "是否接受调剂"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2665,
+      "total_count": 2673,
+      "coverage": 0.997,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "notes",
+      "source_columns": [
+        "备注"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2519,
+      "total_count": 2673,
+      "coverage": 0.9424,
+      "examples": [
+        {
+          "row": 2,
+          "value": "复试：思想政治、管理综合。学制：3年。学费：28000元/生.年。"
+        },
+        {
+          "row": 3,
+          "value": "复试：思想政治、管理综合。学制：3年。学费：28000元/生.年。"
+        },
+        {
+          "row": 4,
+          "value": "复试：思想政治、管理综合。学制：3年。学费：28000元/生.年。"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "description",
+      "source_columns": [
+        "学校简介"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2673,
+      "total_count": 2673,
+      "coverage": 1.0,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川大学（Sichuan University），简称“川大”，位于四川省成都市，是中华人民共和国教育部直属全国重点大学 ，位列国家”双一流“ 、985工程、212工程 。"
+        },
+        {
+          "row": 3,
+          "value": "四川大学（Sichuan University），简称“川大”，位于四川省成都市，是中华人民共和国教育部直属全国重点大学 ，位列国家”双一流“ 、985工程、212工程 。"
+        },
+        {
+          "row": 4,
+          "value": "四川大学（Sichuan University），简称“川大”，位于四川省成都市，是中华人民共和国教育部直属全国重点大学 ，位列国家”双一流“ 、985工程、212工程 。"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "website",
+      "source_columns": [
+        "官网"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2632,
+      "total_count": 2673,
+      "coverage": 0.9847,
+      "examples": [
+        {
+          "row": 2,
+          "value": "https://sesu.scu.edu.cn/"
+        },
+        {
+          "row": 3,
+          "value": "https://sesu.scu.edu.cn/"
+        },
+        {
+          "row": 4,
+          "value": "https://sesu.scu.edu.cn/"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "interview",
+      "source_columns": [
+        "是否提前面试"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2591,
+      "total_count": 2673,
+      "coverage": 0.9693,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2025.score_line",
+      "source_columns": [
+        "2025分数线",
+        "最新分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2342,
+      "total_count": 2673,
+      "coverage": 0.8762,
+      "examples": [
+        {
+          "row": 2,
+          "value": "180/100/50"
+        },
+        {
+          "row": 3,
+          "value": "180/100/50"
+        },
+        {
+          "row": 4,
+          "value": "180/100/50"
+        }
+      ],
+      "note": ""
+    }
+  ],
+  "needs_manual_or_parser_fields": [
+    {
+      "target_path": "province",
+      "source_columns": [
+        "地区"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "四川"
+        },
+        {
+          "row": 3,
+          "value": "四川"
+        },
+        {
+          "row": 4,
+          "value": "四川"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "junior_college_allowed",
+      "source_columns": [
+        "是否接受大专报考"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 735,
+      "total_count": 2673,
+      "coverage": 0.275,
+      "examples": [
+        {
+          "row": 14,
+          "value": "是"
+        },
+        {
+          "row": 15,
+          "value": "是"
+        },
+        {
+          "row": 16,
+          "value": "是"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_code",
+      "source_columns": [
+        "学校代码"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "10610"
+        },
+        {
+          "row": 3,
+          "value": "10610"
+        },
+        {
+          "row": 4,
+          "value": "10610"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_level",
+      "source_columns": [
+        "院校性质",
+        "学校标签"
+      ],
+      "match_status": "auto",
+      "transform": "prefer 院校性质",
+      "non_empty_count": 1121,
+      "total_count": 2673,
+      "coverage": 0.4194,
+      "examples": [
+        {
+          "row": 2,
+          "value": "985,211,双一流"
+        },
+        {
+          "row": 3,
+          "value": "985,211,双一流"
+        },
+        {
+          "row": 4,
+          "value": "985,211,双一流"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "school_level_display",
+      "source_columns": [
+        "院校性质",
+        "学校标签"
+      ],
+      "match_status": "derived",
+      "transform": "map to 985/211/双非",
+      "non_empty_count": 1121,
+      "total_count": 2673,
+      "coverage": 0.4194,
+      "examples": [
+        {
+          "row": 2,
+          "value": "985"
+        },
+        {
+          "row": 3,
+          "value": "985"
+        },
+        {
+          "row": 4,
+          "value": "985"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "department_code",
+      "source_columns": [
+        "院系"
+      ],
+      "match_status": "auto",
+      "transform": "parse label",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "101"
+        },
+        {
+          "row": 3,
+          "value": "101"
+        },
+        {
+          "row": 4,
+          "value": "101"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "direction_code",
+      "source_columns": [
+        "方向"
+      ],
+      "match_status": "auto",
+      "transform": "parse leading direction code",
+      "non_empty_count": 2021,
+      "total_count": 2673,
+      "coverage": 0.7561,
+      "examples": [
+        {
+          "row": 2,
+          "value": "01"
+        },
+        {
+          "row": 3,
+          "value": "02"
+        },
+        {
+          "row": 4,
+          "value": "03"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "admission_rate",
+      "source_columns": [
+        "录取率"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 61,
+      "total_count": 2673,
+      "coverage": 0.0228,
+      "examples": [
+        {
+          "row": 2,
+          "value": "82.10%"
+        },
+        {
+          "row": 3,
+          "value": "82.10%"
+        },
+        {
+          "row": 4,
+          "value": "82.10%"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "class_time",
+      "source_columns": [
+        "上课方式"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2038,
+      "total_count": 2673,
+      "coverage": 0.7624,
+      "examples": [
+        {
+          "row": 2,
+          "value": "周末集中授课"
+        },
+        {
+          "row": 3,
+          "value": "周末集中授课"
+        },
+        {
+          "row": 4,
+          "value": "周末集中授课"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "retired_soldier_plan",
+      "source_columns": [
+        "退役计划"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "minority_backbone_plan",
+      "source_columns": [
+        "少民计划"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "否"
+        },
+        {
+          "row": 3,
+          "value": "否"
+        },
+        {
+          "row": 4,
+          "value": "否"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "logo_url",
+      "source_columns": [
+        "学校Logo"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 181,
+      "total_count": 2673,
+      "coverage": 0.0677,
+      "examples": [
+        {
+          "row": 2,
+          "value": "https://t1.chei.com.cn/common/xh/10610.jpg"
+        },
+        {
+          "row": 3,
+          "value": "https://t1.chei.com.cn/common/xh/10610.jpg"
+        },
+        {
+          "row": 4,
+          "value": "https://t1.chei.com.cn/common/xh/10610.jpg"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "retest_info_by_year.2025.notes",
+      "source_columns": [
+        "复试信息"
+      ],
+      "match_status": "partial",
+      "transform": "store unstructured retest info under 2025 notes",
+      "non_empty_count": 2596,
+      "total_count": 2673,
+      "coverage": 0.9712,
+      "examples": [
+        {
+          "row": 2,
+          "value": "思想政治/面试/专业知识\n1、笔试具体安排 笔试形式：闭卷考试 复试科目：请查阅“四川大学2025年硕士研究生招生目录” 、“经济学院2025年硕士研究生招生复试参考书目”\n2、综合面试：主要包含考生个人陈述（请准备5分钟的PPT）、专业知识问答（随机抽题）、英语口试和专家现场提问。"
+        },
+        {
+          "row": 3,
+          "value": "思想政治/面试/专业知识\n复试内容：复试：思想政治、管理综合。 参考书目： 1、《习近平新时代中国特色社会主义思想学习纲要》（最新版），学习出版社、人民出版社 2、近三年党和国家重要会议文件精神、党和国家领导人重要讲话 3、《管理学》编写组：《管理学》（马克思主义理论研究和建设工程重点教材），高等教育出版社最新版;；"
+        },
+        {
+          "row": 4,
+          "value": "思想政治/面试/专业知识\n复试内容：复试：思想政治、管理综合。 参考书目： 1、《习近平新时代中国特色社会主义思想学习纲要》（最新版），学习出版社、人民出版社 2、近三年党和国家重要会议文件精神、党和国家领导人重要讲话 3、《管理学》编写组：《管理学》（马克思主义理论研究和建设工程重点教材），高等教育出版社最新版;；"
+        }
+      ],
+      "note": "复试内容较完整，但尚未拆成笔试、面试、形式、参考书等字段。"
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2024.score_line",
+      "source_columns": [
+        "2024分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2104,
+      "total_count": 2673,
+      "coverage": 0.7871,
+      "examples": [
+        {
+          "row": 2,
+          "value": "185/110/55"
+        },
+        {
+          "row": 3,
+          "value": "185/110/55"
+        },
+        {
+          "row": 4,
+          "value": "185/110/55"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2023.score_line",
+      "source_columns": [
+        "2023分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 2060,
+      "total_count": 2673,
+      "coverage": 0.7707,
+      "examples": [
+        {
+          "row": 2,
+          "value": "185/110/55"
+        },
+        {
+          "row": 3,
+          "value": "185/110/55"
+        },
+        {
+          "row": 4,
+          "value": "185/110/55"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2022.score_line",
+      "source_columns": [
+        "2022分数线"
+      ],
+      "match_status": "auto",
+      "transform": "trim",
+      "non_empty_count": 1943,
+      "total_count": 2673,
+      "coverage": 0.7269,
+      "examples": [
+        {
+          "row": 2,
+          "value": "190/110/55"
+        },
+        {
+          "row": 3,
+          "value": "190/110/55"
+        },
+        {
+          "row": 4,
+          "value": "190/110/55"
+        }
+      ],
+      "note": ""
+    },
+    {
+      "target_path": "first_choice_admission_by_year.2025.score_band_analysis",
+      "source_columns": [
+        "录取分析",
+        "分数段统计"
+      ],
+      "match_status": "partial",
+      "transform": "store unstructured admission analysis",
+      "non_empty_count": 2653,
+      "total_count": 2673,
+      "coverage": 0.9925,
+      "examples": [
+        {
+          "row": 2,
+          "value": "2025年 | 拟录取总人数：171人 | 180-189分：拟录取41人 | 190-199分：拟录取41人 | 200-209分：拟录取37人 | 210-219分：拟录取28人 | 220-229分：拟录取11人 | 230-239分：拟录取11人 | 240以上分：拟录取2人 | 规则：S总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)\n2025：非全日制180-189:拟录41/复试0/录取率0.0，非全日制190-199:拟录41/复试0/录取率0.0，非全日制200-209:拟录37/复试0/录取率0.0，非全日制210-219:拟录28/复试0/录取率0.0，非全日制220-229:拟录11/复试0/录取率0.0，非全日制230-239:拟录11/复试0/录取率0.0，非全日制240以上:拟录2/复试0/录取率0.0\nS总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)"
+        },
+        {
+          "row": 3,
+          "value": "2025年 | 拟录取总人数：171人 | 180-189分：拟录取41人 | 190-199分：拟录取41人 | 200-209分：拟录取37人 | 210-219分：拟录取28人 | 220-229分：拟录取11人 | 230-239分：拟录取11人 | 240以上分：拟录取2人 | 规则：S总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)\n2025：非全日制180-189:拟录41/复试0/录取率0.0，非全日制190-199:拟录41/复试0/录取率0.0，非全日制200-209:拟录37/复试0/录取率0.0，非全日制210-219:拟录28/复试0/录取率0.0，非全日制220-229:拟录11/复试0/录取率0.0，非全日制230-239:拟录11/复试0/录取率0.0，非全日制240以上:拟录2/复试0/录取率0.0\nS总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)"
+        },
+        {
+          "row": 4,
+          "value": "2025年 | 拟录取总人数：171人 | 180-189分：拟录取41人 | 190-199分：拟录取41人 | 200-209分：拟录取37人 | 210-219分：拟录取28人 | 220-229分：拟录取11人 | 230-239分：拟录取11人 | 240以上分：拟录取2人 | 规则：S总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)\n2025：非全日制180-189:拟录41/复试0/录取率0.0，非全日制190-199:拟录41/复试0/录取率0.0，非全日制200-209:拟录37/复试0/录取率0.0，非全日制210-219:拟录28/复试0/录取率0.0，非全日制220-229:拟录11/复试0/录取率0.0，非全日制230-239:拟录11/复试0/录取率0.0，非全日制240以上:拟录2/复试0/录取率0.0\nS总=（S初÷3）×50%+（S复÷2）×50%(非全日制MPA)"
+        }
+      ],
+      "note": "可保留深度文本，但复试人数、录取人数、复录比等结构化字段需要解析或人工确认。"
+    },
+    {
+      "target_path": "adjustment_admission_by_year.*.quota",
+      "source_columns": [],
+      "match_status": "manual",
+      "transform": "no stable source column",
+      "non_empty_count": 0,
+      "total_count": 2673,
+      "coverage": 0.0,
+      "examples": [],
+      "note": "全量主表只有是否接受调剂，没有年度调剂名额、轮次和复试资格线。"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-05-18T10:09:36",
+  "items": [
+    {
+      "source": "schoolData/publish/199exam_miniapp_school_publish_sc_cq.json",
+      "dest": "miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json",
+      "ok": true,
+      "changed": false,
+      "bytes": 618248
+    },
+    {
+      "source": "schoolData/publish/party_school_miniapp_publish.json",
+      "dest": "miniapp/src/data/party-school-miniapp-publish.json",
+      "ok": true,
+      "changed": false,
+      "bytes": 19238
+    },
+    {
+      "source": "studentCases/publish/student_cases_miniapp_publish.json",
+      "dest": "miniapp/src/data/student-cases-publish.json",
+      "ok": true,
+      "changed": false,
+      "bytes": 59791
+    },
+    {
+      "source": "courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json",
+      "dest": "miniapp/src/data/recommendation-strategies-publish.json",
+      "ok": true,
+      "changed": false,
+      "bytes": 12973
+    }
+  ]
+}

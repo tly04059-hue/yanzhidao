@@ -1,0 +1,585 @@
+[
+  {
+    "id": 1,
+    "name": "四川大学",
+    "short_name": "川大",
+    "location": "成都",
+    "region": "四川",
+    "category": "管综系",
+    "programs": [
+      {
+        "name": "MPA非全",
+        "degree": "双证",
+        "exam_required": true,
+        "enrollment_2026": 120,
+        "admission_rate": 0.60
+      }
+    ],
+    "tuition_min": 84000,
+    "tuition_max": 84000,
+    "duration": 3.0,
+    "schedule": "周末班",
+    "tags": ["985", "双一流", "公管学院"],
+    "复试线_2025": 180,
+    "择校推荐": "A-",
+    "website": "gs.scu.edu.cn",
+    "description": "985名校,川渝地区认可度最高,公管学院复试线189,适合追求名校的人",
+    
+    "match_weights": {
+      "age_25_28": 5,
+      "age_28_32": 10,
+      "age_32_35": 10,
+      "age_35_plus": 5,
+      
+      "budget_0_40k": 0,
+      "budget_40_70k": 2,
+      "budget_70_90k": 10,
+      "budget_90_160k": 8,
+      "budget_160k_plus": 5,
+      
+      "goal_promotion": 10,
+      "goal_selection": 10,
+      "goal_transfer": 8,
+      "goal_prestige": 10,
+      "goal_strong": 10,
+      "goal_weak": 5,
+      
+      "position_gov": 10,
+      "position_institution": 9,
+      "position_soe": 8,
+      "position_private": 6,
+      
+      "education_junior": 5,
+      "education_bachelor": 10,
+      "education_master": 8,
+      
+      "time_abundant": 8,
+      "time_limited": 10,
+      "time_tight": 5,
+      
+      "exam_willing": 10,
+      "exam_neutral": 5,
+      "exam_unwilling": 0,
+      
+      "difficulty_easy": 3,
+      "difficulty_medium": 7,
+      "difficulty_hard": 10,
+      
+      "location_local": 10,
+      "location_province": 7,
+      "location_neighbor": 5,
+      "location_remote": 3
+    }
+  },
+  
+  {
+    "id": 2,
+    "name": "电子科技大学",
+    "short_name": "电子科大",
+    "location": "成都",
+    "region": "四川",
+    "category": "管综系",
+    "programs": [
+      {
+        "name": "MPA非全",
+        "degree": "双证",
+        "exam_required": true,
+        "enrollment_2026": 100,
+        "admission_rate": 0.65
+      }
+    ],
+    "tuition_min": 84000,
+    "tuition_max": 84000,
+    "duration": 3.0,
+    "schedule": "周末班",
+    "tags": ["985", "双一流", "理工特色"],
+    "复试线_2025": 170,
+    "择校推荐": "A-",
+    "website": "gr.uestc.edu.cn",
+    "description": "985双一流,理工科背景强,复试线较川大低10分,性价比高",
+    
+    "match_weights": {
+      "age_25_28": 6,
+      "age_28_32": 10,
+      "age_32_35": 10,
+      "age_35_plus": 4,
+      
+      "budget_0_40k": 0,
+      "budget_40_70k": 2,
+      "budget_70_90k": 10,
+      "budget_90_160k": 8,
+      "budget_160k_plus": 5,
+      
+      "goal_promotion": 10,
+      "goal_selection": 10,
+      "goal_transfer": 9,
+      "goal_prestige": 9,
+      "goal_strong": 10,
+      "goal_weak": 6,
+      
+      "position_gov": 9,
+      "position_institution": 10,
+      "position_soe": 9,
+      "position_private": 7,
+      
+      "education_junior": 5,
+      "education_bachelor": 10,
+      "education_master": 8,
+      
+      "time_abundant": 8,
+      "time_limited": 10,
+      "time_tight": 5,
+      
+      "exam_willing": 10,
+      "exam_neutral": 5,
+      "exam_unwilling": 0,
+      
+      "difficulty_easy": 5,
+      "difficulty_medium": 10,
+      "difficulty_hard": 7,
+      
+      "location_local": 10,
+      "location_province": 7,
+      "location_neighbor": 5,
+      "location_remote": 3
+    }
+  },
+  
+  {
+    "id": 3,
+    "name": "西南财经大学",
+    "short_name": "西财",
+    "location": "成都",
+    "region": "四川",
+    "category": "管综系",
+    "programs": [
+      {
+        "name": "MPA非全",
+        "degree": "双证",
+        "exam_required": true,
+        "enrollment_2026": 150,
+        "admission_rate": 0.70
+      }
+    ],
+    "tuition_min": 84000,
+    "tuition_max": 84000,
+    "duration": 2.0,
+    "schedule": "全日制,周末班",
+    "tags": ["211", "双一流", "财经特色"],
+    "复试线_2025": 172,
+    "择校推荐": "A-",
+    "website": "gs.swufe.edu.cn",
+    "description": "财经类顶尖211,适合财政、金融相关岗位,学制2年",
+    
+    "match_weights": {
+      "age_25_28": 7,
+      "age_28_32": 10,
+      "age_32_35": 10,
+      "age_35_plus": 5,
+      
+      "budget_0_40k": 0,
+      "budget_40_70k": 2,
+      "budget_70_90k": 10,
+      "budget_90_160k": 8,
+      "budget_160k_plus": 5,
+      
+      "goal_promotion": 10,
+      "goal_selection": 9,
+      "goal_transfer": 10,
+      "goal_prestige": 8,
+      "goal_strong": 8,
+      "goal_weak": 6,
+      
+      "position_gov": 9,
+      "position_institution": 10,
+      "position_soe": 8,
+      "position_private": 9,
+      
+      "education_junior": 6,
+      "education_bachelor": 10,
+      "education_master": 8,
+      
+      "time_abundant": 8,
+      "time_limited": 10,
+      "time_tight": 6,
+      
+      "exam_willing": 10,
+      "exam_neutral": 6,
+      "exam_unwilling": 0,
+      
+      "difficulty_easy": 5,
+      "difficulty_medium": 10,
+      "difficulty_hard": 6,
+      
+      "location_local": 10,
+      "location_province": 7,
+      "location_neighbor": 5,
+      "location_remote": 3
+    }
+  },
+  
+  {
+    "id": 4,
+    "name": "四川农业大学",
+    "short_name": "川农",
+    "location": "成都",
+    "region": "四川",
+    "category": "管综系",
+    "programs": [
+      {
+        "name": "MPA非全",
+        "degree": "双证",
+        "exam_required": true,
+        "enrollment_2026": 120,
+        "admission_rate": 0.75
+      }
+    ],
+    "tuition_min": 69000,
+    "tuition_max": 69000,
+    "duration": 3.0,
+    "schedule": "周末班",
+    "tags": ["211", "性价比高", "好上岸"],
+    "复试线_2025": 164,
+    "择校推荐": "A",
+    "website": "yan.sicau.edu.cn",
+    "description": "211双一流,学费6.9万,复试线164,性价比之王,最适合'好上岸'的需求",
+    
+    "match_weights": {
+      "age_25_28": 7,
+      "age_28_32": 10,
+      "age_32_35": 10,
+      "age_35_plus": 6,
+      
+      "budget_0_40k": 0,
+      "budget_40_70k": 10,
+      "budget_70_90k": 7,
+      "budget_90_160k": 5,
+      "budget_160k_plus": 3,
+      
+      "goal_promotion": 10,
+      "goal_selection": 8,
+      "goal_transfer": 7,
+      "goal_prestige": 5,
+      "goal_strong": 3,
+      "goal_weak": 10,
+      
+      "position_gov": 10,
+      "position_institution": 10,
+      "position_soe": 8,
+      "position_private": 6,
+      
+      "education_junior": 6,
+      "education_bachelor": 10,
+      "education_master": 7,
+      
+      "time_abundant": 7,
+      "time_limited": 10,
+      "time_tight": 7,
+      
+      "exam_willing": 10,
+      "exam_neutral": 7,
+      "exam_unwilling": 0,
+      
+      "difficulty_easy": 10,
+      "difficulty_medium": 5,
+      "difficulty_hard": 0,
+      
+      "location_local": 10,
+      "location_province": 10,
+      "location_neighbor": 7,
+      "location_remote": 4
+    }
+  },
+  
+  {
+    "id": 5,
+    "name": "四川师范大学",
+    "short_name": "川师",
+    "location": "成都",
+    "region": "四川",
+    "category": "管综系",
+    "programs": [
+      {
+        "name": "MPA非全",
+        "degree": "双证",
+        "exam_required": true,
+        "enrollment_2026": 100,
+        "admission_rate": 0.72
+      }
+    ],
+    "tuition_min": 54000,
+    "tuition_max": 54000,
+    "duration": 3.0,
+    "schedule": "周末班",
+    "tags": ["省属重点", "教育特色", "性价比"],
+    "复试线_2025": 178,
+    "择校推荐": "A-",
+    "website": "gd.sicnu.edu.cn",
+    "description": "省属重点,学费5.4万,适合预算有限+追求性价比的人",
+    
+    "match_weights": {
+      "age_25_28": 6,
+      "age_28_32": 10,
+      "age_32_35": 10,
+      "age_35_plus": 7,
+      
+      "budget_0_40k": 0,
+      "budget_40_70k": 10,
+      "budget_70_90k": 6,
+      "budget_90_160k": 3,
+      "budget_160k_plus": 0,
+      
+      "goal_promotion": 9,
+      "goal_selection": 7,
+      "goal_transfer": 7,
+      "goal_prestige": 4,
+      "goal_strong": 2,
+      "goal_weak": 10,
+      
+      "position_gov": 8,
+      "position_institution": 10,
+      "position_soe": 6,
+      "position_private": 5,
+      
+      "education_junior": 7,
+      "education_bachelor": 10,
+      "education_master": 6,
+      
+      "time_abundant": 7,
+      "time_limited": 10,
+      "time_tight": 7,
+      
+      "exam_willing": 10,
+      "exam_neutral": 7,
+      "exam_unwilling": 0,
+      
+      "difficulty_easy": 7,
+      "difficulty_medium": 10,
+      "difficulty_hard": 3,
+      
+      "location_local": 10,
+      "location_province": 8,
+      "location_neighbor": 5,
+      "location_remote": 2
+    }
+  },
+  
+  {
+    "id": 6,
+    "name": "中共四川省委党校",
+    "short_name": "川党校",
+    "location": "成都",
+    "region": "四川",
+    "category": "党校系",
+    "programs": [
+      {
+        "name": "政治学在职研究生",
+        "degree": "单证",
+        "exam_required": false,
+        "enrollment_2026": 200,
+        "admission_rate": 0.90
+      }
+    ],
+    "tuition_min": 24000,
+    "tuition_max": 24000,
+    "duration": 2.0,
+    "schedule": "周末班",
+    "tags": ["免联考", "体制内", "性价比"],
+    "复试线_2025": 213,
+    "择校推荐": "B",
+    "website": "scswdx.cn",
+    "description": "免联考,学费2.4万,体制内认可,性价比最优,适合35+不想考试的公务员",
+    
+    "match_weights": {
+      "age_25_28": 3,
+      "age_28_32": 8,
+      "age_32_35": 10,
+      "age_35_plus": 10,
+      
+      "budget_0_40k": 10,
+      "budget_40_70k": 5,
+      "budget_70_90k": 2,
+      "budget_90_160k": 0,
+      "budget_160k_plus": 0,
+      
+      "goal_promotion": 10,
+      "goal_selection": 4,
+      "goal_transfer": 2,
+      "goal_prestige": 0,
+      "goal_strong": 0,
+      "goal_weak": 10,
+      
+      "position_gov": 10,
+      "position_institution": 8,
+      "position_soe": 5,
+      "position_private": 0,
+      
+      "education_junior": 10,
+      "education_bachelor": 10,
+      "education_master": 3,
+      
+      "time_abundant": 5,
+      "time_limited": 10,
+      "time_tight": 10,
+      
+      "exam_willing": 0,
+      "exam_neutral": 5,
+      "exam_unwilling": 10,
+      
+      "difficulty_easy": 10,
+      "difficulty_medium": 5,
+      "difficulty_hard": 0,
+      
+      "location_local": 10,
+      "location_province": 7,
+      "location_neighbor": 3,
+      "location_remote": 0
+    }
+  },
+  
+  {
+    "id": 7,
+    "name": "中共重庆市委党校",
+    "short_name": "渝党校",
+    "location": "重庆",
+    "region": "重庆",
+    "category": "党校系",
+    "programs": [
+      {
+        "name": "政治学在职研究生",
+        "degree": "单证",
+        "exam_required": false,
+        "enrollment_2026": 180,
+        "admission_rate": 0.85
+      }
+    ],
+    "tuition_min": 35000,
+    "tuition_max": 35000,
+    "duration": 2.0,
+    "schedule": "周末班",
+    "tags": ["免联考", "体制内", "重庆本地"],
+    "复试线_2025": 210,
+    "择校推荐": "B",
+    "website": "cqswdx.cn",
+    "description": "重庆本地党校,免联考,学费3.5万,体制内认可",
+    
+    "match_weights": {
+      "age_25_28": 3,
+      "age_28_32": 8,
+      "age_32_35": 10,
+      "age_35_plus": 10,
+      
+      "budget_0_40k": 10,
+      "budget_40_70k": 6,
+      "budget_70_90k": 2,
+      "budget_90_160k": 0,
+      "budget_160k_plus": 0,
+      
+      "goal_promotion": 10,
+      "goal_selection": 4,
+      "goal_transfer": 2,
+      "goal_prestige": 0,
+      "goal_strong": 0,
+      "goal_weak": 10,
+      
+      "position_gov": 10,
+      "position_institution": 8,
+      "position_soe": 5,
+      "position_private": 0,
+      
+      "education_junior": 10,
+      "education_bachelor": 10,
+      "education_master": 3,
+      
+      "time_abundant": 5,
+      "time_limited": 10,
+      "time_tight": 10,
+      
+      "exam_willing": 0,
+      "exam_neutral": 5,
+      "exam_unwilling": 10,
+      
+      "difficulty_easy": 10,
+      "difficulty_medium": 5,
+      "difficulty_hard": 0,
+      
+      "location_local": 10,
+      "location_province": 10,
+      "location_neighbor": 7,
+      "location_remote": 2
+    }
+  },
+  
+  {
+    "id": 8,
+    "name": "西南科技大学",
+    "short_name": "西南科大",
+    "location": "绵阳",
+    "region": "四川",
+    "category": "管综系",
+    "programs": [
+      {
+        "name": "MPA非全",
+        "degree": "双证",
+        "exam_required": true,
+        "enrollment_2026": 80,
+        "admission_rate": 0.73
+      }
+    ],
+    "tuition_min": 46000,
+    "tuition_max": 46000,
+    "duration": 3.0,
+    "schedule": "周末班",
+    "tags": ["省属重点", "性价比", "绵阳"],
+    "复试线_2025": 178,
+    "择校推荐": "A-",
+    "website": "gs.swust.edu.cn",
+    "description": "省属重点,学费4.6万,性价比高,适合绵阳及周边地区学员",
+    
+    "match_weights": {
+      "age_25_28": 6,
+      "age_28_32": 10,
+      "age_32_35": 10,
+      "age_35_plus": 7,
+      
+      "budget_0_40k": 0,
+      "budget_40_70k": 10,
+      "budget_70_90k": 5,
+      "budget_90_160k": 2,
+      "budget_160k_plus": 0,
+      
+      "goal_promotion": 9,
+      "goal_selection": 6,
+      "goal_transfer": 7,
+      "goal_prestige": 3,
+      "goal_strong": 2,
+      "goal_weak": 10,
+      
+      "position_gov": 9,
+      "position_institution": 10,
+      "position_soe": 9,
+      "position_private": 5,
+      
+      "education_junior": 6,
+      "education_bachelor": 10,
+      "education_master": 6,
+      
+      "time_abundant": 7,
+      "time_limited": 10,
+      "time_tight": 7,
+      
+      "exam_willing": 10,
+      "exam_neutral": 7,
+      "exam_unwilling": 0,
+      
+      "difficulty_easy": 7,
+      "difficulty_medium": 10,
+      "difficulty_hard": 2,
+      
+      "location_local": 10,
+      "location_province": 10,
+      "location_neighbor": 6,
+      "location_remote": 2
+    }
+  }
+]

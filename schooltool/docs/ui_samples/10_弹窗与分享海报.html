@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>选校工具 · 留资弹窗 + 分享海报</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-base: #F5EFE7; --bg-card: #FFFFFF; --bg-soft: #F0E9DD;
+  --text-1: #2A251E; --text-2: #6B6258; --text-3: #8A8175;
+  --accent: #CF7140; --accent-soft: #F1E0D3;
+  --success: #5F8C6E; --success-soft: #DAE5DC;
+  --divider: #E8E1D5; --border: #ECE5D8;
+  --serif: "Noto Serif SC", serif; --sans: "Noto Sans SC", sans-serif;
+  --shadow-cta: 0 6px 20px rgba(207,113,64,0.22);
+}
+body { background: #1a1a1a; padding: 56px 32px 96px; color: #e8e6e3; font-family: var(--sans); }
+
+.h { max-width: 1700px; margin: 0 auto 36px; padding: 0 16px; }
+.h h1 { font-family: var(--serif); font-weight: 600; font-size: 28px; margin-bottom: 10px; }
+.h .meta { font-size: 13px; color: #999; line-height: 1.8; }
+.h strong { color: var(--accent); }
+
+.stage { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1700px; margin: 0 auto; }
+.frame { background: #2a2a2a; border-radius: 6px; overflow: hidden; }
+.frame-head { padding: 18px 24px; border-bottom: 1px solid #404040; }
+.frame-head h2 { font-family: var(--serif); font-weight: 600; font-size: 18px; color: #fff; margin-bottom: 4px; }
+.frame-head .tag { font-size: 11px; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; }
+.frame-head .desc { font-size: 12px; color: #999; margin-top: 6px; line-height: 1.6; }
+.frame-body { padding: 30px; background: #141414; display: flex; align-items: center; justify-content: center; min-height: 1200px; }
+
+/* ① 留资弹窗 · 模拟在小程序页面之上 */
+.modal-stage {
+  width: 750px; height: 1100px;
+  background: rgba(0, 0, 0, 0.55);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.modal {
+  width: 100%;
+  background: var(--bg-card);
+  border-radius: 32px 32px 0 0;
+  padding: 32px 36px 44px;
+  position: relative;
+}
+.modal-handle { width: 80px; height: 5px; background: var(--divider); border-radius: 999px; margin: 0 auto 24px; }
+.modal-close { position: absolute; top: 24px; right: 24px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-weight: 400; font-size: 28px; color: var(--text-3); }
+.modal-head { text-align: center; margin-bottom: 32px; }
+.modal-icon { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 32px; color: var(--accent); margin: 0 auto 18px; }
+.modal-title { font-family: var(--serif); font-weight: 600; font-size: 32px; line-height: 1.4; margin-bottom: 10px; }
+.modal-title .accent { color: var(--accent); }
+.modal-sub { font-family: var(--sans); font-size: 18px; line-height: 1.65; color: var(--text-2); }
+
+.modal-input { padding: 18px 22px; background: var(--bg-base); border-radius: 14px; margin-bottom: 14px; }
+.modal-input .label { font-family: var(--sans); font-size: 14px; color: var(--text-3); letter-spacing: 0.06em; margin-bottom: 6px; }
+.modal-input input, .modal-input .ph { font-family: var(--sans); font-size: 19px; color: var(--text-3); border: none; outline: none; background: transparent; width: 100%; }
+.modal-input input:focus, .modal-input.active .ph { color: var(--text-1); }
+.modal-checkbox { display: flex; align-items: center; gap: 10px; margin: 20px 0 22px; }
+.cb-box { width: 22px; height: 22px; border: 1.5px solid var(--accent); border-radius: 6px; flex-shrink: 0; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: 700; }
+.cb-label { font-family: var(--sans); font-size: 15px; color: var(--text-2); line-height: 1.5; }
+.cb-label a { color: var(--accent); text-decoration: underline; }
+.modal-cta {
+  width: 100%; height: 80px;
+  background: var(--accent); color: white; border: none;
+  border-radius: 999px;
+  box-shadow: var(--shadow-cta);
+  font-family: var(--sans); font-weight: 700;
+  font-size: 22px; letter-spacing: 0.1em;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.modal-foot { text-align: center; }
+.modal-foot .privacy { font-family: var(--sans); font-size: 14px; color: var(--text-3); display: flex; align-items: center; justify-content: center; gap: 8px; }
+.modal-foot svg { width: 14px; height: 14px; stroke: var(--text-3); stroke-width: 2; fill: none; }
+
+/* ② 分享海报 · 1080×1620 · 缩放 0.45 */
+.poster-stage { width: 486px; height: 730px; }
+.poster {
+  width: 1080px; height: 1620px;
+  background: var(--bg-base);
+  color: var(--text-1);
+  padding: 80px 80px;
+  transform: scale(0.45);
+  transform-origin: top left;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--sans);
+  display: flex;
+  flex-direction: column;
+}
+.poster::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(207,113,64,0.10), transparent 70%);
+  pointer-events: none;
+}
+.poster > * { position: relative; z-index: 1; }
+
+.p-mast { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 20px; border-bottom: 1.5px solid var(--text-1); margin-bottom: 48px; }
+.p-mast-l { display: flex; gap: 16px; align-items: flex-start; }
+.p-mast-sq { width: 14px; height: 14px; background: var(--accent); margin-top: 8px; }
+.p-mast-name { font-family: var(--serif); font-weight: 600; font-size: 28px; letter-spacing: 0.32em; }
+.p-mast-sub { font-family: var(--serif); font-size: 16px; color: var(--text-2); margin-top: 6px; letter-spacing: 0.18em; }
+.p-mast-r { font-family: var(--serif); font-size: 16px; color: var(--text-3); letter-spacing: 0.18em; }
+
+.p-kicker { text-align: center; font-family: var(--sans); font-weight: 500; font-size: 24px; color: var(--accent); letter-spacing: 0.32em; text-transform: uppercase; margin-bottom: 32px; }
+
+.p-result-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 0.5px solid var(--border);
+  padding: 56px 56px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(60,50,40,0.06);
+  margin-bottom: 40px;
+}
+.p-result-icon { width: 100px; height: 100px; border-radius: 50%; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 600; font-size: 42px; color: var(--accent); margin: 0 auto 28px; }
+.p-result-tag { display: inline-block; font-family: var(--sans); font-weight: 500; font-size: 22px; color: var(--accent); background: var(--accent-soft); padding: 6px 22px; border-radius: 999px; letter-spacing: 0.16em; margin-bottom: 24px; }
+.p-result-title { font-family: var(--serif); font-weight: 600; font-size: 56px; line-height: 1.3; margin-bottom: 18px; letter-spacing: 0.01em; }
+.p-result-sub { font-family: var(--sans); font-size: 22px; line-height: 1.75; color: var(--text-2); }
+
+.p-stats {
+  background: var(--bg-card);
+  border-radius: 20px;
+  border: 0.5px solid var(--border);
+  padding: 32px 28px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.p-stat { text-align: center; }
+.p-stat .v { font-family: var(--serif); font-weight: 600; font-size: 40px; color: var(--text-1); line-height: 1; }
+.p-stat .v.green { color: var(--success); }
+.p-stat .v.warm { color: var(--accent); }
+.p-stat .l { font-family: var(--sans); font-size: 16px; color: var(--text-3); margin-top: 8px; letter-spacing: 0.06em; }
+
+/* QR */
+.p-qr-row { display: flex; align-items: center; gap: 28px; padding: 32px; background: var(--bg-card); border-radius: 20px; border: 0.5px solid var(--border); margin-top: auto; margin-bottom: 36px; }
+.p-qr { width: 140px; height: 140px; background: white; border: 1.5px solid var(--text-1); display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 14px; color: var(--text-3); }
+.p-qr-info .lbl { font-family: var(--sans); font-weight: 500; font-size: 22px; color: var(--accent); letter-spacing: 0.18em; margin-bottom: 8px; }
+.p-qr-info .text { font-family: var(--serif); font-weight: 600; font-size: 28px; line-height: 1.4; }
+
+.p-foot { padding-top: 18px; border-top: 1.5px solid var(--text-1); display: flex; justify-content: space-between; font-family: var(--serif); font-weight: 600; font-size: 20px; letter-spacing: 0.32em; }
+.p-foot .r { font-weight: 400; color: var(--text-3); letter-spacing: 0.12em; }
+</style>
+</head>
+<body>
+
+<div class="h">
+  <h1>组件 · 留资弹窗 + 分享海报</h1>
+  <div class="meta">
+    V1 MVP 两个核心组件:<strong>留资弹窗</strong>(结果页 / 资料领取触发)+ <strong>分享海报</strong>(结果页生成,1080×1620 9:13.5)
+  </div>
+</div>
+
+<div class="stage">
+
+  <!-- ① 留资弹窗 -->
+  <div class="frame">
+    <div class="frame-head">
+      <h2>① 留资弹窗</h2>
+      <div class="tag">Modal · 底部弹起</div>
+      <div class="desc">触发时机:点"领取备考资料"/"联系顾问" · 半透明遮罩 + 圆角顶部弹层</div>
+    </div>
+    <div class="frame-body">
+      <div class="modal-stage">
+        <div class="modal">
+          <div class="modal-handle"></div>
+          <div class="modal-close">×</div>
+          <div class="modal-head">
+            <div class="modal-icon">↓</div>
+            <h2 class="modal-title">领取你的<br><span class="accent">专属备考资料</span></h2>
+            <p class="modal-sub">3 天内顾问 1v1 推送匹配资料</p>
+          </div>
+          <div class="modal-input active">
+            <div class="label">手机号</div>
+            <div class="ph">138 0000 0000</div>
+          </div>
+          <div class="modal-input">
+            <div class="label">微信号(选填,方便顾问联系)</div>
+            <div class="ph">微信号 / 备注昵称</div>
+          </div>
+          <div class="modal-checkbox">
+            <div class="cb-box">✓</div>
+            <div class="cb-label">我同意<a href="#">《信息收集说明》</a>,信息仅用于本次咨询</div>
+          </div>
+          <button class="modal-cta">
+            <span>领取资料</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round"/></svg>
+          </button>
+          <div class="modal-foot">
+            <div class="privacy">
+              <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+              <span>严格保密 · 不向第三方共享</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② 分享海报 -->
+  <div class="frame">
+    <div class="frame-head">
+      <h2>② 分享海报</h2>
+      <div class="tag">Poster · 1080×1620</div>
+      <div class="desc">结果页生成 · 朋友圈/微信群分享 · 含个性化结果 + 数据 + QR 码</div>
+    </div>
+    <div class="frame-body">
+      <div class="poster-stage">
+        <div class="poster">
+          <header class="p-mast">
+            <div class="p-mast-l">
+              <div class="p-mast-sq"></div>
+              <div>
+                <div class="p-mast-name">研 知 道</div>
+                <div class="p-mast-sub">川渝在职考研</div>
+              </div>
+            </div>
+            <div class="p-mast-r">测评结果 · 042</div>
+          </header>
+
+          <div class="p-kicker">我的考研决策方案</div>
+
+          <div class="p-result-card">
+            <div class="p-result-icon">★</div>
+            <span class="p-result-tag">基于 8 题诊断</span>
+            <h1 class="p-result-title">推荐路径:<br>非全日制 MPA</h1>
+            <p class="p-result-sub">兼顾体制内工作与<br>学历提升的最佳平衡点</p>
+          </div>
+
+          <div class="p-stats">
+            <div class="p-stat"><div class="v warm">中等</div><div class="l">综合投入</div></div>
+            <div class="p-stat"><div class="v green">较高</div><div class="l">职业收益</div></div>
+            <div class="p-stat"><div class="v">92%</div><div class="l">匹配度</div></div>
+          </div>
+
+          <div class="p-qr-row">
+            <div class="p-qr">[ QR 码 ]</div>
+            <div class="p-qr-info">
+              <div class="lbl">扫码也测一测</div>
+              <div class="text">3 分钟看见<br>适合你的路径</div>
+            </div>
+          </div>
+
+          <div class="p-foot">
+            <div>不骗人 · 真服务</div>
+            <div class="r">研知道·川渝</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
