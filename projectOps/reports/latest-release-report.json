@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-15T14:19:06",
-  "target": "h5",
+  "generated_at": "2026-05-29T13:59:14",
+  "target": "mp-weixin",
   "ok": true,
   "results": [
     {
@@ -18,7 +18,7 @@
         "projectOps/scripts/sync-miniapp-data.py"
       ],
       "returncode": 0,
-      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-sync-report.json\",\n  \"items\": [\n    {\n      \"source\": \"schoolData/publish/199exam_miniapp_school_publish_sc_cq.json\",\n      \"dest\": \"miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 618248\n    },\n    {\n      \"source\": \"studentCases/publish/student_cases_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/student-cases-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 59791\n    },\n    {\n      \"source\": \"courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/recommendation-strategies-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 9622\n    }\n  ]\n}\n",
+      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-sync-report.json\",\n  \"items\": [\n    {\n      \"source\": \"schoolData/publish/199exam_miniapp_school_publish_sc_cq.json\",\n      \"dest\": \"miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 618248\n    },\n    {\n      \"source\": \"schoolData/publish/party_school_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/party-school-miniapp-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 19238\n    },\n    {\n      \"source\": \"studentCases/publish/student_cases_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/student-cases-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 76896\n    },\n    {\n      \"source\": \"courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json\",\n      \"dest\": \"miniapp/src/data/recommendation-strategies-publish.json\",\n      \"ok\": true,\n      \"changed\": false,\n      \"bytes\": 12973\n    }\n  ]\n}\n",
       "stderr_tail": ""
     },
     {
@@ -35,10 +35,10 @@
         "python3",
         "projectOps/scripts/build-miniapp.py",
         "--target",
-        "h5"
+        "mp-weixin"
       ],
       "returncode": 0,
-      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-build-report.json\",\n  \"target\": \"h5\"\n}\n",
+      "stdout_tail": "{\n  \"ok\": true,\n  \"report\": \"projectOps/reports/latest-build-report.json\",\n  \"target\": \"mp-weixin\"\n}\n",
       "stderr_tail": ""
     }
   ]

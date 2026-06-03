@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset": "party_school_miniapp_publish",
-    "generated_at": "2026-05-18",
+    "generated_at": "2026-05-29",
     "source_dataset": "schoolData/standardized/party/party_school_l1_v2.json",
     "record_count": 8,
     "school_count": 2,

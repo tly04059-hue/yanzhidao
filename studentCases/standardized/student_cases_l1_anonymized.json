@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset": "student_cases_l1_anonymized",
-    "generated_at": "2026-05-18",
+    "generated_at": "2026-05-29",
     "source_files": [
       "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx",
       "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx"
@@ -53,6 +53,15 @@
         "weekly": "44.5h/周",
         "daily": "5.7h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "公安系统",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -62,7 +71,10 @@
         "时间充足",
         "首次备考",
         "体制内",
-        "学历提升"
+        "学历提升",
+        "党政机关",
+        "公安系统",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -115,6 +127,15 @@
         "weekly": "29.5h/周",
         "daily": "3.6h/天"
       },
+      "persona": {
+        "system_tag": "银行金融",
+        "position_tag": "金融监管",
+        "goal_tag": [
+          "晋升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -122,7 +143,11 @@
         "数学中下",
         "英语待提升",
         "时间充足",
-        "首次备考"
+        "首次备考",
+        "银行金融",
+        "金融监管",
+        "晋升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -175,6 +200,15 @@
         "weekly": "20h/周",
         "daily": "2.8h/天"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "监管服务",
+        "goal_tag": [
+          "晋升",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -184,7 +218,9 @@
         "时间适中",
         "首次备考",
         "晋升",
-        "学历提升"
+        "学历提升",
+        "其他",
+        "监管服务"
       ],
       "privacy": {
         "anonymized": true,
@@ -237,6 +273,15 @@
         "weekly": "21.5h/周",
         "daily": "2.5h/天"
       },
+      "persona": {
+        "system_tag": "乡镇街道",
+        "position_tag": "街道办",
+        "goal_tag": [
+          "遴选",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -247,7 +292,9 @@
         "非首次备考",
         "遴选",
         "体制内",
-        "学历提升"
+        "学历提升",
+        "乡镇街道",
+        "街道办"
       ],
       "privacy": {
         "anonymized": true,
@@ -300,6 +347,14 @@
         "weekly": "33.5h/周",
         "daily": "4.2h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "管理岗",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -309,7 +364,9 @@
         "时间充足",
         "首次备考",
         "体制内",
-        "学历提升"
+        "学历提升",
+        "党政机关",
+        "管理岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -362,6 +419,14 @@
         "weekly": "22h/周",
         "daily": "2.5h/天"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -370,7 +435,8 @@
         "英语待提升",
         "时间适中",
         "非首次备考",
-        "学历提升"
+        "学历提升",
+        "其他"
       ],
       "privacy": {
         "anonymized": true,
@@ -423,6 +489,14 @@
         "weekly": "18.5h/周",
         "daily": "2.0h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "晋升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -432,7 +506,9 @@
         "时间适中",
         "首次备考",
         "晋升",
-        "体制内"
+        "体制内",
+        "党政机关",
+        "综合岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -485,6 +561,14 @@
         "weekly": "36.5h/周",
         "daily": "4.6h/天"
       },
+      "persona": {
+        "system_tag": "教育系统",
+        "position_tag": "教师",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -493,7 +577,9 @@
         "英语有基础",
         "时间充足",
         "首次备考",
-        "学历提升"
+        "学历提升",
+        "教育系统",
+        "教师"
       ],
       "privacy": {
         "anonymized": true,
@@ -546,6 +632,14 @@
         "weekly": "29.5h/周",
         "daily": "3.6h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "待确认"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -554,7 +648,9 @@
         "英语待提升",
         "时间充足",
         "首次备考",
-        "体制内"
+        "体制内",
+        "党政机关",
+        "综合岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -607,6 +703,14 @@
         "weekly": "36.5h/周",
         "daily": "4.6h/天"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "宣传部",
+        "goal_tag": [
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -615,7 +719,9 @@
         "英语待提升",
         "时间充足",
         "首次备考",
-        "自我提升"
+        "自我提升",
+        "其他",
+        "宣传部"
       ],
       "privacy": {
         "anonymized": true,
@@ -668,6 +774,14 @@
         "weekly": "36h/周",
         "daily": "4.5h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "管理岗",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -677,7 +791,9 @@
         "时间充足",
         "首次备考",
         "体制内",
-        "学历提升"
+        "学历提升",
+        "党政机关",
+        "管理岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -730,6 +846,15 @@
         "weekly": "30h/周",
         "daily": "3.7h/天"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "晋升",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -740,7 +865,9 @@
         "首次备考管综",
         "晋升",
         "国企",
-        "学历提升"
+        "学历提升",
+        "国企央企",
+        "业务岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -793,6 +920,14 @@
         "weekly": "27h/周",
         "daily": "3.3h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "待确认"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -801,7 +936,9 @@
         "英语有基础",
         "时间充足",
         "非首次备考",
-        "体制内"
+        "体制内",
+        "党政机关",
+        "综合岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -854,6 +991,14 @@
         "weekly": "20.5h/周",
         "daily": "2.3h/天"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -863,7 +1008,9 @@
         "时间适中",
         "首次备考",
         "国企",
-        "学历提升"
+        "学历提升",
+        "国企央企",
+        "业务岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -916,6 +1063,15 @@
         "weekly": "39.5h/周",
         "daily": "5.0h/天"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "遴选",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MPA",
@@ -926,7 +1082,9 @@
         "首次备考",
         "遴选",
         "体制内",
-        "学历提升"
+        "学历提升",
+        "党政机关",
+        "综合岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -979,6 +1137,14 @@
         "weekly": "22.5h/周",
         "daily": "2.6h/天"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MBA",
@@ -988,7 +1154,9 @@
         "时间适中",
         "首次备考",
         "国企",
-        "学历提升"
+        "学历提升",
+        "国企央企",
+        "业务岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -1041,6 +1209,14 @@
         "weekly": "31.5h/周",
         "daily": "3.9h/天"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "管理岗",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MBA",
@@ -1049,7 +1225,9 @@
         "英语有基础",
         "时间充足",
         "非首次备考(2012年首次参考)",
-        "学历提升"
+        "学历提升",
+        "其他",
+        "管理岗"
       ],
       "privacy": {
         "anonymized": true,
@@ -1102,6 +1280,14 @@
         "weekly": "42h/周",
         "daily": "5.4h/天"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "财政发改",
+        "goal_tag": [
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "管综系",
         "MBA",
@@ -1110,7 +1296,9 @@
         "英语待提升",
         "时间充足",
         "非首次备考",
-        "学历提升"
+        "学历提升",
+        "其他",
+        "财政发改"
       ],
       "privacy": {
         "anonymized": true,
@@ -1152,6 +1340,15 @@
         "minority_bonus": null,
         "total_study_duration": "4099"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1159,7 +1356,11 @@
         "本科",
         "法学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1204,6 +1405,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "659"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1211,7 +1421,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1256,6 +1470,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "3615"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1263,7 +1486,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1308,6 +1535,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4337"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1315,7 +1551,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "业务岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1346,7 +1586,7 @@
         "graduation_time": "200706",
         "graduated_school": "攀枝花学院",
         "undergraduate_major": "工商管理",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-04-18"
       },
       "target": {
@@ -1360,6 +1600,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3819"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "管理岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1367,7 +1616,11 @@
         "本科",
         "经济学",
         "未录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "管理岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1412,6 +1665,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "2785"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1419,7 +1681,10 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1464,6 +1729,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "2541"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "交通运输",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1471,7 +1745,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "交通运输",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1516,6 +1794,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4608"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1523,7 +1810,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1568,6 +1859,15 @@
         "minority_bonus": null,
         "total_study_duration": "2819"
       },
+      "persona": {
+        "system_tag": "医疗系统",
+        "position_tag": "医护",
+        "goal_tag": [
+          "职称",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1575,7 +1875,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "医疗系统",
+        "医护",
+        "职称",
+        "学历提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1620,6 +1924,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4482"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1627,7 +1940,10 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1672,6 +1988,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "5709"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1679,7 +2004,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1710,7 +2039,7 @@
         "graduation_time": "201807",
         "graduated_school": "重庆大学",
         "undergraduate_major": "土木工程",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-04-16"
       },
       "target": {
@@ -1724,6 +2053,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3157"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "财政发改",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1731,7 +2069,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "财政发改",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1776,6 +2118,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "1895"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1783,7 +2134,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1828,6 +2183,15 @@
         "minority_bonus": null,
         "total_study_duration": "2319"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1835,7 +2199,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -1880,6 +2248,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "5911"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1887,7 +2264,10 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1932,6 +2312,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "5911"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1939,7 +2328,10 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -1984,6 +2376,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3317"
       },
+      "persona": {
+        "system_tag": "乡镇街道",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -1991,7 +2392,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "乡镇街道",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2036,6 +2441,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "2396"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2043,7 +2457,10 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2088,6 +2505,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3905"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2095,7 +2521,10 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2140,6 +2569,15 @@
         "minority_bonus": null,
         "total_study_duration": "3416"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2147,7 +2585,10 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2178,7 +2619,7 @@
         "graduation_time": "201606",
         "graduated_school": "南通大学",
         "undergraduate_major": "本科",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-03-24"
       },
       "target": {
@@ -2192,6 +2633,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4547"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2199,7 +2649,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "业务岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2244,6 +2698,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "3422"
       },
+      "persona": {
+        "system_tag": "公检法纪检",
+        "position_tag": "法院检察院",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2251,7 +2714,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "公检法纪检",
+        "法院检察院",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2296,6 +2763,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "5301"
       },
+      "persona": {
+        "system_tag": "公检法纪检",
+        "position_tag": "法院检察院",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2303,7 +2779,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "公检法纪检",
+        "法院检察院",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2348,6 +2828,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "2091"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "宣传部",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2355,7 +2844,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "宣传部",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2400,6 +2893,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "2931"
       },
+      "persona": {
+        "system_tag": "乡镇街道",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2407,7 +2909,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "乡镇街道",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2452,6 +2958,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3283"
       },
+      "persona": {
+        "system_tag": "公检法纪检",
+        "position_tag": "纪委监委",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2459,7 +2974,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "公检法纪检",
+        "纪委监委",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2504,6 +3023,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "2091"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2511,7 +3039,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2556,6 +3088,15 @@
         "minority_bonus": null,
         "total_study_duration": "5416"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "管理岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2563,7 +3104,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "管理岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2608,6 +3153,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "5495"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2615,7 +3169,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2660,6 +3218,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "3120"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "宣传部",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2667,7 +3234,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "宣传部",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2712,6 +3283,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4846"
       },
+      "persona": {
+        "system_tag": "银行金融",
+        "position_tag": "金融监管",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2719,7 +3299,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "银行金融",
+        "金融监管",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2764,6 +3348,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "9334"
       },
+      "persona": {
+        "system_tag": "教育系统",
+        "position_tag": "技术岗",
+        "goal_tag": [
+          "职称",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2771,7 +3364,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "教育系统",
+        "技术岗",
+        "职称",
+        "学历提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2816,6 +3413,15 @@
         "minority_bonus": null,
         "total_study_duration": "3769"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2823,7 +3429,10 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2868,6 +3477,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "1346"
       },
+      "persona": {
+        "system_tag": "银行金融",
+        "position_tag": "金融监管",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2875,7 +3493,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "银行金融",
+        "金融监管",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -2920,6 +3542,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "5016"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2927,7 +3558,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -2972,6 +3607,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "1236"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "应急管理",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -2979,7 +3623,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "应急管理",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3010,7 +3658,7 @@
         "graduation_time": "201206",
         "graduated_school": "湖南工业大学",
         "undergraduate_major": "土木工程",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-03-31"
       },
       "target": {
@@ -3024,6 +3672,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "1084"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3031,7 +3688,11 @@
         "本科",
         "经济学",
         "未录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "业务岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3076,6 +3737,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "4168"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3083,7 +3753,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3128,6 +3802,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4643"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3135,7 +3818,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3180,6 +3867,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4094"
       },
+      "persona": {
+        "system_tag": "乡镇街道",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3187,7 +3883,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "乡镇街道",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3232,6 +3932,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "1562"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3239,7 +3948,10 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3284,6 +3996,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "5744"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3291,7 +4012,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3336,6 +4061,15 @@
         "minority_bonus": null,
         "total_study_duration": "5169"
       },
+      "persona": {
+        "system_tag": "教育系统",
+        "position_tag": "教育局机关",
+        "goal_tag": [
+          "职称",
+          "学历提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3343,7 +4077,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "教育系统",
+        "教育局机关",
+        "职称",
+        "学历提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3374,7 +4112,7 @@
         "graduation_time": "201901",
         "graduated_school": "西南财经大学",
         "undergraduate_major": "会计学",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-03-21"
       },
       "target": {
@@ -3388,6 +4126,15 @@
         "minority_bonus": null,
         "total_study_duration": "4333"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "技术岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3395,7 +4142,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "技术岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3440,6 +4191,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3166"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3447,7 +4207,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3492,6 +4256,15 @@
         "minority_bonus": null,
         "total_study_duration": "3734"
       },
+      "persona": {
+        "system_tag": "公检法纪检",
+        "position_tag": "法院检察院",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3499,7 +4272,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "公检法纪检",
+        "法院检察院",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3544,6 +4321,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "3553"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3551,7 +4337,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3596,6 +4386,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "1908"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "其他",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3603,7 +4402,10 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3648,6 +4450,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "3990"
       },
+      "persona": {
+        "system_tag": "公检法纪检",
+        "position_tag": "公安系统",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3655,7 +4466,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "公检法纪检",
+        "公安系统",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3700,6 +4515,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "4774"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "财政发改",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3707,7 +4531,11 @@
         "本科",
         "经济学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "财政发改",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3738,7 +4566,7 @@
         "graduation_time": "202207",
         "graduated_school": "国家开放大学",
         "undergraduate_major": "法学",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-03-31"
       },
       "target": {
@@ -3752,6 +4580,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "1196"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3759,7 +4596,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "业务岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3804,6 +4645,15 @@
         "minority_bonus": null,
         "total_study_duration": "4986"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3811,7 +4661,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3856,6 +4710,15 @@
         "minority_bonus": null,
         "total_study_duration": "4740"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3863,7 +4726,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -3908,6 +4775,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "3553"
       },
+      "persona": {
+        "system_tag": "其他",
+        "position_tag": "应急管理",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3915,7 +4791,11 @@
         "本科",
         "政治学",
         "已录取",
-        "已参考"
+        "已参考",
+        "其他",
+        "应急管理",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,
@@ -3960,6 +4840,15 @@
         "minority_bonus": 15.0,
         "total_study_duration": "2012"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "社区村镇管理",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -3967,7 +4856,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "社区村镇管理",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -4012,6 +4905,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "1117"
       },
+      "persona": {
+        "system_tag": "党政机关",
+        "position_tag": "综合岗",
+        "goal_tag": [
+          "学历提升",
+          "防御"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -4019,7 +4921,11 @@
         "本科",
         "政治学",
         "未录取",
-        "已参考"
+        "已参考",
+        "党政机关",
+        "综合岗",
+        "学历提升",
+        "防御"
       ],
       "privacy": {
         "anonymized": true,
@@ -4050,7 +4956,7 @@
         "graduation_time": "201612",
         "graduated_school": "电子科技大学",
         "undergraduate_major": "本科",
-        "work_unit_type": "单位类型待确认",
+        "work_unit_type": "国企/企业",
         "enrollment_date": "2025-04-25"
       },
       "target": {
@@ -4064,6 +4970,15 @@
         "minority_bonus": 0.0,
         "total_study_duration": "2632"
       },
+      "persona": {
+        "system_tag": "国企央企",
+        "position_tag": "业务岗",
+        "goal_tag": [
+          "学历提升",
+          "自我提升"
+        ],
+        "party_member_tag": "待确认"
+      },
       "tags": [
         "党校系",
         "四川党校",
@@ -4071,7 +4986,11 @@
         "本科",
         "经济学",
         "未录取",
-        "已参考"
+        "已参考",
+        "国企央企",
+        "业务岗",
+        "学历提升",
+        "自我提升"
       ],
       "privacy": {
         "anonymized": true,

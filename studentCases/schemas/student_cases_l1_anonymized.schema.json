@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Student Cases L1 Anonymized",
+  "description": "学生案例库 L1 匿名标准化层。保留匿名画像、原始目标信息、基础信息和用于同行匹配的结构化 persona 字段。",
+  "type": "object",
+  "required": ["metadata", "records"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["dataset", "generated_at", "source_files", "record_count", "privacy_note"],
+      "properties": {
+        "dataset": { "type": "string" },
+        "generated_at": { "type": "string" },
+        "source_files": { "type": "array", "items": { "type": "string" } },
+        "record_count": { "type": "number" },
+        "privacy_note": { "type": "string" }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "system",
+          "program_type",
+          "profile",
+          "persona",
+          "tags",
+          "privacy"
+        ],
+        "properties": {
+          "case_id": { "type": "string" },
+          "source_file": { "type": "string" },
+          "source_row_number": { "type": "number" },
+          "display_alias": { "type": "string" },
+          "system": { "type": "string" },
+          "program_type": { "type": "string" },
+          "party_school": { "type": "string" },
+          "admission_status": { "type": "string" },
+          "exam_status": { "type": "string" },
+          "profile": { "type": "object" },
+          "target": { "type": "object" },
+          "baseline": { "type": "object" },
+          "goals": { "type": "object" },
+          "study_time": { "type": "object" },
+          "result": { "type": "object" },
+          "persona": {
+            "type": "object",
+            "required": ["system_tag", "position_tag", "goal_tag", "party_member_tag"],
+            "properties": {
+              "system_tag": { "type": "string" },
+              "position_tag": { "type": "string" },
+              "goal_tag": { "type": "array", "items": { "type": "string" } },
+              "party_member_tag": { "type": "string" }
+            }
+          },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "privacy": { "type": "object" }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

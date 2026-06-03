@@ -10,6 +10,7 @@
 import l2PublishData from './199exam-miniapp-school-publish-sc-cq.json'
 import partySchoolPublishData from './party-school-miniapp-publish.json'
 import schoolDataRaw from './schooldata-data.json'
+import memDataRaw from './mem.json'
 
 interface L2PublishRecord {
   id: string
@@ -35,6 +36,7 @@ interface L2PublishRecord {
   class_time?: string
   class_location?: string
   exam_subjects?: string
+  total_score?: number
   latest_score?: string
   score_year?: number | string
   adjustment?: string
@@ -78,6 +80,9 @@ export interface SchoolListItem {
   matchScore?: number
   latestScore?: string
   programCount?: number
+  tuitionValue?: number | null
+  scoreValue?: number | null
+  durationValue?: number | null
 }
 
 // 学校详情
@@ -159,6 +164,7 @@ const schoolLogoMap = (() => {
     Object.values(node).forEach(walk)
   }
   walk(schoolDataRaw as any)
+  walk(memDataRaw as any)
   return map
 })()
 
@@ -191,8 +197,8 @@ const formatTuition = (min?: number | null, max?: number | null): string => {
 }
 
 const formatDuration = (value?: number | string | null): string => {
-  if (typeof value === 'number') return `${value}年`
-  if (typeof value === 'string' && value.trim()) return value.includes('年') ? value : `${value}年`
+  if (typeof value === 'number') return `${value} 年`
+  if (typeof value === 'string' && value.trim()) return value.includes('年') ? value.replace(/(\d)(年)/, '$1 $2') : `${value} 年`
   return '待定'
 }
 
@@ -304,6 +310,9 @@ const calculateMatchScore = (records: L2PublishRecord[]): number => {
 
 const transformListGroup = (records: L2PublishRecord[]): SchoolListItem => {
   const first = pickRepresentative(records)
+  const tuitionValue = typeof first.tuition_min === 'number' ? first.tuition_min / 10000 : null
+  const scoreValue = numberValue(first.total_score || first.latest_score || null)
+  const durationValue = numberValue(first.duration)
   return {
     id: groupId(first),
     code: first.school_id,
@@ -320,8 +329,11 @@ const transformListGroup = (records: L2PublishRecord[]): SchoolListItem => {
     hasInterview: buildTags(records).includes('提前面试'),
     logoUrl: resolveSchoolLogo(first),
     matchScore: calculateMatchScore(records),
-    latestScore: first.latest_score || '',
-    programCount: records.length
+    latestScore: first.total_score ? String(first.total_score) : (first.latest_score?.split('/')[0] || ''),
+    programCount: records.length,
+    tuitionValue,
+    scoreValue,
+    durationValue
   }
 }
 
@@ -388,12 +400,148 @@ const transformDetailGroup = (records: L2PublishRecord[]): SchoolDetail => {
 }
 
 export const getAllSchools = (): SchoolListItem[] => {
-  return groupRecords().map(transformListGroup)
+  return groupRecords().map(transformListGroup).filter(s => s.type !== '党校')
 }
 
 export const getSchoolsByType = (type: string): SchoolListItem[] => {
   return getAllSchools().filter(school => school.type === type)
 }
+
+export interface PartyDirection {
+  id: string
+  province: string
+  major: string
+  enrollment: number
+  fit: string
+  examSubjects: string
+  notes: string
+  direction: string
+  detailSections: Array<{
+    label: string
+    text?: string
+    items?: Array<{
+      tag: string
+      dir: string
+      fit: string
+    }>
+  }>
+}
+
+const PARTY_FIT_MAP: Record<string, string> = {
+  '经济学': '财政 / 金融 / 产业经济 / 招商',
+  '政治学': '党政 / 公管 / 政策研究 · 覆盖最广',
+  '法学': '纪检 / 法务 / 合规 · 最难考',
+  '经济管理': '财政 / 金融 / 产业经济',
+  '法律': '纪检 / 法务 / 合规',
+  '公共管理': '民政 / 人社 / 应急 / 街道 · 覆盖最广',
+  '党政管理': '组织 / 宣传 / 纪委 / 统战',
+  '战略管理': '发改 / 政研 / 外事 / 国企战略'
+}
+
+const PARTY_DETAIL_MAP: Record<
+  string,
+  Array<{
+    label: string
+    text?: string
+    items?: Array<{
+      tag: string
+      dir: string
+      fit: string
+    }>
+  }>
+> = {
+  '四川-经济学': [
+    {
+      label: '班级细分',
+      items: [
+        { tag: '1·2 班', dir: '政治经济学', fit: '财政局 / 经信局 / 发改委 / 城投公司' },
+        { tag: '3 班', dir: '产业经济学', fit: '产业规划 / 园区 / 招商' },
+        { tag: '4 班', dir: '区域经济学', fit: '招商办 / 开发区 / 外事办' },
+        { tag: '5 班', dir: '财政学 / 金融学', fit: '财政 / 金融 / 综合经济岗' }
+      ]
+    },
+    {
+      label: '招生备注',
+      text: '150 普通 / 50 民族专项（三州 + 三县 +15 分）'
+    }
+  ],
+  '四川-政治学': [
+    {
+      label: '班级细分',
+      items: [
+        { tag: '1 班', dir: '党史党建', fit: '党委办 / 宣传部 / 组织部 / 国企党委 / 群团办' },
+        { tag: '2 班', dir: '政治科学', fit: '外事 / 涉外 / 政策研究' },
+        { tag: '3 班', dir: '公共管理', fit: '公共管理 / 政务管理岗' },
+        { tag: '4 班', dir: '应急管理', fit: '街道办 / 应急局 / 政务大厅 / 医院行政 / 学校保卫' },
+        { tag: '5 班', dir: '马克思主义理论与哲学实践', fit: '理论研究 / 党校 / 政策研究' },
+        { tag: '6 班', dir: '社会治理', fit: '文化馆 / 妇联 / 群团 / 融媒体 / 社区治理 / 信访 / 民宗' }
+      ]
+    },
+    {
+      label: '招生备注',
+      text: '225 普通 / 75 民族专项 · 6 个班级方向最丰富'
+    }
+  ],
+  '四川-法学': [
+    {
+      label: '班级细分',
+      items: [
+        { tag: '1 班', dir: '法理学 + 党内法规', fit: '综合办 / 纪检 / 法务 / 信访 / 执法辅助' },
+        { tag: '2 班', dir: '行政法学 + 法治政府建设', fit: '公共政策 / 法规研究 / 政策起草 / 制度评估' },
+        { tag: '3 班', dir: '民商法学 + 法治社会', fit: '产业园区 / 开发区 / 企业合规 / 合同管理 / 风控' }
+      ]
+    },
+    {
+      label: '招生备注',
+      text: '75 普通 / 25 民族专项 · 招生最少 · 最难考'
+    }
+  ],
+  '重庆-经济管理': [
+    { label: '考试科目', text: '政治理论 + 专业综合（政治经济学、管理学）' },
+    { label: '对口岗位', text: '财政 / 金融 / 产业经济（需要一定管理学基础）' },
+    { label: '注意', text: '需要管理学基础，零基础慎选。' }
+  ],
+  '重庆-法律': [
+    { label: '考试科目', text: '政治理论 + 专业综合（法理学、行政法与行政诉讼法）' },
+    { label: '对口岗位', text: '纪检 / 法务 / 合规' },
+    { label: '注意', text: '无法学基础不建议首选。' }
+  ],
+  '重庆-公共管理': [
+    { label: '考试科目', text: '政治理论 + 专业综合（政治学、公共管理学）' },
+    { label: '对口岗位', text: '民政 / 人社 / 应急 / 街道社区' },
+    { label: '特征', text: '覆盖最广 · 横向协调岗位首选。' }
+  ],
+  '重庆-党政管理': [
+    { label: '考试科目', text: '政治理论 + 专业综合（政治学、马克思主义党的学说史）' },
+    { label: '对口岗位', text: '组织 / 宣传 / 纪委 / 统战 / 党校' },
+    { label: '特征', text: '纵向管理 · 培训对象优先。' }
+  ],
+  '重庆-战略管理': [
+    { label: '考试科目', text: '政治理论 + 专业综合（领导科学、战略思维）' },
+    { label: '对口岗位', text: '发改 / 政研 / 外事 / 国企战略' },
+    { label: '特征', text: '前瞻布局 · 领导职位优先 · 招生最少。' }
+  ]
+}
+
+export const getPartyDirectionCounts = () => ({
+  sichuan: partyPublishRecords.filter(r => r.province === '四川').length,
+  chongqing: partyPublishRecords.filter(r => r.province === '重庆').length
+})
+
+export const getPartyDirections = (province: string): PartyDirection[] =>
+  partyPublishRecords
+    .filter(r => r.province === province)
+    .map(r => ({
+      id: r.id,
+      province: r.province,
+      major: r.major_label || '',
+      enrollment: typeof r.enrollment === 'number' ? r.enrollment : 0,
+      fit: PARTY_FIT_MAP[r.major_label || ''] || r.description || '',
+      examSubjects: r.exam_subjects || '政治理论 + 政治学 / 公共管理学',
+      notes: r.notes || r.description || '',
+      direction: r.direction || '不区分研究方向',
+      detailSections: PARTY_DETAIL_MAP[`${r.province}-${r.major_label || ''}`] || []
+    }))
 
 export const getSchoolById = (id: string): SchoolDetail | null => {
   const records = groupRecords().find(group => groupId(group[0]) === id)

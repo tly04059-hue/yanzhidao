@@ -1,1025 +1,597 @@
 <template>
-  <view class="page-v3 result-page">
-    <view class="result-topbar">
-      <view class="tb-btn" @click="retryTest">‹</view>
-      <text class="tb-title">你的专属方案</text>
-      <view class="tb-btn" @click="shareResult">⤴</view>
+  <view class="shell">
+    <view class="v6-nav">
+      <view class="v6-nav-side" @click="retryTest">
+        <image class="v6-back-icon" src="/static/icons/nav-back.svg" mode="aspectFit" />
+      </view>
+      <text class="v6-nav-title">选校方向建议</text>
+      <view class="v6-nav-side"></view>
     </view>
 
-    <view class="profile-strip">
-      <text class="profile-label">你的信息</text>
-      <text class="profile-text">{{ profileText }}</text>
-    </view>
+    <view class="v6-page has-tabbar">
+      <view class="brand-row">已服务 1,000+ 川渝同学 · 不骗人 · 真服务</view>
 
-    <view v-if="recommendation.blocked" class="hero-shell">
-      <view class="result-hero-card">
-        <view class="hero-icon">!</view>
-        <text class="hero-tag">基于你的 8 题答案</text>
-        <text class="hero-title">暂不建议<br>直接报考</text>
-        <text class="hero-sub">{{ recommendation.message || recommendation.reason }}</text>
-      </view>
-    </view>
-
-    <template v-else>
-      <view class="hero-shell">
-        <view class="result-hero-card">
-          <view class="hero-icon">★</view>
-          <text class="hero-tag">基于你的 8 题答案</text>
-          <text class="hero-title">推荐路径:<br>{{ recommendation.primaryPath }}</text>
-          <text class="hero-sub">{{ recommendation.reason }}</text>
-        </view>
+      <view class="hero-card">
+        <text class="kicker-cn">选校诊断结果</text>
+        <text class="hero-title">选校方向建议</text>
+        <text class="hero-copy">{{ profile }}</text>
       </view>
 
-      <view class="dual">
-        <view class="dual-card">
-          <view class="dual-head">
-            <image class="dual-icon-img" src="/static/icons/icon-cost.svg" mode="aspectFit" />
-            <text class="dual-title warm">预计成本</text>
-          </view>
-          <view class="dual-row">
-            <text class="dual-l">时间成本</text>
-            <text class="dual-v">{{ heroDuration }} · 周末学习</text>
-          </view>
-          <view class="dual-row">
-            <text class="dual-l">金钱成本</text>
-            <text class="dual-v">约 {{ heroTuition }}</text>
-          </view>
+      <view class="recommend-card">
+        <text class="recommend-crown">⭐ 首选推荐</text>
+        <text class="recommend-title">{{ recommendation.title }}</text>
+        <view class="recommend-meta">
+          <text class="recommend-meta-item">学费 {{ recommendation.tuition }}</text>
+          <text class="recommend-meta-item">学制 {{ recommendation.duration }}</text>
+          <text class="recommend-meta-item">{{ recommendation.city }}</text>
         </view>
-        <view class="dual-card">
-          <view class="dual-head">
-            <image class="dual-icon-img" src="/static/icons/icon-benefit.svg" mode="aspectFit" />
-            <text class="dual-title green">核心收益</text>
+        <text class="recommend-reason">{{ recommendation.reason }}</text>
+        <view class="match-line">
+          <text>匹配度</text>
+          <view class="match-bar">
+            <view class="match-bar-fill" :style="{ width: recommendation.match + '%' }"></view>
           </view>
-          <view class="dual-row">
-            <text class="dual-l">短期</text>
-            <text class="dual-v">满足学历筛选</text>
-          </view>
-          <view class="dual-row">
-            <text class="dual-l">长期</text>
-            <text class="dual-v">拓宽遴选通道</text>
-          </view>
+          <text class="match-pct">{{ recommendation.match }}%</text>
         </view>
+
+
       </view>
 
-      <view class="school-section">
-        <view class="section-head">
-          <text class="section-title-main">匹配院校(前 3)</text>
-          <view class="more" @click="goSchools"><text>查看全部</text><text class="more-arrow">›</text></view>
+      <view class="section">
+        <view class="section-head section-head-inline">
+          <view class="reason-head-shell" @click="toggleReasonSection">
+            <view class="section-head-top">
+              <text class="section-head-title">推荐理由</text>
+              <text class="reason-head-meta">政策 + 真实作用</text>
+            </view>
+            <view class="reason-toggle">
+              <view class="reason-toggle-arrow" :class="{ open: reasonSectionOpen, drift: arrowDriftDown && !reasonSectionOpen }"></view>
+            </view>
+          </view>
         </view>
-        <view class="school-list">
-          <view
-            v-for="(school, index) in topSchools"
-            :key="school.name"
-            class="school-card"
-            @click="goSchools"
-          >
-            <view class="sc-left">
-              <view class="sc-avatar">
-                <image class="sc-avatar-img" :src="schoolLogo(school.name)" mode="aspectFill" />
-              </view>
-              <view class="sc-copy">
-                <text class="sc-name">{{ school.name }}</text>
-                <text class="sc-meta">{{ school.meta || '非全日制 · 双证' }} · {{ formatTuition(school.tuition) }}</text>
+        <view class="collapse-panel" :class="{ open: reasonSectionOpen }">
+          <view class="collapse-panel-inner">
+          <text v-if="systemName" class="text-sm section-intro">在{{ systemName }}里，研究生学历的实际作用：</text>
+
+          <view class="result-card">
+            <text class="result-card-title">政策层面</text>
+            <text v-for="item in policyItems" :key="item.pre" class="result-card-item">
+              <text class="text-bold">{{ item.pre }}</text>{{ item.text }}
+            </text>
+          </view>
+
+          <view v-if="realityItems.length" class="result-card">
+            <text class="result-card-title">真实作用 · 相似案例反馈</text>
+            <view v-for="item in realityItems" :key="item.sourceCaseId || item.text" class="result-card-item-wrap">
+              <text class="result-card-item">{{ item.text }}</text>
+            </view>
+          </view>
+
+          <view class="result-card">
+            <view class="window-toggle" @click="toggleWindowSection">
+              <text class="result-card-title">为什么现在是窗口期</text>
+              <view class="window-toggle-right">
+                <text class="window-toggle-text">3-5 年窗口期</text>
+                <view class="reason-toggle-arrow" :class="{ open: windowSectionOpen, drift: arrowDriftDown && !windowSectionOpen }"></view>
               </view>
             </view>
-
-          </view>
-        </view>
-      </view>
-
-      <view class="strategy-section">
-        <view class="section-head">
-          <text class="section-title-main">推荐策略</text>
-          <text class="more">按你的信息筛选</text>
-        </view>
-        <view class="strategy-card">
-          <text class="strategy-title">为什么推荐这条路径</text>
-          <text class="strategy-text">{{ recommendation.reason }}</text>
-        </view>
-        <view class="strategy-grid">
-          <view v-for="(item, index) in schoolPriorities" :key="index" class="strategy-pill">
-            <text class="pill-num">{{ index + 1 }}</text>
-            <text class="pill-text">{{ item }}</text>
-          </view>
-        </view>
-      </view>
-
-      <view class="risk-section">
-        <view class="section-head">
-          <text class="section-title-main">备考风险提示</text>
-          <text class="more">先避坑再择校</text>
-        </view>
-        <view class="risk-list">
-          <view v-for="item in riskCards" :key="item.label" class="risk-card">
-            <view class="risk-head">
-              <text class="risk-label">{{ item.label }}</text>
-              <text class="risk-value">{{ item.value }}</text>
+            <view v-if="windowSectionOpen">
+              <text class="result-card-item">延迟退休 63-65 岁配套政策下，体制内职业生涯延长 3-5 年</text>
+              <text class="result-card-item">国考限研岗占比 7%（2022）→ 12.95%（2025）· 学历正从加分项走向准入项</text>
+              <text class="result-card-item">末等退出常态化后，学历是少数你能主动拿到、长期有效的资产</text>
+              <text class="result-card-item">三条政策叠加，意味着现在是 3-5 年窗口期</text>
             </view>
-            <text class="risk-desc">{{ item.desc }}</text>
+          </view>
+
+          <view class="result-card">
+            <text class="result-card-title">接下来 1 周可以做的</text>
+            <text v-for="item in weeklyPlan" :key="item" class="result-card-item">{{ item }}</text>
+          </view>
           </view>
         </view>
       </view>
 
-      <view class="plan-section">
+      <view class="section">
+        <view class="section-head section-head-inline">
+          <view class="reason-head-shell" @click="toggleBackupSection">
+            <view class="section-head-top">
+              <text class="section-head-title">备选方案</text>
+              <text class="reason-head-meta">统考非全研究生</text>
+            </view>
+            <view class="reason-toggle">
+              <view class="reason-toggle-arrow" :class="{ open: backupSectionOpen, drift: arrowDriftDown && !backupSectionOpen }"></view>
+            </view>
+          </view>
+        </view>
+        <view class="collapse-panel" :class="{ open: backupSectionOpen }">
+          <view class="collapse-panel-inner note-card">
+            <text class="backup-title">{{ backup.title }}</text>
+            <text class="note-card-text">{{ backup.reason }}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section-head section-head-inline">
+          <view class="reason-head-shell" @click="togglePeerSection">
+            <view class="section-head-top">
+              <text class="section-head-title">类似同学实际怎么选</text>
+              <text class="reason-head-meta">5a 个案 + 5b K-NN 聚合</text>
+            </view>
+            <view class="reason-toggle">
+              <view class="reason-toggle-arrow" :class="{ open: peerSectionOpen, drift: arrowDriftDown && !peerSectionOpen }"></view>
+            </view>
+          </view>
+        </view>
+        <view class="collapse-panel" :class="{ open: peerSectionOpen }">
+          <view class="collapse-panel-inner">
+          <view class="result-card">
+            <text class="result-card-title">相似个案 · {{ similarCase.name }}</text>
+            <text class="source-note case-source-note">{{ similarCase.sourceLabel }} · {{ similarCase.sourceNote }}</text>
+            <text class="result-card-item">{{ similarCase.who }}</text>
+            <view class="choice-row">
+              <text class="choice-bullet">·</text>
+              <text class="choice-prefix">选了：</text>
+              <text class="choice-value">{{ similarCase.choice }}</text>
+            </view>
+            <text class="result-card-item quote-line">“{{ similarCase.quote }}”</text>
+            <text class="result-card-item">结果：{{ similarCase.result }}</text>
+          </view>
+
+          <view class="result-card">
+            <text class="result-card-title">同样画像的同学怎么选 <text class="kicker-mini">K-NN 5 维</text></text>
+            <text class="text-sm knn-summary">和你 5 维画像相似的 <text class="text-accent">{{ knn.total }} 位</text>同学怎么选：</text>
+            <view class="knn-pair">
+              <view class="knn-card A">
+                <text class="knn-num">{{ knn.aText }}</text>
+                <text class="knn-lbl">{{ knn.aLabel }}</text>
+              </view>
+              <view class="knn-card B">
+                <text class="knn-num">{{ knn.bText }}</text>
+                <text class="knn-lbl">{{ knn.bLabel }}</text>
+              </view>
+            </view>
+            <view class="knn-reasons">
+              <text><text class="knn-reason-strong">{{ knn.reasonATitle }}</text>{{ knn.reasonA }}{{ '\n' }}<text class="knn-reason-strong">{{ knn.reasonBTitle }}</text>{{ knn.reasonB }}</text>
+            </view>
+            <!-- <text class="knn-footnote"></text> -->
+          </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="section">
         <view class="section-head">
-          <text class="section-title-main">本周最小行动</text>
-          <text class="more">可直接执行</text>
+          <text class="section-head-title">你能做的下一步</text>
+          <text class="section-head-meta">研知道不催不诱</text>
         </view>
-        <view class="plan-list">
-          <view v-for="item in weeklyPlan" :key="item.title" class="plan-card">
-            <text class="plan-title">{{ item.title }}</text>
-            <text class="plan-desc">{{ item.desc }}</text>
+        <view class="entry-grid">
+          <view class="entry-btn highlight-entry" @click="goPage('zexiao')">
+            <text class="entry-btn-title">⭐ 保存择校方向建议到手机</text>
+            <text class="entry-btn-desc">1 张完整长图 · 含路径建议 + 参考政策 + 相似故事 + 行动清单</text>
+            <text class="entry-btn-action">跳长图 →</text>
+          </view>
+          <view class="entry-btn" @click="goPage('pass-rate')">
+            <text class="entry-btn-title">这 4 个过考率怎么算的？</text>
+            <text class="entry-btn-desc">验证我们数据真实性的最直接路径。</text>
+            <text class="entry-btn-action">看过考率说明 →</text>
+          </view>
+          <view class="entry-btn" @click="goPage('wechat')">
+            <text class="entry-btn-title">把你的情况和咨询人员聊聊</text>
+            <text class="entry-btn-desc">不会打扰你，不骗人真服务，可以放心聊。</text>
+            <text class="entry-btn-action">加企微 →</text>
           </view>
         </view>
       </view>
 
-      <view class="case-block">
-        <view class="section-head">
-          <text class="section-title-main">同类同行</text>
-          <view class="more"><text>查看更多</text><text class="more-arrow">›</text></view>
-        </view>
-        <view class="case-card">
-          <view class="case-head">
-            <text class="case-name">{{ similarCase.title }}</text>
-            <text class="case-status">已上岸</text>
-          </view>
-          <text class="case-text">"{{ similarCase.advice }}"</text>
-          <text class="case-meta">{{ similarCase.profile }} · {{ similarCase.risk }}</text>
-        </view>
-      </view>
-
-    </template>
-
-    <view class="result-cta-bar">
-      <view class="result-btn" @click="retryTest">
-        <text class="result-btn-ico">⟲</text>
-        <text class="result-btn-lbl">重测</text>
-      </view>
-      <view class="result-btn primary" @click="shareResult">
-        <text class="result-btn-ico">⤴</text>
-        <text class="result-btn-lbl">分享</text>
+      <view class="btn-row-2">
+        <view class="btn-primary" @click="goPage('schools')">看看院校库</view>
+        <view class="btn-primary" @click="goPage('cases')">看看同学案例</view>
       </view>
     </view>
+
+    <BottomTabBar />
   </view>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { onLoad } from '@dcloudio/uni-app'
-import { getAnalyticsSessionId, trackEvent } from '@/api/request'
-import { dataDrivenCases } from '@/data/real-insights'
-import { getLocalRecommendation } from '@/data/recommendation-strategy'
-import { getAllSchools } from '@/data/school-data'
+import { onMounted, onUnmounted, ref } from 'vue'
+import { trackNavClick, trackPageView } from '@/api/tracking'
+import BottomTabBar from '@/components/BottomTabBar.vue'
+import type { QuizRuntime } from '@/data/quiz-runtime'
 
-type Warning = {
-  type?: string
-  message: string
-}
+type RichItem = { pre: string; text: string }
+type RealityItem = { text: string; sourceCaseId?: string; sourceLabel?: string }
 
-type RecommendedSchool = {
-  name: string
-  tuition: number
-  reason: string
-  meta?: string
-}
+const profile = ref('正在加载...')
+const systemName = ref('')
+const reasonSectionOpen = ref(false)
+const backupSectionOpen = ref(false)
+const peerSectionOpen = ref(false)
+const windowSectionOpen = ref(false)
+const arrowDriftDown = ref(false)
+let arrowDriftTimer: ReturnType<typeof setInterval> | null = null
 
-const answers = ref<Record<string, any>>({})
-
-const recommendation = ref<{
-  blocked: boolean
-  primaryPath: string
-  reason: string
-  message?: string
-  warnings: Warning[]
-  recommendedSchools: RecommendedSchool[]
-  schoolPriorities?: string[]
-  riskCards?: string[]
-  weeklyPlan?: Array<{ title: string; desc: string }>
-}>({
-  blocked: false,
-  primaryPath: 'MPA 双证路径',
-  reason: '根据你的目标和条件，建议优先比较 MPA 双证项目，并用地区、学费、分数线、授课方式做二次筛选。',
-  warnings: [],
-  recommendedSchools: [
-    { name: '西南财经大学 MPA', tuition: 54000, reason: '公共管理方向匹配体制内目标，适合作为重点比较项' },
-    { name: '四川大学 MPA', tuition: 84000, reason: '院校层次高，但需要同步评估分数和复试压力' }
-  ],
-  schoolPriorities: [],
-  riskCards: [],
-  weeklyPlan: []
+const recommendation = ref({
+  title: '党校在职研究生路径',
+  tuition: '待确认',
+  duration: '3 年',
+  city: '川渝',
+  reason: '正在根据你的情况生成建议...',
+  match: 88
 })
 
-const fallbackRecommendation: {
-  blocked: boolean
-  primaryPath: string
-  reason: string
-  warnings: Warning[]
-  recommendedSchools: RecommendedSchool[]
-  schoolPriorities: string[]
-  riskCards: string[]
-  weeklyPlan: Array<{ title: string; desc: string }>
-} = {
-  blocked: false,
-  primaryPath: 'MPA 双证路径',
-  reason: '根据你的目标和条件，建议优先比较 MPA 双证项目，并用地区、学费、分数线、授课方式做二次筛选。',
-  warnings: [],
-  recommendedSchools: [
-    { name: '西南财经大学 MPA', tuition: 54000, reason: '公共管理方向匹配体制内目标，适合作为重点比较项' },
-    { name: '四川大学 MPA', tuition: 84000, reason: '院校层次高，但需要同步评估分数和复试压力' }
-  ],
-  schoolPriorities: [],
-  riskCards: [],
-  weeklyPlan: []
-}
-
-const allSchools = getAllSchools()
-
-const profileText = computed(() => {
-  const items = [
-    answers.value.system,
-    answers.value.province,
-    answers.value.education,
-    answers.value.age,
-    answers.value.goal,
-    answers.value.study_time || answers.value.studyTime,
-    mathBaseText.value
-  ].filter(Boolean)
-  return items.length ? items.join(' · ') : '体制内 · 全日制本科 · 目标晋升 · 数学弱基础'
+const backup = ref({
+  title: 'MPA 双证路径',
+  reason: '如果未来有遴选或跨系统需求，MPA 是学信网可查的双证路径。',
+  source: ''
 })
 
-const heroTuition = computed(() => {
-  if (recommendation.value.primaryPath.includes('党校')) return '2-5 万'
-  if (recommendation.value.primaryPath.includes('MBA')) return '5-22 万'
-  if (recommendation.value.primaryPath.includes('MEM')) return '3-10 万'
-  return '3-9 万'
-})
-const heroDuration = computed(() => '2-3 年')
-const studyTime = computed(() => answers.value.study_time || answers.value.studyTime || '1h-2h')
-const mathBase = computed(() => answers.value.math_base || answers.value.mathBase || 'weak')
-const englishBase = computed(() => answers.value.english_base || answers.value.englishBase || '四级未过')
-const schoolPreference = computed(() => answers.value.school_preference || answers.value.schoolPreference || 'low_score')
+const policyItems = ref<RichItem[]>([
+  { pre: '竞争上岗', text: '：研究生 +0.5 档（依据 2019 中办职级并行规定）' },
+  { pre: '遴选参考', text: '：部分岗位要求研究生学历' },
+  { pre: '组织考察', text: '：学历作为综合素质指标' }
+])
+const realityItems = ref<RealityItem[]>([])
 
-const mathBaseText = computed(() => {
-  const map: Record<string, string> = {
-    weak: '数学弱基础',
-    normal: '数学中下',
-    good: '数学较好',
-    unknown: '数学待诊断'
-  }
-  return map[mathBase.value] || ''
-})
+const weeklyPlan = ref<string[]>([
+  '整理目标院校清单，确认报名资格条件',
+  '对比党校和统考路径的证书、成本、考试压力',
+  '联系顾问 1 对 1 确认适合自己的方案'
+])
 
-const riskCards = computed(() => {
-  const strategyRiskCards = recommendation.value.riskCards || []
-  const timeMap: Record<string, string> = {
-    '小于等于1h': '时间极紧，先做保底任务，不建议同时铺太多课。',
-    '1h-2h': '这是花名册里最常见状态，关键是稳定周计划。',
-    '2h及以上': '可以按常规通关节奏推进，但要防止前期只听课不输出。',
-    '时间不固定': '建议用弹性任务池，先保证背词、补课和错题复盘。'
-  }
-  const mathMap: Record<string, string> = {
-    weak: '真实学员里数学弱基础占比最高，择校要优先看低分线和招生人数。',
-    normal: '可考虑常规 MPA/MBA，但要把数学刷题稳定下来。',
-    good: '数学不是主要短板，可以把院校层次和城市匹配放得更靠前。',
-    unknown: '按弱基础处理更稳，先做一次基础测评再决定冲刺范围。'
-  }
-  const englishMap: Record<string, string> = {
-    '四级未过': '词汇和长难句要前置，否则后期会挤压写作和逻辑时间。',
-    '高考中下': '先稳词汇和阅读基本盘，避免只刷真题不复盘。',
-    '大学英语四级': '具备基础，重点是阅读速度和作文模板输出。',
-    '大学英语六级': '英语可作为优势科目，数学和逻辑更值得优先补。'
-  }
-  const baseCards = [
-    { label: '学习时间', value: studyTime.value, desc: timeMap[studyTime.value] || timeMap['1h-2h'] },
-    { label: '数学基础', value: mathBaseText.value || '待诊断', desc: mathMap[mathBase.value] || mathMap.weak },
-    { label: '英语基础', value: englishBase.value, desc: englishMap[englishBase.value] || englishMap['四级未过'] }
-  ]
-  if (!strategyRiskCards.length) return baseCards
-  return [
-    ...strategyRiskCards.slice(0, 2).map((desc, index) => ({
-      label: index === 0 ? '路径风险' : '择校提醒',
-      value: recommendation.value.primaryPath,
-      desc
-    })),
-    ...baseCards.slice(0, 2)
-  ]
+const similarCase = ref({
+  name: '王同学',
+  who: '33 岁 · 成都某区税务局 · 全日制本科',
+  choice: '省委党校经济学',
+  quote: '不读的话三年后还是一样。',
+  result: '在读中',
+  sourceLabel: '近似案例参考',
+  sourceNote: '正在加载案例来源。',
+  sourceCaseId: ''
 })
 
-const schoolPriorities = computed(() => {
-  if (recommendation.value.schoolPriorities?.length) return recommendation.value.schoolPriorities
-  const map: Record<string, string[]> = {
-    low_score: ['先看今年分数线和去年复试线', '优先招生人数较多、录取率更稳的院校', '再比较学费和城市通勤成本'],
-    low_tuition: ['先排除超预算项目', '在低学费里看分数线和招生人数', '保留 1 所更稳的保底院校'],
-    nearby_weekend: ['先锁定所在城市或高铁可达城市', '确认非全日制和周末授课方式', '再比较学费、分数线和复试压力'],
-    brand: ['先确认名校是否符合预算和时间', '同时放 1-2 所稳妥备选', '不要只看校名，必须看录取率和复试压力'],
-    certificate: ['优先低风险、低学费、低通勤成本', '避开复试不确定性过高的项目', '把拿证稳定性放在学校层次前面']
-  }
-  return map[schoolPreference.value] || map.low_score
+const knn = ref({
+  total: 12,
+  a: 9,
+  b: 3,
+  aText: '9',
+  bText: '3',
+  aLabel: '位选党校',
+  bLabel: '位选 MPA',
+  reasonATitle: '选党校的核心理由：',
+  reasonA: '不考英数 · 本系统晋升 · 学费低',
+  reasonBTitle: '选 MPA 的核心理由：',
+  reasonB: '遴选硬门槛 · 双证'
 })
 
-const weeklyPlan = computed(() => {
-  if (recommendation.value.weeklyPlan?.length) return recommendation.value.weeklyPlan
-  if (studyTime.value === '小于等于1h') {
-    return [
-      { title: '每天 20 分钟', desc: '背核心词汇，不追求量，保证连续 7 天。' },
-      { title: '每天 25 分钟', desc: '补数学基础题，只做能复盘的题。' },
-      { title: '周末 1 次', desc: '完成一次院校筛选，确定冲刺和保底各 1 所。' }
-    ]
-  }
-  if (studyTime.value === '2h及以上') {
-    return [
-      { title: '工作日 90 分钟', desc: '数学基础课 + 当天练习题，形成错题记录。' },
-      { title: '工作日 30 分钟', desc: '英语词汇和阅读精读交替推进。' },
-      { title: '周末半天', desc: '补逻辑或写作系统课，避免写作启动过晚。' }
-    ]
-  }
-  if (studyTime.value === '时间不固定') {
-    return [
-      { title: '碎片时间', desc: '只放词汇、公式和错题回看，不安排重课。' },
-      { title: '完整时间块', desc: '优先补数学基础课，一次只解决一个知识点。' },
-      { title: '每周复盘', desc: '顾问根据本周完成度调整任务，不用硬凑每日时长。' }
-    ]
-  }
-  return [
-    { title: '每天 30 分钟', desc: '英语词汇 + 1 篇阅读或长难句。' },
-    { title: '每天 45 分钟', desc: '数学基础课和同类题练习。' },
-    { title: '周末 2 小时', desc: '逻辑/写作系统课启动，并同步院校筛选。' }
-  ]
-})
-
-const similarCase = computed(() => {
-  if (studyTime.value === '时间不固定') return dataDrivenCases[2]
-  if (schoolPreference.value === 'nearby_weekend') return dataDrivenCases[3]
-  if (mathBase.value === 'weak' || mathBase.value === 'unknown') return dataDrivenCases[1]
-  return dataDrivenCases[0]
-})
-
-const topSchools = computed(() => {
-  const schools = recommendation.value.recommendedSchools?.length
-    ? recommendation.value.recommendedSchools
-    : fallbackRecommendation.recommendedSchools
-  return schools.slice(0, 3)
-})
-
-onLoad(async (options: any) => {
-  if (!options.answers) return
+const loadFromStorage = () => {
   try {
-    const parsed = JSON.parse(decodeURIComponent(options.answers))
-    parsed.session_id = parsed.session_id || getAnalyticsSessionId()
-    answers.value = parsed
-    recommendation.value = normalizeRecommendation(getLocalRecommendation(parsed))
-    trackEvent('view_result', {
-      target_type: 'recommendation',
-      answers: parsed,
-      primary_path: recommendation.value.primaryPath,
-      recommended_schools: recommendation.value.recommendedSchools
-    })
+    const runtime = uni.getStorageSync('yz_quiz_runtime') as QuizRuntime | undefined
+    if (!runtime) return
+
+    const presentation = runtime.presentation
+
+    profile.value = presentation.profile
+    systemName.value = presentation.systemName
+    recommendation.value = presentation.recommendation
+    backup.value = { ...presentation.backup, source: presentation.backup.source || '' }
+    policyItems.value = presentation.policyItems
+    realityItems.value = presentation.realityItems.filter(item => item.sourceLabel !== '近似案例参考')
+    weeklyPlan.value = presentation.weeklyPlan
+    similarCase.value = presentation.similarCase
+    knn.value = presentation.knn
   } catch (error) {
-    console.error('获取推荐失败:', error)
-    uni.showToast({ title: '加载失败', icon: 'none' })
+    // ignore storage fallback
   }
+}
+
+const retryTest = () => uni.switchTab({ url: '/pages/test/index' })
+
+const goPage = (key: string) => {
+  trackNavClick('result', key)
+  const pageMap: Record<string, string> = {
+    schools: '/pages/schools/index',
+    cases: '/pages/cases/index',
+    'pass-rate': '/pages/pass-rate/index',
+    wechat: '/pages/contact/index',
+    zexiao: '/pages/zexiao/index'
+  }
+  if (pageMap[key]) uni.navigateTo({ url: pageMap[key] })
+}
+
+const toggleReasonSection = () => {
+  reasonSectionOpen.value = !reasonSectionOpen.value
+}
+
+const toggleBackupSection = () => {
+  backupSectionOpen.value = !backupSectionOpen.value
+}
+
+const togglePeerSection = () => {
+  peerSectionOpen.value = !peerSectionOpen.value
+}
+
+const toggleWindowSection = () => {
+  windowSectionOpen.value = !windowSectionOpen.value
+}
+
+onMounted(() => {
+  trackPageView('result')
+  loadFromStorage()
+  arrowDriftTimer = setInterval(() => {
+    arrowDriftDown.value = !arrowDriftDown.value
+  }, 1400)
 })
 
-const normalizeRecommendation = (raw: typeof recommendation.value) => {
-  return {
-    ...raw,
-    reason: raw.reason || fallbackRecommendation.reason,
-    recommendedSchools: raw.recommendedSchools?.length ? raw.recommendedSchools : fallbackRecommendation.recommendedSchools,
-    schoolPriorities: raw.schoolPriorities?.length ? raw.schoolPriorities : fallbackRecommendation.schoolPriorities,
-    riskCards: raw.riskCards?.length ? raw.riskCards : fallbackRecommendation.riskCards,
-    weeklyPlan: raw.weeklyPlan?.length ? raw.weeklyPlan : fallbackRecommendation.weeklyPlan
+onUnmounted(() => {
+  if (arrowDriftTimer) {
+    clearInterval(arrowDriftTimer)
+    arrowDriftTimer = null
   }
-}
-
-const formatTuition = (tuition: number) => {
-  if (!tuition) return '待定'
-  return tuition >= 10000 ? `${(tuition / 10000).toFixed(1)}万` : `${tuition}元`
-}
-
-const schoolAvatar = (name: string) => {
-  if (name.includes('四川大学')) return '川大'
-  if (name.includes('电子科技')) return '电科'
-  if (name.includes('重庆大学')) return '重大'
-  if (name.includes('西南财经')) return '西财'
-  if (name.includes('西南交通')) return '交大'
-  return name.replace(/大学|学院|MPA|MBA|·/g, '').slice(0, 2) || '院校'
-}
-
-const schoolLogo = (name: string) => {
-  const pureName = name.replace(/\s*(MPA|MBA|MEM|党校)\s*$/i, '').trim()
-  const fromSchoolData = allSchools.find(
-    school => school.name === pureName || pureName.includes(school.name) || school.name.includes(pureName)
-  )
-  if (fromSchoolData?.logoUrl) return fromSchoolData.logoUrl
-  if (name.includes('重庆') && name.includes('党校')) return '/static/icons/school-party-cq.svg'
-  if (name.includes('党校')) return '/static/icons/school-party-sc.svg'
-  if (name.includes('MEM')) return '/static/icons/school-mem.svg'
-  if (name.includes('MBA')) return '/static/icons/school-mba.svg'
-  return '/static/icons/school-mpa.svg'
-}
-
-const saveResult = () => {
-  trackEvent('favorite_recommendation', {
-    target_type: 'recommendation',
-    primary_path: recommendation.value.primaryPath,
-    recommended_schools: recommendation.value.recommendedSchools
-  })
-  uni.showToast({ title: '保存功能待接入', icon: 'none' })
-}
-const shareResult = () => {
-  trackEvent('share_result', {
-    target_type: 'recommendation',
-    primary_path: recommendation.value.primaryPath,
-    recommended_schools: recommendation.value.recommendedSchools
-  })
-  uni.showModal({ title: '分享预览', content: '提测版先展示分享内容，不生成海报下载。后续接入分享海报能力。', showCancel: false })
-}
-const followAccount = () => {
-  trackEvent('follow_account_click', {
-    target_type: 'content',
-    source: 'result_page'
-  })
-  uni.showModal({ title: '关注研知道', content: '公众号能力接入后，可获取你所在系统的政策提醒。', showCancel: false })
-}
-const retryTest = () => uni.navigateTo({ url: '/pages/test/index' })
-const goSchools = () => uni.navigateTo({ url: '/pages/schools/index' })
+})
 </script>
 
 <style lang="scss" scoped>
-.result-page {
-  padding: 0;
-  padding-bottom: 124px;
-}
+@import "@/styles/v6.scss";
 
-.result-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 12;
-  height: 56px;
-  padding: 10px 16px;
-  background: #FFFFFF;
-  border-bottom: 1px solid #ECE5D8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.shell { background: #FAF7F2; min-height: 100vh; }
 
-.tb-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2A251E;
-  font-size: 24px;
-  font-family: "Songti SC", serif;
-}
-
-.tb-title {
-  color: #2A251E;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.profile-strip {
-  margin: 24px 20px 0;
-  padding: 22px 20px;
-  border-radius: 14px;
-  background: #FFFFFF;
-  border: 1px solid #ECE5D8;
-}
-
-.profile-label,
-.profile-text,
-.hero-tag,
-.hero-title,
-.hero-sub,
-.meta-title,
-.metric-lbl,
-.metric-tag,
-.dual-title,
-.dual-l,
-.dual-v,
-.section-title-main,
-.more,
-.sc-name,
-.sc-meta,
-.case-name,
-.case-status,
-.case-text,
-.case-meta,
-.lead-title,
-.lead-sub,
-.input-label,
-.privacy {
+.section-intro {
+  margin-bottom: 12px;
   display: block;
 }
 
-.profile-label {
+.section-head-inline {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reason-head-shell {
+  width: 100%;
+  padding: 14px 10px 4px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(207, 113, 64, 0.04) 0%, rgba(207, 113, 64, 0.015) 68%, rgba(207, 113, 64, 0) 100%);
+  cursor: pointer;
+}
+
+.section-head-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.reason-head-meta {
+  flex-shrink: 0;
+  max-width: 120px;
+  padding-right: 10px;
   color: #8A8175;
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-align: right;
 }
 
-.profile-text {
-  color: #2A251E;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.hero-shell {
-  padding: 28px 20px 20px;
-}
-
-.result-hero-card {
-  padding: 40px 28px;
-  border-radius: 24px;
-  background: #FFFFFF;
-  border: 1px solid #ECE5D8;
-  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
-  text-align: center;
-}
-
-.hero-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  margin: 0 auto 16px;
-  background: #F1E0D3;
-  color: #CF7140;
+.reason-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Songti SC", serif;
-  font-size: 24px;
-  font-weight: 700;
+  width: 100%;
+  height: 24px;
+  border-radius: 10px;
+  background: transparent;
 }
 
-.hero-tag {
-  width: max-content;
-  max-width: 100%;
-  margin: 0 auto 14px;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: #F1E0D3;
-  color: #CF7140;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
+.reason-toggle-text {
+  display: none;
 }
 
-.hero-title {
-  color: #2A251E;
-  font-family: "Songti SC", "Noto Serif SC", serif;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.35;
-  margin-bottom: 12px;
-}
-
-.hero-sub {
-  color: #6B6258;
-  font-size: 14px;
-  line-height: 1.75;
-}
-
-.meta-card {
-  margin: 0 16px 18px;
-  padding: 24px 20px;
+.reason-toggle-arrow {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 20px;
-  background: #FFFFFF;
-  border: 1px solid #ECE5D8;
-  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  background: transparent;
+  flex-shrink: 0;
+  transform: translateY(-10px);
+  opacity: 0.49;
+  animation: arrowBreath 2.2s ease-in-out infinite;
+  transition: transform 1.2s ease, opacity 0.8s ease;
 }
 
-.meta-title,
-.section-title-main {
-  color: #2A251E;
-  font-family: "Songti SC", "Noto Serif SC", serif;
-  font-size: 18px;
-  font-weight: 700;
+.reason-toggle-arrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 1.76px solid #CF7140;
+  border-bottom: 1.76px solid #CF7140;
+  transform: rotate(45deg) translateY(-1px);
+  transform-origin: center;
 }
 
-.meta-title {
-  margin-bottom: 20px;
+.reason-toggle-arrow.open {
+  transform: translateY(-10px) rotate(180deg);
 }
 
-.metric {
-  margin-bottom: 18px;
+.reason-toggle-arrow.drift {
+  transform: translateY(-2px);
+  opacity: 0.49;
 }
 
-.metric:last-child {
-  margin-bottom: 0;
+@keyframes arrowBreath {
+  0%, 100% {
+    opacity: 0.49;
+    box-shadow: 0 0 0 rgba(207, 113, 64, 0);
+  }
+  50% {
+    opacity: 0.49;
+    box-shadow: 0 0 4px rgba(207, 113, 64, 0.08);
+  }
 }
 
-.metric-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.metric-lbl {
-  color: #2A251E;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.metric-tag {
-  font-size: 16px;
-  font-weight: 800;
-}
-
-.metric-tag.warm {
-  color: #CF7140;
-}
-
-.metric-tag.green {
-  color: #5F8C6E;
-}
-
-.metric-bar {
-  height: 8px;
-  border-radius: 999px;
+.collapse-panel {
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  background: #E8E1D5;
+  pointer-events: none;
+  transition: max-height 1s ease, opacity 1s ease, margin-top 1s ease;
+  margin-top: 0;
 }
 
-.metric-bar .fill {
-  height: 100%;
-  border-radius: 999px;
-}
-
-.metric-bar .fill.warm {
-  width: 42%;
-  background: #CF7140;
-}
-
-.metric-bar .fill.green {
-  width: 78%;
-  background: #5F8C6E;
-}
-
-.dual {
-  padding: 0 20px 22px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.dual-card {
-  min-width: 0;
-  padding: 24px 20px;
-  border-radius: 16px;
-  background: #FFFFFF;
-  border: 1px solid #ECE5D8;
-  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
-}
-
-.dual-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.dual-icon-img {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.dual-title {
-  font-family: "Songti SC", serif;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.dual-title.warm {
-  color: #CF7140;
-}
-
-.dual-title.green {
-  color: #5F8C6E;
-}
-
-.dual-row {
-  padding: 9px 0;
-  border-bottom: 1px solid #E8E1D5;
-}
-
-.dual-row:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.dual-l {
-  color: #8A8175;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-
-.dual-v {
-  color: #2A251E;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.45;
-}
-
-.school-section {
-  padding: 16px 20px 24px;
-}
-
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.more {
-  flex-shrink: 0;
-  color: #CF7140;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.more-arrow {
-  font-size: 24px;
-  color: #CF7140;
-}
-
-.school-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.school-card {
-  padding: 22px;
-  border-radius: 16px;
-  background: #FFFFFF;
-  border: 1px solid #ECE5D8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.sc-left {
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.sc-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  background: #F0E9DD;
-  color: #6B6258;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Songti SC", serif;
-  font-weight: 700;
-  font-size: 15px;
-  overflow: hidden;
-}
-
-.sc-avatar-img {
-  width: 48px;
-  height: 48px;
-  display: block;
-}
-
-.sc-copy {
-  min-width: 0;
-}
-
-.sc-name {
-  color: #2A251E;
-  font-family: "Songti SC", serif;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 3px;
-}
-
-.sc-meta {
-  color: #8A8175;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.case-block {
-  background: #FFFFFF;
-  border-top: 16px solid #F5EFE7;
-  padding: 28px 20px;
-}
-
-.strategy-section,
-.risk-section,
-.plan-section {
-  padding: 28px 20px;
-  border-top: 16px solid #F5EFE7;
-  background: #FFFFFF;
-}
-
-.strategy-card {
-  padding: 20px;
-  border-radius: 14px;
-  background: #F5EFE7;
-  border: 1px solid #ECE5D8;
-  margin-bottom: 14px;
-}
-
-.strategy-title,
-.plan-title {
-  color: #2A251E;
-  font-family: "Songti SC", serif;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.strategy-text,
-.plan-desc,
-.risk-desc {
-  color: #6B6258;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.strategy-grid,
-.risk-list,
-.plan-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.strategy-pill,
-.plan-card {
-  display: flex;
-  gap: 14px;
-  padding: 18px;
-  border-radius: 14px;
-  background: #FFFFFF;
-  border: 1px solid #ECE5D8;
-}
-
-.plan-card {
-  flex-direction: column;
-}
-
-.pill-num {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background: #CF7140;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.pill-text {
-  color: #2A251E;
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-.risk-card {
-  padding: 18px;
-  border-radius: 14px;
-  background: #F5EFE7;
-  border: 1px solid #ECE5D8;
-}
-
-.risk-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.risk-label {
-  color: #2A251E;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.risk-value {
-  flex-shrink: 0;
-  color: #5F8C6E;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.case-card {
-  padding: 26px;
-  border-radius: 14px;
-  background: #F5EFE7;
-}
-
-.case-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.case-name {
-  color: #2A251E;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.case-status {
-  flex-shrink: 0;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: #DAE5DC;
-  color: #5F8C6E;
-  font-size: 12px;
-}
-
-.case-text {
-  color: #2A251E;
-  font-family: "Songti SC", serif;
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-.case-meta {
-  color: #8A8175;
-  font-size: 12px;
-  line-height: 1.6;
+.collapse-panel.open {
+  max-height: 2200px;
+  opacity: 1;
+  pointer-events: auto;
   margin-top: 8px;
 }
 
-.result-cta-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 20;
-  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
-  border-top: 1px solid #ECE5D8;
-  background: #FFFFFF;
+.collapse-panel-inner {
+  transform: translateY(-10px);
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+.collapse-panel.open .collapse-panel-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.window-toggle {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.result-btn {
-  flex: 1;
-  max-width: 160px;
-  height: 46px;
-  border-radius: 999px;
-  background: #F5EFE7;
-  border: 0.5px solid #ECE5D8;
-  display: flex;
+.window-toggle-right {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.result-btn.primary {
-  background: #CF7140;
-  border-color: #CF7140;
-  box-shadow: 0 6px 20px rgba(207, 113, 64, 0.22);
+.window-toggle-text {
+  color: #8A8175;
+  font-size: 11px;
+  letter-spacing: 0.08em;
 }
 
-.result-btn-ico {
-  font-family: "Songti SC", serif;
-  font-size: 18px;
-  color: #6B6258;
-}
-
-.result-btn.primary .result-btn-ico {
-  color: #FFFFFF;
-}
-
-.result-btn-lbl {
-  font-family: "Songti SC", serif;
+.backup-title {
+  font-family: var(--f-serif);
   font-size: 15px;
   font-weight: 600;
-  color: #6B6258;
+  color: #2A251E;
+  margin-bottom: 6px;
+  display: block;
 }
 
-.result-btn.primary .result-btn-lbl {
-  color: #FFFFFF;
+.choice-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  padding: 2px 0 2px 16px;
+  position: relative;
+}
+
+.choice-bullet {
+  position: absolute;
+  left: 4px;
+  color: #CF7140;
+  font-weight: 700;
+}
+
+.choice-prefix,
+.choice-value {
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.choice-prefix {
+  color: #2A251E;
+  flex-shrink: 0;
+}
+
+.choice-value {
+  color: #CF7140;
+  font-weight: 600;
+}
+
+.quote-line { font-style: italic; }
+
+.result-card-item-wrap {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.source-note {
+  display: block;
+  margin-top: 3px;
+  color: #9A9186;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+.case-source-note {
+  margin: 2px 0 8px;
+}
+
+.kicker-mini {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #CF7140;
+  font-weight: 500;
+}
+
+.knn-summary {
+  margin: 8px 0 12px;
+  display: block;
+}
+
+.knn-reason-strong {
+  color: #2A251E;
+  font-weight: 500;
+}
+
+.knn-footnote {
+  font-size: 11px;
+  margin-top: 10px;
+  display: block;
+  color: #8A8175;
+}
+
+.highlight-entry {
+  background: #F1E0D3;
+  border-color: rgba(207, 113, 64, 0.22);
+}
+
+.dp-fold {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 0.5px dashed #E8E1D5;
+}
+
+.dp-fold-summary {
+  font-size: 12px;
+  color: #CF7140;
+  line-height: 1.6;
+}
+
+.dp-fold-body { margin-top: 10px; }
+
+.dp-fold-line {
+  display: block;
+  font-size: 12px;
+  color: #6B6258;
+  line-height: 1.75;
+  margin-bottom: 8px;
 }
 
 </style>

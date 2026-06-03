@@ -1,0 +1,16 @@
+<view class="btb-wrap">
+  <view
+    class="btb-item {{selected === item.path ? 'active' : ''}}"
+    wx:for="{{tabs}}"
+    wx:key="path"
+    data-path="{{item.path}}"
+    bindtap="switchTab"
+  >
+    <image
+      class="btb-icon"
+      src="{{selected === item.path ? item.activeIcon : item.icon}}"
+      mode="aspectFit"
+    />
+    <text class="btb-text">{{item.text}}</text>
+  </view>
+</view>

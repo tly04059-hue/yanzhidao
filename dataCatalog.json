@@ -1,0 +1,58 @@
+{
+  "name": "yanzhidao-data-catalog",
+  "version": "2026-05-20",
+  "description": "研知道可复用数据目录。其他项目优先读取 publish 层文件或同名 API 入口，不直接读取 sourceData。",
+  "api_base_path": "/api/data",
+  "datasets": [
+    {
+      "id": "schools",
+      "name": "院校库发布数据",
+      "description": "管综 MPA/MEM/MBA 与党校院校 L2 发布层合并入口。",
+      "api": "/api/data/schools",
+      "local_files": [
+        "schoolData/publish/199exam_miniapp_school_publish_sc_cq.json",
+        "schoolData/publish/party_school_miniapp_publish.json"
+      ],
+      "miniapp_files": [
+        "miniapp/src/data/199exam-miniapp-school-publish-sc-cq.json",
+        "miniapp/src/data/party-school-miniapp-publish.json"
+      ],
+      "schema_files": [
+        "schoolData/schemas/miniapp_school_publish.schema.json"
+      ],
+      "query": ["program_type", "province", "city", "school_id", "school_name", "page", "page_size"]
+    },
+    {
+      "id": "student-cases",
+      "name": "学生案例库发布数据",
+      "description": "匿名学生案例 L2 发布层。",
+      "api": "/api/data/student-cases",
+      "local_files": [
+        "studentCases/publish/student_cases_miniapp_publish.json"
+      ],
+      "miniapp_files": [
+        "miniapp/src/data/student-cases-publish.json"
+      ],
+      "schema_files": [
+        "studentCases/schemas/student_cases_miniapp_publish.schema.json"
+      ],
+      "query": ["system", "program_type", "party_school", "tag", "page", "page_size"]
+    },
+    {
+      "id": "recommendation-strategies",
+      "name": "推荐方案库发布数据",
+      "description": "测一测预生成推荐策略 L2 发布层。",
+      "api": "/api/data/recommendation-strategies",
+      "local_files": [
+        "courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json"
+      ],
+      "miniapp_files": [
+        "miniapp/src/data/recommendation-strategies-publish.json"
+      ],
+      "schema_files": [
+        "courseRecommendationStrategy/schemas/recommendation_strategies_miniapp_publish.schema.json"
+      ],
+      "query": ["program_type", "status", "tag", "page", "page_size"]
+    }
+  ]
+}

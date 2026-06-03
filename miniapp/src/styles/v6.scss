@@ -1,0 +1,2040 @@
+// ============================================================
+// V6 设计系统 · 直接对应 6.0-实现稿-claude.html CSS
+// ============================================================
+
+$accent: #CF7140;
+$accent-soft: #F1E0D3;
+$accent-ring: rgba(207, 113, 64, 0.22);
+$accent-deep: #B85F38;
+$accent-dim: rgba(207, 113, 64, 0.08);
+$success: #5F8C6E;
+$success-soft: #DAE5DC;
+$bg: #FAF7F2;
+$bg-warm: #FAF6EF;
+$bg-tertiary: #F0E9DD;
+$card: #FFFFFF;
+$text-1: #2A251E;
+$text-2: #6B6258;
+$text-3: #8A8175;
+$border: #ECE5D8;
+$divider: #E8E1D5;
+$dark-bg: #2A251E;
+
+@mixin serif {
+  font-family: "Songti SC", "STSong", "SimSun", "Noto Serif SC", "Source Han Serif SC", serif;
+}
+
+@mixin sans {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", system-ui, sans-serif;
+}
+
+// ============================================================
+// 页面容器
+// ============================================================
+.v6-page {
+  min-height: 100vh;
+  background: $bg;
+  color: $text-1;
+  padding: 18px 18px 96px;
+  box-sizing: border-box;
+  @include sans;
+  overflow-x: hidden;
+}
+
+.v6-page.has-tabbar {
+  padding-bottom: calc(50px + env(safe-area-inset-bottom, 0px));
+}
+
+// ============================================================
+// 顶部导航
+// ============================================================
+.v6-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-sizing: border-box;
+  height: calc(54px + var(--status-bar-height, 0px));
+  padding: var(--status-bar-height, 0px) 20px 0;
+  border-bottom: 0.5px solid rgba(236, 229, 216, 0.9);
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(42, 37, 30, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v6-nav-side {
+  width: 44px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+}
+
+.v6-nav-title {
+  flex: 1;
+  text-align: center;
+  @include serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: $text-1;
+  line-height: 54px;
+}
+
+.v6-nav-right {
+  width: 44px;
+  flex: 0 0 44px;
+  text-align: right;
+  font-size: 12px;
+  color: $text-2;
+}
+
+.v6-back-icon {
+  width: 22px;
+  height: 22px;
+}
+
+// ============================================================
+// 品牌行
+// ============================================================
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  color: $text-3;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    background: $accent;
+    display: block;
+  }
+}
+
+// ============================================================
+// Hero 卡片
+// ============================================================
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  background-color: $card;
+  border-radius: 18px;
+  padding: 18px 12px;
+  border: 0.5px solid $border;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  margin-bottom: 16px;
+}
+
+.kicker-cn {
+  display: block;
+  color: $accent;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+// editorial kicker（带方块前缀 · 非 hero-card 内使用）
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: $accent;
+  font-weight: 500;
+  margin-bottom: 6px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: $accent;
+    flex-shrink: 0;
+  }
+}
+
+// 开放区块 hero（无卡片 · 编辑风格首屏）
+.hero {
+  padding: 12px 4px 24px;
+}
+
+.hero-h1 {
+  @include serif;
+  font-size: 28px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: $text-2;
+  line-height: 1.7;
+  display: block;
+}
+
+.hero-title {
+  display: block;
+  @include serif;
+  font-size: 30px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 10px;
+}
+
+.hero-copy {
+  display: block;
+  font-size: 14px;
+  line-height: 1.95;
+  color: $text-2;
+}
+
+// ============================================================
+// 区块
+// ============================================================
+.section {
+  margin-bottom: 24px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  gap: 10px;
+  min-height: 50px;
+}
+
+.section-head-title {
+  @include serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: $text-1;
+  flex: 1;
+}
+
+.section-head-h2 {
+  @include serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: $text-1;
+  flex: 1;
+}
+
+.section-head-meta {
+  color: $text-3;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-align: right;
+  flex: 0 0 auto;
+}
+
+// ============================================================
+// 入口按钮
+// ============================================================
+.entry-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.entry-btn {
+  display: block;
+  padding: 18px 16px;
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  color: $text-1;
+
+  &:active { opacity: 0.78; }
+}
+
+.entry-btn-title {
+  display: block;
+  @include serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: $text-1;
+}
+
+.entry-btn-desc {
+  display: block;
+  font-size: 13px;
+  line-height: 1.75;
+  color: $text-2;
+  margin-bottom: 10px;
+}
+
+.entry-btn-action {
+  display: block;
+  font-size: 12px;
+  color: $accent;
+  letter-spacing: 0.06em;
+}
+
+// ============================================================
+// 通用卡片
+// ============================================================
+.card {
+  background: $card;
+  border-radius: 18px;
+  padding: 20px;
+  border: 0.5px solid $border;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  margin-bottom: 16px;
+}
+
+.card-sm {
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.card-warm {
+  background: $bg-warm;
+  border: 0.5px dashed $accent-ring;
+  box-shadow: none;
+}
+
+.note-card {
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.note-card-text {
+  font-size: 13px;
+  color: $text-2;
+  line-height: 1.85;
+  display: block;
+}
+
+.note-after {
+  font-size: 11px;
+  color: $text-3;
+  margin-top: 8px;
+  line-height: 1.7;
+  display: block;
+}
+
+// ============================================================
+// 入口卡（usage 页 · 编辑风格列表型）
+// ============================================================
+.entry-card {
+  display: block;
+  padding: 18px 16px;
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  margin-bottom: 12px;
+  color: $text-1;
+
+  &:active { opacity: 0.78; }
+}
+
+.entry-card-lbl {
+  display: block;
+  @include serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 6px;
+}
+
+.entry-card-desc {
+  display: block;
+  font-size: 13px;
+  color: $text-2;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.entry-card-arrow {
+  display: block;
+  font-size: 13px;
+  color: $accent;
+  font-weight: 500;
+}
+
+// ============================================================
+// CTA 按钮
+// ============================================================
+.btn-primary {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 20px;
+  background: $accent;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  @include sans;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(207, 113, 64, 0.22);
+  margin-bottom: 10px;
+
+  &:active { opacity: 0.9; }
+}
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 20px;
+  background: $card;
+  color: $accent;
+  border: 1px solid $accent;
+  border-radius: 999px;
+  @include sans;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+
+  &:active { opacity: 0.8; }
+}
+
+.btn-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+// ============================================================
+// 警告卡
+// ============================================================
+.alert-card {
+  background: linear-gradient(180deg, #fff8f3 0%, #fcf3e9 100%);
+  border: 0.5px solid $accent-soft;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.alert-kicker {
+  font-size: 11px;
+  color: $accent;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.alert-text {
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.7;
+  display: block;
+}
+
+// ============================================================
+// 列表卡
+// ============================================================
+.list-card {
+  background: $card;
+  border-radius: 18px;
+  border: 0.5px solid $border;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 0.5px solid $border;
+  font-size: 14px;
+  line-height: 1.55;
+  color: $text-1;
+
+  &:last-child { border-bottom: none; }
+
+  &:active { background: $bg; }
+}
+
+.list-item-label { flex: 1; }
+
+.list-item-arrow {
+  color: $text-3;
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.list-item-val {
+  color: $text-3;
+}
+
+// ============================================================
+// Home 列表（首页链接列表）
+// ============================================================
+.home-list {
+  padding: 6px 0;
+
+  .list-item {
+    font-size: 14px;
+    color: $text-1;
+    cursor: pointer;
+  }
+
+  .list-item-arrow { font-size: 16px; color: $text-3; }
+  .list-item.emphasis .list-item-label { color: $accent; font-weight: 700; }
+}
+
+// ============================================================
+// 首页双路径大卡
+// ============================================================
+.path-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.path-stat-card {
+  background: linear-gradient(180deg, #fffaf6 0%, #fff 100%);
+  border: 0.5px solid $border;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  padding: 20px 16px 18px;
+  display: block;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.ps-link-top {
+  display: block;
+  position: relative;
+  &:active { opacity: 0.78; }
+}
+
+.ps-link-bottom {
+  display: block;
+  &:active { opacity: 0.78; }
+}
+
+.ps-headline {
+  font-size: 24px;
+  line-height: 1.25;
+  color: $accent;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.ps-desc {
+  font-size: 11px;
+  color: $text-3;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.ps-desc-strong {
+  color: $accent;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.ps-divider {
+  border-top: 0.5px dashed $divider;
+  margin: 14px 0;
+}
+
+.ps-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 14px;
+  color: $text-3;
+  opacity: 0.5;
+  line-height: 1;
+}
+
+.ps-desc-line {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  color: $text-3;
+  line-height: 1.7;
+}
+
+.ps-rate-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: $accent;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.ps-rate-line {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  color: $text-3;
+  line-height: 14px;
+}
+
+.ps-rates {
+  font-size: 11px;
+  color: $text-3;
+  line-height: 1.7;
+}
+
+.metric-hint {
+  display: block;
+  font-size: 11px;
+  color: $text-3;
+  margin-top: 10px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+// ============================================================
+// 结果卡
+// ============================================================
+.result-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.result-card {
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  padding: 16px;
+}
+
+.result-card-title {
+  @include serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: $text-1;
+  display: block;
+}
+
+.result-card-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-card-item {
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.85;
+  padding: 2px 0 2px 16px;
+  position: relative;
+  display: block;
+
+  &::before {
+    content: "·";
+    position: absolute;
+    left: 4px;
+    color: $accent;
+    font-weight: 700;
+  }
+}
+
+.result-card-item-strong {
+  color: $text-1;
+  font-weight: 600;
+}
+
+// ============================================================
+// 推荐卡（结果页）
+// ============================================================
+.recommend-card {
+  background: linear-gradient(135deg, #fff 0%, $bg-warm 100%);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid $accent-ring;
+  box-shadow: 0 4px 16px rgba(60, 50, 40, 0.06);
+  margin-bottom: 16px;
+}
+
+.recommend-crown {
+  font-size: 11px;
+  color: $accent;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.recommend-title {
+  @include serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.recommend-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.recommend-meta-item {
+  font-size: 12px;
+  color: $text-2;
+}
+
+.recommend-reason {
+  font-size: 14px;
+  line-height: 1.75;
+  color: $text-1;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  border-left: 3px solid $accent;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.match-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: $text-2;
+  margin-bottom: 8px;
+}
+
+.match-bar {
+  flex: 1;
+  height: 6px;
+  background: $border;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.match-bar-fill {
+  height: 100%;
+  background: $accent;
+  border-radius: 3px;
+}
+
+.match-pct {
+  @include serif;
+  font-weight: 600;
+  color: $accent;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+
+// ============================================================
+// K-NN 双卡
+// ============================================================
+.knn-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.knn-card {
+  background: $card;
+  border-radius: 14px;
+  padding: 16px;
+  border: 0.5px solid $border;
+  text-align: center;
+
+  &.A { border-color: $accent-ring; background: $accent-soft; }
+  &.B { border-color: rgba(95, 140, 110, 0.22); background: $success-soft; }
+}
+
+.knn-num {
+  @include serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+
+  .A & { color: $accent; }
+  .B & { color: $success; }
+}
+
+.knn-lbl {
+  font-size: 12px;
+  color: $text-2;
+  margin-top: 4px;
+  display: block;
+}
+
+.knn-reasons {
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.7;
+  padding: 8px 12px;
+  background: $bg-warm;
+  border-radius: 14px;
+  margin-top: 8px;
+}
+
+// ============================================================
+// 折叠块（用 Vue v-show 代替 details）
+// ============================================================
+.dim-fold {
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.dim-fold-summary {
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+
+  &:active { opacity: 0.78; }
+}
+
+.dim-fold-info { flex: 1; }
+
+.dim-title {
+  @include serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.dim-desc {
+  font-size: 12px;
+  color: $text-3;
+  line-height: 1.6;
+  display: block;
+}
+
+.dim-arrow {
+  font-size: 12px;
+  color: $accent;
+  flex-shrink: 0;
+  margin-top: 4px;
+  transition: transform 0.2s;
+
+  &.open { transform: rotate(180deg); }
+}
+
+.dim-rules {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dim-rule-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.dim-rule-text {
+  font-size: 13px;
+  color: $text-2;
+  line-height: 1.7;
+  flex: 1;
+}
+
+// ============================================================
+// 表格（用 View 模拟）
+// ============================================================
+.compare-table {
+  background: $card;
+  border-radius: 16px;
+  border: 0.5px solid $border;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.compare-table-head {
+  background: $bg-warm;
+  display: flex;
+}
+
+.compare-table-th {
+  flex: 1;
+  padding: 10px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: $text-2;
+  letter-spacing: 0.04em;
+}
+
+.compare-table-th:first-child {
+  flex: 0 0 76px;
+  max-width: 76px;
+}
+
+.compare-table-row {
+  display: flex;
+  border-top: 0.5px dashed $divider;
+}
+
+.compare-table-td {
+  flex: 1;
+  padding: 10px 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  vertical-align: top;
+  color: $text-1;
+}
+
+.compare-table-td:first-child {
+  flex: 0 0 76px;
+  max-width: 76px;
+  color: $text-2;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.compare-table-td-strong {
+  color: $text-1;
+  font-weight: 600;
+}
+
+.compare-table-expand-row {
+  border-top: 0.5px dashed $divider;
+}
+
+.compare-table-expand-td {
+  display: block;
+  padding: 14px;
+  font-size: 12px;
+  line-height: 1.85;
+  color: $text-2;
+  background: linear-gradient(180deg, #fff8f3 0%, #ffffff 100%);
+  white-space: normal;
+  word-break: break-word;
+}
+
+// ============================================================
+// 进度条
+// ============================================================
+.progress {
+  height: 4px;
+  background: $border;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: $accent;
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+// ============================================================
+// 答题专用
+// ============================================================
+.quiz-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: $text-2;
+  margin-bottom: 6px;
+}
+
+.quiz-progress-accent { color: $accent; font-weight: 600; }
+
+.quiz-question { margin: 20px 0 16px; }
+
+.quiz-question-title {
+  @include serif;
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: $text-1;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.quiz-question-title.dp { color: $accent; }
+
+.quiz-hint {
+  font-size: 12px;
+  line-height: 1.95;
+  color: $text-3;
+  display: block;
+}
+
+.q-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.q-option {
+  padding: 14px 16px;
+  background: $card;
+  border-radius: 14px;
+  border: 1px solid $border;
+  font-size: 14px;
+  line-height: 1.55;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &.selected { border-color: $accent; }
+  &:active { opacity: 0.78; }
+}
+
+.q-radio {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid $border;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  position: relative;
+  transition: border-color 0.15s;
+
+  .q-option.selected & {
+    border-color: $accent;
+  }
+}
+
+.q-radio-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $accent;
+  opacity: 0;
+  transition: opacity 0.15s;
+
+  .q-option.selected & { opacity: 1; }
+}
+
+.q-check-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  color: #fff;
+  opacity: 0;
+
+  .q-option.selected.multi & { opacity: 1; }
+}
+
+.q-option-text { flex: 1; }
+
+.q-escape {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid $divider;
+}
+
+.q-escape-link {
+  font-size: 12px;
+  color: $text-3;
+  text-decoration: underline;
+}
+
+.quiz-nav {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 0.5px solid $divider;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.quiz-nav .btn-primary,
+.quiz-nav .btn-secondary {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.quiz-nav .btn-primary:disabled,
+.quiz-nav .btn-primary.disabled {
+  opacity: 0.4;
+  box-shadow: none;
+}
+
+.btn-ghost-link {
+  background: none;
+  border: none;
+  color: $text-3;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 8px 10px;
+  @include sans;
+  flex: 0 0 auto;
+}
+
+// ============================================================
+// 过考率 / 统计数据
+// ============================================================
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin: 20px 0 6px;
+}
+
+.stat-card {
+  background: $card;
+  border-radius: 14px;
+  padding: 10px 6px;
+  border: 0.5px solid $border;
+  text-align: center;
+}
+
+.stat-num {
+  @include serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: $accent;
+  line-height: 1.1;
+}
+
+.stat-lbl {
+  font-size: 10px;
+  color: $text-2;
+  margin-top: 4px;
+  line-height: 1.4;
+  display: block;
+}
+
+.stat-note {
+  font-size: 9px;
+  color: $text-3;
+  margin-top: 2px;
+  line-height: 1.3;
+  display: block;
+}
+
+// ============================================================
+// 过考率说明页专用
+// ============================================================
+.pass-rate-warn {
+  background: $bg-warm;
+  border-left: 3px solid $accent;
+  padding: 14px 16px;
+  border-radius: 0 14px 14px 0;
+  margin-bottom: 16px;
+}
+
+.pass-rate-warn-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: $accent;
+  display: block;
+}
+
+.pass-rate-warn-text {
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.75;
+  display: block;
+}
+
+.pass-rate-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 0.5px dashed $divider;
+  font-size: 13px;
+}
+
+.pass-rate-row-num {
+  @include serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: $accent;
+}
+
+.pass-rate-row-meta {
+  font-size: 11px;
+  color: $text-3;
+  display: block;
+  margin-top: 2px;
+}
+
+// ============================================================
+// 关于页
+// ============================================================
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.about-stat {
+  background: $card;
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  border: 0.5px solid $border;
+}
+
+.about-stat-num {
+  @include serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  &.accent { color: $accent; }
+  &.success { color: $success; }
+}
+
+.about-stat-lbl {
+  font-size: 11px;
+  color: $text-2;
+  margin-top: 4px;
+  display: block;
+}
+
+// ============================================================
+// 加载页
+// ============================================================
+.loading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.loading-steps { text-align: center; }
+
+.loading-step {
+  font-size: 13px;
+  color: $text-3;
+  padding: 6px 0;
+  display: block;
+  transition: color 0.3s;
+
+  &.active { color: $accent; font-weight: 500; }
+  &.done { color: $text-2; }
+}
+
+// ============================================================
+// 地图页
+// ============================================================
+.map-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.map-stat-card {
+  background: $card;
+  border-radius: 14px;
+  padding: 12px 8px;
+  text-align: center;
+  border: 0.5px solid $border;
+}
+
+.map-stat-num {
+  @include serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: $accent;
+  display: block;
+}
+
+.map-stat-lbl {
+  font-size: 11px;
+  color: $text-2;
+  margin-top: 2px;
+  display: block;
+}
+
+// ============================================================
+// 顾问卡
+// ============================================================
+.consultant-card-v6 {
+  background: linear-gradient(135deg, $card 0%, $bg-warm 100%);
+  border-radius: 20px;
+  padding: 24px;
+  border: 0.5px solid $border;
+  box-shadow: 0 4px 16px rgba(60, 50, 40, 0.06);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.consultant-avatar-v6 {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: $accent-soft;
+  border: 2px solid $accent-ring;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: $accent-deep;
+}
+
+.consultant-name-v6 {
+  display: block;
+  @include serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 4px;
+}
+
+.consultant-title-v6 {
+  display: block;
+  font-size: 12px;
+  color: $text-2;
+  margin-bottom: 12px;
+}
+
+// ============================================================
+// 分隔文字
+// ============================================================
+.divider-text {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: $text-3;
+  text-align: center;
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: $divider;
+}
+
+// ============================================================
+// 数据截止说明
+// ============================================================
+.data-cutoff {
+  background: $bg-warm;
+  border-left: 2px solid $accent;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.7;
+  border-radius: 0 14px 14px 0;
+  margin: 12px 0;
+  display: block;
+}
+
+.zk-note {
+  background: $bg-warm;
+  border-left: 2px solid $accent;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.7;
+  border-radius: 0 14px 14px 0;
+  margin: 12px 0;
+  display: block;
+}
+
+// ============================================================
+// Chip 标签
+// ============================================================
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: $bg;
+  color: $text-2;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  border: 0.5px solid $border;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chip-accent { background: $accent-soft; color: $accent; border-color: $accent-ring; }
+.chip-success { background: $success-soft; color: $success; border-color: rgba(95, 140, 110, 0.22); }
+.chip-active { background: $accent; color: #fff; border-color: $accent; font-weight: 600; }
+
+// ============================================================
+// 标签
+// ============================================================
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  border-radius: 4px;
+  background: $bg;
+  color: $text-2;
+  margin-right: 4px;
+}
+
+.tag-985 { background: $accent; color: #fff; }
+.tag-211 { background: $accent-soft; color: $accent; }
+.tag-success { background: $success-soft; color: $success; }
+
+// ============================================================
+// 院校库（zk-lib）专用
+// ============================================================
+.zk-tree { padding: 0; }
+
+.zk-path-trail {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  padding: 8px 10px;
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 14px;
+  margin: 6px 0 10px;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  min-height: 30px;
+  overflow-x: auto;
+}
+
+.zk-crumb {
+  font-size: 10.5px;
+  color: $accent;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 2px 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.zk-crumb-placeholder {
+  font-size: 10.5px;
+  color: $text-3;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.zk-crumb-sep {
+  font-size: 10px;
+  color: $accent;
+  margin: 0 2px;
+  opacity: 0.7;
+}
+
+.zk-reset {
+  margin-left: auto;
+  font-size: 10px;
+  color: $text-3;
+  padding: 2px 6px;
+  border: 0.5px solid $border;
+  border-radius: 999px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.zk-step-row {
+  margin-bottom: 16px;
+}
+
+.zk-step-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.zk-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $accent;
+  color: #fff;
+  @include serif;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.zk-step-meta {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: $text-3;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.zk-step-title {
+  @include serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: $text-1;
+  display: block;
+}
+
+.zk-l1-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.zk-l1-card {
+  padding: 16px 14px;
+  border-radius: 14px;
+  text-align: center;
+  cursor: pointer;
+
+  &.solid { background: $accent; color: #fff; }
+  &.ring { background: $card; border: 1.5px solid $accent; color: $accent; }
+  &:active { opacity: 0.85; }
+}
+
+.zk-l1-name {
+  @include serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+
+  .zk-l1-card.ring & { color: $accent; }
+}
+
+.zk-l1-feat {
+  font-size: 11px;
+  opacity: 0.9;
+  line-height: 1.6;
+
+  .zk-l1-card.ring & { opacity: 0.85; color: $text-2; }
+}
+
+.zk-l2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.zk-l2-card {
+  background: $card;
+  border-radius: 14px;
+  padding: 14px;
+  border: 0.5px solid $border;
+  cursor: pointer;
+
+  &:active { opacity: 0.78; }
+}
+
+.zk-l2-name {
+  @include serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.zk-l2-cond {
+  font-size: 11px;
+  color: $text-2;
+  line-height: 1.6;
+  display: block;
+}
+
+.zk-l3-list { display: flex; flex-direction: column; gap: 10px; }
+
+.school-card {
+  background: $card;
+  border-radius: 14px;
+  padding: 14px;
+  border: 0.5px solid $border;
+  cursor: pointer;
+
+  &:active { opacity: 0.78; }
+}
+
+.school-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.school-name {
+  @include serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: $text-1;
+}
+
+.school-meta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: $text-2;
+}
+
+.school-meta-b { color: $text-1; font-weight: 500; }
+
+// ============================================================
+// CTA 行（结果页 / 关于页等）
+// ============================================================
+.cta-stack { display: flex; flex-direction: column; gap: 10px; }
+
+.cta-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background: $card;
+  border-radius: 18px;
+  border: 0.5px solid $border;
+  gap: 12px;
+  cursor: pointer;
+
+  &.primary {
+    background: $accent;
+    color: #fff;
+    border-color: $accent;
+    box-shadow: 0 6px 20px rgba(207, 113, 64, 0.22);
+  }
+
+  &:active { opacity: 0.78; }
+}
+
+.cta-row-body { flex: 1; }
+.cta-row-lbl { font-size: 14px; font-weight: 500; margin-bottom: 2px; display: block; }
+.cta-row-desc { font-size: 11px; color: $text-2; .primary & { color: rgba(255,255,255,0.85); } }
+.cta-row-arrow { font-size: 22px; opacity: 0.6; }
+
+// ============================================================
+// 择校长图
+// ============================================================
+.longimg {
+  background: $card;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(60, 50, 40, 0.06);
+  border: 0.5px solid $border;
+  margin-bottom: 16px;
+}
+
+.li-cover {
+  background: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+  color: #fff;
+  padding: 40px 20px 32px;
+  text-align: center;
+}
+
+.li-cover-brand {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  opacity: 0.85;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.li-cover-title {
+  @include serif;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.li-cover-sub {
+  color: rgba(255,255,255,0.88);
+  font-size: 13px;
+  display: block;
+}
+
+.li-toc { padding: 20px; }
+
+.li-toc-meta {
+  font-size: 11px;
+  color: $text-3;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.li-toc-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed $divider;
+  font-size: 13px;
+
+  &:last-child { border-bottom: none; }
+}
+
+.li-seq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: $accent;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.li-lbl {
+  @include serif;
+  font-weight: 600;
+  min-width: 70px;
+  display: block;
+}
+
+.li-dots {
+  flex: 1;
+  border-bottom: 1px dashed $text-3;
+  margin-bottom: 4px;
+}
+
+.li-toc-desc {
+  font-size: 12px;
+  color: $text-3;
+  display: block;
+}
+
+.li-section {
+  padding: 24px 20px;
+  border-bottom: 1px dashed $divider;
+
+  &:last-child { border-bottom: none; }
+}
+
+.li-story-card, .li-policy-card {
+  background: $bg-warm;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.li-policy-name { font-weight: 600; color: $accent; margin-bottom: 4px; display: block; }
+.li-policy-note { font-size: 11px; color: $text-3; margin-top: 4px; display: block; }
+.li-story-who { font-weight: 700; font-size: 14px; margin-bottom: 4px; color: $text-1; display: block; }
+.li-story-choice { color: $accent; font-size: 12px; display: block; }
+.li-story-quote { font-size: 12px; color: $text-2; font-style: italic; margin-top: 4px; display: block; }
+
+.li-footer {
+  background: $dark-bg;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.li-footer-brand { font-size: 13px; letter-spacing: 0.12em; margin-bottom: 4px; display: block; }
+.li-footer-tag { opacity: 0.7; font-size: 11px; letter-spacing: 0.08em; display: block; }
+
+.li-footer-qr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.li-footer-qr-card {
+  background: #FAF6EF;
+  border: 0.5px solid rgba(236, 229, 216, 0.72);
+  border-radius: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
+.li-footer-qr-img {
+  width: 100%;
+  height: 72px;
+  display: block;
+}
+
+.li-footer-qr-label {
+  display: block;
+  margin-top: 6px;
+  color: $text-1;
+  font-size: 11px;
+}
+
+.li-footer-qr-hint {
+  display: block;
+  margin-top: 10px;
+  color: rgba(255,255,255,0.66);
+  font-size: 11px;
+}
+
+// ============================================================
+// 刊尾
+// ============================================================
+.footer-sign {
+  text-align: center;
+  padding: 28px 0 16px;
+  border-top: 1px dashed $divider;
+  margin-top: 24px;
+}
+
+.footer-sign-title {
+  @include serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: $text-1;
+  display: block;
+}
+
+.footer-sign-sub {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: $text-3;
+  margin-top: 6px;
+  display: block;
+}
+
+// ============================================================
+// 标签行
+// ============================================================
+.tag-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+// ============================================================
+// 空状态占位
+// ============================================================
+.placeholder {
+  text-align: center;
+  padding: 60px 20px;
+  background: $card;
+  border-radius: 18px;
+  border: 0.5px dashed $accent-ring;
+  margin: 40px 0;
+}
+
+.placeholder-icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+  display: block;
+  opacity: 0.4;
+}
+
+.placeholder-title {
+  display: block;
+  @include serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text-2;
+  margin-bottom: 8px;
+}
+
+.placeholder-desc {
+  display: block;
+  font-size: 13px;
+  color: $text-3;
+  line-height: 1.7;
+}
+
+// ============================================================
+// 案例卡（cases 页）
+// ============================================================
+.case-card {
+  background: $card;
+  border-radius: 18px;
+  border: 0.5px solid $border;
+  box-shadow: 0 2px 8px rgba(60, 50, 40, 0.04);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.case-card-title {
+  display: block;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.5;
+  color: $text-1;
+  margin-bottom: 4px;
+}
+
+.case-meta {
+  display: block;
+  font-size: 13px;
+  color: $text-3;
+  margin-bottom: 10px;
+}
+
+.case-choice {
+  display: block;
+  font-size: 13px;
+  color: $text-1;
+  margin-bottom: 6px;
+}
+
+.case-quote {
+  display: block;
+  font-size: 13px;
+  color: $text-2;
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.case-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+// ============================================================
+// 筛选行（cases、schools 页）
+// ============================================================
+.filter-row {
+  margin-bottom: 10px;
+}
+
+.filter-scroll { flex: 1; }
+
+.chip-group {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 4px;
+}
+
+// ============================================================
+// 通用文字工具类
+// ============================================================
+.text-accent { color: $accent; font-weight: 500; }
+.text-success { color: $success; font-weight: 500; }
+.text-2 { color: $text-2; }
+.text-3 { color: $text-3; }
+.text-sm { font-size: 13px; line-height: 1.7; color: $text-2; }
+.text-xs { font-size: 12px; line-height: 1.6; color: $text-3; }
+.text-bold { font-weight: 600; color: $text-1; }
+
+// ============================================================
+// promise-list（测一测入口）
+// ============================================================
+.promise-list { margin: 14px 0 22px; }
+
+.promise-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.promise-dot {
+  color: $success;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+// ============================================================
+// 数据来源页
+// ============================================================
+.source-group {
+  margin-bottom: 20px;
+}
+
+.source-group-title {
+  @include serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.source-item {
+  padding: 10px 0;
+  border-bottom: 0.5px dashed $divider;
+  display: block;
+
+  &:last-child { border-bottom: none; }
+}
+
+.source-item-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: $text-1;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.source-item-desc {
+  font-size: 12px;
+  color: $text-2;
+  line-height: 1.6;
+  display: block;
+}

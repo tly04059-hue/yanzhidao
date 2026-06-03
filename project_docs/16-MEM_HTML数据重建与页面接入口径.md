@@ -1,6 +1,6 @@
 # MEM HTML 数据重建与页面接入口径
 
-> 更新时间：2026-05-18  
+> 更新时间：2026-05-29  
 > 来源：`schoolData/sourceData/199exam/html`  
 > 输出：`schoolData/mem.json`、`schoolData/standardized/199exam/199exam_mem_school_program_master.json`
 

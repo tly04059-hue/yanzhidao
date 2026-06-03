@@ -1,7 +1,7 @@
 {
   "metadata": {
     "dataset": "recommendation_strategy_l1",
-    "generated_at": "2026-05-18",
+    "generated_at": "2026-05-29",
     "source_file": "courseRecommendationStrategy/sourceData/recommendation_strategy_seed.json",
     "record_count": 8,
     "active_count": 8

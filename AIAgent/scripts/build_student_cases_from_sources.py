@@ -20,11 +20,17 @@ PUBLISH_OUTPUT = ROOT / "studentCases/publish/student_cases_miniapp_publish.json
 MINIAPP_OUTPUT = ROOT / "miniapp/src/data/student-cases-publish.json"
 REPORT_OUTPUT = ROOT / "studentCases/student_case_build_report.json"
 DOC_OUTPUT = ROOT / "project_docs/17-学生案例库L1L2生成与小程序接入口径.md"
+PERSONA_OVERRIDE_INPUT = ROOT / "studentCases/manual/persona_overrides.json"
 
 PRIVATE_FIELDS = {"姓名", "电话", "联系方式", "身份证号", "邮寄地址"}
 PROGRAM_ORDER = {"MPA": 1, "MEM": 2, "MBA": 3, "党校": 4}
 SYSTEM_ORDER = {"管综系": 1, "党校系": 2}
 DX_SCHOOL_ORDER = {"四川党校": 1, "重庆党校": 2}
+
+try:
+    PERSONA_OVERRIDES: dict[str, dict[str, Any]] = json.loads(PERSONA_OVERRIDE_INPUT.read_text(encoding="utf-8"))
+except FileNotFoundError:
+    PERSONA_OVERRIDES = {}
 
 
 def clean(value: Any) -> str:
@@ -175,17 +181,249 @@ def motivation_tags(value: str) -> list[str]:
     return tags
 
 
+def ordered_values(values: set[str], order: list[str]) -> list[str]:
+    rank = {value: index for index, value in enumerate(order)}
+    return sorted(values, key=lambda value: (rank.get(value, 999), value))
+
+
 def classify_work_unit(value: str) -> str:
     text = clean(value)
     if not text:
         return "单位类型待确认"
     if any(key in text for key in ("人民政府", "局", "委员会", "法院", "检察", "公安", "税务", "财政", "镇", "乡")):
         return "体制内/机关事业单位"
-    if "国企" in text or "集团" in text:
+    if any(key in text for key in ("国企", "集团", "公司", "有限责任公司")):
         return "国企/企业"
     if "学校" in text or "医院" in text:
         return "事业单位"
     return "单位类型待确认"
+
+
+def infer_system_tag(system: str, work_function: str = "", motivation: str = "", work_unit_type: str = "", work_unit_name: str = "") -> str:
+    text = " ".join(clean(part) for part in (work_function, motivation, work_unit_name, work_unit_type))
+    if not text:
+        return "待确认"
+    if any(key in text for key in ("法院", "检察", "公安", "交警", "司法", "纪检", "纪委", "监委")):
+        return "公检法纪检"
+    if any(key in text for key in ("教师", "学校", "教育", "教务", "学院")):
+        return "教育系统"
+    if any(key in text for key in ("医院", "医护", "护理", "卫健", "卫生", "医生")):
+        return "医疗系统"
+    if any(key in text for key in ("街道", "乡镇", "社区", "村镇", "街道办")):
+        return "乡镇街道"
+    if any(key in text for key in ("人民银行", "银行", "金融", "银保监", "金融监管")):
+        return "银行金融"
+    if any(key in text for key in ("国企", "央企", "集团", "企业")) or work_unit_type == "国企/企业":
+        return "国企央企"
+    if any(
+        key in text
+        for key in ("机关", "政府", "局", "委员会", "财政", "发改", "人社", "民政", "应急", "组织部", "宣传部", "公务员", "体制内")
+    ) or work_unit_type == "体制内/机关事业单位":
+        return "党政机关"
+    if any(key in text for key in ("事业单位", "图书馆", "文化馆", "融媒体", "公积金")) or work_unit_type == "事业单位":
+        return "其他事业编"
+    if system == "党校系":
+        return "其他"
+    return "其他"
+
+
+def infer_position_tag(work_function: str = "", system_tag: str = "", work_unit_type: str = "", work_unit_name: str = "") -> str:
+    text = " ".join(part for part in (clean(work_function), clean(work_unit_name)) if part)
+    normalized_unit_name = clean(work_unit_name)
+    if any(key in text for key in ("组织部",)):
+        return "组织部"
+    if any(key in text for key in ("宣传", "文广", "广播电视", "文旅", "融媒体")):
+        return "宣传部"
+    if any(key in text for key in ("纪委", "监委", "纪检")):
+        return "纪委监委"
+    if any(key in text for key in ("财政", "发改", "审计", "国资")):
+        return "财政发改"
+    if any(key in text for key in ("应急", "消防")):
+        return "应急管理"
+    if any(key in text for key in ("信访",)) or ("司法" in text and "行政" not in text):
+        return "司法法治信访"
+    if any(key in text for key in ("交通运输", "交通局", "交通运输局")):
+        return "交通运输"
+    if "公安" in text or "交警" in text or "交通管理" in text:
+        return "公安系统"
+    if "法院" in text or "检察" in text:
+        return "法院检察院"
+    if "司法行政" in text:
+        return "司法行政"
+    if "教师" in text:
+        return "教师"
+    if any(key in text for key in ("教务", "辅导员", "教育管理")):
+        return "教育管理"
+    if "教育局" in text:
+        return "教育局机关"
+    if any(key in text for key in ("医护", "护理", "医生")):
+        return "医护"
+    if any(key in text for key in ("医院党务", "医院行政", "院办")):
+        return "医院党务行政"
+    if "卫健" in text:
+        return "卫健委机关"
+    if any(key in text for key in ("党建", "党务")):
+        return "党建纪检"
+    if any(key in text for key in ("教育局", "教育和体育局")):
+        return "教育局机关"
+    if any(key in text for key in ("卫生服务中心", "卫生院", "社区卫生")):
+        return "医护"
+    if any(key in text for key in ("街道办",)):
+        return "街道办"
+    if any(key in text for key in ("人民政府", "镇政府")):
+        return "社区村镇管理"
+    if any(key in text for key in ("社区", "村镇", "乡镇")):
+        return "社区村镇管理"
+    if normalized_unit_name.endswith("镇") or normalized_unit_name.endswith("乡"):
+        return "社区村镇管理"
+    if "人社" in text or "社保" in text or "退役军人" in text or ("民政" in text and "人民政府" not in text):
+        return "人社民政"
+    if any(key in text for key in ("社会事务", "民政")):
+        return "社会事务民政"
+    if any(key in text for key in ("监管服务",)):
+        return "监管服务"
+    if any(key in text for key in ("金融监管", "人民银行", "银行")):
+        return "金融监管"
+    if any(key in text for key in ("技术", "工程", "信息", "研发", "运维")):
+        return "技术岗"
+    if any(key in text for key in ("管理",)):
+        return "管理岗"
+    if system_tag in {"党政机关", "公检法纪检", "其他事业编", "乡镇街道"} or work_unit_type == "体制内/机关事业单位":
+        return "综合岗"
+    if system_tag == "国企央企":
+        return "业务岗"
+    if system_tag in {"教育系统", "医疗系统"}:
+        return "管理岗"
+    if text:
+        return "其他"
+    return "待确认"
+
+
+def infer_goal_tags(motivation: str) -> list[str]:
+    text = clean(motivation)
+    tags = []
+    mapping = {
+        "遴选": "遴选",
+        "晋升": "晋升",
+        "提拔": "晋升",
+        "发展空间": "晋升",
+        "转编": "转编",
+        "入编": "转编",
+        "职称": "职称",
+        "不掉队": "防御",
+        "防御": "防御",
+        "防止": "防御",
+        "学历": "学历提升",
+        "学位": "学历提升",
+        "充实自我": "自我提升",
+        "提高学习能力": "自我提升",
+        "弥补遗憾": "自我提升",
+    }
+    for keyword, tag in mapping.items():
+        if keyword in text and tag not in tags:
+            tags.append(tag)
+    return tags or ["待确认"]
+
+
+def infer_party_member_tag(row: dict[str, str]) -> str:
+    for key in ("政治面貌", "是否党员", "党员情况"):
+        text = clean(row.get(key, ""))
+        if "预备党员" in text:
+            return "预备党员"
+        if "党员" in text or "中共" in text:
+            return "党员"
+        if any(flag in text for flag in ("非党员", "群众", "无党派")):
+            return "非党员"
+    return "待确认"
+
+
+def infer_party_school_goal_tags(system_tag: str) -> list[str]:
+    if system_tag in {"教育系统", "医疗系统"}:
+        return ["职称", "学历提升"]
+    if system_tag in {"党政机关", "公检法纪检", "乡镇街道", "其他事业编"}:
+        return ["学历提升", "防御"]
+    if system_tag in {"国企央企", "银行金融", "其他"}:
+        return ["学历提升", "自我提升"]
+    return ["待确认"]
+
+
+def apply_persona_override(source_file: str, row_number: int, persona: dict[str, Any]) -> dict[str, Any]:
+    key = f"{source_file}:{row_number}"
+    override = PERSONA_OVERRIDES.get(key)
+    if not override:
+        return persona
+    merged = dict(persona)
+    for field in ("system_tag", "position_tag", "party_member_tag"):
+        if field in override:
+            merged[field] = override[field]
+    if "goal_tag" in override:
+        merged["goal_tag"] = override["goal_tag"]
+    return merged
+
+
+def persona_sync_tags(base_tags: list[str], persona: dict[str, Any]) -> list[str]:
+    tags = list(base_tags)
+    for key in ("system_tag", "position_tag", "party_member_tag"):
+        value = clean(persona.get(key, ""))
+        if value and value != "待确认":
+            tags.append(value)
+    for value in persona.get("goal_tag", []):
+        if value and value != "待确认":
+            tags.append(value)
+    return list(dict.fromkeys(tags))
+
+
+def build_filters(cases: list[dict[str, Any]]) -> dict[str, list[str]]:
+    return {
+        "systems": ordered_values({case["system"] for case in cases}, ["管综系", "党校系"]),
+        "program_types": ordered_values({case["program_type"] for case in cases}, ["MPA", "MEM", "MBA", "党校"]),
+        "party_schools": ordered_values(
+            {case["party_school"] for case in cases if clean(case.get("party_school", ""))},
+            ["四川党校", "重庆党校"],
+        ),
+        "positions": ordered_values(
+            {case["position_tag"] for case in cases if clean(case.get("position_tag", "")) and case["position_tag"] != "待确认"},
+            [
+                "组织部",
+                "宣传部",
+                "纪委监委",
+                "财政发改",
+                "人社民政",
+                "应急管理",
+                "司法法治信访",
+                "综合岗",
+                "公安系统",
+                "法院检察院",
+                "司法行政",
+                "教师",
+                "教育管理",
+                "教育局机关",
+                "医护",
+                "医院党务行政",
+                "卫健委机关",
+                "管理岗",
+                "技术岗",
+                "党建纪检",
+                "业务岗",
+                "社区村镇管理",
+                "社会事务民政",
+                "党建组织",
+                "监管服务",
+                "街道办",
+                "金融监管",
+                "其他",
+            ],
+        ),
+        "goals": ordered_values(
+            {goal for case in cases for goal in case.get("goal_tag", []) if goal and goal != "待确认"},
+            ["晋升", "遴选", "防御", "职称", "转编", "学历提升", "自我提升"],
+        ),
+        "party_members": ordered_values(
+            {case["party_member_tag"] for case in cases if clean(case.get("party_member_tag", "")) and case["party_member_tag"] != "待确认"},
+            ["党员", "预备党员", "非党员"],
+        ),
+        "tags": sorted({tag for case in cases for tag in case.get("tags", []) if tag}),
+    }
 
 
 def risk_and_advice(tags: list[str], system: str, program_type: str) -> tuple[str, str]:
@@ -253,6 +491,16 @@ def inspect_file_with_rows(path: Path) -> list[dict[str, str]]:
 def build_management_case(source_file: str, row_number: int, row: dict[str, str]) -> tuple[dict[str, Any], dict[str, Any]]:
     program_type = normalize_program(row.get("意向专业", ""))
     band = age_band(row.get("年龄"))
+    work_function = clean(row.get("工作职能", ""))
+    motivation = clean(row.get("考研动机", ""))
+    persona = {
+        "system_tag": infer_system_tag("管综系", work_function=work_function, motivation=motivation),
+        "position_tag": "",
+        "goal_tag": infer_goal_tags(motivation),
+        "party_member_tag": infer_party_member_tag(row),
+    }
+    persona["position_tag"] = infer_position_tag(work_function, persona["system_tag"])
+    persona = apply_persona_override(source_file, row_number, persona)
     tags = [
         "管综系",
         program_type,
@@ -262,8 +510,8 @@ def build_management_case(source_file: str, row_number: int, row: dict[str, str]
         study_time_tag(row.get("日均学习时长", "")),
         clean(row.get("备考经验", "")) or "备考经验待确认",
     ]
-    tags.extend(motivation_tags(row.get("考研动机", "")))
-    tags = list(dict.fromkeys([tag for tag in tags if tag]))
+    tags.extend(motivation_tags(motivation))
+    tags = persona_sync_tags(list(dict.fromkeys([tag for tag in tags if tag])), persona)
     risk, advice = risk_and_advice(tags, "管综系", program_type)
     case_id = anonymized_id("case-199", source_file, row_number)
     target_school = clean(row.get("意向院校", ""))
@@ -282,14 +530,14 @@ def build_management_case(source_file: str, row_number: int, row: dict[str, str]
             "age_band": band,
             "graduated_school": clean(row.get("毕业院校", "")),
             "undergraduate_major": clean(row.get("所学专业", "")),
-            "work_function": clean(row.get("工作职能", "")),
+            "work_function": work_function,
             "class_type": clean(row.get("班型", "")),
             "enrollment_date": parse_excel_date(row.get("入班时间", "")),
         },
         "target": {
             "target_program": program_type,
             "target_school": target_school,
-            "motivation": clean(row.get("考研动机", "")),
+            "motivation": motivation,
         },
         "baseline": {
             "experience": clean(row.get("备考经验", "")),
@@ -311,6 +559,7 @@ def build_management_case(source_file: str, row_number: int, row: dict[str, str]
             "weekly": clean(row.get("每周学习时长", "")),
             "daily": clean(row.get("日均学习时长", "")),
         },
+        "persona": persona,
         "tags": tags,
         "privacy": {
             "anonymized": True,
@@ -322,9 +571,13 @@ def build_management_case(source_file: str, row_number: int, row: dict[str, str]
         "system": "管综系",
         "program_type": program_type,
         "party_school": "",
+        "system_tag": persona["system_tag"],
+        "position_tag": persona["position_tag"],
+        "goal_tag": persona["goal_tag"],
+        "party_member_tag": persona["party_member_tag"],
         "display_alias": alias,
         "title": f"{alias}｜{build_case_title('管综系', program_type, band, target_school)}",
-        "profile": f"{band} · {clean(row.get('工作职能', '岗位待确认'))} · {clean(row.get('备考经验', '备考经验待确认'))}",
+        "profile": f"{band} · {work_function or '岗位待确认'} · {clean(row.get('备考经验', '备考经验待确认'))}",
         "target": f"{program_type} · {target_school or '目标院校待确认'}",
         "baseline": f"{clean(row.get('数学基础', '数学待确认'))}；{clean(row.get('英语基础', '英语待确认'))}",
         "score": f"测评 {clean(row.get('测试总分', '待确认'))} 分 → 目标 {clean(row.get('目标总分', '待确认'))} 分",
@@ -345,6 +598,16 @@ def build_dx_case(source_file: str, row_number: int, row: dict[str, str]) -> tup
     admitted = clean(row.get("是否录取", "")) == "是"
     referenced = clean(row.get("是否参考", "")) == "是"
     major = clean(row.get("专业", ""))
+    work_unit_name = clean(row.get("工作单位名称", ""))
+    work_unit_type = classify_work_unit(row.get("工作单位名称", ""))
+    inferred_system_tag = infer_system_tag("党校系", work_unit_type=work_unit_type, work_unit_name=work_unit_name)
+    persona = {
+        "system_tag": inferred_system_tag,
+        "position_tag": infer_position_tag(system_tag=inferred_system_tag, work_unit_type=work_unit_type, work_unit_name=work_unit_name),
+        "goal_tag": infer_party_school_goal_tags(inferred_system_tag),
+        "party_member_tag": infer_party_member_tag(row),
+    }
+    persona = apply_persona_override(source_file, row_number, persona)
     tags = [
         "党校系",
         party_school,
@@ -354,7 +617,7 @@ def build_dx_case(source_file: str, row_number: int, row: dict[str, str]) -> tup
         "已录取" if admitted else "未录取",
         "已参考" if referenced else "未参考",
     ]
-    tags = list(dict.fromkeys([tag for tag in tags if tag]))
+    tags = persona_sync_tags(list(dict.fromkeys([tag for tag in tags if tag])), persona)
     risk, advice = risk_and_advice(tags, "党校系", program_type)
     case_id = anonymized_id("case-dx", source_file, row_number)
     alias = display_alias(row)
@@ -376,7 +639,7 @@ def build_dx_case(source_file: str, row_number: int, row: dict[str, str]) -> tup
             "graduation_time": clean(row.get("毕业时间", "")),
             "graduated_school": clean(row.get("毕业院校", "")),
             "undergraduate_major": clean(row.get("所学专业", "")),
-            "work_unit_type": classify_work_unit(row.get("工作单位名称", "")),
+            "work_unit_type": work_unit_type,
             "enrollment_date": parse_excel_date(row.get("入班时间", "")),
         },
         "target": {
@@ -390,6 +653,7 @@ def build_dx_case(source_file: str, row_number: int, row: dict[str, str]) -> tup
             "minority_bonus": to_number(row.get("少数民族加分")),
             "total_study_duration": clean(row.get("总学习时长", "")),
         },
+        "persona": persona,
         "tags": tags,
         "privacy": {
             "anonymized": True,
@@ -404,6 +668,10 @@ def build_dx_case(source_file: str, row_number: int, row: dict[str, str]) -> tup
             "system": "党校系",
             "program_type": program_type,
             "party_school": party_school,
+            "system_tag": persona["system_tag"],
+            "position_tag": persona["position_tag"],
+            "goal_tag": persona["goal_tag"],
+            "party_member_tag": persona["party_member_tag"],
             "display_alias": alias,
             "title": f"{alias}｜{build_case_title('党校系', program_type, band, major)}",
             "profile": f"{band} · {education_level(row.get('最高学历', ''))} · {major or '专业待确认'}",
@@ -467,7 +735,7 @@ def build_payload() -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
             },
             "privacy_note": "前台发布层不包含姓名、电话、身份证号、地址。",
         },
-        "filters": ["全部", "管综系", "党校系", "MPA", "MEM", "MBA", "四川党校", "重庆党校", "25-30", "30-35", "35+"],
+        "filters": build_filters(l2_cases),
         "cases": l2_cases,
     }
     report = {

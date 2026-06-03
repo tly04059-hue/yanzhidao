@@ -1,0 +1,306 @@
+{
+  "_meta": {
+    "derived_object": "zexiao",
+    "rename_note": "原 judge_doc.json，2026-05-19 改名 zexiao.json（§4.16 改名'择校方向建议'）",
+    "version": "0.2",
+    "version_change": "v0.1 → v0.2（2026-05-20）：按 PRD §4.16 v0.2 加 §2 目录 + §6 参考政策 + §7 相似故事 3 段，原 6 段升 9 段；导出高度 2200px → 3000px",
+    "source": [
+      {
+        "path": "03-产品与服务/选校工具/docs/02-产品需求文档-V1.md",
+        "version_date": "2026-05-20",
+        "section": "§4.16 择校方向建议（9 段固定结构 · v0.2 含目录段）",
+        "method": "映射"
+      },
+      {
+        "path": "01-战略定位/上下文价值观层.md",
+        "version_date": "2026-05-16",
+        "section": "§3.7 ER3 三个尊重 + §3.8 元规则段（含落款不带 ww）",
+        "method": "提炼"
+      },
+      {
+        "path": "data/derived-from-context/rules.json",
+        "version_date": "2026-05-18",
+        "section": "推荐路径 + 匹配度 + 一句话理由（§4 我的判断 输入）",
+        "method": "派生"
+      },
+      {
+        "path": "data/derived-from-context/path_options.json",
+        "version_date": "2026-05-20",
+        "section": "v0.2 路径 A/B + L2/L3（§4 我的判断 / §5 路径含义 输入）",
+        "method": "派生"
+      },
+      {
+        "path": "data/derived-from-context/policy_basis.json",
+        "version_date": "2026-05-20",
+        "section": "4 张政策卡（§6 参考政策 输入）",
+        "method": "派生"
+      },
+      {
+        "path": "data/derived-from-context/cases.json",
+        "version_date": "待派生（Phase 6）",
+        "section": "K-NN 匹配 4 张故事卡（§7 相似故事 输入）",
+        "method": "派生"
+      }
+    ],
+    "derived_at": "2026-05-20",
+    "derived_by": "Claude + ww 确认（PRD §4.16 v0.2 9 段固定结构 + 目录段设计）",
+    "sync_status": "synced",
+    "next_review_at": "2026-08-20",
+    "meta_rule_compliance": [
+      "ER1 ✓",
+      "ER2 ✓",
+      "ER3 ✓ · 落款不含 ww 个人署名 · 全图不含分享 CTA"
+    ],
+    "v03_path_refactor": "2026-05-19 ww 拍板 v0.3 院校库重构同步：zexiao 渲染模板通过 {primary_path} / {alternative_path} 变量占位，不直接引用旧 P001-P008 路径名，但渲染层填充时必须遵守新契约——primary.path_id ∈ {A, B}；primary.degree_type ∈ {MPA, MBA, MEM}（仅 path_id == B 时填，path_id == A 时为 null）；alternative 同。详见 §sections.my_judgment.path_contract 字段。",
+    "v02_toc_change": "2026-05-20 ww 拍板：长图开头加目录段（§2 toc），让用户一眼看清整图有什么。位置：cover 之后、profile_summary 之前。形态：6 行纵向列表（不是水平 tab），每行：序号+段名+一句话简介。小程序内可点击锚点跳转，保存为长图后作视觉指引。 · 2026-05-20 ww 校对：序号 03/04 简介取消数字，序号 05 改'接下来可以做什么'",
+    "synced_at": "2026-05-20",
+    "synced_by": "ww 校对通过（脚本 PASS + 重点字段确认）"
+  },
+  "data": {
+    "render_spec": {
+      "width_px": 750,
+      "height_px_estimate": 3000,
+      "height_px_estimate_change_note": "v0.1 2200 → v0.2 3000（+ §2 目录约 200-280px + §6 政策卡 + §7 故事卡）",
+      "format": "jpg",
+      "quality": 0.92,
+      "save_api": "wx.saveImageToPhotosAlbum"
+    },
+    "sections": [
+      {
+        "id": "cover",
+        "section_no": 1,
+        "type": "cover",
+        "style": "accent_bg_white_text",
+        "brand_line": "■ 研知道 · 川渝在职考研  ·  不骗人 · 真服务",
+        "title": "我的择校方向建议",
+        "subtitle_template": "基于 {n_questions} 道题 · 推荐路径 {n_primary} + 备选 {n_alternative} · 含风险边界"
+      },
+      {
+        "id": "toc",
+        "section_no": 2,
+        "type": "toc",
+        "v02_new": true,
+        "kicker": "目录 · 一眼看清本图",
+        "title": "本图包含",
+        "design_principle": "纵向列表 6 行（不是水平 tab）· 每行：[序号] + 段名 + 一句话简介（≤15 字） · 序号赤土橙小方块 · serif 段名 + 弱色简介 · 1px dashed 行间区隔 · 整段视觉密度低于 §3 画像摘要",
+        "interaction": "小程序内每行可点击锚点跳转到对应段；保存为长图后作为视觉指引（不可点）",
+        "section_height_px": 240,
+        "entries": [
+          {
+            "no": "01",
+            "anchor": "my_judgment",
+            "section_name": "我的判断",
+            "one_liner": "首推路径 + 备选 + 匹配度"
+          },
+          {
+            "no": "02",
+            "anchor": "path_meaning",
+            "section_name": "路径含义",
+            "one_liner": "这条路对你意味着什么"
+          },
+          {
+            "no": "03",
+            "anchor": "policy_reference",
+            "section_name": "参考政策",
+            "one_liner": "你该知道的政策"
+          },
+          {
+            "no": "04",
+            "anchor": "similar_stories",
+            "section_name": "相似故事",
+            "one_liner": "与你画像相似的同学"
+          },
+          {
+            "no": "05",
+            "anchor": "action_list",
+            "section_name": "行动清单",
+            "one_liner": "接下来可以做什么"
+          },
+          {
+            "no": "06",
+            "anchor": "risk_boundary",
+            "section_name": "风险与边界",
+            "one_liner": "我们能给你什么 / 不能给什么"
+          }
+        ]
+      },
+      {
+        "id": "profile_summary",
+        "section_no": 3,
+        "type": "section",
+        "kicker": "画像摘要",
+        "title": "你的当前画像",
+        "fields": [
+          "age_band",
+          "edu_starting",
+          "region",
+          "current_need",
+          "value_orientation"
+        ],
+        "privacy": "脱敏到地级市 + 子类，不含真名（遵守 数据脱敏规则.md 第 1 层 + 第 3 层 ≤4 维组合）"
+      },
+      {
+        "id": "my_judgment",
+        "section_no": 4,
+        "type": "section",
+        "kicker": "我的判断",
+        "title_template": "首推 · {primary_path}",
+        "body_template": "一句话理由 + 备选 · {alternative_path}（匹配度 {alt_score}）：备选适用条件说明",
+        "path_contract": {
+          "primary_path_id": "∈ {A, B}（A = 党校在职研究生 / B = 统考非全研究生）",
+          "primary_degree_type": "∈ {MPA, MBA, MEM}（仅 path_id == B 时填，path_id == A 时为 null）",
+          "primary_path_render_rule": "path_id == A 时 {primary_path} 渲染为 '路径 A · 党校在职研究生（{省份：四川 / 重庆}）'；path_id == B 时渲染为 '路径 B · 统考非全 {degree_type}'",
+          "alternative_path_id": "∈ {A, B}（同 primary）",
+          "alternative_degree_type": "∈ {MPA, MBA, MEM}（同 primary 规则）",
+          "alternative_path_render_rule": "同 primary",
+          "source": "PRD §六 推荐输出 JSON 契约 + 06 v0.8 §五 路径 A / 路径 B 结构 · 旧 P001-P008 已废弃 · P006/P007 永久删除"
+        }
+      },
+      {
+        "id": "path_meaning",
+        "section_no": 5,
+        "type": "section",
+        "kicker": "路径含义",
+        "title": "这条路径对你意味着什么",
+        "bullets_count": 4,
+        "bullets_template": [
+          "政策依据",
+          "真实作用",
+          "不能解决什么",
+          "为什么这个时候"
+        ],
+        "data_source": "recommendation_result.path_meaning",
+        "_render_rules_v01_2026_05_27": {
+          "_note": "长图 §4 path_meaning 4 bullets 紧凑版渲染规则 · ww 2026-05-27 拍板 · 与 #result 区块 3 同源同逻辑 · 不同呈现",
+          "vs_result_block3": {
+            "同源数据 3 个 JSON": "policy_basis.json + cases.json + strategy_pool.json",
+            "差异": [
+              "长图 §4 压成 4 bullets · #result 区块 3 是 5 张卡片可滚动",
+              "长图 §4 不含'接下来 1 周可以做'（在长图独立 §7 action_list 段）",
+              "长图 §4 每 bullet 1-2 句话 30-80 字 · #result 卡可展开多条"
+            ],
+            "对应关系": {
+              "bullet 1 政策依据": "对应 #result 卡 1 政策层面 top 3 → 压成 1-2 句",
+              "bullet 2 真实作用": "对应 #result 卡 2 真实作用 N 位 X 系统 → 1 句",
+              "bullet 3 不能解决什么": "对应 #result 卡 3 风险提示 → 取 strategy.risk_cards 头 2 条",
+              "bullet 4 为什么这个时候": "对应 #result 卡 4 → 4 主政策浓缩成 1 句"
+            }
+          },
+          "bullet_render_rules": {
+            "1_政策依据": {
+              "data_source": "policy_basis.json (cards + signals)",
+              "logic": "按 path 过滤 + trigger_user_segments 命中 → 取 top 2 → 用 one_liner 拼成 1 段",
+              "format": "{政策1 one_liner} · {政策2 one_liner}（参见 {policy_doc_ref}）",
+              "字数": "60-120 字"
+            },
+            "2_真实作用": {
+              "_revised_2026_05_27_v12": "ww 钦定 v1.2 · 案例定位重大调整：cases = 证据存在性来源 · 不是统计来源 · 卡 2 不说 N 不说百分比 · 改路径存在性陈述",
+              "data_source": "data/derived-from-context/cases.json（125 条 V6 消费版；按 Q1/system_chip + 路径聚合）",
+              "logic": "用 cases.json _meta._render_rules_for_real_effect_card v1.2 规则 · 检查该 Q1 系统是否有 path A / path B 案例 · 输出存在性陈述",
+              "format": "研知道服务过的 {Q1_label} 同学中：有选党校路径并上岸的、也有选 MPA/MBA/MEM 双证路径并上岸的（看完整心得 →）",
+              "字数": "30-50 字",
+              "constraint": "绝不写数字 / 百分比 / X 位 Y 位 · N<3 时 fallback '研知道暂未服务过 {Q1_label} 同样画像同学 · 建议 1 对 1 沟通'",
+              "business_principle": "案例的作用：决策案例库里有，就证明这个决策有用过 → 用户可参考。不做统计承诺。"
+            },
+            "3_不能解决什么": {
+              "data_source": "strategy_pool.json risk_cards (matchStrategy 命中策略)",
+              "logic": "取 strategy.risk_cards 前 2 条 · 用 ' / ' 串联",
+              "format": "{risk_card_1} / {risk_card_2}",
+              "字数": "60-100 字"
+            },
+            "4_为什么这个时候": {
+              "data_source": "policy_basis.json cards (4 主政策固定)",
+              "logic": "取 4 主政策 one_liner · 浓缩为 5-10 年窗口期叙事",
+              "format": "{延迟退休 one_liner} + {国考研岗} + {末等退出} = 5-10 年窗口期判断",
+              "字数": "60-100 字"
+            }
+          },
+          "rendered_sample_财政发改党员36_40遴选5_8w": {
+            "_note": "示例渲染（用户：财政发改 党员 全本 成都 36-40 遴选 5-8w · 命中 P=98 35-38 双轨）",
+            "bullet_1": "政策依据：研究生学历是省直财税遴选 50% 岗位的硬门槛；国考研岗占比 7% → 12.95%，学历从加分项向准入项过渡（参见国家公务员局国考职位表 2022-2025）",
+            "bullet_2": "真实作用：研知道服务过的党政机关同学中，有选党校路径并上岸的、也有选 MPA/MBA/MEM 双证路径并上岸的（看完整心得 →）",
+            "bullet_3": "不能解决什么：35-38 不是绝对红线但 38 岁后部分岗位会卡硬学历 / 党校单证够单位内部 · MPA 双证才走得通省直跨系统遴选",
+            "bullet_4": "为什么这个时候：延迟退休延长 3-5 年职业生涯 + 国考准入项过渡 + 末等退出常态化 = 5-10 年窗口期判断"
+          }
+        }
+      },
+      {
+        "id": "policy_reference",
+        "section_no": 6,
+        "type": "section",
+        "v02_new": true,
+        "kicker": "参考政策",
+        "title": "4 张你该知道的政策卡",
+        "card_count": 4,
+        "card_selection_rule": "根据用户路径动态选取（不同路径触发的政策依据不同）· 默认 4 张：延迟退休 3-5 年 / 国考研岗 7%→12.95% / 末等退出 / 三条政策叠加",
+        "card_template": {
+          "policy_name": "政策名",
+          "one_liner": "一句话解读",
+          "relation_to_user": "与用户路径的关联（为什么这个政策对你的路径有影响）",
+          "compliance": "ER2 — 用'基于核实政策的可能性和方向'措辞，禁'一定会/必然/保证'"
+        },
+        "data_source": "data/derived-from-context/policy_basis.json"
+      },
+      {
+        "id": "similar_stories",
+        "section_no": 7,
+        "type": "section",
+        "v02_new": true,
+        "kicker": "相似故事",
+        "title": "4 位画像相似的同学",
+        "card_count": 4,
+        "knn_matching": {
+          "match_dimensions": [
+            "age_band",
+            "tizhi_level",
+            "edu_origin",
+            "region",
+            "value_orientation"
+          ],
+          "threshold_min_match_dims": 4,
+          "privacy_threshold_n": 3,
+          "below_threshold_fallback": "样本不足，建议结合 1 对 1 顾问诊断"
+        },
+        "card_template": {
+          "display_name": "X 同学（脱敏 · 仅姓 + 同学）",
+          "profile": "地级市 + 单位子类 + 年龄段 + 是否党员 + 学历起点（最多 4 维组合）",
+          "chosen_path": "实际选择（path_id + degree_type）",
+          "key_quote": "一句话原话（来自访谈样本 · 去除可识别细节）",
+          "outcome": "在读中 / 已上岸 / 备考中"
+        },
+        "compliance": "ER3 + 数据脱敏规则.md 第 3 层（每张卡最多 4 维组合，民族地区强制额外脱敏）",
+        "data_source": "data/derived-from-context/cases.json + K-NN 实时计算（peer_profile_cache.json）"
+      },
+      {
+        "id": "action_list",
+        "section_no": 8,
+        "type": "section",
+        "kicker": "行动清单",
+        "title": "接下来 4 步",
+        "bullets_count": 4,
+        "constraint": "不含付费引导，第 4 条可包含 '加 1 对 1 顾问'"
+      },
+      {
+        "id": "risk_boundary",
+        "section_no": 9,
+        "type": "section_fixed",
+        "kicker": "风险与边界",
+        "title": "风险与边界说明",
+        "body_fixed": "以上信息来自公开渠道可收集的政策文件，及研知道服务总结的实操经验，仅供参考，与您所处的实际情况有出入的，请与我们联系交流，或点这里提交您的意见，感谢。",
+        "constraint": "本段文案为 ww 钦定，不可改动；'点这里' 是可点击的留言入口"
+      },
+      {
+        "id": "footer",
+        "section_no": "末",
+        "type": "footer",
+        "style": "dark_bg",
+        "brand": "■ 研知道",
+        "tagline": "川渝在职考研  ·  不骗人 · 真服务",
+        "qr_code": true,
+        "qr_hint": "扫码做你的判断书",
+        "no_personal_signature": true,
+        "constraint": "落款不带 ww 个人署名（v3.2 ww 明确）"
+      }
+    ]
+  }
+}

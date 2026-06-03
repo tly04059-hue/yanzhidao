@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Student Cases Miniapp Publish",
+  "description": "学生案例库 L2 发布层。仅包含小程序和外部项目可展示的匿名案例字段，不包含姓名、电话、身份证号、地址等隐私字段。",
+  "type": "object",
+  "required": ["metadata", "filters", "cases"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["dataset", "generated_at", "source_record_count", "publish_case_count", "display_scope", "privacy_note"],
+      "properties": {
+        "dataset": { "type": "string" },
+        "generated_at": { "type": "string" },
+        "source_record_count": { "type": "number" },
+        "publish_case_count": { "type": "number" },
+        "display_scope": { "type": "string" },
+        "hierarchy": {
+          "type": "object",
+          "properties": {
+            "top_level": { "type": "array", "items": { "type": "string" } },
+            "management_exam_order": { "type": "array", "items": { "type": "string" } },
+            "party_school_order": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "privacy_note": { "type": "string" }
+      }
+    },
+    "filters": {
+      "type": "object",
+      "properties": {
+        "systems": { "type": "array", "items": { "type": "string" } },
+        "program_types": { "type": "array", "items": { "type": "string" } },
+        "party_schools": { "type": "array", "items": { "type": "string" } },
+        "positions": { "type": "array", "items": { "type": "string" } },
+        "goals": { "type": "array", "items": { "type": "string" } },
+        "party_members": { "type": "array", "items": { "type": "string" } },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "system",
+          "system_tag",
+          "position_tag",
+          "goal_tag",
+          "party_member_tag",
+          "title",
+          "profile",
+          "target",
+          "risk",
+          "advice",
+          "tags",
+          "sort_order"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "system": { "type": "string", "enum": ["管综系", "党校系"] },
+          "program_type": { "type": "string" },
+          "party_school": { "type": "string" },
+          "system_tag": { "type": "string" },
+          "position_tag": { "type": "string" },
+          "goal_tag": { "type": "array", "items": { "type": "string" } },
+          "party_member_tag": { "type": "string" },
+          "display_alias": { "type": "string" },
+          "title": { "type": "string" },
+          "profile": { "type": "string" },
+          "target": { "type": "string" },
+          "baseline": { "type": "string" },
+          "score": { "type": "string" },
+          "study_time": { "type": "string" },
+          "result": { "type": "string" },
+          "risk": { "type": "string" },
+          "advice": { "type": "string" },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "sort_order": { "type": "number" }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

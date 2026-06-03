@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recommendation Strategies Miniapp Publish",
+  "description": "推荐方案库 L2 发布层。用于测一测按 8 题答案匹配预生成策略，并给小程序或外部项目展示路径、原因、风险和行动建议。",
+  "type": "object",
+  "required": ["metadata", "strategies"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["dataset", "generated_at", "version", "strategy_count", "match_inputs", "display_note"],
+      "properties": {
+        "dataset": { "type": "string" },
+        "generated_at": { "type": "string" },
+        "version": { "type": "string" },
+        "strategy_count": { "type": "number" },
+        "match_inputs": { "type": "array", "items": { "type": "string" } },
+        "display_note": { "type": "string" }
+      }
+    },
+    "strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["strategy_id", "priority", "status", "primary_path", "program_type", "reason", "school_query"],
+        "properties": {
+          "strategy_id": { "type": "string" },
+          "priority": { "type": "number" },
+          "status": { "type": "string", "enum": ["active", "inactive"] },
+          "primary_path": { "type": "string" },
+          "program_type": { "type": "string", "enum": ["MPA", "MEM", "MBA", "党校"] },
+          "match": {
+            "type": "object",
+            "properties": {
+              "systems": { "type": "array", "items": { "type": "string" } },
+              "goals": { "type": "array", "items": { "type": "string" } },
+              "age_bands": { "type": "array", "items": { "type": "string" } },
+              "education": { "type": "array", "items": { "type": "string" } },
+              "math_bases": { "type": "array", "items": { "type": "string" } },
+              "study_times": { "type": "array", "items": { "type": "string" } },
+              "budget_min": { "type": "number" },
+              "budget_max": { "type": "number" }
+            },
+            "additionalProperties": true
+          },
+          "reason": { "type": "string" },
+          "school_query": {
+            "type": "object",
+            "required": ["program_type"],
+            "properties": {
+              "program_type": { "type": "string" },
+              "province_from_answer": { "type": "boolean" },
+              "budget_from_answer": { "type": "boolean" }
+            },
+            "additionalProperties": true
+          },
+          "static_schools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "tuition", "reason"],
+              "properties": {
+                "name": { "type": "string" },
+                "tuition": { "type": "number" },
+                "reason": { "type": "string" },
+                "meta": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          },
+          "school_priorities": { "type": "array", "items": { "type": "string" } },
+          "risk_cards": { "type": "array", "items": { "type": "string" } },
+          "weekly_plan": { "type": "array", "items": { "type": "string" } },
+          "tags": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}

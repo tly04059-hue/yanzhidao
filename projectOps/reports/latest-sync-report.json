@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18T10:09:36",
+  "generated_at": "2026-05-29T13:59:05",
   "items": [
     {
       "source": "schoolData/publish/199exam_miniapp_school_publish_sc_cq.json",
@@ -20,7 +20,7 @@
       "dest": "miniapp/src/data/student-cases-publish.json",
       "ok": true,
       "changed": false,
-      "bytes": 59791
+      "bytes": 76896
     },
     {
       "source": "courseRecommendationStrategy/publish/recommendation_strategies_miniapp_publish.json",

@@ -1,0 +1,552 @@
+// V5 design tokens extracted from schooltool/apps/当前原型/5.0-实现稿-claude.html.
+// Classes are prefixed with v5- so this file can be introduced gradually.
+
+$v5-accent: #CF7140;
+$v5-accent-soft: #F1E0D3;
+$v5-accent-dim: rgba(207, 113, 64, 0.08);
+$v5-accent-deep: #B85F38;
+$v5-accent-light: #E8A07A;
+$v5-accent-dark: #A55925;
+$v5-accent-ring: rgba(207, 113, 64, 0.22);
+$v5-success: #5F8C6E;
+$v5-success-soft: #DAE5DC;
+$v5-bg: #FAF7F2;
+$v5-bg-warm: #FAF6EF;
+$v5-bg-tertiary: #F0E9DD;
+$v5-card: #FFFFFF;
+$v5-text-1: #2A251E;
+$v5-text-2: #6B6258;
+$v5-text-3: #8A8175;
+$v5-border: #ECE5D8;
+$v5-divider: #E8E1D5;
+$v5-dark-bg: #2A251E;
+
+$v5-s-1: 4px;   $v5-s-2: 8px;   $v5-s-3: 12px;
+$v5-s-4: 16px;  $v5-s-5: 20px;  $v5-s-6: 24px;
+$v5-s-8: 32px;  $v5-s-10: 40px; $v5-s-12: 48px;
+
+$v5-radius-sm: 14px;
+$v5-radius-md: 16px;
+$v5-radius-card: 18px;
+$v5-radius-lg: 20px;
+$v5-radius-xl: 24px;
+$v5-radius-thumb: 6px;
+$v5-radius-pill: 999px;
+
+$v5-shadow-card: 0 2px 8px rgba(60, 50, 40, 0.04);
+$v5-shadow-card-lg: 0 4px 16px rgba(60, 50, 40, 0.06);
+$v5-shadow-cta: 0 6px 20px rgba(207, 113, 64, 0.22);
+
+@mixin v5-serif {
+  font-family: "Songti SC", "STSong", "SimSun", "Noto Serif SC", "Source Han Serif SC", serif;
+}
+
+@mixin v5-sans {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", system-ui, sans-serif;
+}
+
+.v5-page {
+  min-height: 100vh;
+  background: $v5-bg;
+  color: $v5-text-1;
+  padding: 18px 18px 96px;
+  box-sizing: border-box;
+  @include v5-sans;
+  overflow-x: hidden;
+}
+
+// ---- V6 Typography Scale (global standard classes) ----
+.v6-h1 {
+  @include v5-serif;
+  color: $v5-text-1;
+  font-size: 28px;
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.v6-h2 {
+  @include v5-serif;
+  color: $v5-text-1;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.v6-h3 {
+  @include v5-serif;
+  color: $v5-text-1;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.v6-body {
+  @include v5-sans;
+  color: $v5-text-2;
+  font-size: 14px;
+  line-height: 1.95;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.v6-body-strong {
+  @include v5-sans;
+  color: $v5-text-1;
+  font-size: 14px;
+  line-height: 1.95;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.v6-accent-strong {
+  color: $v5-accent;
+  font-weight: 500;
+}
+
+.v6-fs12 {
+  @include v5-sans;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.v6-fs15 {
+  @include v5-sans;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.v6-fs14 {
+  @include v5-sans;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.v6-fs13 {
+  @include v5-sans;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.v6-fs11 {
+  @include v5-sans;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.v6-fs10 {
+  @include v5-sans;
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.v5-shell {
+  min-height: 100vh;
+  background: $v5-bg;
+  overflow-x: hidden;
+  --v5-safe-top: env(safe-area-inset-top, 0px);
+  --v5-nav-content-height: 54px;
+  --v5-status-top: var(--status-bar-height, var(--v5-safe-top));
+}
+
+.v5-shell.has-tabbar .v5-page {
+  padding-bottom: calc(78px + env(safe-area-inset-bottom));
+}
+
+.v5-top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-sizing: border-box;
+  height: calc(var(--v5-nav-content-height) + var(--v5-status-top)) !important;
+  padding: var(--v5-status-top) 20px 0 !important;
+  border-bottom: 0.5px solid rgba(236, 229, 216, 0.9);
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@supports not (height: calc(44px + var(--v5-status-top))) {
+  .v5-top-nav {
+    height: 78px !important;
+    padding-top: 24px !important;
+  }
+}
+
+.v5-nav-side {
+  width: 44px !important;
+  height: 44px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px !important;
+}
+
+.v5-nav-title {
+  flex: 1;
+  min-width: 0;
+  height: var(--v5-nav-content-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.25 !important;
+  text-align: center;
+}
+
+.v5-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 2px 0 14px;
+  color: $v5-text-3;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+}
+
+.v5-brand-row::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  background: $v5-accent;
+}
+
+// ---- 6.0 刊尾 ----
+.v5-footer-sign {
+  text-align: center;
+  padding: 32px 0 16px;
+  font-size: 11px;
+  color: $v5-text-3;
+  letter-spacing: 0.08em;
+}
+.v5-footer-title {
+  @include v5-serif;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: $v5-text-1;
+}
+.v5-footer-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: $v5-text-3;
+}
+.v5-footer-sign .sep { margin: 0 6px; opacity: 0.4; }
+.v5-footer-sign .brand { color: $v5-accent; font-weight: 500; }
+
+// ---- 6.0 Tiny typography ----
+.tiny {
+  @include v5-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: $v5-text-2;
+  letter-spacing: 0.04em;
+}
+
+.v5-card {
+  background: $v5-card;
+  border: 0.5px solid $v5-border;
+  border-radius: $v5-radius-card;
+  box-shadow: none;
+}
+
+.v5-hero-card {
+  @extend .v5-card;
+  padding: 22px 20px;
+}
+
+.v5-kicker-cn {
+  display: block;
+  margin-bottom: 8px;
+  color: $v5-accent;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  line-height: 1.4;
+}
+
+.v5-hero-title {
+  display: block;
+  @include v5-serif;
+  color: $v5-text-1;
+  font-size: 30px;
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+
+.v5-hero-copy {
+  display: block;
+  @extend .v6-body;
+}
+
+.v5-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.v5-metric-card {
+  min-height: 96px;
+  padding: 14px 12px 12px;
+  border-radius: $v5-radius-sm;
+  border: 0.5px solid $v5-border;
+  background: $v5-bg-warm;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.v5-metric-num {
+  display: block;
+  color: $v5-accent;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.v5-metric-label {
+  display: block;
+  @include v5-serif;
+  color: $v5-text-1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.v5-metric-note {
+  display: block;
+  color: $v5-text-3;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.v5-metric-hint {
+  display: block;
+  margin-top: 10px;
+  color: $v5-text-3;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.v5-section {
+  margin-top: 22px;
+}
+
+.v5-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.v5-section-title {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  @extend .v6-h3;
+}
+
+.v5-section-meta {
+  display: block;
+  flex: 0 0 auto;
+  color: $v5-text-3;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+}
+
+.v5-entry-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.v5-entry-btn {
+  display: block;
+  padding: 14px 16px;
+  border-radius: $v5-radius-md;
+  border: 0.5px solid $v5-border;
+  background: $v5-card;
+  box-shadow: none;
+}
+
+.v5-entry-title {
+  display: block;
+  @extend .v6-h3;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.v5-entry-desc {
+  display: block;
+  @include v5-sans;
+  color: $v5-text-3;
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.v5-entry-action {
+  display: block;
+  margin-top: 6px;
+  color: $v5-accent;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.v5-list-card {
+  overflow: hidden;
+  border-radius: $v5-radius-md;
+  border: 0.5px solid $v5-border;
+  background: $v5-card;
+  box-shadow: none;
+}
+
+.v5-list-item {
+  min-height: 46px;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid $v5-divider;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.v5-list-item:last-child {
+  border-bottom: 0;
+}
+
+.v5-list-label {
+  @extend .v6-body-strong;
+}
+
+.v5-list-arrow {
+  flex: 0 0 auto;
+  color: $v5-text-3;
+  font-size: 14px;
+}
+
+.v5-btn-primary,
+.v5-btn-secondary {
+  width: 100%;
+  min-height: 44px;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-radius: $v5-radius-pill;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.v5-btn-primary::after,
+.v5-btn-secondary::after {
+  border: none !important;
+}
+
+.v5-btn-primary {
+  color: #FFFFFF;
+  background: $v5-accent;
+  border-color: #C76737;
+}
+
+.v5-btn-secondary {
+  color: $v5-accent;
+  background: $v5-card;
+  border-color: #DCCDBE;
+}
+
+// ---- 全局复用组件 ----
+
+.v5-tab-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 64px;
+  padding: 2px 10px calc(2px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 0.5px solid $v5-border;
+  box-shadow: 0 -10px 28px rgba(60, 50, 40, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.v5-tab-item {
+  min-height: 52px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px !important;
+  color: $v5-text-3;
+}
+
+.v5-tab-icon {
+  width: 26px !important;
+  height: 26px !important;
+  display: block;
+}
+
+.v5-tab-label {
+  color: $v5-text-3;
+  font-size: 15px !important;
+  line-height: 1.25 !important;
+}
+
+.v5-back-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.cta-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}

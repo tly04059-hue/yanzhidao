@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Analytics Event",
+  "description": "微信小程序匿名行为事件。",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "anonymous_user_id",
+    "session_id",
+    "env",
+    "app_version",
+    "tracking_plan_version",
+    "created_at"
+  ],
+  "properties": {
+    "event_id": { "type": "string" },
+    "event_type": { "type": "string" },
+    "anonymous_user_id": { "type": "string" },
+    "session_id": { "type": "string" },
+    "wechat_openid": { "type": "string" },
+    "is_new_user": { "type": "boolean" },
+    "is_test_user": { "type": "boolean" },
+    "page_path": { "type": "string" },
+    "page_title": { "type": "string" },
+    "target_type": { "type": "string" },
+    "target_id": { "type": "string" },
+    "target_name": { "type": "string" },
+    "source_channel": { "type": "string" },
+    "scene": { "type": ["string", "number"] },
+    "query": { "type": "object" },
+    "payload": { "type": "object" },
+    "duration_ms": { "type": "number" },
+    "env": { "type": "string", "enum": ["development", "trial", "production"] },
+    "app_version": { "type": "string" },
+    "tracking_plan_version": { "type": "string" },
+    "created_at": { "type": "string" },
+    "received_at": { "type": "string" }
+  },
+  "additionalProperties": true
+}

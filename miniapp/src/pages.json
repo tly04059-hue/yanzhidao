@@ -1,78 +1,289 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "研知道"
+				"navigationBarTitleText": "研知道",
+				"navigationStyle": "custom"
 			}
 		},
 		{
 		  "path": "pages/learn/index",
 		  "style": {
-			"navigationBarTitleText": "了解"
-		  }
-		},
-		{
-		  "path": "pages/schools/index",
-		  "style": {
-			"navigationBarTitleText": "院校库",
-			"enablePullDownRefresh": false
-		  }
-		},
-		{
-		  "path": "pages/school-detail/index",
-		  "style": {
-		    "navigationBarTitleText": "院校详情"
-		  }
-		},
-		{
-		  "path": "pages/comparison/index",
-		  "style": {
-		    "navigationBarTitleText": "路径对比"
-		  }
-		},
-		{
-		  "path": "pages/cases/index",
-		  "style": {
-		    "navigationBarTitleText": "案例库"
+			"navigationBarTitleText": "在职考研学历了解",
+			"navigationStyle": "custom"
 		  }
 		},
 		{
 		  "path": "pages/test/index",
 		  "style": {
-		    "navigationBarTitleText": "测一测"
+			"navigationBarTitleText": "测一测",
+			"navigationStyle": "custom"
 		  }
 		},
 		{
-		  "path": "pages/result/index",
+		  "path": "pages/loading/index",
 		  "style": {
-		    "navigationBarTitleText": "推荐结果"
-		  }
-		},
-		{
-		  "path": "pages/timeline/index",
-		  "style": {
-		    "navigationBarTitleText": "备考时间"
-		  }
-		},
-		{
-		  "path": "pages/estimate/index",
-		  "style": {
-		    "navigationBarTitleText": "估分工具"
+			"navigationBarTitleText": "正在生成你的方向建议",
+			"navigationStyle": "custom"
 		  }
 		},
 		{
 		  "path": "pages/contact/index",
 		  "style": {
-		    "navigationBarTitleText": "联系我们"
+			"navigationBarTitleText": "加企微 1 对 1 咨询",
+			"navigationStyle": "custom"
 		  }
 		}
 	],
+	"subPackages": [
+		{
+			"root": "pages/schools",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "院校库",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/school-detail",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "院校详情",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/cases",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "1000+学员真实选择",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/result",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "选校方向建议",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/zexiao",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "我的择校方向建议",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/prep",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "选择备考路径",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/prep-dx",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "党校备考方案",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/prep-gz",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "管综备考方案",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/map",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "服务同学分布",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/pass-rate",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "过考率说明",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/about",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "关于研知道",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/data-source",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "数据来源与说明",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/usage",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "使用说明",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+			{
+				"root": "pages/downloads",
+				"pages": [
+					{
+						"path": "index",
+					"style": {
+						"navigationBarTitleText": "资料下载",
+						"navigationStyle": "custom"
+					}
+					}
+				]
+			},
+			{
+				"root": "pages/estimate",
+				"pages": [
+					{
+						"path": "index",
+					"style": {
+						"navigationBarTitleText": "估分工具",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages/timeline",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "选择备考路径",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+			{
+				"root": "pages/comparison",
+				"pages": [
+					{
+						"path": "index",
+						"style": {
+							"navigationBarTitleText": "路径对比",
+							"navigationStyle": "custom"
+						}
+					}
+				]
+			}
+		],
+	"preloadRule": {
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["pages/schools"]
+		},
+		"pages/test/index": {
+			"network": "all",
+			"packages": ["pages/result"]
+		}
+	},
+	"tabBar": {
+		"custom": true,
+		"color": "#8A8175",
+		"selectedColor": "#CF7140",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/tab-home.png",
+				"selectedIconPath": "static/tab-home-active.png"
+			},
+			{
+				"pagePath": "pages/learn/index",
+				"text": "了解",
+				"iconPath": "static/tab-learn.png",
+				"selectedIconPath": "static/tab-learn-active.png"
+			},
+			{
+				"pagePath": "pages/test/index",
+				"text": "测一测",
+				"iconPath": "static/tab-test.png",
+				"selectedIconPath": "static/tab-test-active.png"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTitleText": "研知道",
+		"navigationBarBackgroundColor": "#FAF7F2",
 		"navigationStyle": "custom",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#FAF7F2"
 	}
 }

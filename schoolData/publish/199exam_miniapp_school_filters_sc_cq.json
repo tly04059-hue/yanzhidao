@@ -2,7 +2,7 @@
   "metadata": {
     "dataset": "199exam_miniapp_school_filters_sc_cq",
     "version": "2026-05-l2-sc-cq-initial",
-    "generated_at": "2026-05-18",
+    "generated_at": "2026-05-29",
     "source_file": "schoolData/publish/199exam_miniapp_school_publish_sc_cq.json"
   },
   "filters": {

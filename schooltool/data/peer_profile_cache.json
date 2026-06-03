@@ -1,0 +1,2852 @@
+{
+  "_meta": {
+    "derived_object": "peer_profile_cache",
+    "version_in_file": "v0.2",
+    "version": "v0.2 · students_map 43 桶索引 cases · 2026-05-29",
+    "updated_at": "2026-05-29",
+    "source": [
+      {
+        "path": "03-产品与服务/选校工具/docs/02-产品需求文档-V1.md",
+        "version_date": "2026-05-19",
+        "section": "§4.18 同样画像的同学怎么选（K-NN 5 维 · v3.2 新增）/ §4.16 §7 相似故事",
+        "method": "映射"
+      },
+      {
+        "path": "03-产品与服务/选校工具/docs/06-推荐逻辑规则表.md",
+        "version_date": "2026-05-19",
+        "section": "§六.4 案例匹配权重表 + ER3 隐私门槛配套",
+        "method": "提炼"
+      },
+      {
+        "path": "03-产品与服务/选校工具/docs/数据脱敏规则.md",
+        "version_date": "2026-05-20",
+        "section": "§二 5 个敏感 JSON 清单 + §三 第 2 层隐私门槛 + 第 3 层反向识别防护",
+        "method": "提炼"
+      },
+      {
+        "path": "03-产品与服务/选校工具/data/derived-from-context/peer_profile.json",
+        "version_date": "2026-05-19",
+        "section": "v0.1 schema 占位（运行时 K-NN 算法填充到本文件）",
+        "method": "扩展"
+      }
+    ],
+    "change_note": "v0.1→v0.2：从 schema-only 升级到含预聚合数据 · 复用 students_map.stats_by_match_key 43 个有效桶 · cases.json 按 q1/q3/q5 同口径索引到桶 · 解锁 V6 #14/#15/#16/#17/#19 五个动态点",
+    "derived_at": "2026-05-29",
+    "derived_by": "scripts/derive_peer_profile_cache.py",
+    "sync_status": "synced",
+    "next_review_at": "2026-08-20",
+    "meta_rule_compliance": [
+      "ER1 ✓（不打主力客群标签 · 仅展示样本量与路径分布）",
+      "ER2 ✓（无政策结论 · 数据陈述层）",
+      "ER3 ✓（N<3 触发隐私门槛降级 + 不展示个体仅展示聚合维度）"
+    ],
+    "consumed_by_pages": [
+      "§4.18 同样画像同学怎么选（已并入 §4.8 区块 5b）",
+      "§4.16 §7 相似故事卡（K-NN 匹配后取 Top-N 故事）"
+    ],
+    "compliance_notes": [
+      "本文件**不存储任何学员个人字段**——仅缓存按 profile_signature_hash 聚合后的样本量 + 路径分布 + 路径理由聚合",
+      "本文件**不可独立反向识别**——profile_signature_hash 是 sha256 哈希，原始 5 维画像不出现在本文件",
+      "隐私门槛 N≥3 在算法层硬执行；N<3 直接返回 below_threshold_message，不返回任何数据",
+      "案例库源（cases.json）已通过第 1 层字段脱敏（地级市 / 单位子类 / 年龄段 / X 同学），cache 派生时只汇总不解码"
+    ],
+    "synced_at": "2026-05-20",
+    "synced_by": "ww 校对通过（脚本 PASS + 重点字段确认）",
+    "total_buckets": 43,
+    "buckets_n_ge_3": 13,
+    "buckets_n_lt_3": 16,
+    "source_cases_total": 125,
+    "buckets_from_students_map": 43,
+    "buckets_with_cases": 22,
+    "below_threshold_fallbacks": 32,
+    "source_students_map_total_samples": 1592
+  },
+  "schema": {
+    "algorithm": {
+      "type": "k_nn",
+      "version": "v1.0",
+      "match_dimensions": [
+        {
+          "id": "system_layer",
+          "name": "体制类型",
+          "weight": 30,
+          "values": [
+            "公务员",
+            "事业编",
+            "国央企",
+            "民企",
+            "教师",
+            "医护",
+            "公检法",
+            "党政机关"
+          ]
+        },
+        {
+          "id": "purpose",
+          "name": "目的",
+          "weight": 25,
+          "values": [
+            "遴选",
+            "调任",
+            "职称",
+            "本单位晋升",
+            "防御性",
+            "事转公"
+          ]
+        },
+        {
+          "id": "edu_origin",
+          "name": "学历起点",
+          "weight": 20,
+          "values": [
+            "大专",
+            "非全本科",
+            "全日制本科",
+            "硕士"
+          ]
+        },
+        {
+          "id": "region",
+          "name": "地区",
+          "weight": 15,
+          "values": [
+            "川东",
+            "川西",
+            "川南",
+            "川北",
+            "渝主城",
+            "渝郊区",
+            "民族自治州"
+          ]
+        },
+        {
+          "id": "age_band",
+          "name": "年龄段",
+          "weight": 10,
+          "values": [
+            "<25 岁",
+            "25-30 岁段",
+            "30-35 岁段",
+            "35-38 岁段",
+            "38-45 岁段",
+            "45+ 岁段"
+          ]
+        }
+      ],
+      "non_party_bonus": {
+        "weight": 20,
+        "rationale": "非党员场景与党校体系硬冲突 → 加 20 权重单独标识，避免与党员客户混入"
+      },
+      "total_weight": "100 + 20 (非党员加成)",
+      "similarity_thresholds": [
+        {
+          "level": "完全相似",
+          "score_range": "[85, 100]",
+          "rule": "5 维全部一致 OR 4 维一致 + 第 5 维相近",
+          "action": "直接展示完整数据"
+        },
+        {
+          "level": "强相似",
+          "score_range": "[70, 85)",
+          "rule": "3-4 维一致",
+          "action": "展示但提示'匹配度参考'"
+        },
+        {
+          "level": "弱相似",
+          "score_range": "[55, 70)",
+          "rule": "2-3 维一致",
+          "action": "不展示，进 ER3 隐私门槛 N<3 同等处理"
+        },
+        {
+          "level": "不相似",
+          "score_range": "[0, 55)",
+          "rule": "≤2 维一致",
+          "action": "不进 K-NN 候选"
+        }
+      ]
+    },
+    "privacy_gates": {
+      "min_sample_n": 3,
+      "min_match_dims": 4,
+      "below_threshold_fallback": "样本不足，建议直接咨询顾问做 1 对 1 诊断",
+      "city_granularity": "地级市",
+      "unit_granularity": "子类（如'区县税务''市直机关'）",
+      "age_granularity": "5 岁段（民族地区强制 10 岁段）",
+      "name_policy": "X 同学（保留真姓 + 名脱敏）",
+      "individual_display_blocked": true,
+      "aggregate_only": true,
+      "aggregate_display_rule": "",
+      "note": "2026-05-20 ww 校对：N≥5 → N≥3"
+    },
+    "cache_strategy": {
+      "ttl_seconds": 86400,
+      "key_template": "peer:{profile_signature_hash}",
+      "profile_signature_hash_method": "sha256(system_layer + purpose + edu_origin + region + age_band + party_member)",
+      "data_source": "data/derived-from-context/cases.json",
+      "cache_storage": "Redis（生产）/ 内存（开发）",
+      "invalidation_trigger": "cases.json 更新 → 全量失效重算"
+    },
+    "response_schema": {
+      "profile_signature_hash": "<sha256(...)>",
+      "total_sample_n": "int（>=3 才返回数据，<3 返回 below_threshold_fallback）",
+      "similarity_level": "完全相似 | 强相似",
+      "path_distribution": [
+        {
+          "path": "A",
+          "path_name": "党校在职研究生",
+          "count": "int",
+          "pct": "float",
+          "reason_aggregated": "string（聚合后的核心理由 · 不引用个体）"
+        },
+        {
+          "path": "B",
+          "degree_type": "MPA|MBA|MEM",
+          "count": "int",
+          "pct": "float",
+          "reason_aggregated": "string"
+        }
+      ],
+      "data_source_note": ""
+    },
+    "sample_response_template": {
+      "profile_signature_hash": "<sha256(公务员+本单位晋升+全日制本科+川东+30-35 岁段+党员)>",
+      "total_sample_n": 12,
+      "similarity_level": "完全相似",
+      "path_distribution": [
+        {
+          "path": "A",
+          "path_name": "党校在职研究生",
+          "count": 9,
+          "pct": 75.0,
+          "reason_aggregated": "需要更稳的执行节奏 / 不想再过统考关 / 单位内对党校学历认可"
+        },
+        {
+          "path": "B",
+          "degree_type": "MPA",
+          "count": 3,
+          "pct": 25.0,
+          "reason_aggregated": "未来考虑遴选 / 跨系统流动 / 希望证书认可面更宽"
+        }
+      ],
+      "data_source_note": ""
+    },
+    "below_threshold_response_template": {
+      "profile_signature_hash": "<sha256(...)>",
+      "total_sample_n": 2,
+      "similarity_level": "完全相似",
+      "fallback_triggered": true,
+      "message": "样本不足，建议直接咨询顾问做 1 对 1 诊断"
+    },
+    "minority_region_extra_rule": {
+      "trigger": "region 命中民族自治州（甘孜/凉山/阿坝）",
+      "extra_constraints": [
+        "age_band 强制合并到 10 岁段（如 30-40 岁段）",
+        "system_layer 强制合并到上级（如'区县税务' → '区县财税'）",
+        "如合并后 N 仍 < 3 → 触发 below_threshold_fallback"
+      ]
+    }
+  },
+  "data": {
+    "cache_entries": {
+      "other_shiye|sichuan|31-35": {
+        "key": "other_shiye|sichuan|31-35",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 248,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "B_tongkao": 52,
+          "A_dangxiao": 152,
+          "unknown": 44
+        },
+        "case_match_count": 10,
+        "case_match_count_display": "10",
+        "similar_case_ids": [
+          "C116",
+          "C124",
+          "C047",
+          "C073",
+          "C077",
+          "C078",
+          "C083",
+          "C107",
+          "C118",
+          "C025"
+        ],
+        "top1_case_id": "C116",
+        "top_reason_tags": [
+          "宝妈",
+          "35+ 焦虑",
+          "同事影响",
+          "年龄焦虑",
+          "自我提升"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan|25-30": {
+        "key": "other_shiye|sichuan|25-30",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan",
+        "q5_age_band": "25-30",
+        "students_n_total": 177,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 111,
+          "B_tongkao": 33,
+          "unknown": 33
+        },
+        "case_match_count": 9,
+        "case_match_count_display": "9",
+        "similar_case_ids": [
+          "C106",
+          "C110",
+          "C111",
+          "C121",
+          "C115",
+          "C034",
+          "C035",
+          "C041",
+          "C069"
+        ],
+        "top1_case_id": "C106",
+        "top_reason_tags": [
+          "学历兜底",
+          "宝妈",
+          "同事影响",
+          "身边",
+          "体制内认可"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan|36-40": {
+        "key": "other_shiye|sichuan|36-40",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 166,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 115,
+          "B_tongkao": 25,
+          "unknown": 26
+        },
+        "case_match_count": 5,
+        "case_match_count_display": "5",
+        "similar_case_ids": [
+          "C036",
+          "C049",
+          "C081",
+          "C023",
+          "C025"
+        ],
+        "top1_case_id": "C036",
+        "top_reason_tags": [
+          "35+ 焦虑",
+          "宝妈",
+          "一战上岸",
+          "短时间冲刺",
+          "在职党校"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan|41+": {
+        "key": "other_shiye|sichuan|41+",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 66,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 46,
+          "unknown": 10,
+          "B_tongkao": 10
+        },
+        "case_match_count": 8,
+        "case_match_count_display": "8",
+        "similar_case_ids": [
+          "C114",
+          "C109",
+          "C042",
+          "C043",
+          "C045",
+          "C065",
+          "C080",
+          "C024"
+        ],
+        "top1_case_id": "C114",
+        "top_reason_tags": [
+          "35+ 焦虑",
+          "给孩子榜样",
+          "孩子",
+          "榜样",
+          "宝妈"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan_minzu|25-30": {
+        "key": "dangzheng|sichuan_minzu|25-30",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "25-30",
+        "students_n_total": 53,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 46,
+          "unknown": 2,
+          "B_tongkao": 5
+        },
+        "case_match_count": 14,
+        "case_match_count_display": "10+",
+        "similar_case_ids": [
+          "C117",
+          "C039",
+          "C044",
+          "C053",
+          "C054",
+          "C056",
+          "C108",
+          "C001",
+          "C002",
+          "C003"
+        ],
+        "top1_case_id": "C117",
+        "top_reason_tags": [
+          "民族州",
+          "民族地区",
+          "市直机关党员",
+          "民政系统",
+          "党校政治学"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan_minzu|25-30": {
+        "key": "other_shiye|sichuan_minzu|25-30",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "25-30",
+        "students_n_total": 46,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 36,
+          "B_tongkao": 6,
+          "unknown": 4
+        },
+        "case_match_count": 1,
+        "case_match_count_display": "1",
+        "similar_case_ids": [
+          "C021"
+        ],
+        "top1_case_id": "C021",
+        "top_reason_tags": [
+          "宝妈",
+          "二战",
+          "民族地区"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan|31-35": {
+        "key": "dangzheng|sichuan|31-35",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 38,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "B_tongkao": 5,
+          "A_dangxiao": 30,
+          "unknown": 3
+        },
+        "case_match_count": 9,
+        "case_match_count_display": "9",
+        "similar_case_ids": [
+          "C087",
+          "C104",
+          "C048",
+          "C051",
+          "C058",
+          "C060",
+          "C075",
+          "C027",
+          "C030"
+        ],
+        "top1_case_id": "C087",
+        "top_reason_tags": [
+          "市直机关党员",
+          "双证",
+          "晋升",
+          "纪检公检法",
+          "基层公职"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan|25-30": {
+        "key": "dangzheng|sichuan|25-30",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan",
+        "q5_age_band": "25-30",
+        "students_n_total": 38,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 30,
+          "B_tongkao": 3,
+          "unknown": 5
+        },
+        "case_match_count": 9,
+        "case_match_count_display": "9",
+        "similar_case_ids": [
+          "C033",
+          "C037",
+          "C040",
+          "C062",
+          "C064",
+          "C072",
+          "C011",
+          "C028",
+          "C029"
+        ],
+        "top1_case_id": "C033",
+        "top_reason_tags": [
+          "市直机关党员",
+          "党校政治学",
+          "基层公职",
+          "政法系统",
+          "五年服务期"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan_minzu|31-35": {
+        "key": "other_shiye|sichuan_minzu|31-35",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "31-35",
+        "students_n_total": 34,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 23,
+          "B_tongkao": 4,
+          "unknown": 7
+        },
+        "case_match_count": 3,
+        "case_match_count_display": "3",
+        "similar_case_ids": [
+          "C061",
+          "C082",
+          "C021"
+        ],
+        "top1_case_id": "C061",
+        "top_reason_tags": [
+          "民族州",
+          "宝妈",
+          "二战",
+          "民族地区"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan_minzu|25-30": {
+        "key": "xiangzhen|sichuan_minzu|25-30",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "25-30",
+        "students_n_total": 30,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 27,
+          "unknown": 3
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan|25-30": {
+        "key": "xiangzhen|sichuan|25-30",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan",
+        "q5_age_band": "25-30",
+        "students_n_total": 27,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 21,
+          "B_tongkao": 4,
+          "unknown": 2
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan|36-40": {
+        "key": "dangzheng|sichuan|36-40",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 26,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 23,
+          "B_tongkao": 1,
+          "unknown": 2
+        },
+        "case_match_count": 5,
+        "case_match_count_display": "5",
+        "similar_case_ids": [
+          "C038",
+          "C076",
+          "C008",
+          "C009",
+          "C010"
+        ],
+        "top1_case_id": "C038",
+        "top_reason_tags": [
+          "政法系统",
+          "市直机关党员",
+          "35+ 焦虑",
+          "党校政治学",
+          "二战"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan|31-35": {
+        "key": "xiangzhen|sichuan|31-35",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 23,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 19,
+          "B_tongkao": 2,
+          "unknown": 2
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan|31-35": {
+        "key": "gongjianfa|sichuan|31-35",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 22,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "B_tongkao": 2,
+          "A_dangxiao": 20
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "guoqi|sichuan|31-35": {
+        "key": "guoqi|sichuan|31-35",
+        "q1_system": "guoqi",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 17,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 15,
+          "unknown": 1,
+          "B_tongkao": 1
+        },
+        "case_match_count": 2,
+        "case_match_count_display": "2",
+        "similar_case_ids": [
+          "C074",
+          "C020"
+        ],
+        "top1_case_id": "C074",
+        "top_reason_tags": [
+          "国央企",
+          "党校政治学",
+          "奖金班"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan_minzu|31-35": {
+        "key": "dangzheng|sichuan_minzu|31-35",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "31-35",
+        "students_n_total": 16,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 13,
+          "unknown": 2,
+          "B_tongkao": 1
+        },
+        "case_match_count": 11,
+        "case_match_count_display": "10+",
+        "similar_case_ids": [
+          "C031",
+          "C050",
+          "C059",
+          "C063",
+          "C001",
+          "C002",
+          "C003",
+          "C004",
+          "C005",
+          "C006"
+        ],
+        "top1_case_id": "C031",
+        "top_reason_tags": [
+          "民族地区",
+          "民政系统",
+          "党校政治学",
+          "民族州",
+          "市直机关党员"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "education|sichuan|36-40": {
+        "key": "education|sichuan|36-40",
+        "q1_system": "education",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 15,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "B_tongkao": 2,
+          "A_dangxiao": 13
+        },
+        "case_match_count": 3,
+        "case_match_count_display": "3",
+        "similar_case_ids": [
+          "C070",
+          "C014",
+          "C016"
+        ],
+        "top1_case_id": "C070",
+        "top_reason_tags": [
+          "党校政治学",
+          "35+ 焦虑",
+          "教育系统",
+          "高校",
+          "奖金班"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan_minzu|31-35": {
+        "key": "xiangzhen|sichuan_minzu|31-35",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "31-35",
+        "students_n_total": 15,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 14,
+          "B_tongkao": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "guoqi|sichuan|36-40": {
+        "key": "guoqi|sichuan|36-40",
+        "q1_system": "guoqi",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 14,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 13,
+          "B_tongkao": 1
+        },
+        "case_match_count": 2,
+        "case_match_count_display": "2",
+        "similar_case_ids": [
+          "C019",
+          "C022"
+        ],
+        "top1_case_id": "C019",
+        "top_reason_tags": [
+          "国央企",
+          "党校政治学",
+          "宝妈",
+          "一战上岸"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan|36-40": {
+        "key": "gongjianfa|sichuan|36-40",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 14,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 12,
+          "unknown": 2
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan|25-30": {
+        "key": "gongjianfa|sichuan|25-30",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan",
+        "q5_age_band": "25-30",
+        "students_n_total": 14,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 13,
+          "unknown": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "guoqi|sichuan|25-30": {
+        "key": "guoqi|sichuan|25-30",
+        "q1_system": "guoqi",
+        "q3_region": "sichuan",
+        "q5_age_band": "25-30",
+        "students_n_total": 13,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 12,
+          "unknown": 1
+        },
+        "case_match_count": 4,
+        "case_match_count_display": "4",
+        "similar_case_ids": [
+          "C032",
+          "C071",
+          "C017",
+          "C018"
+        ],
+        "top1_case_id": "C032",
+        "top_reason_tags": [
+          "国央企",
+          "体制内认可",
+          "国企",
+          "党校政治学",
+          "党校经济学"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan_minzu|36-40": {
+        "key": "gongjianfa|sichuan_minzu|36-40",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "36-40",
+        "students_n_total": 13,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 10,
+          "unknown": 2,
+          "B_tongkao": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "education|sichuan|31-35": {
+        "key": "education|sichuan|31-35",
+        "q1_system": "education",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 12,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "B_tongkao": 2,
+          "unknown": 1,
+          "A_dangxiao": 9
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan_minzu|36-40": {
+        "key": "other_shiye|sichuan_minzu|36-40",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "36-40",
+        "students_n_total": 11,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 8,
+          "B_tongkao": 2,
+          "unknown": 1
+        },
+        "case_match_count": 1,
+        "case_match_count_display": "1",
+        "similar_case_ids": [
+          "C066"
+        ],
+        "top1_case_id": "C066",
+        "top_reason_tags": [
+          "民族州",
+          "35+ 焦虑"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "education|sichuan|25-30": {
+        "key": "education|sichuan|25-30",
+        "q1_system": "education",
+        "q3_region": "sichuan",
+        "q5_age_band": "25-30",
+        "students_n_total": 11,
+        "students_n_display": "10+",
+        "students_path_distribution": {
+          "A_dangxiao": 9,
+          "unknown": 2
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan_minzu|36-40": {
+        "key": "dangzheng|sichuan_minzu|36-40",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "36-40",
+        "students_n_total": 10,
+        "students_n_display": "10",
+        "students_path_distribution": {
+          "A_dangxiao": 7,
+          "B_tongkao": 2,
+          "unknown": 1
+        },
+        "case_match_count": 6,
+        "case_match_count_display": "6",
+        "similar_case_ids": [
+          "C100",
+          "C105",
+          "C046",
+          "C055",
+          "C068",
+          "C079"
+        ],
+        "top1_case_id": "C100",
+        "top_reason_tags": [
+          "民族州",
+          "市直机关党员",
+          "35+ 焦虑",
+          "坚持型",
+          "纪检公检法"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan_minzu|31-35": {
+        "key": "gongjianfa|sichuan_minzu|31-35",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "31-35",
+        "students_n_total": 10,
+        "students_n_display": "10",
+        "students_path_distribution": {
+          "A_dangxiao": 10
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan_minzu|25-30": {
+        "key": "gongjianfa|sichuan_minzu|25-30",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "25-30",
+        "students_n_total": 10,
+        "students_n_display": "10",
+        "students_path_distribution": {
+          "A_dangxiao": 9,
+          "unknown": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "gongjianfa|sichuan|41+": {
+        "key": "gongjianfa|sichuan|41+",
+        "q1_system": "gongjianfa",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 9,
+        "students_n_display": "9",
+        "students_path_distribution": {
+          "A_dangxiao": 8,
+          "unknown": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "dangzheng|sichuan|41+": {
+        "key": "dangzheng|sichuan|41+",
+        "q1_system": "dangzheng",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 9,
+        "students_n_display": "9",
+        "students_path_distribution": {
+          "A_dangxiao": 9
+        },
+        "case_match_count": 1,
+        "case_match_count_display": "1",
+        "similar_case_ids": [
+          "C052"
+        ],
+        "top1_case_id": "C052",
+        "top_reason_tags": [
+          "纪检公检法",
+          "市直机关党员",
+          "35+ 焦虑"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "medical|sichuan|41+": {
+        "key": "medical|sichuan|41+",
+        "q1_system": "medical",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 8,
+        "students_n_display": "8",
+        "students_path_distribution": {
+          "A_dangxiao": 6,
+          "unknown": 1,
+          "B_tongkao": 1
+        },
+        "case_match_count": 1,
+        "case_match_count_display": "1",
+        "similar_case_ids": [
+          "C013"
+        ],
+        "top1_case_id": "C013",
+        "top_reason_tags": [
+          "医疗系统",
+          "党校政治学",
+          "二战",
+          "宝妈"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "medical|sichuan|36-40": {
+        "key": "medical|sichuan|36-40",
+        "q1_system": "medical",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 8,
+        "students_n_display": "8",
+        "students_path_distribution": {
+          "A_dangxiao": 7,
+          "unknown": 1
+        },
+        "case_match_count": 2,
+        "case_match_count_display": "2",
+        "similar_case_ids": [
+          "C067",
+          "C012"
+        ],
+        "top1_case_id": "C067",
+        "top_reason_tags": [
+          "医护",
+          "35+ 焦虑",
+          "医疗系统",
+          "党校政治学"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "medical|sichuan|31-35": {
+        "key": "medical|sichuan|31-35",
+        "q1_system": "medical",
+        "q3_region": "sichuan",
+        "q5_age_band": "31-35",
+        "students_n_total": 7,
+        "students_n_display": "7",
+        "students_path_distribution": {
+          "A_dangxiao": 7
+        },
+        "case_match_count": 1,
+        "case_match_count_display": "1",
+        "similar_case_ids": [
+          "C057"
+        ],
+        "top1_case_id": "C057",
+        "top_reason_tags": [
+          "医护"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|sichuan_minzu|41+": {
+        "key": "other_shiye|sichuan_minzu|41+",
+        "q1_system": "other_shiye",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "41+",
+        "students_n_total": 7,
+        "students_n_display": "7",
+        "students_path_distribution": {
+          "A_dangxiao": 5,
+          "B_tongkao": 1,
+          "unknown": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan|36-40": {
+        "key": "xiangzhen|sichuan|36-40",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 7,
+        "students_n_display": "7",
+        "students_path_distribution": {
+          "unknown": 2,
+          "A_dangxiao": 5
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "guoqi|sichuan|41+": {
+        "key": "guoqi|sichuan|41+",
+        "q1_system": "guoqi",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 6,
+        "students_n_display": "6",
+        "students_path_distribution": {
+          "A_dangxiao": 5,
+          "unknown": 1
+        },
+        "case_match_count": 1,
+        "case_match_count_display": "1",
+        "similar_case_ids": [
+          "C101"
+        ],
+        "top1_case_id": "C101",
+        "top_reason_tags": [
+          "同事影响",
+          "同事",
+          "国央企"
+        ],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": true,
+          "max_case_cards": 4
+        }
+      },
+      "education|sichuan|41+": {
+        "key": "education|sichuan|41+",
+        "q1_system": "education",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 6,
+        "students_n_display": "6",
+        "students_path_distribution": {
+          "A_dangxiao": 6
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "bank_finance|sichuan|36-40": {
+        "key": "bank_finance|sichuan|36-40",
+        "q1_system": "bank_finance",
+        "q3_region": "sichuan",
+        "q5_age_band": "36-40",
+        "students_n_total": 6,
+        "students_n_display": "6",
+        "students_path_distribution": {
+          "A_dangxiao": 6
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|chongqing|31-35": {
+        "key": "other_shiye|chongqing|31-35",
+        "q1_system": "other_shiye",
+        "q3_region": "chongqing",
+        "q5_age_band": "31-35",
+        "students_n_total": 6,
+        "students_n_display": "6",
+        "students_path_distribution": {
+          "unknown": 5,
+          "A_dangxiao": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan_minzu|36-40": {
+        "key": "xiangzhen|sichuan_minzu|36-40",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan_minzu",
+        "q5_age_band": "36-40",
+        "students_n_total": 5,
+        "students_n_display": "5",
+        "students_path_distribution": {
+          "A_dangxiao": 4,
+          "B_tongkao": 1
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "xiangzhen|sichuan|41+": {
+        "key": "xiangzhen|sichuan|41+",
+        "q1_system": "xiangzhen",
+        "q3_region": "sichuan",
+        "q5_age_band": "41+",
+        "students_n_total": 5,
+        "students_n_display": "5",
+        "students_path_distribution": {
+          "unknown": 2,
+          "A_dangxiao": 3
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      },
+      "other_shiye|chongqing|36-40": {
+        "key": "other_shiye|chongqing|36-40",
+        "q1_system": "other_shiye",
+        "q3_region": "chongqing",
+        "q5_age_band": "36-40",
+        "students_n_total": 5,
+        "students_n_display": "5",
+        "students_path_distribution": {
+          "unknown": 5
+        },
+        "case_match_count": 0,
+        "case_match_count_display": "0",
+        "similar_case_ids": [],
+        "top1_case_id": null,
+        "top_reason_tags": [],
+        "fallback_chain": null,
+        "display_policy": {
+          "students_aggregate_ok": true,
+          "case_cards_ok": false,
+          "max_case_cards": 4
+        }
+      }
+    },
+    "_note": "简化版 v0.2（2026-05-29 ww 钦定步骤 5）· 复用 students_map.stats_by_match_key 43 个 buckets_above_threshold，把 cases.json 的 case_id 按同一 q1/q3/q5 口径挂入桶。当前有案例命中的桶 22 个；below_threshold_fallbacks 复用 students_map fallback_chains。",
+    "below_threshold_fallbacks": {
+      "education|sichuan_minzu|25-30": {
+        "original_n": 4,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "education|sichuan_minzu|any_age",
+            "n": 7,
+            "eligible": true,
+            "member_buckets": [
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "education|any_region|any_age",
+            "n": 56,
+            "eligible": false,
+            "member_buckets": [
+              "education|sichuan|36-40",
+              "education|sichuan|31-35",
+              "education|sichuan|25-30",
+              "education|sichuan|41+",
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|sichuan_minzu|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "bank_finance|sichuan|31-35": {
+        "original_n": 4,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "bank_finance|sichuan|any_age",
+            "n": 14,
+            "eligible": true,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "bank_finance|any_region|any_age",
+            "n": 20,
+            "eligible": false,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan|41+",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "guoqi|chongqing|31-35": {
+        "original_n": 4,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "guoqi|chongqing|any_age",
+            "n": 9,
+            "eligible": true,
+            "member_buckets": [
+              "guoqi|chongqing|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "guoqi|any_region|any_age",
+            "n": 65,
+            "eligible": false,
+            "member_buckets": [
+              "guoqi|sichuan|31-35",
+              "guoqi|sichuan|36-40",
+              "guoqi|sichuan|25-30",
+              "guoqi|sichuan|41+",
+              "guoqi|chongqing|31-35",
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|chongqing|36-40",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "guoqi|sichuan_minzu|31-35": {
+        "original_n": 3,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "guoqi|sichuan_minzu|any_age",
+            "n": 6,
+            "eligible": true,
+            "member_buckets": [
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "guoqi|any_region|any_age",
+            "n": 65,
+            "eligible": false,
+            "member_buckets": [
+              "guoqi|sichuan|31-35",
+              "guoqi|sichuan|36-40",
+              "guoqi|sichuan|25-30",
+              "guoqi|sichuan|41+",
+              "guoqi|chongqing|31-35",
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|chongqing|36-40",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "medical|sichuan_minzu|31-35": {
+        "original_n": 3,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|sichuan_minzu|any_age",
+            "n": 7,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": false,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "medical|sichuan_minzu|36-40": {
+        "original_n": 3,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|sichuan_minzu|any_age",
+            "n": 7,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": false,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "guoqi|chongqing|25-30": {
+        "original_n": 3,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "guoqi|chongqing|any_age",
+            "n": 9,
+            "eligible": true,
+            "member_buckets": [
+              "guoqi|chongqing|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "guoqi|any_region|any_age",
+            "n": 65,
+            "eligible": false,
+            "member_buckets": [
+              "guoqi|sichuan|31-35",
+              "guoqi|sichuan|36-40",
+              "guoqi|sichuan|25-30",
+              "guoqi|sichuan|41+",
+              "guoqi|chongqing|31-35",
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|chongqing|36-40",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "other_shiye|chongqing|25-30": {
+        "original_n": 3,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "other_shiye|chongqing|any_age",
+            "n": 14,
+            "eligible": true,
+            "member_buckets": [
+              "other_shiye|chongqing|31-35",
+              "other_shiye|chongqing|36-40",
+              "other_shiye|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "other_shiye|any_region|any_age",
+            "n": 769,
+            "eligible": false,
+            "member_buckets": [
+              "other_shiye|sichuan|31-35",
+              "other_shiye|sichuan|25-30",
+              "other_shiye|sichuan|36-40",
+              "other_shiye|sichuan|41+",
+              "other_shiye|sichuan_minzu|25-30",
+              "other_shiye|sichuan_minzu|31-35",
+              "other_shiye|sichuan_minzu|36-40",
+              "other_shiye|sichuan_minzu|41+",
+              "other_shiye|chongqing|31-35",
+              "other_shiye|chongqing|36-40",
+              "other_shiye|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "dangzheng|sichuan_minzu|41+": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "dangzheng|sichuan_minzu|any_age",
+            "n": 81,
+            "eligible": true,
+            "member_buckets": [
+              "dangzheng|sichuan_minzu|25-30",
+              "dangzheng|sichuan_minzu|31-35",
+              "dangzheng|sichuan_minzu|36-40",
+              "dangzheng|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "dangzheng|any_region|any_age",
+            "n": 195,
+            "eligible": false,
+            "member_buckets": [
+              "dangzheng|sichuan_minzu|25-30",
+              "dangzheng|sichuan|31-35",
+              "dangzheng|sichuan|25-30",
+              "dangzheng|sichuan|36-40",
+              "dangzheng|sichuan_minzu|31-35",
+              "dangzheng|sichuan_minzu|36-40",
+              "dangzheng|sichuan|41+",
+              "dangzheng|sichuan_minzu|41+",
+              "dangzheng|chongqing|25-30",
+              "dangzheng|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "bank_finance|sichuan|25-30": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "bank_finance|sichuan|any_age",
+            "n": 14,
+            "eligible": true,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "bank_finance|any_region|any_age",
+            "n": 20,
+            "eligible": false,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan|41+",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "bank_finance|sichuan_minzu|36-40": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "bank_finance|sichuan_minzu|any_age",
+            "n": 6,
+            "eligible": true,
+            "member_buckets": [
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "bank_finance|any_region|any_age",
+            "n": 20,
+            "eligible": false,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan|41+",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "dangzheng|chongqing|25-30": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "dangzheng|chongqing|any_age",
+            "n": 3,
+            "eligible": false,
+            "member_buckets": [
+              "dangzheng|chongqing|25-30",
+              "dangzheng|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "dangzheng|any_region|any_age",
+            "n": 195,
+            "eligible": true,
+            "member_buckets": [
+              "dangzheng|sichuan_minzu|25-30",
+              "dangzheng|sichuan|31-35",
+              "dangzheng|sichuan|25-30",
+              "dangzheng|sichuan|36-40",
+              "dangzheng|sichuan_minzu|31-35",
+              "dangzheng|sichuan_minzu|36-40",
+              "dangzheng|sichuan|41+",
+              "dangzheng|sichuan_minzu|41+",
+              "dangzheng|chongqing|25-30",
+              "dangzheng|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "education|sichuan_minzu|31-35": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "education|sichuan_minzu|any_age",
+            "n": 7,
+            "eligible": true,
+            "member_buckets": [
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "education|any_region|any_age",
+            "n": 56,
+            "eligible": false,
+            "member_buckets": [
+              "education|sichuan|36-40",
+              "education|sichuan|31-35",
+              "education|sichuan|25-30",
+              "education|sichuan|41+",
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|sichuan_minzu|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "bank_finance|sichuan_minzu|25-30": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "bank_finance|sichuan_minzu|any_age",
+            "n": 6,
+            "eligible": true,
+            "member_buckets": [
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "bank_finance|any_region|any_age",
+            "n": 20,
+            "eligible": false,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan|41+",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "guoqi|sichuan_minzu|25-30": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "guoqi|sichuan_minzu|any_age",
+            "n": 6,
+            "eligible": true,
+            "member_buckets": [
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "guoqi|any_region|any_age",
+            "n": 65,
+            "eligible": false,
+            "member_buckets": [
+              "guoqi|sichuan|31-35",
+              "guoqi|sichuan|36-40",
+              "guoqi|sichuan|25-30",
+              "guoqi|sichuan|41+",
+              "guoqi|chongqing|31-35",
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|chongqing|36-40",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "bank_finance|sichuan|41+": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "bank_finance|sichuan|any_age",
+            "n": 14,
+            "eligible": true,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "bank_finance|any_region|any_age",
+            "n": 20,
+            "eligible": false,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan|41+",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "bank_finance|sichuan_minzu|31-35": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "bank_finance|sichuan_minzu|any_age",
+            "n": 6,
+            "eligible": true,
+            "member_buckets": [
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "bank_finance|any_region|any_age",
+            "n": 20,
+            "eligible": false,
+            "member_buckets": [
+              "bank_finance|sichuan|36-40",
+              "bank_finance|sichuan|31-35",
+              "bank_finance|sichuan|25-30",
+              "bank_finance|sichuan_minzu|36-40",
+              "bank_finance|sichuan_minzu|25-30",
+              "bank_finance|sichuan|41+",
+              "bank_finance|sichuan_minzu|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "education|chongqing|31-35": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "education|chongqing|any_age",
+            "n": 5,
+            "eligible": true,
+            "member_buckets": [
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "education|any_region|any_age",
+            "n": 56,
+            "eligible": false,
+            "member_buckets": [
+              "education|sichuan|36-40",
+              "education|sichuan|31-35",
+              "education|sichuan|25-30",
+              "education|sichuan|41+",
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|sichuan_minzu|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "education|chongqing|41+": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "education|chongqing|any_age",
+            "n": 5,
+            "eligible": true,
+            "member_buckets": [
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "education|any_region|any_age",
+            "n": 56,
+            "eligible": false,
+            "member_buckets": [
+              "education|sichuan|36-40",
+              "education|sichuan|31-35",
+              "education|sichuan|25-30",
+              "education|sichuan|41+",
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|sichuan_minzu|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "guoqi|chongqing|36-40": {
+        "original_n": 2,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "guoqi|chongqing|any_age",
+            "n": 9,
+            "eligible": true,
+            "member_buckets": [
+              "guoqi|chongqing|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "guoqi|any_region|any_age",
+            "n": 65,
+            "eligible": false,
+            "member_buckets": [
+              "guoqi|sichuan|31-35",
+              "guoqi|sichuan|36-40",
+              "guoqi|sichuan|25-30",
+              "guoqi|sichuan|41+",
+              "guoqi|chongqing|31-35",
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|chongqing|36-40",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "medical|sichuan|25-30": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|sichuan|any_age",
+            "n": 24,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan|25-30"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": false,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "medical|sichuan_minzu|41+": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|sichuan_minzu|any_age",
+            "n": 7,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": false,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "guoqi|sichuan_minzu|36-40": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "guoqi|sichuan_minzu|any_age",
+            "n": 6,
+            "eligible": true,
+            "member_buckets": [
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "guoqi|any_region|any_age",
+            "n": 65,
+            "eligible": false,
+            "member_buckets": [
+              "guoqi|sichuan|31-35",
+              "guoqi|sichuan|36-40",
+              "guoqi|sichuan|25-30",
+              "guoqi|sichuan|41+",
+              "guoqi|chongqing|31-35",
+              "guoqi|sichuan_minzu|31-35",
+              "guoqi|chongqing|25-30",
+              "guoqi|sichuan_minzu|25-30",
+              "guoqi|chongqing|36-40",
+              "guoqi|sichuan_minzu|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "gongjianfa|sichuan_minzu|41+": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "gongjianfa|sichuan_minzu|any_age",
+            "n": 34,
+            "eligible": true,
+            "member_buckets": [
+              "gongjianfa|sichuan_minzu|36-40",
+              "gongjianfa|sichuan_minzu|31-35",
+              "gongjianfa|sichuan_minzu|25-30",
+              "gongjianfa|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "gongjianfa|any_region|any_age",
+            "n": 94,
+            "eligible": false,
+            "member_buckets": [
+              "gongjianfa|sichuan|31-35",
+              "gongjianfa|sichuan|36-40",
+              "gongjianfa|sichuan|25-30",
+              "gongjianfa|sichuan_minzu|36-40",
+              "gongjianfa|sichuan_minzu|31-35",
+              "gongjianfa|sichuan_minzu|25-30",
+              "gongjianfa|sichuan|41+",
+              "gongjianfa|sichuan_minzu|41+",
+              "gongjianfa|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "education|sichuan_minzu|41+": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "education|sichuan_minzu|any_age",
+            "n": 7,
+            "eligible": true,
+            "member_buckets": [
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|sichuan_minzu|41+"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "education|any_region|any_age",
+            "n": 56,
+            "eligible": false,
+            "member_buckets": [
+              "education|sichuan|36-40",
+              "education|sichuan|31-35",
+              "education|sichuan|25-30",
+              "education|sichuan|41+",
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|sichuan_minzu|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      },
+      "dangzheng|chongqing|31-35": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "dangzheng|chongqing|any_age",
+            "n": 3,
+            "eligible": false,
+            "member_buckets": [
+              "dangzheng|chongqing|25-30",
+              "dangzheng|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "dangzheng|any_region|any_age",
+            "n": 195,
+            "eligible": true,
+            "member_buckets": [
+              "dangzheng|sichuan_minzu|25-30",
+              "dangzheng|sichuan|31-35",
+              "dangzheng|sichuan|25-30",
+              "dangzheng|sichuan|36-40",
+              "dangzheng|sichuan_minzu|31-35",
+              "dangzheng|sichuan_minzu|36-40",
+              "dangzheng|sichuan|41+",
+              "dangzheng|sichuan_minzu|41+",
+              "dangzheng|chongqing|25-30",
+              "dangzheng|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "xiangzhen|chongqing|25-30": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "xiangzhen|chongqing|any_age",
+            "n": 1,
+            "eligible": false,
+            "member_buckets": [
+              "xiangzhen|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "xiangzhen|any_region|any_age",
+            "n": 113,
+            "eligible": true,
+            "member_buckets": [
+              "xiangzhen|sichuan_minzu|25-30",
+              "xiangzhen|sichuan|25-30",
+              "xiangzhen|sichuan|31-35",
+              "xiangzhen|sichuan_minzu|31-35",
+              "xiangzhen|sichuan|36-40",
+              "xiangzhen|sichuan_minzu|36-40",
+              "xiangzhen|sichuan|41+",
+              "xiangzhen|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "medical|chongqing|41+": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|chongqing|any_age",
+            "n": 3,
+            "eligible": false,
+            "member_buckets": [
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "medical|chongqing|36-40": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|chongqing|any_age",
+            "n": 3,
+            "eligible": false,
+            "member_buckets": [
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "medical|chongqing|31-35": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "medical|chongqing|any_age",
+            "n": 3,
+            "eligible": false,
+            "member_buckets": [
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "medical|any_region|any_age",
+            "n": 34,
+            "eligible": true,
+            "member_buckets": [
+              "medical|sichuan|41+",
+              "medical|sichuan|36-40",
+              "medical|sichuan|31-35",
+              "medical|sichuan_minzu|31-35",
+              "medical|sichuan_minzu|36-40",
+              "medical|sichuan|25-30",
+              "medical|sichuan_minzu|41+",
+              "medical|chongqing|41+",
+              "medical|chongqing|36-40",
+              "medical|chongqing|31-35"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "gongjianfa|chongqing|25-30": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "gongjianfa|chongqing|any_age",
+            "n": 1,
+            "eligible": false,
+            "member_buckets": [
+              "gongjianfa|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "gongjianfa|any_region|any_age",
+            "n": 94,
+            "eligible": true,
+            "member_buckets": [
+              "gongjianfa|sichuan|31-35",
+              "gongjianfa|sichuan|36-40",
+              "gongjianfa|sichuan|25-30",
+              "gongjianfa|sichuan_minzu|36-40",
+              "gongjianfa|sichuan_minzu|31-35",
+              "gongjianfa|sichuan_minzu|25-30",
+              "gongjianfa|sichuan|41+",
+              "gongjianfa|sichuan_minzu|41+",
+              "gongjianfa|chongqing|25-30"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 2
+      },
+      "education|chongqing|36-40": {
+        "original_n": 1,
+        "standard_response_prefix": "目前案例库中暂无完全一样的案例，类似案例的情况是：",
+        "chain": [
+          {
+            "level": 1,
+            "scope": "education|chongqing|any_age",
+            "n": 5,
+            "eligible": true,
+            "member_buckets": [
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 2,
+            "scope": "education|any_region|any_age",
+            "n": 56,
+            "eligible": false,
+            "member_buckets": [
+              "education|sichuan|36-40",
+              "education|sichuan|31-35",
+              "education|sichuan|25-30",
+              "education|sichuan|41+",
+              "education|sichuan_minzu|25-30",
+              "education|sichuan_minzu|31-35",
+              "education|chongqing|31-35",
+              "education|chongqing|41+",
+              "education|sichuan_minzu|41+",
+              "education|chongqing|36-40"
+            ]
+          },
+          {
+            "level": 3,
+            "scope": "redirect_to_1v1",
+            "n": 0,
+            "eligible": false,
+            "fallback_message": "目前案例库中暂无完全一样的案例，建议加企微 1 对 1 沟通"
+          }
+        ],
+        "active_level": 1
+      }
+    }
+  }
+}

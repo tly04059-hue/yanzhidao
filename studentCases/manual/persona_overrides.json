@@ -1,0 +1,37 @@
+{
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:2": {
+    "system_tag": "党政机关",
+    "position_tag": "宣传部",
+    "goal_tag": ["学历提升", "防御"]
+  },
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:18": {
+    "system_tag": "党政机关",
+    "position_tag": "综合岗",
+    "goal_tag": ["学历提升", "防御"]
+  },
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:34": {
+    "system_tag": "党政机关",
+    "position_tag": "社区村镇管理",
+    "goal_tag": ["学历提升", "防御"]
+  },
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:48": {
+    "system_tag": "国企央企",
+    "position_tag": "业务岗",
+    "goal_tag": ["学历提升", "自我提升"]
+  },
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:50": {
+    "system_tag": "党政机关",
+    "position_tag": "交通运输",
+    "goal_tag": ["学历提升", "防御"]
+  },
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:52": {
+    "system_tag": "其他",
+    "position_tag": "管理岗",
+    "goal_tag": ["学历提升", "自我提升"]
+  },
+  "studentCases/sourceData/党校已上岸学员案例信息汇总表.xlsx:53": {
+    "system_tag": "国企央企",
+    "position_tag": "技术岗",
+    "goal_tag": ["学历提升", "自我提升"]
+  }
+}

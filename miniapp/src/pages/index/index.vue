@@ -1,575 +1,479 @@
 <template>
-  <!-- 微信顶栏 -->
-  <view class="wx-nav">
-    <text class="wx-nav-title">研知道选校</text>
-    <text class="nav-dots">●●●</text>
-  </view>
+  <view class="shell">
+    <view class="v6-nav">
+      <view class="v6-nav-side"></view>
+      <text class="v6-nav-title">研知道</text>
+      <view class="v6-nav-side"></view>
+    </view>
 
-  <view class="page-v3">
-    <!-- Hero Banner -->
-    <view class="hero">
+    <view class="v6-page home-page has-tabbar">
+      <view class="brand-row">已服务1000+川渝同学 · 不骗人 · 真服务</view>
+
+      <!-- Hero 大白卡：6月考/12月考 双路径 -->
       <view class="hero-card">
-        <view class="hero-mast">
-          <image class="hero-mast-dot" src="/static/logo-white.png" mode="aspectFit"></image>
+        <view class="hero-card-top-fade"></view>
+        <view class="hero-card-heading">
+          <text class="hero-title">研知道，川渝在职考研</text>
+          <text class="hero-copy">已服务川渝1000+同学，两大主流在职考研路径</text>
         </view>
-        <text class="hero-title">川渝体制内</text>
-        <text class="hero-subtitle">考研决策指南</text>
-        <view>
-          <text class="hero-sub">只需 3 分钟，看见适合你的学历提升路径</text>
-        </view>
-      </view>
-    </view>
 
-    <!-- 三类用户入口 -->
-    <view class="entry-section">
-      <view class="entry-head">
-        <text class="kicker">Quick Start</text>
-        <view class="entry-head-title-wrap">
-          <text class="entry-head-icon">✦</text>
-          <text class="entry-head-title">你现在的状态？</text>
-        </view>
-      </view>
-      <view class="entry-list">
-        <view class="entry-card" @click="goLearn">
-          <view class="entry-icon"><image class="entry-icon-img" src="/static/icons/tab-home-active.svg" mode="aspectFit" /></view>
-          <view class="entry-content">
-            <text class="entry-label">犹豫期</text>
-            <text class="entry-title">我还在想要不要读研</text>
-            <text class="entry-desc">看政策、看案例，理解学历作用</text>
+        <view class="path-stats">
+          <view class="path-stat-card">
+            <view class="ps-link-top" @click="goPage('prep')">
+              <text class="ps-headline">6月考</text>
+              <view class="ps-desc">
+                <text class="ps-desc-strong">川渝党校在职研究生</text>
+                <text class="ps-desc-line">四川3个专业 / 重庆5个专业</text>
+                <text class="ps-desc-line">单证 / 体制内认可</text>
+                <text class="ps-desc-line">体制人专属的读研路径</text>
+              </view>
+            </view>
+            <view class="ps-divider"></view>
+            <view class="ps-link-bottom" @click="goPage('pass-rate')">
+              <text class="ps-rate-title">辅导过考率</text>
+              <view class="ps-rate-row">
+                <text class="ps-rate-line">四川党校 2025年 <text class="text-accent">40.4%</text></text>
+                <text class="ps-rate-line">重庆党校 2025年 <text class="text-accent">44%</text></text>
+              </view>
+              <text class="ps-arrow">→</text>
+            </view>
           </view>
-          <text class="entry-arrow">›</text>
-        </view>
-        <view class="entry-card" @click="goTest">
-          <view class="entry-icon"><image class="entry-icon-img" src="/static/icons/tab-test-active.svg" mode="aspectFit" /></view>
-          <view class="entry-content">
-            <text class="entry-label">决策期</text>
-            <text class="entry-title">我想知道适合考什么</text>
-            <text class="entry-desc">3 分钟测评 → 个性化方案</text>
+          <view class="path-stat-card">
+            <view class="ps-link-top" @click="goPage('prep')">
+              <text class="ps-headline">12月考</text>
+              <view class="ps-desc">
+                <text class="ps-desc-strong">统考非全日制研究生</text>
+                <text class="ps-desc-line">MPA / MBA / MEM</text>
+                <text class="ps-desc-line">双证 / 学信网可查</text>
+                <text class="ps-desc-line">国民教育在职读研路径</text>
+              </view>
+            </view>
+            <view class="ps-divider"></view>
+            <view class="ps-link-bottom" @click="goPage('pass-rate')">
+              <text class="ps-rate-title">辅导过考率</text>
+              <view class="ps-rate-row">
+                <text class="ps-rate-line">26年初试辅导 <text class="text-accent">55.6%</text></text>
+                <text class="ps-rate-line">26年复试辅导 <text class="text-accent">87.5%</text></text>
+              </view>
+              <text class="ps-arrow">→</text>
+            </view>
           </view>
-          <text class="entry-arrow">›</text>
         </view>
-        <view class="entry-card" @click="goTimeline">
-          <view class="entry-icon"><image class="entry-icon-img" src="/static/icons/tab-learn-active.svg" mode="aspectFit" /></view>
-          <view class="entry-content">
-            <text class="entry-label">行动期</text>
-            <text class="entry-title">我决定了，要开始备考</text>
-            <text class="entry-desc">备考方案、资料、顾问</text>
+        <text class="metric-hint" @click="goPage('pass-rate')">点数字看「过考率怎么算的」</text>
+      </view>
+
+      <!-- §1 三类用户分流 -->
+        <view class="section">
+          <view class="section-head section-head-inline">
+          <view class="entry-head-shell" @click="toggleEntrySection">
+            <view class="section-head-top">
+              <text class="section-head-title">你现在更像哪种状态</text>
+              <text class="entry-head-meta">3 个入口</text>
+            </view>
+            <view class="entry-toggle">
+              <view class="entry-toggle-arrow" :class="{ open: entrySectionOpen, drift: arrowDriftDown && !entrySectionOpen }"></view>
+            </view>
           </view>
-          <text class="entry-arrow">›</text>
+        </view>
+        <view class="collapse-panel" :class="{ open: entrySectionOpen }">
+          <view class="collapse-panel-inner entry-grid">
+            <view class="entry-btn" @click="goTab('learn')">
+              <text class="entry-btn-title">先了解</text>
+              <text class="entry-btn-desc">还没决定，看看学历有什么用，了解院校和真实案例。</text>
+              <text class="entry-btn-action">浏览政策、案例、院校信息 →</text>
+            </view>
+            <view class="entry-btn" @click="goTab('test')">
+              <text class="entry-btn-title">测一测</text>
+              <text class="entry-btn-desc">有想法，快速判断适合党校单证还是统考非全双证。</text>
+              <text class="entry-btn-action">3 分钟得到第一轮建议 →</text>
+            </view>
+            <view class="entry-btn" @click="goPage('prep')">
+              <text class="entry-btn-title">看看备考时间节奏</text>
+              <text class="entry-btn-desc">了解不同考研路径的区别、报考条件和时间安排。</text>
+              <text class="entry-btn-action">党校在职研究生 vs 统考非全研究生 →</text>
+            </view>
+          </view>
         </view>
       </view>
-    </view>
 
-    <!-- 院校查询入口 -->
-    <view class="tool-row">
-      <view class="tool-card">
-        <view class="tool-item" @click="goSchools">
-          <view class="tool-ico"><image class="tool-ico-img" src="/static/icons/tab-learn.svg" mode="aspectFit" /></view>
-          <text class="tool-name">院校查询</text>
+      <!-- §2 院校/案例/咨询 -->
+        <view class="section">
+          <view class="section-head section-head-inline">
+          <view class="entry-head-shell" @click="toggleResourceSection">
+            <view class="section-head-top">
+              <text class="section-head-title">院校/案例/咨询/资料下载</text>
+            </view>
+            <view class="entry-toggle">
+              <view class="entry-toggle-arrow" :class="{ open: resourceSectionOpen, drift: arrowDriftDown && !resourceSectionOpen }"></view>
+            </view>
+          </view>
         </view>
-
-      </view>
-  </view>
-
-  <!-- 信任锚 -->
-  <view class="trust">
-    <view class="trust-row">
-      <view class="trust-item">
-        <text class="trust-num green">1,100+</text>
-        <text class="trust-lbl">川渝同行</text>
-      </view>
-      <view class="trust-item">
-        <text class="trust-num">04</text>
-        <text class="trust-lbl">届数据</text>
-      </view>
-      <view class="trust-item">
-        <text class="trust-num">42</text>
-        <text class="trust-lbl">所院校</text>
-      </view>
-    </view>
-  </view>
-
-  <!-- 备考方案预览 -->
-  <view class="plan-section">
-    <view class="entry-head">
-      <text class="kicker">Programs</text>
-      <view class="entry-head-title-wrap">
-        <text class="entry-head-icon">✦</text>
-        <text class="entry-head-title">备考方案</text>
-      </view>
-    </view>
-    <view class="plan-list">
-      <view class="plan-card" @click="goTimeline">
-        <view class="plan-card-l">
-          <text class="plan-tag">党校系</text>
-          <text class="plan-name">党校在职研究生</text>
-          <text class="plan-meta">免联考 · 适合体制内 35+</text>
+        <view class="collapse-panel" :class="{ open: resourceSectionOpen }">
+          <view class="collapse-panel-inner list-card home-list">
+            <view class="list-item" @click="goPage('schools')">
+              <text class="list-item-label">院校库查询</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item" @click="goPage('cases')">
+              <text class="list-item-label">1,000+ 同学真实案例</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item" @click="goPage('map')">
+              <text class="list-item-label">1,000+ 同学的川渝分布</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item emphasis" @click="goPage('wechat')">
+              <text class="list-item-label">加企业微信1对1咨询</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item" @click="goPage('downloads')">
+              <text class="list-item-label">资料下载</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item" @click="goPage('data-source')">
+              <text class="list-item-label">数据来源与说明</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item" @click="goPage('usage')">
+              <text class="list-item-label">使用说明</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+            <view class="list-item" @click="goPage('about')">
+              <text class="list-item-label">关于研知道</text>
+              <text class="list-item-arrow">→</text>
+            </view>
+          </view>
         </view>
-        <text class="plan-card-r">›</text>
       </view>
-      <view class="plan-card" @click="goTimeline">
-        <view class="plan-card-l">
-          <text class="plan-tag">管综系</text>
-          <text class="plan-name">非全日制 MPA / MBA</text>
-          <text class="plan-meta">双证 · 适合体制内 28-40</text>
-        </view>
-        <text class="plan-card-r">›</text>
+
+      <!-- 刊尾 -->
+      <view class="footer-sign">
+        <text class="footer-sign-title">不骗人 · 真服务</text>
+        <text class="footer-sign-sub">研知道 · 成立于 2021 年</text>
       </view>
-    </view>
-  </view>
 
-  <view class="brand-foot">不骗人 · 真服务</view>
-
-  <!-- Tab Bar -->
-  <view class="tab-bar">
-    <view class="tab-item active">
-      <image class="tab-icon-img" src="/static/icons/tab-home-active.svg" mode="aspectFit" />
-      <text class="tab-label">首页</text>
     </view>
-    <view class="tab-item" @click="goLearn">
-      <image class="tab-icon-img" src="/static/icons/tab-learn.svg" mode="aspectFit" />
-      <text class="tab-label">了解</text>
-    </view>
-    <view class="tab-item" @click="goTest">
-      <image class="tab-icon-img" src="/static/icons/tab-test.svg" mode="aspectFit" />
-      <text class="tab-label">测一测</text>
-    </view>
-    <view class="tab-item" @click="goContact">
-      <image class="tab-icon-img" src="/static/icons/tab-contact.svg" mode="aspectFit" />
-      <text class="tab-label">咨询</text>
-    </view>
-  </view>
+  <BottomTabBar />
   </view>
 </template>
 
 <script setup lang="ts">
-const goLearn = () => uni.redirectTo({ url: '/pages/learn/index' })
-const goTest = () => uni.redirectTo({ url: '/pages/test/index' })
-const goContact = () => uni.redirectTo({ url: '/pages/contact/index' })
-const goSchools = () => uni.navigateTo({ url: '/pages/schools/index' })
-const goTimeline = () => uni.navigateTo({ url: '/pages/timeline/index' })
-
-const showInfo = (title: string, content: string) => {
-  uni.showModal({ title, content, showCancel: false })
+import { onMounted, onUnmounted, ref } from 'vue'
+import { onShow } from '@dcloudio/uni-app'
+import BottomTabBar from '@/components/BottomTabBar.vue'
+import { trackPageView, trackTabClick, trackNavClick } from '@/api/tracking'
+const routeMap: Record<string, string> = {
+  schools: '/pages/schools/index',
+  cases: '/pages/cases/index',
+  map: '/pages/map/index',
+  downloads: '/pages/downloads/index',
+  wechat: '/pages/contact/index',
+  'data-source': '/pages/data-source/index',
+  usage: '/pages/usage/index',
+  about: '/pages/about/index',
+  prep: '/pages/prep/index',
+  'pass-rate': '/pages/pass-rate/index',
+  result: '/pages/result/index',
+  zexiao: '/pages/zexiao/index',
 }
 
+const entrySectionOpen = ref(false)
+const resourceSectionOpen = ref(false)
+const arrowDriftDown = ref(false)
+let arrowDriftTimer: ReturnType<typeof setInterval> | null = null
+const goPage = (key: string) => {
+  trackNavClick('home', key)
+  const url = routeMap[key]
+  if (url) uni.navigateTo({ url })
+}
+
+const goTab = (tab: string) => {
+  const tabMap: Record<string, string> = {
+    home: '/pages/index/index',
+    learn: '/pages/learn/index',
+    test: '/pages/test/index',
+  }
+  trackTabClick('home', tab, tabMap[tab] || '')
+  uni.switchTab({ url: tabMap[tab] || '/pages/index/index' })
+}
+
+const toggleEntrySection = () => {
+  entrySectionOpen.value = !entrySectionOpen.value
+}
+
+const toggleResourceSection = () => {
+  resourceSectionOpen.value = !resourceSectionOpen.value
+}
+
+onMounted(() => {
+  trackPageView('home')
+  arrowDriftTimer = setInterval(() => {
+    arrowDriftDown.value = !arrowDriftDown.value
+  }, 1400)
+})
+
+// onShow(() => {
+//   const pages = getCurrentPages()
+//   const page = pages[pages.length - 1] as any
+//   if (page && typeof page.getTabBar === 'function' && page.getTabBar()) {
+//     page.getTabBar().setData({ selected: '/pages/index/index' })
+//   }
+// })
+
+onUnmounted(() => {
+  if (arrowDriftTimer) {
+    clearInterval(arrowDriftTimer)
+    arrowDriftTimer = null
+  }
+})
 </script>
 
 <style lang="scss" scoped>
-/* 按 UI 样本 01_首页.html 规范编写 */
-.page-v3 {
-  width: 100%;
-  background: #F5EFE7;
-  min-height: 100vh;
-  padding-bottom: 130px;
-  box-sizing: border-box;
+@import "@/styles/v6.scss";
+
+.shell { background: #FAF7F2; min-height: 100vh; }
+
+.home-page {
+  padding-top: 18px;
 }
 
-/* 微信顶栏 */
-.wx-nav {
-  width: 100%;
-  background: #FFFFFF;
-  padding: 16px 20px;
-  border-bottom: 0.5px solid #ECE5D8;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+.home-page.has-tabbar {
+  padding-bottom: calc(50px + env(safe-area-inset-bottom, 0px));
 }
 
-.wx-nav-title {
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 28px;
-  color: #2A251E;
-}
-
-.nav-dots {
-  font-size: 8px;
-  color: #2A251E;
-  letter-spacing: -1px;
-}
-
-/* Hero Banner */
-.hero {
-  padding: 18px 20px 0;
+.home-list .list-item.emphasis .list-item-label {
+  color: #CF7140;
+  font-weight: 700;
 }
 
 .hero-card {
-  background: #CF7140;
-  color: white;
-  border-radius: 16px;
-  padding: 28px 24px;
-  position: relative;
-  overflow: hidden;
+  padding-top: 0;
 }
 
-.hero-card::before {
-  content: '';
+.hero-card-top-fade {
   position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 182px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.18) 28%, rgba(255, 255, 255, 0.56) 68%, rgba(255, 255, 255, 0.94) 100%);
 }
 
-.hero-mast {
+.hero-card-heading,
+.path-stats,
+.metric-hint {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-card-heading {
+  min-height: 76px;
+  padding: 10px 12px 6px;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  transform: translateY(5px);
 }
 
-.hero-mast-dot {
-  width: 150px;
-  height: 150px;
-}
-
-.hero-mast-name {
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.32em;
+.hero-title,
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hero-title {
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.2;
-  margin-bottom: 2px;
-  white-space: nowrap;
-}
-
-.hero-subtitle {
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 1.2;
-  margin-bottom: 6px;
-  white-space: nowrap;
-}
-
-.hero-sub {
-  font-family: "Songti SC", serif;
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.4;
-}
-
-/* 三类用户入口 */
-.entry-section {
-  padding: 22px 20px 16px;
-}
-
-.entry-head {
-  margin-bottom: 14px;
-  padding: 0 2px;
-}
-
-.kicker {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-weight: 500;
-  font-size: 12px;
-  color: #CF7140;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.entry-head-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.entry-head-icon {
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #CF7140;
-}
-
-.entry-head-title {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #2A251E;
-}
-
-.entry-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.entry-card {
-  background: #FFFFFF;
-  border-radius: 14px;
-  border: 0.5px solid #ECE5D8;
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.entry-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #F1E0D3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 18px;
-  color: #CF7140;
-  flex-shrink: 0;
-}
-
-.entry-icon-img {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
-.entry-content {
-  flex: 1;
-}
-
-.entry-label {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-weight: 500;
-  font-size: 12px;
-  color: #8A8175;
-  letter-spacing: 0.08em;
-  margin-bottom: 1px;
-}
-
-.entry-title {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #2A251E;
-  margin-bottom: 1px;
-}
-
-.entry-desc {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-size: 12px;
-  color: #6B6258;
-}
-
-.entry-arrow {
-  font-family: "Songti SC", serif;
-  font-size: 24px;
-  color: #8A8175;
-}
-
-/* 院校查询入口 */
-.tool-row {
-  padding: 12px 20px 18px;
-}
-
-.tool-card {
-  background: #FFFFFF;
-  border-radius: 14px;
-  border: 0.5px solid #ECE5D8;
-  padding: 18px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.tool-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 2px 0;
-}
-
-.tool-ico {
-  width: 32px;
-  height: 32px;
-  background: #F0E9DD;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #CF7140;
-}
-
-.tool-ico-img {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
-
-.tool-name {
-  font-family: "Songti SC", serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #2A251E;
-}
-
-/* 信任锚 */
-.trust {
   width: 100%;
-  background: #FFFFFF;
-  padding: 16px 0;
-  border-top: 4px solid #F5EFE7;
-  box-sizing: border-box;
+  font-size: 25px;
+  line-height: 1.2;
 }
 
-.trust-row {
-  display: flex;
-  justify-content: space-around;
-}
-
-.trust-item {
-  text-align: center;
-}
-
-.trust-num {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 24px;
-  color: #CF7140;
-  line-height: 1;
-}
-
-.trust-num.green {
-  color: #5F8C6E;
-}
-
-.trust-lbl {
-  display: block;
-  font-family: "Songti SC", serif;
+.hero-copy {
+  width: 100%;
   font-size: 12px;
+  line-height: 1.2;
+}
+
+.section-head-inline {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section {
+  margin-bottom: 9px;
+}
+
+.entry-head-shell {
+  width: 100%;
+  padding: 14px 10px 4px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(207, 113, 64, 0.04) 0%, rgba(207, 113, 64, 0.015) 68%, rgba(207, 113, 64, 0) 100%);
+  cursor: pointer;
+}
+
+.section-head-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.section-head-title {
+  flex: 1;
+  display: block;
+  text-align: left;
+  padding: 0;
+}
+
+.entry-head-meta {
+  flex-shrink: 0;
+  max-width: 120px;
+  padding-right: 10px;
   color: #8A8175;
-  margin-top: 2px;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-align: right;
 }
 
-/* 备考方案预览 */
-.plan-section {
-  padding: 20px 20px;
+.path-stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.plan-list {
+.entry-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 24px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.entry-toggle-text {
+  display: none;
+}
+
+.entry-toggle-arrow {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: transparent;
+  flex-shrink: 0;
+  transform: translateY(0);
+  opacity: 0.49;
+  animation: arrowBreath 2.2s ease-in-out infinite;
+  transition: transform 1.2s ease, opacity 0.8s ease;
+}
+
+.entry-toggle-arrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 1.76px solid #CF7140;
+  border-bottom: 1.76px solid #CF7140;
+  transform: rotate(45deg) translateY(-1px);
+  transform-origin: center;
+}
+
+.entry-toggle-arrow.open {
+  transform: translateY(0) rotate(180deg);
+}
+
+.entry-toggle-arrow.drift {
+  transform: translateY(4px);
+  opacity: 0.49;
+}
+
+@keyframes arrowBreath {
+  0%, 100% {
+    opacity: 0.49;
+    box-shadow: 0 0 0 rgba(207, 113, 64, 0);
+  }
+  50% {
+    opacity: 0.49;
+    box-shadow: 0 0 4px rgba(207, 113, 64, 0.08);
+  }
+}
+
+.collapse-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 1s ease, opacity 1s ease, margin-top 1s ease;
+  margin-top: 0;
+}
+
+.collapse-panel.open {
+  max-height: 1200px;
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 8px;
+}
+
+.collapse-panel-inner {
+  transform: translateY(-10px);
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+.collapse-panel.open .collapse-panel-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.collapse-panel:not(.open) .collapse-panel-inner {
+  overflow: hidden;
+  opacity: 0;
+}
+
+
+.footer-sign {
+  padding: 18px 0 8px;
+  margin-top: 10px;
+}
+
+.ps-rate-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 6px;
+}
+
+.ps-link-top,
+.ps-link-bottom {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  text-align: left;
+  align-items: flex-start;
 }
 
-.plan-card {
-  background: #FFFFFF;
-  border-radius: 14px;
-  border: 0.5px solid #ECE5D8;
-  padding: 18px;
+.ps-desc {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.plan-card-l {
-  flex: 1;
-}
-
-.plan-tag {
-  display: inline-block;
-  font-family: "Songti SC", serif;
-  font-size: 11px;
-  color: #CF7140;
-  background: #F1E0D3;
-  padding: 2px 6px;
-  border-radius: 999px;
-  margin-bottom: 2px;
-  letter-spacing: 0.04em;
-}
-
-.plan-name {
+.ps-arrow {
+  position: static;
+  align-self: center;
+  margin-top: 10px;
   display: block;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #2A251E;
 }
-
-.plan-meta {
-  display: block;
-  font-family: "Songti SC", serif;
-  font-size: 12px;
-  color: #6B6258;
-}
-
-.plan-card-r {
-  color: #8A8175;
-  font-size: 24px;
-}
-
-/* 底部信息组 */
-.foot-row {
-  background: #FFFFFF;
-  padding: 18px 20px;
-  border-top: 14px solid #F5EFE7;
-}
-
-.foot-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 0.5px solid #E8E1D5;
-}
-
-.foot-link:last-child {
-  border-bottom: none;
-}
-
-.foot-link-left {
-  font-family: "Songti SC", serif;
-  font-size: 14px;
-  color: #2A251E;
-}
-
-.foot-link-right-wrap {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.foot-link-right {
-  font-family: "Songti SC", serif;
-  font-size: 14px;
-  color: #8A8175;
-}
-
-.foot-arrow {
-  font-size: 24px;
-  color: #8A8175;
-}
-
-/* 刊尾品牌 */
-.brand-foot {
-  text-align: center;
-  padding: 14px 0 18px;
-  font-family: "Songti SC", serif;
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.32em;
-  color: #8A8175;
-}
-
 </style>

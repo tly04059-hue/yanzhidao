@@ -1,104 +1,266 @@
 <template>
-  <view class="page-v3">
-    <view class="v3-card hero-card">
-      <text class="hero-title">估分工具</text>
-      <text class="hero-desc">这个模块老板还在进一步确认，提测版先作为占位入口保留，暂不提供正式估分结论。</text>
+  <view class="shell">
+    <view class="v6-nav">
+      <view class="v6-nav-side" @click="goBack">
+        <image class="v6-back-icon" src="/static/icons/nav-back.svg" mode="aspectFit" />
+      </view>
+      <text class="v6-nav-title">{{ content.title }}</text>
+      <view class="v6-nav-side"></view>
     </view>
 
-    <view class="v3-card">
-      <text class="block-title">规划中</text>
-      <text class="block-desc">后续这里会用于输入管综和英语预估分数，结合院校库里的分数线、招生人数和录取率，给出院校风险分层。</text>
-    </view>
+    <view class="v6-page">
+      <view class="brand-row">{{ content.brandLine }}</view>
 
-    <view class="v3-card list-card">
-      <view class="list-item">
-        <text>数学、逻辑、写作、英语估分</text>
-        <text class="status">待确认</text>
+      <view class="hero-card">
+        <text class="kicker-cn">{{ content.hero.kicker }}</text>
+        <text class="hero-title">{{ content.hero.title }}</text>
+        <text class="hero-copy">{{ content.hero.subtitle }}</text>
       </view>
-      <view class="list-item">
-        <text>按分数推荐院校档位</text>
-        <text class="status">待确认</text>
-      </view>
-      <view class="list-item">
-        <text>结合地区和预算做风险提示</text>
-        <text class="status">待确认</text>
-      </view>
-    </view>
 
-    <view class="v3-card cta">
-      <button class="btn-primary" @click="goTest">先测一测适合哪条路径</button>
-      <button class="btn-secondary" @click="goLearn">返回了解页</button>
-    </view>
+      <!-- 边界说明 -->
+      <view class="alert-card">
+        <text class="alert-kicker">{{ content.notice.title }}</text>
+        <text class="alert-text" v-for="item in content.notice.items" :key="item">· {{ item }}{{'\n'}}</text>
+      </view>
 
-    <view class="bottom-tabs">
-      <view class="tab" @click="goHome">
-        <image class="icon-img" src="/static/icons/tab-home.svg" mode="aspectFit" />
-        <text>首页</text>
+      <!-- 输入表单 -->
+      <view class="card">
+        <text class="form-title">{{ content.form.title }}</text>
+        <view class="field-stack">
+          <view class="field-row" v-for="field in content.form.fields" :key="field.key">
+            <text class="field-label">{{ field.label }}</text>
+            <input
+              class="field-input"
+              type="number"
+              :placeholder="field.placeholder"
+              :value="String(scores[field.key] ?? '')"
+              @input="updateScore(field.key, $event)"
+            />
+          </view>
+        </view>
+        <view class="total-row">
+          <text class="total-label">合计</text>
+          <text class="total-val">{{ totalScore }}</text>
+        </view>
+        <view class="btn-primary" style="margin-top: 16px; margin-bottom: 0;" @click="calculate">计算分数带</view>
       </view>
-      <view class="tab active" @click="goLearn">
-        <image class="icon-img" src="/static/icons/tab-learn-active.svg" mode="aspectFit" />
-        <text>了解</text>
+
+      <!-- 结果 -->
+      <view class="result-band-wrap" v-if="activeBand">
+        <text class="result-band-title">{{ content.result.title }}</text>
+        <view
+          class="result-band"
+          v-for="band in content.result.bands"
+          :key="band.id"
+          :class="{ active: activeBand === band.id }"
+        >
+          <view class="band-head">
+            <text class="band-range">{{ band.range }}</text>
+            <text class="band-label">{{ band.label }}</text>
+          </view>
+          <text class="band-desc" v-if="activeBand === band.id">{{ band.desc }}</text>
+        </view>
       </view>
-      <view class="tab" @click="goTest">
-        <image class="icon-img" src="/static/icons/tab-test.svg" mode="aspectFit" />
-        <text>测一测</text>
+
+      <!-- 参考建议 -->
+      <view class="section">
+        <view class="section-head">
+          <text class="section-head-title">{{ content.tips.title }}</text>
+        </view>
+        <view class="note-card">
+          <text class="note-card-text" v-for="tip in content.tips.items" :key="tip">· {{ tip }}{{'\n\n'}}</text>
+        </view>
       </view>
+
+      <view class="btn-primary" @click="goSchools">{{ content.cta.primary }}</view>
+      <view class="btn-secondary" @click="goTest">{{ content.cta.secondary }}</view>
+      <view class="btn-secondary" @click="goPassRate">{{ content.cta.tertiary }}</view>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
-const goHome = () => uni.redirectTo({ url: '/pages/index/index' })
-const goLearn = () => uni.redirectTo({ url: '/pages/learn/index' })
-const goTest = () => uni.redirectTo({ url: '/pages/test/index' })
+import { onMounted, ref, computed, reactive } from 'vue'
+import { v6EstimateContent } from '@/data/v5'
+import { trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+
+const content = v6EstimateContent
+const scores = reactive<Record<string, number | null>>({
+  math: null, logic: null, writing: null, english: null,
+})
+const activeBand = ref('')
+
+const totalScore = computed(() => {
+  const vals = Object.values(scores).map(v => v ?? 0)
+  return vals.reduce((a, b) => a + b, 0)
+})
+
+const updateScore = (key: string, e: any) => {
+  const val = parseFloat(e.detail?.value ?? e.target?.value ?? '')
+  scores[key] = isNaN(val) ? null : val
+  activeBand.value = ''
+}
+
+const calculate = () => {
+  const total = totalScore.value
+  if (total < 140) activeBand.value = 'low'
+  else if (total < 180) activeBand.value = 'mid'
+  else activeBand.value = 'high'
+  trackNavClick('estimate', 'calculate')
+}
+
+const goBack = () => {
+  const pages = getCurrentPages()
+  if (pages.length > 1) uni.navigateBack({ delta: 1 })
+  else uni.switchTab({ url: '/pages/index/index' })
+}
+
+const goSchools = () => {
+  trackNavClick('estimate', 'schools', '/pages/schools/index')
+  uni.navigateTo({ url: '/pages/schools/index' })
+}
+
+const goTest = () => {
+  trackTabClick('estimate', 'test', '/pages/test/index')
+  uni.switchTab({ url: '/pages/test/index' })
+}
+
+const goPassRate = () => {
+  trackNavClick('estimate', 'pass-rate', '/pages/pass-rate/index')
+  uni.navigateTo({ url: '/pages/pass-rate/index' })
+}
+
+onMounted(() => trackPageView('estimate'))
 </script>
 
 <style lang="scss" scoped>
-.hero-title,
-.hero-desc,
-.block-title,
-.block-desc {
+@import "@/styles/v6.scss";
+
+.shell { background: #FAF7F2; min-height: 100vh; }
+
+.form-title {
   display: block;
-}
-
-.hero-title {
-  color: #173B3A;
+  @include serif;
   font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-weight: 600;
+  color: $text-1;
+  margin-bottom: 16px;
 }
 
-.hero-desc,
-.block-desc {
-  color: #5F8F96;
+.field-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 0.5px dashed $divider;
+
+  &:last-child { border-bottom: none; }
+}
+
+.field-label {
   font-size: 14px;
-  line-height: 1.6;
+  color: $text-1;
+  font-weight: 500;
+  flex: 0 0 60px;
 }
 
-.block-title {
-  color: #079B83;
+.field-input {
+  flex: 1;
   font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  color: $accent;
+  background: transparent;
+  border: none;
+  text-align: right;
+  padding: 0;
+  @include serif;
 }
 
-.status {
-  margin-left: auto;
-  color: #999999;
-  font-size: 12px;
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid $border;
 }
 
-.cta button {
+.total-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: $text-1;
+}
+
+.total-val {
+  @include serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: $accent;
+}
+
+.result-band-wrap {
+  margin-bottom: 24px;
+}
+
+.result-band-title {
+  display: block;
+  @include serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text-1;
   margin-bottom: 10px;
 }
 
-.cta button:last-child {
-  margin-bottom: 0;
+.result-band {
+  background: $card;
+  border: 0.5px solid $border;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+
+  &.active {
+    border-color: $accent;
+    background: $accent-soft;
+  }
 }
 
-.icon-img {
-  width: 18px;
-  height: 18px;
+.band-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.band-range {
+  @include serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: $text-1;
+
+  .result-band.active & { color: $accent; }
+}
+
+.band-label {
+  font-size: 13px;
+  color: $text-2;
+  font-weight: 500;
+
+  .result-band.active & { color: $accent-deep; font-weight: 600; }
+}
+
+.band-desc {
   display: block;
+  font-size: 13px;
+  color: $text-2;
+  line-height: 1.75;
+  margin-top: 10px;
+
+  .result-band.active & { color: $accent-deep; }
 }
 </style>

@@ -1,5 +1,23 @@
 // API 基础地址
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8010/api'
+const IS_PROD = import.meta.env.PROD || import.meta.env.MODE === 'production'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || (IS_PROD ? 'https://yanzhidao.com/api' : 'http://127.0.0.1:8010/api')
+const ANALYTICS_BASE_URL = import.meta.env.VITE_ANALYTICS_BASE_URL || ''
+const ENABLE_LOCAL_ANALYTICS_ENV = String(import.meta.env.VITE_ENABLE_LOCAL_ANALYTICS || '').toLowerCase() === 'true'
+const IS_LOCAL_API = /\/\/(127\.0\.0\.1|localhost)(:\d+)?\//.test(BASE_URL)
+const LOCAL_ANALYTICS_SWITCH_KEY = 'yz_enable_local_analytics'
+
+const normalizeRequestError = (error: any, fallbackMessage = 'request:fail') => {
+  if (error && typeof error === 'object') {
+    return {
+      ...error,
+      errMsg: typeof error.errMsg === 'string' && error.errMsg ? error.errMsg : fallbackMessage
+    }
+  }
+  return {
+    errMsg: fallbackMessage,
+    detail: error
+  }
+}
 
 export const getAnalyticsSessionId = () => {
   const key = 'yz_session_id'
@@ -16,15 +34,47 @@ export const getAnalyticsSessionId = () => {
   return id
 }
 
+export const setLocalAnalyticsEnabled = (enabled: boolean) => {
+  try {
+    uni.setStorageSync(LOCAL_ANALYTICS_SWITCH_KEY, enabled ? '1' : '0')
+  } catch (error) {
+    // ignore
+  }
+}
+
+export const getLocalAnalyticsEnabled = () => {
+  if (ENABLE_LOCAL_ANALYTICS_ENV) return true
+  try {
+    return String(uni.getStorageSync(LOCAL_ANALYTICS_SWITCH_KEY) || '') === '1'
+  } catch (error) {
+    return false
+  }
+}
+
 // 通用请求函数
 export const request = (options: {
   url: string
   method?: 'GET' | 'POST' | 'PUT' | 'DELETE'
   data?: any
+  forceNetwork?: boolean
+  baseUrl?: string
 }) => {
   return new Promise((resolve, reject) => {
+    // In dev mp-weixin preview, backend 127.0.0.1 often times out and pollutes console.
+    // We short-circuit to a silent mock response to keep UI验收干净.
+    // NEVER short-circuit in production.
+    if (!IS_PROD && IS_LOCAL_API && !options.forceNetwork) {
+      resolve({
+        skipped: true,
+        reason: 'local-api-disabled',
+        url: options.url,
+        data: null
+      })
+      return
+    }
+
     uni.request({
-      url: BASE_URL + options.url,
+      url: (options.baseUrl || BASE_URL) + options.url,
       method: options.method || 'GET',
       data: options.data || {},
       timeout: 2500,
@@ -35,11 +85,11 @@ export const request = (options: {
         if (res.statusCode === 200) {
           resolve(res.data)
         } else {
-          reject(res)
+          reject(normalizeRequestError(res, `request:fail statusCode ${res.statusCode || 'unknown'}`))
         }
       },
       fail: (err) => {
-        reject(err)
+        reject(normalizeRequestError(err))
       }
     })
   })
@@ -141,10 +191,15 @@ export const estimateApi = {
 
 export const analyticsApi = {
   track: (payload: any) => {
+    const enabledInLocal = getLocalAnalyticsEnabled()
+    const canForceNetwork = !IS_LOCAL_API || enabledInLocal
+    const finalBaseUrl = ANALYTICS_BASE_URL || BASE_URL
     return request({
       url: '/miniapp/events',
       method: 'POST',
-      data: payload
+      data: payload,
+      forceNetwork: canForceNetwork,
+      baseUrl: finalBaseUrl
     })
   },
   feedback: (payload: any) => {
@@ -163,6 +218,13 @@ export const analyticsApi = {
 }
 
 export const trackEvent = (event_type: string, payload: any = {}) => {
+  if (!IS_PROD && IS_LOCAL_API && !getLocalAnalyticsEnabled()) {
+    return Promise.resolve({
+      skipped: true,
+      reason: 'local-api-disabled',
+      event_type
+    })
+  }
   return analyticsApi.track({
     event_type,
     session_id: getAnalyticsSessionId(),
@@ -171,6 +233,6 @@ export const trackEvent = (event_type: string, payload: any = {}) => {
     target_name: payload.target_name,
     payload
   }).catch((error) => {
-    console.warn('埋点失败:', event_type, error)
+    if (!IS_PROD) console.warn('埋点失败:', event_type, error)
   })
 }

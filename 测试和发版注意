@@ -1,0 +1,3 @@
+实际上最省事的做法：直接在 pages.json 里把这 4 个 subPackage 注释掉——发布前去掉，需要调试时加回来，前后 10 秒的事。
+
+ src/pages/data-preview*/ 中的四个文件的处理方式 （ data-preview）
