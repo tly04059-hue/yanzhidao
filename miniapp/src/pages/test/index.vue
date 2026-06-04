@@ -130,7 +130,12 @@ import { onShow } from '@dcloudio/uni-app'
 import { v5QuizContent } from '@/data/v5/quiz'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import { trackAssessmentFinish, trackAssessmentStart, trackNavClick, trackPageView } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
 
+usePageShare({
+  title: '测一测适合你的在职考研路径｜研知道',
+  path: '/pages/test/index'
+})
 
 const TOTAL_Q = 9
 const stage = ref<'entry' | 'quiz'>('entry')

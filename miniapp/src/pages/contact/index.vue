@@ -59,6 +59,12 @@
 import { onMounted, ref } from 'vue'
 import { trackContactClick, trackPageView } from '@/api/tracking'
 import { remoteAssets } from '@/data/remote-assets'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '和研知道顾问聊聊在职考研路径',
+  path: '/pages/contact/index'
+})
 
 interface QRItem { label: string; src: string }
 

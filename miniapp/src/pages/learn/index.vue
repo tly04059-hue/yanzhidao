@@ -206,12 +206,18 @@ import { computed, onMounted, onUnmounted, reactive, ref } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import { trackContactClick, trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
 import {
   casesV2Stats,
   managementExamCasesV2,
   partySchoolCasesV2,
   type CaseV2
 } from '@/data/cases-v2'
+
+usePageShare({
+  title: '党校在职研和管综非全怎么选｜研知道',
+  path: '/pages/learn/index'
+})
 
 const routeMap: Record<string, string> = {
   prep: '/pages/prep/index',

@@ -162,6 +162,13 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import { trackPageView, trackTabClick, trackNavClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '研知道｜川渝在职考研怎么选',
+  path: '/pages/index/index'
+})
+
 const routeMap: Record<string, string> = {
   schools: '/pages/schools/index',
   cases: '/pages/cases-v2/index',

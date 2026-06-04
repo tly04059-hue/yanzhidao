@@ -200,6 +200,12 @@ import { trackContactClick, trackNavClick, trackPageView, trackRecommendationVie
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import type { QuizRuntime } from '@/data/quiz-runtime'
 import { casesV2, casesV2Stats, managementExamCasesV2, partySchoolCasesV2 } from '@/data/cases-v2'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '我的在职考研择校方向建议｜研知道',
+  path: '/pages/result/index'
+})
 
 type RichItem = { pre: string; text: string }
 type RealityItem = { text: string; sourceCaseId?: string; sourceLabel?: string }

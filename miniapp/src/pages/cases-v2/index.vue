@@ -203,6 +203,7 @@ import {
   trackPageView
 } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
+import { usePageShare } from '@/utils/share'
 import {
   casesV2Stats,
   managementExamCasesV2,
@@ -210,6 +211,11 @@ import {
   type CaseV2,
   type CaseV2Type
 } from '@/data/cases-v2'
+
+usePageShare({
+  title: '1000+ 川渝学员真实选择｜研知道',
+  path: '/pages/cases-v2/index'
+})
 
 const PAGE_SIZE = 10
 const PAGE_NAME = 'cases_v2'
