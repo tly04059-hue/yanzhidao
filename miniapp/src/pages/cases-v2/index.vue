@@ -85,8 +85,15 @@
 
     <view v-if="activeCase" class="modal-mask" @click="closeDetail('mask')" @touchmove.stop.prevent></view>
 
-    <view class="modal-sheet" :class="{ 'modal-sheet-open': activeCase }" @touchmove.stop>
-      <view v-if="activeCase" class="modal-inner">
+    <view class="modal-sheet" :class="{ 'modal-sheet-open': activeCase }">
+      <scroll-view
+        v-if="activeCase"
+        class="modal-scroll"
+        scroll-y
+        :show-scrollbar="true"
+        @touchmove.stop
+      >
+      <view class="modal-inner">
         <view class="modal-header">
           <text class="modal-title">{{ cardTitle(activeCase) }}</text>
           <text class="outcome-badge" :class="outcomeBadgeClass(activeCase.outcomeLabel)">
@@ -175,6 +182,7 @@
           <text class="modal-cta-text">知道了</text>
         </view>
       </view>
+      </scroll-view>
     </view>
 
     <BottomTabBar />
@@ -570,8 +578,8 @@ onUnmounted(() => {
   left: 50%;
   width: 88%;
   max-width: 400px;
-  max-height: 82vh;
-  overflow-y: auto;
+  height: 82vh;
+  overflow: hidden;
   background: #FFFFFF;
   border-radius: 20px;
   z-index: 101;
@@ -587,8 +595,12 @@ onUnmounted(() => {
   pointer-events: auto;
 }
 
+.modal-scroll {
+  height: 100%;
+}
+
 .modal-inner {
-  padding: 20px 20px 40px;
+  padding: 20px 20px calc(28px + env(safe-area-inset-bottom));
   position: relative;
 }
 
