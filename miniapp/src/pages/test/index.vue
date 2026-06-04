@@ -129,7 +129,7 @@ import { onMounted, ref, computed, reactive } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
 import { v5QuizContent } from '@/data/v5/quiz'
 import BottomTabBar from '@/components/BottomTabBar.vue'
-import { trackPageView, trackNavClick } from '@/api/tracking'
+import { trackAssessmentFinish, trackAssessmentStart, trackNavClick, trackPageView } from '@/api/tracking'
 
 
 const TOTAL_Q = 9
@@ -234,6 +234,9 @@ const selectDpOption = (opt: string) => {
 const startTest = () => {
   stage.value = 'quiz'
   currentQ.value = 1
+  trackAssessmentStart('test', {
+    position: 'start_button'
+  })
   trackNavClick('test', 'start')
 }
 
@@ -292,17 +295,24 @@ const nextDP = () => {
 }
 
 const submitQuiz = () => {
+  const route = '/pages/loading/index'
+  trackAssessmentFinish('test', {
+    position: 'submit_button',
+    question_count: TOTAL_Q,
+    dp_answer_count: Object.values(dpAnswers).filter(Boolean).length
+  })
   uni.setStorageSync('yz_quiz_submission', {
     answers: JSON.parse(JSON.stringify(answers)),
     dpAnswers: { ...dpAnswers }
   })
-  uni.navigateTo({ url: '/pages/loading/index' })
-  trackNavClick('test', 'submit')
+  uni.navigateTo({ url: route })
+  trackNavClick('test', 'submit', route)
 }
 
 const goLearn = () => {
-  trackNavClick('test', 'learn-escape')
-  uni.switchTab({ url: '/pages/learn/index' })
+  const route = '/pages/learn/index'
+  trackNavClick('test', 'learn-escape', route)
+  uni.switchTab({ url: route })
 }
 
 onMounted(() => {

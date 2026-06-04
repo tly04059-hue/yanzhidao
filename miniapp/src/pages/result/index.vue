@@ -76,10 +76,10 @@
               </view>
             </view>
             <view v-if="windowSectionOpen">
-              <text class="result-card-item">延迟退休 63-65 岁配套政策下，体制内职业生涯延长 3-5 年</text>
-              <text class="result-card-item">国考限研岗占比 7%（2022）→ 12.95%（2025）· 学历正从加分项走向准入项</text>
-              <text class="result-card-item">末等退出常态化后，学历是少数你能主动拿到、长期有效的资产</text>
-              <text class="result-card-item">三条政策叠加，意味着现在是 3-5 年窗口期</text>
+              <text class="result-card-item">延迟退休改革已落地，体制内职业生涯可能延长 3-5 年，学历投资回收期也随之放大。</text>
+              <text class="result-card-item">2022 → 2025 国考研岗占比从 7% 上升到 12.95%，部分岗位从本科可报转向仅限研究生。</text>
+              <text class="result-card-item">末等调整和绩效约束持续强化，学历是少数可主动准备、长期有效的显性条件之一。</text>
+              <text class="result-card-item">这些政策叠加后，现在更像提前布局的窗口期；具体执行仍要看个人单位和岗位要求。</text>
             </view>
           </view>
 
@@ -116,7 +116,7 @@
           <view class="reason-head-shell" @click="togglePeerSection">
             <view class="section-head-top">
               <text class="section-head-title">类似同学实际怎么选</text>
-              <text class="reason-head-meta">5a 个案 + 5b K-NN 聚合</text>
+              <text class="reason-head-meta">V2 个案 + 样本聚合</text>
             </view>
             <view class="reason-toggle">
               <view class="reason-toggle-arrow" :class="{ open: peerSectionOpen, drift: arrowDriftDown && !peerSectionOpen }"></view>
@@ -196,12 +196,23 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { trackNavClick, trackPageView } from '@/api/tracking'
+import { trackContactClick, trackNavClick, trackPageView, trackRecommendationView } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import type { QuizRuntime } from '@/data/quiz-runtime'
+import { casesV2, casesV2Stats, managementExamCasesV2, partySchoolCasesV2 } from '@/data/cases-v2'
 
 type RichItem = { pre: string; text: string }
 type RealityItem = { text: string; sourceCaseId?: string; sourceLabel?: string }
+
+const fallbackCase = partySchoolCasesV2[0] || casesV2[0]
+const fallbackChoice = fallbackCase
+  ? fallbackCase.caseType === 'management_exam'
+    ? fallbackCase.admittedSchool || fallbackCase.intentSchool || fallbackCase.chosenTarget
+    : fallbackCase.chosenTarget
+  : 'V2 案例'
+const fallbackQuote = fallbackCase
+  ? fallbackCase.reflection || fallbackCase.cardQuote || fallbackCase.examExperience || fallbackCase.motivation || '这条路更适合我当前阶段。'
+  : '这条路更适合我当前阶段。'
 
 const profile = ref('正在加载...')
 const systemName = ref('')
@@ -228,9 +239,9 @@ const backup = ref({
 })
 
 const policyItems = ref<RichItem[]>([
-  { pre: '竞争上岗', text: '：研究生 +0.5 档（依据 2019 中办职级并行规定）' },
-  { pre: '遴选参考', text: '：部分岗位要求研究生学历' },
-  { pre: '组织考察', text: '：学历作为综合素质指标' }
+  { pre: '双证通用性', text: '：国民教育序列双证学信网可查，在遴选、调任、职称和跨系统使用中适用范围更广。' },
+  { pre: '职级与岗位', text: '：研究生学历在新录用起点定级和职级晋升综合评价中是重要维度，具体执行视个人单位情况。' },
+  { pre: '使用边界', text: '：学历能提高资格条件和路径弹性，但不替代业绩、岗位要求和单位实际审核。' }
 ])
 const realityItems = ref<RealityItem[]>([])
 
@@ -241,22 +252,26 @@ const weeklyPlan = ref<string[]>([
 ])
 
 const similarCase = ref({
-  name: '王同学',
-  who: '33 岁 · 成都某区税务局 · 全日制本科',
-  choice: '省委党校经济学',
-  quote: '不读的话三年后还是一样。',
-  result: '在读中',
-  sourceLabel: '近似案例参考',
-  sourceNote: '正在加载案例来源。',
-  sourceCaseId: ''
+  name: fallbackCase?.displayAlias || '同学',
+  who: [
+    fallbackCase?.ageLabel,
+    fallbackCase?.regionLabel || fallbackCase?.systemLabel,
+    fallbackCase?.caseType === 'management_exam' ? fallbackCase?.programLabel : fallbackCase?.systemLabel
+  ].filter(Boolean).join(' · ') || '已脱敏案例',
+  choice: fallbackChoice,
+  quote: fallbackQuote,
+  result: fallbackCase?.outcomeLabel || '结果待确认',
+  sourceLabel: 'V2 脱敏公开案例',
+  sourceNote: '来自 V2 脱敏公开案例，按路径、系统、地区和目标相似度选取。',
+  sourceCaseId: fallbackCase?.id || ''
 })
 
 const knn = ref({
-  total: 12,
-  a: 9,
-  b: 3,
-  aText: '9',
-  bText: '3',
+  total: casesV2Stats.total,
+  a: partySchoolCasesV2.length,
+  b: managementExamCasesV2.length,
+  aText: String(partySchoolCasesV2.length),
+  bText: String(managementExamCasesV2.length),
   aLabel: '位选党校',
   bLabel: '位选 MPA',
   reasonATitle: '选党校的核心理由：',
@@ -289,15 +304,22 @@ const loadFromStorage = () => {
 const retryTest = () => uni.switchTab({ url: '/pages/test/index' })
 
 const goPage = (key: string) => {
-  trackNavClick('result', key)
   const pageMap: Record<string, string> = {
     schools: '/pages/schools/index',
-    cases: '/pages/cases/index',
+    cases: '/pages/cases-v2/index',
     'pass-rate': '/pages/pass-rate/index',
     wechat: '/pages/contact/index',
     zexiao: '/pages/zexiao/index'
   }
-  if (pageMap[key]) uni.navigateTo({ url: pageMap[key] })
+  const url = pageMap[key] || ''
+  trackNavClick('result', key, url)
+  if (key === 'wechat') {
+    trackContactClick('result', 'wechat', '加企微', url, {
+      recommendation_title: recommendation.value.title,
+      match: recommendation.value.match
+    })
+  }
+  if (url) uni.navigateTo({ url })
 }
 
 const toggleReasonSection = () => {
@@ -319,6 +341,13 @@ const toggleWindowSection = () => {
 onMounted(() => {
   trackPageView('result')
   loadFromStorage()
+  trackRecommendationView('result', {
+    target_id: recommendation.value.title,
+    target_name: recommendation.value.title,
+    recommendation_title: recommendation.value.title,
+    match: recommendation.value.match,
+    similar_case_id: similarCase.value.sourceCaseId
+  })
   arrowDriftTimer = setInterval(() => {
     arrowDriftDown.value = !arrowDriftDown.value
   }, 1400)

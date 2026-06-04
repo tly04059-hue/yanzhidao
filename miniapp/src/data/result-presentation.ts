@@ -1,6 +1,12 @@
-import { formatPeerProgramLabel, getPeerInsights, type PeerInsights } from './peer-insights'
+import { formatPeerProgramLabel, getPeerInsights, type PeerInsights } from './cases-v2-peer-insights'
 import type { LocalRecommendation, RecommendedSchool } from './recommendation-strategy'
-import type { RuntimeCase } from './runtime-cases'
+import {
+  casesV2,
+  casesV2Stats,
+  managementExamCasesV2,
+  partySchoolCasesV2,
+  type CaseV2
+} from './cases-v2'
 
 type Answers = Record<string, any>
 
@@ -122,6 +128,68 @@ const formatPeerCount = (count: number, compact = false) => {
   return count > 10 ? '10+' : String(count)
 }
 
+const includesAny = (text: string, words: string[]) =>
+  words.some(word => word && text.includes(word))
+
+const answerSystemWords = (normalized: Answers) =>
+  [
+    normalized.system_detail,
+    normalized.system,
+    normalized.position
+  ]
+    .filter(Boolean)
+    .map(item => String(item))
+
+const scoreV2Case = (normalized: Answers, item: CaseV2, isPartyPath: boolean) => {
+  const text = [
+    item.systemLabel,
+    item.regionLabel,
+    item.programLabel,
+    item.chosenTarget,
+    item.cardQuote,
+    item.reflection,
+    item.examExperience,
+    item.motivation
+  ].join(' ')
+  const systemWords = answerSystemWords(normalized)
+  const province = String(normalized.province_detail || normalized.province || '')
+  const goal = String(normalized.goal_detail || normalized.goal || '')
+
+  return (
+    item.richnessScore +
+    (item.caseType === (isPartyPath ? 'party_school' : 'management_exam') ? 1000 : 0) +
+    (province && includesAny(text, [province]) ? 120 : 0) +
+    (systemWords.length && includesAny(text, systemWords) ? 160 : 0) +
+    (goal && includesAny(text, [goal]) ? 80 : 0) +
+    (item.aiFillLevel === 'none' ? 40 : 0)
+  )
+}
+
+const selectV2Cases = (normalized: Answers, isPartyPath: boolean) => {
+  const preferred = isPartyPath ? partySchoolCasesV2 : managementExamCasesV2
+  const fallback = preferred.length ? preferred : casesV2
+  return fallback
+    .slice()
+    .sort((a, b) => scoreV2Case(normalized, b, isPartyPath) - scoreV2Case(normalized, a, isPartyPath))
+}
+
+const formatV2Who = (item: CaseV2) =>
+  [
+    item.ageLabel,
+    item.regionLabel || item.systemLabel,
+    item.caseType === 'management_exam' ? item.programLabel : item.systemLabel
+  ].filter(Boolean).join(' · ')
+
+const formatV2Choice = (item: CaseV2) =>
+  item.caseType === 'management_exam'
+    ? item.admittedSchool || item.intentSchool || item.chosenTarget
+    : item.chosenTarget
+
+const formatV2Quote = (item: CaseV2) =>
+  item.reflection || item.cardQuote || item.examExperience || item.motivation || item.studyMethod || '这条路更适合我当前阶段。'
+
+const v2SourceNote = '来自 V2 脱敏公开案例，按路径、系统、地区和目标相似度选取。'
+
 const isBudgetSensitive = (normalized: Answers) =>
   (Number(normalized.budget || 0) > 0 && Number(normalized.budget || 0) <= 65000) ||
   ((normalized.worries || []) as string[]).includes('budget_concern')
@@ -130,136 +198,105 @@ const hasExamConcern = (normalized: Answers) =>
   ['weak', 'unknown'].includes(String(normalized.math_base || '')) ||
   ((normalized.worries || []) as string[]).some(item => ['english_concern', 'math_concern', 'exam_concern'].includes(item))
 
-const isInternalUseGoal = (goal: string) => ['防御', '晋升'].includes(goal)
-
-const REALITY_SYSTEM_MAP: Record<string, string[]> = {
-  dangzheng: ['县级民政', '市直机关'],
-  gongjianfa: ['市直政法'],
-  education: ['教育系统', '高校'],
-  medical: ['医院'],
-  guoqi: ['央企', '国企', '省属国企'],
-  bank_finance: ['银行金融'],
-  xiangzhen: ['基层公职'],
-  other_shiye: ['system_unknown_storied']
-}
-
-const realityCaseText = (item: RuntimeCase) =>
-  [
-    item.system,
-    item.system_chip,
-    item.unit_narrative,
-    item.chosen_school,
-    item.key_quote,
-    item.story_summary,
-    item.reflection,
-    item.source.position_tag,
-    item.source.goal_tag.join(' ')
-  ].join(' ')
-
-const isSuitableRealityCase = (normalized: Answers, item: RuntimeCase) => {
-  const systemKey = String(normalized.system_key || '')
-  const allowedSystems = REALITY_SYSTEM_MAP[systemKey]
-  const text = realityCaseText(item)
-
-  if (allowedSystems?.length && !allowedSystems.includes(item.system)) {
-    return false
-  }
-
-  if (systemKey === 'education') {
-    return /教育|学校|高校|教师|师范/.test(text) && !/人民银行|银行|金融|国企|央企/.test(text)
-  }
-
-  if (systemKey === 'medical') {
-    return /医|医疗|医护|医院|医科|MEM/.test(text) && !/人民银行|银行|金融|国企|央企/.test(text)
-  }
-
-  if (systemKey === 'gongjianfa') {
-    return /法院|检察|公安|纪委|纪检|政法|法学|法律/.test(text)
-  }
-
-  if (systemKey === 'bank_finance') {
-    return /银行|金融|财经|财政|人民银行/.test(text)
-  }
-
-  return true
-}
-
 const buildPolicyItems = (normalized: Answers, isPartyPath: boolean): RichItem[] => {
-  const systemName = normalized.system_detail || normalized.system
   const goal = String(normalized.goal || '')
-  const position = String(normalized.position || '')
-  const items: RichItem[] = []
+  const goalText = String(normalized.goal_detail || normalized.goal || '')
+  const provinceText = String(normalized.province_detail || normalized.province || '')
 
   if (isPartyPath) {
-    if (isInternalUseGoal(goal)) {
-      items.push({
-        pre: '内部使用',
-        text: `：${systemName || '体制内'}场景里，党校更适合“先补学历条件 / 本系统内部使用”的判断方向，具体仍以单位口径为准。`,
-        source: 'rule:P001; path:A'
-      })
-    }
-    if (isBudgetSensitive(normalized)) {
-      items.push({
-        pre: '成本控制',
-        text: '：你的预算约束较明显，党校学费通常处在 2-3 万区间，比多数统考非全项目更容易控制投入。',
-        source: 'rule:R008; data:party-school-miniapp-publish'
-      })
-    }
-    if (hasExamConcern(normalized)) {
-      items.push({
-        pre: '考试压力',
-        text: '：党校不走全国联考，能避开管综/英语二这条压力线，但仍要承担主观题和材料表达要求。',
-        source: 'rule:P001; risk:english-math'
-      })
-    }
-    if (position && isInternalUseGoal(goal)) {
-      items.push({
-        pre: '岗位场景',
-        text: `：你填的岗位是「${position}」，当前推荐只用于判断内部补位/晋升可能性，不替代单位正式认定。`,
-        source: 'answers:position'
-      })
-    }
-    return items.length
-      ? items.slice(0, 3)
-      : [{ pre: '单位口径', text: '：党校路径是否适用，核心看你所在单位是否认可，建议报名前先确认。', source: 'rule:A' }]
-  }
-
-  if (goal === '遴选' || goal === '转行') {
     return [
-      { pre: '双证资格', text: '：更适合需要研究生学历门槛的遴选、跨系统或转行场景。', source: 'rule:P002' },
-      { pre: '国民教育序列', text: '：学信网可查，单位外部认可度更高。', source: 'path:B' },
-      { pre: '路径通用性', text: '：后续在职称、调动和岗位转换上更灵活。', source: 'rule:P002' }
+      {
+        pre: '党校学历认可',
+        text: '：中发〔2000〕10号文明确，党校学历待遇参照国民教育相应学历有关规定，主要适用于体制内本单位晋升、内部竞争和职务任免场景。',
+        source: 'PD-02'
+      },
+      {
+        pre: '使用边界',
+        text: '：学信网不可查不等于不被承认；跨系统遴选、调任或部分专业职称评审，仍要以调入机关、岗位和本地评审细则为准。',
+        source: 'PD-02;PD-03;PD-06'
+      },
+      {
+        pre: '川渝招生',
+        text: '：四川、重庆党校学制、收费、录取规则按党校年度招生章程执行，每年以最新章程和报名通知为准。',
+        source: 'PD-10'
+      }
     ]
   }
 
-  if (goal === '职称') {
+  if (goal === '遴选' || goalText.includes('遴选') || goal === '转行') {
     return [
-      { pre: '职称口径', text: '：职称/专技场景优先看国民教育序列双证，但最终仍要以本单位和当地评审口径为准。', source: 'rule:E002' },
-      { pre: '外部认可', text: '：学信网可查的证书更适合跨单位、跨行业使用。', source: 'path:B' },
-      { pre: '长期回报', text: '：更适合把学历当作长期职业资产来布局。', source: 'rule:E002' }
+      {
+        pre: '国民教育序列',
+        text: '：双证硕士学信网可查，在单位外部资格审核、跨系统使用和研究生学历门槛场景中通用性更高。',
+        source: 'PD-03;PD-04;PD-05'
+      },
+      {
+        pre: provinceText.includes('重庆') ? '重庆遴选口径' : '四川遴选口径',
+        text: provinceText.includes('重庆')
+          ? '：重庆2025年度遴选公告存在年龄和国民教育序列双证要求，具体岗位以当年公告为准。'
+          : '：四川2025年度省直机关遴选/选调公告涉及年龄上限和有效学历学位证书要求，具体岗位以当年公告为准。',
+        source: provinceText.includes('重庆') ? 'PD-05' : 'PD-04'
+      },
+      {
+        pre: '调任审查',
+        text: '：公务员调任等跨系统场景对学历属性存在审查要求，党校单证认可度可能因机关和岗位不同而有差异。',
+        source: 'PD-03'
+      }
+    ]
+  }
+
+  if (goal === '职称' || goalText.includes('职称')) {
+    return [
+      {
+        pre: '职称评审',
+        text: '：人社部2017年深化职称改革意见及各地配套文件中，学历是中高级职称评审的重要资格条件。',
+        source: 'PD-06'
+      },
+      {
+        pre: '国民教育序列',
+        text: '：部分职称系列更看重国民教育序列研究生学历，部分系列还会审查学科专业对口度。',
+        source: 'PD-06'
+      },
+      {
+        pre: '执行口径',
+        text: '：职称评审存在地区、单位和系列差异，最终以本地评审细则和单位审核口径为准。',
+        source: 'PD-06'
+      }
     ]
   }
 
   return [
-    { pre: '双证通用性', text: '：学信网可查，在单位内外的认可场景更广。', source: 'path:B' },
-    { pre: '考试门槛', text: '：需要同步承担英数和复试压力，越早准备越稳。', source: 'path:B' },
-    { pre: '路径弹性', text: '：更适合兼顾晋升、遴选、职称或跨系统的综合目标。', source: 'rule:DEFAULT' }
+    {
+      pre: '双证通用性',
+      text: '：国民教育序列双证学信网可查，在遴选、调任、职称和跨系统使用中适用范围更广。',
+      source: 'PD-03;PD-06'
+    },
+    {
+      pre: '职级与岗位',
+      text: '：研究生学历在新录用起点定级和职级晋升综合评价中是重要维度，具体执行视个人单位情况。',
+      source: 'PD-01'
+    },
+    {
+      pre: '使用边界',
+      text: '：学历能提高资格条件和路径弹性，但不替代业绩、岗位要求和单位实际审核。',
+      source: 'PD-01;PD-03;PD-06'
+    }
   ]
 }
 
 const buildRealityItems = (normalized: Answers, peerInsights: PeerInsights): RealityItem[] => {
-  if (peerInsights.source.caseSource === 'heuristic') return []
-
-  const items = peerInsights.stories
-    .filter(item => isSuitableRealityCase(normalized, item))
+  const isPartyPath = String(peerInsights.distribution[0]?.programType || '').includes('党校')
+  const v2Items = selectV2Cases(normalized, isPartyPath)
+    .slice(0, 2)
     .map(item => ({
-      text: item.reflection || item.key_quote || '',
-      sourceCaseId: item.case_id,
-      sourceLabel: peerInsights.source.caseSourceLabel
+      text: item.reflection || item.cardQuote || item.examExperience || item.motivation || '',
+      sourceCaseId: item.id,
+      sourceLabel: 'V2 脱敏公开案例'
     }))
     .filter(item => Boolean(item.text))
 
-  return items.slice(0, 2)
+  if (v2Items.length) return v2Items
+  return []
 }
 
 const buildPathMeaning = (normalized: Answers, isPartyPath: boolean, realityItems: RealityItem[], proxyHint = '') => {
@@ -297,8 +334,12 @@ export const buildResultPresentation = (
   const secondarySchool = result.secondaryOption?.recommendedSchool
   const peerInsights = providedPeerInsights || getPeerInsights(normalized, result.primaryPath)
   const similarCase = peerInsights.similarCase
+  const v2Cases = selectV2Cases(normalized, isPartyPath)
+  const v2SimilarCase = v2Cases[0]
   const [primaryDistribution, secondaryDistribution] = peerInsights.distribution
-  const total = peerInsights.total || (primaryDistribution.count + secondaryDistribution.count)
+  const v2PrimaryCount = isPartyPath ? casesV2Stats.party : casesV2Stats.managementExam
+  const v2SecondaryCount = isPartyPath ? casesV2Stats.managementExam : casesV2Stats.party
+  const total = casesV2Stats.total || peerInsights.total || (primaryDistribution.count + secondaryDistribution.count)
   const primaryLabel = formatPeerProgramLabel(primaryDistribution.programType, normalized.province)
   const secondaryLabel = formatPeerProgramLabel(secondaryDistribution.programType, normalized.province)
   const primaryReasons = peerInsights.reasonSummary[primaryDistribution.programType] || []
@@ -338,25 +379,27 @@ export const buildResultPresentation = (
         : ['不能替代单位内资历与实绩', '统考路径需要承担英数与复试压力']),
     weeklyPlan: (result.weeklyPlan || []).map(item => item.desc).slice(0, 3),
     similarCase: {
-      name: similarCase.display_name,
-      who: [
-        similarCase.age_concrete || similarCase.age_band,
-        similarCase.unit_narrative,
-        [similarCase.edu_modifier, similarCase.education].filter(Boolean).join('')
-      ].filter(Boolean).join(' · '),
-      choice: similarCase.chosen_school,
-      quote: similarCase.reflection || similarCase.key_quote || '这条路更适合我当前阶段。',
-      result: similarCase.outcome || '结果待持续跟踪',
-      sourceLabel: peerInsights.source.caseSourceLabel,
-      sourceNote: peerInsights.source.displayMessage,
-      sourceCaseId: similarCase.case_id
+      name: v2SimilarCase?.displayAlias || similarCase.display_name,
+      who: v2SimilarCase
+        ? formatV2Who(v2SimilarCase)
+        : [
+          similarCase.age_concrete || similarCase.age_band,
+          similarCase.unit_narrative,
+          [similarCase.edu_modifier, similarCase.education].filter(Boolean).join('')
+        ].filter(Boolean).join(' · '),
+      choice: v2SimilarCase ? formatV2Choice(v2SimilarCase) : similarCase.chosen_school,
+      quote: v2SimilarCase ? formatV2Quote(v2SimilarCase) : similarCase.reflection || similarCase.key_quote || '这条路更适合我当前阶段。',
+      result: v2SimilarCase?.outcomeLabel || similarCase.outcome || '结果待持续跟踪',
+      sourceLabel: v2SimilarCase ? 'V2 脱敏公开案例' : peerInsights.source.caseSourceLabel,
+      sourceNote: v2SimilarCase ? v2SourceNote : peerInsights.source.displayMessage,
+      sourceCaseId: v2SimilarCase?.id || similarCase.case_id
     },
     knn: {
       total,
-      a: primaryDistribution.count,
-      b: secondaryDistribution.count,
-      aText: formatPeerCount(primaryDistribution.count, true),
-      bText: formatPeerCount(secondaryDistribution.count, true),
+      a: v2PrimaryCount,
+      b: v2SecondaryCount,
+      aText: formatPeerCount(v2PrimaryCount),
+      bText: formatPeerCount(v2SecondaryCount),
       aLabel: primaryDistribution.label,
       bLabel: secondaryDistribution.label,
       reasonATitle: `选${primaryLabel}的核心理由：`,
@@ -368,30 +411,29 @@ export const buildResultPresentation = (
     compareBars: [
       {
         label: primaryLabel,
-        ratio: total ? Math.max(10, Math.round((primaryDistribution.count / total) * 100)) : 50,
-        countText: formatPeerCount(primaryDistribution.count, true),
+        ratio: total ? Math.max(10, Math.round((v2PrimaryCount / total) * 100)) : 50,
+        countText: formatPeerCount(v2PrimaryCount),
         color: primaryDistribution.tone === 'A' ? '#CF7140' : '#5F8C6E'
       },
       {
         label: secondaryLabel,
-        ratio: total ? Math.max(10, Math.round((secondaryDistribution.count / total) * 100)) : 50,
-        countText: formatPeerCount(secondaryDistribution.count, true),
+        ratio: total ? Math.max(10, Math.round((v2SecondaryCount / total) * 100)) : 50,
+        countText: formatPeerCount(v2SecondaryCount),
         color: secondaryDistribution.tone === 'A' ? '#CF7140' : '#5F8C6E'
       }
     ],
     passRateSummary: passRates.summary,
     passRateDetail: passRates.detail,
-    stories: peerInsights.stories.map(item => ({
+    stories: (v2Cases.length ? v2Cases : []).slice(0, 4).map(item => ({
       who: [
-        item.display_name,
-        item.age_concrete || item.age_band,
-        item.unit_narrative
+        item.displayAlias,
+        formatV2Who(item)
       ].filter(Boolean).join(' · '),
-      choice: item.chosen_school,
-      quote: item.reflection || item.key_quote || '这条路更贴近当时的实际情况。',
-      result: item.outcome || '',
-      sourceCaseId: item.case_id,
-      sourceLabel: peerInsights.source.caseSourceLabel
+      choice: formatV2Choice(item),
+      quote: formatV2Quote(item),
+      result: item.outcomeLabel || '',
+      sourceCaseId: item.id,
+      sourceLabel: 'V2 脱敏公开案例'
     })),
     provenance: {
       primaryRuleId: result.source?.primaryRuleId || result.strategyId,
@@ -399,7 +441,7 @@ export const buildResultPresentation = (
       primarySchoolRecordId: school?.sourceRecordId || '',
       secondarySchoolRecordId: secondarySchool?.sourceRecordId || '',
       peerBucketKey: peerInsights.source.bucketKey,
-      peerCaseSource: peerInsights.source.caseSource,
+      peerCaseSource: v2SimilarCase ? 'cases-v2-public' : peerInsights.source.caseSource,
       missingRuntimeSources: [
         'policy_basis.json',
         'rules.json',

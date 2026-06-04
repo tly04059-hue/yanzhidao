@@ -13,7 +13,7 @@
       <view class="hero">
         <text class="kicker">真实样本</text>
         <text class="hero-h1">1,000+ 川渝学员怎么选</text>
-        <text class="hero-sub">展示部分上岸案例，涉及内容为同学反馈的原话，未做加工。</text>
+        <text class="hero-sub">以下数据均来自我们的真实学员，全部已做脱敏处理。</text>
       </view>
 
       <!-- 系统筛选 -->
@@ -174,7 +174,7 @@
 import { onMounted, onUnmounted, ref, computed, watch } from 'vue'
 import { trackPageView, trackTabClick } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
-import rawData from '@/data/cases-unified.json'
+import { casesV2, type CaseV2 } from '@/data/cases-v2'
 
 interface UnifiedCase {
   id: string
@@ -198,7 +198,38 @@ interface UnifiedCase {
   tags: string[]
 }
 
-const allCases = (rawData as any).cases as UnifiedCase[]
+const toLegacyCase = (item: CaseV2): UnifiedCase => ({
+  id: item.id,
+  source: item.caseType === 'party_school' ? 'sc' : 'm8',
+  display_alias: item.displayAlias,
+  age_band: item.ageLabel,
+  region: item.regionLabel,
+  system_tag: item.systemLabel || item.pathLabel,
+  position_tag: item.positionLabel,
+  goal_tag: item.goalTags,
+  path: item.caseType === 'party_school' ? 'A' : 'B',
+  program_type: item.caseType === 'party_school' ? item.programLabel || '党校在职研究生' : item.programLabel || '统考非全',
+  party_school: item.caseType === 'party_school' ? item.chosenTarget : '',
+  chosen_school: item.caseType === 'management_exam'
+    ? item.admittedSchool || item.intentSchool || item.chosenTarget
+    : item.chosenTarget,
+  outcome: item.outcomeLabel,
+  key_quote: item.cardQuote || item.reflection || item.examExperience || item.motivation,
+  score: item.score,
+  study_time: item.studyTime,
+  risk: item.risk,
+  advice: item.advice,
+  tags: [
+    item.systemLabel,
+    item.pathLabel,
+    item.programLabel,
+    item.outcomeLabel,
+    ...item.tags,
+    ...item.goalTags
+  ].filter(Boolean)
+})
+
+const allCases = casesV2.map(toLegacyCase)
 
 const goBack = () => {
   const pages = getCurrentPages()
@@ -234,7 +265,7 @@ const impreciseChoicePattern = /(及附近|名校|好上岸|第一优先|川渝�
 const hasPreciseChoice = (item: UnifiedCase): boolean => {
   const choice = String(item.chosen_school || '').trim()
   if (!choice || impreciseChoicePattern.test(choice)) return false
-  return choice.includes('·')
+  return item.path === 'A' || choice.includes('·')
 }
 
 const PAGE_SIZE = 10

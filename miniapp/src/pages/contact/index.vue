@@ -57,7 +57,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { trackPageView, trackNavClick, trackTabClick } from '@/api/tracking'
+import { trackContactClick, trackPageView } from '@/api/tracking'
 import { remoteAssets } from '@/data/remote-assets'
 
 interface QRItem { label: string; src: string }
@@ -69,7 +69,13 @@ const qrcodes: QRItem[] = [
   { label: '公众号', src: remoteAssets.contact.officialAccountQr },
 ]
 
-const openQR = (item: QRItem) => { activeQR.value = item }
+const openQR = (item: QRItem) => {
+  trackContactClick('contact', 'qr_open', item.label, '', {
+    target_id: item.label,
+    target_name: item.label
+  })
+  activeQR.value = item
+}
 const closeQR = () => { activeQR.value = null }
 const previewQR = (src: string) => {
   uni.previewImage({ current: src, urls: [src], showmenu: true })

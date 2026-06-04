@@ -1,0 +1,2061 @@
+{
+  "meta": {
+    "name": "案例 V2 小程序公开发布数据",
+    "generated_at": "2026-06-04 15:07:37",
+    "privacy_version": "public_user",
+    "record_count": 44,
+    "party_count": 26,
+    "exam_count": 18,
+    "party_filter": "only ai_fill_level=none records are included for party direction",
+    "exam_filter": "all public exam records are included",
+    "source_files": [
+      "studentCases/cases-v2-db/party-public.json",
+      "studentCases/cases-v2-db/exam-public.json"
+    ],
+    "privacy_note": "仅包含用户端可展示字段；党校方向仅进入未经过 AI 补充的数据；未脱敏和内部脱敏字段不进入小程序包。"
+  },
+  "records": [
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C115",
+      "display_order_source": 98,
+      "sort_tuple": [
+        0,
+        -1401,
+        98
+      ],
+      "richness_score": 1401,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 29 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "遴选",
+        "体制内认可",
+        "同事影响",
+        "乡镇基层"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "所以如果你也在纠结要不要考研，或者不知道该选哪个辅导班，我真心建议你了解下研知道——他们最牛的不是资料有多全，而是真的懂我们这些“在职考生”的痛，能把复杂的备考过程拆成“踮踮脚就能完成”的小目标。就像村上春树说的：“一直走，天一定亮。”但走的时候，有个靠谱的领路人，天亮得会更快。希望正在备考的你，也能找到属于自己的“研知道”，少点焦虑，多点笃定，我们岸上见。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "如果没有精准的考点、贴心的督导、科学的计划，仅凭自己根本不可能在加班间隙里考上；考研不是硬熬，选对帮手才能少走弯路。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "开车通勤听干货带背音频（把'十个明确'编成口诀红灯默念）；午休刷密训题库20道题错题收藏；早晚洗漱循环播放自录考点语音；手机屏保换成核心考点截图；晚上睡前用备忘录默写框架记关键词；周末用核心考点目录过一周内容；碎片化学习——通勤、午休、早晚洗漱、等红灯时间；周末整块时间过一周内容；每天有老师一起自习。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C100",
+      "display_order_source": 83,
+      "sort_tuple": [
+        0,
+        -1374,
+        83
+      ],
+      "richness_score": 1374,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "坚持型",
+        "民族州",
+        "市直机关党员",
+        "考研多战"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "作为体制内的小中层，面对工作多、压力大，家庭、学习、工作互相冲突，记忆力也迅速下降等诸多难题。从2016年开始考研，中间几度放弃，有一定的基础知识，但是更多是碎片化，杂乱不成体系的，学习也是靠死记硬背，答题更是磕磕巴巴、言不达意。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "3月底拿到研知道准备的全套专业资料，每天根据课程制定学习计划表，然后开始了每天晚上线上学习、课后练习，早上复盘、背诵前一天学习内容，中午再重做一遍课后习题的循环复习过程，当然中间短学30天左右。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "考试前2天的1V1分析，杨老师给我讲答题思路、方法、技巧，课后也反复复盘梳理，再次拆分重点，在考前2天开始极限背诵；3月底拿到研知道准备的全套专业资料，每天根据课程制定学习计划表，然后开始了每天晚上线上学习、课后练习，早上复盘、背诵前一天学习内容，中午再重做一遍课后习题的循环。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C104",
+      "display_order_source": 87,
+      "sort_tuple": [
+        0,
+        -1246,
+        87
+      ],
+      "richness_score": 1246,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "吴同学",
+      "age": "约 34 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "晋升",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "抛开外界因素，只关注于自己。前面我也提到了我是一个心理作用很强大的人，所以每当心里烦闷或者不自信的时候，就喜欢去玩玩deepseek之类的灵魂软件。在考前我用软件预测过，显示这次考试通过不了。说实话那几天还是很受影响，觉得反正也考不过要不就不看了，但是又想着已经努力这么长时间了不能在临门一脚放弃，最终在自己的坚持下还是考出了超出分数线30分的成绩。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "时间太紧凑造成物极必反，5月下旬身体崩溃；过度相信deepseek预测差点放弃，应该相信自己。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "先学干货带背框架再听视频课；基础课、密训课、干货带背反复观看；做模拟卷后返回内部讲义记忆考点；默写党建知识框架；碎片时间看资料图片、开车听课程语音；在职备考，早上七点起床看书；中午吃完饭看半个小时；下班回家吃完饭看到晚上十一点；碎片时间（排队、开车）也利用；最后一周请4天假在家系统复习。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C109",
+      "display_order_source": 92,
+      "sort_tuple": [
+        0,
+        -1242,
+        92
+      ],
+      "richness_score": 1242,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "金同学",
+      "age": "约 45 岁",
+      "region": "眉山",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "给孩子榜样",
+        "年龄焦虑",
+        "宝妈",
+        "40+ 转型",
+        "考研多战"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "充分利用上下班的通勤时间，我是从5月份开始改为坐公交车上下班，利用等公交车和坐公交车的时间，背重要知识点，背核心要点，再自己组织语言扩展，反复地背，发现效率还蛮高的，专业课上考的“五个必须统筹”，就是自己利用这些时间背到的。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "持之以恒很重要；掌握学习方法比埋头苦学更关键；2024年差71.5分→2025年超线2.5分，折合总分提高50分。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "三三法则、干货带背、精细带背；分阶段设定目标；课后练习题+三套模拟试卷（第三套背着写、掐时间写）；核心要点反复背+自己组织语言扩展；记忆+手写结合；坚持每次直播课在线；5月份起改坐公交车上下班，利用等车和坐车的通勤碎片时间背重要知识点、背核心要点。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C114",
+      "display_order_source": 97,
+      "sort_tuple": [
+        0,
+        -1220,
+        97
+      ],
+      "richness_score": 1220,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "杨同学",
+      "age": "约 41 岁",
+      "region": "绵阳",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "晋升",
+        "给孩子榜样",
+        "宝妈",
+        "市直机关党员",
+        "医护",
+        "40+ 转型",
+        "考研多战"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "虽然自己早有准备，但激动的、喜悦的泪水就像溃堤的洪水在大街上宣泄出来，爱人像哄小孩子一样哄着我，不哭，不哭……学习不仅仅只是努力就能取得好成绩的，还应该有最好的学习方法。学习本身就是一个循序渐进的过程，只有当我们自己去拼命的学习+最好的学习方法，才能把自己最大的潜力激发出来、展示出来。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "学习不仅仅是努力就能取得好成绩，还应该有最好的学习方法；曾经认为杨老师讲的'无用东西'其实大有用，自习时才发现来不及补救。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "研知道33法则、建场景、知识框架记忆、核心考点反复背诵、每天视频会议室相互监督自习、考前知识点拉通；白天工作，工作时间以外推掉一切应酬聚会，晚上看书看到半夜；每天视频会议室相互监督自习。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C103",
+      "display_order_source": 86,
+      "sort_tuple": [
+        0,
+        -1208,
+        86
+      ],
+      "richness_score": 1208,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈同学",
+      "age": "约 31 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "坦白说，在决定备考在职研究生之前，我对现状颇为满足，甚至主观地认为这些年读书吃的“苦”已经足够，学历提升与否无关紧要。作为一名工科生，我自信能胜任领导讲话、政策文件、调研课题等工作。因此，参加工作后，我对提升学历一直持回避态度，近乎“躺平”。然而，目睹身边朋友陆续考上研究生。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "适合自己的才是最好的；自学如同独自在黑暗山洞中摸索前行，凭意志力硬撑会偏离正确航向；收获的不仅是一纸录取通知，更是风雨来袭时不再颤抖的勇气。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "官方指定五本教材自学 → 研知道核心考点手册（五星等级标注重点）+ 密训课夯实基础 + 带背课构建知识框架 + 三轮模考定时模拟+复盘错题；工作通勤车载蓝牙循环带背音频；午休翻阅核心考点手册；下班后雷打不动2-3小时跟课程背重点整笔记；周末系统复习对着电脑梳理框架。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C117",
+      "display_order_source": 100,
+      "sort_tuple": [
+        0,
+        -1126,
+        100
+      ],
+      "richness_score": 1126,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "扎同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学费低",
+        "同事影响",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "大学毕业那年，我曾对着考研报名页面犹豫了很久。那时家里经济条件不宽裕，想着早点工作分担压力，便把读研的念头压在了心底。可这份遗憾像颗种子，在机关工作的几年里慢慢发了芽——看着身边同事讨论专业理论时的笃定，面对复杂公文写作时偶尔的力不从心，我越来越清晰地意识到：是时候去圆那个学历梦了。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "备考经历比录取通知书更珍贵，学会了在忙碌中保持自律、在压力下找到平衡，明白遗憾从来都不晚去弥补。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "研知道核心考点手册（盯高星考点）、密训题库答题框架刻意套用、三套预测卷一题一题抠思路、网课、手机备忘录记知识点；早上提前一小时到办公室啃书、工作间隙刷题记备忘录、下班后留一小时整理笔记、周末空办公室学三小时、下午强制休息。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C107",
+      "display_order_source": 90,
+      "sort_tuple": [
+        0,
+        -1106,
+        90
+      ],
+      "richness_score": 1106,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "张同学",
+      "age": "约 32 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "坚持型"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "到达考场当天，发现几乎每一个人都在努力地背诵，做最后的冲刺，而我只带了考试用品，可能这就是研知道给我的从容，就像杨老师说：“超纲的题，你不会大家也不会，所以不必担心，把会做的题做好，相信自己，你比想象中更强大”。当成绩出来的时候，高出分数线40余分。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "回头再看那些熬过的夜，早起背书的日子，发现一切的坚持都有了意义。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "把需要背的内容通过录音方式录下来，上下班途中反复听；反复听网课；重庆模拟试卷每套做3遍结合秘训题库查缺补漏；从系统学到框架图到核心考点背诵再到密训题库；每天至少抽出4小时学习，周末及节假日至少7小时；利用上下班通勤途中反复听录音。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C105",
+      "display_order_source": 88,
+      "sort_tuple": [
+        0,
+        -1096,
+        88
+      ],
+      "richness_score": 1096,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "冉同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "给孩子榜样",
+        "坚持型",
+        "宝妈",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "我是一名两娃80后宝妈，常年在民族地区工作，经常疲于奔波于家庭和工作之间。但家庭和工作不是让自己停下努力的理由，我笃信活到老学到老。2024年我第一次参加研究生考试，最终以失败告终。我深感迷茫却倔强的不愿意放弃，我想通过努力证明自己，同时也给参加中考的孩子做一个榜样，和他一起成为学习搭子。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "当初建立的学习小细节和习惯，在后期学习疲软和最后冲刺时刻起到很大的惯性作用和心理提醒；考试成绩的每一分都不是白来的。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "严格按照33法备考；定提醒学习闹铃建立生物钟；问题记录后集中咨询；按学法六步踏实学；知识框架图背诵；考前默记概念；主要集中在下班后，每天1-1.5h起步到2h；利用加班、上班途中等碎片时间巩固；布置每天上课的小天地。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C124",
+      "display_order_source": 107,
+      "sort_tuple": [
+        0,
+        -1096,
+        107
+      ],
+      "richness_score": 1096,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "赵同学",
+      "age": "约 32 岁",
+      "region": "达州",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学渣翻身",
+        "乡镇基层",
+        "0 基础上岸"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "我是学渣，在学习方面渣到不能再渣，一句话概括就是校园时期对学习从来都是不主动、不拒绝、不负责。从接触研知道到考试，前后65天成功上岸，破天荒的一次我把自己感动了，这辈子居然还敢考研。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "师傅领进门修行在个人，研知道老师即使牛到爆，每个人也要有自己的一套学习规划才行；前期把背密训押题方向搞错了。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "基础课回放第一天晚上1.25倍听一遍，第二天早上1.5倍再听一遍加深印象；把密训课和杨老师押题重点偷工减料抄在笔记本上死记硬背；工作日基本每天保证4个小时学习，真正高效时间3个小时，集中在每天晚上夜深人静的时候；周末利用完整时间死记硬背。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C116",
+      "display_order_source": 99,
+      "sort_tuple": [
+        0,
+        -1066,
+        99
+      ],
+      "richness_score": 1066,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "何同学",
+      "age": "约 35 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响",
+        "年龄焦虑",
+        "自我提升",
+        "宝妈",
+        "国央企",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "约 36 岁，约 6 岁男孩妈妈，备考研究生一战上岸。决定考研是因为想在这个年纪给自己重新确定一个目标和期待，某书某音上搜30+备考，出来的大多都是大龄考研，然而在我心里，年龄不过是一个数字，而不是想要去做任何事的障碍。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "越早准备越好（重要的事情说三遍）；选对辅导机构可以少走很多弯路；师傅领进门修行在个人，真正让你成功上岸的一定是脚踏实地的努力和日复一日的坚持。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "多刷网课倍速回看+上下班听音频；笔记整理用不同颜色标记重难点；密训题库电脑转音频反复听；一听二写前几遍抄写后几遍默写；二级标题构建知识框架；第一阶段每天1小时；第二阶段每天3小时（上下班听音频1h+晚上19-21点学习2h+周末带娃间隙）；不早起不晚睡不打疲劳战。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C121",
+      "display_order_source": 104,
+      "sort_tuple": [
+        0,
+        -1038,
+        104
+      ],
+      "richness_score": 1038,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "高同学",
+      "age": "约 30 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "体制内认可",
+        "纪检公检法",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "一定要稳住心态。不管你学习进班是早还是晚，只要认真按照步骤完成了学习，问题就不大，一定要相信自己。一旦发现有什么学习困难或者心态问题，第一时间跟班主任沟通，真的很重要，避免走弯路！"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "法学考试没有捷径，唯有脚踏实地的积累；三件硬功夫——深耕教材打地基、巧用讲义织网络、精研题册磨利刃。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "教材逐页翻看勾画两遍+红笔标注问号；研知道外部讲义跟视频快速过一遍串线建链；内外部讲义反复翻、以理解为主；密训题库精做+精看解析；模拟题试卷打印参考答案直接背诵；在职备考，每天雷打不动腾出2小时专注研读教材核心章节；每周末作为模拟战场做题。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C112",
+      "display_order_source": 95,
+      "sort_tuple": [
+        0,
+        -916,
+        95
+      ],
+      "richness_score": 916,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "何同学",
+      "age": "约 44 岁",
+      "region": "未知",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "不考英数",
+        "给孩子榜样",
+        "学渣翻身",
+        "宝妈",
+        "乡镇基层",
+        "40+ 转型",
+        "0 基础上岸"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "最大的感触是：年龄从不是“不行”的理由，而是“更该试试”的底气；方法比蛮干重要一万倍；更意外的是，这段经历让我重新理解了“榜样”的意义。当初想给孩子做榜样，最后却发现，父母的“折腾”，本身就是最好的言传身教。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "方向不对努力白费；基础不牢地动山摇；年龄不是不行的理由而是更该试试的底气；方法比蛮干重要一万倍。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "读外部讲义（三色笔记）、学带背视频、背核心考点手册、做密训题库、知识框架图、研知道33法、重复重复再重复；早上6点起床半小时读讲义，中午1小时学带背视频，晚上下班后继续学习，每天4.5-5小时见缝插针。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C111",
+      "display_order_source": 94,
+      "sort_tuple": [
+        0,
+        -904,
+        94
+      ],
+      "richness_score": 904,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "旷同学",
+      "age": "约 30 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "圆梦",
+        "同事影响",
+        "宝妈"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "支撑我的，从来不是毅力，是软肋。累到想放弃时，就让闺女对着监控说“妈妈加油”；忍不住想刷手机时，打开监控看着娃的睡姿，就是我继续的动力。有一句话很适合于我：“不是因为有希望才坚持，是坚持了才有希望。”"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "专业课只用半个月准备，虽因加分过线但成绩不理想，复盘发现对知识点熟悉度和延伸理解不够，是血的教训；运气是实力的一部分。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "先听课按老师要求时间听完政治理论课再梳理；专业课回放听，听不懂先听知识框架再重复；一遍遍抄写3遍不行就5遍；刷小鹅通选择题；每天忙完工作在办公室学到近12点才回去；周末兼顾家庭，周中每分每秒抓牢；通勤碎片化时间刷选择题。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C113",
+      "display_order_source": 96,
+      "sort_tuple": [
+        0,
+        -867,
+        96
+      ],
+      "richness_score": 867,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "道同学",
+      "age": "约 34 岁",
+      "region": "眉山",
+      "system": "",
+      "chosen_target": "不详",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "不考英数",
+        "考研多战"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "有人问过我，为何要一直坚持报考？其实，我自己也问过自己。归纳起来，主要是丰富理论、新增学友、弥补坚守。但报考八年，是心酸的！年龄大，记忆差；工作重，精力少；玩心大，不集中。除此之外，年年不上岸的成绩单、报考费、食住行……等等，还有周而复始每到三月的填报程序、五月的备考焦虑，都给人无尽的苦恼，这是不愿回首的。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "八年磨砺终成硕果，回顾备途之酸、考途之慌、旅途之茫三个体会。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "用1.5-2倍速视频把重点课程过一遍；《精编核心考点手册》重点学、学重点；倒置答题顺序（论述题先做）；临时抱佛脚型，1.5-2倍速视频过重点课程。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C102",
+      "display_order_source": 85,
+      "sort_tuple": [
+        0,
+        -850,
+        85
+      ],
+      "richness_score": 850,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "吴同学",
+      "age": "约 28 岁",
+      "region": "绵阳",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "自我提升"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "至于很多人在乎的在职研究生的含金量究竟多少，我真没想这么多，我只想证明自己某一个阶段我可以，也是为后面在人生路上严格落实每一阶段提供信心。总之，是研知道让我梦想成真、也是研知道让我这个曾经不爱读书的网瘾少年能够在自己所在的城市以政治学第一名的成绩成功上岸，哪怕我的专业课未及格，总分不是很高，但这种感觉实在是太好了！！"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "知道了学习以及学习习惯的重要性；想证明某一阶段我可以，为后面人生路上严格落实每一阶段提供信心。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "公共课阶段按研知道的学习计划严格落实；在职备考。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C106",
+      "display_order_source": 89,
+      "sort_tuple": [
+        0,
+        -850,
+        89
+      ],
+      "richness_score": 850,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 26 岁",
+      "region": "广元",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "坚持型",
+        "宝妈"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "白天在单位忙于工作，处理各种事务无法抽身；晚上回到家后，又成了“全能妈妈”，直到哄孩子入睡，通常已经接近十点，才有了属于自己的学习时间。坐在书桌前，常常熬夜到深夜，面对那些陌生的经济学概念，我多次想要放弃。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "在职备考从来不是孤军奋战，把知识点理解透了再背诵会意外顺畅。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "跟着老师把知识点理解透，最后小半个月集中背诵；使用胡老师整理的习思想口诀和马政经重点题；晚上哄孩子入睡后接近十点开始学习，常常熬夜到深夜。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C108",
+      "display_order_source": 91,
+      "sort_tuple": [
+        0,
+        -808,
+        91
+      ],
+      "richness_score": 808,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "丹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "坚持型",
+        "学渣翻身",
+        "民族州",
+        "考研多战",
+        "0 基础上岸"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "我是来自甘孜州的一名少数民族考生，学生时代成绩平平，但始终秉持着不服输的劲儿一路前行。2018年，我从大专工程测量专业毕业，随后凭借着对知识的渴望与坚定的信念，零基础踏上自考法学本科的征程，并于2022年顺利毕业。2025年，我成功考取在职研究生，回顾这段备考经历，满是汗水与感动交织的回忆。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "节奏把握的很好，一战上岸。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "跟着研知道的节奏照做，学习打卡，反复看课，参与云自习；参与云自习。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C101",
+      "display_order_source": 84,
+      "sort_tuple": [
+        0,
+        -754,
+        84
+      ],
+      "richness_score": 754,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 45 岁",
+      "region": "达州",
+      "system": "国央企",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响",
+        "国央企"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "明确的目标、科学的计划、坚持不懈的努力以及良好的心态，是取得理想成绩的关键"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "公共课得分低因考试时间分配不当，简答题追求卷面完美耗时多导致论述题时间紧；专业课对整体知识体系梳理时间太仓促。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "外部讲义+内部讲义结合，依据干货代背梳理框架，课前预习+听直播课+重难点回放+课后习题+错题标记+小手稿+密训题库+全真模拟；集中在家学习，办公室利用上班前和午后间歇默记知识点；五一端午小长假和周末严格执行班课安排，每天约6小时。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C110",
+      "display_order_source": 93,
+      "sort_tuple": [
+        0,
+        -722,
+        93
+      ],
+      "richness_score": 722,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "白同学",
+      "age": "约 28 岁",
+      "region": "广安",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "自我提升",
+        "宝妈",
+        "考研多战"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "其实备考过程，最难的是工作和学习难以平衡，工作忙的时候根本没有时间看书学习，还会有加班出差的情况。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "单靠自己学难度很大，必须有归纳后的核心考点资料才能不盲目背全文抓不住重点。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "研知道核心考点一本书+早中晚强化背诵+一边写一边背+碎片化时间背书刷题+考前1对1分析；出差利用碎片化时间背书刷题，最后两个月5-6月集中冲刺，最后一周早中晚不停背专业课。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C122",
+      "display_order_source": 105,
+      "sort_tuple": [
+        0,
+        -680,
+        105
+      ],
+      "richness_score": 680,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 32 岁",
+      "region": "未知",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "考研多战",
+        "0 基础上岸"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "当感觉大脑要爆炸的时候一定是我们的神经元脑细胞在加快链接帮助记忆"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "所有的付出与努力在拿到录取通知书的那一刻已经成为过去，我们终会往前走，不妨大胆一点。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "先通读外部讲义了解学科框架→视频课程2倍速+熬通宵2天听完32小时→重点背核心考点和预测模拟卷；倒数第二周通读讲义+最后一周2天熬通宵2倍速听完视频+考试当天早上及中午都在背预测卷。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C126",
+      "display_order_source": 109,
+      "sort_tuple": [
+        0,
+        -618,
+        109
+      ],
+      "richness_score": 618,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "唐同学",
+      "age": "约 28 岁",
+      "region": "未知",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "工作后真的很少体会到那种有人一直在背后推你前进，希望你前进的人"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "上岸只是一个新开始；只要方法找对了，结果都不会太差；唯有努力是不会辜负人的。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "33法；认真参与直播上课+课后回顾和预习+反复刷视频+把视频1.5倍听放+最后划重点刷真题；每天都有规划和安排，参与直播上课+课后回顾预习+反复刷视频（1.5倍速）+刷真题。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C120",
+      "display_order_source": 103,
+      "sort_tuple": [
+        0,
+        -556,
+        103
+      ],
+      "richness_score": 556,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "清同学",
+      "age": "约 35 岁",
+      "region": "未知",
+      "system": "",
+      "chosen_target": "不详",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学费低",
+        "宝妈"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "在职研究生考试并不难，难在利用时间，难在开始"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "在职研究生考试并不难，难在利用时间，难在开始。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "四步法：浏览参考书→打印研知道资料勾画背诵+整理知识框架→粗做历年真题统计重点→按时间细做真题整理错题+回忆框架；产假宝妈零碎时段+家人替换带娃；用上下班通勤、午休、孩子睡前等碎片时段；周末家人接手带娃换整块学习时间。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C118",
+      "display_order_source": 101,
+      "sort_tuple": [
+        0,
+        -495,
+        101
+      ],
+      "richness_score": 495,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "彭同学",
+      "age": "约 35 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "宝妈",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "要有足够的决心。既然决定要考，就要有一次就考上的决心和准备，不要给自己留后路，这样在备考中你才会更专注、更投入！我是关掉了微信朋友圈、卸载了抖音、微博等APP，只留了小红书用于打卡，拒绝了饭局社交。"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "入班要尽早、要有足够的决心、建立学习场景、先掌握框架建体系、找人带路避免走弯路。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "先掌握框架建体系；建立学习场景。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C125",
+      "display_order_source": 108,
+      "sort_tuple": [
+        0,
+        -488,
+        108
+      ],
+      "richness_score": 488,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "左同学",
+      "age": "约 37 岁",
+      "region": "未知",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学费低",
+        "考研多战"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "追风赶月莫停留，平芜尽处是春山"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "要是当时十个明确看了就上了；一定要看书。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "买499考点资料包；只看核心考点五星四星内容；背考前一页纸部分内容；听姚老师杨老师考前直播；扫传单二维码背名词解释论述题；抓住零碎时间看书；考前听直播；回酒店吃完饭听直播。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C119",
+      "display_order_source": 102,
+      "sort_tuple": [
+        0,
+        -180,
+        102
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 26 岁",
+      "region": "未知",
+      "system": "",
+      "chosen_target": "公管",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿"
+      ],
+      "sections": [
+        {
+          "key": "key_quote",
+          "label": "报考动机",
+          "text": "备考不是拼时间，而是拼效率，少走很多弯路"
+        },
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "备考不是拼时间，而是拼效率，少走很多弯路。"
+        },
+        {
+          "key": "study_method",
+          "label": "备考方法",
+          "text": "研知道33法、化整为零的学习方法。"
+        }
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-4",
+      "display_order_source": 3,
+      "sort_tuple": [
+        0,
+        0,
+        -445,
+        3
+      ],
+      "richness_score": 445,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "唐女士",
+      "age": "约 32 岁",
+      "system": "教育系统",
+      "program": "MPA",
+      "intent_school": "四川大学公共管理学院 · MPA",
+      "admitted_school": "四川大学公共管理学院 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "非首次备考",
+      "motivation": "相关系统工作,学历提升,学习知识",
+      "baseline": "理科/高考中下(90~110分)；高考良好(110~130分)",
+      "score": "测评 66 分 → 目标 200 分",
+      "study_time": "22h/周；2.5h/天",
+      "risk": "需要同时平衡目标院校、基础水平和备考时间。",
+      "advice": "按专业方向和城市筛选，再结合分数线、学费、招生人数做保底和冲刺组合。",
+      "tags": [
+        "教育系统",
+        "MPA",
+        "上岸",
+        "学历提升",
+        "自我提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-16",
+      "display_order_source": 15,
+      "sort_tuple": [
+        0,
+        0,
+        -432,
+        15
+      ],
+      "richness_score": 432,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "胡先生",
+      "age": "约 32 岁",
+      "system": "党政机关",
+      "program": "MEM",
+      "intent_school": "西南建筑科技大学 · MEM",
+      "admitted_school": "西南建筑科技大学 · MEM",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "体制内事业编,学历提升,为未来提前准备",
+      "baseline": "理科/高考未及格(90分以下)；高考中下(90~110分)/成教专升本学位英语",
+      "score": "测评 55 分 → 目标 180 分",
+      "study_time": "36h/周；4.5h/天",
+      "risk": "数学基础是主要风险，择校不宜只看院校名气。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "党政机关",
+        "MEM",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-8",
+      "display_order_source": 7,
+      "sort_tuple": [
+        0,
+        0,
+        -411,
+        7
+      ],
+      "richness_score": 411,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "范女士",
+      "age": "约 27 岁",
+      "system": "国央企",
+      "program": "MPA",
+      "intent_school": "西南医科大学 · MPA",
+      "admitted_school": "西南医科大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考管综",
+      "motivation": "国企任职,提升学历,增加晋升或跳槽附加值",
+      "baseline": "理科/高考良好(110~130分)；高考良好(110~130分)/大学英语四级",
+      "score": "测评 70 分 → 目标 200 分",
+      "study_time": "30h/周；3.7h/天",
+      "risk": "需要同时平衡目标院校、基础水平和备考时间。",
+      "advice": "按专业方向和城市筛选，再结合分数线、学费、招生人数做保底和冲刺组合。",
+      "tags": [
+        "国央企",
+        "MPA",
+        "上岸",
+        "晋升",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-5",
+      "display_order_source": 4,
+      "sort_tuple": [
+        0,
+        0,
+        -402,
+        4
+      ],
+      "richness_score": 402,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "德女士",
+      "age": "约 32 岁",
+      "system": "银行金融",
+      "program": "MPA",
+      "intent_school": "西南财经大学 · MPA",
+      "admitted_school": "西南财经大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "人民银行工作,提升发展空间,充实自我",
+      "baseline": "理科/高考中下(90~110分)；高考良好(110~130分)/大学英语六级",
+      "score": "测评 76 分 → 目标 200 分",
+      "study_time": "29.5h/周；3.6h/天",
+      "risk": "需要同时平衡目标院校、基础水平和备考时间。",
+      "advice": "按专业方向和城市筛选，再结合分数线、学费、招生人数做保底和冲刺组合。",
+      "tags": [
+        "银行金融",
+        "MPA",
+        "上岸",
+        "自我提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-13",
+      "display_order_source": 12,
+      "sort_tuple": [
+        0,
+        0,
+        -402,
+        12
+      ],
+      "richness_score": 402,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "许先生",
+      "age": "25岁以下",
+      "system": "党政机关",
+      "program": "MPA",
+      "intent_school": "电子科技大学 · MPA",
+      "admitted_school": "电子科技大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "体制内公务员,为发展提前准备,人脉拓展",
+      "baseline": "文科/高考未及格(90分以下)；高考优秀(130分以上)/大学英语六级",
+      "score": "测评 74 分 → 目标 200 分",
+      "study_time": "29.5h/周；3.6h/天",
+      "risk": "数学基础是主要风险，择校不宜只看院校名气。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "党政机关",
+        "MPA",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-19",
+      "display_order_source": 18,
+      "sort_tuple": [
+        0,
+        0,
+        -402,
+        18
+      ],
+      "richness_score": 402,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "彭先生",
+      "age": "约 32 岁",
+      "system": "党政机关",
+      "program": "MPA",
+      "intent_school": "西南交通大学 · MPA",
+      "admitted_school": "西南交通大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "非首次备考",
+      "motivation": "体制内公务员,提升学历为遴选做准备",
+      "baseline": "文科/高考良好(110~130分)；高考良好(110~130分)/大学英语四级",
+      "score": "测评 61 分 → 目标 200 分",
+      "study_time": "21.5h/周；2.5h/天",
+      "risk": "需要同时平衡目标院校、基础水平和备考时间。",
+      "advice": "按专业方向和城市筛选，再结合分数线、学费、招生人数做保底和冲刺组合。",
+      "tags": [
+        "党政机关",
+        "MPA",
+        "上岸",
+        "遴选",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-7",
+      "display_order_source": 6,
+      "sort_tuple": [
+        0,
+        0,
+        -398,
+        6
+      ],
+      "richness_score": 398,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王女士",
+      "age": "约 32 岁",
+      "system": "国央企",
+      "program": "MPA",
+      "intent_school": "西南医科大学 · MPA",
+      "admitted_school": "西南医科大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "国企子公司高管,为职业发展提升学历",
+      "baseline": "文科/高考未及格(90分以下)；高考良好(110~130分)/大学英语三级",
+      "score": "测评 53 分 → 目标 190 分",
+      "study_time": "20.5h/周；2.3h/天",
+      "risk": "数学基础是主要风险，择校不宜只看院校名气。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "国央企",
+        "MPA",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-14",
+      "display_order_source": 13,
+      "sort_tuple": [
+        0,
+        0,
+        -397,
+        13
+      ],
+      "richness_score": 397,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "张先生",
+      "age": "40岁以上",
+      "system": "",
+      "program": "MBA",
+      "intent_school": "西南财经大学 · MBA",
+      "admitted_school": "西南财经大学 · MBA",
+      "outcome": "上岸",
+      "exam_experience": "非首次备考",
+      "motivation": "学历提升,需要双证,为后续发展提前准备",
+      "baseline": "理科/高考未及格(90分以下)；高考良好(110~130分)",
+      "score": "测评 90 分 → 目标 210 分",
+      "study_time": "42h/周；5.4h/天",
+      "risk": "数学基础是主要风险，择校不宜只看院校名气。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "MBA",
+        "上岸",
+        "学历提升",
+        "双证"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-17",
+      "display_order_source": 16,
+      "sort_tuple": [
+        0,
+        0,
+        -392,
+        16
+      ],
+      "richness_score": 392,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "何女士",
+      "age": "约 27 岁",
+      "system": "国央企",
+      "program": "MBA",
+      "intent_school": "西南交通大学 · MBA",
+      "admitted_school": "西南交通大学 · MBA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "国企任职,提升学历为后续做准备",
+      "baseline": "理科/高考中下(90~110分)；高考中下(90~110分)/大学英语四级",
+      "score": "测评 67 分 → 目标 190 分",
+      "study_time": "22.5h/周；2.6h/天",
+      "risk": "MBA 更容易受学费、城市和上课方式约束。",
+      "advice": "先锁定预算和上课地点，再比较复试压力与院校认可度。",
+      "tags": [
+        "国央企",
+        "MBA",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-11",
+      "display_order_source": 10,
+      "sort_tuple": [
+        0,
+        0,
+        -391,
+        10
+      ],
+      "richness_score": 391,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈先生",
+      "age": "约 27 岁",
+      "system": "党政机关",
+      "program": "MPA",
+      "intent_school": "成都理工大学 · MPA",
+      "admitted_school": "成都理工大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "体制内公务员,单证学历不够用",
+      "baseline": "理科/高考未及格(90分以下)；高考中下(90~110分),未参加学位英语考试",
+      "score": "测评 49 分 → 目标 175 分",
+      "study_time": "33.5h/周；4.2h/天",
+      "risk": "测评分数偏低，基础补齐和择校保底需要优先处理。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "党政机关",
+        "MPA",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-12",
+      "display_order_source": 11,
+      "sort_tuple": [
+        0,
+        0,
+        -388,
+        11
+      ],
+      "richness_score": 388,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈先生",
+      "age": "25岁以下",
+      "system": "党政机关",
+      "program": "MPA",
+      "intent_school": "西南政法大学 · MPA",
+      "admitted_school": "西南政法大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "体制内公务员,学历提升,提高学习能力",
+      "baseline": "理科/高考良好(110~130分)；大学英语四级",
+      "score": "测评 80 分 → 目标 210 分",
+      "study_time": "44.5h/周；5.7h/天",
+      "risk": "需要同时平衡目标院校、基础水平和备考时间。",
+      "advice": "按专业方向和城市筛选，再结合分数线、学费、招生人数做保底和冲刺组合。",
+      "tags": [
+        "党政机关",
+        "MPA",
+        "上岸",
+        "学历提升",
+        "自我提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-18",
+      "display_order_source": 17,
+      "sort_tuple": [
+        0,
+        0,
+        -382,
+        17
+      ],
+      "richness_score": 382,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "廖先生",
+      "age": "40岁以上",
+      "system": "",
+      "program": "MBA",
+      "intent_school": "河海大学 · MBA",
+      "admitted_school": "河海大学 · MBA",
+      "outcome": "上岸",
+      "exam_experience": "非首次备考(2012年首次参考)",
+      "motivation": "学历提升,为职业发展做准备",
+      "baseline": "文科/高考中下(90~110分)；高考中下(90~110分)/大学英语四级",
+      "score": "测评 58 分 → 目标 200 分",
+      "study_time": "31.5h/周；3.9h/天",
+      "risk": "MBA 更容易受学费、城市和上课方式约束。",
+      "advice": "先锁定预算和上课地点，再比较复试压力与院校认可度。",
+      "tags": [
+        "MBA",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-15",
+      "display_order_source": 14,
+      "sort_tuple": [
+        0,
+        0,
+        -380,
+        14
+      ],
+      "richness_score": 380,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "黄女士",
+      "age": "约 27 岁",
+      "system": "党政机关",
+      "program": "MBA",
+      "intent_school": "甘肃农业大学 · MBA",
+      "admitted_school": "甘肃农业大学 · MBA",
+      "outcome": "上岸",
+      "exam_experience": "非首次备考",
+      "motivation": "事业单位编外,想在体制内向上发展",
+      "baseline": "文科/高考未及格(90分以下)；大学英语四级",
+      "score": "测评 62 分 → 目标 180 分",
+      "study_time": "27h/周；3.3h/天",
+      "risk": "数学基础是主要风险，择校不宜只看院校名气。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "党政机关",
+        "MBA",
+        "上岸",
+        "晋升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-9",
+      "display_order_source": 8,
+      "sort_tuple": [
+        0,
+        0,
+        -377,
+        8
+      ],
+      "richness_score": 377,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "辜女士",
+      "age": "约 32 岁",
+      "system": "党政机关",
+      "program": "MPA",
+      "intent_school": "四川农业大学 · MPA",
+      "admitted_school": "四川农业大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "体制内事业编,为晋升做准备",
+      "baseline": "文科/高考未及格(90分以下)；高考未及格(90分以下)",
+      "score": "测评 17 分 → 目标 175 分",
+      "study_time": "18.5h/周；2.0h/天",
+      "risk": "测评分数偏低，基础补齐和择校保底需要优先处理。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "党政机关",
+        "MPA",
+        "上岸",
+        "晋升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-2",
+      "display_order_source": 1,
+      "sort_tuple": [
+        0,
+        0,
+        -371,
+        1
+      ],
+      "richness_score": 371,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘女士",
+      "age": "约 32 岁",
+      "system": "党政机关",
+      "program": "MPA",
+      "intent_school": "四川大学 · MPA",
+      "admitted_school": "四川大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "体制内公务员,提升学历为遴选做准备",
+      "baseline": "文科/高考未及格(90分以下)；高考中下(90-110分)/通过学位英语考试",
+      "score": "测评 44 分 → 目标 180 分",
+      "study_time": "39.5h/周；5.0h/天",
+      "risk": "测评分数偏低，基础补齐和择校保底需要优先处理。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "党政机关",
+        "MPA",
+        "上岸",
+        "遴选",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-6",
+      "display_order_source": 5,
+      "sort_tuple": [
+        0,
+        0,
+        -371,
+        5
+      ],
+      "richness_score": 371,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王女士",
+      "age": "约 27 岁",
+      "system": "",
+      "program": "MPA",
+      "intent_school": "西南医科大学 · MPA",
+      "admitted_school": "西南医科大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "提升学历,为调任晋升做准备",
+      "baseline": "薄弱,中专→大专→自考本科；薄弱,未参加英语考级",
+      "score": "测评 33 分 → 目标 175 分",
+      "study_time": "20h/周；2.8h/天",
+      "risk": "测评分数偏低，基础补齐和择校保底需要优先处理。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "MPA",
+        "上岸",
+        "晋升",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-10",
+      "display_order_source": 9,
+      "sort_tuple": [
+        0,
+        0,
+        -359,
+        9
+      ],
+      "richness_score": 359,
+      "target_precision": "precise",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈先生",
+      "age": "约 37 岁",
+      "system": "教育系统",
+      "program": "MPA",
+      "intent_school": "四川大学 · MPA",
+      "admitted_school": "四川大学 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "高职院校任职,提升学历,为后续做准备",
+      "baseline": "理科/高考中下(90-110分)；大学英语四级",
+      "score": "测评 33 分 → 目标 180 分",
+      "study_time": "36.5h/周；4.6h/天",
+      "risk": "测评分数偏低，基础补齐和择校保底需要优先处理。",
+      "advice": "优先选择分数线稳定、招生人数相对充足、学费和上课方式匹配的院校，再安排基础补齐。",
+      "tags": [
+        "教育系统",
+        "MPA",
+        "上岸",
+        "学历提升"
+      ]
+    },
+    {
+      "direction": "exam",
+      "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
+      "source_id": "exam-row-3",
+      "display_order_source": 2,
+      "sort_tuple": [
+        0,
+        1,
+        -260,
+        2
+      ],
+      "richness_score": 260,
+      "target_precision": "broad",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "derived_fields": [
+        "risk",
+        "advice",
+        "system",
+        "goal_tags"
+      ],
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘女士",
+      "age": "约 32 岁",
+      "system": "",
+      "program": "MPA",
+      "intent_school": "四川医学类院校 · MPA",
+      "admitted_school": "四川医学类院校 · MPA",
+      "outcome": "上岸",
+      "exam_experience": "首次备考",
+      "motivation": "弥补遗憾,提升自己",
+      "baseline": "文科/高考未及格(90分以下)；高考中下(90-110分)",
+      "score": "测评 17 分 → 目标 180 分",
+      "study_time": "36.5h/周；4.6h/天",
+      "risk": "测评分数偏低，基础补齐和择校保底需要优先处理。",
+      "advice": "先把意向院校、城市、学费和分数线拆开复盘，再沉淀成可复用择校口径。",
+      "tags": [
+        "MPA",
+        "上岸",
+        "自我提升"
+      ]
+    }
+  ]
+}

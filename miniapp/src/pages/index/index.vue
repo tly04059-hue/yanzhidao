@@ -164,7 +164,7 @@ import BottomTabBar from '@/components/BottomTabBar.vue'
 import { trackPageView, trackTabClick, trackNavClick } from '@/api/tracking'
 const routeMap: Record<string, string> = {
   schools: '/pages/schools/index',
-  cases: '/pages/cases/index',
+  cases: '/pages/cases-v2/index',
   map: '/pages/map/index',
   downloads: '/pages/downloads/index',
   wechat: '/pages/contact/index',
@@ -470,10 +470,41 @@ onUnmounted(() => {
   align-items: flex-start;
 }
 
+.ps-desc-strong,
+.ps-desc-line,
+.ps-rate-line {
+  max-width: 100%;
+}
+
+.ps-desc-line {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
 .ps-arrow {
   position: static;
   align-self: center;
   margin-top: 10px;
   display: block;
+}
+
+@media (max-width: 380px) {
+  .path-stats {
+    gap: 10px;
+  }
+
+  .path-stat-card {
+    padding: 18px 12px 16px;
+  }
+
+  .ps-desc-strong,
+  .ps-desc-line,
+  .ps-rate-line {
+    font-size: 10px;
+    line-height: 1.65;
+  }
 }
 </style>

@@ -202,7 +202,26 @@ onMounted(() => {
 
 .list-card { margin-bottom: 6px; }
 
-.list-item { padding: 9px 14px; }
+.list-item {
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 14px;
+}
+
+.list-item-label {
+  flex: 0 0 auto;
+  min-width: 68px;
+  white-space: nowrap;
+}
+
+.list-item-val {
+  flex: 0 1 60%;
+  max-width: 60%;
+  text-align: left;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
 
 .note-card {
   padding: 16px;

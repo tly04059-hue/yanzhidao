@@ -134,7 +134,6 @@
           <view class="learn-head-shell" @click="togglePeerSampleSection">
             <view class="section-head-top">
               <text class="section-head-h2">同学们实际怎么选</text>
-              <text class="learn-head-meta">1,000+ 全样本</text>
             </view>
             <view class="learn-toggle">
               <view class="learn-toggle-arrow" :class="{ open: peerSampleSectionOpen, drift: arrowDriftDown && !peerSampleSectionOpen }"></view>
@@ -145,18 +144,22 @@
           <view class="collapse-panel-inner">
           <view class="knn-pair" style="margin-bottom: 12px;">
             <view class="knn-card A">
-              <text class="knn-num">62%</text>
+              <text class="knn-num">{{ partyShare }}%</text>
               <text class="knn-lbl">党校在职研究生</text>
             </view>
             <view class="knn-card B">
-              <text class="knn-num">31%</text>
+              <text class="knn-num">{{ managementExamShare }}%</text>
               <text class="knn-lbl">统考非全研究生{{'\n'}}<text class="knn-sub">MPA / MBA / MEM</text></text>
             </view>
           </view>
-          <view class="card card-sm" style="background: linear-gradient(180deg, #fff8f3 0%, #ffffff 100%);">
-            <text class="case-title">王同学 · 市直机关 34 岁 · 党员</text>
-            <text class="case-text">想到了"先把学历这件事做了，不掉队"——最终选了四川省委党校经济学，3年毕业。</text>
-            <text class="case-quote" style="font-style: italic;">"我没想着这一张文凭能带我升多远，但少了它是实实在在少一些底气，一方面是实在的资格作用，一方面是心里的底气，都很重要。"</text>
+          <view
+            v-for="item in peerSampleCases"
+            :key="item.id"
+            class="card card-sm peer-case-card"
+          >
+            <text class="case-title">{{ peerSampleTitle(item) }}</text>
+            <text class="case-text">{{ peerSampleText(item) }}</text>
+            <text v-if="peerSampleQuote(item)" class="case-quote">"{{ peerSampleQuote(item) }}"</text>
           </view>
           <view class="btn-secondary" style="margin-top: 12px;" @click="goPage('cases')">看更多同学案例 →</view>
           </view>
@@ -199,20 +202,29 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, reactive, ref } from 'vue'
+import { computed, onMounted, onUnmounted, reactive, ref } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
 import BottomTabBar from '@/components/BottomTabBar.vue'
-import { trackPageView, trackTabClick, trackNavClick } from '@/api/tracking'
+import { trackContactClick, trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+import {
+  casesV2Stats,
+  managementExamCasesV2,
+  partySchoolCasesV2,
+  type CaseV2
+} from '@/data/cases-v2'
 
 const routeMap: Record<string, string> = {
   prep: '/pages/prep/index',
-  cases: '/pages/cases/index',
+  cases: '/pages/cases-v2/index',
   wechat: '/pages/contact/index',
 }
 
 const goPage = (key: string) => {
-  trackNavClick('learn', key)
   const url = routeMap[key]
+  trackNavClick('learn', key, url || '')
+  if (key === 'wechat') {
+    trackContactClick('learn', 'wechat', '加企微顾问', url || '')
+  }
   if (url) uni.navigateTo({ url })
 }
 
@@ -236,6 +248,48 @@ const toggleUseSection = () => { useSectionOpen.value = !useSectionOpen.value }
 const togglePathRuleSection = () => { pathRuleSectionOpen.value = !pathRuleSectionOpen.value }
 const toggleMainPathSection = () => { mainPathSectionOpen.value = !mainPathSectionOpen.value }
 const togglePeerSampleSection = () => { peerSampleSectionOpen.value = !peerSampleSectionOpen.value }
+
+const percentOfTotal = (count: number) =>
+  casesV2Stats.total ? Math.round((count / casesV2Stats.total) * 100) : 0
+
+const partyShare = computed(() => percentOfTotal(casesV2Stats.party))
+const managementExamShare = computed(() => percentOfTotal(casesV2Stats.managementExam))
+
+const blockedPeerSampleIds = new Set([
+  'party-C102',
+  'party-C115',
+  'party-C107',
+  'party-C124'
+])
+
+const isBlockedPeerSampleCase = (item: CaseV2) => {
+  if (blockedPeerSampleIds.has(item.id)) return true
+  return item.displayAlias === '梁同学'
+    && item.ageLabel === '约 30 岁'
+    && item.regionLabel === '甘孜'
+    && item.richnessScore === 148
+}
+
+const peerSampleCases = computed(() =>
+  [
+    partySchoolCasesV2.find(item => !isBlockedPeerSampleCase(item)),
+    managementExamCasesV2.find(item => !isBlockedPeerSampleCase(item))
+  ].filter((item): item is CaseV2 => Boolean(item))
+)
+
+const peerSampleTitle = (item: CaseV2) =>
+  [item.displayAlias, item.ageLabel, item.regionLabel || item.systemLabel].filter(Boolean).join(' · ')
+
+const peerSampleText = (item: CaseV2) => {
+  const target = item.caseType === 'management_exam'
+    ? item.admittedSchool || item.intentSchool || item.chosenTarget
+    : item.chosenTarget
+  const path = item.caseType === 'management_exam' ? '统考非全研究生' : '党校在职研究生'
+  return `这位同学最终选择了${path}${target ? `，目标是${target}` : ''}，结果为${item.outcomeLabel || '已确认'}。`
+}
+
+const peerSampleQuote = (item: CaseV2) =>
+  item.cardQuote || item.reflection || item.examExperience || ''
 
 const policies = [
   { seq: '01', title: '党校学历体制内认可', desc: '中发〔2000〕10 号文，党政机关 / 事业单位 / 国有企业内部认可，用于晋升、职称等。' },
@@ -520,7 +574,22 @@ onUnmounted(() => {
 
 .case-title { font-weight: 700; font-size: 14px; color: #2A251E; margin-bottom: 6px; display: block; }
 .case-text { font-size: 13px; color: #6B6258; line-height: 1.8; display: block; }
-.case-quote { font-size: 13px; color: #6B6258; line-height: 1.8; margin-top: 8px; display: block; }
+.case-quote {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #FFF6EA;
+  border-left: 3px solid #E7A56E;
+  color: #5E554C;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.85;
+}
+.peer-case-card {
+  background: linear-gradient(180deg, #FFF8F3 0%, #FFFFFF 100%);
+  margin-bottom: 10px;
+}
 
 .dim-chip {
   min-width: 76px;

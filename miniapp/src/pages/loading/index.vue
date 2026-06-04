@@ -34,7 +34,7 @@ import { onMounted, ref } from 'vue'
 import { trackPageView } from '@/api/tracking'
 import { prepareQuizInput, buildQuizRuntimeFromPieces, type QuizSubmission } from '@/data/quiz-runtime'
 import { getLocalRecommendation } from '@/data/recommendation-strategy'
-import { getPeerInsights } from '@/data/peer-insights'
+import { getPeerInsights } from '@/data/cases-v2-peer-insights'
 import { buildResultPresentation } from '@/data/result-presentation'
 
 const steps = [

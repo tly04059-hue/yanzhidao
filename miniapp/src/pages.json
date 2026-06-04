@@ -74,6 +74,18 @@
 			]
 		},
 		{
+			"root": "pages/cases-v2",
+			"pages": [
+				{
+					"path": "index",
+					"style": {
+						"navigationBarTitleText": "1000+学员真实选择",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
 			"root": "pages/result",
 			"pages": [
 				{

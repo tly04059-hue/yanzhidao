@@ -125,7 +125,7 @@ const goPage = (key: string) => {
   trackNavClick('pass-rate', key)
   const map: Record<string, string> = {
     schools: '/pages/schools/index',
-    cases: '/pages/cases/index',
+    cases: '/pages/cases-v2/index',
     estimate: '/pages/estimate/index',
   }
   if (key === 'learn') uni.switchTab({ url: '/pages/learn/index' })

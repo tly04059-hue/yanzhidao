@@ -10,10 +10,10 @@
 
     <view class="v6-page">
       <view class="hero-card">
-        <text class="preview-kicker">student-cases-publish.json</text>
-        <text class="preview-title">案例库发布层数据</text>
+        <text class="preview-kicker">cases-v2-public.json</text>
+        <text class="preview-title">案例 V2 公开展示层数据</text>
         <text class="preview-copy">
-          生成时间 {{ metadata.generated_at }} · 源记录 {{ metadata.source_record_count }} 条 · 发布案例 {{ metadata.publish_case_count }} 条
+          当前公开案例 {{ casesV2Stats.total }} 条 · 党校 {{ casesV2Stats.party }} 条 · 管综 {{ casesV2Stats.managementExam }} 条
         </text>
       </view>
 
@@ -27,7 +27,7 @@
           <text class="stat-value">{{ filters.program_types.length }}</text>
         </view>
         <view class="stat-card">
-          <text class="stat-label">岗位标签</text>
+          <text class="stat-label">质量等级</text>
           <text class="stat-value">{{ filters.positions.length }}</text>
         </view>
       </view>
@@ -48,18 +48,22 @@
 
         <view v-for="item in previewCases" :key="item.id" class="data-card">
           <view class="data-card-head">
-            <text class="data-card-title">{{ item.title }}</text>
-            <text class="data-card-badge">{{ item.program_type }}</text>
+            <text class="data-card-title">{{ item.displayAlias }} · {{ item.ageLabel }}</text>
+            <text class="data-card-badge">{{ item.pathLabel }}</text>
           </view>
-          <text class="data-card-line">{{ item.profile }}</text>
-          <text class="data-card-line"><text class="label">目标：</text>{{ item.target }}</text>
-          <text class="data-card-line"><text class="label">基础：</text>{{ item.baseline }}</text>
-          <text class="data-card-line"><text class="label">成绩：</text>{{ item.score }}</text>
-          <text class="data-card-line"><text class="label">时间：</text>{{ item.study_time }}</text>
-          <text class="data-card-line"><text class="label">结果：</text>{{ item.result }}</text>
-          <text class="data-card-line"><text class="label">风险：</text>{{ item.risk }}</text>
-          <text class="data-card-line"><text class="label">建议：</text>{{ item.advice }}</text>
-          <view class="chip-wrap chip-wrap-tight">
+          <text class="data-card-line">{{ [item.regionLabel, item.systemLabel, item.programLabel].filter(Boolean).join(' · ') }}</text>
+          <text class="data-card-line"><text class="label">目标：</text>{{ item.chosenTarget }}</text>
+          <text v-if="shouldShowIntentSchool(item)" class="data-card-line"><text class="label">意向院校：</text>{{ item.intentSchool }}</text>
+          <text v-if="item.admittedSchool" class="data-card-line"><text class="label">上岸院校：</text>{{ item.admittedSchool }}</text>
+          <text v-if="item.baseline" class="data-card-line"><text class="label">基础：</text>{{ item.baseline }}</text>
+          <text v-if="item.score" class="data-card-line"><text class="label">成绩：</text>{{ item.score }}</text>
+          <text v-if="item.studyTime" class="data-card-line"><text class="label">时间：</text>{{ item.studyTime }}</text>
+          <text class="data-card-line"><text class="label">结果：</text>{{ item.outcomeLabel }}</text>
+          <text v-if="item.cardQuote" class="data-card-line"><text class="label">报考动机：</text>{{ item.cardQuote }}</text>
+          <text v-if="item.reflection" class="data-card-line"><text class="label">真实反馈：</text>{{ item.reflection }}</text>
+          <text v-if="item.studyMethod" class="data-card-line"><text class="label">备考方法：</text>{{ item.studyMethod }}</text>
+          <text v-if="item.examExperience" class="data-card-line"><text class="label">备考经验：</text>{{ item.examExperience }}</text>
+          <view v-if="item.tags.length" class="chip-wrap chip-wrap-tight">
             <text v-for="tag in item.tags.slice(0, 8)" :key="`${item.id}-${tag}`" class="chip">{{ tag }}</text>
           </view>
         </view>
@@ -69,22 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import casePayload from '@/data/student-cases-publish.json'
-
-type PublishedCase = {
-  id: string
-  title: string
-  profile: string
-  target: string
-  baseline: string
-  score: string
-  study_time: string
-  result: string
-  risk: string
-  advice: string
-  program_type: string
-  tags: string[]
-}
+import { casesV2, casesV2Stats, type CaseV2 } from '@/data/cases-v2'
 
 const goBack = () => {
   const pages = getCurrentPages()
@@ -92,13 +81,20 @@ const goBack = () => {
   else uni.switchTab({ url: '/pages/index/index' })
 }
 
-const metadata = (casePayload as any).metadata || {}
-const filters = (casePayload as any).filters || {
-  systems: [],
-  program_types: [],
-  positions: []
+const unique = (values: string[]) => Array.from(new Set(values.filter(Boolean)))
+const normalizedSchoolName = (value: string) =>
+  value.replace(/\s+/g, '').replace(/·/g, '').trim()
+
+const shouldShowIntentSchool = (item: CaseV2) =>
+  Boolean(item.intentSchool)
+  && (!item.admittedSchool || normalizedSchoolName(item.intentSchool) !== normalizedSchoolName(item.admittedSchool))
+
+const filters = {
+  systems: unique(casesV2.map(item => item.systemLabel)),
+  program_types: unique(casesV2.map(item => item.pathLabel || item.programLabel)),
+  positions: unique(casesV2.map(item => item.quality))
 }
-const previewCases = (((casePayload as any).cases || []) as PublishedCase[]).slice(0, 12)
+const previewCases = casesV2.slice(0, 12)
 </script>
 
 <style lang="scss" scoped>

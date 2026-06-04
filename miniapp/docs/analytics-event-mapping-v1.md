@@ -55,7 +55,8 @@
 | `result` | ✅ | cta_share / cta_retry / cta_schools | ✅ | `src/pages/result/index.vue` |
 | `schools` | ✅ | menu / back | ✅ | `src/pages/schools/index.vue` |
 | `school_detail` | ✅ | back / cta_consult | - | `src/pages/school-detail/index.vue` |
-| `cases` | ✅ | back / cta_map | ✅ | `src/pages/cases/index.vue` |
+| `cases` | 兼容保留 | back / cta_map | ✅ | `src/pages/cases/index.vue` |
+| `cases_v2` | ✅ 主案例页 | back / contact_entry | ✅ | `src/pages/cases-v2/index.vue` |
 | `map` | ✅ | back | ✅ | `src/pages/map/index.vue` |
 | `contact` | ✅ | back / cta_timeline / cta_result | ✅ | `src/pages/contact/index.vue` |
 | `timeline` | ✅ | back / cta_contact | ✅ | `src/pages/timeline/index.vue` |
@@ -74,14 +75,13 @@
 
 | 事件名 | 页面 | 触发点 | 当前 payload 关键字段（代码中） | 建议必填字段（v1） |
 |---|---|---|---|---|
-| `start_assessment` | `test` | 点击“开始测试” | `target_type`, `source` | `source`, `position`, `route`, `scene` |
-| `finish_assessment` | `test` | 提交问卷 | `target_type`, `answers` | `source`, `position`, `route`, `scene`, `answer_completeness` |
-| `view_result` | `result` | 结果页加载（query/cache/fallback） | `target_type`, `source`, `answers?`, `primary_path`, `recommended_schools` | `source`, `route`, `scene`, `primary_path` |
+| `assessment_start` | `test` | 点击“开始测试” | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene` |
+| `assessment_finish` | `test` | 提交问卷 | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene`, `question_count` |
+| `recommendation_view` | `result` | 结果页推荐曝光 | `target_type`, `target_id`, `target_name` | `source`, `route`, `scene`, `recommendation_title` |
 | `favorite_recommendation` | `result` | 收藏/保存建议 | `target_type`, `primary_path`, `recommended_schools` | `source`, `position`, `route`, `scene`, `target_name` |
 | `share_result` | `result` | 点击分享 | `target_type`, `primary_path`, `recommended_schools` | `source`, `position`, `route`, `scene` |
-| `follow_account_click` | `result` | 去联系顾问入口 | `target_type`, `source` | `source`, `position`, `route`, `scene` |
+| `contact_click` | `result` | 去联系顾问入口 | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene` |
 | `view_pass_rate_detail` | `result` | 查看过考率说明 | `target_type`, `source` | `source`, `position`, `route`, `scene` |
-| `contact_click` | `result` | 下一步联系顾问 | `target_type`, `source` | `source`, `position`, `route`, `scene` |
 | `view_school_list` | `schools` | 院校库页面打开 | `target_type`, `source` | `source`, `route`, `scene` |
 | `filter_school_list` | `schools` | 切换筛选条件 | `target_type`, `level`, `filter` | `source`, `position`, `route`, `scene`, `filter_key`, `filter_value` |
 | `click_school_card` | `schools` | 点击院校卡片 | `target_type`, `target_id`, `target_name`, `school_name`, `program_type` | `source`, `position`, `route`, `scene`, `target_id` |
@@ -90,6 +90,17 @@
 | `consult_click` | `school_detail` | 咨询按钮点击 | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene` |
 | `view_case_list` | `cases` | 案例页打开 | `target_type`, `source` | `source`, `route`, `scene` |
 | `filter_case_list` | `cases` | 切换案例筛选 | `target_type`, `level`, `filter` | `source`, `position`, `route`, `scene`, `filter_key`, `filter_value` |
+| `filter_case_list` | `cases_v2` | 切换党校/管综 Tab | `target_type`, `filter_key`, `filter_value`, `from_tab` | `source`, `position`, `route`, `scene`, `filter_key`, `filter_value` |
+| `case_card_click` | `cases_v2` | 点击 V2 案例卡片 | `target_type`, `target_id`, `target_name`, `case_type`, `case_quality` | `source`, `position`, `route`, `scene`, `target_id`, `target_name` |
+| `case_list_load_more` | `cases_v2` | 点击继续加载更多案例 | `target_type`, `previous_visible_count`, `next_visible_count`, `total_count` | `source`, `position`, `route`, `scene`, `total_count` |
+| `modal_open` | `cases_v2` | 打开 V2 案例详情 | `target_type`, `target_id`, `target_name`, `modal_type` | `source`, `position`, `route`, `scene`, `modal_type`, `target_id` |
+| `modal_close` | `cases_v2` | 关闭 V2 案例详情 | `target_type`, `target_id`, `target_name`, `modal_type`, `close_method` | `source`, `position`, `route`, `scene`, `modal_type`, `target_id`, `close_method` |
+| `cta_click` | `cases_v2` | 点击详情“知道了”/案例页 CTA | `target_type`, `position`, `label`, `route` | `source`, `position`, `route`, `scene`, `label` |
+| `contact_click` | `cases_v2` | 点击案例页联系顾问 | `target_type`, `position`, `label`, `route` | `source`, `position`, `route`, `scene`, `label` |
+| `assessment_start` | `test` | 点击开始测一测 | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene` |
+| `assessment_finish` | `test` | 提交测评 | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene`, `question_count` |
+| `recommendation_view` | `result` | 结果页推荐曝光 | `target_type`, `target_id`, `target_name` | `source`, `position`, `route`, `scene`, `recommendation_title` |
+| `contact_click` | `result` | 结果页联系顾问 | `target_type`, `position`, `label`, `route` | `source`, `position`, `route`, `scene`, `recommendation_title` |
 
 ---
 
@@ -117,4 +128,3 @@
    - “业务事件映射表”中每个事件至少触发一次并可在 Network 中看到。
 3. 字段完整率：
    - 基础字段 `source/position/route/scene` 完整率 >= 95%。
-

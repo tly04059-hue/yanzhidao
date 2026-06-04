@@ -1,7 +1,7 @@
 export const v5ResultContent = {
   route: 'result',
   prd: '§4.8 结果页 8 区块',
-  dataSources: ['rules', 'copy', 'cases', 'pass_rate', 'peer_profile_cache', 'policy_basis', 'zexiao'],
+  dataSources: ['rules', 'copy', 'cases_v2_public', 'pass_rate', 'policy_basis', 'zexiao'],
   title: '你的选校方向建议',
   brandLine: '已服务 1,000+ 川渝同学 · 不骗人 · 真服务',
   diagnosis: {

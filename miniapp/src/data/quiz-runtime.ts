@@ -2,7 +2,7 @@ import { v5QuizContent } from './v5/quiz'
 import { buildNormalizedQuizAnswers, normalizeConcernLabels, type NormalizedQuizAnswers } from './quiz-normalization'
 import { getLocalRecommendation, type LocalRecommendation } from './recommendation-strategy'
 import { buildResultPresentation, type ResultPresentation } from './result-presentation'
-import { getPeerInsights, type PeerInsights } from './peer-insights'
+import { getPeerInsights, type PeerInsights } from './cases-v2-peer-insights'
 
 type RawAnswers = Record<number, string | string[]>
 type DpAnswers = Record<string, string>

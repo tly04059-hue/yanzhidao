@@ -1,0 +1,4487 @@
+{
+  "meta": {
+    "name": "党校脱敏内部版",
+    "direction": "party",
+    "privacy_version": "desensitized_internal",
+    "generated_at": "2026-06-04 15:07:37",
+    "record_count": 108,
+    "review_status": "pending_final_review",
+    "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+    "miniapp_connection": "connected_to_pages_cases_v2"
+  },
+  "records": [
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C115",
+      "display_order_source": 98,
+      "sort_tuple": [
+        0,
+        -1401,
+        98
+      ],
+      "richness_score": 1401,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C115",
+      "display_name": "李同学",
+      "age": "约 29 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "遴选",
+        "体制内认可",
+        "同事影响",
+        "乡镇基层"
+      ],
+      "fields": {
+        "key_quote": "所以如果你也在纠结要不要考研，或者不知道该选哪个辅导班，我真心建议你了解下研知道——他们最牛的不是资料有多全，而是真的懂我们这些“在职考生”的痛，能把复杂的备考过程拆成“踮踮脚就能完成”的小目标。就像村上春树说的：“一直走，天一定亮。”但走的时候，有个靠谱的领路人，天亮得会更快。希望正在备考的你，也能找到属于自己的“研知道”，少点焦虑，多点笃定，我们岸上见。",
+        "narrative_choose": "遴选到省直后，看到身边同事随口说出的专业术语、写材料时引用的学术观点，发现自己的知识储备早就跟不上了。在基层熬完服务期，遴选到省直后，看着身边同事随口说出的专业术语、写材料时引用的学术观点，才发现自己的知识储备早就跟不上了。",
+        "reflection": "如果没有精准的考点、贴心的督导、科学的计划，仅凭自己根本不可能在加班间隙里考上；考研不是硬熬，选对帮手才能少走弯路。",
+        "story_summary": "8 年工龄本科，成都，约 29 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "开车通勤听干货带背音频（把'十个明确'编成口诀红灯默念）；午休刷密训题库20道题错题收藏；早晚洗漱循环播放自录考点语音；手机屏保换成核心考点截图；晚上睡前用备忘录默写框架记关键词；周末用核心考点目录过一周内容；碎片化学习——通勤、午休、早晚洗漱、等红灯时间；周末整块时间过一周内容；每天有老师一起自习。",
+        "turning_point": "报了研知道，和老师沟通后明白体制内备考别指望完美计划，能把碎片时间用好就赢了；考前20天老师特意打电话沟通学习状态和进度制定适合的计划。在基层熬完服务期，遴选到省直后，看着身边同事随口说出的专业术语、写材料时引用的学术观点，才发现自己的知识储备早就跟不上了。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C100",
+      "display_order_source": 83,
+      "sort_tuple": [
+        0,
+        -1374,
+        83
+      ],
+      "richness_score": 1374,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C100",
+      "display_name": "王同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "坚持型",
+        "民族州",
+        "市直机关党员",
+        "考研多战"
+      ],
+      "fields": {
+        "key_quote": "作为体制内的小中层，面对工作多、压力大，家庭、学习、工作互相冲突，记忆力也迅速下降等诸多难题。从2016年开始考研，中间几度放弃，有一定的基础知识，但是更多是碎片化，杂乱不成体系的，学习也是靠死记硬背，答题更是磕磕巴巴、言不达意。",
+        "narrative_choose": "2024年差30分上岸，但因为《公共管理\"一页纸\"》让我这个迷失在知识海洋里的小菜鸟找到导航灯，2025年必须报班学习，一定上岸——4战党校考研生的逐梦与不服输。在2024年考试期间偶然刷到研知道杨老师的在线直播，拿到了《公共管理的“一页纸”》，靠着这薄薄的几页纸让我几乎没有复习的公共管理课程拿下101分的成绩，是三科里。",
+        "reflection": "3月底拿到研知道准备的全套专业资料，每天根据课程制定学习计划表，然后开始了每天晚上线上学习、课后练习，早上复盘、背诵前一天学习内容，中午再重做一遍课后习题的循环复习过程，当然中间短学30天左右。",
+        "story_summary": "9 年工龄本科，阿坝党政机关，约 37 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "考试前2天的1V1分析，杨老师给我讲答题思路、方法、技巧，课后也反复复盘梳理，再次拆分重点，在考前2天开始极限背诵；3月底拿到研知道准备的全套专业资料，每天根据课程制定学习计划表，然后开始了每天晚上线上学习、课后练习，早上复盘、背诵前一天学习内容，中午再重做一遍课后习题的循环。",
+        "turning_point": "6月30日朋友圈的“哈哈哈哈哈哈哈”，是4战党校考研生的胜利心情的真实写照。在2024年考试期间偶然刷到研知道杨老师的在线直播，拿到了《公共管理的“一页纸”》，靠着这薄薄的几页纸让我几乎没有复习的公共管理课程拿下101分的成绩，是三科里。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C104",
+      "display_order_source": 87,
+      "sort_tuple": [
+        0,
+        -1246,
+        87
+      ],
+      "richness_score": 1246,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C104",
+      "display_name": "吴同学",
+      "age": "约 34 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "晋升",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "抛开外界因素，只关注于自己。前面我也提到了我是一个心理作用很强大的人，所以每当心里烦闷或者不自信的时候，就喜欢去玩玩deepseek之类的灵魂软件。在考前我用软件预测过，显示这次考试通过不了。说实话那几天还是很受影响，觉得反正也考不过要不就不看了，但是又想着已经努力这么长时间了不能在临门一脚放弃，最终在自己的坚持下还是考出了超出分数线30分的成绩。",
+        "narrative_choose": "自己目前学历较低，下一步如果有晋升机会相对来说比较吃亏，所以心中就有了提升学历的想法。今年3月份党校突然发布了招生信息，招生的人数跟去年比也砍了一半，感觉时间太紧张了。",
+        "reflection": "时间太紧凑造成物极必反，5月下旬身体崩溃；过度相信deepseek预测差点放弃，应该相信自己。",
+        "story_summary": "8 年工龄本科，成都党政机关，约 34 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "先学干货带背框架再听视频课；基础课、密训课、干货带背反复观看；做模拟卷后返回内部讲义记忆考点；默写党建知识框架；碎片时间看资料图片、开车听课程语音；在职备考，早上七点起床看书；中午吃完饭看半个小时；下班回家吃完饭看到晚上十一点；碎片时间（排队、开车）也利用；最后一周请4天假在家系统复习。",
+        "turning_point": "班主任胡老师建议先学干货带背框架再看视频课，方法调整后专业课不再讨厌；考场门口偶遇杨老师，心理作用让信心回来。今年3月份党校突然发布了招生信息，招生的人数跟去年比也砍了一半，感觉时间太紧张了。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C109",
+      "display_order_source": 92,
+      "sort_tuple": [
+        0,
+        -1242,
+        92
+      ],
+      "richness_score": 1242,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C109",
+      "display_name": "金同学",
+      "age": "约 45 岁",
+      "region": "眉山",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "给孩子榜样",
+        "年龄焦虑",
+        "宝妈",
+        "40+ 转型",
+        "考研多战"
+      ],
+      "fields": {
+        "key_quote": "充分利用上下班的通勤时间，我是从5月份开始改为坐公交车上下班，利用等公交车和坐公交车的时间，背重要知识点，背核心要点，再自己组织语言扩展，反复地背，发现效率还蛮高的，专业课上考的“五个必须统筹”，就是自己利用这些时间背到的。",
+        "narrative_choose": "就算约 40 岁，也还有20年的职业生涯，出生在人口高峰期的我们，同龄人这么多，投资一个研究生学历，至少能用20年，这个身份挂在自己身上20年，就算是给孩子当榜样都值。2024年裸考差63分，走出考场看到宣传资料，发现宣传单上勾画的重点（如\"十个明确\"）与自己复习的重点差别太大，且与实际考题高度吻合，于是联系老师报班。",
+        "reflection": "持之以恒很重要；掌握学习方法比埋头苦学更关键；2024年差71.5分→2025年超线2.5分，折合总分提高50分。",
+        "story_summary": "5 年工龄本科，眉山，约 45 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "三三法则、干货带背、精细带背；分阶段设定目标；课后练习题+三套模拟试卷（第三套背着写、掐时间写）；核心要点反复背+自己组织语言扩展；记忆+手写结合；坚持每次直播课在线；5月份起改坐公交车上下班，利用等车和坐车的通勤碎片时间背重要知识点、背核心要点。",
+        "turning_point": "2024年考完走出考场领到宣传资料，发现\"十个明确\"等重点与自己复习方向差别太大，联系老师报班。2024年裸考差63分，走出考场看到宣传资料，发现宣传单上勾画的重点（如\"十个明确\"）与自己复习的重点差别太大，且与实际考题高度吻合，于是联系老师报班。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C114",
+      "display_order_source": 97,
+      "sort_tuple": [
+        0,
+        -1220,
+        97
+      ],
+      "richness_score": 1220,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C114",
+      "display_name": "杨同学",
+      "age": "约 41 岁",
+      "region": "绵阳",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "晋升",
+        "给孩子榜样",
+        "宝妈",
+        "市直机关党员",
+        "医护",
+        "40+ 转型",
+        "考研多战"
+      ],
+      "fields": {
+        "key_quote": "虽然自己早有准备，但激动的、喜悦的泪水就像溃堤的洪水在大街上宣泄出来，爱人像哄小孩子一样哄着我，不哭，不哭……学习不仅仅只是努力就能取得好成绩的，还应该有最好的学习方法。学习本身就是一个循序渐进的过程，只有当我们自己去拼命的学习+最好的学习方法，才能把自己最大的潜力激发出来、展示出来。",
+        "narrative_choose": "给家里孩子起个努力打样的榜样；自己内心真心渴望学习，走上管理岗后急迫体会到综合能力不够用，希望进党校学习党优秀的理论和实践经验。参加第一批援彝后入党，体会到党的伟大；走上管理岗后发现专业知识不够用，需要认识事物本质、辩证应对矛盾等综合能力。",
+        "reflection": "学习不仅仅是努力就能取得好成绩，还应该有最好的学习方法；曾经认为杨老师讲的'无用东西'其实大有用，自习时才发现来不及补救。",
+        "story_summary": "18 年工龄本科，绵阳，约 41 岁，选四川党校 · 经济学，已上岸。",
+        "study_method": "研知道33法则、建场景、知识框架记忆、核心考点反复背诵、每天视频会议室相互监督自习、考前知识点拉通；白天工作，工作时间以外推掉一切应酬聚会，晚上看书看到半夜；每天视频会议室相互监督自习。",
+        "turning_point": "考前姚老师电话鼓励并教会用矛盾特殊性普遍性阐述中国式现代化；考前1晚和当天中午杨老师把基础课+专业重要知识点30分钟拉通透，醍醐灌顶。参加第一批援彝后入党，体会到党的伟大；走上管理岗后发现专业知识不够用，需要认识事物本质、辩证应对矛盾等综合能力。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C103",
+      "display_order_source": 86,
+      "sort_tuple": [
+        0,
+        -1208,
+        86
+      ],
+      "richness_score": 1208,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C103",
+      "display_name": "陈同学",
+      "age": "约 31 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响"
+      ],
+      "fields": {
+        "key_quote": "坦白说，在决定备考党校研究生之前，我对现状颇为满足，甚至主观地认为这些年读书吃的“苦”已经足够，学历提升与否无关紧要。作为一名工科生，我自信能胜任领导讲话、政策文件、调研课题等工作。因此，参加工作后，我对提升学历一直持回避态度，近乎“躺平”。然而，目睹身边朋友陆续考上研究生。",
+        "narrative_choose": "目睹身边朋友陆续考上研究生，加上领导时常对我提升学历的关心与勉励，开始认真思考自己是否也该迈出这一步。身边朋友陆续考上研究生 + 领导时常对提升学历的关心与勉励 + 与家人朋友深入交流后获得一致支持。",
+        "reflection": "适合自己的才是最好的；自学如同独自在黑暗山洞中摸索前行，凭意志力硬撑会偏离正确航向；收获的不仅是一纸录取通知，更是风雨来袭时不再颤抖的勇气。",
+        "story_summary": "约 31 岁，成都，选四川党校 · 经济学，已上岸。",
+        "study_method": "官方指定五本教材自学 → 研知道核心考点手册（五星等级标注重点）+ 密训课夯实基础 + 带背课构建知识框架 + 三轮模考定时模拟+复盘错题；工作通勤车载蓝牙循环带背音频；午休翻阅核心考点手册；下班后雷打不动2-3小时跟课程背重点整笔记；周末系统复习对着电脑梳理框架。",
+        "turning_point": "偶然浏览淘宝看到\"研知道\"几个字，距考试仅剩两个月时咬牙选择冲刺班；第一次模考后杨老师托吴伟老师转告\"让他好好整，说不定能考上\"。身边朋友陆续考上研究生 + 领导时常对提升学历的关心与勉励 + 与家人朋友深入交流后获得一致支持。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C117",
+      "display_order_source": 100,
+      "sort_tuple": [
+        0,
+        -1126,
+        100
+      ],
+      "richness_score": 1126,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C117",
+      "display_name": "扎同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学费低",
+        "同事影响",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "大学毕业那年，我曾对着考研报名页面犹豫了很久。那时家里经济条件不宽裕，想着早点工作分担压力，便把读研的念头压在了心底。可这份遗憾像颗种子，在机关工作的几年里慢慢发了芽——看着身边同事讨论专业理论时的笃定，面对复杂公文写作时偶尔的力不从心，我越来越清晰地意识到：是时候去圆那个学历梦了。",
+        "narrative_choose": "想通过党校研究生课程提升思想意识和业务能力，圆学历梦，给曾经因经济原因放弃读研的自己一个交代。在机关工作几年后，看着同事讨论专业理论时的笃定，面对复杂公文写作时偶尔的力不从心，意识到该去圆学历梦了。",
+        "reflection": "备考经历比录取通知书更珍贵，学会了在忙碌中保持自律、在压力下找到平衡，明白遗憾从来都不晚去弥补。",
+        "story_summary": "4 年工龄本科，甘孜党政机关，约 28 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "研知道核心考点手册（盯高星考点）、密训题库答题框架刻意套用、三套预测卷一题一题抠思路、网课、手机备忘录记知识点；早上提前一小时到办公室啃书、工作间隙刷题记备忘录、下班后留一小时整理笔记、周末空办公室学三小时、下午强制休息。",
+        "turning_point": "2024年裸考摸底后下定再战决心；听网课后明白要盯高星考点，不再从头看到尾走弯路。在机关工作几年后，看着同事讨论专业理论时的笃定，面对复杂公文写作时偶尔的力不从心，意识到该去圆学历梦了。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C107",
+      "display_order_source": 90,
+      "sort_tuple": [
+        0,
+        -1106,
+        90
+      ],
+      "richness_score": 1106,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C107",
+      "display_name": "张同学",
+      "age": "约 32 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "坚持型"
+      ],
+      "fields": {
+        "key_quote": "到达考场当天，发现几乎每一个人都在努力地背诵，做最后的冲刺，而我只带了考试用品，可能这就是研知道给我的从容，就像杨老师说：“超纲的题，你不会大家也不会，所以不必担心，把会做的题做好，相信自己，你比想象中更强大”。当成绩出来的时候，高出分数线40余分。",
+        "narrative_choose": "既然选择了考研，哪怕再难我也会坚持下去。”，有的是自学有的是找机构，我清楚自己什么水平，让我自己买书看，确实坚持不了，内容太多、也没有重点勾画、更没有老师讲解，再加上自己有惰性，需要老师的监督，很庆幸。",
+        "reflection": "回头再看那些熬过的夜，早起背书的日子，发现一切的坚持都有了意义。",
+        "story_summary": "9 年工龄本科，成都，约 32 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "把需要背的内容通过录音方式录下来，上下班途中反复听；反复听网课；重庆模拟试卷每套做3遍结合秘训题库查缺补漏；从系统学到框架图到核心考点背诵再到密训题库；每天至少抽出4小时学习，周末及节假日至少7小时；利用上下班通勤途中反复听录音。",
+        "turning_point": "重庆成绩出来高出近50分，仿佛在告诉我四川你就大胆的考，没有想象中的难；主动与胡老师表达焦虑后重新全身心投入。”，有的是自学有的是找机构，我清楚自己什么水平，让我自己买书看，确实坚持不了，内容太多、也没有重点勾画、更没有老师讲解，再加上自己有惰性，需要老师的监督，很庆幸。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C105",
+      "display_order_source": 88,
+      "sort_tuple": [
+        0,
+        -1096,
+        88
+      ],
+      "richness_score": 1096,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C105",
+      "display_name": "冉同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "给孩子榜样",
+        "坚持型",
+        "宝妈",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "我是一名两娃80后宝妈，常年在民族地区工作，经常疲于奔波于家庭和工作之间。但家庭和工作不是让自己停下努力的理由，我笃信活到老学到老。2024年我第一次参加省委党校研究生考试，最终以失败告终。我深感迷茫却倔强的不愿意放弃，我想通过努力证明自己，同时也给参加中考的孩子做一个榜样，和他一起成为学习搭子。",
+        "narrative_choose": "想通过努力证明自己，同时也给参加中考的孩子做一个榜样，和他一起成为学习搭子。2024年第一次参加省委党校研究生考试失败后，深感迷茫却倔强的不愿意放弃。",
+        "reflection": "当初建立的学习小细节和习惯，在后期学习疲软和最后冲刺时刻起到很大的惯性作用和心理提醒；考试成绩的每一分都不是白来的。",
+        "story_summary": "17 年工龄本科，阿坝党政机关，约 38 岁，选四川党校 · 经济学，已上岸。",
+        "study_method": "严格按照33法备考；定提醒学习闹铃建立生物钟；问题记录后集中咨询；按学法六步踏实学；知识框架图背诵；考前默记概念；主要集中在下班后，每天1-1.5h起步到2h；利用加班、上班途中等碎片时间巩固；布置每天上课的小天地。",
+        "turning_point": "班主任胡老师在茫然期耐心指导后第二周完全适应学习节奏；考前请3天假猛攻专业课。2024年第一次参加省委党校研究生考试失败后，深感迷茫却倔强的不愿意放弃。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C124",
+      "display_order_source": 107,
+      "sort_tuple": [
+        0,
+        -1096,
+        107
+      ],
+      "richness_score": 1096,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C124",
+      "display_name": "赵同学",
+      "age": "约 32 岁",
+      "region": "达州",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学渣翻身",
+        "乡镇基层",
+        "0 基础上岸"
+      ],
+      "fields": {
+        "key_quote": "我是学渣，在学习方面渣到不能再渣，一句话概括就是校园时期对学习从来都是不主动、不拒绝、不负责。从接触研知道到考试，前后65天成功上岸，破天荒的一次我把自己感动了，这辈子居然还敢考研。",
+        "narrative_choose": "我是学渣，在学习方面渣到不能再渣，一句话概括就是校园时期对学习从来都是不主动、不拒绝、不负责。依稀还记得研知道有一个大群好像是有300人左右（我已经退群了），应该是出成绩当天，群里面有一个老师在说考试前夕小胡老师做了手术还在挨个给学员打电话加油鼓劲，看到。",
+        "reflection": "师傅领进门修行在个人，研知道老师即使牛到爆，每个人也要有自己的一套学习规划才行；前期把背密训押题方向搞错了。",
+        "story_summary": "8 年工龄本科，达州，约 32 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "基础课回放第一天晚上1.25倍听一遍，第二天早上1.5倍再听一遍加深印象；把密训课和杨老师押题重点偷工减料抄在笔记本上死记硬背；工作日基本每天保证4个小时学习，真正高效时间3个小时，集中在每天晚上夜深人静的时候；周末利用完整时间死记硬背。",
+        "turning_point": "5月下旬成效不明显想放弃时，胡老师及时闪现耐心疏导、细心讲方法，重拾信心再出发。依稀还记得研知道有一个大群好像是有300人左右（我已经退群了），应该是出成绩当天，群里面有一个老师在说考试前夕小胡老师做了手术还在挨个给学员打电话加油鼓劲，看到。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C116",
+      "display_order_source": 99,
+      "sort_tuple": [
+        0,
+        -1066,
+        99
+      ],
+      "richness_score": 1066,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C116",
+      "display_name": "何同学",
+      "age": "约 35 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响",
+        "年龄焦虑",
+        "自我提升",
+        "宝妈",
+        "国央企",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "约 36 岁，约 6 岁男孩妈妈，备考四川党校研究生一战上岸。决定考研是因为想在这个年纪给自己重新确定一个目标和期待，某书某音上搜30+备考，出来的大多都是大龄考研，然而在我心里，年龄不过是一个数字，而不是想要去做任何事的障碍。",
+        "narrative_choose": "想在约 36 岁这个年纪给自己重新确定一个目标和期待，年龄不过是一个数字，而不是想要去做任何事的障碍。看到之前学姐的上岸经验帖，第一次了解到“研知道”。",
+        "reflection": "越早准备越好（重要的事情说三遍）；选对辅导机构可以少走很多弯路；师傅领进门修行在个人，真正让你成功上岸的一定是脚踏实地的努力和日复一日的坚持。",
+        "story_summary": "12 年工龄本科，成都，约 35 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "多刷网课倍速回看+上下班听音频；笔记整理用不同颜色标记重难点；密训题库电脑转音频反复听；一听二写前几遍抄写后几遍默写；二级标题构建知识框架；第一阶段每天1小时；第二阶段每天3小时（上下班听音频1h+晚上19-21点学习2h+周末带娃间隙）；不早起不晚睡不打疲劳战。",
+        "turning_point": "听政治学课像听天书后果断从政治学转为经济学；临考前一周和杨老师1V1辅导被那句'你就是我们的骄傲'从内耗中拉出来。看到之前学姐的上岸经验帖，第一次了解到“研知道”。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C121",
+      "display_order_source": 104,
+      "sort_tuple": [
+        0,
+        -1038,
+        104
+      ],
+      "richness_score": 1038,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C121",
+      "display_name": "高同学",
+      "age": "约 30 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "体制内认可",
+        "纪检公检法",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "一定要稳住心态。不管你学习进班是早还是晚，只要认真按照步骤完成了学习，问题就不大，一定要相信自己。一旦发现有什么学习困难或者心态问题，第一时间跟班主任沟通，真的很重要，避免走弯路！",
+        "narrative_choose": "原本报考公共管理但公管不再招考，本身干纪检监察工作与法学专业对口、组织部和单位认可党校学历，转考法学方向是职业刚需+学历兜底。2024年报考公共管理专业未过；2025年公共管理专业不再招考，结合本身干纪检监察工作，改报法学专业。",
+        "reflection": "党校法学考试没有捷径，唯有脚踏实地的积累；三件硬功夫——深耕教材打地基、巧用讲义织网络、精研题册磨利刃。",
+        "story_summary": "7 年工龄本科，成都，约 30 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "教材逐页翻看勾画两遍+红笔标注问号；研知道外部讲义跟视频快速过一遍串线建链；内外部讲义反复翻、以理解为主；密训题库精做+精看解析；模拟题试卷打印参考答案直接背诵；在职备考，每天雷打不动腾出2小时专注研读教材核心章节；每周末作为模拟战场做题。",
+        "turning_point": "2024年考场门口收到研知道传单、发现传单知识点正好是当天试卷题目；2025年改报法学后毫不犹豫报名研知道。2024年报考公共管理专业未过；2025年公共管理专业不再招考，结合本身干纪检监察工作，改报法学专业。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C112",
+      "display_order_source": 95,
+      "sort_tuple": [
+        0,
+        -916,
+        95
+      ],
+      "richness_score": 916,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C112",
+      "display_name": "何同学",
+      "age": "约 44 岁",
+      "region": "未知",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "不考英数",
+        "给孩子榜样",
+        "学渣翻身",
+        "宝妈",
+        "乡镇基层",
+        "40+ 转型",
+        "0 基础上岸"
+      ],
+      "fields": {
+        "key_quote": "最大的感触是：年龄从不是“不行”的理由，而是“更该试试”的底气；方法比蛮干重要一万倍；更意外的是，这段经历让我重新理解了“榜样”的意义。当初想给孩子做榜样，最后却发现，父母的“折腾”，本身就是最好的言传身教。",
+        "narrative_choose": "打心底喜好心理学，去年10月临时决定考研；后来想给孩子做个榜样，便决心报考不考英语的党校。想给孩子做个榜样，认为父母的折腾本身就是最好的言传身教。",
+        "reflection": "方向不对努力白费；基础不牢地动山摇；年龄不是不行的理由而是更该试试的底气；方法比蛮干重要一万倍。",
+        "story_summary": "不详，未知，约 44 岁，选四川党校 · 不详，已上岸。",
+        "study_method": "读外部讲义（三色笔记）、学带背视频、背核心考点手册、做密训题库、知识框架图、研知道33法、重复重复再重复；早上6点起床半小时读讲义，中午1小时学带背视频，晚上下班后继续学习，每天4.5-5小时见缝插针。",
+        "turning_point": "5月13日报名研知道冲刺班；6月3日政治学模考一88分把我从放弃边缘拉回来；考前必背一页纸+杨老师直播豁然开朗。想给孩子做个榜样，认为父母的折腾本身就是最好的言传身教。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C111",
+      "display_order_source": 94,
+      "sort_tuple": [
+        0,
+        -904,
+        94
+      ],
+      "richness_score": 904,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C111",
+      "display_name": "旷同学",
+      "age": "约 30 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "圆梦",
+        "同事影响",
+        "宝妈"
+      ],
+      "fields": {
+        "key_quote": "支撑我的，从来不是毅力，是软肋。累到想放弃时，就让闺女对着监控说“妈妈加油”；忍不住想刷手机时，打开监控看着娃的睡姿，就是我继续的动力。有一句话很适合于我：“不是因为有希望才坚持，是坚持了才有希望。”",
+        "narrative_choose": "身边内卷的工作、异地的家人，心里有个必须考上的执念。看着身边内卷的工作、异地的家人，在距离考试只剩不到2个月时，临时决定再试一次。",
+        "reflection": "专业课只用半个月准备，虽因加分过线但成绩不理想，复盘发现对知识点熟悉度和延伸理解不够，是血的教训；运气是实力的一部分。",
+        "story_summary": "7 年工龄本科，成都，约 30 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "先听课按老师要求时间听完政治理论课再梳理；专业课回放听，听不懂先听知识框架再重复；一遍遍抄写3遍不行就5遍；刷小鹅通选择题；每天忙完工作在办公室学到近12点才回去；周末兼顾家庭，周中每分每秒抓牢；通勤碎片化时间刷选择题。",
+        "turning_point": "距离考试只剩不到2个月时临时决定再试一次。看着身边内卷的工作、异地的家人，在距离考试只剩不到2个月时，临时决定再试一次。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C113",
+      "display_order_source": 96,
+      "sort_tuple": [
+        0,
+        -867,
+        96
+      ],
+      "richness_score": 867,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C113",
+      "display_name": "道同学",
+      "age": "约 34 岁",
+      "region": "眉山",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 不详",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "不考英数",
+        "考研多战"
+      ],
+      "fields": {
+        "key_quote": "有人问过我，为何要一直坚持报考？其实，我自己也问过自己。归纳起来，主要是丰富理论、新增学友、弥补坚守。但报考八年，是心酸的！年龄大，记忆差；工作重，精力少；玩心大，不集中。除此之外，年年不上岸的成绩单、报考费、食住行……等等，还有周而复始每到三月的填报程序、五月的备考焦虑，都给人无尽的苦恼，这是不愿回首的。",
+        "narrative_choose": "丰富理论、新增学友、弥补坚守。2018年四川省委党校在职研究生不再把英语作为考试科目。",
+        "reflection": "八年磨砺终成硕果，回顾备途之酸、考途之慌、旅途之茫三个体会。",
+        "story_summary": "不详，眉山，选四川党校 · 不详，已上岸。",
+        "study_method": "用1.5-2倍速视频把重点课程过一遍；《精编核心考点手册》重点学、学重点；倒置答题顺序（论述题先做）；临时抱佛脚型，1.5-2倍速视频过重点课程。",
+        "turning_point": "距考试还有15天的6月6日，考场外拿了'研知道'宣传单并报班。2018年四川省委党校在职研究生不再把英语作为考试科目。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C102",
+      "display_order_source": 85,
+      "sort_tuple": [
+        0,
+        -850,
+        85
+      ],
+      "richness_score": 850,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C102",
+      "display_name": "吴同学",
+      "age": "约 28 岁",
+      "region": "绵阳",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "自我提升"
+      ],
+      "fields": {
+        "key_quote": "至于很多人在乎的党校在职研究生的含金量究竟多少，我真没想这么多，我只想证明自己某一个阶段我可以，也是为后面在人生路上严格落实每一阶段提供信心。总之，是研知道让我梦想成真、也是研知道让我这个曾经不爱读书的网瘾少年能够在自己所在的城市以政治学第一名的成绩成功上岸，哪怕我的专业课未及格，总分不是很高，但这种感觉实在是太好了！！",
+        "narrative_choose": "长远看让自己走得更高更远；近处看想证明自己、弥补学历上的不足。",
+        "reflection": "知道了学习以及学习习惯的重要性；想证明某一阶段我可以，为后面人生路上严格落实每一阶段提供信心。",
+        "story_summary": "1 年工龄本科，绵阳，约 28 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "公共课阶段按研知道的学习计划严格落实；在职备考。",
+        "turning_point": "2025年2月20日入班；从朋友推荐知道研知道，到姚老师耐心解答选择研知道，再到胡老师悉心指导信任研知道。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C106",
+      "display_order_source": 89,
+      "sort_tuple": [
+        0,
+        -850,
+        89
+      ],
+      "richness_score": 850,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C106",
+      "display_name": "李同学",
+      "age": "约 26 岁",
+      "region": "广元",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "坚持型",
+        "宝妈"
+      ],
+      "fields": {
+        "key_quote": "白天在单位忙于工作，处理各种事务无法抽身；晚上回到家后，又成了“全能妈妈”，直到哄孩子入睡，通常已经接近十点，才有了属于自己的学习时间。坐在书桌前，常常熬夜到深夜，面对那些陌生的经济学概念，我多次想要放弃。",
+        "narrative_choose": "圆了读研的梦。现在看到成绩的那一刻，才真切体会到：在职备考从来不是孤军奋战，研知道的老师们就像灯塔，不光照亮了书本上的知识点，更给了我坚持下去的底气。",
+        "reflection": "在职备考从来不是孤军奋战，把知识点理解透了再背诵会意外顺畅。",
+        "story_summary": "4 年工龄本科，广元，约 26 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "跟着老师把知识点理解透，最后小半个月集中背诵；使用胡老师整理的习思想口诀和马政经重点题；晚上哄孩子入睡后接近十点开始学习，常常熬夜到深夜。",
+        "turning_point": "遇上研知道的老师们，把拗口理论变成身边例子一下就懂。现在看到成绩的那一刻，才真切体会到：在职备考从来不是孤军奋战，研知道的老师们就像灯塔，不光照亮了书本上的知识点，更给了我坚持下去的底气。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C108",
+      "display_order_source": 91,
+      "sort_tuple": [
+        0,
+        -808,
+        91
+      ],
+      "richness_score": 808,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C108",
+      "display_name": "丹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "坚持型",
+        "学渣翻身",
+        "民族州",
+        "考研多战",
+        "0 基础上岸"
+      ],
+      "fields": {
+        "key_quote": "我是来自甘孜州的一名少数民族考生，学生时代成绩平平，但始终秉持着不服输的劲儿一路前行。2018年，我从大专工程测量专业毕业，随后凭借着对知识的渴望与坚定的信念，零基础踏上自考法学本科的征程，并于2022年顺利毕业。2025年，我成功考取四川省委党校在职研究生，回顾这段备考经历，满是汗水与感动交织的回忆。",
+        "narrative_choose": "我是来自甘孜州的一名少数民族考生，学生时代成绩平平，但始终秉持着不服输的劲儿一路前行。3月底党校公布报名信息才加入研知道。",
+        "reflection": "节奏把握的很好，一战上岸。",
+        "story_summary": "3 年工龄本科，甘孜党政机关，约 30 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "跟着研知道的节奏照做，学习打卡，反复看课，参与云自习；参与云自习。",
+        "turning_point": "甘孜州的少数民族考生，从3月底党校公布报名信息才加入研知道。3月底党校公布报名信息才加入研知道。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C101",
+      "display_order_source": 84,
+      "sort_tuple": [
+        0,
+        -754,
+        84
+      ],
+      "richness_score": 754,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C101",
+      "display_name": "李同学",
+      "age": "约 45 岁",
+      "region": "达州",
+      "system": "国央企",
+      "position": "国企",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响",
+        "国央企"
+      ],
+      "fields": {
+        "key_quote": "明确的目标、科学的计划、坚持不懈的努力以及良好的心态，是取得理想成绩的关键",
+        "narrative_choose": "为了提升一下自己，很多同事都在考，去年裸考分数很低，今年报考政治学专业。去年参加考试时收到研知道宣传资料，考后发现传单内容出现在考题中。",
+        "reflection": "公共课得分低因考试时间分配不当，简答题追求卷面完美耗时多导致论述题时间紧；专业课对整体知识体系梳理时间太仓促。",
+        "story_summary": "7 年工龄本科，达州国央企，约 45 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "外部讲义+内部讲义结合，依据干货代背梳理框架，课前预习+听直播课+重难点回放+课后习题+错题标记+小手稿+密训题库+全真模拟；集中在家学习，办公室利用上班前和午后间歇默记知识点；五一端午小长假和周末严格执行班课安排，每天约6小时。",
+        "turning_point": "4月20日选定研知道报名入班；班主任胡老师电话沟通制定学习计划；最后十天拿出手稿和考点秘籍重点突破。去年参加考试时收到研知道宣传资料，考后发现传单内容出现在考题中。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C110",
+      "display_order_source": 93,
+      "sort_tuple": [
+        0,
+        -722,
+        93
+      ],
+      "richness_score": 722,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C110",
+      "display_name": "白同学",
+      "age": "约 28 岁",
+      "region": "广安",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学历兜底",
+        "自我提升",
+        "宝妈",
+        "考研多战"
+      ],
+      "fields": {
+        "key_quote": "其实备考过程，最难的是工作和学习难以平衡，工作忙的时候根本没有时间看书学习，还会有加班出差的情况。",
+        "narrative_choose": "想有所进步，再读一次书，至少证明自己这么多年没有原地踏步。2024年第一次考试失败差20多分，看到研知道传单预测的重难点与实际考试方向高度重合。",
+        "reflection": "单靠自己学难度很大，必须有归纳后的核心考点资料才能不盲目背全文抓不住重点。",
+        "story_summary": "5 年工龄本科，广安，约 28 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "研知道核心考点一本书+早中晚强化背诵+一边写一边背+碎片化时间背书刷题+考前1对1分析；出差利用碎片化时间背书刷题，最后两个月5-6月集中冲刺，最后一周早中晚不停背专业课。",
+        "turning_point": "2024年考完看到研知道传单+同去考试朋友报研知道考上后毅然决定报班；最后两个月5-6月集中冲刺。2024年第一次考试失败差20多分，看到研知道传单预测的重难点与实际考试方向高度重合。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C122",
+      "display_order_source": 105,
+      "sort_tuple": [
+        0,
+        -680,
+        105
+      ],
+      "richness_score": 680,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C122",
+      "display_name": "刘同学",
+      "age": "约 32 岁",
+      "region": "未知",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "考研多战",
+        "0 基础上岸"
+      ],
+      "fields": {
+        "key_quote": "当感觉大脑要爆炸的时候一定是我们的神经元脑细胞在加快链接帮助记忆",
+        "narrative_choose": "应朋友之邀参加省委党校研究生考试，朋友三战未上岸给出建议，本人本科非政治学但工作十多年里一直疯狂跨专业靠各种证书。今年五月朋友提到省委党校研究生又要发布招考公告，约一起参加考试。",
+        "reflection": "所有的付出与努力在拿到录取通知书的那一刻已经成为过去，我们终会往前走，不妨大胆一点。",
+        "story_summary": "不详，未知，选四川党校 · 不详，已上岸。",
+        "study_method": "先通读外部讲义了解学科框架→视频课程2倍速+熬通宵2天听完32小时→重点背核心考点和预测模拟卷；倒数第二周通读讲义+最后一周2天熬通宵2倍速听完视频+考试当天早上及中午都在背预测卷。",
+        "turning_point": "6月初猛然想起花2000多块报了冲刺班、距考试不到两周开始抓紧；姚老师强调一定要看预测模拟卷。今年五月朋友提到省委党校研究生又要发布招考公告，约一起参加考试。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C126",
+      "display_order_source": 109,
+      "sort_tuple": [
+        0,
+        -618,
+        109
+      ],
+      "richness_score": 618,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C126",
+      "display_name": "唐同学",
+      "age": "约 28 岁",
+      "region": "未知",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "同事影响"
+      ],
+      "fields": {
+        "key_quote": "工作后真的很少体会到那种有人一直在背后推你前进，希望你前进的人",
+        "narrative_choose": "看着身边很多朋友立的flag中都有考研时，我自己真的很焦虑，这种焦虑感触发我重启的计划。24年身边很多朋友立的flag中都有考研，自己感到焦虑。",
+        "reflection": "上岸只是一个新开始；只要方法找对了，结果都不会太差；唯有努力是不会辜负人的。",
+        "story_summary": "8 年工龄本科，未知，约 28 岁，选四川党校 · 经济学，已上岸。",
+        "study_method": "33法；认真参与直播上课+课后回顾和预习+反复刷视频+把视频1.5倍听放+最后划重点刷真题；每天都有规划和安排，参与直播上课+课后回顾预习+反复刷视频（1.5倍速）+刷真题。",
+        "turning_point": "24年9月加入研知道；与谢老师首次通话打消对学习的畏惧。24年身边很多朋友立的flag中都有考研，自己感到焦虑。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C120",
+      "display_order_source": 103,
+      "sort_tuple": [
+        0,
+        -556,
+        103
+      ],
+      "richness_score": 556,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C120",
+      "display_name": "清同学",
+      "age": "约 35 岁",
+      "region": "未知",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 不详",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学费低",
+        "宝妈"
+      ],
+      "fields": {
+        "key_quote": "党校在职研究生考试并不难，难在利用时间，难在开始",
+        "narrative_choose": "厌倦毫无准备的备考，决心准备充分、出击必胜，选择自己感兴趣的政治学专业。2023年报考经济学差二十分遗憾落榜，2024年因身体原因缺考，第三次报考决心必胜。",
+        "reflection": "党校在职研究生考试并不难，难在利用时间，难在开始。",
+        "story_summary": "不详，未知，选四川党校 · 不详，已上岸。",
+        "study_method": "四步法：浏览参考书→打印研知道资料勾画背诵+整理知识框架→粗做历年真题统计重点→按时间细做真题整理错题+回忆框架；产假宝妈零碎时段+家人替换带娃；用上下班通勤、午休、孩子睡前等碎片时段；周末家人接手带娃换整块学习时间。",
+        "turning_point": "5月初某书上看到研知道学员分享，关注公众号后发现轻松学政治理论资料含金量高，决定跟学。2023年报考经济学差二十分遗憾落榜，2024年因身体原因缺考，第三次报考决心必胜。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C118",
+      "display_order_source": 101,
+      "sort_tuple": [
+        0,
+        -495,
+        101
+      ],
+      "richness_score": 495,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C118",
+      "display_name": "彭同学",
+      "age": "约 35 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "宝妈",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "要有足够的决心。既然决定要考，就要有一次就考上的决心和准备，不要给自己留后路，这样在备考中你才会更专注、更投入！我是关掉了微信朋友圈、卸载了抖音、微博等APP，只留了小红书用于打卡，拒绝了饭局社交。",
+        "narrative_choose": "要有足够的决心。",
+        "reflection": "入班要尽早、要有足够的决心、建立学习场景、先掌握框架建体系、找人带路避免走弯路。",
+        "story_summary": "12 年工龄本科，成都，约 35 岁，选四川党校 · 政治学，已上岸。",
+        "study_method": "先掌握框架建体系；建立学习场景。",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C125",
+      "display_order_source": 108,
+      "sort_tuple": [
+        0,
+        -488,
+        108
+      ],
+      "richness_score": 488,
+      "quality": "rich",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C125",
+      "display_name": "左同学",
+      "age": "约 37 岁",
+      "region": "未知",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿",
+        "学费低",
+        "考研多战"
+      ],
+      "fields": {
+        "key_quote": "追风赶月莫停留，平芜尽处是春山",
+        "narrative_choose": "去年一战经济学因后期躺平摆烂只考310多分，离录取线319.5分差2分，进考场拿到研知道传单上'十个明确'论述题考到却没背，损失30来分，从此认识研知道。",
+        "reflection": "要是当时十个明确看了就上了；一定要看书。",
+        "story_summary": "不详，未知，选四川党校 · 经济学，已上岸。",
+        "study_method": "买499考点资料包；只看核心考点五星四星内容；背考前一页纸部分内容；听姚老师杨老师考前直播；扫传单二维码背名词解释论述题；抓住零碎时间看书；考前听直播；回酒店吃完饭听直播。",
+        "turning_point": "一战考完扫传单二维码听考前直播专业科目名词解释论述题都考到；二战看考场遇见杨老师拿到传单；听杨老师直播感觉醍醐灌顶思路框架一下就有了。去年一战经济学因后期躺平摆烂只考310多分，离录取线319.5分差2分，进考场拿到研知道传单上'十个明确'论述题考到却没背，损失30来分，从此认识研知道。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C119",
+      "display_order_source": 102,
+      "sort_tuple": [
+        0,
+        -180,
+        102
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "none",
+      "ai_filled_fields": [],
+      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C119",
+      "display_name": "刘同学",
+      "age": "约 26 岁",
+      "region": "未知",
+      "system": "其他",
+      "position": "",
+      "chosen_target": "四川党校 · 公管",
+      "outcome": "上岸",
+      "tags": [
+        "25 届投稿"
+      ],
+      "fields": {
+        "key_quote": "备考不是拼时间，而是拼效率，少走很多弯路",
+        "narrative_choose": "",
+        "reflection": "备考不是拼时间，而是拼效率，少走很多弯路。",
+        "story_summary": "6 年工龄本科，未知，约 26 岁，选四川党校 · 公管，已上岸。",
+        "study_method": "研知道33法、化整为零的学习方法。",
+        "turning_point": "转变思维，意识到备考不是拼时间而是拼效率。"
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C004",
+      "display_order_source": 4,
+      "sort_tuple": [
+        1,
+        -274,
+        4
+      ],
+      "richness_score": 274,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C004",
+      "display_name": "丹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "党校政治学",
+        "二战"
+      ],
+      "fields": {
+        "key_quote": "甘孜州的少数民族考生，从 3 月底党校公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。",
+        "narrative_choose": "甘孜州的少数民族考生，从 3 月底党校公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。",
+        "reflection": "经历过一次失利后，才知道不能只靠蛮劲，方向和方法都要重新调整。",
+        "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C013",
+      "display_order_source": 12,
+      "sort_tuple": [
+        1,
+        -253,
+        12
+      ],
+      "richness_score": 253,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C013",
+      "display_name": "杨同学",
+      "age": "约 42 岁",
+      "region": "绵阳",
+      "system": "医疗系统",
+      "position": "医院",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "医疗系统",
+        "党校政治学",
+        "二战",
+        "宝妈"
+      ],
+      "fields": {
+        "key_quote": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。",
+        "narrative_choose": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。",
+        "reflection": "这段备考让我知道，妈妈不是不能学习，只是要比别人更会挤时间。知道问题在哪里，下一次就能更早调整方法。",
+        "story_summary": "约 42 岁，绵阳，医疗系统，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C025",
+      "display_order_source": 24,
+      "sort_tuple": [
+        1,
+        -246,
+        24
+      ],
+      "richness_score": 246,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C025",
+      "display_name": "李同学",
+      "age": "约 35 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "在职党校"
+      ],
+      "fields": {
+        "key_quote": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。",
+        "narrative_choose": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。",
+        "reflection": "真正坚持下来才发现，妈妈的时间都是挤出来的，但每晚多学一点都算数。先把基础补起来，再上考场心里就不会那么虚。",
+        "story_summary": "约 35 岁，成都，，本科，选择四川党校，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C024",
+      "display_order_source": 23,
+      "sort_tuple": [
+        1,
+        -245,
+        23
+      ],
+      "richness_score": 245,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C024",
+      "display_name": "金同学",
+      "age": "45+ 岁",
+      "region": "南充",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "45+",
+        "二战",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。",
+        "narrative_choose": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。",
+        "reflection": "再考一次压力不小，但把上次的坑避开后，心里反而更有底了。",
+        "story_summary": "45+ 岁，南充，，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C001",
+      "display_order_source": 1,
+      "sort_tuple": [
+        1,
+        -204,
+        1
+      ],
+      "richness_score": 204,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C001",
+      "display_name": "邹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "党校政治学",
+        "专业班"
+      ],
+      "fields": {
+        "key_quote": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。",
+        "narrative_choose": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。",
+        "reflection": "这次被拖延影响了状态，但也提醒自己，持续投入比临时冲刺更重要。",
+        "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C022",
+      "display_order_source": 21,
+      "sort_tuple": [
+        1,
+        -203,
+        21
+      ],
+      "richness_score": 203,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C022",
+      "display_name": "何同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "国央企",
+      "position": "国企",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "国央企",
+        "一战上岸"
+      ],
+      "fields": {
+        "key_quote": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。",
+        "narrative_choose": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。",
+        "reflection": "白天顾工作，晚上顾孩子，能坚持下来，靠的就是不把自己放弃掉。把该补的地方列出来，比一直焦虑有用得多。",
+        "story_summary": "约 37 岁，成都，国央企，本科，选择四川党校，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C008",
+      "display_order_source": 7,
+      "sort_tuple": [
+        1,
+        -202,
+        7
+      ],
+      "richness_score": 202,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C008",
+      "display_name": "申同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "政法系统",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "政法岗位单位认可党校学历，政治学专业方向覆盖最广，约 37 岁按党校在职路径稳推上岸。",
+        "narrative_choose": "政法岗位单位认可党校学历，政治学专业方向覆盖最广，约 37 岁按党校在职路径稳推上岸。",
+        "reflection": "学政治学时能和工作里的材料、思路对上，后面坚持起来就没那么虚。下次会先把每天的小任务完成，不再等到最后才追。",
+        "story_summary": "约 37 岁，成都，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C017",
+      "display_order_source": 16,
+      "sort_tuple": [
+        1,
+        -191,
+        16
+      ],
+      "richness_score": 191,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C017",
+      "display_name": "曾同学",
+      "age": "约 27 岁",
+      "region": "泸州",
+      "system": "国央企",
+      "position": "省属国企",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "国央企",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按党校政治学方向一战上岸。",
+        "narrative_choose": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按党校政治学方向一战上岸。",
+        "reflection": "单位工作越久，越能感觉到持续学习的重要，不能一直吃老本。",
+        "story_summary": "约 27 岁，泸州，国央企，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C016",
+      "display_order_source": 15,
+      "sort_tuple": [
+        1,
+        -184,
+        15
+      ],
+      "richness_score": 184,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C016",
+      "display_name": "范同学",
+      "age": "约 37 岁",
+      "region": "泸州",
+      "system": "教育系统",
+      "position": "高校",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "高校",
+        "党校政治学",
+        "奖金班"
+      ],
+      "fields": {
+        "key_quote": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，党校政治学方向一战上岸。",
+        "narrative_choose": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，党校政治学方向一战上岸。",
+        "reflection": "备考过程让我重新体会到，学习这件事不能只停留在口头上。",
+        "story_summary": "约 37 岁，泸州，教育系统，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C014",
+      "display_order_source": 13,
+      "sort_tuple": [
+        1,
+        -181,
+        13
+      ],
+      "richness_score": 181,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C014",
+      "display_name": "彭同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "教育系统",
+      "position": "教育系统",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "教育系统",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "教育系统在职岗位，约 37 岁统考本科底子稳，按党校政治学方向一战上岸。",
+        "narrative_choose": "教育系统在职岗位，约 37 岁统考本科底子稳，按党校政治学方向一战上岸。",
+        "reflection": "做教育工作的人更知道学习不能停，这次上岸也算给自己一个交代。",
+        "story_summary": "约 37 岁，成都，教育系统，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C027",
+      "display_order_source": 26,
+      "sort_tuple": [
+        1,
+        -181,
+        26
+      ],
+      "richness_score": 181,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C027",
+      "display_name": "王同学",
+      "age": "约 32 岁",
+      "region": "达州",
+      "system": "党政机关",
+      "position": "基层公职",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "达州基层公职岗位 约 32 岁，统考本科底子稳，党校政治学方向一战上岸。",
+        "narrative_choose": "达州基层公职岗位 约 32 岁，统考本科底子稳，党校政治学方向一战上岸。",
+        "reflection": "这次最大的体会是，基层备考不能等有空，能学一点就要先学一点。",
+        "story_summary": "约 32 岁，达州，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C029",
+      "display_order_source": 28,
+      "sort_tuple": [
+        1,
+        -181,
+        28
+      ],
+      "richness_score": 181,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C029",
+      "display_name": "刘同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "基层公职",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "党校经济学"
+      ],
+      "fields": {
+        "key_quote": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，党校经济学方向一战上岸。",
+        "narrative_choose": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，党校经济学方向一战上岸。",
+        "reflection": "基层事情多，但越是这样，越要把学习拆小，一点点往前推。",
+        "story_summary": "约 27 岁，成都，党政机关，本科，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C033",
+      "display_order_source": 32,
+      "sort_tuple": [
+        1,
+        -180,
+        32
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C033",
+      "display_name": "陈同学",
+      "age": "约 27 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "宜宾、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "问题暴露出来也好，后面再准备，就能把力气用在更关键的地方。下次会先把每天的小任务完成，不再等到最后才追。",
+        "story_summary": "约 27 岁，宜宾，党政机关，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C051",
+      "display_order_source": 50,
+      "sort_tuple": [
+        1,
+        -180,
+        50
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C051",
+      "display_name": "薛同学",
+      "age": "约 32 岁",
+      "region": "广元",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直政法",
+        "纪检公检法",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "广元、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "广元、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "问题暴露出来也好，后面再准备，就能把力气用在更关键的地方。",
+        "story_summary": "约 32 岁，广元，党政机关，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C053",
+      "display_order_source": 52,
+      "sort_tuple": [
+        1,
+        -180,
+        52
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C053",
+      "display_name": "朱同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "复盘后才明白，持续投入最关键，这个教训会变成下一次的底气。把短板拆开来看，后面复习就不再一团乱。",
+        "story_summary": "约 27 岁，阿坝，党政机关，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C058",
+      "display_order_source": 57,
+      "sort_tuple": [
+        1,
+        -180,
+        57
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C058",
+      "display_name": "王同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直政法",
+        "纪检公检法",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "宜宾、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "结果没有达到预期，但真正考过一次，后面就不会再凭感觉准备。把该补的地方列出来，比一直焦虑有用得多。",
+        "story_summary": "约 32 岁，宜宾，党政机关，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C063",
+      "display_order_source": 62,
+      "sort_tuple": [
+        1,
+        -180,
+        62
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C063",
+      "display_name": "邹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "这次结果不理想，但问题已经看清，后面再准备会少走很多弯路。把短板拆开来看，后面复习就不再一团乱。",
+        "story_summary": "约 32 岁，甘孜，党政机关，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C064",
+      "display_order_source": 63,
+      "sort_tuple": [
+        1,
+        -180,
+        63
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C064",
+      "display_name": "刘同学",
+      "age": "约 27 岁",
+      "region": "广元",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "没上岸不代表没收获，至少知道自己卡在哪里，下一步更清楚。",
+        "story_summary": "约 27 岁，广元，党政机关，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C075",
+      "display_order_source": 74,
+      "sort_tuple": [
+        1,
+        -180,
+        74
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C075",
+      "display_name": "张同学",
+      "age": "约 32 岁",
+      "region": "攀枝花",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "攀枝花、约 32 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "攀枝花、约 32 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "备考时每天都不轻松，可真的坚持下来，会发现自己比想象中能扛。这次踩过的坑，后面都会变成提醒自己的经验。",
+        "story_summary": "约 32 岁，攀枝花，党政机关，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C020",
+      "display_order_source": 19,
+      "sort_tuple": [
+        1,
+        -179,
+        19
+      ],
+      "richness_score": 179,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C020",
+      "display_name": "隆同学",
+      "age": "约 32 岁",
+      "region": "成都",
+      "system": "国央企",
+      "position": "央企",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "国央企",
+        "党校政治学",
+        "奖金班"
+      ],
+      "fields": {
+        "key_quote": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，党校政治学方向上岸。",
+        "narrative_choose": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，党校政治学方向上岸。",
+        "reflection": "单位工作越久，越能感觉到持续学习的重要，不能一直吃老本。把问题看明白了，后面准备就不会再乱抓。",
+        "story_summary": "约 32 岁，成都，国央企，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C018",
+      "display_order_source": 17,
+      "sort_tuple": [
+        1,
+        -176,
+        17
+      ],
+      "richness_score": 176,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C018",
+      "display_name": "段同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "国央企",
+      "position": "央企",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "国央企",
+        "党校经济学",
+        "专业班"
+      ],
+      "fields": {
+        "key_quote": "央企岗位 约 27 岁，统考本科底子稳，专业班党校经济学方向一战上岸。",
+        "narrative_choose": "央企岗位 约 27 岁，统考本科底子稳，专业班党校经济学方向一战上岸。",
+        "reflection": "在单位里待久了会更明白，学历和学习能力都是给未来留余地。把短板拆开来看，后面复习就不再一团乱。",
+        "story_summary": "约 27 岁，成都，国央企，本科，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C011",
+      "display_order_source": 10,
+      "sort_tuple": [
+        1,
+        -175,
+        10
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C011",
+      "display_name": "史同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "政法系统",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "成都市直政法岗位 约 27 岁，统考本科底子稳，党校政治学一战上岸。",
+        "narrative_choose": "成都市直政法岗位 约 27 岁，统考本科底子稳，党校政治学一战上岸。",
+        "reflection": "学政治学时能和工作里的材料、思路对上，后面坚持起来就没那么虚。",
+        "story_summary": "约 27 岁，成都，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C031",
+      "display_order_source": 30,
+      "sort_tuple": [
+        1,
+        -175,
+        30
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C031",
+      "display_name": "甲同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这一路不算轻松，但把每天能学的那点时间抓住，结果就会有变化。",
+        "story_summary": "约 32 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C037",
+      "display_order_source": 36,
+      "sort_tuple": [
+        1,
+        -175,
+        36
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C037",
+      "display_name": "李同学",
+      "age": "约 27 岁",
+      "region": "南充",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "南充、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "南充、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。",
+        "story_summary": "约 27 岁，南充，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C038",
+      "display_order_source": 37,
+      "sort_tuple": [
+        1,
+        -175,
+        37
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C038",
+      "display_name": "彭同学",
+      "age": "约 37 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "县级民政",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "宜宾、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这次最大的感受是，工作再琐碎，也要给学习留一点固定位置。能复盘出问题，下一次就不是从零开始。",
+        "story_summary": "约 37 岁，宜宾，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C039",
+      "display_order_source": 38,
+      "sort_tuple": [
+        1,
+        -175,
+        38
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C039",
+      "display_name": "丹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "备考过程没有想象中顺，但每天往前一点，最后真的会有结果。",
+        "story_summary": "约 27 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C040",
+      "display_order_source": 39,
+      "sort_tuple": [
+        1,
+        -175,
+        39
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C040",
+      "display_name": "鲁同学",
+      "age": "约 27 岁",
+      "region": "德阳",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "德阳、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "德阳、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。后面再学，会先把基础题和核心考点吃透。",
+        "story_summary": "约 27 岁，德阳，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C044",
+      "display_order_source": 43,
+      "sort_tuple": [
+        1,
+        -175,
+        43
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C044",
+      "display_name": "周同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "工作和路程都会消耗人，但只要每天不断一点，最后还是能看到变化。",
+        "story_summary": "约 27 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C046",
+      "display_order_source": 45,
+      "sort_tuple": [
+        1,
+        -175,
+        45
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C046",
+      "display_name": "申同学",
+      "age": "约 40 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直政法",
+        "民族州",
+        "纪检公检法",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "在甘孜备考不算轻松，但这次让我相信慢慢学也能走到岸上。",
+        "story_summary": "约 37 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C048",
+      "display_order_source": 47,
+      "sort_tuple": [
+        1,
+        -175,
+        47
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C048",
+      "display_name": "陈同学",
+      "age": "约 32 岁",
+      "region": "资阳",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "资阳、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "资阳、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。把该补的地方列出来，比一直焦虑有用得多。",
+        "story_summary": "约 32 岁，资阳，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C050",
+      "display_order_source": 49,
+      "sort_tuple": [
+        1,
+        -175,
+        49
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C050",
+      "display_name": "泽同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "阿坝、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "阿坝、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "民族地区工作不轻松，能上岸更多靠的是把零碎时间一点点用起来。后面再学，会先把基础题和核心考点吃透。",
+        "story_summary": "约 32 岁，阿坝，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C052",
+      "display_order_source": 51,
+      "sort_tuple": [
+        1,
+        -175,
+        51
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C052",
+      "display_name": "陈同学",
+      "age": "约 42 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直政法",
+        "纪检公检法",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 42 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "宜宾、约 42 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "真正复盘后才发现，岗位和专业能对上，学习就不只是为了考试。",
+        "story_summary": "约 42 岁，宜宾，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C054",
+      "display_order_source": 53,
+      "sort_tuple": [
+        1,
+        -175,
+        53
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C054",
+      "display_name": "李同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "在阿坝备考，最现实的办法就是别等整块时间，先学起来。",
+        "story_summary": "约 27 岁，阿坝，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C055",
+      "display_order_source": 54,
+      "sort_tuple": [
+        1,
+        -175,
+        54
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C055",
+      "display_name": "王同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "工作和路程都会消耗人，但只要每天不断一点，最后还是能看到变化。看清自己的问题后，反而知道该怎么往前走了。",
+        "story_summary": "约 37 岁，阿坝，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C056",
+      "display_order_source": 55,
+      "sort_tuple": [
+        1,
+        -175,
+        55
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C056",
+      "display_name": "梁同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "以前总觉得条件不够好，真正开始后才发现，持续跟上比想太多更重要。",
+        "story_summary": "约 27 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C057",
+      "display_order_source": 56,
+      "sort_tuple": [
+        1,
+        -175,
+        56
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C057",
+      "display_name": "邬同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "医疗系统",
+      "position": "医院",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "医院",
+        "医护"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 32 岁、医疗系统背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "宜宾、约 32 岁、医疗系统背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "医务工作强度大，能坚持学习下来，对自己也是一次重新证明。",
+        "story_summary": "约 32 岁，宜宾，医疗系统，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C059",
+      "display_order_source": 58,
+      "sort_tuple": [
+        1,
+        -175,
+        58
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C059",
+      "display_name": "谭同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这次最大的收获，是发现只要方向对，零散的时间也能慢慢攒成进度。",
+        "story_summary": "约 32 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C060",
+      "display_order_source": 59,
+      "sort_tuple": [
+        1,
+        -175,
+        59
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C060",
+      "display_name": "岳同学",
+      "age": "约 32 岁",
+      "region": "眉山",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "眉山、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "眉山、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这次备考让我知道，成年人学习拼的不是热闹，而是能不能持续执行。先把基础补起来，再上考场心里就不会那么虚。",
+        "story_summary": "约 32 岁，眉山，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C062",
+      "display_order_source": 61,
+      "sort_tuple": [
+        1,
+        -175,
+        61
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C062",
+      "display_name": "李同学",
+      "age": "约 27 岁",
+      "region": "广元",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "上岸不是突然发生的，前面那些零碎又普通的坚持，最后都会算数。",
+        "story_summary": "约 27 岁，广元，党政机关，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C067",
+      "display_order_source": 66,
+      "sort_tuple": [
+        1,
+        -175,
+        66
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C067",
+      "display_name": "殷同学",
+      "age": "约 37 岁",
+      "region": "绵阳",
+      "system": "医疗系统",
+      "position": "医院",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "医院",
+        "医护",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "绵阳、约 37 岁、医疗系统背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "绵阳、约 37 岁、医疗系统背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "这次让我知道，在职备考不是拼谁时间多，而是谁能把状态找回来。",
+        "story_summary": "约 37 岁，绵阳，医疗系统，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C068",
+      "display_order_source": 67,
+      "sort_tuple": [
+        1,
+        -175,
+        67
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C068",
+      "display_name": "冉同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "在阿坝备考不算轻松，但这次让我相信慢慢学也能走到岸上。这段经历至少让我知道，不能再靠临时硬扛。",
+        "story_summary": "约 37 岁，阿坝，党政机关，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C070",
+      "display_order_source": 69,
+      "sort_tuple": [
+        1,
+        -175,
+        69
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C070",
+      "display_name": "李同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "教育系统",
+      "position": "高校",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "高校",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "成都、约 37 岁、教育系统背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "成都、约 37 岁、教育系统背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "备考过程让我重新体会到，学习这件事不能只停留在口头上。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "story_summary": "约 37 岁，成都，教育系统，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C072",
+      "display_order_source": 71,
+      "sort_tuple": [
+        1,
+        -175,
+        71
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C072",
+      "display_name": "钱同学",
+      "age": "约 27 岁",
+      "region": "遂宁",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "fields": {
+        "key_quote": "遂宁、约 27 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "遂宁、约 27 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "上岸以后回头看，最有用的不是焦虑，而是把每天该做的事情做完。",
+        "story_summary": "约 27 岁，遂宁，党政机关，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C076",
+      "display_order_source": 75,
+      "sort_tuple": [
+        1,
+        -175,
+        75
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C076",
+      "display_name": "苏同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "市直机关",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "市直机关",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "成都、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "成都、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "以前总觉得没时间，真正开始后才知道，时间都是一点点挤出来的。",
+        "story_summary": "约 37 岁，成都，党政机关，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C079",
+      "display_order_source": 78,
+      "sort_tuple": [
+        1,
+        -175,
+        78
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C079",
+      "display_name": "袁同学",
+      "age": "约 40 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "市直政法",
+        "民族州",
+        "纪检公检法",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "在甘孜备考不算轻松，但这次让我相信慢慢学也能走到岸上。",
+        "story_summary": "约 37 岁，甘孜，党政机关，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C021",
+      "display_order_source": 20,
+      "sort_tuple": [
+        1,
+        -171,
+        20
+      ],
+      "richness_score": 171,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C021",
+      "display_name": "冉同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "二战",
+        "民族地区"
+      ],
+      "fields": {
+        "key_quote": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。",
+        "narrative_choose": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。",
+        "reflection": "真正坚持下来才发现，妈妈的时间都是挤出来的，但每晚多学一点都算数。",
+        "story_summary": "约 30 岁，阿坝，，本科，选择四川党校，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C032",
+      "display_order_source": 31,
+      "sort_tuple": [
+        1,
+        -170,
+        31
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C032",
+      "display_name": "曾同学",
+      "age": "约 27 岁",
+      "region": "泸州",
+      "system": "国央企",
+      "position": "省属国企",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "省属国企",
+        "体制内认可",
+        "国央企"
+      ],
+      "fields": {
+        "key_quote": "泸州、约 27 岁、国央企背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "泸州、约 27 岁、国央企背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "在单位里待久了会更明白，学历和学习能力都是给未来留余地。把该补的地方列出来，比一直焦虑有用得多。",
+        "story_summary": "约 27 岁，泸州，国央企，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C065",
+      "display_order_source": 64,
+      "sort_tuple": [
+        1,
+        -170,
+        64
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C065",
+      "display_name": "王同学",
+      "age": "约 42 岁",
+      "region": "绵阳",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "绵阳、约 42 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "绵阳、约 42 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "准备不够连续影响了结果，但复盘之后，心态反而更踏实了。看清自己的问题后，反而知道该怎么往前走了。",
+        "story_summary": "约 42 岁，绵阳，，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C066",
+      "display_order_source": 65,
+      "sort_tuple": [
+        1,
+        -170,
+        65
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C066",
+      "display_name": "唐同学",
+      "age": "约 40 岁",
+      "region": "凉山",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "民族州",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "凉山、约 37 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
+        "narrative_choose": "凉山、约 37 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
+        "reflection": "这次给自己敲了警钟，也让我知道，下次要更早进入状态。",
+        "story_summary": "约 37 岁，凉山，，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C071",
+      "display_order_source": 70,
+      "sort_tuple": [
+        1,
+        -170,
+        70
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C071",
+      "display_name": "代同学",
+      "age": "约 27 岁",
+      "region": "内江",
+      "system": "国央企",
+      "position": "银行金融",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "银行金融",
+        "国央企"
+      ],
+      "fields": {
+        "key_quote": "内江、约 27 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "内江、约 27 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "真正准备过才知道，约 27 岁学习也不是晚，只是要比以前更自觉。",
+        "story_summary": "约 27 岁，内江，国央企，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C074",
+      "display_order_source": 73,
+      "sort_tuple": [
+        1,
+        -170,
+        73
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C074",
+      "display_name": "何同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "国央企",
+      "position": "银行金融",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "银行金融",
+        "国央企"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 32 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "宜宾、约 32 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "在宜宾边工作边学，最难的是持续，但最有用的也是持续。",
+        "story_summary": "约 32 岁，宜宾，国央企，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C080",
+      "display_order_source": 79,
+      "sort_tuple": [
+        1,
+        -170,
+        79
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C080",
+      "display_name": "廖同学",
+      "age": "约 42 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "成都、约 42 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
+        "narrative_choose": "成都、约 42 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
+        "reflection": "复盘后才明白，持续投入最关键，这个教训会变成下一次的底气。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "story_summary": "约 42 岁，成都，，选择四川党校 · 经济学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C081",
+      "display_order_source": 80,
+      "sort_tuple": [
+        1,
+        -170,
+        80
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C081",
+      "display_name": "左同学",
+      "age": "约 37 岁",
+      "region": "泸州",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "泸州、约 37 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
+        "narrative_choose": "泸州、约 37 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
+        "reflection": "这次结果不理想，但问题已经看清，后面再准备会少走很多弯路。",
+        "story_summary": "约 37 岁，泸州，，选择四川党校 · 经济学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C082",
+      "display_order_source": 81,
+      "sort_tuple": [
+        1,
+        -170,
+        81
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C082",
+      "display_name": "刘同学",
+      "age": "约 30 岁",
+      "region": "凉山",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "未上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "民族州"
+      ],
+      "fields": {
+        "key_quote": "凉山、约 32 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
+        "narrative_choose": "凉山、约 32 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
+        "reflection": "没上岸不代表没收获，至少知道自己卡在哪里，下一步更清楚。",
+        "story_summary": "约 32 岁，凉山，，选择四川党校 · 经济学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C012",
+      "display_order_source": 11,
+      "sort_tuple": [
+        1,
+        -169,
+        11
+      ],
+      "richness_score": 169,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C012",
+      "display_name": "杨同学",
+      "age": "约 37 岁",
+      "region": "遂宁",
+      "system": "医疗系统",
+      "position": "医院",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "医疗系统",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "医院专技岗工作节奏紧，约 37 岁按党校政治学方向稳推一战上岸。",
+        "narrative_choose": "医院专技岗工作节奏紧，约 37 岁按党校政治学方向稳推一战上岸。",
+        "reflection": "这次让我知道，在职备考不是拼谁时间多，而是谁能把状态找回来。能复盘出问题，下一次就不是从零开始。",
+        "story_summary": "约 37 岁，遂宁，医疗系统，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C006",
+      "display_order_source": 6,
+      "sort_tuple": [
+        1,
+        -166,
+        6
+      ],
+      "richness_score": 166,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C006",
+      "display_name": "谭同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "甘孜州县城民政岗，统考本科底子稳，按党校政治学专业方向一战上岸。",
+        "narrative_choose": "甘孜州县城民政岗，统考本科底子稳，按党校政治学专业方向一战上岸。",
+        "reflection": "备考过程没有想象中顺，但每天往前一点，最后真的会有结果。",
+        "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C010",
+      "display_order_source": 9,
+      "sort_tuple": [
+        1,
+        -166,
+        9
+      ],
+      "richness_score": 166,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C010",
+      "display_name": "甄同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 法学",
+      "outcome": "未上岸",
+      "tags": [
+        "政法系统",
+        "党校法学",
+        "竞争激烈"
+      ],
+      "fields": {
+        "key_quote": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。",
+        "narrative_choose": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。",
+        "reflection": "前面漏掉的内容会变成压力，但能提前发现问题，本身也是一种收获。下次再准备，会更早进入状态，也更敢坚持到底。",
+        "story_summary": "约 37 岁，成都，党政机关，本科，选择四川党校 · 法学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C015",
+      "display_order_source": 14,
+      "sort_tuple": [
+        1,
+        -165,
+        14
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C015",
+      "display_name": "高同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "教育系统",
+      "position": "高校",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "高校",
+        "民族地区",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。",
+        "narrative_choose": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。",
+        "reflection": "中途断了节奏确实吃力，但知道短板在哪里，下次就能更早调整。后面再学，会先把基础题和核心考点吃透。",
+        "story_summary": "约 30 岁，甘孜，教育系统，本科，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C034",
+      "display_order_source": 33,
+      "sort_tuple": [
+        1,
+        -165,
+        33
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C034",
+      "display_name": "吴同学",
+      "age": "约 27 岁",
+      "region": "达州",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这段经历让我对自己多了一点信心，原来工作以后也还能重新学进去。",
+        "story_summary": "约 27 岁，达州，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C035",
+      "display_order_source": 34,
+      "sort_tuple": [
+        1,
+        -165,
+        34
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C035",
+      "display_name": "吴同学",
+      "age": "约 27 岁",
+      "region": "达州",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "真正走完一遍才知道，焦虑解决不了问题，把任务一件件完成才最有用。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "story_summary": "约 27 岁，达州，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C036",
+      "display_order_source": 35,
+      "sort_tuple": [
+        1,
+        -165,
+        35
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C036",
+      "display_name": "黄同学",
+      "age": "约 37 岁",
+      "region": "内江",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "内江、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "内江、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这次最大的感受是，在职备考不能只靠热情，要把每天该做的事情落下去。",
+        "story_summary": "约 37 岁，内江，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C041",
+      "display_order_source": 40,
+      "sort_tuple": [
+        1,
+        -165,
+        40
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C041",
+      "display_name": "唐同学",
+      "age": "约 27 岁",
+      "region": "南充",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "南充、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "南充、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "这次最大的感受是，在职备考不能只靠热情，要把每天该做的事情落下去。",
+        "story_summary": "约 27 岁，南充，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C042",
+      "display_order_source": 41,
+      "sort_tuple": [
+        1,
+        -165,
+        41
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C042",
+      "display_name": "李同学",
+      "age": "约 42 岁",
+      "region": "达州",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "达州、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "达州、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "真正准备过才知道，约 42 岁学习也不是晚，只是要比以前更自觉。这段经历至少让我知道，不能再靠临时硬扛。",
+        "story_summary": "约 42 岁，达州，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C043",
+      "display_order_source": 42,
+      "sort_tuple": [
+        1,
+        -165,
+        42
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C043",
+      "display_name": "曹同学",
+      "age": "约 42 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "上岸以后回头看，最有用的不是焦虑，而是把每天该做的事情做完。下次会先把每天的小任务完成，不再等到最后才追。",
+        "story_summary": "约 42 岁，成都，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C045",
+      "display_order_source": 44,
+      "sort_tuple": [
+        1,
+        -165,
+        44
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C045",
+      "display_name": "陈同学",
+      "age": "约 42 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "在成都边工作边学，最难的是持续，但最有用的也是持续。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "story_summary": "约 42 岁，成都，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C047",
+      "display_order_source": 46,
+      "sort_tuple": [
+        1,
+        -165,
+        46
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C047",
+      "display_name": "刘同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "宜宾、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "以前总觉得没时间，真正开始后才知道，时间都是一点点挤出来的。",
+        "story_summary": "约 32 岁，宜宾，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C049",
+      "display_order_source": 48,
+      "sort_tuple": [
+        1,
+        -165,
+        48
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C049",
+      "display_name": "阮同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径",
+        "35+ 焦虑"
+      ],
+      "fields": {
+        "key_quote": "成都、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "成都、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。",
+        "story_summary": "约 37 岁，成都，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C061",
+      "display_order_source": 60,
+      "sort_tuple": [
+        1,
+        -165,
+        60
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C061",
+      "display_name": "欧同学",
+      "age": "约 30 岁",
+      "region": "凉山",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "民族地区",
+        "党校路径",
+        "民族州"
+      ],
+      "fields": {
+        "key_quote": "凉山、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "narrative_choose": "凉山、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
+        "reflection": "民族地区工作不轻松，能上岸更多靠的是把零碎时间一点点用起来。",
+        "story_summary": "约 32 岁，凉山，，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C069",
+      "display_order_source": 68,
+      "sort_tuple": [
+        1,
+        -165,
+        68
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C069",
+      "display_name": "刘同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "成都、约 27 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "成都、约 27 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "在成都边工作边学，最难的是持续，但最有用的也是持续。",
+        "story_summary": "约 27 岁，成都，，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C073",
+      "display_order_source": 72,
+      "sort_tuple": [
+        1,
+        -165,
+        72
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C073",
+      "display_name": "伏同学",
+      "age": "约 32 岁",
+      "region": "巴中",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "巴中、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "巴中、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "这段经历让我更确定，成年人学习不容易，但开始了就会有变化。能复盘出问题，下一次就不是从零开始。",
+        "story_summary": "约 32 岁，巴中，，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C077",
+      "display_order_source": 76,
+      "sort_tuple": [
+        1,
+        -165,
+        76
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C077",
+      "display_name": "蒋同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "宜宾、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "宜宾、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "这次结果让我踏实了一点，至少证明约 32 岁也还能重新学进去。",
+        "story_summary": "约 32 岁，宜宾，，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C078",
+      "display_order_source": 77,
+      "sort_tuple": [
+        1,
+        -165,
+        77
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C078",
+      "display_name": "王同学",
+      "age": "约 32 岁",
+      "region": "成都",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "成都、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "narrative_choose": "成都、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
+        "reflection": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。后面会把时间拆小，不再等完全空下来才开始。",
+        "story_summary": "约 32 岁，成都，，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C019",
+      "display_order_source": 18,
+      "sort_tuple": [
+        1,
+        -163,
+        18
+      ],
+      "richness_score": 163,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C019",
+      "display_name": "廖同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "国央企",
+      "position": "央企",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "国央企",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。",
+        "narrative_choose": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。",
+        "reflection": "工作一忙学习就容易被冲散，但至少知道了，备考要先把时间留出来。",
+        "story_summary": "约 37 岁，成都，国央企，本科，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C026",
+      "display_order_source": 25,
+      "sort_tuple": [
+        1,
+        -163,
+        25
+      ],
+      "richness_score": 163,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C026",
+      "display_name": "李同学",
+      "age": "约 30 岁",
+      "region": "凉山",
+      "system": "党政机关",
+      "position": "基层公职",
+      "chosen_target": "四川党校 · 经济学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "民族地区",
+        "党校经济学"
+      ],
+      "fields": {
+        "key_quote": "凉山基层公职岗位，民族地区按党校经济学方向走民族专项一战上岸。",
+        "narrative_choose": "凉山基层公职岗位，民族地区按党校经济学方向走民族专项一战上岸。",
+        "reflection": "这次最大的收获，是发现只要方向对，零散的时间也能慢慢攒成进度。",
+        "story_summary": "约 30 岁，凉山，党政机关，本科，选择四川党校 · 经济学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C028",
+      "display_order_source": 27,
+      "sort_tuple": [
+        1,
+        -163,
+        27
+      ],
+      "richness_score": 163,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C028",
+      "display_name": "唐同学",
+      "age": "约 27 岁",
+      "region": "南充",
+      "system": "党政机关",
+      "position": "基层公职",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "党校政治学",
+        "五年服务期"
+      ],
+      "fields": {
+        "key_quote": "南充乡镇服务期内备考，约 27 岁按党校政治学方向一战上岸。",
+        "narrative_choose": "南充乡镇服务期内备考，约 27 岁按党校政治学方向一战上岸。",
+        "reflection": "每天的事情都不确定，反而更需要把学习安排得简单、固定、能执行。把短板拆开来看，后面复习就不再一团乱。",
+        "story_summary": "约 27 岁，南充，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C002",
+      "display_order_source": 2,
+      "sort_tuple": [
+        1,
+        -162,
+        2
+      ],
+      "richness_score": 162,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C002",
+      "display_name": "韩同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "党校政治学",
+        "专业班"
+      ],
+      "fields": {
+        "key_quote": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。",
+        "narrative_choose": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。",
+        "reflection": "没坚持完整确实可惜，但这次复盘清楚了，下一次会更有把握。把短板拆开来看，后面复习就不再一团乱。",
+        "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，未上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C030",
+      "display_order_source": 29,
+      "sort_tuple": [
+        1,
+        -161,
+        29
+      ],
+      "richness_score": 161,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C030",
+      "display_name": "余同学",
+      "age": "约 32 岁",
+      "region": "遂宁",
+      "system": "党政机关",
+      "position": "基层公职",
+      "chosen_target": "四川党校 · 法学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "党校法学",
+        "川渝双过"
+      ],
+      "fields": {
+        "key_quote": "川渝两地同卷过线，按 33 法分阶段稳推党校法学方向一战上岸。",
+        "narrative_choose": "川渝两地同卷过线，按 33 法分阶段稳推党校法学方向一战上岸。",
+        "reflection": "这次最大的体会是，基层备考不能等有空，能学一点就要先学一点。把问题看明白了，后面准备就不会再乱抓。",
+        "story_summary": "约 32 岁，遂宁，党政机关，本科，选择四川党校 · 法学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C083",
+      "display_order_source": 82,
+      "sort_tuple": [
+        1,
+        -160,
+        82
+      ],
+      "richness_score": 160,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C083",
+      "display_name": "余同学",
+      "age": "约 32 岁",
+      "region": "遂宁",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校 · 法学",
+      "outcome": "上岸",
+      "tags": [
+        "25党校上岸",
+        "党校路径"
+      ],
+      "fields": {
+        "key_quote": "遂宁、约 32 岁、背景，选择四川党校 · 法学，结果为上岸。",
+        "narrative_choose": "遂宁、约 32 岁、背景，选择四川党校 · 法学，结果为上岸。",
+        "reflection": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。把该补的地方列出来，比一直焦虑有用得多。",
+        "story_summary": "约 32 岁，遂宁，，选择四川党校 · 法学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C003",
+      "display_order_source": 3,
+      "sort_tuple": [
+        1,
+        -157,
+        3
+      ],
+      "richness_score": 157,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C003",
+      "display_name": "泽同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "党校政治学",
+        "民族专项"
+      ],
+      "fields": {
+        "key_quote": "阿坝民政岗位走民族专项政策路径，按党校政治学方向一战上岸。",
+        "narrative_choose": "阿坝民政岗位走民族专项政策路径，按党校政治学方向一战上岸。",
+        "reflection": "很多时候不是时间够了才学，而是先开始学，时间才会一点点挤出来。",
+        "story_summary": "约 30 岁，阿坝，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C009",
+      "display_order_source": 8,
+      "sort_tuple": [
+        1,
+        -151,
+        8
+      ],
+      "richness_score": 151,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C009",
+      "display_name": "阮同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "position": "市直政法",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "政法系统",
+        "党校政治学",
+        "二战"
+      ],
+      "fields": {
+        "key_quote": "市直政法岗位，统考本科底子稳，党校政治学方向二战上岸。",
+        "narrative_choose": "市直政法岗位，统考本科底子稳，党校政治学方向二战上岸。",
+        "reflection": "二战最明显的变化，是不再乱抓重点，知道该把力气用在哪里。",
+        "story_summary": "约 37 岁，成都，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C005",
+      "display_order_source": 5,
+      "sort_tuple": [
+        1,
+        -148,
+        5
+      ],
+      "richness_score": 148,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C005",
+      "display_name": "梁同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "position": "县级民政",
+      "chosen_target": "四川党校 · 政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "党校政治学"
+      ],
+      "fields": {
+        "key_quote": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。",
+        "narrative_choose": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。",
+        "reflection": "在甘孜边工作边学，确实累，但坚持下来后心里很踏实。后面再学，会先把基础题和核心考点吃透。",
+        "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C023",
+      "display_order_source": 22,
+      "sort_tuple": [
+        1,
+        -144,
+        22
+      ],
+      "richness_score": 144,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "human_review_status": "pending",
+      "privacy_version": "desensitized_internal",
+      "case_id": "C023",
+      "display_name": "彭同学",
+      "age": "约 37 岁",
+      "region": "宜宾",
+      "system": "其他",
+      "position": "其他单位",
+      "chosen_target": "四川党校",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "一战上岸",
+        "短时间冲刺"
+      ],
+      "fields": {
+        "key_quote": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。",
+        "narrative_choose": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。",
+        "reflection": "以前总觉得没时间，后来才发现，只要想学，十点后的书桌也算起点。这次经验留下来，后面准备会更有章法。",
+        "story_summary": "约 37 岁，宜宾，，本科，选择四川党校，上岸。",
+        "study_method": "",
+        "turning_point": ""
+      }
+    }
+  ]
+}

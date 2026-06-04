@@ -86,8 +86,8 @@ const goSchools = () => {
 }
 
 const goCases = () => {
-  trackNavClick('timeline', 'cases', '/pages/cases/index')
-  uni.navigateTo({ url: '/pages/cases/index' })
+  trackNavClick('timeline', 'cases', '/pages/cases-v2/index')
+  uni.navigateTo({ url: '/pages/cases-v2/index' })
 }
 
 onMounted(() => trackPageView('timeline'))

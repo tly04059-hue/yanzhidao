@@ -56,20 +56,21 @@
 | `consult_click` | 已实现 | 院校详情咨询点击 | `school` | `source` |
 | `view_case_list` | 已实现 | 进入案例页 | `case` | `source` |
 | `filter_case_list` | 已实现 | 案例筛选变更 | `case` | `system`, `age`, `path` |
-| `start_assessment` | 已实现 | 测一测开始 | `assessment` | `source` |
-| `finish_assessment` | 已实现 | 9题/DP001提交 | `assessment` | `answers` |
-| `view_result` | 已实现 | 结果页曝光 | `result` | `source`, `answers` |
+| `assessment_start` | 已实现 | 测一测开始 | `assessment` | `source`, `position` |
+| `assessment_finish` | 已实现 | 9题/DP001提交 | `assessment` | `question_count`, `dp_answer_count` |
+| `recommendation_view` | 已实现 | 结果页推荐曝光 | `strategy` | `recommendation_title`, `match`, `similar_case_id` |
 | `favorite_recommendation` | 已实现 | 结果页收藏建议 | `result` | `recommendation_type` |
 | `share_result` | 已实现 | 结果页点击分享 | `result` | `source` |
-| `follow_account_click` | 已实现 | 结果页关注入口点击 | `result` | `source` |
+| `contact_click` | 已实现 | 结果页/案例页/联系页咨询动作 | `contact` | `source`, `position`, `route` |
 | `view_pass_rate_detail` | 已实现 | 结果页查看过考率说明 | `result` | `source` |
-| `contact_click` | 已实现 | 结果页联系顾问点击 | `result` | `source` |
 | `page_view` | 已实现 | 通用页面曝光（全页） | `page` | `page`, `source`, `route`, `scene`, `version` |
 | `nav_click` | 已实现 | 顶部返回/菜单/路由点击 | `page` | `page`, `position`, `route`, `from_route`, `scene` |
 | `tab_click` | 已实现 | 底部 Tab 点击 | `page` | `page`, `tab`, `route`, `from_route`, `scene` |
-| `cta_click` | 待补 | 主要按钮点击（非结果页） | `page` | `page`, `position`, `label`, `route` |
-| `modal_open` | 待补 | 弹窗打开（案例详情/咨询） | `case` | `modal_type`, `source` |
-| `modal_close` | 待补 | 弹窗关闭 | `case` | `modal_type`, `source` |
+| `cta_click` | 已预留 | 主要按钮点击（非结果页） | `page` | `page`, `position`, `label`, `route` |
+| `modal_open` | 已预留 | 弹窗打开（案例详情/咨询） | `case` | `modal_type`, `source` |
+| `modal_close` | 已预留 | 弹窗关闭 | `case` | `modal_type`, `source`, `close_method` |
+| `case_card_click` | 已预留 | 点击案例卡片 | `case` | `target_id`, `target_name`, `case_type`, `case_quality` |
+| `case_list_load_more` | 已预留 | 案例页点击加载更多 | `case` | `previous_visible_count`, `next_visible_count`, `total_count` |
 
 ---
 
@@ -80,14 +81,15 @@
 | 首页 | `/pages/index/index` | 有 Tab | `page_view`, `tab_click` | `cta_click`, `nav_click` |
 | 了解页 | `/pages/learn/index` | 有 Tab | `page_view`, `tab_click`, `nav_click` | `cta_click` |
 | 路径对比 | `/pages/comparison/index` | 有 Tab | `page_view`, `tab_click`, `nav_click` | `cta_click` |
-| 测一测 | `/pages/test/index` | 有 Tab | `start_assessment`, `finish_assessment`, `page_view`, `tab_click`, `nav_click` | 关键答题步骤事件 |
+| 测一测 | `/pages/test/index` | 有 Tab | `assessment_start`, `assessment_finish`, `page_view`, `tab_click`, `nav_click` | 关键答题步骤事件 |
 | 加载页 | `/pages/loading/index` | 无 Tab | `page_view`, `nav_click` | `cta_click` |
-| 结果页 | `/pages/result/index` | 底部 CTA | `view_result`, `favorite_recommendation`, `share_result`, `follow_account_click`, `view_pass_rate_detail`, `contact_click`, `page_view`, `tab_click`, `nav_click` | 无 |
+| 结果页 | `/pages/result/index` | 底部 CTA | `recommendation_view`, `contact_click`, `page_view`, `tab_click`, `nav_click` | 收藏/分享等增强事件 |
 | 院校查询 | `/pages/schools/index` | 有 Tab | `view_school_list`, `filter_school_list`, `click_school_card`, `page_view`, `tab_click`, `nav_click` | 选校树交互事件 |
 | 院校详情 | `/pages/school-detail/index` | 无 Tab | `view_school_detail`, `favorite_school`, `consult_click`, `page_view`, `nav_click` | `cta_click` |
-| 案例页 | `/pages/cases/index` | 有 Tab | `view_case_list`, `filter_case_list`, `page_view`, `tab_click`, `nav_click` | `modal_open`, `modal_close`, `cta_click` |
+| 老案例页 | `/pages/cases/index` | 兼容保留 | `page_view`, `tab_click`, `nav_click` | 不作为主案例页口径 |
+| 案例 V2 主页面 | `/pages/cases-v2/index` | 主案例页入口 | `page_view`, `nav_click`, `filter_case_list`, `case_card_click`, `case_list_load_more`, `modal_open`, `modal_close`, `cta_click`, `contact_click` | 详情停留、更多转化事件 |
 | 服务分布 | `/pages/map/index` | 有 Tab | `page_view`, `tab_click`, `nav_click` | 地图点位点击事件 |
-| 联系顾问 | `/pages/contact/index` | 有 Tab | `page_view`, `tab_click`, `nav_click` | `cta_click` |
+| 联系顾问 | `/pages/contact/index` | 有 Tab | `page_view`, `contact_click` | 来源页转化归因 |
 | 备考方案 | `/pages/timeline/index` | 有 Tab | `page_view`, `tab_click`, `nav_click` | 切换路径事件 |
 | 关于研知道 | `/pages/about/index` | 无 Tab | `page_view`, `nav_click` | `cta_click` |
 | 数据来源 | `/pages/data-source/index` | 无 Tab | `page_view`, `nav_click` | `cta_click` |
