@@ -266,6 +266,11 @@ onUnmounted(() => {
   z-index: 1;
 }
 
+.metric-hint {
+  text-align: center;
+  display: block;
+}
+
 .hero-card-heading {
   min-height: 76px;
   padding: 10px 12px 6px;
