@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS analytics_events (
   wechat_openid VARCHAR(128) NULL,
   is_new_user TINYINT(1) NULL,
   is_test_user TINYINT(1) NOT NULL DEFAULT 0,
+  page VARCHAR(128) NOT NULL,
   page_path VARCHAR(255) NULL,
   page_title VARCHAR(128) NULL,
   target_type VARCHAR(64) NULL,
@@ -58,6 +59,7 @@ CREATE TABLE IF NOT EXISTS analytics_events (
   INDEX idx_analytics_events_type_time (event_type, created_at),
   INDEX idx_analytics_events_user_time (anonymous_user_id, created_at),
   INDEX idx_analytics_events_session (session_id),
+  INDEX idx_analytics_events_page_name (page),
   INDEX idx_analytics_events_page (page_path),
   INDEX idx_analytics_events_target (target_type, target_id),
   INDEX idx_analytics_events_env_time (env, created_at)
@@ -90,4 +92,44 @@ CREATE TABLE IF NOT EXISTS analytics_page_metrics (
   avg_duration_ms BIGINT NULL,
   updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (metric_date, env, page_path)
+);
+
+CREATE TABLE IF NOT EXISTS analytics_case_metrics (
+  metric_date DATE NOT NULL,
+  env VARCHAR(32) NOT NULL,
+  case_id VARCHAR(128) NOT NULL,
+  case_name VARCHAR(255) NULL,
+  case_type VARCHAR(64) NULL,
+  card_clicks INT NOT NULL DEFAULT 0,
+  detail_opens INT NOT NULL DEFAULT 0,
+  contact_clicks INT NOT NULL DEFAULT 0,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (metric_date, env, case_id),
+  INDEX idx_analytics_case_metrics_type (env, metric_date, case_type)
+);
+
+CREATE TABLE IF NOT EXISTS analytics_funnel_metrics (
+  metric_date DATE NOT NULL,
+  env VARCHAR(32) NOT NULL,
+  funnel_name VARCHAR(64) NOT NULL,
+  step_order INT NOT NULL,
+  step_name VARCHAR(64) NOT NULL,
+  event_type VARCHAR(64) NOT NULL,
+  event_count INT NOT NULL DEFAULT 0,
+  uv INT NOT NULL DEFAULT 0,
+  conversion_rate DECIMAL(8, 4) NULL,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (metric_date, env, funnel_name, step_order),
+  INDEX idx_analytics_funnel_metrics_name (env, metric_date, funnel_name)
+);
+
+CREATE TABLE IF NOT EXISTS analytics_event_quality_metrics (
+  metric_date DATE NOT NULL,
+  env VARCHAR(32) NOT NULL,
+  field_name VARCHAR(64) NOT NULL,
+  missing_count INT NOT NULL DEFAULT 0,
+  invalid_count INT NOT NULL DEFAULT 0,
+  total_count INT NOT NULL DEFAULT 0,
+  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (metric_date, env, field_name)
 );

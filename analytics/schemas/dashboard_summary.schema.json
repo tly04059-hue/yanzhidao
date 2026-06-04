@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Analytics Dashboard Summary",
+  "description": "用户行为看板读取的聚合数据结构。",
+  "type": "object",
+  "required": ["generated_at", "filters", "totals", "cases", "funnels", "pages", "events_quality"],
+  "properties": {
+    "generated_at": { "type": "string" },
+    "filters": {
+      "type": "object",
+      "required": ["env"],
+      "properties": {
+        "env": { "type": "string", "enum": ["development", "trial", "production", "all"] },
+        "date_from": { "type": "string" },
+        "date_to": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "totals": {
+      "type": "object",
+      "required": ["events", "pv", "uv", "sessions", "leads"],
+      "properties": {
+        "events": { "type": "number" },
+        "pv": { "type": "number" },
+        "uv": { "type": "number" },
+        "sessions": { "type": "number" },
+        "leads": { "type": "number" }
+      },
+      "additionalProperties": true
+    },
+    "cases": {
+      "type": "object",
+      "required": [
+        "page_pv",
+        "page_uv",
+        "card_clicks",
+        "detail_opens",
+        "load_more_clicks",
+        "party_clicks",
+        "management_exam_clicks",
+        "card_click_rate",
+        "detail_open_rate",
+        "top_cases"
+      ],
+      "properties": {
+        "page_pv": { "type": "number" },
+        "page_uv": { "type": "number" },
+        "card_clicks": { "type": "number" },
+        "detail_opens": { "type": "number" },
+        "load_more_clicks": { "type": "number" },
+        "party_clicks": { "type": "number" },
+        "management_exam_clicks": { "type": "number" },
+        "card_click_rate": { "type": "number" },
+        "detail_open_rate": { "type": "number" },
+        "top_cases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["target_id", "target_name", "case_type", "clicks"],
+            "properties": {
+              "target_id": { "type": "string" },
+              "target_name": { "type": "string" },
+              "case_type": { "type": "string" },
+              "clicks": { "type": "number" },
+              "detail_opens": { "type": "number" },
+              "contact_clicks": { "type": "number" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "funnels": {
+      "type": "object",
+      "required": ["assessment_to_result", "case_to_contact", "result_to_contact"],
+      "properties": {
+        "assessment_to_result": { "$ref": "#/$defs/funnel_steps" },
+        "case_to_contact": { "$ref": "#/$defs/funnel_steps" },
+        "result_to_contact": { "$ref": "#/$defs/funnel_steps" }
+      },
+      "additionalProperties": true
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["page", "pv", "uv"],
+        "properties": {
+          "page": { "type": "string" },
+          "page_path": { "type": "string" },
+          "pv": { "type": "number" },
+          "uv": { "type": "number" },
+          "avg_duration_ms": { "type": "number" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "events_quality": {
+      "type": "object",
+      "required": ["missing_required_count", "invalid_event_count", "missing_fields"],
+      "properties": {
+        "missing_required_count": { "type": "number" },
+        "invalid_event_count": { "type": "number" },
+        "missing_fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["field", "count"],
+            "properties": {
+              "field": { "type": "string" },
+              "count": { "type": "number" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "funnel_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["step", "event_type", "uv", "conversion_rate"],
+        "properties": {
+          "step": { "type": "string" },
+          "event_type": { "type": "string" },
+          "uv": { "type": "number" },
+          "count": { "type": "number" },
+          "conversion_rate": { "type": "number" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

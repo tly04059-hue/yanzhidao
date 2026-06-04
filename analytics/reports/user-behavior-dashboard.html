@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用户行为看板</title>
+  <style>
+    :root {
+      --bg: #eef7f5;
+      --panel: #fbfffd;
+      --ink: #183237;
+      --muted: #64777a;
+      --line: #cfe4df;
+      --brand: #159a9c;
+      --brand-strong: #086c72;
+      --green: #2f8f73;
+      --blue: #2f7da3;
+      --red: #b95448;
+      --shadow: 0 18px 40px rgba(24, 78, 83, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(21, 154, 156, 0.16), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(47, 125, 163, 0.12), transparent 32rem),
+        linear-gradient(135deg, #f7fffc 0%, var(--bg) 48%, #e7f1f5 100%);
+      color: var(--ink);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 28px 56px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4vw, 52px);
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .status-card,
+    .card {
+      background: rgba(251, 255, 253, 0.94);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .status-card {
+      min-width: 300px;
+      padding: 18px 20px;
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-row strong {
+      color: var(--ink);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .notice {
+      margin: 18px 0 26px;
+      padding: 14px 18px;
+      border: 1px solid #b8ded8;
+      border-radius: 18px;
+      background: rgba(228, 247, 243, 0.9);
+      color: #285a5f;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.metrics {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .grid.two {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .card {
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .metric {
+      min-height: 126px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .metric::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      bottom: -38px;
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      background: rgba(21, 154, 156, 0.12);
+    }
+
+    .metric .label,
+    .section-label {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .metric .value {
+      color: var(--brand);
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .metric .hint {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    section {
+      margin-top: 22px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 0 0 12px;
+    }
+
+    .section-head h2 {
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .case-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .split-box {
+      padding: 16px;
+      border-radius: 18px;
+      background: #f2fbf8;
+      border: 1px solid #cfe4df;
+    }
+
+    .split-box strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--brand-strong);
+      font-size: 24px;
+    }
+
+    .bar-track {
+      height: 12px;
+      margin-top: 12px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #dcebe8;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--brand), #58bdad);
+    }
+
+    .funnel {
+      display: grid;
+      gap: 12px;
+    }
+
+    .funnel-step {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) 82px;
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: #f2fbf8;
+      border: 1px solid #d8ebe7;
+    }
+
+    .funnel-name {
+      font-weight: 800;
+    }
+
+    .funnel-meta,
+    .table-meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mini-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #dcebe8;
+      overflow: hidden;
+    }
+
+    .mini-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    .rate {
+      color: var(--brand);
+      font-weight: 800;
+      text-align: right;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 13px 10px;
+      border-bottom: 1px solid #dcebe8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #dff1ed;
+      color: #285a5f;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tag.red {
+      background: #f9e0dc;
+      color: var(--red);
+    }
+
+    .tag.green {
+      background: #dff1ed;
+      color: var(--green);
+    }
+
+    .empty {
+      padding: 18px;
+      color: var(--muted);
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.46);
+    }
+
+    .footer-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    button,
+    .file-label {
+      appearance: none;
+      border: 1px solid #9fcfc8;
+      border-radius: 999px;
+      background: #fbfffd;
+      color: var(--brand-strong);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+      padding: 9px 14px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .grid.metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .status-card {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 24px 14px 40px;
+      }
+
+      .grid.metrics,
+      .case-split {
+        grid-template-columns: 1fr;
+      }
+
+      .funnel-step {
+        grid-template-columns: 1fr;
+      }
+
+      .rate {
+        text-align: left;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <h1>用户行为看板</h1>
+        <p class="subtitle">读取 `analytics/reports/latest-summary.json`，展示小程序真实行为事件汇总。</p>
+      </div>
+      <div class="status-card">
+        <div class="status-row"><span>数据时间</span><strong id="generatedAt">-</strong></div>
+        <div class="status-row"><span>环境</span><strong id="filterEnv">-</strong></div>
+        <div class="status-row"><span>日期范围</span><strong id="filterDate">-</strong></div>
+      </div>
+    </header>
+
+    <div class="notice" id="notice">
+      正在读取 `latest-summary.json`。如果直接用浏览器 file:// 打开导致读取失败，请用本地 HTTP 服务打开，或手动选择 summary JSON。
+    </div>
+
+    <section class="grid metrics" id="metrics"></section>
+
+    <section>
+      <div class="section-head">
+        <h2>案例页表现</h2>
+        <span class="section-label">cases</span>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <h3>案例行为</h3>
+          <div class="case-split">
+            <div class="split-box"><strong id="casePv">0</strong><span>案例页 PV</span></div>
+            <div class="split-box"><strong id="caseUv">0</strong><span>案例页 UV</span></div>
+            <div class="split-box"><strong id="caseClicks">0</strong><span>案例卡片点击</span></div>
+            <div class="split-box"><strong id="caseDetails">0</strong><span>详情打开</span></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="caseClickRateBar"></div></div>
+          <p class="table-meta" id="caseRateText">案例点击率 0%，详情打开率 0%。</p>
+        </article>
+        <article class="card">
+          <h3>党校 / 管综关注</h3>
+          <div class="case-split">
+            <div class="split-box"><strong id="partyClicks">0</strong><span>党校点击</span></div>
+            <div class="split-box"><strong id="examClicks">0</strong><span>管综点击</span></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="partyShareBar"></div></div>
+          <p class="table-meta" id="partyShareText">暂无案例点击数据。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>核心漏斗</h2>
+        <span class="section-label">funnels</span>
+      </div>
+      <div class="grid two" id="funnels"></div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>热门案例</h2>
+          <span class="section-label">top_cases</span>
+        </div>
+        <div id="topCases"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>页面访问</h2>
+          <span class="section-label">pages</span>
+        </div>
+        <div id="pagesTable"></div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>事件质量</h2>
+          <span class="section-label">events_quality</span>
+        </div>
+        <div id="quality"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>事件分布</h2>
+          <span class="section-label">top_events</span>
+        </div>
+        <div id="eventsTable"></div>
+      </article>
+    </section>
+
+    <div class="footer-tools">
+      <button type="button" id="reloadBtn">重新读取 latest-summary.json</button>
+      <label class="file-label" for="fileInput">选择 summary JSON</label>
+      <input id="fileInput" type="file" accept="application/json,.json">
+      <span>推荐先执行：`node analytics/scripts/aggregate-jsonl.mjs --output analytics/reports/latest-summary.json --env production`</span>
+    </div>
+  </main>
+
+  <script>
+    const SUMMARY_PATH = './latest-summary.json'
+
+    const fallbackSummary = {
+      generated_at: '',
+      filters: { env: 'all', date_from: '', date_to: '' },
+      totals: { events: 0, leads: 0, pv: 0, uv: 0, sessions: 0 },
+      cases: {
+        page_pv: 0,
+        page_uv: 0,
+        card_clicks: 0,
+        detail_opens: 0,
+        load_more_clicks: 0,
+        party_clicks: 0,
+        management_exam_clicks: 0,
+        card_click_rate: 0,
+        detail_open_rate: 0,
+        top_cases: []
+      },
+      funnels: { assessment_to_result: [], case_to_contact: [], result_to_contact: [] },
+      pages: [],
+      events_quality: { missing_required_count: 0, invalid_event_count: 0, missing_fields: [] },
+      top_events: []
+    }
+
+    const $ = (id) => document.getElementById(id)
+    const fmt = (value) => Number(value || 0).toLocaleString('zh-CN')
+    const pct = (value) => `${Math.round(Number(value || 0) * 1000) / 10}%`
+    const safe = (value, fallback = '-') => value === undefined || value === null || value === '' ? fallback : value
+    const dateText = (value) => value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '-'
+
+    function setNotice(text, type = 'normal') {
+      const notice = $('notice')
+      notice.textContent = text
+      notice.style.borderColor = type === 'error' ? '#e8afa6' : '#b8ded8'
+      notice.style.background = type === 'error' ? '#fff0ed' : 'rgba(228, 247, 243, 0.9)'
+    }
+
+    function normalize(summary) {
+      return {
+        ...fallbackSummary,
+        ...summary,
+        filters: { ...fallbackSummary.filters, ...(summary.filters || {}) },
+        totals: { ...fallbackSummary.totals, ...(summary.totals || {}) },
+        cases: { ...fallbackSummary.cases, ...(summary.cases || {}) },
+        funnels: { ...fallbackSummary.funnels, ...(summary.funnels || {}) },
+        events_quality: { ...fallbackSummary.events_quality, ...(summary.events_quality || {}) },
+        pages: Array.isArray(summary.pages) ? summary.pages : [],
+        top_events: Array.isArray(summary.top_events) ? summary.top_events : []
+      }
+    }
+
+    function renderMetrics(summary) {
+      const { totals } = summary
+      const metrics = [
+        ['PV', totals.pv, '页面浏览量'],
+        ['UV', totals.uv, '匿名用户数'],
+        ['Sessions', totals.sessions, '会话数'],
+        ['Events', totals.events, '行为事件数'],
+        ['Leads', totals.leads, '留资数']
+      ]
+      $('metrics').innerHTML = metrics.map(([label, value, hint]) => `
+        <article class="card metric">
+          <div class="label">${label}</div>
+          <div class="value">${fmt(value)}</div>
+          <div class="hint">${hint}</div>
+        </article>
+      `).join('')
+    }
+
+    function renderCaseSection(summary) {
+      const cases = summary.cases
+      $('casePv').textContent = fmt(cases.page_pv)
+      $('caseUv').textContent = fmt(cases.page_uv)
+      $('caseClicks').textContent = fmt(cases.card_clicks)
+      $('caseDetails').textContent = fmt(cases.detail_opens)
+      $('partyClicks').textContent = fmt(cases.party_clicks)
+      $('examClicks').textContent = fmt(cases.management_exam_clicks)
+
+      $('caseClickRateBar').style.width = `${Math.min(Number(cases.card_click_rate || 0) * 100, 100)}%`
+      $('caseRateText').textContent = `案例点击率 ${pct(cases.card_click_rate)}，详情打开率 ${pct(cases.detail_open_rate)}。`
+
+      const totalCaseClicks = Number(cases.party_clicks || 0) + Number(cases.management_exam_clicks || 0)
+      const partyShare = totalCaseClicks ? Number(cases.party_clicks || 0) / totalCaseClicks : 0
+      $('partyShareBar').style.width = `${partyShare * 100}%`
+      $('partyShareText').textContent = totalCaseClicks
+        ? `党校关注占比 ${pct(partyShare)}，管综关注占比 ${pct(1 - partyShare)}。`
+        : '暂无案例点击数据。'
+    }
+
+    function renderFunnel(name, steps) {
+      const items = Array.isArray(steps) ? steps : []
+      return `
+        <article class="card">
+          <div class="section-head">
+            <h3>${name}</h3>
+            <span class="section-label">${items.length} steps</span>
+          </div>
+          <div class="funnel">
+            ${items.length ? items.map((item) => `
+              <div class="funnel-step">
+                <div>
+                  <div class="funnel-name">${safe(item.step)}</div>
+                  <div class="funnel-meta">${safe(item.event_type)}</div>
+                </div>
+                <div class="mini-bar"><span style="width:${Math.min(Number(item.conversion_rate || 0) * 100, 100)}%"></span></div>
+                <div class="rate">${pct(item.conversion_rate)}<br><span class="funnel-meta">UV ${fmt(item.uv)} / ${fmt(item.count)}</span></div>
+              </div>
+            `).join('') : '<div class="empty">暂无漏斗数据。</div>'}
+          </div>
+        </article>
+      `
+    }
+
+    function renderFunnels(summary) {
+      const funnels = summary.funnels
+      $('funnels').innerHTML = [
+        renderFunnel('测评到结果页', funnels.assessment_to_result),
+        renderFunnel('案例到咨询', funnels.case_to_contact),
+        renderFunnel('结果页到咨询', funnels.result_to_contact)
+      ].join('')
+    }
+
+    function table(headers, rows, emptyText) {
+      if (!rows.length) return `<div class="empty">${emptyText}</div>`
+      return `
+        <table>
+          <thead><tr>${headers.map((item) => `<th>${item}</th>`).join('')}</tr></thead>
+          <tbody>${rows.join('')}</tbody>
+        </table>
+      `
+    }
+
+    function renderTopCases(summary) {
+      const rows = (summary.cases.top_cases || []).slice(0, 12).map((item) => `
+        <tr>
+          <td><strong>${safe(item.target_name, item.target_id)}</strong><br><span class="table-meta">${safe(item.target_id)}</span></td>
+          <td><span class="tag">${caseTypeName(item.case_type)}</span></td>
+          <td>${fmt(item.clicks)}</td>
+          <td>${fmt(item.detail_opens)}</td>
+          <td>${fmt(item.contact_clicks)}</td>
+        </tr>
+      `)
+      $('topCases').innerHTML = table(['案例', '方向', '点击', '详情', '咨询'], rows, '暂无案例点击数据。')
+    }
+
+    function renderPages(summary) {
+      const rows = (summary.pages || []).slice(0, 12).map((item) => `
+        <tr>
+          <td><strong>${safe(item.page)}</strong><br><span class="table-meta">${safe(item.page_path, '')}</span></td>
+          <td>${fmt(item.pv)}</td>
+          <td>${fmt(item.uv)}</td>
+          <td>${fmt(item.avg_duration_ms)} ms</td>
+        </tr>
+      `)
+      $('pagesTable').innerHTML = table(['页面', 'PV', 'UV', '平均停留'], rows, '暂无页面访问数据。')
+    }
+
+    function renderQuality(summary) {
+      const quality = summary.events_quality
+      const ok = Number(quality.invalid_event_count || 0) === 0 && Number(quality.missing_required_count || 0) === 0
+      const rows = (quality.missing_fields || []).map((item) => `
+        <tr>
+          <td>${safe(item.field)}</td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('quality').innerHTML = `
+        <div class="case-split">
+          <div class="split-box"><strong>${fmt(quality.invalid_event_count)}</strong><span>无效事件</span></div>
+          <div class="split-box"><strong>${fmt(quality.missing_required_count)}</strong><span>缺失字段次数</span></div>
+        </div>
+        <p style="margin:14px 0;"><span class="tag ${ok ? 'green' : 'red'}">${ok ? '字段质量正常' : '需要排查字段缺失'}</span></p>
+        ${table(['缺失字段', '次数'], rows, '暂无字段缺失。')}
+      `
+    }
+
+    function renderEvents(summary) {
+      const rows = (summary.top_events || []).slice(0, 14).map((item) => `
+        <tr>
+          <td>${safe(item.name)}</td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('eventsTable').innerHTML = table(['事件名', '次数'], rows, '暂无事件分布数据。')
+    }
+
+    function caseTypeName(value) {
+      if (['party_school', 'party'].includes(value)) return '党校'
+      if (['management_exam', 'exam'].includes(value)) return '管综'
+      return safe(value, '未知')
+    }
+
+    function render(summaryInput) {
+      const summary = normalize(summaryInput || {})
+      $('generatedAt').textContent = dateText(summary.generated_at)
+      $('filterEnv').textContent = safe(summary.filters.env, 'all')
+      $('filterDate').textContent = summary.filters.date_from || summary.filters.date_to
+        ? `${safe(summary.filters.date_from, '不限')} 至 ${safe(summary.filters.date_to, '不限')}`
+        : '不限'
+      renderMetrics(summary)
+      renderCaseSection(summary)
+      renderFunnels(summary)
+      renderTopCases(summary)
+      renderPages(summary)
+      renderQuality(summary)
+      renderEvents(summary)
+    }
+
+    async function loadSummary() {
+      try {
+        const response = await fetch(`${SUMMARY_PATH}?t=${Date.now()}`)
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        const summary = await response.json()
+        render(summary)
+        setNotice(`已读取 ${SUMMARY_PATH}。如果数据为 0，说明当前 JSONL 还没有对应环境的真实事件，或聚合时筛选条件没有命中。`)
+      } catch (error) {
+        render(fallbackSummary)
+        setNotice(`读取 ${SUMMARY_PATH} 失败：${error.message}。请用 HTTP 服务打开，或点击“选择 summary JSON”手动加载。`, 'error')
+      }
+    }
+
+    $('reloadBtn').addEventListener('click', loadSummary)
+    $('fileInput').addEventListener('change', async (event) => {
+      const file = event.target.files && event.target.files[0]
+      if (!file) return
+      try {
+        const summary = JSON.parse(await file.text())
+        render(summary)
+        setNotice(`已读取本地文件：${file.name}`)
+      } catch (error) {
+        setNotice(`读取本地 JSON 失败：${error.message}`, 'error')
+      }
+    })
+
+    loadSummary()
+  </script>
+</body>
+</html>

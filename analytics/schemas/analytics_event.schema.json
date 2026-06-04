@@ -6,6 +6,8 @@
   "required": [
     "event_id",
     "event_type",
+    "page",
+    "page_path",
     "anonymous_user_id",
     "session_id",
     "env",
@@ -16,6 +18,7 @@
   "properties": {
     "event_id": { "type": "string" },
     "event_type": { "type": "string" },
+    "page": { "type": "string" },
     "anonymous_user_id": { "type": "string" },
     "session_id": { "type": "string" },
     "wechat_openid": { "type": "string" },

@@ -11,9 +11,12 @@
 | `docs/tracking-plan.md` | 埋点事件字典、字段规范、接入原则 |
 | `docs/metrics.md` | PV、UV、新老用户、停留时长、漏斗等指标口径 |
 | `docs/privacy-and-governance.md` | 隐私、权限、数据保留、测试数据隔离规则 |
+| `docs/implementation-plan-and-dashboard-structure.md` | 埋点落库方案、真实看板读取结构、实施顺序 |
 | `schemas/analytics_events.sql` | 正式数据库表结构建议 |
 | `schemas/analytics_event.schema.json` | 单条事件 JSON Schema |
+| `schemas/dashboard_summary.schema.json` | 用户行为看板汇总数据 JSON Schema |
 | `scripts/aggregate-jsonl.mjs` | 从现有 JSONL 事件文件生成汇总报告的离线脚本 |
+| `reports/user-behavior-dashboard.html` | 读取 `latest-summary.json` 的用户行为看板 HTML |
 | `reports/` | 本地生成的分析报告目录，不提交具体报告 JSON |
 
 ## 一期目标
@@ -43,3 +46,23 @@ node analytics/scripts/aggregate-jsonl.mjs \
 ```
 
 生成结果用于验证口径，不替代正式数据库和看板。
+
+## 用户行为看板 HTML
+
+看板读取同目录的 `latest-summary.json`：
+
+```bash
+node analytics/scripts/aggregate-jsonl.mjs \
+  --events schooltool/data/runtime/miniapp-events.jsonl \
+  --leads schooltool/data/runtime/miniapp-leads.jsonl \
+  --output analytics/reports/latest-summary.json \
+  --env production
+
+python3 -m http.server 8787 --bind 0.0.0.0 --directory analytics/reports
+```
+
+局域网访问：
+
+```text
+http://本机局域网IP:8787/user-behavior-dashboard.html
+```
