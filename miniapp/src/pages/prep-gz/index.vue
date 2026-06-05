@@ -101,6 +101,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { trackPageView, trackNavClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '管综非全研究生备考方案｜研知道',
+  path: '/pages/prep-gz/index'
+})
 
 const goBack = () => {
   const pages = getCurrentPages()

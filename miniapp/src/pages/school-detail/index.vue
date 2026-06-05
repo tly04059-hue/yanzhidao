@@ -102,6 +102,12 @@
 import { onMounted, ref, computed } from 'vue'
 import { trackPageView, trackNavClick } from '@/api/tracking'
 import { getSchoolById, type SchoolDetail } from '@/data/school-data'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '在职研究生院校详情｜研知道',
+  path: '/pages/school-detail/index'
+})
 
 const school = ref<SchoolDetail | null>(null)
 

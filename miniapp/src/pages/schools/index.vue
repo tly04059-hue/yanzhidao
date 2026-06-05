@@ -311,6 +311,12 @@ import { computed, onMounted, reactive, ref } from 'vue'
 import { trackNavClick, trackPageView } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import { getAllSchools, getPartyDirections, type SchoolListItem } from '@/data/school-data'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '川渝在职研究生院校库｜研知道',
+  path: '/pages/schools/index'
+})
 
 type PathType = 'A' | 'B' | null
 

@@ -43,6 +43,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { trackPageView, trackNavClick, trackTabClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '研知道小程序使用说明',
+  path: '/pages/usage/index'
+})
 
 const goBack = () => {
   const pages = getCurrentPages()

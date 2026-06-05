@@ -92,6 +92,12 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue'
 import { trackPageView, trackNavClick, trackTabClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '党校在职研 vs 管综非全路径对比｜研知道',
+  path: '/pages/prep/index'
+})
 
 const goBack = () => {
   const pages = getCurrentPages()

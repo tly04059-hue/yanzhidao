@@ -49,6 +49,12 @@
 import { onMounted } from 'vue'
 import { v5PathContent } from '@/data/v5'
 import { trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '党校在职研和管综非全路径对比｜研知道',
+  path: '/pages/comparison/index'
+})
 
 const content = v5PathContent
 

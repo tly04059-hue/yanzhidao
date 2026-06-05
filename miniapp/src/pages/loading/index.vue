@@ -36,6 +36,12 @@ import { prepareQuizInput, buildQuizRuntimeFromPieces, type QuizSubmission } fro
 import { getLocalRecommendation } from '@/data/recommendation-strategy'
 import { getPeerInsights } from '@/data/cases-v2-peer-insights'
 import { buildResultPresentation } from '@/data/result-presentation'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '测一测你的在职考研方向｜研知道',
+  path: '/pages/test/index'
+})
 
 const steps = [
   { key: 'input', label: '读取画像' },

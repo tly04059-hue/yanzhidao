@@ -113,6 +113,12 @@ import { ensurePrivacyAuthorization } from '@/api/privacy'
 import { trackNavClick, trackPageView } from '@/api/tracking'
 import type { QuizRuntime } from '@/data/quiz-runtime'
 import { remoteAssets } from '@/data/remote-assets'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '我的在职考研择校方向建议｜研知道',
+  path: '/pages/zexiao/index'
+})
 
 const instance = getCurrentInstance()
 const EXPORT_SCALE = 2

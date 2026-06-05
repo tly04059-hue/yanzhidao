@@ -33,7 +33,7 @@ export const v6DownloadsContent = {
   brandLine: '资料预览 · 保存到手机里慢慢看',
   hero: {
     // kicker: '下载专区',
-    title: '2026四川党校在职研考前必背一页纸',
+    title: '2026四川党校在职研\n考前必背一页纸',
     // subtitle: '图片资料可直接保存到相册，文档资料可直接打开。'
   },
   // section: {

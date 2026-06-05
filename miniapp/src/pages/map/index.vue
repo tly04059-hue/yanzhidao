@@ -152,6 +152,12 @@ import { computed, onMounted, ref } from 'vue'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import { trackNavClick, trackPageView } from '@/api/tracking'
 import { remoteAssets } from '@/data/remote-assets'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '研知道服务同学分布｜川渝在职考研',
+  path: '/pages/map/index'
+})
 
 type TabKey = 'all' | 'sichuan' | 'chongqing'
 
