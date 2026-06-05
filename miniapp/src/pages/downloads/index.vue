@@ -12,6 +12,16 @@
     <view class="v6-page">
       <view class="brand-row">{{ content.brandLine }}</view>
 
+      <view class="hero-card">
+        <view class="downloads-hero-title">
+          <text
+            v-for="line in heroTitleLines"
+            :key="line"
+            class="downloads-hero-title-line"
+          >{{ line }}</text>
+        </view>
+      </view>
+
       <view class="downloads-action-stack">
         <view class="btn-primary" @click="goPage('prep')">在职考研路径对比</view>
         <view class="btn-secondary" @click="goPage('cases')">辅导上岸案例</view>
@@ -41,10 +51,6 @@
             </view>
 
             <view class="dl-info">
-              <view class="dl-head">
-                <text class="dl-title-text">{{ item.title }}</text>
-                <!-- <text class="chip">{{ item.tag }}</text> -->
-              </view>
               <text class="dl-note">{{ item.note }}</text>
               <view v-if="item.subjects?.length" class="dl-subject-list">
                 <view v-for="subject in item.subjects" :key="subject.title" class="dl-subject-row">
@@ -95,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { v6DownloadsContent } from '@/data/v5'
 import { ensurePrivacyAuthorization } from '@/api/privacy'
 import { trackNavClick, trackPageView } from '@/api/tracking'
@@ -113,6 +119,7 @@ usePageShare({
 const content = v6DownloadsContent
 const downloadingId = ref('')
 const previewItem = ref<DownloadItem | null>(null)
+const heroTitleLines = computed(() => content.hero.title.split('\n').filter(Boolean))
 
 const goBack = () => {
   trackNavClick('downloads', 'back', '/pages/index/index')
@@ -298,6 +305,21 @@ onUnmounted(() => lockBodyScroll(false))
 .shell.modal-open {
   height: 100vh;
   overflow: hidden;
+}
+
+.downloads-hero-title {
+  @include serif;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 24px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: $text-1;
+}
+
+.downloads-hero-title-line {
+  display: block;
 }
 
 .downloads-action-stack {
