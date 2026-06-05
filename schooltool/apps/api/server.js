@@ -21,6 +21,10 @@ const jsonResponse = (res, statusCode, payload) => {
 }
 
 const normalizeString = value => String(value || '').trim()
+const normalizeNumberOrNull = value => {
+  const number = Number(value)
+  return Number.isFinite(number) ? number : null
+}
 
 const readBody = req => new Promise((resolve, reject) => {
   const chunks = []
@@ -77,7 +81,35 @@ const normalizeEvent = raw => {
     target_name: normalizeString(raw.target_name || payload.target_name),
     source_channel: normalizeString(raw.source_channel || payload.source_channel || payload.source),
     scene: normalizeString(raw.scene || payload.scene),
+    scene_category: normalizeString(raw.scene_category || payload.scene_category),
     duration_ms: Number(raw.duration_ms || payload.duration_ms || 0) || null,
+    keyword: normalizeString(raw.keyword || payload.keyword),
+    result_count: normalizeNumberOrNull(raw.result_count || payload.result_count),
+    has_result: typeof raw.has_result === 'boolean' ? raw.has_result : (typeof payload.has_result === 'boolean' ? payload.has_result : null),
+    error_type: normalizeString(raw.error_type || payload.error_type),
+    err_msg: normalizeString(raw.err_msg || payload.err_msg),
+    status_code: normalizeNumberOrNull(raw.status_code || payload.status_code),
+    url: normalizeString(raw.url || payload.url),
+    method: normalizeString(raw.method || payload.method),
+    share_trace_id: normalizeString(raw.share_trace_id || payload.share_trace_id),
+    referrer_share_trace_id: normalizeString(raw.referrer_share_trace_id || payload.referrer_share_trace_id),
+    section_id: normalizeString(raw.section_id || payload.section_id),
+    section_name: normalizeString(raw.section_name || payload.section_name),
+    scroll_threshold: normalizeNumberOrNull(raw.scroll_threshold || payload.scroll_threshold),
+    action: normalizeString(raw.action || payload.action),
+    device_brand: normalizeString(raw.device_brand || payload.device_brand || payload.device?.device_brand),
+    device_model: normalizeString(raw.device_model || payload.device_model || payload.device?.device_model),
+    device_type: normalizeString(raw.device_type || payload.device_type || payload.device?.device_type),
+    os_name: normalizeString(raw.os_name || payload.os_name || payload.device?.os_name),
+    os_version: normalizeString(raw.os_version || payload.os_version || payload.device?.os_version),
+    platform: normalizeString(raw.platform || payload.platform || payload.device?.platform),
+    wechat_version: normalizeString(raw.wechat_version || payload.wechat_version || payload.device?.wechat_version),
+    sdk_version: normalizeString(raw.sdk_version || payload.sdk_version || payload.device?.sdk_version),
+    screen_width: normalizeNumberOrNull(raw.screen_width || payload.screen_width || payload.device?.screen_width),
+    screen_height: normalizeNumberOrNull(raw.screen_height || payload.screen_height || payload.device?.screen_height),
+    window_width: normalizeNumberOrNull(raw.window_width || payload.window_width || payload.device?.window_width),
+    window_height: normalizeNumberOrNull(raw.window_height || payload.window_height || payload.device?.window_height),
+    pixel_ratio: normalizeNumberOrNull(raw.pixel_ratio || payload.pixel_ratio || payload.device?.pixel_ratio),
     env: normalizeString(raw.env || payload.env),
     app_version: normalizeString(raw.app_version || payload.app_version),
     tracking_plan_version: normalizeString(raw.tracking_plan_version || payload.tracking_plan_version),

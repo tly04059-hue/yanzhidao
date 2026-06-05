@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
-onLaunch(() => {
+import { trackAppHide, trackAppLaunch, trackAppShow } from "@/api/tracking";
+
+onLaunch((options) => {
+  trackAppLaunch(options);
   if (import.meta.env.DEV) console.log("App Launch");
 });
-onShow(() => {
+onShow((options) => {
+  trackAppShow(options);
   if (import.meta.env.DEV) console.log("App Show");
 });
 onHide(() => {
+  trackAppHide();
   if (import.meta.env.DEV) console.log("App Hide");
 });
 </script>

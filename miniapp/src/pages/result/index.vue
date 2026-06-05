@@ -11,13 +11,13 @@
     <view class="v6-page has-tabbar">
       <view class="brand-row">已服务 1,000+ 川渝同学 · 不骗人 · 真服务</view>
 
-      <view class="hero-card">
+      <view id="result-hero" class="hero-card js-track-section">
         <text class="kicker-cn">选校诊断结果</text>
         <text class="hero-title">选校方向建议</text>
         <text class="hero-copy">{{ profile }}</text>
       </view>
 
-      <view class="recommend-card">
+      <view id="result-recommendation" class="recommend-card js-track-section">
         <text class="recommend-crown">⭐ 首选推荐</text>
         <text class="recommend-title">{{ recommendation.title }}</text>
         <view class="recommend-meta">
@@ -37,7 +37,7 @@
 
       </view>
 
-      <view class="section">
+      <view id="result-reasons" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="reason-head-shell" @click="toggleReasonSection">
             <view class="section-head-top">
@@ -53,21 +53,21 @@
           <view class="collapse-panel-inner">
           <text v-if="systemName" class="text-sm section-intro">在{{ systemName }}里，研究生学历的实际作用：</text>
 
-          <view class="result-card">
+          <view id="result-policy" class="result-card js-track-section">
             <text class="result-card-title">政策层面</text>
             <text v-for="item in policyItems" :key="item.pre" class="result-card-item">
               <text class="text-bold">{{ item.pre }}</text>{{ item.text }}
             </text>
           </view>
 
-          <view v-if="realityItems.length" class="result-card">
+          <view v-if="realityItems.length" id="result-reality" class="result-card js-track-section">
             <text class="result-card-title">真实作用 · 相似案例反馈</text>
             <view v-for="item in realityItems" :key="item.sourceCaseId || item.text" class="result-card-item-wrap">
               <text class="result-card-item">{{ item.text }}</text>
             </view>
           </view>
 
-          <view class="result-card">
+          <view id="result-window" class="result-card js-track-section">
             <view class="window-toggle" @click="toggleWindowSection">
               <text class="result-card-title">为什么现在是窗口期</text>
               <view class="window-toggle-right">
@@ -83,7 +83,7 @@
             </view>
           </view>
 
-          <view class="result-card">
+          <view id="result-weekly-plan" class="result-card js-track-section">
             <text class="result-card-title">接下来 1 周可以做的</text>
             <text v-for="item in weeklyPlan" :key="item" class="result-card-item">{{ item }}</text>
           </view>
@@ -91,7 +91,7 @@
         </view>
       </view>
 
-      <view class="section">
+      <view id="result-backup" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="reason-head-shell" @click="toggleBackupSection">
             <view class="section-head-top">
@@ -111,7 +111,7 @@
         </view>
       </view>
 
-      <view class="section">
+      <view id="result-peer-cases" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="reason-head-shell" @click="togglePeerSection">
             <view class="section-head-top">
@@ -160,7 +160,7 @@
         </view>
       </view>
 
-      <view class="section">
+      <view id="result-next-actions" class="section js-track-section">
         <view class="section-head">
           <text class="section-head-title">你能做的下一步</text>
           <text class="section-head-meta">研知道不催不诱</text>
@@ -196,15 +196,34 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { trackContactClick, trackNavClick, trackPageView, trackRecommendationView } from '@/api/tracking'
+import { trackContactClick, trackNavClick, trackPageView, trackRecommendationView, trackSectionToggle } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import type { QuizRuntime } from '@/data/quiz-runtime'
 import { casesV2, casesV2Stats, managementExamCasesV2, partySchoolCasesV2 } from '@/data/cases-v2'
+import { useBehaviorTrace } from '@/utils/behaviorTrace'
 import { usePageShare } from '@/utils/share'
+
+const PAGE_NAME = 'result'
 
 usePageShare({
   title: '我的在职考研择校方向建议｜研知道',
-  path: '/pages/result/index'
+  path: '/pages/result/index',
+  page: PAGE_NAME
+})
+
+useBehaviorTrace(PAGE_NAME, {
+  sections: [
+    { id: 'result-hero', name: '结果页头图' },
+    { id: 'result-recommendation', name: '首选推荐' },
+    { id: 'result-reasons', name: '推荐理由' },
+    { id: 'result-policy', name: '政策层面' },
+    { id: 'result-reality', name: '真实作用案例' },
+    { id: 'result-window', name: '窗口期说明' },
+    { id: 'result-weekly-plan', name: '一周行动计划' },
+    { id: 'result-backup', name: '备选方案' },
+    { id: 'result-peer-cases', name: '类似同学案例' },
+    { id: 'result-next-actions', name: '下一步入口' }
+  ]
 })
 
 type RichItem = { pre: string; text: string }
@@ -328,20 +347,31 @@ const goPage = (key: string) => {
   if (url) uni.navigateTo({ url })
 }
 
+const trackResultToggle = (sectionId: string, open: boolean, sectionName: string) =>
+  trackSectionToggle(PAGE_NAME, sectionId, open, {
+    section_name: sectionName,
+    recommendation_title: recommendation.value.title,
+    match: recommendation.value.match
+  })
+
 const toggleReasonSection = () => {
   reasonSectionOpen.value = !reasonSectionOpen.value
+  trackResultToggle('result-reasons', reasonSectionOpen.value, '推荐理由')
 }
 
 const toggleBackupSection = () => {
   backupSectionOpen.value = !backupSectionOpen.value
+  trackResultToggle('result-backup', backupSectionOpen.value, '备选方案')
 }
 
 const togglePeerSection = () => {
   peerSectionOpen.value = !peerSectionOpen.value
+  trackResultToggle('result-peer-cases', peerSectionOpen.value, '类似同学案例')
 }
 
 const toggleWindowSection = () => {
   windowSectionOpen.value = !windowSectionOpen.value
+  trackResultToggle('result-window', windowSectionOpen.value, '窗口期说明')
 }
 
 onMounted(() => {

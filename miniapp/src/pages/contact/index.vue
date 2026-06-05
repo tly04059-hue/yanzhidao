@@ -11,14 +11,14 @@
     <view class="v6-page">
       <view class="brand-row">已服务 1,000+ 川渝同学 · 不骗人 · 真服务</view>
 
-      <view class="hero-card">
+      <view id="contact-hero" class="hero-card js-track-section">
         <text class="kicker-cn">1 对 1 顾问</text>
         <text class="hero-title">不骗人，真服务{{'\n'}}请放心聊</text>
         <text class="hero-copy">结合我们知道的数据、信息和经验，助你把想法、方向变成清晰的判断、计划、行动。</text>
       </view>
 
       <!-- 顾问名片卡 -->
-      <view class="consultant-card-v6">
+      <view id="contact-qr" class="consultant-card-v6 js-track-section">
         <view class="consultant-avatar-v6">
           <image class="avatar-logo" src="/static/Logo研.svg" mode="aspectFit" />
         </view>
@@ -46,7 +46,7 @@
       </view>
 
       <!-- 顾问能帮你什么 -->
-      <view class="note-card">
+      <view id="contact-help" class="note-card js-track-section">
         <text class="help-title">顾问能帮你什么</text>
         <text class="note-card-text" v-for="item in helpItems" :key="item" style="margin-top: 12px; display: block;">· {{ item }}</text>
       </view>
@@ -59,11 +59,21 @@
 import { onMounted, ref } from 'vue'
 import { trackContactClick, trackPageView } from '@/api/tracking'
 import { remoteAssets } from '@/data/remote-assets'
+import { useBehaviorTrace } from '@/utils/behaviorTrace'
 import { usePageShare } from '@/utils/share'
 
 usePageShare({
   title: '和研知道顾问聊聊在职考研路径',
-  path: '/pages/contact/index'
+  path: '/pages/contact/index',
+  page: 'contact'
+})
+
+useBehaviorTrace('contact', {
+  sections: [
+    { id: 'contact-hero', name: '联系页头图' },
+    { id: 'contact-qr', name: '二维码区域' },
+    { id: 'contact-help', name: '顾问帮助说明' }
+  ]
 })
 
 interface QRItem { label: string; src: string }

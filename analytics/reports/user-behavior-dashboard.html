@@ -40,6 +40,47 @@
       padding: 40px 28px 56px;
     }
 
+    .locked .page {
+      filter: blur(6px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .auth-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(13, 37, 42, 0.58);
+      backdrop-filter: blur(10px);
+    }
+
+    .locked .auth-panel {
+      display: flex;
+    }
+
+    .auth-card {
+      width: min(520px, 100%);
+      padding: 28px;
+      border: 1px solid #b8ded8;
+      border-radius: 26px;
+      background: #fbfffd;
+      box-shadow: 0 24px 70px rgba(13, 37, 42, 0.24);
+    }
+
+    .auth-card h2 {
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    .auth-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
@@ -307,6 +348,26 @@
       color: var(--green);
     }
 
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .path-line {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: normal;
+      word-break: break-all;
+    }
+
+    .timeline-item {
+      padding: 10px 12px;
+      border: 1px solid #d8ebe7;
+      border-radius: 14px;
+      background: #f7fcfa;
+    }
+
     .empty {
       padding: 18px;
       color: var(--muted);
@@ -338,6 +399,57 @@
       padding: 9px 14px;
     }
 
+    .search-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      margin: 0 0 14px;
+    }
+
+    .search-input {
+      width: 100%;
+      border: 1px solid #b8ded8;
+      border-radius: 999px;
+      background: #fbfffd;
+      color: var(--ink);
+      font: inherit;
+      padding: 9px 14px;
+      outline: none;
+    }
+
+    .filter-panel {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+    }
+
+    .field label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      border: 1px solid #b8ded8;
+      border-radius: 14px;
+      background: #fbfffd;
+      color: var(--ink);
+      font: inherit;
+      padding: 9px 10px;
+      outline: none;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     input[type="file"] {
       display: none;
     }
@@ -354,6 +466,10 @@
 
       .status-card {
         min-width: 0;
+      }
+
+      .filter-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -380,10 +496,25 @@
         overflow-x: auto;
         white-space: nowrap;
       }
+
+      .filter-panel {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-<body>
+<body class="locked">
+  <div class="auth-panel">
+    <div class="auth-card">
+      <h2>用户行为看板</h2>
+      <p>请输入访问口令。注意：这是前端门禁，正式上线仍需要服务器 Basic Auth、IP 白名单或登录鉴权保护页面和 JSON 数据。</p>
+      <div class="search-row">
+        <input id="accessCodeInput" class="search-input" type="password" placeholder="访问口令">
+        <button type="button" id="accessCodeBtn">进入</button>
+      </div>
+      <p class="table-meta" id="accessCodeMsg">本地默认口令用于内部验收，上线后请替换为服务端权限控制。</p>
+    </div>
+  </div>
   <main class="page">
     <header class="hero">
       <div>
@@ -402,6 +533,241 @@
     </div>
 
     <section class="grid metrics" id="metrics"></section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>基础访问总览</h2>
+          <span class="section-label">overview</span>
+        </div>
+        <div id="overviewBox"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>用户来源</h2>
+          <span class="section-label">source</span>
+        </div>
+        <div id="sourceTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>用户访问路径分析</h2>
+        <span class="section-label">landing / exit / A→B</span>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <div class="section-head">
+            <h3>Landing Page / 离开页</h3>
+            <span class="section-label">入口页 / 最后离开页</span>
+          </div>
+          <div id="entryExitTable"></div>
+        </article>
+        <article class="card">
+          <div class="section-head">
+            <h3>页面跳转关系</h3>
+            <span class="section-label">从 A 页到 B 页</span>
+          </div>
+          <div id="transitionsTable"></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>单次会话路径</h2>
+        <span class="section-label">session timeline</span>
+      </div>
+      <article class="card">
+        <div id="recentSessions"></div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>按用户查询完整路径</h2>
+          <span class="section-label">anonymous_user_id</span>
+        </div>
+        <div class="search-row">
+          <input id="userSearchInput" class="search-input" placeholder="输入 anonymous_user_id，查看这个用户的完整访问路径">
+          <button type="button" id="userSearchBtn">查询</button>
+        </div>
+        <div id="userTimeline"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>高意向匿名用户</h2>
+          <span class="section-label">咨询 / 留资 / 分享</span>
+        </div>
+        <div id="highIntentUsers"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>全局筛选与导出</h2>
+        <span class="section-label">filters / export</span>
+      </div>
+      <article class="card">
+        <div class="filter-panel">
+          <div class="field">
+            <label for="filterUser">匿名用户 ID</label>
+            <input id="filterUser" placeholder="anonymous_user_id">
+          </div>
+          <div class="field">
+            <label for="filterSession">会话 ID</label>
+            <input id="filterSession" placeholder="session_id">
+          </div>
+          <div class="field">
+            <label for="filterEvent">事件类型</label>
+            <input id="filterEvent" placeholder="page_view / contact_click">
+          </div>
+          <div class="field">
+            <label for="filterPage">页面路径</label>
+            <input id="filterPage" placeholder="/pages/result/index">
+          </div>
+          <div class="field">
+            <label for="filterFrom">开始时间</label>
+            <input id="filterFrom" type="datetime-local">
+          </div>
+          <div class="field">
+            <label for="filterTo">结束时间</label>
+            <input id="filterTo" type="datetime-local">
+          </div>
+        </div>
+        <div class="button-row" style="margin-top:14px;">
+          <button type="button" id="applyFiltersBtn">应用筛选</button>
+          <button type="button" id="resetFiltersBtn">重置筛选</button>
+          <button type="button" id="exportEventsBtn">导出事件 CSV</button>
+          <button type="button" id="exportSessionsBtn">导出会话 CSV</button>
+          <button type="button" id="exportUsersBtn">导出用户 CSV</button>
+        </div>
+        <p class="table-meta" id="filterResultText" style="margin-top:10px;">筛选会作用于事件回放、单次会话路径和用户完整路径查询。</p>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>真实事件样本回放</h2>
+        <span class="section-label">event replay</span>
+      </div>
+      <article class="card">
+        <div id="eventReplay"></div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>内容区块停留</h2>
+          <span class="section-label">sections</span>
+        </div>
+        <div id="sectionsTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>主动展开内容</h2>
+        <span class="section-label">section toggles</span>
+      </div>
+      <article class="card">
+        <div id="sectionTogglesTable"></div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>未留资高意向用户</h2>
+          <span class="section-label">hot but no lead</span>
+        </div>
+        <div id="unconvertedUsers"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>回访分析</h2>
+          <span class="section-label">retention</span>
+        </div>
+        <div id="retentionBox"></div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>漏斗掉队用户</h2>
+          <span class="section-label">dropoffs</span>
+        </div>
+        <div id="dropoffsTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>区块流转</h2>
+          <span class="section-label">section transitions</span>
+        </div>
+        <div id="sectionTransitionsTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>滚动深度</h2>
+        <span class="section-label">scroll_depth</span>
+      </div>
+      <article class="card">
+        <div id="scrollDepthTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>访问时段</h2>
+        <span class="section-label">time distribution</span>
+      </div>
+      <article class="card">
+        <div id="timeDistributionTable"></div>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>搜索分析</h2>
+          <span class="section-label">search</span>
+        </div>
+        <div id="searchTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>互动分析</h2>
+          <span class="section-label">interaction</span>
+        </div>
+        <div id="interactionTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>技术监控</h2>
+        <span class="section-label">technical</span>
+      </div>
+      <article class="card">
+        <div id="technicalTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>近期原始事件</h2>
+        <span class="section-label">recent events</span>
+      </div>
+      <article class="card">
+        <div id="recentEventsTable"></div>
+      </article>
+    </section>
 
     <section>
       <div class="section-head">
@@ -474,6 +840,23 @@
       </article>
     </section>
 
+    <section class="grid two">
+      <article class="card">
+        <div class="section-head">
+          <h2>分享传播</h2>
+          <span class="section-label">share</span>
+        </div>
+        <div id="shareTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>设备分布</h2>
+          <span class="section-label">devices</span>
+        </div>
+        <div id="devicesTable"></div>
+      </article>
+    </section>
+
     <div class="footer-tools">
       <button type="button" id="reloadBtn">重新读取 latest-summary.json</button>
       <label class="file-label" for="fileInput">选择 summary JSON</label>
@@ -484,11 +867,19 @@
 
   <script>
     const SUMMARY_PATH = './latest-summary.json'
+    const DASHBOARD_ACCESS_CODE = 'yanzhidao-dashboard'
+    const AUTH_KEY = 'yz_dashboard_authorized_v1'
+    const FILTER_INPUT_IDS = ['filterUser', 'filterSession', 'filterEvent', 'filterPage', 'filterFrom', 'filterTo']
+    let currentSummary = null
+    let filteredEvents = []
+    let filteredSessions = []
+    let filteredUsers = []
 
     const fallbackSummary = {
       generated_at: '',
       filters: { env: 'all', date_from: '', date_to: '' },
       totals: { events: 0, leads: 0, pv: 0, uv: 0, sessions: 0 },
+      overview: { uv: 0, pv: 0, sessions: 0, new_users: 0, returning_users: 0, avg_sessions_per_user: 0, avg_page_views_per_user: 0, avg_session_duration_ms: 0, avg_user_duration_ms: 0, bounce_sessions: 0, bounce_rate: 0 },
       cases: {
         page_pv: 0,
         page_uv: 0,
@@ -502,6 +893,21 @@
         top_cases: []
       },
       funnels: { assessment_to_result: [], case_to_contact: [], result_to_contact: [] },
+      user_behavior: { users: [], sessions: [], recent_sessions: [], high_intent_users: [] },
+      source_analysis: { channels: [] },
+      share: { attempts: 0, opens: 0, attempt_pages: [], open_pages: [], traces: [] },
+      devices: { top_models: [], platforms: [], os: [] },
+      sections: { top_sections: [], toggles: [] },
+      search_analysis: { total_searches: 0, result_clicks: 0, click_through_rate: 0, top_keywords: [], no_result_keywords: [] },
+      interactions: { total: 0, top_actions: [], contact_clicks: 0, lead_submits: 0, share_attempts: 0 },
+      scroll_depth: { by_page: [] },
+      navigation: { entry_pages: [], exit_pages: [], page_transitions: [], section_transitions: [] },
+      retention: { total_users: 0, users_visited_2plus_days: 0, users_visited_3plus_sessions: 0, users_visited_7plus_sessions: 0, users_visited_30plus_sessions: 0 },
+      retention_cohorts: { next_day: { base_users: 0, retained_users: 0, retention_rate: 0 }, seven_day: { base_users: 0, retained_users: 0, retention_rate: 0 }, thirty_day: { base_users: 0, retained_users: 0, retention_rate: 0 } },
+      time_distribution: { by_hour: [], by_weekday: [] },
+      technical: { total_issues: 0, api_failures: 0, page_errors: 0, by_type: [], by_url: [], by_status: [] },
+      dropoffs: { assessment_started_not_finished: [], assessment_finished_not_result: [], result_view_no_contact: [], contact_click_no_lead: [], case_page_no_case_click: [] },
+      recent_events: [],
       pages: [],
       events_quality: { missing_required_count: 0, invalid_event_count: 0, missing_fields: [] },
       top_events: []
@@ -512,6 +918,81 @@
     const pct = (value) => `${Math.round(Number(value || 0) * 1000) / 10}%`
     const safe = (value, fallback = '-') => value === undefined || value === null || value === '' ? fallback : value
     const dateText = (value) => value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '-'
+    const shortId = (value) => {
+      const text = String(value || '')
+      return text.length > 18 ? `${text.slice(0, 10)}…${text.slice(-6)}` : safe(text)
+    }
+    const durationText = (value) => {
+      const ms = Number(value || 0)
+      if (!ms) return '-'
+      const seconds = Math.round(ms / 1000)
+      if (seconds < 60) return `${seconds}s`
+      const minutes = Math.floor(seconds / 60)
+      const remain = seconds % 60
+      if (minutes < 60) return `${minutes}m ${remain}s`
+      const hours = Math.floor(minutes / 60)
+      return `${hours}h ${minutes % 60}m`
+    }
+    const joinShort = (items, limit = 3) => {
+      const list = Array.isArray(items) ? items.filter(Boolean) : []
+      if (!list.length) return '-'
+      const visible = list.slice(0, limit)
+      return `${visible.join(' → ')}${list.length > limit ? ` 等 ${list.length} 页` : ''}`
+    }
+    const parseTime = (value) => {
+      const date = value ? new Date(value) : null
+      return date && !Number.isNaN(date.getTime()) ? date.getTime() : 0
+    }
+    const csvEscape = (value) => {
+      const text = String(value === undefined || value === null ? '' : value)
+      return `"${text.replace(/"/g, '""')}"`
+    }
+    const downloadCsv = (filename, rows) => {
+      if (!rows.length) {
+        setNotice(`没有可导出的数据：${filename}`, 'error')
+        return
+      }
+      const headers = Object.keys(rows[0])
+      const csv = [
+        headers.map(csvEscape).join(','),
+        ...rows.map(row => headers.map(key => csvEscape(row[key])).join(','))
+      ].join('\n')
+      const blob = new Blob([`\ufeff${csv}`], { type: 'text/csv;charset=utf-8;' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = filename
+      link.click()
+      URL.revokeObjectURL(url)
+    }
+
+    function applyAuthState() {
+      let authed = false
+      try {
+        authed = localStorage.getItem(AUTH_KEY) === '1'
+      } catch (error) {
+        authed = false
+      }
+      document.body.classList.toggle('locked', !authed)
+    }
+
+    function unlockDashboard() {
+      const input = $('accessCodeInput')
+      const msg = $('accessCodeMsg')
+      if (String(input.value || '').trim() === DASHBOARD_ACCESS_CODE) {
+        try {
+          localStorage.setItem(AUTH_KEY, '1')
+        } catch (error) {
+          // ignore storage failures; keep the in-memory unlock for this page load.
+        }
+        applyAuthState()
+        document.body.classList.remove('locked')
+        msg.textContent = '已通过。'
+        return
+      }
+      msg.textContent = '口令不正确。'
+      msg.style.color = 'var(--red)'
+    }
 
     function setNotice(text, type = 'normal') {
       const notice = $('notice')
@@ -526,30 +1007,131 @@
         ...summary,
         filters: { ...fallbackSummary.filters, ...(summary.filters || {}) },
         totals: { ...fallbackSummary.totals, ...(summary.totals || {}) },
+        overview: { ...fallbackSummary.overview, ...(summary.overview || {}) },
         cases: { ...fallbackSummary.cases, ...(summary.cases || {}) },
         funnels: { ...fallbackSummary.funnels, ...(summary.funnels || {}) },
+        user_behavior: { ...fallbackSummary.user_behavior, ...(summary.user_behavior || {}) },
+        source_analysis: { ...fallbackSummary.source_analysis, ...(summary.source_analysis || {}) },
+        share: { ...fallbackSummary.share, ...(summary.share || {}) },
+        devices: { ...fallbackSummary.devices, ...(summary.devices || {}) },
+        sections: { ...fallbackSummary.sections, ...(summary.sections || {}) },
+        search_analysis: { ...fallbackSummary.search_analysis, ...(summary.search_analysis || {}) },
+        interactions: { ...fallbackSummary.interactions, ...(summary.interactions || {}) },
+        scroll_depth: { ...fallbackSummary.scroll_depth, ...(summary.scroll_depth || {}) },
+        navigation: { ...fallbackSummary.navigation, ...(summary.navigation || {}) },
+        retention: { ...fallbackSummary.retention, ...(summary.retention || {}) },
+        retention_cohorts: { ...fallbackSummary.retention_cohorts, ...(summary.retention_cohorts || {}) },
+        time_distribution: { ...fallbackSummary.time_distribution, ...(summary.time_distribution || {}) },
+        technical: { ...fallbackSummary.technical, ...(summary.technical || {}) },
+        dropoffs: { ...fallbackSummary.dropoffs, ...(summary.dropoffs || {}) },
         events_quality: { ...fallbackSummary.events_quality, ...(summary.events_quality || {}) },
         pages: Array.isArray(summary.pages) ? summary.pages : [],
+        recent_events: Array.isArray(summary.recent_events) ? summary.recent_events : [],
         top_events: Array.isArray(summary.top_events) ? summary.top_events : []
       }
     }
 
+    function getFilterValues() {
+      return {
+        user: $('filterUser')?.value.trim() || '',
+        session: $('filterSession')?.value.trim() || '',
+        event: $('filterEvent')?.value.trim() || '',
+        page: $('filterPage')?.value.trim() || '',
+        from: parseTime($('filterFrom')?.value || ''),
+        to: parseTime($('filterTo')?.value || '')
+      }
+    }
+
+    function matchesFilters(item, filters) {
+      const createdAt = parseTime(item.created_at)
+      if (filters.user && !String(item.anonymous_user_id || '').includes(filters.user)) return false
+      if (filters.session && !String(item.session_id || '').includes(filters.session)) return false
+      if (filters.event && !String(item.event_type || '').includes(filters.event)) return false
+      if (filters.page && !String(item.page_path || item.page || '').includes(filters.page)) return false
+      if (filters.from && createdAt && createdAt < filters.from) return false
+      if (filters.to && createdAt && createdAt > filters.to) return false
+      return true
+    }
+
+    function applyGlobalFilters(summary) {
+      const filters = getFilterValues()
+      const events = summary.recent_events || []
+      filteredEvents = events.filter(item => matchesFilters(item, filters))
+
+      const matchedSessionIds = new Set(filteredEvents.map(item => item.session_id).filter(Boolean))
+      const matchedUserIds = new Set(filteredEvents.map(item => item.anonymous_user_id).filter(Boolean))
+      filteredSessions = (summary.user_behavior.sessions || []).filter(item => {
+        if (filters.user && !String(item.anonymous_user_id || '').includes(filters.user)) return false
+        if (filters.session && !String(item.session_id || '').includes(filters.session)) return false
+        if (matchedSessionIds.size && matchedSessionIds.has(item.session_id)) return true
+        if (!filters.event && !filters.page && !filters.from && !filters.to) return true
+        return false
+      })
+      filteredSessions.forEach(item => {
+        if (item.anonymous_user_id) matchedUserIds.add(item.anonymous_user_id)
+      })
+      filteredUsers = (summary.user_behavior.users || []).filter(item => {
+        if (filters.user && !String(item.anonymous_user_id || '').includes(filters.user)) return false
+        if (matchedUserIds.size && matchedUserIds.has(item.anonymous_user_id)) return true
+        if (!filters.event && !filters.page && !filters.from && !filters.to && !filters.session) return true
+        return false
+      })
+
+      $('filterResultText').textContent = `当前筛选命中 ${fmt(filteredEvents.length)} 条事件、${fmt(filteredSessions.length)} 个会话、${fmt(filteredUsers.length)} 个匿名用户。`
+      renderEventReplay(filteredEvents)
+      renderRecentEvents({ recent_events: filteredEvents })
+      renderUserTimeline(summary, filters.user)
+    }
+
     function renderMetrics(summary) {
       const { totals } = summary
+      const overview = summary.overview || {}
       const metrics = [
         ['PV', totals.pv, '页面浏览量'],
         ['UV', totals.uv, '匿名用户数'],
         ['Sessions', totals.sessions, '会话数'],
+        ['New', overview.new_users, '新用户数'],
+        ['Bounce', pct(overview.bounce_rate), '跳出率'],
         ['Events', totals.events, '行为事件数'],
         ['Leads', totals.leads, '留资数']
       ]
       $('metrics').innerHTML = metrics.map(([label, value, hint]) => `
         <article class="card metric">
           <div class="label">${label}</div>
-          <div class="value">${fmt(value)}</div>
+          <div class="value">${typeof value === 'string' ? value : fmt(value)}</div>
           <div class="hint">${hint}</div>
         </article>
       `).join('')
+    }
+
+    function renderOverview(summary) {
+      const item = summary.overview || {}
+      $('overviewBox').innerHTML = `
+        <div class="case-split">
+          <div class="split-box"><strong>${fmt(item.new_users)}</strong><span>新用户</span></div>
+          <div class="split-box"><strong>${fmt(item.returning_users)}</strong><span>老用户</span></div>
+          <div class="split-box"><strong>${safe(item.avg_sessions_per_user, 0)}</strong><span>人均访问次数</span></div>
+          <div class="split-box"><strong>${safe(item.avg_page_views_per_user, 0)}</strong><span>人均 PV</span></div>
+          <div class="split-box"><strong>${durationText(item.avg_session_duration_ms)}</strong><span>人均会话停留</span></div>
+          <div class="split-box"><strong>${durationText(item.avg_user_duration_ms)}</strong><span>人均累计停留</span></div>
+          <div class="split-box"><strong>${fmt(item.bounce_sessions)}</strong><span>跳出会话</span></div>
+          <div class="split-box"><strong>${pct(item.bounce_rate)}</strong><span>跳出率</span></div>
+        </div>
+      `
+    }
+
+    function renderSourceAnalysis(summary) {
+      const rows = (summary.source_analysis.channels || []).slice(0, 18).map((item) => `
+        <tr>
+          <td><strong>${safe(item.channel)}</strong></td>
+          <td>${fmt(item.uv)}</td>
+          <td>${fmt(item.sessions)}</td>
+          <td>${fmt(item.count)}</td>
+          <td>${fmt(item.contact_clicks)}<br><span class="table-meta">${pct(item.contact_rate)}</span></td>
+          <td>${fmt(item.lead_submits)}<br><span class="table-meta">${pct(item.lead_rate)}</span></td>
+        </tr>
+      `)
+      $('sourceTable').innerHTML = table(['来源渠道', 'UV', '会话', '事件', '咨询', '留资'], rows, '暂无来源数据。')
     }
 
     function renderCaseSection(summary) {
@@ -605,6 +1187,104 @@
       ].join('')
     }
 
+    function renderUserBehavior(summary) {
+      const highIntentRows = (summary.user_behavior.high_intent_users || []).slice(0, 10).map((item) => `
+        <tr>
+          <td><strong class="mono">${safe(item.anonymous_user_id)}</strong><br><span class="table-meta">最近 ${dateText(item.last_seen_at)}</span></td>
+          <td>${fmt(item.session_count)} 次<br><span class="table-meta">${fmt(item.visit_days)} 天</span></td>
+          <td>${durationText(item.total_page_duration_ms)}<br><span class="path-line">${joinShort(item.pages)}</span></td>
+          <td>${fmt(item.contact_clicks)} / ${fmt(item.lead_submits)}<br><span class="table-meta">分享 ${fmt(item.share_attempts)}</span></td>
+          <td><span class="tag">${fmt(item.intent_score)}</span></td>
+        </tr>
+      `)
+      $('highIntentUsers').innerHTML = table(
+        ['匿名用户', '访问', '停留/路径', '咨询/留资', '意向分'],
+        highIntentRows,
+        '暂无用户轨迹数据。'
+      )
+
+      const sessionRows = (summary.user_behavior.recent_sessions || []).slice(0, 10).map((item) => `
+        <tr>
+          <td><strong class="mono">${shortId(item.session_id)}</strong><br><span class="table-meta">${dateText(item.started_at)}</span></td>
+          <td><span class="mono">${shortId(item.anonymous_user_id)}</span><br><span class="table-meta">${safe(item.device_model)} ${safe(item.platform, '')}</span></td>
+          <td>${durationText(item.duration_ms)}<br><span class="table-meta">${fmt(item.page_view_count)} PV / ${fmt(item.event_count)} 事件</span></td>
+          <td><span class="path-line">进：${safe(item.entry_page)}</span><br><span class="path-line">出：${safe(item.exit_page)}</span></td>
+          <td>${fmt(item.contact_clicks)} 咨询<br><span class="table-meta">${fmt(item.share_attempts)} 分享</span></td>
+        </tr>
+      `)
+      $('recentSessions').innerHTML = table(
+        ['会话', '用户/设备', '停留', '进出页面', '关键动作'],
+        sessionRows,
+        '暂无会话路径数据。'
+      )
+    }
+
+    function renderUserTimeline(summary, keyword = '') {
+      const query = String(keyword || '').trim()
+      const sessions = summary.user_behavior.sessions || []
+      const users = summary.user_behavior.users || []
+      const matchedUser = users.find(item => item.anonymous_user_id === query)
+      const matchedSessions = query
+        ? sessions.filter(item => item.anonymous_user_id === query)
+        : (filteredSessions.length ? filteredSessions : sessions).slice(0, 3)
+
+      if (query && !matchedUser && !matchedSessions.length) {
+        $('userTimeline').innerHTML = '<div class="empty">没有找到这个 anonymous_user_id 的行为轨迹。可以从“高意向匿名用户”复制完整 ID 再查询。</div>'
+        return
+      }
+
+      const userBox = matchedUser ? `
+        <div class="case-split" style="margin-bottom:14px;">
+          <div class="split-box"><strong>${fmt(matchedUser.session_count)}</strong><span>访问会话</span></div>
+          <div class="split-box"><strong>${fmt(matchedUser.visit_days)}</strong><span>回访天数</span></div>
+          <div class="split-box"><strong>${durationText(matchedUser.total_page_duration_ms)}</strong><span>累计页面停留</span></div>
+          <div class="split-box"><strong>${fmt(matchedUser.intent_score)}</strong><span>意向分</span></div>
+        </div>
+      ` : ''
+
+      const sessionBlocks = matchedSessions.slice(0, 8).map((session) => {
+        const eventLines = (session.events || []).slice(0, 30).map((event) => `
+          <div class="timeline-item">
+            <strong>${dateText(event.created_at)} · ${safe(event.event_type)}</strong>
+            <div class="path-line">${safe(event.page_path || event.page)} ${event.target_name ? `· ${event.target_name}` : ''}</div>
+            ${event.duration_ms ? `<div class="table-meta">停留 ${durationText(event.duration_ms)}</div>` : ''}
+          </div>
+        `).join('')
+        return `
+          <div style="margin-bottom:18px;">
+            <p class="table-meta">
+              会话 <span class="mono">${safe(session.session_id)}</span> ·
+              ${dateText(session.started_at)} · ${durationText(session.duration_ms)}
+            </p>
+            <p class="path-line">进入：${safe(session.entry_page)} ｜ 退出：${safe(session.exit_page)}</p>
+            <div style="display:grid;gap:8px;margin-top:10px;">${eventLines || '<div class="empty">暂无事件明细。</div>'}</div>
+          </div>
+        `
+      }).join('')
+
+      $('userTimeline').innerHTML = `${userBox}${sessionBlocks || '<div class="empty">暂无会话明细。</div>'}`
+    }
+
+    function renderEventReplay(events) {
+      const rows = (events || []).slice(0, 120).map((item, index) => `
+        <div class="timeline-item">
+          <strong>${fmt(index + 1)}. ${dateText(item.created_at)} · ${safe(item.event_type)}</strong>
+          <div class="path-line">用户：${safe(item.anonymous_user_id)} ｜ 会话：${safe(item.session_id)}</div>
+          <div class="path-line">页面：${safe(item.page_path || item.page)} ｜ 对象：${safe(item.target_name || item.target_id)}</div>
+          <div class="table-meta">
+            ${item.section_name ? `区块：${item.section_name} ｜ ` : ''}
+            ${item.action ? `动作：${item.action} ｜ ` : ''}
+            ${item.scroll_threshold ? `滚动：${item.scroll_threshold}% ｜ ` : ''}
+            ${item.duration_ms ? `时长：${durationText(item.duration_ms)} ｜ ` : ''}
+            ${item.device_model ? `设备：${item.device_model}` : ''}
+          </div>
+        </div>
+      `).join('')
+      $('eventReplay').innerHTML = rows
+        ? `<div style="display:grid;gap:8px;">${rows}</div>`
+        : '<div class="empty">暂无可回放事件。请先产生真实埋点，或调整筛选条件。</div>'
+    }
+
     function table(headers, rows, emptyText) {
       if (!rows.length) return `<div class="empty">${emptyText}</div>`
       return `
@@ -635,10 +1315,308 @@
           <td>${fmt(item.pv)}</td>
           <td>${fmt(item.uv)}</td>
           <td>${fmt(item.avg_duration_ms)} ms</td>
+          <td>${fmt(item.exits)}</td>
+          <td>${pct(item.exit_rate)}</td>
         </tr>
       `)
-      $('pagesTable').innerHTML = table(['页面', 'PV', 'UV', '平均停留'], rows, '暂无页面访问数据。')
+      $('pagesTable').innerHTML = table(['页面', 'PV', 'UV', '平均停留', '退出', '退出率'], rows, '暂无页面访问数据。')
     }
+
+    function renderSections(summary) {
+      const rows = (summary.sections.top_sections || []).slice(0, 14).map((item) => `
+        <tr>
+          <td><strong>${safe(item.section_name, item.section_id)}</strong><br><span class="path-line">${safe(item.page)} · ${safe(item.section_id)}</span></td>
+          <td>${fmt(item.starts)}</td>
+          <td>${fmt(item.uv)}</td>
+          <td>${durationText(item.avg_duration_ms)}</td>
+          <td>${durationText(item.total_duration_ms)}</td>
+        </tr>
+      `)
+      $('sectionsTable').innerHTML = table(['区块', '曝光', 'UV', '平均停留', '累计停留'], rows, '暂无区块停留数据。')
+
+      const toggleRows = (summary.sections.toggles || []).slice(0, 20).map((item) => `
+        <tr>
+          <td><strong>${safe(item.section_name, item.section_id)}</strong><br><span class="path-line">${safe(item.page)} · ${safe(item.section_id)}</span></td>
+          <td>${fmt(item.opens)}</td>
+          <td>${fmt(item.closes)}</td>
+          <td>${fmt(item.uv)}</td>
+        </tr>
+      `)
+      $('sectionTogglesTable').innerHTML = table(['区块', '打开', '关闭', 'UV'], toggleRows, '暂无主动展开/收起数据。')
+    }
+
+    function renderUnconvertedUsers(summary) {
+      const rows = (summary.user_behavior.high_intent_unconverted_users || []).slice(0, 12).map((item) => `
+        <tr>
+          <td><strong class="mono">${safe(item.anonymous_user_id)}</strong><br><span class="table-meta">最近 ${dateText(item.last_seen_at)}</span></td>
+          <td>${durationText(item.total_page_duration_ms)}<br><span class="table-meta">${fmt(item.session_count)} 次会话</span></td>
+          <td>${fmt(item.case_detail_opens)} 案例详情<br><span class="table-meta">${fmt(item.contact_clicks)} 咨询 / ${fmt(item.share_attempts)} 分享</span></td>
+          <td><span class="tag red">${fmt(item.intent_score)}</span></td>
+        </tr>
+      `)
+      $('unconvertedUsers').innerHTML = table(['匿名用户', '停留/回访', '关键动作', '意向分'], rows, '暂无未留资高意向用户。')
+    }
+
+    function renderRetention(summary) {
+      const item = summary.retention || {}
+      const cohorts = summary.retention_cohorts || {}
+      const total = Number(item.total_users || 0)
+      const rate = (value) => total ? pct(Number(value || 0) / total) : '0%'
+      $('retentionBox').innerHTML = `
+        <div class="case-split">
+          <div class="split-box"><strong>${fmt(total)}</strong><span>总匿名用户</span></div>
+          <div class="split-box"><strong>${fmt(item.users_visited_2plus_days)}</strong><span>2 天以上回访 · ${rate(item.users_visited_2plus_days)}</span></div>
+          <div class="split-box"><strong>${fmt(item.users_visited_3plus_sessions)}</strong><span>3 次以上会话 · ${rate(item.users_visited_3plus_sessions)}</span></div>
+          <div class="split-box"><strong>${fmt(item.users_visited_7plus_sessions)}</strong><span>7 次以上会话 · ${rate(item.users_visited_7plus_sessions)}</span></div>
+          <div class="split-box"><strong>${pct(cohorts.next_day?.retention_rate)}</strong><span>次日留存 · ${fmt(cohorts.next_day?.retained_users)}/${fmt(cohorts.next_day?.base_users)}</span></div>
+          <div class="split-box"><strong>${pct(cohorts.seven_day?.retention_rate)}</strong><span>7 日留存 · ${fmt(cohorts.seven_day?.retained_users)}/${fmt(cohorts.seven_day?.base_users)}</span></div>
+          <div class="split-box"><strong>${pct(cohorts.thirty_day?.retention_rate)}</strong><span>30 日留存 · ${fmt(cohorts.thirty_day?.retained_users)}/${fmt(cohorts.thirty_day?.base_users)}</span></div>
+        </div>
+      `
+    }
+
+    function renderNavigation(summary) {
+      const entryRows = (summary.navigation.entry_pages || []).slice(0, 8).map((item) => `
+        <tr>
+          <td><span class="tag green">Landing Page</span></td>
+          <td>${safe(item.name)}</td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      const exitRows = (summary.navigation.exit_pages || []).slice(0, 8).map((item) => `
+        <tr>
+          <td><span class="tag red">离开页</span></td>
+          <td>${safe(item.name)}</td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('entryExitTable').innerHTML = table(['类型', '页面地址', '会话数'], [...entryRows, ...exitRows], '暂无 Landing Page / 离开页数据。')
+
+      const transitionRows = (summary.navigation.page_transitions || []).slice(0, 14).map((item) => `
+        <tr>
+          <td><span class="path-line">${safe(item.name)}</span></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('transitionsTable').innerHTML = table(['A 页 → B 页', '次数'], transitionRows, '暂无页面跳转关系数据。')
+
+      const sectionRows = (summary.navigation.section_transitions || []).slice(0, 14).map((item) => `
+        <tr>
+          <td><span class="path-line">${safe(item.name)}</span></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('sectionTransitionsTable').innerHTML = table(['区块流转路径', '次数'], sectionRows, '暂无区块流转数据。')
+    }
+
+    function renderDropoffs(summary) {
+      const labels = {
+        assessment_started_not_finished: '开始测评未完成',
+        assessment_finished_not_result: '完成测评未到结果页',
+        result_view_no_contact: '看结果未咨询',
+        contact_click_no_lead: '点咨询未留资',
+        case_page_no_case_click: '进案例页未点案例'
+      }
+      const rows = Object.entries(summary.dropoffs || {}).map(([key, users]) => `
+        <tr>
+          <td><strong>${labels[key] || key}</strong></td>
+          <td>${fmt((users || []).length)}</td>
+          <td><span class="path-line">${(users || []).slice(0, 5).join('，') || '-'}</span></td>
+        </tr>
+      `)
+      $('dropoffsTable').innerHTML = table(['掉队阶段', '用户数', '示例 anonymous_user_id'], rows, '暂无掉队数据。')
+    }
+
+    function renderScrollDepth(summary) {
+      const rows = (summary.scroll_depth.by_page || []).slice(0, 80).map((item) => `
+        <tr>
+          <td><strong>${safe(item.page)}</strong></td>
+          <td><span class="tag">${fmt(item.threshold)}%</span></td>
+          <td>${fmt(item.count)}</td>
+          <td>${fmt(item.uv)}</td>
+        </tr>
+      `)
+      $('scrollDepthTable').innerHTML = table(['页面', '到达深度', '次数', 'UV'], rows, '暂无滚动深度数据。')
+    }
+
+    function renderTimeDistribution(summary) {
+      const hourRows = (summary.time_distribution.by_hour || []).map((item) => `
+        <tr>
+          <td><span class="tag">${safe(item.name)}:00</span></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      const weekdayName = (value) => ['周日', '周一', '周二', '周三', '周四', '周五', '周六'][Number(value)] || value
+      const weekdayRows = (summary.time_distribution.by_weekday || []).map((item) => `
+        <tr>
+          <td><span class="tag green">${weekdayName(item.name)}</span></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('timeDistributionTable').innerHTML = table(['时段', '事件数'], [...hourRows, ...weekdayRows], '暂无访问时段数据。')
+    }
+
+    function renderSearchAnalysis(summary) {
+      const search = summary.search_analysis || {}
+      const keywordRows = (search.top_keywords || []).slice(0, 12).map((item) => `
+        <tr>
+          <td><strong>${safe(item.keyword)}</strong></td>
+          <td>${fmt(item.count)}</td>
+          <td>${fmt(item.uv)}</td>
+          <td>${fmt(item.result_clicks)}</td>
+        </tr>
+      `)
+      const noResultRows = (search.no_result_keywords || []).slice(0, 8).map((item) => `
+        <tr>
+          <td><span class="tag red">${safe(item.keyword)}</span></td>
+          <td>${fmt(item.count)}</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      `)
+      $('searchTable').innerHTML = `
+        <div class="case-split" style="margin-bottom:14px;">
+          <div class="split-box"><strong>${fmt(search.total_searches)}</strong><span>搜索次数</span></div>
+          <div class="split-box"><strong>${fmt(search.result_clicks)}</strong><span>搜索后点击</span></div>
+          <div class="split-box"><strong>${pct(search.click_through_rate)}</strong><span>搜索后点击率</span></div>
+        </div>
+        ${table(['关键词', '搜索次数', 'UV', '点击'], [...keywordRows, ...noResultRows], '暂无搜索数据。')}
+      `
+    }
+
+    function renderInteractions(summary) {
+      const interactions = summary.interactions || {}
+      const rows = (interactions.top_actions || []).slice(0, 16).map((item) => `
+        <tr>
+          <td><strong>${safe(item.action)}</strong><br><span class="table-meta">${safe(item.target_name)}</span></td>
+          <td>${fmt(item.count)}</td>
+          <td>${fmt(item.uv)}</td>
+        </tr>
+      `)
+      $('interactionTable').innerHTML = `
+        <div class="case-split" style="margin-bottom:14px;">
+          <div class="split-box"><strong>${fmt(interactions.contact_clicks)}</strong><span>点击咨询</span></div>
+          <div class="split-box"><strong>${fmt(interactions.lead_submits)}</strong><span>留言/留资</span></div>
+          <div class="split-box"><strong>${fmt(interactions.share_attempts)}</strong><span>分享次数</span></div>
+          <div class="split-box"><strong>${fmt(interactions.total)}</strong><span>其他互动</span></div>
+        </div>
+        ${table(['动作/对象', '次数', 'UV'], rows, '暂无互动数据。')}
+      `
+    }
+
+    function renderTechnical(summary) {
+      const technical = summary.technical || {}
+      const typeRows = (technical.by_type || []).slice(0, 12).map((item) => `
+        <tr>
+          <td><strong>${safe(item.type)}</strong></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      const urlRows = (technical.by_url || []).slice(0, 12).map((item) => `
+        <tr>
+          <td><span class="path-line">${safe(item.url)}</span></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      const statusRows = (technical.by_status || []).slice(0, 8).map((item) => `
+        <tr>
+          <td><span class="tag red">${safe(item.status_code)}</span></td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('technicalTable').innerHTML = `
+        <div class="case-split" style="margin-bottom:14px;">
+          <div class="split-box"><strong>${fmt(technical.total_issues)}</strong><span>技术异常总数</span></div>
+          <div class="split-box"><strong>${fmt(technical.api_failures)}</strong><span>接口失败</span></div>
+          <div class="split-box"><strong>${fmt(technical.page_errors)}</strong><span>页面/资源错误</span></div>
+        </div>
+        <div class="grid two">
+          <div>${table(['异常类型', '次数'], typeRows, '暂无异常类型。')}</div>
+          <div>${table(['接口/页面', '次数'], [...urlRows, ...statusRows], '暂无接口失败。')}</div>
+        </div>
+      `
+    }
+
+    function renderRecentEvents(summary) {
+      const rows = (summary.recent_events || []).slice(0, 40).map((item) => `
+        <tr>
+          <td>${dateText(item.created_at)}</td>
+          <td><span class="tag">${safe(item.event_type)}</span></td>
+          <td><span class="path-line">${safe(item.page_path || item.page)}</span></td>
+          <td>${safe(item.target_name || item.target_id)}</td>
+          <td>${item.duration_ms ? durationText(item.duration_ms) : '-'}</td>
+        </tr>
+      `)
+      $('recentEventsTable').innerHTML = table(['时间', '事件', '页面', '对象', '时长'], rows, '暂无原始事件。')
+    }
+
+    const eventCsvRows = (events) => (events || []).map(item => ({
+      created_at: item.created_at,
+      event_type: item.event_type,
+      anonymous_user_id: item.anonymous_user_id,
+      session_id: item.session_id,
+      page: item.page,
+      page_path: item.page_path,
+      source_channel: item.source_channel,
+      target_type: item.target_type,
+      target_id: item.target_id,
+      target_name: item.target_name,
+      section_id: item.section_id,
+      section_name: item.section_name,
+      action: item.action,
+      keyword: item.keyword,
+      result_count: item.result_count,
+      has_result: item.has_result,
+      error_type: item.error_type,
+      err_msg: item.err_msg,
+      status_code: item.status_code,
+      url: item.url,
+      scroll_threshold: item.scroll_threshold,
+      duration_ms: item.duration_ms,
+      device_model: item.device_model,
+      platform: item.platform,
+      share_trace_id: item.share_trace_id,
+      referrer_share_trace_id: item.referrer_share_trace_id
+    }))
+
+    const sessionCsvRows = (sessions) => (sessions || []).map(item => ({
+      started_at: item.started_at,
+      ended_at: item.ended_at,
+      duration_ms: item.duration_ms,
+      anonymous_user_id: item.anonymous_user_id,
+      session_id: item.session_id,
+      entry_page: item.entry_page,
+      exit_page: item.exit_page,
+      page_view_count: item.page_view_count,
+      event_count: item.event_count,
+      page_count: item.page_count,
+      contact_clicks: item.contact_clicks,
+      lead_submits: item.lead_submits,
+      share_attempts: item.share_attempts,
+      share_opens: item.share_opens,
+      device_model: item.device_model,
+      platform: item.platform,
+      pages: (item.pages || []).join(' | ')
+    }))
+
+    const userCsvRows = (users) => (users || []).map(item => ({
+      anonymous_user_id: item.anonymous_user_id,
+      first_seen_at: item.first_seen_at,
+      last_seen_at: item.last_seen_at,
+      session_count: item.session_count,
+      visit_days: item.visit_days,
+      event_count: item.event_count,
+      page_view_count: item.page_view_count,
+      total_page_duration_ms: item.total_page_duration_ms,
+      share_attempts: item.share_attempts,
+      share_opens: item.share_opens,
+      contact_clicks: item.contact_clicks,
+      lead_submits: item.lead_submits,
+      case_detail_opens: item.case_detail_opens,
+      intent_score: item.intent_score,
+      devices: (item.devices || []).join(' | '),
+      pages: (item.pages || []).join(' | ')
+    }))
 
     function renderQuality(summary) {
       const quality = summary.events_quality
@@ -669,6 +1647,45 @@
       $('eventsTable').innerHTML = table(['事件名', '次数'], rows, '暂无事件分布数据。')
     }
 
+    function renderShare(summary) {
+      const share = summary.share
+      const rows = (share.traces || []).slice(0, 10).map((item) => `
+        <tr>
+          <td><strong class="mono">${shortId(item.share_trace_id)}</strong><br><span class="table-meta">${dateText(item.first_attempt_at || item.first_open_at)}</span></td>
+          <td>${safe(item.shared_page)}<br><span class="path-line">${safe(item.shared_path, '')}</span></td>
+          <td>${fmt(item.attempt_count)}</td>
+          <td>${fmt(item.open_count)}<br><span class="table-meta">UV ${fmt(item.opener_uv)}</span></td>
+        </tr>
+      `)
+      const pageTags = [
+        ...(share.attempt_pages || []).slice(0, 4).map(item => `<span class="tag">分享 ${safe(item.name)} ${fmt(item.count)}</span>`),
+        ...(share.open_pages || []).slice(0, 4).map(item => `<span class="tag green">打开 ${safe(item.name)} ${fmt(item.count)}</span>`)
+      ].join(' ')
+      $('shareTable').innerHTML = `
+        <div class="case-split">
+          <div class="split-box"><strong>${fmt(share.attempts)}</strong><span>分享发起</span></div>
+          <div class="split-box"><strong>${fmt(share.opens)}</strong><span>分享打开</span></div>
+        </div>
+        <p style="margin:14px 0;">${pageTags || '<span class="table-meta">暂无分享页面数据。</span>'}</p>
+        ${table(['分享链路', '页面', '发起', '打开'], rows, '暂无分享链路数据。')}
+      `
+    }
+
+    function renderDevices(summary) {
+      const deviceRows = [
+        ...(summary.devices.top_models || []).slice(0, 8).map(item => ({ type: '机型', ...item })),
+        ...(summary.devices.platforms || []).slice(0, 6).map(item => ({ type: '平台', ...item })),
+        ...(summary.devices.os || []).slice(0, 6).map(item => ({ type: '系统', ...item }))
+      ].map((item) => `
+        <tr>
+          <td><span class="tag">${item.type}</span></td>
+          <td>${safe(item.name)}</td>
+          <td>${fmt(item.count)}</td>
+        </tr>
+      `)
+      $('devicesTable').innerHTML = table(['类型', '名称', '事件数'], deviceRows, '暂无设备数据。')
+    }
+
     function caseTypeName(value) {
       if (['party_school', 'party'].includes(value)) return '党校'
       if (['management_exam', 'exam'].includes(value)) return '管综'
@@ -677,18 +1694,35 @@
 
     function render(summaryInput) {
       const summary = normalize(summaryInput || {})
+      currentSummary = summary
       $('generatedAt').textContent = dateText(summary.generated_at)
       $('filterEnv').textContent = safe(summary.filters.env, 'all')
       $('filterDate').textContent = summary.filters.date_from || summary.filters.date_to
         ? `${safe(summary.filters.date_from, '不限')} 至 ${safe(summary.filters.date_to, '不限')}`
         : '不限'
       renderMetrics(summary)
+      renderOverview(summary)
+      renderSourceAnalysis(summary)
       renderCaseSection(summary)
+      renderUserBehavior(summary)
+      renderSections(summary)
+      renderUnconvertedUsers(summary)
+      renderRetention(summary)
+      renderNavigation(summary)
+      renderDropoffs(summary)
+      renderScrollDepth(summary)
+      renderTimeDistribution(summary)
+      renderSearchAnalysis(summary)
+      renderInteractions(summary)
+      renderTechnical(summary)
       renderFunnels(summary)
       renderTopCases(summary)
       renderPages(summary)
       renderQuality(summary)
       renderEvents(summary)
+      renderShare(summary)
+      renderDevices(summary)
+      applyGlobalFilters(summary)
     }
 
     async function loadSummary() {
@@ -705,6 +1739,33 @@
     }
 
     $('reloadBtn').addEventListener('click', loadSummary)
+    $('accessCodeBtn').addEventListener('click', unlockDashboard)
+    $('accessCodeInput').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') unlockDashboard()
+    })
+    $('applyFiltersBtn').addEventListener('click', () => {
+      if (currentSummary) applyGlobalFilters(currentSummary)
+    })
+    $('resetFiltersBtn').addEventListener('click', () => {
+      FILTER_INPUT_IDS.forEach(id => {
+        $(id).value = ''
+      })
+      if (currentSummary) applyGlobalFilters(currentSummary)
+    })
+    $('exportEventsBtn').addEventListener('click', () => downloadCsv(`events-${Date.now()}.csv`, eventCsvRows(filteredEvents)))
+    $('exportSessionsBtn').addEventListener('click', () => downloadCsv(`sessions-${Date.now()}.csv`, sessionCsvRows(filteredSessions)))
+    $('exportUsersBtn').addEventListener('click', () => downloadCsv(`users-${Date.now()}.csv`, userCsvRows(filteredUsers)))
+    $('userSearchBtn').addEventListener('click', () => {
+      if (!currentSummary) return
+      $('filterUser').value = $('userSearchInput').value
+      applyGlobalFilters(currentSummary)
+    })
+    $('userSearchInput').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && currentSummary) {
+        $('filterUser').value = $('userSearchInput').value
+        applyGlobalFilters(currentSummary)
+      }
+    })
     $('fileInput').addEventListener('change', async (event) => {
       const file = event.target.files && event.target.files[0]
       if (!file) return
@@ -717,6 +1778,7 @@
       }
     })
 
+    applyAuthState()
     loadSummary()
   </script>
 </body>

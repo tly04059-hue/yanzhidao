@@ -18,6 +18,7 @@ const FIRST_SEEN_KEY = 'yz_first_seen_at'
 const VISIT_COUNT_KEY = 'yz_visit_count'
 const SESSION_UPDATED_KEY = 'yz_session_updated_at'
 const SESSION_TTL_MS = 30 * 60 * 1000
+const ANALYTICS_EVENT_PATH = '/miniapp/events'
 
 type AnalyticsValidation = {
   is_valid: boolean
@@ -110,11 +111,60 @@ const getCurrentPagePath = () => {
   }
 }
 
+const getDeviceSnapshot = () => {
+  try {
+    const uniAny = uni as any
+    const deviceInfo = typeof uniAny.getDeviceInfo === 'function' ? uniAny.getDeviceInfo() : {}
+    const appInfo = typeof uniAny.getAppBaseInfo === 'function' ? uniAny.getAppBaseInfo() : {}
+    const windowInfo = typeof uniAny.getWindowInfo === 'function' ? uniAny.getWindowInfo() : {}
+    const systemInfo = typeof uni.getSystemInfoSync === 'function' ? uni.getSystemInfoSync() : {}
+    const merged = {
+      ...systemInfo,
+      ...deviceInfo,
+      ...appInfo,
+      ...windowInfo
+    } as Record<string, any>
+
+    return {
+      device_brand: String(merged.brand || merged.deviceBrand || ''),
+      device_model: String(merged.model || merged.deviceModel || ''),
+      device_type: String(merged.deviceType || ''),
+      os_name: String(merged.osName || merged.platform || ''),
+      os_version: String(merged.osVersion || merged.system || ''),
+      platform: String(merged.platform || ''),
+      wechat_version: String(merged.version || merged.hostVersion || ''),
+      sdk_version: String(merged.SDKVersion || merged.hostSDKVersion || ''),
+      screen_width: Number(merged.screenWidth || merged.windowWidth || 0) || null,
+      screen_height: Number(merged.screenHeight || merged.windowHeight || 0) || null,
+      window_width: Number(merged.windowWidth || 0) || null,
+      window_height: Number(merged.windowHeight || 0) || null,
+      pixel_ratio: Number(merged.pixelRatio || 0) || null
+    }
+  } catch (error) {
+    return {}
+  }
+}
+
 const getEventPage = (payload: any, pagePath: string) =>
   String(payload?.page || payload?.target_name || pagePath || 'unknown')
 
 const generateEventId = (eventType: string) =>
   `evt_${eventType}_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`
+
+const classifySourceChannel = (payload: any = {}) => {
+  const explicit = String(payload.source_channel || payload.channel || '')
+  if (explicit) return explicit
+
+  const scene = String(payload.scene || '')
+  if (payload.referrer_share_trace_id || payload.share_trace_id || ['1007', '1008', '1036', '1044'].includes(scene)) return 'share'
+  if (['1005', '1006', '1027', '1042'].includes(scene)) return 'wechat_search'
+  if (['1011', '1012', '1013', '1047', '1048', '1049'].includes(scene)) return 'qr_code'
+  if (['1035', '1043', '1058', '1074'].includes(scene)) return 'official_account'
+  if (['1175', '1176', '1177', '1192'].includes(scene)) return 'channels'
+  if (['1045', '1046', '1067', '1068'].includes(scene)) return 'ads'
+  if (scene) return `scene_${scene}`
+  return String(payload.source || 'direct')
+}
 
 const requiresTargetId = (eventType: string, targetType = '') => {
   if (targetType === 'case') {
@@ -167,6 +217,8 @@ const buildAnalyticsEvent = (event_type: string, payload: any = {}) => {
   const visitCount = event_type === 'page_view' ? getVisitCount() : getStoredVisitCount()
   const isNewUser = Boolean(firstSeenAt && firstSeenAt.slice(0, 10) === now.slice(0, 10) && visitCount <= 1)
   const page = getEventPage(payload, pagePath)
+  const device = getDeviceSnapshot()
+  const sourceChannel = classifySourceChannel(payload)
 
   const event = {
     event_id: payload.event_id || generateEventId(event_type),
@@ -179,20 +231,30 @@ const buildAnalyticsEvent = (event_type: string, payload: any = {}) => {
     target_type: payload.target_type,
     target_id: payload.target_id,
     target_name: payload.target_name,
-    source_channel: payload.source_channel || payload.source,
+    source_channel: sourceChannel,
     scene: payload.scene,
+    scene_category: sourceChannel,
     env: ANALYTICS_ENV,
     app_version: APP_VERSION,
     tracking_plan_version: TRACKING_PLAN_VERSION,
     created_at: now,
     is_new_user: isNewUser,
+    ...device,
+    share_trace_id: payload.share_trace_id,
+    referrer_share_trace_id: payload.referrer_share_trace_id,
+    section_id: payload.section_id,
+    section_name: payload.section_name,
+    scroll_threshold: payload.scroll_threshold,
+    action: payload.action,
     payload: {
       ...payload,
       page,
       page_path: pagePath,
       app_version: APP_VERSION,
       env: ANALYTICS_ENV,
-      tracking_plan_version: TRACKING_PLAN_VERSION
+      tracking_plan_version: TRACKING_PLAN_VERSION,
+      source_channel: sourceChannel,
+      device
     }
   }
   const validation = validateAnalyticsEvent(event)
@@ -203,6 +265,35 @@ const buildAnalyticsEvent = (event_type: string, payload: any = {}) => {
       ...event.payload,
       _validation: validation
     }
+  }
+}
+
+const shouldTrackRequestIssue = (url: string) => url !== ANALYTICS_EVENT_PATH
+
+const emitTechnicalEvent = (eventType: string, payload: any = {}) => {
+  try {
+    const enabledInLocal = getLocalAnalyticsEnabled()
+    if (!IS_PROD && IS_LOCAL_API && !enabledInLocal) return
+    const finalBaseUrl = ANALYTICS_BASE_URL || BASE_URL
+    const event = buildAnalyticsEvent(eventType, {
+      target_type: 'technical',
+      target_id: payload.url || eventType,
+      target_name: payload.err_msg || payload.url || eventType,
+      page: payload.page || 'technical',
+      page_path: payload.page_path || getCurrentPagePath() || '/technical',
+      source: 'technical_monitor',
+      position: payload.position || eventType,
+      ...payload
+    })
+    uni.request({
+      url: finalBaseUrl + ANALYTICS_EVENT_PATH,
+      method: 'POST',
+      data: event,
+      timeout: 1800,
+      header: { 'Content-Type': 'application/json' }
+    })
+  } catch (error) {
+    // 技术监控本身不能影响用户主流程。
   }
 }
 
@@ -245,6 +336,7 @@ export const request = (options: {
       return
     }
 
+    const requestStartedAt = Date.now()
     uni.request({
       url: (options.baseUrl || BASE_URL) + options.url,
       method: options.method || 'GET',
@@ -257,10 +349,27 @@ export const request = (options: {
         if (res.statusCode === 200) {
           resolve(res.data)
         } else {
+          if (shouldTrackRequestIssue(options.url)) {
+            emitTechnicalEvent('api_request_fail', {
+              url: options.url,
+              method: options.method || 'GET',
+              status_code: res.statusCode,
+              duration_ms: Date.now() - requestStartedAt,
+              err_msg: `statusCode ${res.statusCode || 'unknown'}`
+            })
+          }
           reject(normalizeRequestError(res, `request:fail statusCode ${res.statusCode || 'unknown'}`))
         }
       },
       fail: (err) => {
+        if (shouldTrackRequestIssue(options.url)) {
+          emitTechnicalEvent('api_request_fail', {
+            url: options.url,
+            method: options.method || 'GET',
+            duration_ms: Date.now() - requestStartedAt,
+            err_msg: normalizeRequestError(err).errMsg
+          })
+        }
         reject(normalizeRequestError(err))
       }
     })
@@ -367,7 +476,7 @@ export const analyticsApi = {
     const canForceNetwork = !IS_LOCAL_API || enabledInLocal
     const finalBaseUrl = ANALYTICS_BASE_URL || BASE_URL
     return request({
-      url: '/miniapp/events',
+      url: ANALYTICS_EVENT_PATH,
       method: 'POST',
       data: payload,
       forceNetwork: canForceNetwork,

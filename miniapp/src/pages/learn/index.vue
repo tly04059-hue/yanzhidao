@@ -9,13 +9,13 @@
     <view class="v6-page has-tabbar">
       <view class="brand-row">已服务 1,000+ 川渝同学 · 不骗人 · 真服务</view>
 
-      <view class="hero-card">
+      <view id="learn-hero" class="hero-card js-track-section">
         <text class="hero-title">学历提升，是投资</text>
         <text class="hero-copy">考研，是工作上少有的依靠个人努力就有结果，且一次付出长期有价值的投资。</text>
       </view>
 
       <!-- §1 政策大背景 -->
-      <view class="section">
+      <view id="learn-policy" class="section js-track-section">
         <view class="section-head">
           <text class="section-head-h2">政策大背景</text>
           <text class="section-head-meta">3-5 年窗口期</text>
@@ -34,7 +34,7 @@
       </view>
 
       <!-- §2 学历到底有什么用 -->
-      <view class="section">
+      <view id="learn-usage" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="learn-head-shell" @click="toggleUseSection">
             <view class="section-head-top">
@@ -59,7 +59,7 @@
       </view>
 
       <!-- §3 4维度规则 -->
-      <view class="section">
+      <view id="learn-path-rules" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="learn-head-shell" @click="togglePathRuleSection">
             <view class="section-head-top">
@@ -95,7 +95,7 @@
       </view>
 
       <!-- §4 路径总览 -->
-      <view class="section">
+      <view id="learn-main-path" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="learn-head-shell" @click="toggleMainPathSection">
             <view class="section-head-top">
@@ -129,7 +129,7 @@
       </view>
 
       <!-- §5 同行实际怎么选 -->
-      <view class="section">
+      <view id="learn-peer-samples" class="section js-track-section">
         <view class="section-head section-head-inline">
           <view class="learn-head-shell" @click="togglePeerSampleSection">
             <view class="section-head-top">
@@ -167,7 +167,7 @@
       </view>
 
       <!-- §6 你可以做的事 -->
-      <view class="section">
+      <view id="learn-actions" class="section js-track-section">
         <view class="section-head">
           <text class="section-head-h2">你可以做的事</text>
           <text class="section-head-meta">3 个入口 · 平铺无主次</text>
@@ -205,7 +205,8 @@
 import { computed, onMounted, onUnmounted, reactive, ref } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
 import BottomTabBar from '@/components/BottomTabBar.vue'
-import { trackContactClick, trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+import { trackContactClick, trackNavClick, trackPageView, trackSectionToggle, trackTabClick } from '@/api/tracking'
+import { useBehaviorTrace } from '@/utils/behaviorTrace'
 import { usePageShare } from '@/utils/share'
 import {
   casesV2Stats,
@@ -216,7 +217,20 @@ import {
 
 usePageShare({
   title: '党校在职研和管综非全怎么选｜研知道',
-  path: '/pages/learn/index'
+  path: '/pages/learn/index',
+  page: 'learn'
+})
+
+useBehaviorTrace('learn', {
+  sections: [
+    { id: 'learn-hero', name: '了解页头图' },
+    { id: 'learn-policy', name: '政策大背景' },
+    { id: 'learn-usage', name: '学历作用' },
+    { id: 'learn-path-rules', name: '路径规则' },
+    { id: 'learn-main-path', name: '主流路径对比' },
+    { id: 'learn-peer-samples', name: '同学实际选择' },
+    { id: 'learn-actions', name: '行动入口' }
+  ]
 })
 
 const routeMap: Record<string, string> = {
@@ -249,11 +263,29 @@ const peerSampleSectionOpen = ref(false)
 const arrowDriftDown = ref(false)
 let arrowDriftTimer: ReturnType<typeof setInterval> | null = null
 
-const toggleDim = (id: string) => { openDims[id] = !openDims[id] }
-const toggleUseSection = () => { useSectionOpen.value = !useSectionOpen.value }
-const togglePathRuleSection = () => { pathRuleSectionOpen.value = !pathRuleSectionOpen.value }
-const toggleMainPathSection = () => { mainPathSectionOpen.value = !mainPathSectionOpen.value }
-const togglePeerSampleSection = () => { peerSampleSectionOpen.value = !peerSampleSectionOpen.value }
+const trackLearnToggle = (sectionId: string, open: boolean, sectionName: string) =>
+  trackSectionToggle('learn', sectionId, open, { section_name: sectionName })
+
+const toggleDim = (id: string) => {
+  openDims[id] = !openDims[id]
+  trackLearnToggle(`learn-dim-${id}`, openDims[id], `维度规则-${id}`)
+}
+const toggleUseSection = () => {
+  useSectionOpen.value = !useSectionOpen.value
+  trackLearnToggle('learn-usage', useSectionOpen.value, '学历作用')
+}
+const togglePathRuleSection = () => {
+  pathRuleSectionOpen.value = !pathRuleSectionOpen.value
+  trackLearnToggle('learn-path-rules', pathRuleSectionOpen.value, '路径规则')
+}
+const toggleMainPathSection = () => {
+  mainPathSectionOpen.value = !mainPathSectionOpen.value
+  trackLearnToggle('learn-main-path', mainPathSectionOpen.value, '主流路径对比')
+}
+const togglePeerSampleSection = () => {
+  peerSampleSectionOpen.value = !peerSampleSectionOpen.value
+  trackLearnToggle('learn-peer-samples', peerSampleSectionOpen.value, '同学实际选择')
+}
 
 const percentOfTotal = (count: number) =>
   casesV2Stats.total ? Math.round((count / casesV2Stats.total) * 100) : 0

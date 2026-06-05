@@ -2,6 +2,17 @@ import { trackEvent } from './request'
 
 type CommonPayload = Record<string, any>
 
+type PageVisitState = {
+  page: string
+  page_path: string
+  started_at: number
+  source: string
+}
+
+let currentPageVisit: PageVisitState | null = null
+let appVisibleStartedAt = 0
+let lastShareOpenTraceId = ''
+
 const getCurrentRoute = () => {
   try {
     const pages = getCurrentPages()
@@ -10,6 +21,39 @@ const getCurrentRoute = () => {
   } catch (error) {
     return ''
   }
+}
+
+const getLaunchQuery = (options: any = {}) => {
+  const query = options.query || options.referrerInfo?.extraData || {}
+  return query && typeof query === 'object' ? query : {}
+}
+
+const getShareTraceId = (options: any = {}) => {
+  const query = getLaunchQuery(options)
+  return String(query.share_trace_id || query.shareTraceId || '')
+}
+
+const leaveCurrentPage = (reason: string, extra: CommonPayload = {}) => {
+  if (!currentPageVisit) return Promise.resolve({ skipped: true, reason: 'no-current-page' })
+  const now = Date.now()
+  const durationMs = Math.max(0, now - currentPageVisit.started_at)
+  const pageVisit = currentPageVisit
+  currentPageVisit = null
+
+  return trackEvent('page_leave', {
+    target_type: 'page',
+    target_name: pageVisit.page,
+    page: pageVisit.page,
+    page_path: pageVisit.page_path,
+    route: pageVisit.page_path,
+    source: pageVisit.source,
+    position: reason,
+    leave_reason: reason,
+    duration_ms: durationMs,
+    started_at: new Date(pageVisit.started_at).toISOString(),
+    ended_at: new Date(now).toISOString(),
+    ...extra
+  })
 }
 
 const getScene = () => {
@@ -37,6 +81,18 @@ const getScene = () => {
 export const trackPageView = (page: string, source = 'direct', extra: CommonPayload = {}) => {
   const route = getCurrentRoute()
   const scene = getScene()
+  if (currentPageVisit && currentPageVisit.page_path !== route) {
+    leaveCurrentPage('navigate', {
+      next_page: page,
+      next_page_path: route
+    })
+  }
+  currentPageVisit = {
+    page,
+    page_path: route,
+    started_at: Date.now(),
+    source
+  }
   return trackEvent('page_view', {
     target_type: 'page',
     target_name: page,
@@ -45,6 +101,78 @@ export const trackPageView = (page: string, source = 'direct', extra: CommonPayl
     route,
     scene,
     version: 'v6',
+    ...extra
+  })
+}
+
+export const trackPageLeave = (reason = 'manual', extra: CommonPayload = {}) =>
+  leaveCurrentPage(reason, extra)
+
+export const trackAppLaunch = (options: any = {}) => {
+  const scene = String(options.scene || getScene())
+  const shareTraceId = getShareTraceId(options)
+  return trackEvent('app_launch', {
+    target_type: 'app',
+    target_id: 'miniapp',
+    target_name: '研知道小程序',
+    page: 'app',
+    page_path: '/app',
+    source: 'app',
+    position: 'launch',
+    route: getCurrentRoute() || '/app',
+    scene,
+    launch_path: options.path ? `/${options.path}` : '',
+    launch_query: getLaunchQuery(options),
+    referrer_share_trace_id: shareTraceId
+  })
+}
+
+export const trackAppShow = (options: any = {}) => {
+  appVisibleStartedAt = Date.now()
+  const scene = String(options.scene || getScene())
+  const shareTraceId = getShareTraceId(options)
+  if (shareTraceId && shareTraceId !== lastShareOpenTraceId) {
+    lastShareOpenTraceId = shareTraceId
+    trackShareOpen({
+      referrer_share_trace_id: shareTraceId,
+      scene,
+      route: options.path ? `/${options.path}` : getCurrentRoute(),
+      query: getLaunchQuery(options)
+    })
+  }
+  return trackEvent('app_show', {
+    target_type: 'app',
+    target_id: 'miniapp',
+    target_name: '研知道小程序',
+    page: 'app',
+    page_path: '/app',
+    source: 'app',
+    position: 'show',
+    route: getCurrentRoute() || '/app',
+    scene,
+    launch_path: options.path ? `/${options.path}` : '',
+    launch_query: getLaunchQuery(options),
+    referrer_share_trace_id: shareTraceId
+  })
+}
+
+export const trackAppHide = (extra: CommonPayload = {}) => {
+  const now = Date.now()
+  const durationMs = appVisibleStartedAt ? Math.max(0, now - appVisibleStartedAt) : 0
+  leaveCurrentPage('app_hide')
+  return trackEvent('app_hide', {
+    target_type: 'app',
+    target_id: 'miniapp',
+    target_name: '研知道小程序',
+    page: 'app',
+    page_path: '/app',
+    source: 'app',
+    position: 'hide',
+    route: getCurrentRoute() || '/app',
+    scene: getScene(),
+    duration_ms: durationMs,
+    started_at: appVisibleStartedAt ? new Date(appVisibleStartedAt).toISOString() : '',
+    ended_at: new Date(now).toISOString(),
     ...extra
   })
 }
@@ -259,6 +387,186 @@ export const trackCaseListLoadMore = (page: string, extra: CommonPayload = {}) =
     position: extra.position || 'load_more',
     route,
     scene,
+    ...extra
+  })
+}
+
+export const trackShareAttempt = (page: string, shareTraceId: string, extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('share_attempt', {
+    target_type: 'share',
+    target_id: shareTraceId,
+    target_name: extra.title || page,
+    page,
+    page_path: route,
+    source: page,
+    position: extra.position || 'share_app_message',
+    route,
+    scene,
+    share_trace_id: shareTraceId,
+    ...extra
+  })
+}
+
+export const trackShareOpen = (extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  const referrerShareTraceId = String(extra.referrer_share_trace_id || '')
+  return trackEvent('share_open', {
+    target_type: 'share',
+    target_id: referrerShareTraceId || 'unknown_share',
+    target_name: extra.target_name || '分享打开',
+    page: extra.page || 'app',
+    page_path: route || extra.route || '/app',
+    source: 'share',
+    position: 'share_open',
+    route: route || extra.route || '',
+    scene,
+    referrer_share_trace_id: referrerShareTraceId,
+    ...extra
+  })
+}
+
+export const trackSectionViewStart = (page: string, sectionId: string, sectionName = '', extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('section_view_start', {
+    target_type: 'section',
+    target_id: sectionId,
+    target_name: sectionName || sectionId,
+    page,
+    source: page,
+    position: extra.position || sectionId,
+    route,
+    scene,
+    section_id: sectionId,
+    section_name: sectionName || sectionId,
+    ...extra
+  })
+}
+
+export const trackSectionViewEnd = (page: string, sectionId: string, sectionName = '', extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('section_view_end', {
+    target_type: 'section',
+    target_id: sectionId,
+    target_name: sectionName || sectionId,
+    page,
+    source: page,
+    position: extra.position || sectionId,
+    route,
+    scene,
+    section_id: sectionId,
+    section_name: sectionName || sectionId,
+    ...extra
+  })
+}
+
+export const trackScrollDepth = (page: string, threshold: number, extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('scroll_depth', {
+    target_type: 'page',
+    target_id: `${page}_${threshold}`,
+    target_name: `${page} ${threshold}%`,
+    page,
+    source: page,
+    position: `${threshold}%`,
+    route,
+    scene,
+    scroll_threshold: threshold,
+    ...extra
+  })
+}
+
+export const trackSectionToggle = (page: string, sectionId: string, open: boolean, extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('section_toggle', {
+    target_type: 'section',
+    target_id: sectionId,
+    target_name: extra.section_name || sectionId,
+    page,
+    source: page,
+    position: sectionId,
+    route,
+    scene,
+    section_id: sectionId,
+    section_name: extra.section_name || sectionId,
+    action: open ? 'open' : 'close',
+    ...extra
+  })
+}
+
+export const trackSearch = (page: string, keyword: string, resultCount = 0, extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('search_submit', {
+    target_type: 'search',
+    target_id: keyword || 'empty_keyword',
+    target_name: keyword || '空搜索',
+    page,
+    source: page,
+    position: extra.position || 'search_box',
+    route,
+    scene,
+    keyword,
+    result_count: resultCount,
+    has_result: resultCount > 0,
+    ...extra
+  })
+}
+
+export const trackSearchResultClick = (page: string, keyword: string, targetId: string, targetName = '', extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('search_result_click', {
+    target_type: extra.target_type || 'search_result',
+    target_id: targetId,
+    target_name: targetName || targetId,
+    page,
+    source: page,
+    position: extra.position || 'search_result',
+    route,
+    scene,
+    keyword,
+    ...extra
+  })
+}
+
+export const trackContentInteraction = (page: string, action: string, targetId: string, targetName = '', extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('content_interaction', {
+    target_type: extra.target_type || 'content',
+    target_id: targetId,
+    target_name: targetName || targetId,
+    page,
+    source: page,
+    position: extra.position || action,
+    route,
+    scene,
+    action,
+    ...extra
+  })
+}
+
+export const trackTechnicalError = (page: string, errorType: string, message = '', extra: CommonPayload = {}) => {
+  const route = getCurrentRoute()
+  const scene = getScene()
+  return trackEvent('technical_error', {
+    target_type: 'technical',
+    target_id: extra.target_id || errorType,
+    target_name: message || errorType,
+    page,
+    source: 'technical_monitor',
+    position: errorType,
+    route,
+    scene,
+    error_type: errorType,
+    err_msg: message,
     ...extra
   })
 }

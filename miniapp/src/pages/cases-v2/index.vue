@@ -10,13 +10,13 @@
     </view>
 
     <view class="v6-page has-tabbar">
-      <view class="hero">
+      <view id="cases-v2-hero" class="hero js-track-section">
         <text class="kicker">真实样本</text>
         <text class="hero-h1">1,000+ 川渝学员怎么选</text>
         <text class="hero-sub">以下数据均来自我们的真实学员，全部已做脱敏处理。</text>
       </view>
 
-      <view class="tab-row">
+      <view id="cases-v2-tabs" class="tab-row js-track-section">
         <text
           class="tab-chip"
           :class="{ active: activeTab === 'party_school' }"
@@ -32,7 +32,9 @@
       <view
         v-for="item in visibleCases"
         :key="item.id"
+        :id="`case-card-${item.id}`"
         class="case-card"
+        :class="'js-track-section'"
         @click="openDetail(item)"
       >
         <view class="case-header-row">
@@ -44,7 +46,7 @@
 
         <text class="case-meta" v-if="caseMeta(item)">{{ caseMeta(item) }}</text>
 
-        <view class="case-choice-row">
+        <view v-if="shouldShowChosenTarget(item)" class="case-choice-row">
           <text class="case-choice-label">{{ targetLabel(item) }}：</text>
           <text class="case-choice-val">{{ item.chosenTarget }}</text>
         </view>
@@ -73,7 +75,7 @@
       </view>
       <text v-else class="load-more-hint">↓ 已展示当前 V2 数据全部 {{ currentCases.length }} 条</text>
 
-      <view class="conversion-card">
+      <view id="cases-v2-conversion" class="conversion-card js-track-section">
         <text class="conversion-title">还不确定自己更像哪一类？</text>
         <text class="conversion-text">先做测一测，再结合案例看路径、院校和备考方式。</text>
         <view class="conversion-actions">
@@ -104,7 +106,7 @@
 
         <view class="modal-divider"></view>
 
-        <view v-if="activeCase.caseType === 'party_school'" class="modal-row">
+        <view v-if="activeCase.caseType === 'party_school' && shouldShowChosenTarget(activeCase)" class="modal-row">
           <text class="modal-row-label">选了</text>
           <text class="modal-row-val modal-val-accent">{{ activeCase.chosenTarget }}</text>
         </view>
@@ -200,9 +202,12 @@ import {
   trackModalClose,
   trackModalOpen,
   trackNavClick,
-  trackPageView
+  trackPageView,
+  trackSectionViewEnd,
+  trackSectionViewStart
 } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
+import { useBehaviorTrace } from '@/utils/behaviorTrace'
 import { usePageShare } from '@/utils/share'
 import {
   casesV2Stats,
@@ -212,18 +217,28 @@ import {
   type CaseV2Type
 } from '@/data/cases-v2'
 
-usePageShare({
-  title: '1000+ 川渝学员真实选择｜研知道',
-  path: '/pages/cases-v2/index'
-})
-
 const PAGE_SIZE = 10
 const PAGE_NAME = 'cases_v2'
 const PAGE_VERSION = 'v2'
 
+usePageShare({
+  title: '1000+ 川渝学员真实选择｜研知道',
+  path: '/pages/cases-v2/index',
+  page: PAGE_NAME
+})
+
+useBehaviorTrace(PAGE_NAME, {
+  sections: [
+    { id: 'cases-v2-hero', name: '案例页头图' },
+    { id: 'cases-v2-tabs', name: '案例方向切换' },
+    { id: 'cases-v2-conversion', name: '案例页转化入口' }
+  ]
+})
+
 const activeTab = ref<CaseV2Type>('party_school')
 const activeCase = ref<CaseV2 | null>(null)
 const visibleCount = ref(PAGE_SIZE)
+let detailOpenedAt = 0
 
 const currentCases = computed(() =>
   activeTab.value === 'party_school' ? partySchoolCasesV2 : managementExamCasesV2
@@ -308,6 +323,11 @@ const openDetail = (item: CaseV2) => {
   }
   trackCaseCardClick(PAGE_NAME, item.id, targetName, payload)
   trackModalOpen(PAGE_NAME, 'case_detail', payload)
+  detailOpenedAt = Date.now()
+  trackSectionViewStart(PAGE_NAME, `case-detail-${item.id}`, `案例详情 · ${targetName}`, {
+    ...payload,
+    position: 'case_detail_modal'
+  })
   activeCase.value = item
   if (typeof document !== 'undefined') document.body.style.overflow = 'hidden'
 }
@@ -316,11 +336,23 @@ const closeDetail = (method: 'mask' | 'acknowledge' | 'programmatic' = 'programm
   const item = activeCase.value
   if (item) {
     const targetName = cardTitle(item)
+    const now = Date.now()
+    const detailDurationMs = detailOpenedAt ? Math.max(0, now - detailOpenedAt) : 0
     trackModalClose(PAGE_NAME, 'case_detail', {
       ...casePayload(item, method === 'acknowledge' ? 'detail_acknowledge' : 'detail_close'),
       target_id: item.id,
       target_name: targetName,
-      close_method: method
+      close_method: method,
+      duration_ms: detailDurationMs
+    })
+    trackSectionViewEnd(PAGE_NAME, `case-detail-${item.id}`, `案例详情 · ${targetName}`, {
+      ...casePayload(item, 'case_detail_modal'),
+      target_id: item.id,
+      target_name: targetName,
+      close_method: method,
+      duration_ms: detailDurationMs,
+      started_at: detailOpenedAt ? new Date(detailOpenedAt).toISOString() : '',
+      ended_at: new Date(now).toISOString()
     })
     if (method === 'acknowledge') {
       trackCtaClick(PAGE_NAME, 'case_detail_acknowledge', '知道了', '', {
@@ -330,6 +362,7 @@ const closeDetail = (method: 'mask' | 'acknowledge' | 'programmatic' = 'programm
       })
     }
   }
+  detailOpenedAt = 0
   activeCase.value = null
   if (typeof document !== 'undefined') document.body.style.overflow = ''
 }
@@ -351,6 +384,9 @@ const cardNarrative = (item: CaseV2) =>
 
 const targetLabel = (item: CaseV2) =>
   item.caseType === 'management_exam' ? '上岸院校' : '选了'
+
+const shouldShowChosenTarget = (item: CaseV2) =>
+  Boolean(item.chosenTarget && !['未知', '不详'].includes(item.chosenTarget))
 
 const normalizedSchoolName = (value: string) =>
   value.replace(/\s+/g, '').replace(/·/g, '').trim()

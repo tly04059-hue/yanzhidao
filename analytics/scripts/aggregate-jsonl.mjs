@@ -19,6 +19,7 @@ const outputPath = args.get('output') || 'analytics/reports/latest-summary.json'
 const envFilter = args.get('env') || 'all'
 const dateFrom = args.get('date-from') || ''
 const dateTo = args.get('date-to') || ''
+const eventSampleLimit = Number(args.get('event-sample-limit') || 2000)
 const VALID_ENVS = new Set(['development', 'trial', 'production'])
 
 const readJsonl = (filePath) => {
@@ -101,13 +102,43 @@ const eventCaseType = (event) => event.case_type || event.payload?.case_type || 
 const eventModalType = (event) => event.modal_type || event.payload?.modal_type || ''
 const eventRoute = (event) => event.route || event.payload?.route || ''
 const eventPosition = (event) => event.position || event.payload?.position || ''
+const eventSectionId = (event) => event.section_id || event.payload?.section_id || eventTargetId(event) || ''
+const eventSectionName = (event) => event.section_name || event.payload?.section_name || eventTargetName(event) || eventSectionId(event)
+const eventScrollThreshold = (event) => Number(event.scroll_threshold || event.payload?.scroll_threshold || 0) || 0
+const eventShareTraceId = (event) => event.share_trace_id || event.payload?.share_trace_id || ''
+const eventReferrerShareTraceId = (event) => event.referrer_share_trace_id || event.payload?.referrer_share_trace_id || ''
+const eventSourceChannel = (event) => event.source_channel || event.scene_category || event.payload?.source_channel || event.payload?.source || ''
+const eventKeyword = (event) => event.keyword || event.payload?.keyword || ''
+const eventResultCount = (event) => Number(event.result_count ?? event.payload?.result_count ?? 0) || 0
+const eventHasResult = (event) => {
+  if (typeof event.has_result === 'boolean') return event.has_result
+  if (typeof event.payload?.has_result === 'boolean') return event.payload.has_result
+  return eventResultCount(event) > 0
+}
+const eventErrorType = (event) => event.error_type || event.payload?.error_type || event.event_type || ''
+const eventErrorMessage = (event) => event.err_msg || event.payload?.err_msg || event.target_name || ''
+const eventStatusCode = (event) => Number(event.status_code || event.payload?.status_code || 0) || 0
+const eventUrl = (event) => event.url || event.payload?.url || ''
+const eventDeviceModel = (event) => event.device_model || event.payload?.device_model || event.payload?.device?.device_model || ''
+const eventPlatform = (event) => event.platform || event.payload?.platform || event.payload?.device?.platform || ''
+const eventOsName = (event) => event.os_name || event.payload?.os_name || event.payload?.device?.os_name || ''
 
 const pageKey = (event) => eventPagePath(event) || eventPage(event) || 'unknown'
+const eventTimestamp = (event) => {
+  const date = eventTime(event)
+  return date ? date.getTime() : 0
+}
 
 const addPageUser = (page, userId) => {
   if (!page || !userId) return
   if (!pageUsers.has(page)) pageUsers.set(page, new Set())
   pageUsers.get(page).add(userId)
+}
+
+const addMapSetValue = (map, key, value) => {
+  if (!key || !value) return
+  if (!map.has(key)) map.set(key, new Set())
+  map.get(key).add(value)
 }
 
 const isCasesV2Page = (event) => {
@@ -203,7 +234,37 @@ const validateEvent = (event) => {
 }
 
 const eventUserSet = (items) => new Set(items.map(eventUserId).filter(Boolean))
-const eventCount = (type) => eventCounts.get(type) || 0
+const eventPreview = (event) => ({
+  event_id: event.event_id || '',
+  created_at: event.created_at || event.received_at || event.timestamp || '',
+  event_type: event.event_type || 'unknown',
+  anonymous_user_id: eventUserId(event),
+  session_id: eventSessionId(event),
+  page: eventPage(event),
+  page_path: eventPagePath(event),
+  target_type: eventTargetType(event),
+  target_id: eventTargetId(event),
+  target_name: eventTargetName(event),
+  position: eventPosition(event),
+  section_id: eventSectionId(event),
+  section_name: eventSectionName(event),
+  scroll_threshold: eventScrollThreshold(event),
+  action: event.action || event.payload?.action || '',
+  env: eventEnv(event),
+  source_channel: eventSourceChannel(event),
+  keyword: eventKeyword(event),
+  result_count: eventResultCount(event),
+  has_result: eventHasResult(event),
+  error_type: eventErrorType(event),
+  err_msg: eventErrorMessage(event),
+  status_code: eventStatusCode(event),
+  url: eventUrl(event),
+  device_model: eventDeviceModel(event),
+  platform: eventPlatform(event),
+  duration_ms: Number(event.duration_ms || event.payload?.duration_ms || 0) || 0,
+  share_trace_id: eventShareTraceId(event),
+  referrer_share_trace_id: eventReferrerShareTraceId(event)
+})
 
 const step = (name, eventType, items, previousUv = null) => {
   const uv = eventUserSet(items).size
@@ -218,6 +279,135 @@ const step = (name, eventType, items, previousUv = null) => {
   }
 }
 
+const userStats = new Map()
+const sessionStats = new Map()
+const deviceModelCounts = new Map()
+const platformCounts = new Map()
+const osCounts = new Map()
+const shareAttemptPageCounts = new Map()
+const shareOpenPageCounts = new Map()
+const shareTraces = new Map()
+const sectionStats = new Map()
+const sectionToggleStats = new Map()
+const scrollDepthStats = new Map()
+const entryPageCounts = new Map()
+const exitPageCounts = new Map()
+const transitionCounts = new Map()
+const hourlyCounts = new Map()
+const weekdayCounts = new Map()
+const sectionTransitionCounts = new Map()
+const sourceChannelCounts = new Map()
+const sourceChannelUsers = new Map()
+const sourceChannelSessions = new Map()
+const sourceChannelContacts = new Map()
+const sourceChannelLeads = new Map()
+const searchKeywordCounts = new Map()
+const searchKeywordUsers = new Map()
+const noResultSearchCounts = new Map()
+const searchClickCounts = new Map()
+const interactionCounts = new Map()
+const interactionUsers = new Map()
+const technicalIssueCounts = new Map()
+const technicalUrlCounts = new Map()
+const technicalStatusCounts = new Map()
+const newUserIds = new Set()
+const returningUserIds = new Set()
+
+const getUserStat = (userId) => {
+  if (!userId) return null
+  if (!userStats.has(userId)) {
+    userStats.set(userId, {
+      anonymous_user_id: userId,
+      first_seen_at: '',
+      last_seen_at: '',
+      event_count: 0,
+      page_view_count: 0,
+      session_ids: new Set(),
+      pages: new Set(),
+      visit_days: new Set(),
+      devices: new Set(),
+      platforms: new Set(),
+      total_page_duration_ms: 0,
+      share_attempts: 0,
+      share_opens: 0,
+      contact_clicks: 0,
+      lead_submits: 0,
+      case_detail_opens: 0
+    })
+  }
+  return userStats.get(userId)
+}
+
+const getSessionStat = (sessionId, userId) => {
+  if (!sessionId) return null
+  if (!sessionStats.has(sessionId)) {
+    sessionStats.set(sessionId, {
+      session_id: sessionId,
+      anonymous_user_id: userId || '',
+      started_at: '',
+      ended_at: '',
+      start_ts: 0,
+      end_ts: 0,
+      event_count: 0,
+      page_view_count: 0,
+      pages: new Set(),
+      events: [],
+      entry_page: '',
+      exit_page: '',
+      device_model: '',
+      platform: '',
+      share_attempts: 0,
+      share_opens: 0,
+      contact_clicks: 0,
+      lead_submits: 0,
+      total_page_duration_ms: 0
+    })
+  }
+  const stat = sessionStats.get(sessionId)
+  if (!stat.anonymous_user_id && userId) stat.anonymous_user_id = userId
+  return stat
+}
+
+const getShareTrace = (traceId) => {
+  if (!traceId) return null
+  if (!shareTraces.has(traceId)) {
+    shareTraces.set(traceId, {
+      share_trace_id: traceId,
+      attempt_count: 0,
+      open_count: 0,
+      shared_page: '',
+      shared_path: '',
+      sharer_user_id: '',
+      opener_users: new Set(),
+      first_attempt_at: '',
+      first_open_at: ''
+    })
+  }
+  return shareTraces.get(traceId)
+}
+
+const getSectionStat = (event) => {
+  const sectionId = eventSectionId(event)
+  if (!sectionId) return null
+  const page = eventPage(event)
+  const key = `${page}:${sectionId}`
+  if (!sectionStats.has(key)) {
+    sectionStats.set(key, {
+      page,
+      section_id: sectionId,
+      section_name: eventSectionName(event),
+      starts: 0,
+      ends: 0,
+      total_duration_ms: 0,
+      users: new Set(),
+      sessions: new Set()
+    })
+  }
+  const stat = sectionStats.get(key)
+  if (!stat.section_name && eventSectionName(event)) stat.section_name = eventSectionName(event)
+  return stat
+}
+
 for (const event of events) {
   const eventType = event.event_type || 'unknown'
   const userId = eventUserId(event)
@@ -225,12 +415,172 @@ for (const event of events) {
   const page = eventPage(event)
   const pagePath = pageKey(event)
   const date = dayKey(event)
+  const timestamp = eventTimestamp(event)
+  const timeIso = event.created_at || event.received_at || event.timestamp || ''
+  const duration = Number(event.duration_ms || event.payload?.duration_ms || 0)
+  const validDuration = duration >= 500 && duration <= 30 * 60 * 1000
+  const sourceChannel = eventSourceChannel(event) || 'unknown'
   validateEvent(event)
 
   if (userId) users.add(userId)
   if (sessionId) sessions.add(sessionId)
+  if (event.is_new_user === true && userId) newUserIds.add(userId)
+  if (event.is_new_user === false && userId) returningUserIds.add(userId)
   increment(eventCounts, eventType)
   increment(daily, `${date}:${eventType}`)
+  increment(sourceChannelCounts, sourceChannel)
+  addMapSetValue(sourceChannelUsers, sourceChannel, userId)
+  addMapSetValue(sourceChannelSessions, sourceChannel, sessionId)
+  if (eventType === 'contact_click') increment(sourceChannelContacts, sourceChannel)
+  if (eventType === 'lead_submit') increment(sourceChannelLeads, sourceChannel)
+
+  const deviceModel = eventDeviceModel(event)
+  const platform = eventPlatform(event)
+  const osName = eventOsName(event)
+  if (deviceModel) increment(deviceModelCounts, deviceModel)
+  if (platform) increment(platformCounts, platform)
+  if (osName) increment(osCounts, osName)
+
+  const userStat = getUserStat(userId)
+  if (userStat) {
+    userStat.event_count += 1
+    if (!userStat.first_seen_at || (timestamp && timestamp < new Date(userStat.first_seen_at).getTime())) userStat.first_seen_at = timeIso
+    if (!userStat.last_seen_at || (timestamp && timestamp > new Date(userStat.last_seen_at).getTime())) userStat.last_seen_at = timeIso
+    if (sessionId) userStat.session_ids.add(sessionId)
+    if (pagePath) userStat.pages.add(pagePath)
+    if (date) userStat.visit_days.add(date)
+    if (deviceModel) userStat.devices.add(deviceModel)
+    if (platform) userStat.platforms.add(platform)
+    if (eventType === 'page_view') userStat.page_view_count += 1
+    if (eventType === 'page_leave' && validDuration) userStat.total_page_duration_ms += duration
+    if (eventType === 'share_attempt') userStat.share_attempts += 1
+    if (eventType === 'share_open') userStat.share_opens += 1
+    if (eventType === 'contact_click') userStat.contact_clicks += 1
+    if (eventType === 'lead_submit') userStat.lead_submits += 1
+    if (eventType === 'modal_open' && eventModalType(event) === 'case_detail') userStat.case_detail_opens += 1
+  }
+
+  const sessionStat = getSessionStat(sessionId, userId)
+  if (sessionStat) {
+    sessionStat.event_count += 1
+    if (!sessionStat.started_at || (timestamp && timestamp < sessionStat.start_ts)) {
+      sessionStat.started_at = timeIso
+      sessionStat.start_ts = timestamp
+      sessionStat.entry_page = pagePath || page || 'unknown'
+    }
+    if (!sessionStat.ended_at || (timestamp && timestamp > sessionStat.end_ts)) {
+      sessionStat.ended_at = timeIso
+      sessionStat.end_ts = timestamp
+      sessionStat.exit_page = pagePath || page || 'unknown'
+    }
+    if (eventType === 'page_view') sessionStat.page_view_count += 1
+    if (pagePath) sessionStat.pages.add(pagePath)
+    if (deviceModel && !sessionStat.device_model) sessionStat.device_model = deviceModel
+    if (platform && !sessionStat.platform) sessionStat.platform = platform
+    if (eventType === 'page_leave' && validDuration) sessionStat.total_page_duration_ms += duration
+    if (eventType === 'share_attempt') sessionStat.share_attempts += 1
+    if (eventType === 'share_open') sessionStat.share_opens += 1
+    if (eventType === 'contact_click') sessionStat.contact_clicks += 1
+    if (eventType === 'lead_submit') sessionStat.lead_submits += 1
+    if (sessionStat.events.length < 120) sessionStat.events.push(eventPreview(event))
+  }
+
+  if (eventType === 'share_attempt') {
+    const trace = getShareTrace(eventShareTraceId(event))
+    if (trace) {
+      trace.attempt_count += 1
+      trace.shared_page = eventPage(event)
+      trace.shared_path = event.payload?.target_path || event.payload?.original_path || eventPagePath(event)
+      trace.sharer_user_id = userId
+      if (!trace.first_attempt_at) trace.first_attempt_at = timeIso
+    }
+    increment(shareAttemptPageCounts, eventPage(event))
+  }
+
+  if (eventType === 'share_open') {
+    const trace = getShareTrace(eventReferrerShareTraceId(event))
+    const sharedFromPage = event.payload?.query?.share_from_page || eventPage(event)
+    if (trace) {
+      trace.open_count += 1
+      if (userId) trace.opener_users.add(userId)
+      if (!trace.shared_page && sharedFromPage) trace.shared_page = sharedFromPage
+      if (!trace.first_open_at) trace.first_open_at = timeIso
+    }
+    increment(shareOpenPageCounts, sharedFromPage)
+  }
+
+  if (eventType === 'section_view_start' || eventType === 'section_view_end') {
+    const stat = getSectionStat(event)
+    if (stat) {
+      if (eventType === 'section_view_start') stat.starts += 1
+      if (eventType === 'section_view_end') {
+        stat.ends += 1
+        if (validDuration) stat.total_duration_ms += duration
+      }
+      if (userId) stat.users.add(userId)
+      if (sessionId) stat.sessions.add(sessionId)
+    }
+  }
+
+  if (eventType === 'section_toggle') {
+    const sectionId = eventSectionId(event)
+    const key = `${eventPage(event)}:${sectionId}`
+    if (!sectionToggleStats.has(key)) {
+      sectionToggleStats.set(key, {
+        page: eventPage(event),
+        section_id: sectionId,
+        section_name: eventSectionName(event),
+        opens: 0,
+        closes: 0,
+        users: new Set()
+      })
+    }
+    const stat = sectionToggleStats.get(key)
+    if ((event.action || event.payload?.action) === 'open') stat.opens += 1
+    else stat.closes += 1
+    if (userId) stat.users.add(userId)
+  }
+
+  if (eventType === 'search_submit') {
+    const keyword = eventKeyword(event) || '空搜索'
+    increment(searchKeywordCounts, keyword)
+    addMapSetValue(searchKeywordUsers, keyword, userId)
+    if (!eventHasResult(event)) increment(noResultSearchCounts, keyword)
+  }
+
+  if (eventType === 'search_result_click') {
+    increment(searchClickCounts, eventKeyword(event) || eventTargetName(event) || 'unknown')
+  }
+
+  if (eventType === 'content_interaction') {
+    const key = `${event.action || event.payload?.action || 'interaction'}:${eventTargetName(event) || eventTargetId(event) || 'unknown'}`
+    increment(interactionCounts, key)
+    addMapSetValue(interactionUsers, key, userId)
+  }
+
+  if (eventType === 'technical_error' || eventType === 'api_request_fail') {
+    increment(technicalIssueCounts, eventErrorType(event) || eventType)
+    increment(technicalUrlCounts, eventUrl(event) || eventPagePath(event) || eventPage(event))
+    if (eventStatusCode(event)) increment(technicalStatusCounts, String(eventStatusCode(event)))
+  }
+
+  if (eventType === 'scroll_depth') {
+    const threshold = eventScrollThreshold(event)
+    if (threshold) {
+      const key = `${pagePath || page}:${threshold}`
+      if (!scrollDepthStats.has(key)) {
+        scrollDepthStats.set(key, {
+          page: pagePath || page,
+          threshold,
+          count: 0,
+          users: new Set()
+        })
+      }
+      const stat = scrollDepthStats.get(key)
+      stat.count += 1
+      if (userId) stat.users.add(userId)
+    }
+  }
 
   if (eventType === 'page_view') {
     pageViews.push(event)
@@ -239,8 +589,7 @@ for (const event of events) {
     if (isCasesV2Page(event) && userId) casePageUsers.add(userId)
   }
 
-  const duration = Number(event.duration_ms || event.payload?.duration_ms || 0)
-  if (eventType === 'page_leave' && duration >= 500 && duration <= 30 * 60 * 1000) {
+  if (eventType === 'page_leave' && validDuration) {
     const current = pageDurations.get(pagePath || 'unknown') || { total: 0, count: 0 }
     current.total += duration
     current.count += 1
@@ -278,15 +627,367 @@ const pageDurationSummary = Array.from(pageDurations.entries())
 const pages = Array.from(pageCounts.entries())
   .map(([page, pv]) => {
     const duration = pageDurations.get(page)
+    const exits = exitPageCounts.get(page) || 0
     return {
       page,
       page_path: page.startsWith('/') ? page : '',
       pv,
       uv: pageUsers.get(page)?.size || 0,
-      avg_duration_ms: duration ? Math.round(duration.total / duration.count) : 0
+      avg_duration_ms: duration ? Math.round(duration.total / duration.count) : 0,
+      exits,
+      exit_rate: pv ? Number((exits / pv).toFixed(4)) : 0
     }
   })
   .sort((a, b) => b.pv - a.pv)
+
+const sessionDetails = Array.from(sessionStats.values())
+  .map((item) => {
+    const durationMs = item.total_page_duration_ms || Math.max(0, (item.end_ts || 0) - (item.start_ts || 0))
+    const eventsSorted = item.events
+      .slice()
+      .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+    return {
+      session_id: item.session_id,
+      anonymous_user_id: item.anonymous_user_id,
+      started_at: item.started_at,
+      ended_at: item.ended_at,
+      duration_ms: durationMs,
+      entry_page: item.entry_page,
+      exit_page: item.exit_page,
+      page_view_count: item.page_view_count,
+      event_count: item.event_count,
+      page_count: item.pages.size,
+      pages: Array.from(item.pages).slice(0, 20),
+      device_model: item.device_model,
+      platform: item.platform,
+      share_attempts: item.share_attempts,
+      share_opens: item.share_opens,
+      contact_clicks: item.contact_clicks,
+      lead_submits: item.lead_submits,
+      events: eventsSorted
+    }
+  })
+  .sort((a, b) => new Date(b.ended_at || b.started_at).getTime() - new Date(a.ended_at || a.started_at).getTime())
+
+const userJourneys = Array.from(userStats.values())
+  .map((item) => {
+    const score = item.lead_submits * 100 +
+      item.contact_clicks * 30 +
+      item.case_detail_opens * 10 +
+      item.share_attempts * 8 +
+      item.page_view_count
+    return {
+      anonymous_user_id: item.anonymous_user_id,
+      first_seen_at: item.first_seen_at,
+      last_seen_at: item.last_seen_at,
+      session_count: item.session_ids.size,
+      visit_days: item.visit_days.size,
+      event_count: item.event_count,
+      page_view_count: item.page_view_count,
+      page_count: item.pages.size,
+      total_page_duration_ms: item.total_page_duration_ms,
+      devices: Array.from(item.devices),
+      platforms: Array.from(item.platforms),
+      pages: Array.from(item.pages).slice(0, 20),
+      share_attempts: item.share_attempts,
+      share_opens: item.share_opens,
+      contact_clicks: item.contact_clicks,
+      lead_submits: item.lead_submits,
+      case_detail_opens: item.case_detail_opens,
+      intent_score: score
+    }
+  })
+  .sort((a, b) => b.intent_score - a.intent_score || new Date(b.last_seen_at).getTime() - new Date(a.last_seen_at).getTime())
+
+userJourneys.forEach((item) => {
+  if (item.session_count >= 2 || item.visit_days >= 2) returningUserIds.add(item.anonymous_user_id)
+})
+
+const shareTraceSummary = Array.from(shareTraces.values())
+  .map((item) => ({
+    share_trace_id: item.share_trace_id,
+    attempt_count: item.attempt_count,
+    open_count: item.open_count,
+    shared_page: item.shared_page,
+    shared_path: item.shared_path,
+    sharer_user_id: item.sharer_user_id,
+    opener_uv: item.opener_users.size,
+    first_attempt_at: item.first_attempt_at,
+    first_open_at: item.first_open_at
+  }))
+  .sort((a, b) => b.open_count - a.open_count || b.attempt_count - a.attempt_count)
+
+const devices = {
+  top_models: topEntries(deviceModelCounts, 20),
+  platforms: topEntries(platformCounts, 12),
+  os: topEntries(osCounts, 12)
+}
+
+const share = {
+  attempts: eventCounts.get('share_attempt') || 0,
+  opens: eventCounts.get('share_open') || 0,
+  attempt_pages: topEntries(shareAttemptPageCounts, 20),
+  open_pages: topEntries(shareOpenPageCounts, 20),
+  traces: shareTraceSummary.slice(0, 50)
+}
+
+const user_behavior = {
+  users: userJourneys.slice(0, 80),
+  sessions: sessionDetails.slice(0, 80),
+  recent_sessions: sessionDetails.slice(0, 20),
+  high_intent_users: userJourneys.slice(0, 20),
+  high_intent_unconverted_users: userJourneys
+    .filter(item => !item.lead_submits && (item.contact_clicks || item.case_detail_opens >= 2 || item.total_page_duration_ms >= 90 * 1000))
+    .slice(0, 30)
+}
+
+const sections = {
+  top_sections: Array.from(sectionStats.values())
+    .map((item) => ({
+      page: item.page,
+      section_id: item.section_id,
+      section_name: item.section_name,
+      starts: item.starts,
+      ends: item.ends,
+      uv: item.users.size,
+      sessions: item.sessions.size,
+      total_duration_ms: item.total_duration_ms,
+      avg_duration_ms: item.ends ? Math.round(item.total_duration_ms / item.ends) : 0
+    }))
+    .sort((a, b) => b.avg_duration_ms - a.avg_duration_ms || b.starts - a.starts)
+    .slice(0, 80),
+  toggles: Array.from(sectionToggleStats.values())
+    .map((item) => ({
+      page: item.page,
+      section_id: item.section_id,
+      section_name: item.section_name,
+      opens: item.opens,
+      closes: item.closes,
+      uv: item.users.size
+    }))
+    .sort((a, b) => b.opens - a.opens || b.uv - a.uv)
+    .slice(0, 50)
+}
+
+const scroll_depth = {
+  by_page: Array.from(scrollDepthStats.values())
+    .map((item) => ({
+      page: item.page,
+      threshold: item.threshold,
+      count: item.count,
+      uv: item.users.size
+    }))
+    .sort((a, b) => String(a.page).localeCompare(String(b.page)) || a.threshold - b.threshold)
+}
+
+sessionDetails.forEach((session) => {
+  increment(entryPageCounts, session.entry_page || 'unknown')
+  increment(exitPageCounts, session.exit_page || 'unknown')
+  const viewedPages = (session.events || [])
+    .filter(event => event.event_type === 'page_view')
+    .map(event => event.page_path || event.page)
+    .filter(Boolean)
+  for (let i = 1; i < viewedPages.length; i += 1) {
+    const from = viewedPages[i - 1]
+    const to = viewedPages[i]
+    if (from && to && from !== to) increment(transitionCounts, `${from} → ${to}`)
+  }
+
+  const viewedSections = (session.events || [])
+    .filter(event => event.event_type === 'section_view_start')
+    .map(event => event.target_name || event.target_id || event.position)
+    .filter(Boolean)
+  for (let i = 1; i < viewedSections.length; i += 1) {
+    const from = viewedSections[i - 1]
+    const to = viewedSections[i]
+    if (from && to && from !== to) increment(sectionTransitionCounts, `${from} → ${to}`)
+  }
+})
+
+const pagesWithExit = Array.from(pageCounts.entries())
+  .map(([page, pv]) => {
+    const duration = pageDurations.get(page)
+    const exits = exitPageCounts.get(page) || 0
+    return {
+      page,
+      page_path: page.startsWith('/') ? page : '',
+      pv,
+      uv: pageUsers.get(page)?.size || 0,
+      avg_duration_ms: duration ? Math.round(duration.total / duration.count) : 0,
+      exits,
+      exit_rate: pv ? Number((exits / pv).toFixed(4)) : 0
+    }
+  })
+  .sort((a, b) => b.pv - a.pv)
+
+events.forEach((event) => {
+  const date = eventTime(event)
+  if (!date) return
+  increment(hourlyCounts, String(date.getHours()).padStart(2, '0'))
+  increment(weekdayCounts, String(date.getDay()))
+})
+
+const retention = {
+  total_users: userJourneys.length,
+  users_visited_2plus_days: userJourneys.filter(item => item.visit_days >= 2).length,
+  users_visited_3plus_sessions: userJourneys.filter(item => item.session_count >= 3).length,
+  users_visited_7plus_sessions: userJourneys.filter(item => item.session_count >= 7).length,
+  users_visited_30plus_sessions: userJourneys.filter(item => item.session_count >= 30).length
+}
+
+const navigation = {
+  entry_pages: topEntries(entryPageCounts, 20),
+  exit_pages: topEntries(exitPageCounts, 20),
+  page_transitions: topEntries(transitionCounts, 30),
+  section_transitions: topEntries(sectionTransitionCounts, 30)
+}
+
+const time_distribution = {
+  by_hour: topEntries(hourlyCounts, 24).sort((a, b) => Number(a.name) - Number(b.name)),
+  by_weekday: topEntries(weekdayCounts, 7).sort((a, b) => Number(a.name) - Number(b.name))
+}
+
+const totalUserCount = users.size
+const totalSessionCount = sessions.size
+const totalSessionDurationMs = sessionDetails.reduce((sum, item) => sum + (item.duration_ms || 0), 0)
+const bounceSessions = sessionDetails.filter(item => item.page_view_count <= 1).length
+const newUserCount = newUserIds.size
+const returningUserCount = Math.max(0, totalUserCount - newUserCount)
+
+const overview = {
+  uv: totalUserCount,
+  pv: pageViews.length,
+  sessions: totalSessionCount,
+  new_users: newUserCount,
+  returning_users: returningUserCount,
+  avg_sessions_per_user: totalUserCount ? Number((totalSessionCount / totalUserCount).toFixed(2)) : 0,
+  avg_page_views_per_user: totalUserCount ? Number((pageViews.length / totalUserCount).toFixed(2)) : 0,
+  avg_session_duration_ms: totalSessionCount ? Math.round(totalSessionDurationMs / totalSessionCount) : 0,
+  avg_user_duration_ms: totalUserCount ? Math.round(totalSessionDurationMs / totalUserCount) : 0,
+  bounce_sessions: bounceSessions,
+  bounce_rate: totalSessionCount ? Number((bounceSessions / totalSessionCount).toFixed(4)) : 0
+}
+
+const source_analysis = {
+  channels: Array.from(sourceChannelCounts.entries())
+    .map(([channel, count]) => {
+      const uv = sourceChannelUsers.get(channel)?.size || 0
+      const sessionCount = sourceChannelSessions.get(channel)?.size || 0
+      const contacts = sourceChannelContacts.get(channel) || 0
+      const leadsCount = sourceChannelLeads.get(channel) || 0
+      return {
+        channel,
+        count,
+        uv,
+        sessions: sessionCount,
+        contact_clicks: contacts,
+        lead_submits: leadsCount,
+        contact_rate: uv ? Number((contacts / uv).toFixed(4)) : 0,
+        lead_rate: uv ? Number((leadsCount / uv).toFixed(4)) : 0
+      }
+    })
+    .sort((a, b) => b.uv - a.uv || b.count - a.count)
+}
+
+const searchSubmitCount = eventCounts.get('search_submit') || 0
+const searchClickCount = eventCounts.get('search_result_click') || 0
+const search_analysis = {
+  total_searches: searchSubmitCount,
+  result_clicks: searchClickCount,
+  click_through_rate: searchSubmitCount ? Number((searchClickCount / searchSubmitCount).toFixed(4)) : 0,
+  top_keywords: Array.from(searchKeywordCounts.entries())
+    .map(([keyword, count]) => ({
+      keyword,
+      count,
+      uv: searchKeywordUsers.get(keyword)?.size || 0,
+      result_clicks: searchClickCounts.get(keyword) || 0
+    }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 50),
+  no_result_keywords: topEntries(noResultSearchCounts, 50).map(item => ({
+    keyword: item.name,
+    count: item.count
+  }))
+}
+
+const interactions = {
+  total: eventCounts.get('content_interaction') || 0,
+  top_actions: Array.from(interactionCounts.entries())
+    .map(([key, count]) => ({
+      key,
+      action: key.split(':')[0] || '',
+      target_name: key.split(':').slice(1).join(':') || '',
+      count,
+      uv: interactionUsers.get(key)?.size || 0
+    }))
+    .sort((a, b) => b.count - a.count || b.uv - a.uv)
+    .slice(0, 50),
+  contact_clicks: eventCounts.get('contact_click') || 0,
+  lead_submits: eventCounts.get('lead_submit') || 0,
+  share_attempts: eventCounts.get('share_attempt') || 0
+}
+
+const technical = {
+  total_issues: (eventCounts.get('technical_error') || 0) + (eventCounts.get('api_request_fail') || 0),
+  api_failures: eventCounts.get('api_request_fail') || 0,
+  page_errors: eventCounts.get('technical_error') || 0,
+  by_type: topEntries(technicalIssueCounts, 50).map(item => ({ type: item.name, count: item.count })),
+  by_url: topEntries(technicalUrlCounts, 50).map(item => ({ url: item.name, count: item.count })),
+  by_status: topEntries(technicalStatusCounts, 20).map(item => ({ status_code: item.name, count: item.count }))
+}
+
+const userSessionDays = new Map()
+sessionDetails.forEach((session) => {
+  const userId = session.anonymous_user_id
+  const day = session.started_at ? new Date(session.started_at).toISOString().slice(0, 10) : ''
+  if (!userId || !day) return
+  if (!userSessionDays.has(userId)) userSessionDays.set(userId, new Set())
+  userSessionDays.get(userId).add(day)
+})
+
+let d1Base = 0
+let d1Retained = 0
+let d7Base = 0
+let d7Retained = 0
+let d30Base = 0
+let d30Retained = 0
+userSessionDays.forEach((daysSet) => {
+  const days = Array.from(daysSet).sort()
+  const first = days[0]
+  if (!first) return
+  const firstTime = new Date(`${first}T00:00:00.000Z`).getTime()
+  const offsets = days.map(day => Math.round((new Date(`${day}T00:00:00.000Z`).getTime() - firstTime) / 86400000))
+  d1Base += 1
+  d7Base += 1
+  d30Base += 1
+  if (offsets.includes(1)) d1Retained += 1
+  if (offsets.some(offset => offset >= 1 && offset <= 7)) d7Retained += 1
+  if (offsets.some(offset => offset >= 1 && offset <= 30)) d30Retained += 1
+})
+
+const retention_cohorts = {
+  next_day: {
+    base_users: d1Base,
+    retained_users: d1Retained,
+    retention_rate: d1Base ? Number((d1Retained / d1Base).toFixed(4)) : 0
+  },
+  seven_day: {
+    base_users: d7Base,
+    retained_users: d7Retained,
+    retention_rate: d7Base ? Number((d7Retained / d7Base).toFixed(4)) : 0
+  },
+  thirty_day: {
+    base_users: d30Base,
+    retained_users: d30Retained,
+    retention_rate: d30Base ? Number((d30Retained / d30Base).toFixed(4)) : 0
+  }
+}
+
+const recent_events = events
+  .slice()
+  .sort((a, b) => eventTimestamp(b) - eventTimestamp(a))
+  .slice(0, eventSampleLimit)
+  .map(eventPreview)
 
 const casePageViews = pageViews.filter(isCasesV2Page)
 const validCaseEvent = (event) => eventTargetType(event) === 'case' && Boolean(eventTargetId(event))
@@ -346,6 +1047,30 @@ const resultContactStep = step('结果页咨询点击', 'cta_click:contact', res
 const resultZexiaoStep = step('结果页长图点击', 'nav_click:zexiao', resultToZexiaoEvents, resultViewStep.uv)
 const resultLeadStep = step('提交留资', 'lead_submit', leadSubmitEvents, resultContactStep.uv || resultViewStep.uv)
 
+const userHasEvent = (userId, types) =>
+  events.some(event => eventUserId(event) === userId && types.includes(event.event_type || ''))
+
+const userViewedPage = (userId, predicate) =>
+  pageViews.some(event => eventUserId(event) === userId && predicate(event))
+
+const dropoffs = {
+  assessment_started_not_finished: Array.from(eventUserSet(assessmentStartEvents))
+    .filter(userId => !userHasEvent(userId, ['assessment_finish', 'finish_assessment']))
+    .slice(0, 50),
+  assessment_finished_not_result: Array.from(eventUserSet(assessmentFinishEvents))
+    .filter(userId => !userHasEvent(userId, ['recommendation_view', 'recommendation_generated']) && !userViewedPage(userId, isResultPage))
+    .slice(0, 50),
+  result_view_no_contact: Array.from(eventUserSet(resultPageViews))
+    .filter(userId => !userHasEvent(userId, ['contact_click', 'lead_submit']))
+    .slice(0, 50),
+  contact_click_no_lead: Array.from(eventUserSet(events.filter(event => event.event_type === 'contact_click')))
+    .filter(userId => !userHasEvent(userId, ['lead_submit']))
+    .slice(0, 50),
+  case_page_no_case_click: Array.from(eventUserSet(casePageViews))
+    .filter(userId => !caseClickUsers.has(userId))
+    .slice(0, 50)
+}
+
 const cases = {
   page_pv: casePageViews.length,
   page_uv: casePageUsers.size,
@@ -386,6 +1111,7 @@ const summary = {
     uv: users.size,
     sessions: sessions.size
   },
+  overview,
   funnel: {
     assessment_start: eventCounts.get('assessment_start') || eventCounts.get('start_assessment') || 0,
     assessment_finish: eventCounts.get('assessment_finish') || eventCounts.get('finish_assessment') || 0,
@@ -413,7 +1139,22 @@ const summary = {
       resultLeadStep
     ]
   },
-  pages,
+  pages: pagesWithExit,
+  user_behavior,
+  source_analysis,
+  share,
+  devices,
+  sections,
+  search_analysis,
+  interactions,
+  scroll_depth,
+  navigation,
+  retention,
+  retention_cohorts,
+  time_distribution,
+  technical,
+  dropoffs,
+  recent_events,
   events_quality: eventsQuality,
   top_events: topEntries(eventCounts, 20),
   top_pages: topEntries(pageCounts, 20),
