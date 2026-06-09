@@ -61,6 +61,12 @@
 import { onMounted } from 'vue'
 import { v6TimelineContent } from '@/data/v5/timeline'
 import { trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '在职考研备考时间线｜研知道',
+  path: '/pages/timeline/index'
+})
 
 const content = v6TimelineContent
 

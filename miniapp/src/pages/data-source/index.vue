@@ -79,6 +79,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { trackPageView, trackNavClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '研知道数据来源与说明',
+  path: '/pages/data-source/index'
+})
 
 const goBack = () => {
   const pages = getCurrentPages()

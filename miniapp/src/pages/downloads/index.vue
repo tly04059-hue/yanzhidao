@@ -13,9 +13,18 @@
       <view class="brand-row">{{ content.brandLine }}</view>
 
       <view class="hero-card">
-        <!-- <text class="kicker-cn">{{ content.hero.kicker }}</text> -->
-        <text class="hero-title" style="font-size: 24px;">{{ content.hero.title }}</text>
-        <!-- <text class="hero-copy">{{ content.hero.subtitle }}</text> -->
+        <view class="downloads-hero-title">
+          <text
+            v-for="line in heroTitleLines"
+            :key="line"
+            class="downloads-hero-title-line"
+          >{{ line }}</text>
+        </view>
+      </view>
+
+      <view class="downloads-action-stack">
+        <view class="btn-primary" @click="goPage('prep')">在职考研路径对比</view>
+        <view class="btn-secondary" @click="goPage('cases')">辅导上岸案例</view>
       </view>
 
       <view class="section">
@@ -42,10 +51,6 @@
             </view>
 
             <view class="dl-info">
-              <view class="dl-head">
-                <text class="dl-title-text">{{ item.title }}</text>
-                <!-- <text class="chip">{{ item.tag }}</text> -->
-              </view>
               <text class="dl-note">{{ item.note }}</text>
               <view v-if="item.subjects?.length" class="dl-subject-list">
                 <view v-for="subject in item.subjects" :key="subject.title" class="dl-subject-row">
@@ -70,6 +75,11 @@
         </view>
       </view>
 
+      <view class="downloads-action-stack downloads-action-stack-note">
+        <view class="btn-primary" @click="goPage('prep')">在职考研路径对比</view>
+        <view class="btn-secondary" @click="goPage('cases')">辅导上岸案例</view>
+      </view>
+
       <view class="note-card">
         <text class="note-card-text">{{ content.hint }}</text>
       </view>
@@ -91,18 +101,25 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { v6DownloadsContent } from '@/data/v5'
 import { ensurePrivacyAuthorization } from '@/api/privacy'
 import { trackNavClick, trackPageView } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
 
 type DownloadItem = (typeof v6DownloadsContent.items)[number]
 type DownloadSubject = NonNullable<DownloadItem['subjects']>[number]
 type DownloadTarget = DownloadItem | DownloadSubject
 
+usePageShare({
+  title: '2026 四川党校在职研考前资料下载｜研知道',
+  path: '/pages/downloads/index'
+})
+
 const content = v6DownloadsContent
 const downloadingId = ref('')
 const previewItem = ref<DownloadItem | null>(null)
+const heroTitleLines = computed(() => content.hero.title.split('\n').filter(Boolean))
 
 const goBack = () => {
   trackNavClick('downloads', 'back', '/pages/index/index')
@@ -112,6 +129,16 @@ const goBack = () => {
     return
   }
   uni.switchTab({ url: '/pages/index/index' })
+}
+
+const goPage = (key: 'prep' | 'cases') => {
+  const routeMap = {
+    prep: '/pages/prep/index',
+    cases: '/pages/cases-v2/index'
+  } as const
+  const url = routeMap[key]
+  trackNavClick('downloads', key, url)
+  uni.navigateTo({ url })
 }
 
 const toast = (title: string, icon: 'none' | 'success' = 'none') => {
@@ -280,6 +307,40 @@ onUnmounted(() => lockBodyScroll(false))
   overflow: hidden;
 }
 
+.downloads-hero-title {
+  @include serif;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 24px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: $text-1;
+}
+
+.downloads-hero-title-line {
+  display: block;
+}
+
+.downloads-action-stack {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+
+.downloads-action-stack-note {
+  margin-top: 18px;
+}
+
+.downloads-action-stack .btn-primary,
+.downloads-action-stack .btn-secondary {
+  flex: 1;
+  min-width: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .dl-stack {
   display: flex;
   flex-direction: column;
@@ -296,7 +357,7 @@ onUnmounted(() => lockBodyScroll(false))
 
 .dl-preview {
   width: 100%;
-  height: 600px;
+  height: 400px;
   background: $bg-tertiary;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;

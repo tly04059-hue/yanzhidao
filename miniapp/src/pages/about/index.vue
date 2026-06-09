@@ -100,6 +100,12 @@
 import { onMounted } from 'vue'
 import { trackPageView, trackNavClick } from '@/api/tracking'
 import { remoteAssets } from '@/data/remote-assets'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '关于研知道｜川渝在职考研服务',
+  path: '/pages/about/index'
+})
 
 const goBack = () => {
   const pages = getCurrentPages()

@@ -358,6 +358,14 @@ onUnmounted(() => {
 .path-stats {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+  align-items: stretch;
+}
+
+.path-stat-card {
+  display: grid;
+  grid-template-rows: 150px 1px 118px;
+  align-items: stretch;
+  min-height: 327px;
 }
 
 .entry-toggle {
@@ -474,12 +482,23 @@ onUnmounted(() => {
   flex-direction: column;
   text-align: left;
   align-items: flex-start;
+  min-height: 0;
+}
+
+.ps-link-top {
+  justify-content: flex-start;
+}
+
+.ps-link-bottom {
+  justify-content: flex-start;
+  padding-top: 14px;
 }
 
 .ps-desc {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 0;
 }
 
 .ps-desc-strong,
@@ -494,13 +513,32 @@ onUnmounted(() => {
   text-overflow: clip;
   word-break: keep-all;
   overflow-wrap: anywhere;
+  min-height: 18px;
 }
 
 .ps-arrow {
   position: static;
   align-self: center;
-  margin-top: 10px;
+  margin-top: auto;
+  padding-top: 8px;
   display: block;
+}
+
+.ps-divider {
+  margin: 0;
+  width: 100%;
+}
+
+.ps-rate-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  row-gap: 4px;
+}
+
+.ps-rate-line {
+  line-height: 18px;
+  min-height: 18px;
 }
 
 @media (max-width: 380px) {
@@ -510,6 +548,8 @@ onUnmounted(() => {
 
   .path-stat-card {
     padding: 18px 12px 16px;
+    grid-template-rows: 150px 1px 116px;
+    min-height: 319px;
   }
 
   .ps-desc-strong,

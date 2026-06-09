@@ -83,6 +83,12 @@
 import { onMounted, ref, computed, reactive } from 'vue'
 import { v6EstimateContent } from '@/data/v5'
 import { trackNavClick, trackPageView, trackTabClick } from '@/api/tracking'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '在职考研估分工具｜研知道',
+  path: '/pages/estimate/index'
+})
 
 const content = v6EstimateContent
 const scores = reactive<Record<string, number | null>>({

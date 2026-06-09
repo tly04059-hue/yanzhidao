@@ -175,6 +175,12 @@ import { onMounted, onUnmounted, ref, computed, watch } from 'vue'
 import { trackPageView, trackTabClick } from '@/api/tracking'
 import BottomTabBar from '@/components/BottomTabBar.vue'
 import { casesV2, type CaseV2 } from '@/data/cases-v2'
+import { usePageShare } from '@/utils/share'
+
+usePageShare({
+  title: '1000+ 川渝学员真实选择｜研知道',
+  path: '/pages/cases/index'
+})
 
 interface UnifiedCase {
   id: string
