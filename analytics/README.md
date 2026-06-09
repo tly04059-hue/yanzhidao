@@ -66,3 +66,11 @@ python3 -m http.server 8787 --bind 0.0.0.0 --directory analytics/reports
 ```text
 http://本机局域网IP:8787/user-behavior-dashboard.html
 ```
+
+正式上线建议不要直接裸露静态目录，改用 API 服务的受保护入口：
+
+```text
+https://yanzhidao.com/analytics/user-behavior-dashboard.html
+```
+
+API 服务会用 `ANALYTICS_AUTH_USER` 和 `ANALYTICS_AUTH_PASSWORD` 对 `/analytics/*` 做 Basic Auth，页面和 `latest-summary.json` 会同时受保护。详细部署方式见 `docs/dashboard-access-control.md`。

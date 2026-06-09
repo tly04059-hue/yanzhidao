@@ -12,11 +12,70 @@ const schoolDataPath = process.env.SCHOOL_DATA_PATH || path.join(workspaceRoot, 
 const runtimeDir = process.env.RUNTIME_DIR || path.join(workspaceRoot, 'schooltool', 'data', 'runtime');
 const leadsPath = path.join(runtimeDir, 'miniapp-leads.jsonl');
 const eventsPath = path.join(runtimeDir, 'miniapp-events.jsonl');
+const analyticsReportsDir = path.join(workspaceRoot, 'analytics', 'reports');
+const analyticsAuthUser = process.env.ANALYTICS_AUTH_USER || (process.env.NODE_ENV === 'production' ? '' : 'analytics_admin');
+const analyticsAuthPassword = process.env.ANALYTICS_AUTH_PASSWORD || (process.env.NODE_ENV === 'production' ? '' : 'yanzhidao-dashboard');
 
 app.use(cors({
   origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : true
 }));
 app.use(express.json({ limit: '1mb' }));
+
+// ===================== 用户行为看板访问保护 =====================
+
+function timingSafeEqualString(left, right) {
+  const leftBuffer = Buffer.from(String(left || ''));
+  const rightBuffer = Buffer.from(String(right || ''));
+  return leftBuffer.length === rightBuffer.length && crypto.timingSafeEqual(leftBuffer, rightBuffer);
+}
+
+function parseBasicAuth(req) {
+  const header = req.headers.authorization || '';
+  if (!header.startsWith('Basic ')) return null;
+
+  try {
+    const decoded = Buffer.from(header.slice(6), 'base64').toString('utf8');
+    const separatorIndex = decoded.indexOf(':');
+    if (separatorIndex < 0) return null;
+    return {
+      username: decoded.slice(0, separatorIndex),
+      password: decoded.slice(separatorIndex + 1)
+    };
+  } catch (err) {
+    return null;
+  }
+}
+
+function isAnalyticsAuthConfigured() {
+  return Boolean(analyticsAuthUser && analyticsAuthPassword);
+}
+
+function requireAnalyticsAuth(req, res, next) {
+  if (!isAnalyticsAuthConfigured()) {
+    return res.status(503).type('text/plain').send('Analytics dashboard auth is not configured. Set ANALYTICS_AUTH_USER and ANALYTICS_AUTH_PASSWORD.');
+  }
+
+  const credentials = parseBasicAuth(req);
+  const passed = credentials &&
+    timingSafeEqualString(credentials.username, analyticsAuthUser) &&
+    timingSafeEqualString(credentials.password, analyticsAuthPassword);
+
+  if (!passed) {
+    res.set('WWW-Authenticate', 'Basic realm="Yanzhidao Analytics"');
+    return res.status(401).type('text/plain').send('Authentication required.');
+  }
+
+  next();
+}
+
+app.use('/analytics', requireAnalyticsAuth, express.static(analyticsReportsDir, {
+  index: 'user-behavior-dashboard.html',
+  etag: false,
+  maxAge: 0,
+  setHeaders: res => {
+    res.setHeader('Cache-Control', 'no-store');
+  }
+}));
 
 // ===================== 埋点事件处理 =====================
 
@@ -283,7 +342,12 @@ function appendLead(payload) {
 // ===================== 路由 =====================
 
 app.get('/api/health', (req, res) => {
-  res.json({ ok: true, service: 'yanzhidao-miniapp-api', program_count: flattenSchoolData().length });
+  res.json({
+    ok: true,
+    service: 'yanzhidao-miniapp-api',
+    program_count: flattenSchoolData().length,
+    analytics_auth_configured: isAnalyticsAuthConfigured()
+  });
 });
 
 app.get('/api/miniapp/schools', (req, res) => {

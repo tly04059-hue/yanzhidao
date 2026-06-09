@@ -6,9 +6,12 @@ const crypto = require('node:crypto')
 const ROOT = path.resolve(__dirname, '../../..')
 const RUNTIME_DIR = path.join(ROOT, 'schooltool/data/runtime')
 const EVENTS_FILE = path.join(RUNTIME_DIR, 'miniapp-events.jsonl')
+const ANALYTICS_REPORTS_DIR = path.join(ROOT, 'analytics/reports')
 const PORT = Number(process.env.PORT || 8010)
 const MAX_BODY_BYTES = 128 * 1024
 const VALID_ENVS = new Set(['development', 'trial', 'production'])
+const ANALYTICS_AUTH_USER = process.env.ANALYTICS_AUTH_USER || (process.env.NODE_ENV === 'production' ? '' : 'analytics_admin')
+const ANALYTICS_AUTH_PASSWORD = process.env.ANALYTICS_AUTH_PASSWORD || (process.env.NODE_ENV === 'production' ? '' : 'yanzhidao-dashboard')
 
 const jsonResponse = (res, statusCode, payload) => {
   res.writeHead(statusCode, {
@@ -168,6 +171,104 @@ const appendJsonl = async event => {
   await fs.promises.appendFile(EVENTS_FILE, JSON.stringify(event) + '\n', 'utf8')
 }
 
+const timingSafeEqualString = (left, right) => {
+  const leftBuffer = Buffer.from(String(left || ''))
+  const rightBuffer = Buffer.from(String(right || ''))
+  return leftBuffer.length === rightBuffer.length && crypto.timingSafeEqual(leftBuffer, rightBuffer)
+}
+
+const parseBasicAuth = req => {
+  const header = req.headers.authorization || ''
+  if (!header.startsWith('Basic ')) return null
+
+  try {
+    const decoded = Buffer.from(header.slice(6), 'base64').toString('utf8')
+    const separatorIndex = decoded.indexOf(':')
+    if (separatorIndex < 0) return null
+    return {
+      username: decoded.slice(0, separatorIndex),
+      password: decoded.slice(separatorIndex + 1)
+    }
+  } catch (error) {
+    return null
+  }
+}
+
+const isAnalyticsAuthConfigured = () => Boolean(ANALYTICS_AUTH_USER && ANALYTICS_AUTH_PASSWORD)
+
+const isAnalyticsAuthorized = req => {
+  if (!isAnalyticsAuthConfigured()) return false
+  const credentials = parseBasicAuth(req)
+  if (!credentials) return false
+  return (
+    timingSafeEqualString(credentials.username, ANALYTICS_AUTH_USER) &&
+    timingSafeEqualString(credentials.password, ANALYTICS_AUTH_PASSWORD)
+  )
+}
+
+const writeTextResponse = (res, statusCode, message, headers = {}) => {
+  res.writeHead(statusCode, {
+    'Content-Type': 'text/plain; charset=utf-8',
+    ...headers
+  })
+  res.end(message)
+}
+
+const analyticsContentType = filePath => {
+  const ext = path.extname(filePath).toLowerCase()
+  if (ext === '.html') return 'text/html; charset=utf-8'
+  if (ext === '.json') return 'application/json; charset=utf-8'
+  if (ext === '.js') return 'text/javascript; charset=utf-8'
+  if (ext === '.css') return 'text/css; charset=utf-8'
+  if (ext === '.svg') return 'image/svg+xml'
+  if (ext === '.png') return 'image/png'
+  if (ext === '.jpg' || ext === '.jpeg') return 'image/jpeg'
+  return 'application/octet-stream'
+}
+
+const handleAnalyticsAsset = async (req, res, url) => {
+  if (!isAnalyticsAuthConfigured()) {
+    writeTextResponse(res, 503, 'Analytics dashboard auth is not configured. Set ANALYTICS_AUTH_USER and ANALYTICS_AUTH_PASSWORD.')
+    return
+  }
+
+  if (!isAnalyticsAuthorized(req)) {
+    writeTextResponse(res, 401, 'Authentication required.', {
+      'WWW-Authenticate': 'Basic realm="Yanzhidao Analytics"'
+    })
+    return
+  }
+
+  const relativePath = decodeURIComponent(url.pathname.replace(/^\/analytics\/?/, '')) || 'user-behavior-dashboard.html'
+  const filePath = path.resolve(ANALYTICS_REPORTS_DIR, relativePath)
+  const reportsRoot = path.resolve(ANALYTICS_REPORTS_DIR)
+
+  if (filePath !== reportsRoot && !filePath.startsWith(reportsRoot + path.sep)) {
+    writeTextResponse(res, 403, 'Forbidden.')
+    return
+  }
+
+  try {
+    const stat = await fs.promises.stat(filePath)
+    if (!stat.isFile()) {
+      writeTextResponse(res, 404, 'Not found.')
+      return
+    }
+
+    res.writeHead(200, {
+      'Content-Type': analyticsContentType(filePath),
+      'Cache-Control': 'no-store'
+    })
+    if (req.method === 'HEAD') {
+      res.end()
+      return
+    }
+    fs.createReadStream(filePath).pipe(res)
+  } catch (error) {
+    writeTextResponse(res, 404, 'Not found.')
+  }
+}
+
 const handleTrackEvent = async (req, res) => {
   try {
     const body = await readBody(req)
@@ -215,8 +316,14 @@ const server = http.createServer((req, res) => {
     jsonResponse(res, 200, {
       ok: true,
       service: 'yanzhidao-api',
-      runtime_dir: path.relative(ROOT, RUNTIME_DIR)
+      runtime_dir: path.relative(ROOT, RUNTIME_DIR),
+      analytics_auth_configured: isAnalyticsAuthConfigured()
     })
+    return
+  }
+
+  if ((req.method === 'GET' || req.method === 'HEAD') && (url.pathname === '/analytics' || url.pathname.startsWith('/analytics/'))) {
+    handleAnalyticsAsset(req, res, url)
     return
   }
 
