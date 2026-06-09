@@ -19,7 +19,7 @@ const outputPath = args.get('output') || 'analytics/reports/latest-summary.json'
 const envFilter = args.get('env') || 'all'
 const dateFrom = args.get('date-from') || ''
 const dateTo = args.get('date-to') || ''
-const eventSampleLimit = Number(args.get('event-sample-limit') || 2000)
+const eventSampleLimit = Number(args.get('event-sample-limit') || 10000)
 const VALID_ENVS = new Set(['development', 'trial', 'production'])
 
 const readJsonl = (filePath) => {
@@ -325,6 +325,7 @@ const getUserStat = (userId) => {
       session_ids: new Set(),
       pages: new Set(),
       visit_days: new Set(),
+      visit_times: new Set(),
       devices: new Set(),
       platforms: new Set(),
       total_page_duration_ms: 0,
@@ -449,6 +450,9 @@ for (const event of events) {
     if (sessionId) userStat.session_ids.add(sessionId)
     if (pagePath) userStat.pages.add(pagePath)
     if (date) userStat.visit_days.add(date)
+    if (timeIso && ['app_launch', 'app_show', 'app_hide', 'page_view', 'page_leave'].includes(eventType)) {
+      userStat.visit_times.add(timeIso)
+    }
     if (deviceModel) userStat.devices.add(deviceModel)
     if (platform) userStat.platforms.add(platform)
     if (eventType === 'page_view') userStat.page_view_count += 1
@@ -685,6 +689,8 @@ const userJourneys = Array.from(userStats.values())
       event_count: item.event_count,
       page_view_count: item.page_view_count,
       page_count: item.pages.size,
+      visit_times: Array.from(item.visit_times)
+        .sort((a, b) => new Date(a).getTime() - new Date(b).getTime()),
       total_page_duration_ms: item.total_page_duration_ms,
       devices: Array.from(item.devices),
       platforms: Array.from(item.platforms),
@@ -732,8 +738,8 @@ const share = {
 }
 
 const user_behavior = {
-  users: userJourneys.slice(0, 80),
-  sessions: sessionDetails.slice(0, 80),
+  users: userJourneys,
+  sessions: sessionDetails,
   recent_sessions: sessionDetails.slice(0, 20),
   high_intent_users: userJourneys.slice(0, 20),
   high_intent_unconverted_users: userJourneys

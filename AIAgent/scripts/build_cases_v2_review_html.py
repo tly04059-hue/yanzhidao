@@ -9,10 +9,6 @@ from typing import Any
 
 from openpyxl import load_workbook
 
-from build_party_duplicate_rewrite_draft import choose_reason as draft_choose_reason
-from build_party_duplicate_rewrite_draft import feedback as draft_feedback
-
-
 ROOT = Path(__file__).resolve().parents[2]
 PARTY_SOURCE_CANDIDATES = [
     ROOT / "miniapp" / "dx-cases.json",
@@ -211,20 +207,7 @@ def party_quality(score: int) -> str:
 
 
 def display_narratives(case: dict[str, Any]) -> dict[str, str]:
-    narratives = {key: clean(case.get(key)) for key in NARRATIVE_KEYS}
-    core_keys = ["key_quote", "narrative_choose", "reflection"]
-    core_values = [narratives[key] for key in core_keys]
-    has_all_core = all(core_values)
-    is_exact_duplicate_core = has_all_core and len(set(core_values)) == 1
-
-    if not is_exact_duplicate_core:
-        return narratives
-
-    if narratives["narrative_choose"]:
-        narratives["narrative_choose"] = draft_choose_reason(case)
-    if narratives["reflection"]:
-        narratives["reflection"] = draft_feedback(case)
-    return narratives
+    return {key: clean(case.get(key)) for key in NARRATIVE_KEYS}
 
 
 def ai_fill_info(case: dict[str, Any]) -> dict[str, Any]:
@@ -236,12 +219,12 @@ def ai_fill_info(case: dict[str, Any]) -> dict[str, Any]:
         return {
             "ai_fill_level": "none",
             "ai_filled_fields": [],
-            "ai_label": "未使用 AI 补充",
+            "ai_label": "",
         }
     return {
         "ai_fill_level": "partial",
         "ai_filled_fields": ["narrative_choose", "reflection"],
-        "ai_label": "AI 补充：真实反馈",
+        "ai_label": "曾标记 AI 补充，已回退源文本",
     }
 
 
@@ -540,6 +523,7 @@ def render_party_card(item: dict[str, Any], rank: int) -> str:
     meta_parts = [item["system"]] if item["region"] and item["region"] != "未知" else [item["system"], item["position"]]
     meta = " · ".join(part for part in meta_parts if clean(part))
     ai_class = "ai-none" if item["ai_fill_level"] == "none" else "ai-partial"
+    ai_html = f'<div class="ai-line"><span class="ai-badge {ai_class}">{escape(item["ai_label"])}</span></div>' if item["ai_label"] else ""
     return f"""
     <article class="case-card party-card" data-search="{escape_party(' '.join([item['display_alias'], item['target'], item['system'], item['region']]))}">
       <div class="card-head">
@@ -549,7 +533,7 @@ def render_party_card(item: dict[str, Any], rank: int) -> str:
         </div>
         <div class="score">{item['richness']}</div>
       </div>
-      <div class="ai-line"><span class="ai-badge {ai_class}">{escape(item['ai_label'])}</span></div>
+      {ai_html}
       <div class="meta">{escape_party(meta)}</div>
       <div class="target">选了：<strong>{escape_party(item['target'])}</strong></div>
       <div class="tags">{render_party_tags(item['tags'][:8])}</div>

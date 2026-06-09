@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04 15:07:37",
+  "generated_at": "2026-06-09 17:18:13",
   "miniapp_connection": "connected_to_pages_cases_v2",
   "files": [
     {
@@ -7,10 +7,10 @@
       "name": "党校未脱敏内部版",
       "direction": "party",
       "privacy_version": "raw_internal",
-      "generated_at": "2026-06-04 15:07:37",
+      "generated_at": "2026-06-09 17:18:13",
       "record_count": 108,
       "review_status": "pending_final_review",
-      "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+      "sort_rule": "按明确度、丰富度、原始顺序排序。",
       "miniapp_connection": "connected_to_pages_cases_v2"
     },
     {
@@ -18,10 +18,10 @@
       "name": "党校脱敏内部版",
       "direction": "party",
       "privacy_version": "desensitized_internal",
-      "generated_at": "2026-06-04 15:07:37",
+      "generated_at": "2026-06-09 17:18:13",
       "record_count": 108,
       "review_status": "pending_final_review",
-      "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+      "sort_rule": "按明确度、丰富度、原始顺序排序。",
       "miniapp_connection": "connected_to_pages_cases_v2"
     },
     {
@@ -29,10 +29,10 @@
       "name": "党校用户端展示版",
       "direction": "party",
       "privacy_version": "public_user",
-      "generated_at": "2026-06-04 15:07:37",
+      "generated_at": "2026-06-09 17:18:13",
       "record_count": 108,
       "review_status": "pending_final_review",
-      "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+      "sort_rule": "按明确度、丰富度、原始顺序排序。",
       "miniapp_connection": "connected_to_pages_cases_v2"
     },
     {
@@ -40,10 +40,10 @@
       "name": "管综未脱敏内部版",
       "direction": "exam",
       "privacy_version": "raw_internal",
-      "generated_at": "2026-06-04 15:07:37",
+      "generated_at": "2026-06-09 17:18:13",
       "record_count": 18,
       "review_status": "pending_final_review",
-      "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+      "sort_rule": "按明确度、丰富度、原始顺序排序。",
       "miniapp_connection": "connected_to_pages_cases_v2"
     },
     {
@@ -51,10 +51,10 @@
       "name": "管综脱敏内部版",
       "direction": "exam",
       "privacy_version": "desensitized_internal",
-      "generated_at": "2026-06-04 15:07:37",
+      "generated_at": "2026-06-09 17:18:13",
       "record_count": 18,
       "review_status": "pending_final_review",
-      "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+      "sort_rule": "按明确度、丰富度、原始顺序排序。",
       "miniapp_connection": "connected_to_pages_cases_v2"
     },
     {
@@ -62,10 +62,10 @@
       "name": "管综用户端展示版",
       "direction": "exam",
       "privacy_version": "public_user",
-      "generated_at": "2026-06-04 15:07:37",
+      "generated_at": "2026-06-09 17:18:13",
       "record_count": 18,
       "review_status": "pending_final_review",
-      "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+      "sort_rule": "按明确度、丰富度、原始顺序排序。",
       "miniapp_connection": "connected_to_pages_cases_v2"
     }
   ]

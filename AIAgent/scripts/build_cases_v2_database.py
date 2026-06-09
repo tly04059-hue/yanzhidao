@@ -9,9 +9,6 @@ from typing import Any
 
 from openpyxl import load_workbook
 
-from build_party_duplicate_rewrite_draft import feedback as draft_feedback
-
-
 ROOT = Path(__file__).resolve().parents[2]
 PARTY_SOURCE = ROOT / "miniapp" / "dx-cases.json"
 EXAM_SOURCE = ROOT / "studentCases" / "sourceData" / "管综已上岸学员案例信息汇总表.xlsx"
@@ -202,22 +199,34 @@ def party_ai_info(case: dict[str, Any]) -> dict[str, Any]:
         return {
             "ai_fill_level": "none",
             "ai_filled_fields": [],
-            "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+            "ai_fill_note": "原始字段可直接展示。",
             "ai_sort_weight": 0,
         }
     return {
         "ai_fill_level": "partial",
         "ai_filled_fields": ["reflection"],
-        "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+        "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
         "ai_sort_weight": 1,
     }
 
 
 def party_display_narratives(case: dict[str, Any]) -> dict[str, str]:
-    narratives = {key: clean(case.get(key)) for key in NARRATIVE_KEYS}
-    if party_ai_info(case)["ai_fill_level"] == "partial":
-        narratives["reflection"] = draft_feedback(case)
-    return narratives
+    return {key: clean(case.get(key)) for key in NARRATIVE_KEYS}
+
+
+def party_public_sections(narratives: dict[str, str]) -> list[dict[str, str]]:
+    visible_texts = {
+        key: clean_party_visible_text(narratives.get(key, ""))
+        for key, _ in PUBLIC_PARTY_FIELDS
+    }
+    if visible_texts.get("key_quote") and visible_texts.get("key_quote") == visible_texts.get("reflection"):
+        visible_texts["key_quote"] = ""
+
+    return [
+        {"key": key, "label": label, "text": visible_texts[key]}
+        for key, label in PUBLIC_PARTY_FIELDS
+        if visible_texts[key]
+    ]
 
 
 def party_quality(score: int) -> str:
@@ -401,11 +410,7 @@ def build_party_records() -> tuple[list[dict[str, Any]], list[dict[str, Any]], l
             "privacy_version": "desensitized_internal",
             **internal_fields,
         })
-        public_sections = [
-            {"key": key, "label": label, "text": clean_party_visible_text(narratives.get(key, ""))}
-            for key, label in PUBLIC_PARTY_FIELDS
-            if clean_party_visible_text(narratives.get(key, ""))
-        ]
+        public_sections = party_public_sections(narratives)
         public_records.append({
             **common,
             "privacy_version": "public_user",
@@ -468,7 +473,7 @@ def build_exam_records() -> tuple[list[dict[str, Any]], list[dict[str, Any]], li
             "target_precision": precision,
             "ai_fill_level": "none",
             "ai_filled_fields": [],
-            "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+            "ai_fill_note": "风险和建议为规则派生字段。",
             "derived_fields": ["risk", "advice", "system", "goal_tags"],
             "human_review_status": "pending",
         }
@@ -538,7 +543,7 @@ def wrap_dataset(name: str, direction: str, privacy_version: str, records: list[
             "generated_at": now,
             "record_count": len(records),
             "review_status": "pending_final_review",
-            "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+            "sort_rule": "按明确度、丰富度、原始顺序排序。",
             "miniapp_connection": "connected_to_pages_cases_v2",
         },
         "records": records,
@@ -552,10 +557,7 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 def public_miniapp_payload(party_public: list[dict[str, Any]], exam_public: list[dict[str, Any]]) -> dict[str, Any]:
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    miniapp_party_public = [
-        record for record in party_public
-        if record.get("ai_fill_level", "none") == "none"
-    ]
+    miniapp_party_public = party_public
     return {
         "meta": {
             "name": "案例 V2 小程序公开发布数据",
@@ -564,13 +566,13 @@ def public_miniapp_payload(party_public: list[dict[str, Any]], exam_public: list
             "record_count": len(miniapp_party_public) + len(exam_public),
             "party_count": len(miniapp_party_public),
             "exam_count": len(exam_public),
-            "party_filter": "only ai_fill_level=none records are included for party direction",
+            "party_filter": "all public party records are included; AI-filled fields are restored to source text",
             "exam_filter": "all public exam records are included",
             "source_files": [
                 str((DB_DIR / "party-public.json").relative_to(ROOT)),
                 str((DB_DIR / "exam-public.json").relative_to(ROOT)),
             ],
-            "privacy_note": "仅包含用户端可展示字段；党校方向仅进入未经过 AI 补充的数据；未脱敏和内部脱敏字段不进入小程序包。",
+            "privacy_note": "仅包含用户端可展示字段；党校方向展示全部公开案例，曾经 AI 补充的字段已回退为来源文本；未脱敏和内部脱敏字段不进入小程序包。",
         },
         "records": miniapp_party_public + exam_public,
     }
@@ -703,7 +705,7 @@ def render_analytics_dashboard(public_payload: dict[str, Any]) -> str:
 
 def render_record_card(record: dict[str, Any], privacy_version: str) -> str:
     ai = record.get("ai_fill_level", "none")
-    ai_label = "未使用 AI 补充" if ai == "none" else f"AI 补充：{', '.join(record.get('ai_filled_fields') or [])}"
+    ai_label = "" if ai == "none" else "曾标记 AI 补充，已回退源文本"
     ai_class = "ai-none" if ai == "none" else "ai-partial"
     if record["direction"] == "party":
         if privacy_version == "raw_internal":
@@ -752,6 +754,7 @@ def render_record_card(record: dict[str, Any], privacy_version: str) -> str:
             tags = record.get("tags", [])
 
     tag_html = "".join(f'<span class="tag">{escape(tag)}</span>' for tag in tags if clean(tag))
+    ai_html = f'<div class="ai-line"><span class="ai-badge {ai_class}">{escape(ai_label)}</span></div>' if ai_label else ""
     return f"""
     <article class="case-card" data-direction="{escape(record['direction'])}" data-version="{escape(privacy_version)}">
       <div class="card-head">
@@ -761,7 +764,7 @@ def render_record_card(record: dict[str, Any], privacy_version: str) -> str:
         </div>
         <div class="score">{escape(record.get('richness_score', ''))}</div>
       </div>
-      <div class="ai-line"><span class="ai-badge {ai_class}">{escape(ai_label)}</span></div>
+      {ai_html}
       <div class="target">目标/结果：<strong>{escape(target)}</strong></div>
       <div class="tags">{tag_html}</div>
       <div class="fact-grid">{body}</div>
@@ -851,7 +854,7 @@ def render_html(datasets: dict[str, dict[str, Any]]) -> str:
     </div>
   </header>
   <main>
-    <div class="note">说明：未脱敏内部版仅供内部核对，不进入小程序包；用户端展示版隐藏了部分字段；所有版本均标注 AI 补充情况，并优先显示未使用 AI 补充的数据。</div>
+    <div class="note">说明：未脱敏内部版仅供内部核对，不进入小程序包；用户端展示版隐藏了部分字段；党校方向展示全部公开案例，曾经补写/美化过的字段已回退为来源文本。</div>
     <table>
       <thead><tr><th>方向</th><th>版本</th><th>条数</th><th>文件</th></tr></thead>
       <tbody>{summary_rows}</tbody>

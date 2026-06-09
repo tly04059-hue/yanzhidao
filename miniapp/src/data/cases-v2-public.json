@@ -1,18 +1,18 @@
 {
   "meta": {
     "name": "案例 V2 小程序公开发布数据",
-    "generated_at": "2026-06-04 15:07:37",
+    "generated_at": "2026-06-09 17:18:13",
     "privacy_version": "public_user",
-    "record_count": 44,
-    "party_count": 26,
+    "record_count": 126,
+    "party_count": 108,
     "exam_count": 18,
-    "party_filter": "only ai_fill_level=none records are included for party direction",
+    "party_filter": "all public party records are included; AI-filled fields are restored to source text",
     "exam_filter": "all public exam records are included",
     "source_files": [
       "studentCases/cases-v2-db/party-public.json",
       "studentCases/cases-v2-db/exam-public.json"
     ],
-    "privacy_note": "仅包含用户端可展示字段；党校方向仅进入未经过 AI 补充的数据；未脱敏和内部脱敏字段不进入小程序包。"
+    "privacy_note": "仅包含用户端可展示字段；党校方向展示全部公开案例，曾经 AI 补充的字段已回退为来源文本；未脱敏和内部脱敏字段不进入小程序包。"
   },
   "records": [
     {
@@ -29,7 +29,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -77,7 +77,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -125,7 +125,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "吴同学",
@@ -171,7 +171,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "金同学",
@@ -220,7 +220,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "杨同学",
@@ -271,7 +271,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "陈同学",
@@ -316,7 +316,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "扎同学",
@@ -364,7 +364,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "张同学",
@@ -409,7 +409,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "冉同学",
@@ -459,7 +459,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "赵同学",
@@ -506,7 +506,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "何同学",
@@ -556,7 +556,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "高同学",
@@ -604,12 +604,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "何同学",
       "age": "约 44 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "政治学",
       "outcome": "上岸",
@@ -656,7 +656,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "旷同学",
@@ -703,14 +703,14 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "道同学",
       "age": "约 34 岁",
       "region": "眉山",
       "system": "",
-      "chosen_target": "",
+      "chosen_target": "不详",
       "outcome": "上岸",
       "tags": [
         "25 届投稿",
@@ -749,7 +749,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "吴同学",
@@ -795,7 +795,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -842,7 +842,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "丹同学",
@@ -891,7 +891,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -937,7 +937,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "白同学",
@@ -985,12 +985,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
       "age": "约 32 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "政治学",
       "outcome": "上岸",
@@ -1031,12 +1031,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "唐同学",
       "age": "约 28 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "经济学",
       "outcome": "上岸",
@@ -1076,14 +1076,14 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "清同学",
       "age": "约 35 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
-      "chosen_target": "",
+      "chosen_target": "不详",
       "outcome": "上岸",
       "tags": [
         "25 届投稿",
@@ -1122,7 +1122,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "彭同学",
@@ -1168,12 +1168,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "左同学",
       "age": "约 37 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "经济学",
       "outcome": "上岸",
@@ -1214,12 +1214,12 @@
       "quality": "standard",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
       "age": "约 26 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "公管",
       "outcome": "上岸",
@@ -1245,6 +1245,3186 @@
       ]
     },
     {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C004",
+      "display_order_source": 4,
+      "sort_tuple": [
+        1,
+        -274,
+        4
+      ],
+      "richness_score": 274,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "丹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "政治学",
+        "二战"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜州的少数民族考生，从 3 月底公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C013",
+      "display_order_source": 12,
+      "sort_tuple": [
+        1,
+        -253,
+        12
+      ],
+      "richness_score": 253,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "杨同学",
+      "age": "约 42 岁",
+      "region": "绵阳",
+      "system": "医疗系统",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "医疗系统",
+        "政治学",
+        "二战",
+        "宝妈"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C025",
+      "display_order_source": 24,
+      "sort_tuple": [
+        1,
+        -246,
+        24
+      ],
+      "richness_score": 246,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 35 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "在职"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C024",
+      "display_order_source": 23,
+      "sort_tuple": [
+        1,
+        -245,
+        23
+      ],
+      "richness_score": 245,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "金同学",
+      "age": "45+ 岁",
+      "region": "南充",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "45+",
+        "二战",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C001",
+      "display_order_source": 1,
+      "sort_tuple": [
+        1,
+        -204,
+        1
+      ],
+      "richness_score": 204,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "邹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "政治学",
+        "专业班"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C022",
+      "display_order_source": 21,
+      "sort_tuple": [
+        1,
+        -203,
+        21
+      ],
+      "richness_score": 203,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "何同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "国央企",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "国央企",
+        "一战上岸"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C008",
+      "display_order_source": 7,
+      "sort_tuple": [
+        1,
+        -202,
+        7
+      ],
+      "richness_score": 202,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "申同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "政法系统",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "政法岗位单位认可学历，政治学专业方向覆盖最广，约 37 岁按在职路径稳推上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C017",
+      "display_order_source": 16,
+      "sort_tuple": [
+        1,
+        -191,
+        16
+      ],
+      "richness_score": 191,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "曾同学",
+      "age": "约 27 岁",
+      "region": "泸州",
+      "system": "国央企",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "国央企",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按政治学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C016",
+      "display_order_source": 15,
+      "sort_tuple": [
+        1,
+        -184,
+        15
+      ],
+      "richness_score": 184,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "范同学",
+      "age": "约 37 岁",
+      "region": "泸州",
+      "system": "教育系统",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "高校",
+        "政治学",
+        "奖金班"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，政治学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C014",
+      "display_order_source": 13,
+      "sort_tuple": [
+        1,
+        -181,
+        13
+      ],
+      "richness_score": 181,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "彭同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "教育系统",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "教育系统",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "教育系统在职岗位，约 37 岁统考本科底子稳，按政治学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C027",
+      "display_order_source": 26,
+      "sort_tuple": [
+        1,
+        -181,
+        26
+      ],
+      "richness_score": 181,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王同学",
+      "age": "约 32 岁",
+      "region": "达州",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "达州基层公职岗位 约 32 岁，统考本科底子稳，政治学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C029",
+      "display_order_source": 28,
+      "sort_tuple": [
+        1,
+        -181,
+        28
+      ],
+      "richness_score": 181,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "经济学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，经济学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C033",
+      "display_order_source": 32,
+      "sort_tuple": [
+        1,
+        -180,
+        32
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈同学",
+      "age": "约 27 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C051",
+      "display_order_source": 50,
+      "sort_tuple": [
+        1,
+        -180,
+        50
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "薛同学",
+      "age": "约 32 岁",
+      "region": "广元",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直政法",
+        "纪检公检法",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "广元、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C053",
+      "display_order_source": 52,
+      "sort_tuple": [
+        1,
+        -180,
+        52
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "朱同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C058",
+      "display_order_source": 57,
+      "sort_tuple": [
+        1,
+        -180,
+        57
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直政法",
+        "纪检公检法",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C063",
+      "display_order_source": 62,
+      "sort_tuple": [
+        1,
+        -180,
+        62
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "邹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C064",
+      "display_order_source": 63,
+      "sort_tuple": [
+        1,
+        -180,
+        63
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 27 岁",
+      "region": "广元",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "广元、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C075",
+      "display_order_source": 74,
+      "sort_tuple": [
+        1,
+        -180,
+        74
+      ],
+      "richness_score": 180,
+      "quality": "standard",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "张同学",
+      "age": "约 32 岁",
+      "region": "攀枝花",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "攀枝花、约 32 岁、党政机关背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C020",
+      "display_order_source": 19,
+      "sort_tuple": [
+        1,
+        -179,
+        19
+      ],
+      "richness_score": 179,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "隆同学",
+      "age": "约 32 岁",
+      "region": "成都",
+      "system": "国央企",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "国央企",
+        "政治学",
+        "奖金班"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，政治学方向上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C018",
+      "display_order_source": 17,
+      "sort_tuple": [
+        1,
+        -176,
+        17
+      ],
+      "richness_score": 176,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "段同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "国央企",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "国央企",
+        "经济学",
+        "专业班"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "央企岗位 约 27 岁，统考本科底子稳，专业班经济学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C011",
+      "display_order_source": 10,
+      "sort_tuple": [
+        1,
+        -175,
+        10
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "史同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "政法系统",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都市直政法岗位 约 27 岁，统考本科底子稳，政治学一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C031",
+      "display_order_source": 30,
+      "sort_tuple": [
+        1,
+        -175,
+        30
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "甲同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C037",
+      "display_order_source": 36,
+      "sort_tuple": [
+        1,
+        -175,
+        36
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 27 岁",
+      "region": "南充",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "南充、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C038",
+      "display_order_source": 37,
+      "sort_tuple": [
+        1,
+        -175,
+        37
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "彭同学",
+      "age": "约 37 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "县级民政",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C039",
+      "display_order_source": 38,
+      "sort_tuple": [
+        1,
+        -175,
+        38
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "丹同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C040",
+      "display_order_source": 39,
+      "sort_tuple": [
+        1,
+        -175,
+        39
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "鲁同学",
+      "age": "约 27 岁",
+      "region": "德阳",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "德阳、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C044",
+      "display_order_source": 43,
+      "sort_tuple": [
+        1,
+        -175,
+        43
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "周同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C046",
+      "display_order_source": 45,
+      "sort_tuple": [
+        1,
+        -175,
+        45
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "申同学",
+      "age": "约 40 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直政法",
+        "民族州",
+        "纪检公检法",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C048",
+      "display_order_source": 47,
+      "sort_tuple": [
+        1,
+        -175,
+        47
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈同学",
+      "age": "约 32 岁",
+      "region": "资阳",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "县级民政",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "资阳、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C050",
+      "display_order_source": 49,
+      "sort_tuple": [
+        1,
+        -175,
+        49
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "泽同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C052",
+      "display_order_source": 51,
+      "sort_tuple": [
+        1,
+        -175,
+        51
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈同学",
+      "age": "约 42 岁",
+      "region": "宜宾",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直政法",
+        "纪检公检法",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 42 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C054",
+      "display_order_source": 53,
+      "sort_tuple": [
+        1,
+        -175,
+        53
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C055",
+      "display_order_source": 54,
+      "sort_tuple": [
+        1,
+        -175,
+        54
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C056",
+      "display_order_source": 55,
+      "sort_tuple": [
+        1,
+        -175,
+        55
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "梁同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C057",
+      "display_order_source": 56,
+      "sort_tuple": [
+        1,
+        -175,
+        56
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "邬同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "医疗系统",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "医院",
+        "医护"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 32 岁、医疗系统背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C059",
+      "display_order_source": 58,
+      "sort_tuple": [
+        1,
+        -175,
+        58
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "谭同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "县级民政",
+        "民族州",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C060",
+      "display_order_source": 59,
+      "sort_tuple": [
+        1,
+        -175,
+        59
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "岳同学",
+      "age": "约 32 岁",
+      "region": "眉山",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "眉山、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C062",
+      "display_order_source": 61,
+      "sort_tuple": [
+        1,
+        -175,
+        61
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 27 岁",
+      "region": "广元",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "广元、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C067",
+      "display_order_source": 66,
+      "sort_tuple": [
+        1,
+        -175,
+        66
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "殷同学",
+      "age": "约 37 岁",
+      "region": "绵阳",
+      "system": "医疗系统",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "医院",
+        "医护",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "绵阳、约 37 岁、医疗系统背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C068",
+      "display_order_source": 67,
+      "sort_tuple": [
+        1,
+        -175,
+        67
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "冉同学",
+      "age": "约 40 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直机关",
+        "民族州",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C070",
+      "display_order_source": 69,
+      "sort_tuple": [
+        1,
+        -175,
+        69
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "教育系统",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "高校",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 37 岁、教育系统背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C072",
+      "display_order_source": 71,
+      "sort_tuple": [
+        1,
+        -175,
+        71
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "钱同学",
+      "age": "约 27 岁",
+      "region": "遂宁",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直机关",
+        "市直机关党员"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "遂宁、约 27 岁、党政机关背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C076",
+      "display_order_source": 75,
+      "sort_tuple": [
+        1,
+        -175,
+        75
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "苏同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "市直机关",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C079",
+      "display_order_source": 78,
+      "sort_tuple": [
+        1,
+        -175,
+        78
+      ],
+      "richness_score": 175,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "袁同学",
+      "age": "约 40 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "市直政法",
+        "民族州",
+        "纪检公检法",
+        "市直机关党员",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C021",
+      "display_order_source": 20,
+      "sort_tuple": [
+        1,
+        -171,
+        20
+      ],
+      "richness_score": 171,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "冉同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "",
+      "chosen_target": "",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "二战",
+        "民族地区"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C032",
+      "display_order_source": 31,
+      "sort_tuple": [
+        1,
+        -170,
+        31
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "曾同学",
+      "age": "约 27 岁",
+      "region": "泸州",
+      "system": "国央企",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "省属国企",
+        "体制内认可",
+        "国央企"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "泸州、约 27 岁、国央企背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C065",
+      "display_order_source": 64,
+      "sort_tuple": [
+        1,
+        -170,
+        64
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王同学",
+      "age": "约 42 岁",
+      "region": "绵阳",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "绵阳、约 42 岁、背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C066",
+      "display_order_source": 65,
+      "sort_tuple": [
+        1,
+        -170,
+        65
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "唐同学",
+      "age": "约 40 岁",
+      "region": "凉山",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "民族州",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "凉山、约 37 岁、背景，选择 政治学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C071",
+      "display_order_source": 70,
+      "sort_tuple": [
+        1,
+        -170,
+        70
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "代同学",
+      "age": "约 27 岁",
+      "region": "内江",
+      "system": "国央企",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "银行金融",
+        "国央企"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "内江、约 27 岁、国央企背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C074",
+      "display_order_source": 73,
+      "sort_tuple": [
+        1,
+        -170,
+        73
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "何同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "国央企",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "银行金融",
+        "国央企"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 32 岁、国央企背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C080",
+      "display_order_source": 79,
+      "sort_tuple": [
+        1,
+        -170,
+        79
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "廖同学",
+      "age": "约 42 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 42 岁、背景，选择 经济学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C081",
+      "display_order_source": 80,
+      "sort_tuple": [
+        1,
+        -170,
+        80
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "左同学",
+      "age": "约 37 岁",
+      "region": "泸州",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "泸州、约 37 岁、背景，选择 经济学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C082",
+      "display_order_source": 81,
+      "sort_tuple": [
+        1,
+        -170,
+        81
+      ],
+      "richness_score": 170,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 30 岁",
+      "region": "凉山",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "未上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "民族州"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "凉山、约 32 岁、背景，选择 经济学，结果为未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C012",
+      "display_order_source": 11,
+      "sort_tuple": [
+        1,
+        -169,
+        11
+      ],
+      "richness_score": 169,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "杨同学",
+      "age": "约 37 岁",
+      "region": "遂宁",
+      "system": "医疗系统",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "医疗系统",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "医院专技岗工作节奏紧，约 37 岁按政治学方向稳推一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C006",
+      "display_order_source": 6,
+      "sort_tuple": [
+        1,
+        -166,
+        6
+      ],
+      "richness_score": 166,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "谭同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜州县城民政岗，统考本科底子稳，按政治学专业方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C010",
+      "display_order_source": 9,
+      "sort_tuple": [
+        1,
+        -166,
+        9
+      ],
+      "richness_score": 166,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "甄同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "法学",
+      "outcome": "未上岸",
+      "tags": [
+        "政法系统",
+        "法学",
+        "竞争激烈"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C015",
+      "display_order_source": 14,
+      "sort_tuple": [
+        1,
+        -165,
+        14
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "高同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "教育系统",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "高校",
+        "民族地区",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C034",
+      "display_order_source": 33,
+      "sort_tuple": [
+        1,
+        -165,
+        33
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "吴同学",
+      "age": "约 27 岁",
+      "region": "达州",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "达州、约 27 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C035",
+      "display_order_source": 34,
+      "sort_tuple": [
+        1,
+        -165,
+        34
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "吴同学",
+      "age": "约 27 岁",
+      "region": "达州",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "达州、约 27 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C036",
+      "display_order_source": 35,
+      "sort_tuple": [
+        1,
+        -165,
+        35
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "黄同学",
+      "age": "约 37 岁",
+      "region": "内江",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "内江、约 37 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C041",
+      "display_order_source": 40,
+      "sort_tuple": [
+        1,
+        -165,
+        40
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "唐同学",
+      "age": "约 27 岁",
+      "region": "南充",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "南充、约 27 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C042",
+      "display_order_source": 41,
+      "sort_tuple": [
+        1,
+        -165,
+        41
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 42 岁",
+      "region": "达州",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "达州、约 42 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C043",
+      "display_order_source": 42,
+      "sort_tuple": [
+        1,
+        -165,
+        42
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "曹同学",
+      "age": "约 42 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 42 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C045",
+      "display_order_source": 44,
+      "sort_tuple": [
+        1,
+        -165,
+        44
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "陈同学",
+      "age": "约 42 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 42 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C047",
+      "display_order_source": 46,
+      "sort_tuple": [
+        1,
+        -165,
+        46
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 32 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C049",
+      "display_order_source": 48,
+      "sort_tuple": [
+        1,
+        -165,
+        48
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "阮同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径",
+        "35+ 焦虑"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 37 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C061",
+      "display_order_source": 60,
+      "sort_tuple": [
+        1,
+        -165,
+        60
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "欧同学",
+      "age": "约 30 岁",
+      "region": "凉山",
+      "system": "",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "民族地区",
+        "路径",
+        "民族州"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "凉山、约 32 岁、背景，选择 政治学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C069",
+      "display_order_source": 68,
+      "sort_tuple": [
+        1,
+        -165,
+        68
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "刘同学",
+      "age": "约 27 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 27 岁、背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C073",
+      "display_order_source": 72,
+      "sort_tuple": [
+        1,
+        -165,
+        72
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "伏同学",
+      "age": "约 32 岁",
+      "region": "巴中",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "巴中、约 32 岁、背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C077",
+      "display_order_source": 76,
+      "sort_tuple": [
+        1,
+        -165,
+        76
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "蒋同学",
+      "age": "约 32 岁",
+      "region": "宜宾",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宜宾、约 32 岁、背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C078",
+      "display_order_source": 77,
+      "sort_tuple": [
+        1,
+        -165,
+        77
+      ],
+      "richness_score": 165,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "王同学",
+      "age": "约 32 岁",
+      "region": "成都",
+      "system": "",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "成都、约 32 岁、背景，选择 经济学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C019",
+      "display_order_source": 18,
+      "sort_tuple": [
+        1,
+        -163,
+        18
+      ],
+      "richness_score": 163,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "廖同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "国央企",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "国央企",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C026",
+      "display_order_source": 25,
+      "sort_tuple": [
+        1,
+        -163,
+        25
+      ],
+      "richness_score": 163,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "李同学",
+      "age": "约 30 岁",
+      "region": "凉山",
+      "system": "党政机关",
+      "chosen_target": "经济学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "民族地区",
+        "经济学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "凉山基层公职岗位，民族地区按经济学方向走民族专项一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C028",
+      "display_order_source": 27,
+      "sort_tuple": [
+        1,
+        -163,
+        27
+      ],
+      "richness_score": 163,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "唐同学",
+      "age": "约 27 岁",
+      "region": "南充",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "政治学",
+        "五年服务期"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "南充乡镇服务期内备考，约 27 岁按政治学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C002",
+      "display_order_source": 2,
+      "sort_tuple": [
+        1,
+        -162,
+        2
+      ],
+      "richness_score": 162,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "韩同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "未上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "政治学",
+        "专业班"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C030",
+      "display_order_source": 29,
+      "sort_tuple": [
+        1,
+        -161,
+        29
+      ],
+      "richness_score": 161,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "余同学",
+      "age": "约 32 岁",
+      "region": "遂宁",
+      "system": "党政机关",
+      "chosen_target": "法学",
+      "outcome": "上岸",
+      "tags": [
+        "基层公职",
+        "法学",
+        "川渝双过"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "川渝两地同卷过线，按 33 法分阶段稳推法学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C083",
+      "display_order_source": 82,
+      "sort_tuple": [
+        1,
+        -160,
+        82
+      ],
+      "richness_score": 160,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "余同学",
+      "age": "约 32 岁",
+      "region": "遂宁",
+      "system": "",
+      "chosen_target": "法学",
+      "outcome": "上岸",
+      "tags": [
+        "25上岸",
+        "路径"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "遂宁、约 32 岁、背景，选择 法学，结果为上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C003",
+      "display_order_source": 3,
+      "sort_tuple": [
+        1,
+        -157,
+        3
+      ],
+      "richness_score": 157,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "泽同学",
+      "age": "约 30 岁",
+      "region": "阿坝",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "政治学",
+        "民族专项"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "阿坝民政岗位走民族专项政策路径，按政治学方向一战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C009",
+      "display_order_source": 8,
+      "sort_tuple": [
+        1,
+        -151,
+        8
+      ],
+      "richness_score": 151,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "阮同学",
+      "age": "约 37 岁",
+      "region": "成都",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "政法系统",
+        "政治学",
+        "二战"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "市直政法岗位，统考本科底子稳，政治学方向二战上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C005",
+      "display_order_source": 5,
+      "sort_tuple": [
+        1,
+        -148,
+        5
+      ],
+      "richness_score": 148,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "梁同学",
+      "age": "约 30 岁",
+      "region": "甘孜",
+      "system": "党政机关",
+      "chosen_target": "政治学",
+      "outcome": "上岸",
+      "tags": [
+        "民政系统",
+        "民族地区",
+        "政治学"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。"
+        }
+      ]
+    },
+    {
+      "direction": "party",
+      "source_dataset": "miniapp/dx-cases.json",
+      "source_id": "C023",
+      "display_order_source": 22,
+      "sort_tuple": [
+        1,
+        -144,
+        22
+      ],
+      "richness_score": 144,
+      "quality": "compact",
+      "ai_fill_level": "partial",
+      "ai_filled_fields": [
+        "reflection"
+      ],
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
+      "human_review_status": "pending",
+      "privacy_version": "public_user",
+      "display_name": "彭同学",
+      "age": "约 37 岁",
+      "region": "宜宾",
+      "system": "",
+      "chosen_target": "",
+      "outcome": "上岸",
+      "tags": [
+        "宝妈",
+        "一战上岸",
+        "短时间冲刺"
+      ],
+      "sections": [
+        {
+          "key": "reflection",
+          "label": "真实反馈",
+          "text": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。"
+        }
+      ]
+    },
+    {
       "direction": "exam",
       "source_dataset": "studentCases/sourceData/管综已上岸学员案例信息汇总表.xlsx",
       "source_id": "exam-row-4",
@@ -1259,7 +4439,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1305,7 +4485,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1318,8 +4498,8 @@
       "age": "约 32 岁",
       "system": "党政机关",
       "program": "MEM",
-      "intent_school": "西安建筑科技大学 · MEM",
-      "admitted_school": "西安建筑科技大学 · MEM",
+      "intent_school": "西南建筑科技大学 · MEM",
+      "admitted_school": "西南建筑科技大学 · MEM",
       "outcome": "上岸",
       "exam_experience": "首次备考",
       "motivation": "体制内事业编,学历提升,为未来提前准备",
@@ -1350,7 +4530,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1396,7 +4576,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1441,7 +4621,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1486,7 +4666,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1532,7 +4712,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1577,7 +4757,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1622,7 +4802,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1667,7 +4847,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1712,7 +4892,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1758,7 +4938,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1802,7 +4982,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1847,7 +5027,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1892,7 +5072,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1938,7 +5118,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -1983,7 +5163,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -2028,7 +5208,7 @@
       "target_precision": "broad",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",

@@ -3,10 +3,10 @@
     "name": "管综用户端展示版",
     "direction": "exam",
     "privacy_version": "public_user",
-    "generated_at": "2026-06-04 15:07:37",
+    "generated_at": "2026-06-09 17:18:13",
     "record_count": 18,
     "review_status": "pending_final_review",
-    "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+    "sort_rule": "按明确度、丰富度、原始顺序排序。",
     "miniapp_connection": "connected_to_pages_cases_v2"
   },
   "records": [
@@ -25,7 +25,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -71,7 +71,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -84,8 +84,8 @@
       "age": "约 32 岁",
       "system": "党政机关",
       "program": "MEM",
-      "intent_school": "西安建筑科技大学 · MEM",
-      "admitted_school": "西安建筑科技大学 · MEM",
+      "intent_school": "西南建筑科技大学 · MEM",
+      "admitted_school": "西南建筑科技大学 · MEM",
       "outcome": "上岸",
       "exam_experience": "首次备考",
       "motivation": "体制内事业编,学历提升,为未来提前准备",
@@ -116,7 +116,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -162,7 +162,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -207,7 +207,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -252,7 +252,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -298,7 +298,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -343,7 +343,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -388,7 +388,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -433,7 +433,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -478,7 +478,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -524,7 +524,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -568,7 +568,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -613,7 +613,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -658,7 +658,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -704,7 +704,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -749,7 +749,7 @@
       "target_precision": "precise",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",
@@ -794,7 +794,7 @@
       "target_precision": "broad",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "未使用 AI 补充；风险和建议为规则派生字段。",
+      "ai_fill_note": "风险和建议为规则派生字段。",
       "derived_fields": [
         "risk",
         "advice",

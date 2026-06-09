@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>访问人员详情</title>
+  <style>
+    :root {
+      --bg: #eaf5f3;
+      --card: rgba(255, 255, 255, 0.82);
+      --line: #bcded8;
+      --text: #143235;
+      --muted: #5c7374;
+      --accent: #079a9a;
+      --accent-dark: #087d78;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(120, 219, 205, 0.25), transparent 34%),
+        linear-gradient(135deg, #f8fffd 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    a { color: var(--accent-dark); text-decoration: none; font-weight: 800; }
+    h1 { margin: 10px 0 10px; font-size: 42px; letter-spacing: -0.04em; }
+    h2 { margin: 0; font-size: 22px; }
+
+    .subtitle { color: var(--muted); line-height: 1.7; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; word-break: break-all; }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: 0 16px 50px rgba(52, 95, 94, 0.10);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    .metric {
+      border: 1px solid rgba(8, 125, 120, 0.16);
+      border-radius: 18px;
+      width: 150px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--accent);
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+      gap: 18px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: 18px;
+    }
+
+    .box {
+      max-height: 420px;
+      overflow: auto;
+      border: 1px solid rgba(8, 125, 120, 0.14);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.58);
+      padding: 16px;
+    }
+
+    .line {
+      line-height: 1.8;
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(8, 125, 120, 0.14);
+    }
+
+    .line:last-child { border-bottom: 0; }
+    .muted { color: var(--muted); }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #d9f0ed;
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 800;
+      margin-right: 6px;
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(8, 125, 120, 0.14);
+      padding: 12px 8px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    th { color: var(--muted); font-size: 12px; }
+
+    @media (max-width: 900px) {
+      body { padding: 20px; }
+      .top { display: grid; grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div>
+      <a href="./user-behavior-dashboard.html">← 返回用户行为看板</a>
+      <h1>访问人员详情</h1>
+      <div class="subtitle" id="subtitle">读取中...</div>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="metrics" id="metrics"></div>
+  </section>
+
+  <section class="detail-grid">
+    <article class="card">
+      <h2>基础信息</h2>
+      <div id="basicBox"></div>
+    </article>
+    <article class="card">
+      <h2>访问时间序列</h2>
+      <div class="box" id="visitTimesBox"></div>
+    </article>
+    <article class="card">
+      <h2>浏览过的页面</h2>
+      <div class="box" id="pagesBox"></div>
+    </article>
+    <article class="card">
+      <h2>会话列表</h2>
+      <div class="box" id="sessionsBox"></div>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>按时间串联的所有事件</h2>
+    <div id="eventsBox"></div>
+  </section>
+
+  <script>
+    const $ = (id) => document.getElementById(id)
+    const safe = (value) => String(value || '').replace(/[<>&"]/g, (ch) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[ch]))
+    const fmt = (value) => new Intl.NumberFormat('zh-CN').format(Number(value || 0))
+    const dateText = (value) => value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '-'
+    const durationText = (value) => {
+      const ms = Number(value || 0)
+      if (!ms) return '-'
+      const seconds = Math.round(ms / 1000)
+      if (seconds < 60) return `${seconds}s`
+      const minutes = Math.floor(seconds / 60)
+      const remain = seconds % 60
+      if (minutes < 60) return `${minutes}m ${remain}s`
+      return `${Math.floor(minutes / 60)}h ${minutes % 60}m`
+    }
+    const eventNameMap = {
+      app_launch: '小程序启动',
+      app_show: '小程序进入前台',
+      app_hide: '小程序离开/进入后台',
+      page_view: '页面访问',
+      page_leave: '离开页面',
+      section_view_start: '开始浏览页面区块',
+      section_view_end: '结束浏览页面区块',
+      scroll_depth: '页面滚动深度',
+      nav_click: '导航点击',
+      cta_click: '行动按钮点击',
+      contact_click: '点击咨询',
+      lead_submit: '提交留资',
+      modal_open: '弹窗打开',
+      modal_close: '弹窗关闭',
+      case_card_click: '案例卡片点击',
+      case_detail_view: '案例详情查看',
+      case_load_more: '加载更多案例',
+      case_tab_change: '案例方向切换',
+      assessment_start: '开始测评',
+      assessment_answer: '填写测评题',
+      assessment_finish: '完成测评',
+      recommendation_view: '查看推荐结果',
+      school_filter_change: '院校筛选变化',
+      school_card_click: '院校卡片点击',
+      school_detail_view: '查看院校详情',
+      search_submit: '提交搜索',
+      search_result_click: '搜索结果点击',
+      share_attempt: '发起分享',
+      share_open: '通过分享打开',
+      download_click: '资料下载点击',
+      image_preview: '图片预览',
+      api_error: '接口异常',
+      page_error: '页面异常',
+      resource_error: '资源加载异常'
+    }
+    const eventText = (value) => {
+      const name = safe(value)
+      const zh = eventNameMap[String(value || '')]
+      return zh ? `${name}（${zh}）` : name
+    }
+
+    const userId = new URLSearchParams(location.search).get('id') || ''
+
+    const render = (summary) => {
+      const users = summary.user_behavior?.users || []
+      const sessions = (summary.user_behavior?.sessions || []).filter(item => item.anonymous_user_id === userId)
+      const events = (summary.recent_events || [])
+        .filter(item => item.anonymous_user_id === userId)
+        .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+      const user = users.find(item => item.anonymous_user_id === userId)
+
+      if (!user) {
+        $('subtitle').innerHTML = `<span class="empty">没有找到用户：<span class="mono">${safe(userId)}</span></span>`
+        return
+      }
+
+      $('subtitle').innerHTML = `匿名用户 <span class="mono">${safe(user.anonymous_user_id)}</span>`
+      $('metrics').innerHTML = [
+        ['会话', user.session_count],
+        ['PV', user.page_view_count],
+        ['事件', user.event_count],
+        ['停留', durationText(user.total_page_duration_ms)],
+        ['留资', user.lead_submits]
+      ].map(([label, value]) => `
+        <div class="metric">
+          <strong>${typeof value === 'number' ? fmt(value) : safe(value)}</strong>
+          <span>${safe(label)}</span>
+        </div>
+      `).join('')
+
+      $('basicBox').innerHTML = `
+        <div class="line"><span class="label">匿名用户 ID</span><span class="mono">${safe(user.anonymous_user_id)}</span></div>
+        <div class="line"><span class="label">首次访问时间</span>${dateText(user.first_seen_at)}</div>
+        <div class="line"><span class="label">最近访问时间</span>${dateText(user.last_seen_at)}</div>
+        <div class="line"><span class="label">设备、型号、平台</span>${safe([...(user.devices || []), ...(user.platforms || [])].join(' / ') || '-')}</div>
+        <div class="line"><span class="label">关键行为</span>
+          <span class="tag">咨询 ${fmt(user.contact_clicks)}</span>
+          <span class="tag">留资 ${fmt(user.lead_submits)}</span>
+          <span class="tag">分享 ${fmt(user.share_attempts)}</span>
+          <span class="tag">案例详情 ${fmt(user.case_detail_opens)}</span>
+        </div>
+      `
+
+      $('visitTimesBox').innerHTML = (user.visit_times || [])
+        .map(item => `<div class="line">${dateText(item)}</div>`)
+        .join('') || '<div class="empty">暂无访问时间。</div>'
+
+      $('pagesBox').innerHTML = (user.pages || [])
+        .map(item => `<div class="line mono">${safe(item)}</div>`)
+        .join('') || '<div class="empty">暂无浏览页面。</div>'
+
+      $('sessionsBox').innerHTML = sessions.map(item => `
+        <div class="line">
+          <strong class="mono">${safe(item.session_id)}</strong><br>
+          <span class="muted">进入：</span><span class="mono">${safe(item.entry_page)}</span><br>
+          <span class="muted">退出：</span><span class="mono">${safe(item.exit_page)}</span><br>
+          ${dateText(item.started_at)} - ${dateText(item.ended_at)} · ${durationText(item.duration_ms)}
+        </div>
+      `).join('') || '<div class="empty">暂无会话数据。</div>'
+
+      $('eventsBox').innerHTML = events.length ? `
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>事件</th>
+              <th>页面</th>
+              <th>对象/动作</th>
+              <th>时长/设备</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${events.map(event => `
+              <tr>
+                <td>${dateText(event.created_at)}</td>
+                <td><span class="tag">${eventText(event.event_type)}</span></td>
+                <td><span class="mono">${safe(event.page_path || event.page)}</span></td>
+                <td>${safe(event.target_name || event.target_id || event.section_name || event.action || '-')}</td>
+                <td>${event.duration_ms ? durationText(event.duration_ms) : '-'}<br><span class="muted">${safe(event.device_model)} ${safe(event.platform)}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      ` : '<div class="empty">暂无事件数据。</div>'
+    }
+
+    fetch(`./latest-summary.json?t=${Date.now()}`)
+      .then(response => response.json())
+      .then(render)
+      .catch(error => {
+        $('subtitle').innerHTML = `<span class="empty">读取 latest-summary.json 失败：${safe(error.message)}</span>`
+      })
+  </script>
+</body>
+</html>

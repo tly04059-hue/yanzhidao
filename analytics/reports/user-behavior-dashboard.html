@@ -35,7 +35,8 @@
     }
 
     .page {
-      max-width: 1280px;
+      width: 90vw;
+      max-width: 1760px;
       margin: 0 auto;
       padding: 40px 28px 56px;
     }
@@ -146,37 +147,178 @@
 
     .grid {
       display: grid;
-      gap: 18px;
+      gap: 14px;
     }
 
     .grid.metrics {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+      gap: 12px;
     }
 
     .grid.two {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    }
+
+    .grid.four {
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    }
+
+    .grid.five {
+      grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
+    }
+
+    .case-ratio-row {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 14px;
+    }
+
+    .case-funnel-row .card {
+      min-width: 0;
+    }
+
+    .case-funnel-row h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .case-funnel-row .case-split {
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .case-funnel-row .split-box {
+      min-height: 78px;
+      padding: 10px 12px;
+    }
+
+    .case-funnel-row .split-box strong {
+      font-size: 22px;
+    }
+
+    .case-funnel-row .funnel {
+      gap: 8px;
+    }
+
+    .case-funnel-row .funnel-step {
+      grid-template-columns: 1fr;
+      gap: 6px;
+      padding: 10px;
+      border-radius: 14px;
+    }
+
+    .case-funnel-row .rate {
+      text-align: left;
+    }
+
+    .priority-row .card {
+      min-width: 0;
+    }
+
+    .priority-row .section-head {
+      align-items: start;
+    }
+
+    .priority-row h2,
+    .priority-row h3 {
+      font-size: 20px;
+    }
+
+    .priority-row table th,
+    .priority-row table td {
+      padding: 9px 6px;
+      font-size: 12px;
+    }
+
+    .priority-row .split-box {
+      min-height: 96px;
+      padding: 14px;
+    }
+
+    .bottom-row .card {
+      min-width: 0;
+    }
+
+    .bottom-row .section-head {
+      align-items: start;
+    }
+
+    .bottom-row h2 {
+      font-size: 20px;
+    }
+
+    .bottom-row table th,
+    .bottom-row table td {
+      padding: 8px 6px;
+      font-size: 12px;
+    }
+
+    .bottom-row .split-box {
+      min-height: 80px;
+      padding: 12px;
+    }
+
+    .compact-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .compact-metric {
+      flex: 1 1 150px;
+      min-height: 86px;
+      padding: 12px 14px;
+      border: 1px solid rgba(8, 125, 120, 0.16);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .compact-metric strong {
+      display: block;
+      color: var(--brand-strong);
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .compact-metric span {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.45;
     }
 
     .card {
-      padding: 22px;
+      padding: 16px;
       overflow: hidden;
     }
 
+    .visitor-card {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .metric {
-      min-height: 126px;
+      min-height: 82px;
+      padding: 14px 16px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       position: relative;
     }
 
     .metric::after {
       content: "";
       position: absolute;
-      right: -30px;
-      bottom: -38px;
-      width: 110px;
-      height: 110px;
+      right: -22px;
+      bottom: -32px;
+      width: 78px;
+      height: 78px;
       border-radius: 999px;
       background: rgba(21, 154, 156, 0.12);
     }
@@ -190,10 +332,11 @@
 
     .metric .value {
       color: var(--brand);
-      font-size: 40px;
+      font-size: 30px;
       font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.1;
+      line-height: 1;
+      margin: 2px 0 3px;
     }
 
     .metric .hint {
@@ -202,32 +345,32 @@
     }
 
     section {
-      margin-top: 22px;
+      margin-top: 16px;
     }
 
     .section-head {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 18px;
-      margin: 0 0 12px;
+      gap: 12px;
+      margin: 0 0 8px;
     }
 
     .section-head h2 {
-      font-size: 24px;
+      font-size: 21px;
       letter-spacing: -0.02em;
     }
 
     .case-split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(min(120px, 100%), 1fr));
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .split-box {
-      padding: 16px;
-      border-radius: 18px;
+      padding: 12px;
+      border-radius: 16px;
       background: #f2fbf8;
       border: 1px solid #cfe4df;
     }
@@ -256,16 +399,16 @@
 
     .funnel {
       display: grid;
-      gap: 12px;
+      gap: 8px;
     }
 
     .funnel-step {
       display: grid;
       grid-template-columns: 150px minmax(0, 1fr) 82px;
-      gap: 14px;
+      gap: 10px;
       align-items: center;
-      padding: 14px;
-      border-radius: 18px;
+      padding: 10px;
+      border-radius: 14px;
       background: #f2fbf8;
       border: 1px solid #d8ebe7;
     }
@@ -303,12 +446,12 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     th,
     td {
-      padding: 13px 10px;
+      padding: 9px 8px;
       border-bottom: 1px solid #dcebe8;
       text-align: left;
       vertical-align: top;
@@ -354,6 +497,89 @@
       word-break: break-all;
     }
 
+    .visitor-table {
+      table-layout: fixed;
+      font-size: 15px;
+    }
+
+    .visitor-table th,
+    .visitor-table td {
+      padding: 8px 10px;
+    }
+
+    .visitor-table th:nth-child(1),
+    .visitor-table td:nth-child(1) {
+      width: 25%;
+    }
+
+    .visitor-table th:nth-child(2),
+    .visitor-table td:nth-child(2) {
+      width: 15%;
+    }
+
+    .visitor-table th:nth-child(3),
+    .visitor-table td:nth-child(3) {
+      width: 15%;
+    }
+
+    .visitor-table th:nth-child(4),
+    .visitor-table td:nth-child(4) {
+      width: 35%;
+    }
+
+    .visitor-table th:nth-child(5),
+    .visitor-table td:nth-child(5) {
+      width: 10%;
+    }
+
+    .visitor-id {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .visitor-detail-link {
+      display: inline-flex;
+      margin-left: 10px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .visitor-detail-link:hover {
+      text-decoration: underline;
+    }
+
+    .linked-detail {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .visitor-time,
+    .visitor-subline {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .visitor-pages {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .visitor-action {
+      font-weight: 800;
+      line-height: 1.7;
+    }
+
     .path-line {
       color: var(--muted);
       font-size: 12px;
@@ -362,10 +588,66 @@
     }
 
     .timeline-item {
-      padding: 10px 12px;
+      display: grid;
+      gap: 6px;
+      padding: 5px 8px;
       border: 1px solid #d8ebe7;
-      border-radius: 14px;
+      border-radius: 12px;
       background: #f7fcfa;
+    }
+
+    .session-event-grid .timeline-item {
+      grid-template-columns: minmax(260px, 1.3fr) minmax(220px, 1fr) auto;
+      align-items: center;
+    }
+
+    .timeline-line {
+      display: block;
+      overflow: visible;
+      white-space: normal;
+      text-overflow: clip;
+    }
+
+    .session-event-grid .timeline-line {
+      display: block;
+    }
+
+    .timeline-line .event-main {
+      display: block;
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .event-main {
+      font-weight: 800;
+      font-size: 13px;
+      white-space: normal;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+      gap: 4px 16px;
+    }
+
+    .session-event-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .event-inline {
+      color: var(--muted);
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .event-inline:last-child {
+      text-align: right;
+      white-space: nowrap;
     }
 
     .empty {
@@ -381,7 +663,7 @@
       flex-wrap: wrap;
       gap: 12px;
       align-items: center;
-      margin-top: 22px;
+      margin-top: 16px;
       color: var(--muted);
       font-size: 13px;
     }
@@ -396,14 +678,14 @@
       cursor: pointer;
       font: inherit;
       font-weight: 800;
-      padding: 9px 14px;
+      padding: 7px 12px;
     }
 
     .search-row {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 10px;
-      margin: 0 0 14px;
+      gap: 8px;
+      margin: 0 0 10px;
     }
 
     .search-input {
@@ -413,15 +695,31 @@
       background: #fbfffd;
       color: var(--ink);
       font: inherit;
-      padding: 9px 14px;
+      padding: 7px 12px;
       outline: none;
     }
 
     .filter-panel {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: 8px;
       align-items: end;
+    }
+
+    .filter-section {
+      margin-top: 16px;
+    }
+
+    .filter-section .card {
+      padding: 12px 14px;
+    }
+
+    .filter-section .section-head {
+      margin-bottom: 8px;
+    }
+
+    .filter-section .button-row {
+      align-items: center;
     }
 
     .field label {
@@ -429,7 +727,7 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .field input,
@@ -440,7 +738,7 @@
       background: #fbfffd;
       color: var(--ink);
       font: inherit;
-      padding: 9px 10px;
+      padding: 7px 9px;
       outline: none;
     }
 
@@ -455,21 +753,20 @@
     }
 
     @media (max-width: 980px) {
-      .hero,
-      .grid.two {
+      .hero {
         grid-template-columns: 1fr;
       }
 
-      .grid.metrics {
+      .session-event-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .case-ratio-row {
+        grid-template-columns: 1fr;
       }
 
       .status-card {
         min-width: 0;
-      }
-
-      .filter-panel {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -478,12 +775,11 @@
         padding: 24px 14px 40px;
       }
 
-      .grid.metrics,
-      .case-split {
+      .funnel-step {
         grid-template-columns: 1fr;
       }
 
-      .funnel-step {
+      .session-event-grid {
         grid-template-columns: 1fr;
       }
 
@@ -497,9 +793,6 @@
         white-space: nowrap;
       }
 
-      .filter-panel {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -534,7 +827,7 @@
 
     <section class="grid metrics" id="metrics"></section>
 
-    <section class="grid two">
+    <section class="priority-row">
       <article class="card">
         <div class="section-head">
           <h2>基础访问总览</h2>
@@ -542,6 +835,9 @@
         </div>
         <div id="overviewBox"></div>
       </article>
+    </section>
+
+    <section class="grid three priority-row">
       <article class="card">
         <div class="section-head">
           <h2>用户来源</h2>
@@ -549,53 +845,118 @@
         </div>
         <div id="sourceTable"></div>
       </article>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>用户访问路径分析</h2>
-        <span class="section-label">landing / exit / A→B</span>
-      </div>
-      <div class="grid two">
-        <article class="card">
-          <div class="section-head">
-            <h3>Landing Page / 离开页</h3>
-            <span class="section-label">入口页 / 最后离开页</span>
-          </div>
-          <div id="entryExitTable"></div>
-        </article>
-        <article class="card">
-          <div class="section-head">
-            <h3>页面跳转关系</h3>
-            <span class="section-label">从 A 页到 B 页</span>
-          </div>
-          <div id="transitionsTable"></div>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>单次会话路径</h2>
-        <span class="section-label">session timeline</span>
-      </div>
-      <article class="card">
-        <div id="recentSessions"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
       <article class="card">
         <div class="section-head">
-          <h2>按用户查询完整路径</h2>
-          <span class="section-label">anonymous_user_id</span>
+          <h3>Landing Page / 离开页</h3>
+          <span class="section-label">入口 / 离开</span>
         </div>
-        <div class="search-row">
-          <input id="userSearchInput" class="search-input" placeholder="输入 anonymous_user_id，查看这个用户的完整访问路径">
-          <button type="button" id="userSearchBtn">查询</button>
-        </div>
-        <div id="userTimeline"></div>
+        <div id="entryExitTable"></div>
       </article>
+      <article class="card">
+        <div class="section-head">
+          <h3>页面跳转关系</h3>
+          <span class="section-label">A→B</span>
+        </div>
+        <div id="transitionsTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>案例页表现</h2>
+        <span class="section-label">cases</span>
+      </div>
+      <div class="case-ratio-row case-funnel-row">
+        <article class="card">
+          <h3>案例行为</h3>
+          <div class="case-split">
+            <div class="split-box"><strong id="casePv">0</strong><span>案例页 PV</span></div>
+            <div class="split-box"><strong id="caseUv">0</strong><span>案例页 UV</span></div>
+            <div class="split-box"><strong id="caseClicks">0</strong><span>案例卡片点击</span></div>
+            <div class="split-box"><strong id="caseDetails">0</strong><span>详情打开</span></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="caseClickRateBar"></div></div>
+          <p class="table-meta" id="caseRateText">案例点击率 0%，详情打开率 0%。</p>
+        </article>
+        <article class="card">
+          <h3>党校 / 管综关注</h3>
+          <div class="case-split">
+            <div class="split-box"><strong id="partyClicks">0</strong><span>党校点击</span></div>
+            <div class="split-box"><strong id="examClicks">0</strong><span>管综点击</span></div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="partyShareBar"></div></div>
+          <p class="table-meta" id="partyShareText">暂无案例点击数据。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>核心漏斗</h2>
+        <span class="section-label">funnels</span>
+      </div>
+      <div class="grid three case-funnel-row" id="funnels"></div>
+    </section>
+
+    <section>
+      <article class="card">
+        <div class="section-head">
+          <h2>热门案例</h2>
+          <span class="section-label">top_cases</span>
+        </div>
+        <div id="topCases"></div>
+      </article>
+    </section>
+
+    <section class="grid three bottom-row">
+      <article class="card">
+        <div class="section-head">
+          <h2>页面访问</h2>
+          <span class="section-label">pages</span>
+        </div>
+        <div id="pagesTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>分享传播</h2>
+          <span class="section-label">share</span>
+        </div>
+        <div id="shareTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>设备分布</h2>
+          <span class="section-label">devices</span>
+        </div>
+        <div id="devicesTable"></div>
+      </article>
+    </section>
+
+    <section class="grid three bottom-row">
+      <article class="card">
+        <div class="section-head">
+          <h2>区块流转</h2>
+          <span class="section-label">section transitions</span>
+        </div>
+        <div id="sectionTransitionsTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>滚动深度</h2>
+          <span class="section-label">scroll_depth</span>
+        </div>
+        <div id="scrollDepthTable"></div>
+      </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>访问时段</h2>
+          <span class="section-label">time distribution</span>
+        </div>
+        <div id="timeDistributionTable"></div>
+      </article>
+    </section>
+
+    <section>
       <article class="card">
         <div class="section-head">
           <h2>高意向匿名用户</h2>
@@ -606,6 +967,16 @@
     </section>
 
     <section>
+      <article class="card">
+        <div class="section-head">
+          <h2>未留资高意向用户</h2>
+          <span class="section-label">hot but no lead</span>
+        </div>
+        <div id="unconvertedUsers"></div>
+      </article>
+    </section>
+
+    <section class="filter-section">
       <div class="section-head">
         <h2>全局筛选与导出</h2>
         <span class="section-label">filters / export</span>
@@ -637,28 +1008,41 @@
             <input id="filterTo" type="datetime-local">
           </div>
         </div>
-        <div class="button-row" style="margin-top:14px;">
+        <div class="button-row" style="margin-top:10px;">
           <button type="button" id="applyFiltersBtn">应用筛选</button>
           <button type="button" id="resetFiltersBtn">重置筛选</button>
           <button type="button" id="exportEventsBtn">导出事件 CSV</button>
           <button type="button" id="exportSessionsBtn">导出会话 CSV</button>
           <button type="button" id="exportUsersBtn">导出用户 CSV</button>
         </div>
-        <p class="table-meta" id="filterResultText" style="margin-top:10px;">筛选会作用于事件回放、单次会话路径和用户完整路径查询。</p>
+        <p class="table-meta" id="filterResultText" style="margin-top:8px;">筛选会作用于用户完整路径查询和导出数据。</p>
+        <div id="filterResults"></div>
+      </article>
+    </section>
+
+    <section id="visitorExplorer">
+      <div class="section-head">
+        <h2>访问人员与完整路径</h2>
+        <a class="section-label" href="./demo-visitors.html" target="_blank">查看完整访问人员列表</a>
+      </div>
+      <article class="card visitor-card">
+        <p class="table-meta">这是父子级关系：上方是父级访问人员列表，默认显示最近访问的 10 个匿名用户；点击匿名用户 ID，会在下方子级区块展示这个用户的完整访问路径。需要完整明细时可点击“详情页”。</p>
+        <div id="visitorDetailsTable"></div>
+        <div class="linked-detail">
+          <div class="section-head">
+            <h2>按用户查询完整路径</h2>
+            <span class="section-label">selected anonymous_user_id</span>
+          </div>
+          <div class="search-row">
+            <input id="userSearchInput" class="search-input" placeholder="输入 anonymous_user_id，查看这个用户的完整访问路径">
+            <button type="button" id="userSearchBtn">查询</button>
+          </div>
+          <div id="userTimeline"></div>
+        </div>
       </article>
     </section>
 
     <section>
-      <div class="section-head">
-        <h2>真实事件样本回放</h2>
-        <span class="section-label">event replay</span>
-      </div>
-      <article class="card">
-        <div id="eventReplay"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
       <article class="card">
         <div class="section-head">
           <h2>内容区块停留</h2>
@@ -668,71 +1052,7 @@
       </article>
     </section>
 
-    <section>
-      <div class="section-head">
-        <h2>主动展开内容</h2>
-        <span class="section-label">section toggles</span>
-      </div>
-      <article class="card">
-        <div id="sectionTogglesTable"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
-      <article class="card">
-        <div class="section-head">
-          <h2>未留资高意向用户</h2>
-          <span class="section-label">hot but no lead</span>
-        </div>
-        <div id="unconvertedUsers"></div>
-      </article>
-      <article class="card">
-        <div class="section-head">
-          <h2>回访分析</h2>
-          <span class="section-label">retention</span>
-        </div>
-        <div id="retentionBox"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
-      <article class="card">
-        <div class="section-head">
-          <h2>漏斗掉队用户</h2>
-          <span class="section-label">dropoffs</span>
-        </div>
-        <div id="dropoffsTable"></div>
-      </article>
-      <article class="card">
-        <div class="section-head">
-          <h2>区块流转</h2>
-          <span class="section-label">section transitions</span>
-        </div>
-        <div id="sectionTransitionsTable"></div>
-      </article>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>滚动深度</h2>
-        <span class="section-label">scroll_depth</span>
-      </div>
-      <article class="card">
-        <div id="scrollDepthTable"></div>
-      </article>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>访问时段</h2>
-        <span class="section-label">time distribution</span>
-      </div>
-      <article class="card">
-        <div id="timeDistributionTable"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
+    <section class="grid three bottom-row">
       <article class="card">
         <div class="section-head">
           <h2>搜索分析</h2>
@@ -747,6 +1067,33 @@
         </div>
         <div id="interactionTable"></div>
       </article>
+      <article class="card">
+        <div class="section-head">
+          <h2>漏斗掉队用户</h2>
+          <span class="section-label">dropoffs</span>
+        </div>
+        <div id="dropoffsTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>主动展开内容</h2>
+        <span class="section-label">section toggles</span>
+      </div>
+      <article class="card">
+        <div id="sectionTogglesTable"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>回访分析</h2>
+        <span class="section-label">retention</span>
+      </div>
+      <article class="card">
+        <div id="retentionBox"></div>
+      </article>
     </section>
 
     <section>
@@ -759,71 +1106,7 @@
       </article>
     </section>
 
-    <section>
-      <div class="section-head">
-        <h2>近期原始事件</h2>
-        <span class="section-label">recent events</span>
-      </div>
-      <article class="card">
-        <div id="recentEventsTable"></div>
-      </article>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>案例页表现</h2>
-        <span class="section-label">cases</span>
-      </div>
-      <div class="grid two">
-        <article class="card">
-          <h3>案例行为</h3>
-          <div class="case-split">
-            <div class="split-box"><strong id="casePv">0</strong><span>案例页 PV</span></div>
-            <div class="split-box"><strong id="caseUv">0</strong><span>案例页 UV</span></div>
-            <div class="split-box"><strong id="caseClicks">0</strong><span>案例卡片点击</span></div>
-            <div class="split-box"><strong id="caseDetails">0</strong><span>详情打开</span></div>
-          </div>
-          <div class="bar-track"><div class="bar-fill" id="caseClickRateBar"></div></div>
-          <p class="table-meta" id="caseRateText">案例点击率 0%，详情打开率 0%。</p>
-        </article>
-        <article class="card">
-          <h3>党校 / 管综关注</h3>
-          <div class="case-split">
-            <div class="split-box"><strong id="partyClicks">0</strong><span>党校点击</span></div>
-            <div class="split-box"><strong id="examClicks">0</strong><span>管综点击</span></div>
-          </div>
-          <div class="bar-track"><div class="bar-fill" id="partyShareBar"></div></div>
-          <p class="table-meta" id="partyShareText">暂无案例点击数据。</p>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>核心漏斗</h2>
-        <span class="section-label">funnels</span>
-      </div>
-      <div class="grid two" id="funnels"></div>
-    </section>
-
-    <section class="grid two">
-      <article class="card">
-        <div class="section-head">
-          <h2>热门案例</h2>
-          <span class="section-label">top_cases</span>
-        </div>
-        <div id="topCases"></div>
-      </article>
-      <article class="card">
-        <div class="section-head">
-          <h2>页面访问</h2>
-          <span class="section-label">pages</span>
-        </div>
-        <div id="pagesTable"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
+    <section class="grid two bottom-row">
       <article class="card">
         <div class="section-head">
           <h2>事件质量</h2>
@@ -837,23 +1120,6 @@
           <span class="section-label">top_events</span>
         </div>
         <div id="eventsTable"></div>
-      </article>
-    </section>
-
-    <section class="grid two">
-      <article class="card">
-        <div class="section-head">
-          <h2>分享传播</h2>
-          <span class="section-label">share</span>
-        </div>
-        <div id="shareTable"></div>
-      </article>
-      <article class="card">
-        <div class="section-head">
-          <h2>设备分布</h2>
-          <span class="section-label">devices</span>
-        </div>
-        <div id="devicesTable"></div>
       </article>
     </section>
 
@@ -917,6 +1183,64 @@
     const fmt = (value) => Number(value || 0).toLocaleString('zh-CN')
     const pct = (value) => `${Math.round(Number(value || 0) * 1000) / 10}%`
     const safe = (value, fallback = '-') => value === undefined || value === null || value === '' ? fallback : value
+    const eventNameMap = {
+      app_launch: '小程序启动',
+      app_show: '小程序进入前台',
+      app_hide: '小程序离开/进入后台',
+      page_view: '页面访问',
+      page_leave: '离开页面',
+      section_view_start: '开始浏览页面区块',
+      section_view_end: '结束浏览页面区块',
+      scroll_depth: '页面滚动深度',
+      nav_click: '导航点击',
+      cta_click: '行动按钮点击',
+      contact_click: '点击咨询',
+      lead_submit: '提交留资',
+      modal_open: '弹窗打开',
+      modal_close: '弹窗关闭',
+      case_card_click: '案例卡片点击',
+      case_detail_view: '案例详情查看',
+      case_load_more: '加载更多案例',
+      case_tab_change: '案例方向切换',
+      assessment_start: '开始测评',
+      assessment_answer: '填写测评题',
+      assessment_finish: '完成测评',
+      recommendation_view: '查看推荐结果',
+      school_filter_change: '院校筛选变化',
+      school_card_click: '院校卡片点击',
+      school_detail_view: '查看院校详情',
+      search_submit: '提交搜索',
+      search_result_click: '搜索结果点击',
+      share_attempt: '发起分享',
+      share_open: '通过分享打开',
+      download_click: '资料下载点击',
+      image_preview: '图片预览',
+      api_error: '接口异常',
+      page_error: '页面异常',
+      resource_error: '资源加载异常'
+    }
+    const eventText = (value) => {
+      const name = safe(value)
+      const zh = eventNameMap[String(value || '')]
+      return zh ? `${name}（${zh}）` : name
+    }
+    const sourceNameMap = {
+      video_account: '视频号',
+      qr_code: '二维码',
+      share_card: '微信分享卡片',
+      direct: '直接访问',
+      official_account: '公众号',
+      wechat_search: '微信搜索',
+      moments: '朋友圈',
+      ads: '广告投放',
+      miniapp_link: '小程序链接',
+      unknown: '未知来源'
+    }
+    const sourceText = (value) => {
+      const name = safe(value)
+      const zh = sourceNameMap[String(value || '')]
+      return zh ? `${name}（${zh}）` : name
+    }
     const dateText = (value) => value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '-'
     const shortId = (value) => {
       const text = String(value || '')
@@ -1031,12 +1355,27 @@
       }
     }
 
+    function cleanFilterValue(value, examples = []) {
+      const text = String(value || '').trim()
+      if (!text) return ''
+      return examples.includes(text) ? '' : text
+    }
+
+    function splitFilterTerms(value) {
+      return String(value || '')
+        .split(/[\/,，、\s]+/)
+        .map(item => item.trim())
+        .filter(Boolean)
+    }
+
     function getFilterValues() {
+      const event = cleanFilterValue($('filterEvent')?.value, [])
       return {
-        user: $('filterUser')?.value.trim() || '',
-        session: $('filterSession')?.value.trim() || '',
-        event: $('filterEvent')?.value.trim() || '',
-        page: $('filterPage')?.value.trim() || '',
+        user: cleanFilterValue($('filterUser')?.value, ['anonymous_user_id']),
+        session: cleanFilterValue($('filterSession')?.value, ['session_id']),
+        event,
+        eventTerms: splitFilterTerms(event),
+        page: cleanFilterValue($('filterPage')?.value),
         from: parseTime($('filterFrom')?.value || ''),
         to: parseTime($('filterTo')?.value || '')
       }
@@ -1046,7 +1385,7 @@
       const createdAt = parseTime(item.created_at)
       if (filters.user && !String(item.anonymous_user_id || '').includes(filters.user)) return false
       if (filters.session && !String(item.session_id || '').includes(filters.session)) return false
-      if (filters.event && !String(item.event_type || '').includes(filters.event)) return false
+      if (filters.eventTerms?.length && !filters.eventTerms.some(term => String(item.event_type || '').includes(term))) return false
       if (filters.page && !String(item.page_path || item.page || '').includes(filters.page)) return false
       if (filters.from && createdAt && createdAt < filters.from) return false
       if (filters.to && createdAt && createdAt > filters.to) return false
@@ -1064,7 +1403,7 @@
         if (filters.user && !String(item.anonymous_user_id || '').includes(filters.user)) return false
         if (filters.session && !String(item.session_id || '').includes(filters.session)) return false
         if (matchedSessionIds.size && matchedSessionIds.has(item.session_id)) return true
-        if (!filters.event && !filters.page && !filters.from && !filters.to) return true
+        if (!filters.eventTerms?.length && !filters.page && !filters.from && !filters.to) return true
         return false
       })
       filteredSessions.forEach(item => {
@@ -1073,14 +1412,64 @@
       filteredUsers = (summary.user_behavior.users || []).filter(item => {
         if (filters.user && !String(item.anonymous_user_id || '').includes(filters.user)) return false
         if (matchedUserIds.size && matchedUserIds.has(item.anonymous_user_id)) return true
-        if (!filters.event && !filters.page && !filters.from && !filters.to && !filters.session) return true
+        if (!filters.eventTerms?.length && !filters.page && !filters.from && !filters.to && !filters.session) return true
         return false
       })
 
       $('filterResultText').textContent = `当前筛选命中 ${fmt(filteredEvents.length)} 条事件、${fmt(filteredSessions.length)} 个会话、${fmt(filteredUsers.length)} 个匿名用户。`
-      renderEventReplay(filteredEvents)
-      renderRecentEvents({ recent_events: filteredEvents })
+      renderFilterResults(filters)
+      renderAllVisitors(summary)
       renderUserTimeline(summary, filters.user)
+    }
+
+    function renderFilterResults(filters) {
+      const hasFilter = Boolean(filters.user || filters.session || filters.eventTerms?.length || filters.page || filters.from || filters.to)
+      if (!hasFilter) {
+        $('filterResults').innerHTML = '<div class="empty" style="margin-top:10px;">当前没有应用筛选。填写真实用户 ID、会话 ID、事件名、页面路径或时间范围后，点击“应用筛选”。</div>'
+        return
+      }
+
+      if (!filteredEvents.length && !filteredSessions.length && !filteredUsers.length) {
+        $('filterResults').innerHTML = `
+          <div class="empty" style="margin-top:10px;">
+            没有匹配到数据。注意：<span class="mono">anonymous_user_id</span>、<span class="mono">session_id</span> 是字段名示例，不是具体用户；请填真实值，例如 <span class="mono">anon_demo_0067</span> 或 <span class="mono">sess_demo_0067_04</span>。
+          </div>
+        `
+        return
+      }
+
+      const userRows = filteredUsers.slice(0, 10).map((item) => `
+        <tr>
+          <td><strong class="mono">${safe(item.anonymous_user_id)}</strong></td>
+          <td>${dateText(item.last_seen_at)}</td>
+          <td>${fmt(item.session_count)} 次 / ${fmt(item.page_view_count)} PV</td>
+          <td>${fmt(item.contact_clicks)} 咨询 / ${fmt(item.lead_submits)} 留资</td>
+        </tr>
+      `)
+      const sessionRows = filteredSessions.slice(0, 10).map((item) => `
+        <tr>
+          <td><strong class="mono">${safe(item.session_id)}</strong></td>
+          <td><span class="mono">${safe(item.anonymous_user_id)}</span></td>
+          <td>${durationText(item.duration_ms)} / ${fmt(item.event_count)} 事件</td>
+          <td><span class="path-line">${safe(item.entry_page)} → ${safe(item.exit_page)}</span></td>
+        </tr>
+      `)
+      const eventRows = filteredEvents.slice(0, 10).map((item) => `
+        <tr>
+          <td>${dateText(item.created_at)}</td>
+          <td>${eventText(item.event_type)}</td>
+          <td><span class="mono">${safe(item.anonymous_user_id)}</span></td>
+          <td><span class="path-line">${safe(item.page_path || item.page)}${item.target_name ? ` · ${safe(item.target_name)}` : ''}</span></td>
+        </tr>
+      `)
+
+      $('filterResults').innerHTML = `
+        <div class="grid three bottom-row" style="margin-top:12px;">
+          <div>${table(['用户', '最近访问', '访问量', '关键行为'], userRows, '暂无匹配用户。')}</div>
+          <div>${table(['会话', '用户', '停留/事件', '进出页面'], sessionRows, '暂无匹配会话。')}</div>
+          <div>${table(['时间', '事件', '用户', '页面/对象'], eventRows, '暂无匹配事件。')}</div>
+        </div>
+      `
     }
 
     function renderMetrics(summary) {
@@ -1121,9 +1510,9 @@
     }
 
     function renderSourceAnalysis(summary) {
-      const rows = (summary.source_analysis.channels || []).slice(0, 18).map((item) => `
+      const rows = (summary.source_analysis.channels || []).slice(0, 10).map((item) => `
         <tr>
-          <td><strong>${safe(item.channel)}</strong></td>
+          <td><strong>${sourceText(item.channel)}</strong></td>
           <td>${fmt(item.uv)}</td>
           <td>${fmt(item.sessions)}</td>
           <td>${fmt(item.count)}</td>
@@ -1167,7 +1556,7 @@
               <div class="funnel-step">
                 <div>
                   <div class="funnel-name">${safe(item.step)}</div>
-                  <div class="funnel-meta">${safe(item.event_type)}</div>
+                  <div class="funnel-meta">${eventText(item.event_type)}</div>
                 </div>
                 <div class="mini-bar"><span style="width:${Math.min(Number(item.conversion_rate || 0) * 100, 100)}%"></span></div>
                 <div class="rate">${pct(item.conversion_rate)}<br><span class="funnel-meta">UV ${fmt(item.uv)} / ${fmt(item.count)}</span></div>
@@ -1203,20 +1592,74 @@
         '暂无用户轨迹数据。'
       )
 
-      const sessionRows = (summary.user_behavior.recent_sessions || []).slice(0, 10).map((item) => `
-        <tr>
-          <td><strong class="mono">${shortId(item.session_id)}</strong><br><span class="table-meta">${dateText(item.started_at)}</span></td>
-          <td><span class="mono">${shortId(item.anonymous_user_id)}</span><br><span class="table-meta">${safe(item.device_model)} ${safe(item.platform, '')}</span></td>
-          <td>${durationText(item.duration_ms)}<br><span class="table-meta">${fmt(item.page_view_count)} PV / ${fmt(item.event_count)} 事件</span></td>
-          <td><span class="path-line">进：${safe(item.entry_page)}</span><br><span class="path-line">出：${safe(item.exit_page)}</span></td>
-          <td>${fmt(item.contact_clicks)} 咨询<br><span class="table-meta">${fmt(item.share_attempts)} 分享</span></td>
-        </tr>
-      `)
-      $('recentSessions').innerHTML = table(
-        ['会话', '用户/设备', '停留', '进出页面', '关键动作'],
-        sessionRows,
-        '暂无会话路径数据。'
-      )
+    }
+
+    function renderAllVisitors(summary) {
+      const users = filteredUsers.length ? filteredUsers : (summary.user_behavior.users || [])
+      const sessions = filteredSessions.length ? filteredSessions : (summary.user_behavior.sessions || [])
+      const sessionsByUser = new Map()
+
+      sessions.forEach((session) => {
+        const userId = session.anonymous_user_id || ''
+        if (!userId) return
+        if (!sessionsByUser.has(userId)) sessionsByUser.set(userId, [])
+        sessionsByUser.get(userId).push(session)
+      })
+
+      const rows = users
+        .slice()
+        .sort((a, b) => new Date(b.last_seen_at || 0).getTime() - new Date(a.last_seen_at || 0).getTime())
+        .slice(0, 10)
+        .map((user) => {
+        const userSessions = sessionsByUser.get(user.anonymous_user_id) || []
+        const deviceText = [
+          ...(user.devices || []),
+          ...(user.platforms || [])
+        ].filter(Boolean).join(' / ') || '-'
+        const pages = Array.from(new Set([
+          ...(user.pages || []),
+          ...userSessions.flatMap(item => item.pages || [])
+        ]))
+        const detailUrl = `visitor-detail.html?id=${encodeURIComponent(user.anonymous_user_id)}`
+        return `
+          <tr>
+            <td>
+              <a class="mono visitor-id visitor-select" href="#visitorExplorer" data-user-id="${safe(user.anonymous_user_id)}"><strong>${safe(user.anonymous_user_id)}</strong></a>
+              <a class="visitor-detail-link" href="${detailUrl}" target="_blank">详情页</a>
+              <span class="visitor-time">首次 ${dateText(user.first_seen_at)} ｜ 最近 ${dateText(user.last_seen_at)}</span>
+            </td>
+            <td>${safe(deviceText)}<span class="visitor-subline">${fmt(userSessions.length || user.session_count)} 次会话</span></td>
+            <td>${fmt(user.page_view_count)} PV<span class="visitor-subline">${fmt(user.event_count)} 事件 / ${durationText(user.total_page_duration_ms)}</span></td>
+            <td><span class="visitor-pages">${joinShort(pages, 8)}</span></td>
+            <td><span class="visitor-action">${fmt(user.contact_clicks)} 咨询</span><span class="visitor-subline">${fmt(user.lead_submits)} 留资 / ${fmt(user.share_attempts)} 分享</span></td>
+          </tr>
+        `
+      })
+
+      $('visitorDetailsTable').innerHTML = rows.length
+        ? `
+          <table class="visitor-table">
+            <thead>
+              <tr>
+                <th>匿名用户 ID / 时间</th>
+                <th>设备 / 会话</th>
+                <th>访问量 / 停留</th>
+                <th>浏览页面</th>
+                <th>关键行为</th>
+              </tr>
+            </thead>
+            <tbody>${rows.join('')}</tbody>
+          </table>
+        `
+        : '<div class="empty">暂无访问人员列表。</div>'
+    }
+
+    function selectVisitor(userId) {
+      const value = String(userId || '').trim()
+      if (!currentSummary || !value) return
+      $('userSearchInput').value = value
+      renderUserTimeline(currentSummary, value)
+      $('userTimeline')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     }
 
     function renderUserTimeline(summary, keyword = '') {
@@ -1244,10 +1687,8 @@
 
       const sessionBlocks = matchedSessions.slice(0, 8).map((session) => {
         const eventLines = (session.events || []).slice(0, 30).map((event) => `
-          <div class="timeline-item">
-            <strong>${dateText(event.created_at)} · ${safe(event.event_type)}</strong>
-            <div class="path-line">${safe(event.page_path || event.page)} ${event.target_name ? `· ${event.target_name}` : ''}</div>
-            ${event.duration_ms ? `<div class="table-meta">停留 ${durationText(event.duration_ms)}</div>` : ''}
+          <div class="timeline-item timeline-line">
+            <span class="event-main">${dateText(event.created_at)} · ${eventText(event.event_type)} · ${safe(event.page_path || event.page)}${event.target_name ? ` · ${safe(event.target_name)}` : ''}${event.duration_ms ? ` · 停留 ${durationText(event.duration_ms)}` : ''}</span>
           </div>
         `).join('')
         return `
@@ -1257,32 +1698,12 @@
               ${dateText(session.started_at)} · ${durationText(session.duration_ms)}
             </p>
             <p class="path-line">进入：${safe(session.entry_page)} ｜ 退出：${safe(session.exit_page)}</p>
-            <div style="display:grid;gap:8px;margin-top:10px;">${eventLines || '<div class="empty">暂无事件明细。</div>'}</div>
+            <div class="session-event-grid">${eventLines || '<div class="empty">暂无事件明细。</div>'}</div>
           </div>
         `
       }).join('')
 
       $('userTimeline').innerHTML = `${userBox}${sessionBlocks || '<div class="empty">暂无会话明细。</div>'}`
-    }
-
-    function renderEventReplay(events) {
-      const rows = (events || []).slice(0, 120).map((item, index) => `
-        <div class="timeline-item">
-          <strong>${fmt(index + 1)}. ${dateText(item.created_at)} · ${safe(item.event_type)}</strong>
-          <div class="path-line">用户：${safe(item.anonymous_user_id)} ｜ 会话：${safe(item.session_id)}</div>
-          <div class="path-line">页面：${safe(item.page_path || item.page)} ｜ 对象：${safe(item.target_name || item.target_id)}</div>
-          <div class="table-meta">
-            ${item.section_name ? `区块：${item.section_name} ｜ ` : ''}
-            ${item.action ? `动作：${item.action} ｜ ` : ''}
-            ${item.scroll_threshold ? `滚动：${item.scroll_threshold}% ｜ ` : ''}
-            ${item.duration_ms ? `时长：${durationText(item.duration_ms)} ｜ ` : ''}
-            ${item.device_model ? `设备：${item.device_model}` : ''}
-          </div>
-        </div>
-      `).join('')
-      $('eventReplay').innerHTML = rows
-        ? `<div style="display:grid;gap:8px;">${rows}</div>`
-        : '<div class="empty">暂无可回放事件。请先产生真实埋点，或调整筛选条件。</div>'
     }
 
     function table(headers, rows, emptyText) {
@@ -1296,7 +1717,7 @@
     }
 
     function renderTopCases(summary) {
-      const rows = (summary.cases.top_cases || []).slice(0, 12).map((item) => `
+      const rows = (summary.cases.top_cases || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.target_name, item.target_id)}</strong><br><span class="table-meta">${safe(item.target_id)}</span></td>
           <td><span class="tag">${caseTypeName(item.case_type)}</span></td>
@@ -1309,7 +1730,7 @@
     }
 
     function renderPages(summary) {
-      const rows = (summary.pages || []).slice(0, 12).map((item) => `
+      const rows = (summary.pages || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.page)}</strong><br><span class="table-meta">${safe(item.page_path, '')}</span></td>
           <td>${fmt(item.pv)}</td>
@@ -1323,7 +1744,7 @@
     }
 
     function renderSections(summary) {
-      const rows = (summary.sections.top_sections || []).slice(0, 14).map((item) => `
+      const rows = (summary.sections.top_sections || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.section_name, item.section_id)}</strong><br><span class="path-line">${safe(item.page)} · ${safe(item.section_id)}</span></td>
           <td>${fmt(item.starts)}</td>
@@ -1334,9 +1755,18 @@
       `)
       $('sectionsTable').innerHTML = table(['区块', '曝光', 'UV', '平均停留', '累计停留'], rows, '暂无区块停留数据。')
 
-      const toggleRows = (summary.sections.toggles || []).slice(0, 20).map((item) => `
+      const demoToggles = [
+        { page: 'result', section_id: 'result-reasons', section_name: '推荐理由', opens: 46, closes: 18, uv: 32, demo: true },
+        { page: 'learn', section_id: 'learn-peer-samples', section_name: '同学实际选择', opens: 39, closes: 11, uv: 28, demo: true },
+        { page: 'learn', section_id: 'learn-main-path', section_name: '主流路径对比', opens: 33, closes: 9, uv: 24, demo: true },
+        { page: 'result', section_id: 'result-peer-cases', section_name: '类似同学案例', opens: 29, closes: 7, uv: 21, demo: true },
+        { page: 'learn', section_id: 'learn-path-rules', section_name: '路径规则', opens: 22, closes: 6, uv: 17, demo: true },
+        { page: 'result', section_id: 'result-window', section_name: '窗口期说明', opens: 16, closes: 4, uv: 13, demo: true }
+      ]
+      const sectionToggles = summary.sections.toggles?.length ? summary.sections.toggles : demoToggles
+      const toggleRows = sectionToggles.slice(0, 10).map((item) => `
         <tr>
-          <td><strong>${safe(item.section_name, item.section_id)}</strong><br><span class="path-line">${safe(item.page)} · ${safe(item.section_id)}</span></td>
+          <td><strong>${safe(item.section_name, item.section_id)}</strong>${item.demo ? ' <span class="tag red">模拟示例</span>' : ''}<br><span class="path-line">${safe(item.page)} · ${safe(item.section_id)}</span></td>
           <td>${fmt(item.opens)}</td>
           <td>${fmt(item.closes)}</td>
           <td>${fmt(item.uv)}</td>
@@ -1346,7 +1776,7 @@
     }
 
     function renderUnconvertedUsers(summary) {
-      const rows = (summary.user_behavior.high_intent_unconverted_users || []).slice(0, 12).map((item) => `
+      const rows = (summary.user_behavior.high_intent_unconverted_users || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong class="mono">${safe(item.anonymous_user_id)}</strong><br><span class="table-meta">最近 ${dateText(item.last_seen_at)}</span></td>
           <td>${durationText(item.total_page_duration_ms)}<br><span class="table-meta">${fmt(item.session_count)} 次会话</span></td>
@@ -1363,14 +1793,14 @@
       const total = Number(item.total_users || 0)
       const rate = (value) => total ? pct(Number(value || 0) / total) : '0%'
       $('retentionBox').innerHTML = `
-        <div class="case-split">
-          <div class="split-box"><strong>${fmt(total)}</strong><span>总匿名用户</span></div>
-          <div class="split-box"><strong>${fmt(item.users_visited_2plus_days)}</strong><span>2 天以上回访 · ${rate(item.users_visited_2plus_days)}</span></div>
-          <div class="split-box"><strong>${fmt(item.users_visited_3plus_sessions)}</strong><span>3 次以上会话 · ${rate(item.users_visited_3plus_sessions)}</span></div>
-          <div class="split-box"><strong>${fmt(item.users_visited_7plus_sessions)}</strong><span>7 次以上会话 · ${rate(item.users_visited_7plus_sessions)}</span></div>
-          <div class="split-box"><strong>${pct(cohorts.next_day?.retention_rate)}</strong><span>次日留存 · ${fmt(cohorts.next_day?.retained_users)}/${fmt(cohorts.next_day?.base_users)}</span></div>
-          <div class="split-box"><strong>${pct(cohorts.seven_day?.retention_rate)}</strong><span>7 日留存 · ${fmt(cohorts.seven_day?.retained_users)}/${fmt(cohorts.seven_day?.base_users)}</span></div>
-          <div class="split-box"><strong>${pct(cohorts.thirty_day?.retention_rate)}</strong><span>30 日留存 · ${fmt(cohorts.thirty_day?.retained_users)}/${fmt(cohorts.thirty_day?.base_users)}</span></div>
+        <div class="compact-metrics">
+          <div class="compact-metric"><strong>${fmt(total)}</strong><span>总匿名用户</span></div>
+          <div class="compact-metric"><strong>${fmt(item.users_visited_2plus_days)}</strong><span>2 天以上回访 · ${rate(item.users_visited_2plus_days)}</span></div>
+          <div class="compact-metric"><strong>${fmt(item.users_visited_3plus_sessions)}</strong><span>3 次以上会话 · ${rate(item.users_visited_3plus_sessions)}</span></div>
+          <div class="compact-metric"><strong>${fmt(item.users_visited_7plus_sessions)}</strong><span>7 次以上会话 · ${rate(item.users_visited_7plus_sessions)}</span></div>
+          <div class="compact-metric"><strong>${pct(cohorts.next_day?.retention_rate)}</strong><span>次日留存 · ${fmt(cohorts.next_day?.retained_users)}/${fmt(cohorts.next_day?.base_users)}</span></div>
+          <div class="compact-metric"><strong>${pct(cohorts.seven_day?.retention_rate)}</strong><span>7 日留存 · ${fmt(cohorts.seven_day?.retained_users)}/${fmt(cohorts.seven_day?.base_users)}</span></div>
+          <div class="compact-metric"><strong>${pct(cohorts.thirty_day?.retention_rate)}</strong><span>30 日留存 · ${fmt(cohorts.thirty_day?.retained_users)}/${fmt(cohorts.thirty_day?.base_users)}</span></div>
         </div>
       `
     }
@@ -1392,7 +1822,7 @@
       `)
       $('entryExitTable').innerHTML = table(['类型', '页面地址', '会话数'], [...entryRows, ...exitRows], '暂无 Landing Page / 离开页数据。')
 
-      const transitionRows = (summary.navigation.page_transitions || []).slice(0, 14).map((item) => `
+      const transitionRows = (summary.navigation.page_transitions || []).slice(0, 10).map((item) => `
         <tr>
           <td><span class="path-line">${safe(item.name)}</span></td>
           <td>${fmt(item.count)}</td>
@@ -1400,7 +1830,7 @@
       `)
       $('transitionsTable').innerHTML = table(['A 页 → B 页', '次数'], transitionRows, '暂无页面跳转关系数据。')
 
-      const sectionRows = (summary.navigation.section_transitions || []).slice(0, 14).map((item) => `
+      const sectionRows = (summary.navigation.section_transitions || []).slice(0, 10).map((item) => `
         <tr>
           <td><span class="path-line">${safe(item.name)}</span></td>
           <td>${fmt(item.count)}</td>
@@ -1428,7 +1858,7 @@
     }
 
     function renderScrollDepth(summary) {
-      const rows = (summary.scroll_depth.by_page || []).slice(0, 80).map((item) => `
+      const rows = (summary.scroll_depth.by_page || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.page)}</strong></td>
           <td><span class="tag">${fmt(item.threshold)}%</span></td>
@@ -1453,12 +1883,12 @@
           <td>${fmt(item.count)}</td>
         </tr>
       `)
-      $('timeDistributionTable').innerHTML = table(['时段', '事件数'], [...hourRows, ...weekdayRows], '暂无访问时段数据。')
+      $('timeDistributionTable').innerHTML = table(['时段', '事件数'], [...hourRows, ...weekdayRows].slice(0, 10), '暂无访问时段数据。')
     }
 
     function renderSearchAnalysis(summary) {
       const search = summary.search_analysis || {}
-      const keywordRows = (search.top_keywords || []).slice(0, 12).map((item) => `
+      const keywordRows = (search.top_keywords || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.keyword)}</strong></td>
           <td>${fmt(item.count)}</td>
@@ -1486,7 +1916,7 @@
 
     function renderInteractions(summary) {
       const interactions = summary.interactions || {}
-      const rows = (interactions.top_actions || []).slice(0, 16).map((item) => `
+      const rows = (interactions.top_actions || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.action)}</strong><br><span class="table-meta">${safe(item.target_name)}</span></td>
           <td>${fmt(item.count)}</td>
@@ -1506,13 +1936,13 @@
 
     function renderTechnical(summary) {
       const technical = summary.technical || {}
-      const typeRows = (technical.by_type || []).slice(0, 12).map((item) => `
+      const typeRows = (technical.by_type || []).slice(0, 10).map((item) => `
         <tr>
           <td><strong>${safe(item.type)}</strong></td>
           <td>${fmt(item.count)}</td>
         </tr>
       `)
-      const urlRows = (technical.by_url || []).slice(0, 12).map((item) => `
+      const urlRows = (technical.by_url || []).slice(0, 10).map((item) => `
         <tr>
           <td><span class="path-line">${safe(item.url)}</span></td>
           <td>${fmt(item.count)}</td>
@@ -1535,19 +1965,6 @@
           <div>${table(['接口/页面', '次数'], [...urlRows, ...statusRows], '暂无接口失败。')}</div>
         </div>
       `
-    }
-
-    function renderRecentEvents(summary) {
-      const rows = (summary.recent_events || []).slice(0, 40).map((item) => `
-        <tr>
-          <td>${dateText(item.created_at)}</td>
-          <td><span class="tag">${safe(item.event_type)}</span></td>
-          <td><span class="path-line">${safe(item.page_path || item.page)}</span></td>
-          <td>${safe(item.target_name || item.target_id)}</td>
-          <td>${item.duration_ms ? durationText(item.duration_ms) : '-'}</td>
-        </tr>
-      `)
-      $('recentEventsTable').innerHTML = table(['时间', '事件', '页面', '对象', '时长'], rows, '暂无原始事件。')
     }
 
     const eventCsvRows = (events) => (events || []).map(item => ({
@@ -1608,6 +2025,7 @@
       event_count: item.event_count,
       page_view_count: item.page_view_count,
       total_page_duration_ms: item.total_page_duration_ms,
+      visit_times: (item.visit_times || []).join(' | '),
       share_attempts: item.share_attempts,
       share_opens: item.share_opens,
       contact_clicks: item.contact_clicks,
@@ -1638,9 +2056,9 @@
     }
 
     function renderEvents(summary) {
-      const rows = (summary.top_events || []).slice(0, 14).map((item) => `
+      const rows = (summary.top_events || []).slice(0, 10).map((item) => `
         <tr>
-          <td>${safe(item.name)}</td>
+          <td>${eventText(item.name)}</td>
           <td>${fmt(item.count)}</td>
         </tr>
       `)
@@ -1756,15 +2174,18 @@
     $('exportSessionsBtn').addEventListener('click', () => downloadCsv(`sessions-${Date.now()}.csv`, sessionCsvRows(filteredSessions)))
     $('exportUsersBtn').addEventListener('click', () => downloadCsv(`users-${Date.now()}.csv`, userCsvRows(filteredUsers)))
     $('userSearchBtn').addEventListener('click', () => {
-      if (!currentSummary) return
-      $('filterUser').value = $('userSearchInput').value
-      applyGlobalFilters(currentSummary)
+      selectVisitor($('userSearchInput').value)
     })
     $('userSearchInput').addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' && currentSummary) {
-        $('filterUser').value = $('userSearchInput').value
-        applyGlobalFilters(currentSummary)
+      if (event.key === 'Enter') {
+        selectVisitor($('userSearchInput').value)
       }
+    })
+    document.addEventListener('click', (event) => {
+      const trigger = event.target.closest?.('.visitor-select')
+      if (!trigger) return
+      event.preventDefault()
+      selectVisitor(trigger.dataset.userId)
     })
     $('fileInput').addEventListener('change', async (event) => {
       const file = event.target.files && event.target.files[0]

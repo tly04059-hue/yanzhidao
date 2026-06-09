@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>演示访问人员明细</title>
+  <style>
+    :root {
+      --bg: #eaf5f3;
+      --card: rgba(255, 255, 255, 0.78);
+      --line: #bcded8;
+      --text: #143235;
+      --muted: #5c7374;
+      --accent: #079a9a;
+      --accent-dark: #087d78;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(120, 219, 205, 0.25), transparent 34%),
+        linear-gradient(135deg, #f8fffd 0%, var(--bg) 100%);
+      color: var(--text);
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 42px;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--accent-dark);
+      background: rgba(255, 255, 255, 0.65);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(140px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .metric,
+    .visitor-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: 0 16px 50px rgba(52, 95, 94, 0.10);
+    }
+
+    .metric {
+      padding: 18px 20px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0 22px;
+    }
+
+    input {
+      width: 100%;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.76);
+      padding: 0 14px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .visitor-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .visitor-card {
+      padding: 22px;
+    }
+
+    .visitor-head {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(8, 125, 120, 0.16);
+      margin-bottom: 16px;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      word-break: break-all;
+    }
+
+    .value {
+      font-weight: 800;
+      line-height: 1.55;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr 1.35fr;
+      gap: 14px;
+    }
+
+    .box {
+      border: 1px solid rgba(8, 125, 120, 0.13);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.55);
+      padding: 14px;
+      min-height: 120px;
+      max-height: 320px;
+      overflow: auto;
+    }
+
+    .line {
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 13px;
+      border-bottom: 1px dashed rgba(8, 125, 120, 0.12);
+      padding: 5px 0;
+    }
+
+    .line:last-child {
+      border-bottom: 0;
+    }
+
+    .empty {
+      padding: 28px;
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    @media (max-width: 900px) {
+      body { padding: 20px; }
+      header,
+      .visitor-head,
+      .detail-grid,
+      .toolbar,
+      .metrics {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>访问人员明细演示</h1>
+      <div class="subtitle">模拟 100 个匿名访问人员。重点展示：ID、设备型号、访问时间序列、浏览页面、按时间串联的所有事件。</div>
+    </div>
+    <div class="pill" id="sourceText">读取中...</div>
+  </header>
+
+  <section class="metrics" id="metrics"></section>
+
+  <section class="toolbar">
+    <input id="keywordInput" placeholder="按 anonymous_user_id / 设备 / 页面 / 事件搜索">
+    <input id="pageInput" placeholder="筛选页面，如 /pages/result/index">
+    <input id="eventInput" placeholder="筛选事件，如 contact_click">
+  </section>
+
+  <section class="visitor-list" id="visitorList"></section>
+
+  <script>
+    const $ = (id) => document.getElementById(id)
+    let summary = null
+
+    const fmt = (value) => new Intl.NumberFormat('zh-CN').format(Number(value || 0))
+    const dateText = (value) => value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '-'
+    const durationText = (value) => {
+      const ms = Number(value || 0)
+      if (!ms) return '-'
+      const seconds = Math.round(ms / 1000)
+      if (seconds < 60) return `${seconds}s`
+      const minutes = Math.floor(seconds / 60)
+      const remain = seconds % 60
+      if (minutes < 60) return `${minutes}m ${remain}s`
+      return `${Math.floor(minutes / 60)}h ${minutes % 60}m`
+    }
+    const safe = (value) => String(value || '').replace(/[<>&"]/g, (ch) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' }[ch]))
+    const eventNameMap = {
+      app_launch: '小程序启动',
+      app_show: '小程序进入前台',
+      app_hide: '小程序离开/进入后台',
+      page_view: '页面访问',
+      page_leave: '离开页面',
+      section_view_start: '开始浏览页面区块',
+      section_view_end: '结束浏览页面区块',
+      scroll_depth: '页面滚动深度',
+      nav_click: '导航点击',
+      cta_click: '行动按钮点击',
+      contact_click: '点击咨询',
+      lead_submit: '提交留资',
+      modal_open: '弹窗打开',
+      modal_close: '弹窗关闭',
+      case_card_click: '案例卡片点击',
+      case_detail_view: '案例详情查看',
+      case_load_more: '加载更多案例',
+      case_tab_change: '案例方向切换',
+      assessment_start: '开始测评',
+      assessment_answer: '填写测评题',
+      assessment_finish: '完成测评',
+      recommendation_view: '查看推荐结果',
+      school_filter_change: '院校筛选变化',
+      school_card_click: '院校卡片点击',
+      school_detail_view: '查看院校详情',
+      search_submit: '提交搜索',
+      search_result_click: '搜索结果点击',
+      share_attempt: '发起分享',
+      share_open: '通过分享打开',
+      download_click: '资料下载点击',
+      image_preview: '图片预览',
+      api_error: '接口异常',
+      page_error: '页面异常',
+      resource_error: '资源加载异常'
+    }
+    const eventText = (value) => {
+      const name = safe(value)
+      const zh = eventNameMap[String(value || '')]
+      return zh ? `${name}（${zh}）` : name
+    }
+
+    const renderMetrics = () => {
+      const totals = summary.totals || {}
+      $('metrics').innerHTML = [
+        ['UV', totals.uv, '匿名用户数'],
+        ['Sessions', totals.sessions, '访问会话'],
+        ['PV', totals.pv, '页面浏览'],
+        ['Events', totals.events, '行为事件'],
+        ['Leads', totals.leads, '模拟留资']
+      ].map(([key, value, label]) => `
+        <article class="metric">
+          <strong>${fmt(value)}</strong>
+          <span>${key} · ${label}</span>
+        </article>
+      `).join('')
+    }
+
+    const buildUserEvents = () => {
+      const eventsByUser = new Map()
+      ;(summary.recent_events || []).forEach((event) => {
+        const userId = event.anonymous_user_id || ''
+        if (!userId) return
+        if (!eventsByUser.has(userId)) eventsByUser.set(userId, [])
+        eventsByUser.get(userId).push(event)
+      })
+      eventsByUser.forEach((events) => {
+        events.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+      })
+      return eventsByUser
+    }
+
+    const renderVisitors = () => {
+      const keyword = $('keywordInput').value.trim().toLowerCase()
+      const pageFilter = $('pageInput').value.trim().toLowerCase()
+      const eventFilter = $('eventInput').value.trim().toLowerCase()
+      const eventsByUser = buildUserEvents()
+      const users = summary.user_behavior?.users || []
+
+      const rows = users.filter((user) => {
+        const events = eventsByUser.get(user.anonymous_user_id) || []
+        const text = [
+          user.anonymous_user_id,
+          ...(user.devices || []),
+          ...(user.platforms || []),
+          ...(user.pages || []),
+          ...events.map(event => `${event.event_type} ${event.page_path || event.page} ${event.target_name || ''}`)
+        ].join(' ').toLowerCase()
+        if (keyword && !text.includes(keyword)) return false
+        if (pageFilter && !text.includes(pageFilter)) return false
+        if (eventFilter && !events.some(event => String(event.event_type || '').toLowerCase().includes(eventFilter))) return false
+        return true
+      }).sort((a, b) => new Date(b.last_seen_at || 0).getTime() - new Date(a.last_seen_at || 0).getTime())
+
+      if (!rows.length) {
+        $('visitorList').innerHTML = '<div class="empty">没有匹配的访问人员。请调整筛选条件。</div>'
+        return
+      }
+
+      $('visitorList').innerHTML = rows.map((user) => {
+        const events = eventsByUser.get(user.anonymous_user_id) || []
+        const visitTimes = user.visit_times || []
+        const pages = user.pages || []
+        return `
+          <article class="visitor-card">
+            <div class="visitor-head">
+              <div>
+                <span class="label">匿名用户 ID</span>
+                <a class="value mono" href="./visitor-detail.html?id=${encodeURIComponent(user.anonymous_user_id)}" target="_blank">${safe(user.anonymous_user_id)}</a>
+                <div class="line">首次：${dateText(user.first_seen_at)}</div>
+                <div class="line">最近：${dateText(user.last_seen_at)}</div>
+              </div>
+              <div>
+                <span class="label">设备 / 型号 / 平台</span>
+                <div class="value">${safe([...(user.devices || []), ...(user.platforms || [])].join(' / ') || '-')}</div>
+              </div>
+              <div>
+                <span class="label">访问量</span>
+                <div class="value">${fmt(user.session_count)} 次会话 · ${fmt(user.page_view_count)} PV</div>
+                <div class="line">${fmt(user.event_count)} 个事件 · 停留 ${durationText(user.total_page_duration_ms)}</div>
+              </div>
+              <div>
+                <span class="label">关键行为</span>
+                <div class="line">咨询 ${fmt(user.contact_clicks)} · 留资 ${fmt(user.lead_submits)}</div>
+                <div class="line">分享 ${fmt(user.share_attempts)} · 案例详情 ${fmt(user.case_detail_opens)}</div>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="box">
+                <span class="label">中间访问时间序列</span>
+                ${visitTimes.map(item => `<div class="line">${dateText(item)}</div>`).join('') || '<div class="line">-</div>'}
+              </div>
+              <div class="box">
+                <span class="label">浏览过的页面</span>
+                ${pages.map(item => `<div class="line mono">${safe(item)}</div>`).join('') || '<div class="line">-</div>'}
+              </div>
+              <div class="box">
+                <span class="label">按时间串联的所有事件</span>
+                ${events.map(event => `
+                  <div class="line">
+                    ${dateText(event.created_at)}
+                    <strong>${eventText(event.event_type)}</strong>
+                    <span class="mono">${safe(event.page_path || event.page)}</span>
+                    ${event.target_name ? ` · ${safe(event.target_name)}` : ''}
+                    ${event.duration_ms ? ` · ${durationText(event.duration_ms)}` : ''}
+                  </div>
+                `).join('') || '<div class="line">-</div>'}
+              </div>
+            </div>
+          </article>
+        `
+      }).join('')
+    }
+
+    const boot = async () => {
+      const response = await fetch(`./latest-summary.json?t=${Date.now()}`)
+      summary = await response.json()
+      $('sourceText').textContent = `${fmt(summary.totals?.uv)} 个演示用户 · ${fmt(summary.totals?.events)} 条事件`
+      renderMetrics()
+      renderVisitors()
+    }
+
+    ;['keywordInput', 'pageInput', 'eventInput'].forEach(id => {
+      $(id).addEventListener('input', renderVisitors)
+    })
+    boot().catch((error) => {
+      $('sourceText').textContent = '读取失败'
+      $('visitorList').innerHTML = `<div class="empty">读取 latest-summary.json 失败：${safe(error.message)}</div>`
+    })
+  </script>
+</body>
+</html>

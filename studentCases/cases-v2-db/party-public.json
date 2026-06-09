@@ -3,10 +3,10 @@
     "name": "党校用户端展示版",
     "direction": "party",
     "privacy_version": "public_user",
-    "generated_at": "2026-06-04 15:07:37",
+    "generated_at": "2026-06-09 17:18:13",
     "record_count": 108,
     "review_status": "pending_final_review",
-    "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+    "sort_rule": "按明确度、丰富度、原始顺序排序。",
     "miniapp_connection": "connected_to_pages_cases_v2"
   },
   "records": [
@@ -24,7 +24,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -72,7 +72,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -120,7 +120,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "吴同学",
@@ -166,7 +166,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "金同学",
@@ -215,7 +215,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "杨同学",
@@ -266,7 +266,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "陈同学",
@@ -311,7 +311,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "扎同学",
@@ -359,7 +359,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "张同学",
@@ -404,7 +404,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "冉同学",
@@ -454,7 +454,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "赵同学",
@@ -501,7 +501,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "何同学",
@@ -551,7 +551,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "高同学",
@@ -599,12 +599,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "何同学",
       "age": "约 44 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "政治学",
       "outcome": "上岸",
@@ -651,7 +651,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "旷同学",
@@ -698,14 +698,14 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "道同学",
       "age": "约 34 岁",
       "region": "眉山",
       "system": "",
-      "chosen_target": "",
+      "chosen_target": "不详",
       "outcome": "上岸",
       "tags": [
         "25 届投稿",
@@ -744,7 +744,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "吴同学",
@@ -790,7 +790,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -837,7 +837,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "丹同学",
@@ -886,7 +886,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -932,7 +932,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "白同学",
@@ -980,12 +980,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
       "age": "约 32 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "政治学",
       "outcome": "上岸",
@@ -1026,12 +1026,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "唐同学",
       "age": "约 28 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "经济学",
       "outcome": "上岸",
@@ -1071,14 +1071,14 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "清同学",
       "age": "约 35 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
-      "chosen_target": "",
+      "chosen_target": "不详",
       "outcome": "上岸",
       "tags": [
         "25 届投稿",
@@ -1117,7 +1117,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "彭同学",
@@ -1163,12 +1163,12 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "左同学",
       "age": "约 37 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "经济学",
       "outcome": "上岸",
@@ -1209,12 +1209,12 @@
       "quality": "standard",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
       "age": "约 26 岁",
-      "region": "",
+      "region": "未知",
       "system": "",
       "chosen_target": "公管",
       "outcome": "上岸",
@@ -1255,7 +1255,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "丹同学",
@@ -1272,14 +1272,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜州的少数民族考生，从 3 月底公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "经历过一次失利后，才知道不能只靠蛮劲，方向和方法都要重新调整。"
+          "text": "甘孜州的少数民族考生，从 3 月底公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。"
         }
       ]
     },
@@ -1299,7 +1294,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "杨同学",
@@ -1316,14 +1311,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这段备考让我知道，妈妈不是不能学习，只是要比别人更会挤时间。知道问题在哪里，下一次就能更早调整方法。"
+          "text": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。"
         }
       ]
     },
@@ -1343,7 +1333,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -1358,14 +1348,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "真正坚持下来才发现，妈妈的时间都是挤出来的，但每晚多学一点都算数。先把基础补起来，再上考场心里就不会那么虚。"
+          "text": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。"
         }
       ]
     },
@@ -1385,7 +1370,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "金同学",
@@ -1401,14 +1386,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "再考一次压力不小，但把上次的坑避开后，心里反而更有底了。"
+          "text": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。"
         }
       ]
     },
@@ -1428,7 +1408,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "邹同学",
@@ -1445,14 +1425,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次被拖延影响了状态，但也提醒自己，持续投入比临时冲刺更重要。"
+          "text": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。"
         }
       ]
     },
@@ -1472,7 +1447,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "何同学",
@@ -1488,14 +1463,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "白天顾工作，晚上顾孩子，能坚持下来，靠的就是不把自己放弃掉。把该补的地方列出来，比一直焦虑有用得多。"
+          "text": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。"
         }
       ]
     },
@@ -1515,7 +1485,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "申同学",
@@ -1530,14 +1500,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "政法岗位单位认可学历，政治学专业方向覆盖最广，约 37 岁按在职路径稳推上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "学政治学时能和工作里的材料、思路对上，后面坚持起来就没那么虚。下次会先把每天的小任务完成，不再等到最后才追。"
+          "text": "政法岗位单位认可学历，政治学专业方向覆盖最广，约 37 岁按在职路径稳推上岸。"
         }
       ]
     },
@@ -1557,7 +1522,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "曾同学",
@@ -1572,14 +1537,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按政治学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "单位工作越久，越能感觉到持续学习的重要，不能一直吃老本。"
+          "text": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按政治学方向一战上岸。"
         }
       ]
     },
@@ -1599,7 +1559,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "范同学",
@@ -1615,14 +1575,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，政治学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "备考过程让我重新体会到，学习这件事不能只停留在口头上。"
+          "text": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，政治学方向一战上岸。"
         }
       ]
     },
@@ -1642,7 +1597,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "彭同学",
@@ -1657,14 +1612,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "教育系统在职岗位，约 37 岁统考本科底子稳，按政治学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "做教育工作的人更知道学习不能停，这次上岸也算给自己一个交代。"
+          "text": "教育系统在职岗位，约 37 岁统考本科底子稳，按政治学方向一战上岸。"
         }
       ]
     },
@@ -1684,7 +1634,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -1699,14 +1649,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "达州基层公职岗位 约 32 岁，统考本科底子稳，政治学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的体会是，基层备考不能等有空，能学一点就要先学一点。"
+          "text": "达州基层公职岗位 约 32 岁，统考本科底子稳，政治学方向一战上岸。"
         }
       ]
     },
@@ -1726,7 +1671,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
@@ -1741,14 +1686,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，经济学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "基层事情多，但越是这样，越要把学习拆小，一点点往前推。"
+          "text": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，经济学方向一战上岸。"
         }
       ]
     },
@@ -1768,7 +1708,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "陈同学",
@@ -1785,14 +1725,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "问题暴露出来也好，后面再准备，就能把力气用在更关键的地方。下次会先把每天的小任务完成，不再等到最后才追。"
+          "text": "宜宾、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -1812,7 +1747,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "薛同学",
@@ -1830,14 +1765,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "广元、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "问题暴露出来也好，后面再准备，就能把力气用在更关键的地方。"
+          "text": "广元、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -1857,7 +1787,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "朱同学",
@@ -1876,14 +1806,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "复盘后才明白，持续投入最关键，这个教训会变成下一次的底气。把短板拆开来看，后面复习就不再一团乱。"
+          "text": "阿坝、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -1903,7 +1828,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -1921,14 +1846,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "结果没有达到预期，但真正考过一次，后面就不会再凭感觉准备。把该补的地方列出来，比一直焦虑有用得多。"
+          "text": "宜宾、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -1948,7 +1868,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "邹同学",
@@ -1967,14 +1887,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次结果不理想，但问题已经看清，后面再准备会少走很多弯路。把短板拆开来看，后面复习就不再一团乱。"
+          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -1994,7 +1909,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
@@ -2011,14 +1926,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "广元、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "没上岸不代表没收获，至少知道自己卡在哪里，下一步更清楚。"
+          "text": "广元、约 27 岁、党政机关背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -2038,7 +1948,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "张同学",
@@ -2055,14 +1965,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "攀枝花、约 32 岁、党政机关背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "备考时每天都不轻松，可真的坚持下来，会发现自己比想象中能扛。这次踩过的坑，后面都会变成提醒自己的经验。"
+          "text": "攀枝花、约 32 岁、党政机关背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -2082,7 +1987,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "隆同学",
@@ -2098,14 +2003,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，政治学方向上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "单位工作越久，越能感觉到持续学习的重要，不能一直吃老本。把问题看明白了，后面准备就不会再乱抓。"
+          "text": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，政治学方向上岸。"
         }
       ]
     },
@@ -2125,7 +2025,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "段同学",
@@ -2141,14 +2041,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "央企岗位 约 27 岁，统考本科底子稳，专业班经济学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在单位里待久了会更明白，学历和学习能力都是给未来留余地。把短板拆开来看，后面复习就不再一团乱。"
+          "text": "央企岗位 约 27 岁，统考本科底子稳，专业班经济学方向一战上岸。"
         }
       ]
     },
@@ -2168,7 +2063,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "史同学",
@@ -2183,14 +2078,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都市直政法岗位 约 27 岁，统考本科底子稳，政治学一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "学政治学时能和工作里的材料、思路对上，后面坚持起来就没那么虚。"
+          "text": "成都市直政法岗位 约 27 岁，统考本科底子稳，政治学一战上岸。"
         }
       ]
     },
@@ -2210,7 +2100,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "甲同学",
@@ -2229,14 +2119,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这一路不算轻松，但把每天能学的那点时间抓住，结果就会有变化。"
+          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2256,7 +2141,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -2273,14 +2158,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "南充、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。"
+          "text": "南充、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2300,7 +2180,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "彭同学",
@@ -2318,14 +2198,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的感受是，工作再琐碎，也要给学习留一点固定位置。能复盘出问题，下一次就不是从零开始。"
+          "text": "宜宾、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2345,7 +2220,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "丹同学",
@@ -2364,14 +2239,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "备考过程没有想象中顺，但每天往前一点，最后真的会有结果。"
+          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2391,7 +2261,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "鲁同学",
@@ -2408,14 +2278,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "德阳、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。后面再学，会先把基础题和核心考点吃透。"
+          "text": "德阳、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2435,7 +2300,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "周同学",
@@ -2454,14 +2319,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "工作和路程都会消耗人，但只要每天不断一点，最后还是能看到变化。"
+          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2481,7 +2341,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "申同学",
@@ -2502,14 +2362,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在甘孜备考不算轻松，但这次让我相信慢慢学也能走到岸上。"
+          "text": "甘孜、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2529,7 +2384,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "陈同学",
@@ -2546,14 +2401,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "资阳、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。把该补的地方列出来，比一直焦虑有用得多。"
+          "text": "资阳、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2573,7 +2423,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "泽同学",
@@ -2592,14 +2442,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "民族地区工作不轻松，能上岸更多靠的是把零碎时间一点点用起来。后面再学，会先把基础题和核心考点吃透。"
+          "text": "阿坝、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2619,7 +2464,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "陈同学",
@@ -2638,14 +2483,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 42 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "真正复盘后才发现，岗位和专业能对上，学习就不只是为了考试。"
+          "text": "宜宾、约 42 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2665,7 +2505,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -2684,14 +2524,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在阿坝备考，最现实的办法就是别等整块时间，先学起来。"
+          "text": "阿坝、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2711,7 +2546,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -2731,14 +2566,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "工作和路程都会消耗人，但只要每天不断一点，最后还是能看到变化。看清自己的问题后，反而知道该怎么往前走了。"
+          "text": "阿坝、约 37 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2758,7 +2588,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "梁同学",
@@ -2777,14 +2607,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "以前总觉得条件不够好，真正开始后才发现，持续跟上比想太多更重要。"
+          "text": "甘孜、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2804,7 +2629,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "邬同学",
@@ -2821,14 +2646,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 32 岁、医疗系统背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "医务工作强度大，能坚持学习下来，对自己也是一次重新证明。"
+          "text": "宜宾、约 32 岁、医疗系统背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2848,7 +2668,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "谭同学",
@@ -2867,14 +2687,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的收获，是发现只要方向对，零散的时间也能慢慢攒成进度。"
+          "text": "甘孜、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2894,7 +2709,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "岳同学",
@@ -2911,14 +2726,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "眉山、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次备考让我知道，成年人学习拼的不是热闹，而是能不能持续执行。先把基础补起来，再上考场心里就不会那么虚。"
+          "text": "眉山、约 32 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2938,7 +2748,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -2955,14 +2765,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "广元、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "上岸不是突然发生的，前面那些零碎又普通的坚持，最后都会算数。"
+          "text": "广元、约 27 岁、党政机关背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -2982,7 +2787,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "殷同学",
@@ -3000,14 +2805,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "绵阳、约 37 岁、医疗系统背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次让我知道，在职备考不是拼谁时间多，而是谁能把状态找回来。"
+          "text": "绵阳、约 37 岁、医疗系统背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3027,7 +2827,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "冉同学",
@@ -3047,14 +2847,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在阿坝备考不算轻松，但这次让我相信慢慢学也能走到岸上。这段经历至少让我知道，不能再靠临时硬扛。"
+          "text": "阿坝、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3074,7 +2869,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -3091,14 +2886,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 37 岁、教育系统背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "备考过程让我重新体会到，学习这件事不能只停留在口头上。哪怕结果一般，也比以前更清楚下一步怎么学。"
+          "text": "成都、约 37 岁、教育系统背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3118,7 +2908,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "钱同学",
@@ -3135,14 +2925,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "遂宁、约 27 岁、党政机关背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "上岸以后回头看，最有用的不是焦虑，而是把每天该做的事情做完。"
+          "text": "遂宁、约 27 岁、党政机关背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3162,7 +2947,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "苏同学",
@@ -3180,14 +2965,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "以前总觉得没时间，真正开始后才知道，时间都是一点点挤出来的。"
+          "text": "成都、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3207,7 +2987,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "袁同学",
@@ -3228,14 +3008,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在甘孜备考不算轻松，但这次让我相信慢慢学也能走到岸上。"
+          "text": "甘孜、约 37 岁、党政机关背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3255,7 +3030,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "冉同学",
@@ -3271,14 +3046,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "真正坚持下来才发现，妈妈的时间都是挤出来的，但每晚多学一点都算数。"
+          "text": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。"
         }
       ]
     },
@@ -3298,7 +3068,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "曾同学",
@@ -3316,14 +3086,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "泸州、约 27 岁、国央企背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在单位里待久了会更明白，学历和学习能力都是给未来留余地。把该补的地方列出来，比一直焦虑有用得多。"
+          "text": "泸州、约 27 岁、国央企背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -3343,7 +3108,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -3359,14 +3124,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "绵阳、约 42 岁、背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "准备不够连续影响了结果，但复盘之后，心态反而更踏实了。看清自己的问题后，反而知道该怎么往前走了。"
+          "text": "绵阳、约 42 岁、背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -3386,7 +3146,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "唐同学",
@@ -3404,14 +3164,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "凉山、约 37 岁、背景，选择 政治学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次给自己敲了警钟，也让我知道，下次要更早进入状态。"
+          "text": "凉山、约 37 岁、背景，选择 政治学，结果为未上岸。"
         }
       ]
     },
@@ -3431,7 +3186,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "代同学",
@@ -3448,14 +3203,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "内江、约 27 岁、国央企背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "真正准备过才知道，约 27 岁学习也不是晚，只是要比以前更自觉。"
+          "text": "内江、约 27 岁、国央企背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3475,7 +3225,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "何同学",
@@ -3492,14 +3242,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 32 岁、国央企背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在宜宾边工作边学，最难的是持续，但最有用的也是持续。"
+          "text": "宜宾、约 32 岁、国央企背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -3519,7 +3264,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "廖同学",
@@ -3535,14 +3280,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 42 岁、背景，选择 经济学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "复盘后才明白，持续投入最关键，这个教训会变成下一次的底气。哪怕结果一般，也比以前更清楚下一步怎么学。"
+          "text": "成都、约 42 岁、背景，选择 经济学，结果为未上岸。"
         }
       ]
     },
@@ -3562,7 +3302,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "左同学",
@@ -3578,14 +3318,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "泸州、约 37 岁、背景，选择 经济学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次结果不理想，但问题已经看清，后面再准备会少走很多弯路。"
+          "text": "泸州、约 37 岁、背景，选择 经济学，结果为未上岸。"
         }
       ]
     },
@@ -3605,7 +3340,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
@@ -3622,14 +3357,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "凉山、约 32 岁、背景，选择 经济学，结果为未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "没上岸不代表没收获，至少知道自己卡在哪里，下一步更清楚。"
+          "text": "凉山、约 32 岁、背景，选择 经济学，结果为未上岸。"
         }
       ]
     },
@@ -3649,7 +3379,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "杨同学",
@@ -3664,14 +3394,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "医院专技岗工作节奏紧，约 37 岁按政治学方向稳推一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次让我知道，在职备考不是拼谁时间多，而是谁能把状态找回来。能复盘出问题，下一次就不是从零开始。"
+          "text": "医院专技岗工作节奏紧，约 37 岁按政治学方向稳推一战上岸。"
         }
       ]
     },
@@ -3691,7 +3416,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "谭同学",
@@ -3707,14 +3432,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜州县城民政岗，统考本科底子稳，按政治学专业方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "备考过程没有想象中顺，但每天往前一点，最后真的会有结果。"
+          "text": "甘孜州县城民政岗，统考本科底子稳，按政治学专业方向一战上岸。"
         }
       ]
     },
@@ -3734,7 +3454,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "甄同学",
@@ -3750,14 +3470,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "前面漏掉的内容会变成压力，但能提前发现问题，本身也是一种收获。下次再准备，会更早进入状态，也更敢坚持到底。"
+          "text": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。"
         }
       ]
     },
@@ -3777,7 +3492,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "高同学",
@@ -3793,14 +3508,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "中途断了节奏确实吃力，但知道短板在哪里，下次就能更早调整。后面再学，会先把基础题和核心考点吃透。"
+          "text": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。"
         }
       ]
     },
@@ -3820,7 +3530,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "吴同学",
@@ -3835,14 +3545,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "达州、约 27 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这段经历让我对自己多了一点信心，原来工作以后也还能重新学进去。"
+          "text": "达州、约 27 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -3862,7 +3567,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "吴同学",
@@ -3877,14 +3582,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "达州、约 27 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "真正走完一遍才知道，焦虑解决不了问题，把任务一件件完成才最有用。哪怕结果一般，也比以前更清楚下一步怎么学。"
+          "text": "达州、约 27 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -3904,7 +3604,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "黄同学",
@@ -3920,14 +3620,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "内江、约 37 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的感受是，在职备考不能只靠热情，要把每天该做的事情落下去。"
+          "text": "内江、约 37 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -3947,7 +3642,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "唐同学",
@@ -3962,14 +3657,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "南充、约 27 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的感受是，在职备考不能只靠热情，要把每天该做的事情落下去。"
+          "text": "南充、约 27 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -3989,7 +3679,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -4005,14 +3695,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "达州、约 42 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "真正准备过才知道，约 42 岁学习也不是晚，只是要比以前更自觉。这段经历至少让我知道，不能再靠临时硬扛。"
+          "text": "达州、约 42 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -4032,7 +3717,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "曹同学",
@@ -4048,14 +3733,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 42 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "上岸以后回头看，最有用的不是焦虑，而是把每天该做的事情做完。下次会先把每天的小任务完成，不再等到最后才追。"
+          "text": "成都、约 42 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -4075,7 +3755,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "陈同学",
@@ -4091,14 +3771,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 42 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在成都边工作边学，最难的是持续，但最有用的也是持续。哪怕结果一般，也比以前更清楚下一步怎么学。"
+          "text": "成都、约 42 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -4118,7 +3793,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
@@ -4133,14 +3808,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 32 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "以前总觉得没时间，真正开始后才知道，时间都是一点点挤出来的。"
+          "text": "宜宾、约 32 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -4160,7 +3830,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "阮同学",
@@ -4176,14 +3846,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 37 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。"
+          "text": "成都、约 37 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -4203,7 +3868,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "欧同学",
@@ -4220,14 +3885,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "凉山、约 32 岁、背景，选择 政治学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "民族地区工作不轻松，能上岸更多靠的是把零碎时间一点点用起来。"
+          "text": "凉山、约 32 岁、背景，选择 政治学，结果为上岸。"
         }
       ]
     },
@@ -4247,7 +3907,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "刘同学",
@@ -4262,14 +3922,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 27 岁、背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在成都边工作边学，最难的是持续，但最有用的也是持续。"
+          "text": "成都、约 27 岁、背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -4289,7 +3944,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "伏同学",
@@ -4304,14 +3959,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "巴中、约 32 岁、背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这段经历让我更确定，成年人学习不容易，但开始了就会有变化。能复盘出问题，下一次就不是从零开始。"
+          "text": "巴中、约 32 岁、背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -4331,7 +3981,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "蒋同学",
@@ -4346,14 +3996,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宜宾、约 32 岁、背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次结果让我踏实了一点，至少证明约 32 岁也还能重新学进去。"
+          "text": "宜宾、约 32 岁、背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -4373,7 +4018,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "王同学",
@@ -4388,14 +4033,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "成都、约 32 岁、背景，选择 经济学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。后面会把时间拆小，不再等完全空下来才开始。"
+          "text": "成都、约 32 岁、背景，选择 经济学，结果为上岸。"
         }
       ]
     },
@@ -4415,7 +4055,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "廖同学",
@@ -4430,14 +4070,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "工作一忙学习就容易被冲散，但至少知道了，备考要先把时间留出来。"
+          "text": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。"
         }
       ]
     },
@@ -4457,7 +4092,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "李同学",
@@ -4473,14 +4108,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "凉山基层公职岗位，民族地区按经济学方向走民族专项一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的收获，是发现只要方向对，零散的时间也能慢慢攒成进度。"
+          "text": "凉山基层公职岗位，民族地区按经济学方向走民族专项一战上岸。"
         }
       ]
     },
@@ -4500,7 +4130,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "唐同学",
@@ -4516,14 +4146,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "南充乡镇服务期内备考，约 27 岁按政治学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "每天的事情都不确定，反而更需要把学习安排得简单、固定、能执行。把短板拆开来看，后面复习就不再一团乱。"
+          "text": "南充乡镇服务期内备考，约 27 岁按政治学方向一战上岸。"
         }
       ]
     },
@@ -4543,7 +4168,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "韩同学",
@@ -4560,14 +4185,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "没坚持完整确实可惜，但这次复盘清楚了，下一次会更有把握。把短板拆开来看，后面复习就不再一团乱。"
+          "text": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。"
         }
       ]
     },
@@ -4587,7 +4207,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "余同学",
@@ -4603,14 +4223,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "川渝两地同卷过线，按 33 法分阶段稳推法学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "这次最大的体会是，基层备考不能等有空，能学一点就要先学一点。把问题看明白了，后面准备就不会再乱抓。"
+          "text": "川渝两地同卷过线，按 33 法分阶段稳推法学方向一战上岸。"
         }
       ]
     },
@@ -4630,7 +4245,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "余同学",
@@ -4645,14 +4260,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "遂宁、约 32 岁、背景，选择 法学，结果为上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。把该补的地方列出来，比一直焦虑有用得多。"
+          "text": "遂宁、约 32 岁、背景，选择 法学，结果为上岸。"
         }
       ]
     },
@@ -4672,7 +4282,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "泽同学",
@@ -4689,14 +4299,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "阿坝民政岗位走民族专项政策路径，按政治学方向一战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "很多时候不是时间够了才学，而是先开始学，时间才会一点点挤出来。"
+          "text": "阿坝民政岗位走民族专项政策路径，按政治学方向一战上岸。"
         }
       ]
     },
@@ -4716,7 +4321,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "阮同学",
@@ -4732,14 +4337,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "市直政法岗位，统考本科底子稳，政治学方向二战上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "二战最明显的变化，是不再乱抓重点，知道该把力气用在哪里。"
+          "text": "市直政法岗位，统考本科底子稳，政治学方向二战上岸。"
         }
       ]
     },
@@ -4759,7 +4359,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "梁同学",
@@ -4775,14 +4375,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "在甘孜边工作边学，确实累，但坚持下来后心里很踏实。后面再学，会先把基础题和核心考点吃透。"
+          "text": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。"
         }
       ]
     },
@@ -4802,7 +4397,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "public_user",
       "display_name": "彭同学",
@@ -4818,14 +4413,9 @@
       ],
       "sections": [
         {
-          "key": "key_quote",
-          "label": "报考动机",
-          "text": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。"
-        },
-        {
           "key": "reflection",
           "label": "真实反馈",
-          "text": "以前总觉得没时间，后来才发现，只要想学，十点后的书桌也算起点。这次经验留下来，后面准备会更有章法。"
+          "text": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。"
         }
       ]
     }

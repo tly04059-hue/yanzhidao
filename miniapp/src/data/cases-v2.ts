@@ -92,7 +92,6 @@ export type CaseV2Stats = {
 }
 
 const records = (((publicPayload as any).records || []) as PublicCaseV2Record[])
-  .filter(record => record.direction !== 'party' || record.ai_fill_level === 'none')
 
 const cleanText = (value: unknown) => String(value || '').trim()
 

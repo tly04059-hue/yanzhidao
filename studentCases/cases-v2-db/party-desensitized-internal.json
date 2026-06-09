@@ -3,10 +3,10 @@
     "name": "党校脱敏内部版",
     "direction": "party",
     "privacy_version": "desensitized_internal",
-    "generated_at": "2026-06-04 15:07:37",
+    "generated_at": "2026-06-09 17:18:13",
     "record_count": 108,
     "review_status": "pending_final_review",
-    "sort_rule": "未使用 AI 补充优先；同组内按明确度、丰富度、原始顺序排序。",
+    "sort_rule": "按明确度、丰富度、原始顺序排序。",
     "miniapp_connection": "connected_to_pages_cases_v2"
   },
   "records": [
@@ -24,7 +24,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C115",
@@ -65,7 +65,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C100",
@@ -106,7 +106,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C104",
@@ -145,7 +145,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C109",
@@ -187,7 +187,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C114",
@@ -231,7 +231,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C103",
@@ -269,7 +269,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C117",
@@ -310,7 +310,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C107",
@@ -348,7 +348,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C105",
@@ -391,7 +391,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C124",
@@ -431,7 +431,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C116",
@@ -474,7 +474,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C121",
@@ -515,13 +515,13 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C112",
       "display_name": "何同学",
       "age": "约 44 岁",
-      "region": "",
+      "region": "未知",
       "system": "其他",
       "position": "",
       "chosen_target": "四川党校 · 政治学",
@@ -541,7 +541,7 @@
         "key_quote": "最大的感触是：年龄从不是“不行”的理由，而是“更该试试”的底气；方法比蛮干重要一万倍；更意外的是，这段经历让我重新理解了“榜样”的意义。当初想给孩子做榜样，最后却发现，父母的“折腾”，本身就是最好的言传身教。",
         "narrative_choose": "打心底喜好心理学，去年10月临时决定考研；后来想给孩子做个榜样，便决心报考不考英语的党校。想给孩子做个榜样，认为父母的折腾本身就是最好的言传身教。",
         "reflection": "方向不对努力白费；基础不牢地动山摇；年龄不是不行的理由而是更该试试的底气；方法比蛮干重要一万倍。",
-        "story_summary": "约 44 岁，已上岸。",
+        "story_summary": "不详，未知，约 44 岁，选四川党校 · 不详，已上岸。",
         "study_method": "读外部讲义（三色笔记）、学带背视频、背核心考点手册、做密训题库、知识框架图、研知道33法、重复重复再重复；早上6点起床半小时读讲义，中午1小时学带背视频，晚上下班后继续学习，每天4.5-5小时见缝插针。",
         "turning_point": "5月13日报名研知道冲刺班；6月3日政治学模考一88分把我从放弃边缘拉回来；考前必背一页纸+杨老师直播豁然开朗。想给孩子做个榜样，认为父母的折腾本身就是最好的言传身教。"
       }
@@ -560,7 +560,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C111",
@@ -600,7 +600,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C113",
@@ -609,7 +609,7 @@
       "region": "眉山",
       "system": "其他",
       "position": "",
-      "chosen_target": "四川党校",
+      "chosen_target": "四川党校 · 不详",
       "outcome": "上岸",
       "tags": [
         "25 届投稿",
@@ -620,7 +620,7 @@
         "key_quote": "有人问过我，为何要一直坚持报考？其实，我自己也问过自己。归纳起来，主要是丰富理论、新增学友、弥补坚守。但报考八年，是心酸的！年龄大，记忆差；工作重，精力少；玩心大，不集中。除此之外，年年不上岸的成绩单、报考费、食住行……等等，还有周而复始每到三月的填报程序、五月的备考焦虑，都给人无尽的苦恼，这是不愿回首的。",
         "narrative_choose": "丰富理论、新增学友、弥补坚守。2018年四川省委党校在职研究生不再把英语作为考试科目。",
         "reflection": "八年磨砺终成硕果，回顾备途之酸、考途之慌、旅途之茫三个体会。",
-        "story_summary": "眉山，约 34 岁，已上岸。",
+        "story_summary": "不详，眉山，选四川党校 · 不详，已上岸。",
         "study_method": "用1.5-2倍速视频把重点课程过一遍；《精编核心考点手册》重点学、学重点；倒置答题顺序（论述题先做）；临时抱佛脚型，1.5-2倍速视频过重点课程。",
         "turning_point": "距考试还有15天的6月6日，考场外拿了'研知道'宣传单并报班。2018年四川省委党校在职研究生不再把英语作为考试科目。"
       }
@@ -639,7 +639,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C102",
@@ -678,7 +678,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C106",
@@ -718,7 +718,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C108",
@@ -760,7 +760,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C101",
@@ -799,7 +799,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C110",
@@ -840,13 +840,13 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C122",
       "display_name": "刘同学",
       "age": "约 32 岁",
-      "region": "",
+      "region": "未知",
       "system": "其他",
       "position": "",
       "chosen_target": "四川党校 · 政治学",
@@ -860,7 +860,7 @@
         "key_quote": "当感觉大脑要爆炸的时候一定是我们的神经元脑细胞在加快链接帮助记忆",
         "narrative_choose": "应朋友之邀参加省委党校研究生考试，朋友三战未上岸给出建议，本人本科非政治学但工作十多年里一直疯狂跨专业靠各种证书。今年五月朋友提到省委党校研究生又要发布招考公告，约一起参加考试。",
         "reflection": "所有的付出与努力在拿到录取通知书的那一刻已经成为过去，我们终会往前走，不妨大胆一点。",
-        "story_summary": "约 32 岁，已上岸。",
+        "story_summary": "不详，未知，选四川党校 · 不详，已上岸。",
         "study_method": "先通读外部讲义了解学科框架→视频课程2倍速+熬通宵2天听完32小时→重点背核心考点和预测模拟卷；倒数第二周通读讲义+最后一周2天熬通宵2倍速听完视频+考试当天早上及中午都在背预测卷。",
         "turning_point": "6月初猛然想起花2000多块报了冲刺班、距考试不到两周开始抓紧；姚老师强调一定要看预测模拟卷。今年五月朋友提到省委党校研究生又要发布招考公告，约一起参加考试。"
       }
@@ -879,13 +879,13 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C126",
       "display_name": "唐同学",
       "age": "约 28 岁",
-      "region": "",
+      "region": "未知",
       "system": "其他",
       "position": "",
       "chosen_target": "四川党校 · 经济学",
@@ -898,7 +898,7 @@
         "key_quote": "工作后真的很少体会到那种有人一直在背后推你前进，希望你前进的人",
         "narrative_choose": "看着身边很多朋友立的flag中都有考研时，我自己真的很焦虑，这种焦虑感触发我重启的计划。24年身边很多朋友立的flag中都有考研，自己感到焦虑。",
         "reflection": "上岸只是一个新开始；只要方法找对了，结果都不会太差；唯有努力是不会辜负人的。",
-        "story_summary": "8 年工龄本科，约 28 岁，选四川党校 · 经济学，已上岸。",
+        "story_summary": "8 年工龄本科，未知，约 28 岁，选四川党校 · 经济学，已上岸。",
         "study_method": "33法；认真参与直播上课+课后回顾和预习+反复刷视频+把视频1.5倍听放+最后划重点刷真题；每天都有规划和安排，参与直播上课+课后回顾预习+反复刷视频（1.5倍速）+刷真题。",
         "turning_point": "24年9月加入研知道；与谢老师首次通话打消对学习的畏惧。24年身边很多朋友立的flag中都有考研，自己感到焦虑。"
       }
@@ -917,16 +917,16 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C120",
       "display_name": "清同学",
       "age": "约 35 岁",
-      "region": "",
+      "region": "未知",
       "system": "其他",
       "position": "",
-      "chosen_target": "四川党校",
+      "chosen_target": "四川党校 · 不详",
       "outcome": "上岸",
       "tags": [
         "25 届投稿",
@@ -937,7 +937,7 @@
         "key_quote": "党校在职研究生考试并不难，难在利用时间，难在开始",
         "narrative_choose": "厌倦毫无准备的备考，决心准备充分、出击必胜，选择自己感兴趣的政治学专业。2023年报考经济学差二十分遗憾落榜，2024年因身体原因缺考，第三次报考决心必胜。",
         "reflection": "党校在职研究生考试并不难，难在利用时间，难在开始。",
-        "story_summary": "约 35 岁，已上岸。",
+        "story_summary": "不详，未知，选四川党校 · 不详，已上岸。",
         "study_method": "四步法：浏览参考书→打印研知道资料勾画背诵+整理知识框架→粗做历年真题统计重点→按时间细做真题整理错题+回忆框架；产假宝妈零碎时段+家人替换带娃；用上下班通勤、午休、孩子睡前等碎片时段；周末家人接手带娃换整块学习时间。",
         "turning_point": "5月初某书上看到研知道学员分享，关注公众号后发现轻松学政治理论资料含金量高，决定跟学。2023年报考经济学差二十分遗憾落榜，2024年因身体原因缺考，第三次报考决心必胜。"
       }
@@ -956,7 +956,7 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C118",
@@ -995,13 +995,13 @@
       "quality": "rich",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C125",
       "display_name": "左同学",
       "age": "约 37 岁",
-      "region": "",
+      "region": "未知",
       "system": "其他",
       "position": "",
       "chosen_target": "四川党校 · 经济学",
@@ -1015,7 +1015,7 @@
         "key_quote": "追风赶月莫停留，平芜尽处是春山",
         "narrative_choose": "去年一战经济学因后期躺平摆烂只考310多分，离录取线319.5分差2分，进考场拿到研知道传单上'十个明确'论述题考到却没背，损失30来分，从此认识研知道。",
         "reflection": "要是当时十个明确看了就上了；一定要看书。",
-        "story_summary": "约 37 岁，选四川党校 · 经济学，已上岸。",
+        "story_summary": "不详，未知，选四川党校 · 经济学，已上岸。",
         "study_method": "买499考点资料包；只看核心考点五星四星内容；背考前一页纸部分内容；听姚老师杨老师考前直播；扫传单二维码背名词解释论述题；抓住零碎时间看书；考前听直播；回酒店吃完饭听直播。",
         "turning_point": "一战考完扫传单二维码听考前直播专业科目名词解释论述题都考到；二战看考场遇见杨老师拿到传单；听杨老师直播感觉醍醐灌顶思路框架一下就有了。去年一战经济学因后期躺平摆烂只考310多分，离录取线319.5分差2分，进考场拿到研知道传单上'十个明确'论述题考到却没背，损失30来分，从此认识研知道。"
       }
@@ -1034,13 +1034,13 @@
       "quality": "standard",
       "ai_fill_level": "none",
       "ai_filled_fields": [],
-      "ai_fill_note": "原始字段可直接展示，未使用 AI 补充。",
+      "ai_fill_note": "原始字段可直接展示。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C119",
       "display_name": "刘同学",
       "age": "约 26 岁",
-      "region": "",
+      "region": "未知",
       "system": "其他",
       "position": "",
       "chosen_target": "四川党校 · 公管",
@@ -1052,7 +1052,7 @@
         "key_quote": "备考不是拼时间，而是拼效率，少走很多弯路",
         "narrative_choose": "",
         "reflection": "备考不是拼时间，而是拼效率，少走很多弯路。",
-        "story_summary": "6 年工龄本科，约 26 岁，选四川党校 · 公管，已上岸。",
+        "story_summary": "6 年工龄本科，未知，约 26 岁，选四川党校 · 公管，已上岸。",
         "study_method": "研知道33法、化整为零的学习方法。",
         "turning_point": "转变思维，意识到备考不是拼时间而是拼效率。"
       }
@@ -1073,7 +1073,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C004",
@@ -1093,7 +1093,7 @@
       "fields": {
         "key_quote": "甘孜州的少数民族考生，从 3 月底党校公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。",
         "narrative_choose": "甘孜州的少数民族考生，从 3 月底党校公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。",
-        "reflection": "经历过一次失利后，才知道不能只靠蛮劲，方向和方法都要重新调整。",
+        "reflection": "甘孜州的少数民族考生，从 3 月底党校公布报名信息才加入研知道。记忆不好担心记不住，就跟着研知道的节奏照做，学习打卡反复看课参与云自习。",
         "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1115,7 +1115,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C013",
@@ -1135,7 +1135,7 @@
       "fields": {
         "key_quote": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。",
         "narrative_choose": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。",
-        "reflection": "这段备考让我知道，妈妈不是不能学习，只是要比别人更会挤时间。知道问题在哪里，下一次就能更早调整方法。",
+        "reflection": "医院的一名医务工作者，奔着给孩子努力打个样，满足自己渴望学习的心，一战落败了。二战找到研知道，发现我们讲的无用东西有大用。",
         "story_summary": "约 42 岁，绵阳，医疗系统，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1157,7 +1157,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C025",
@@ -1175,7 +1175,7 @@
       "fields": {
         "key_quote": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。",
         "narrative_choose": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。",
-        "reflection": "真正坚持下来才发现，妈妈的时间都是挤出来的，但每晚多学一点都算数。先把基础补起来，再上考场心里就不会那么虚。",
+        "reflection": "白天在单位忙于工作处理各种事务无法抽身；晚上回到家后又成了'全能妈妈'，直到哄孩子入睡通常已经接近十点才有了属于自己的学习时间。",
         "story_summary": "约 35 岁，成都，，本科，选择四川党校，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1197,7 +1197,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C024",
@@ -1216,7 +1216,7 @@
       "fields": {
         "key_quote": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。",
         "narrative_choose": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。",
-        "reflection": "再考一次压力不小，但把上次的坑避开后，心里反而更有底了。",
+        "reflection": "一战裸考抱着试一试的心态眉毛胡子一把抓最后差 63 分，得益于好的学习方法落地，二战非常幸运不仅四川上岸，重庆也顺利上岸。",
         "story_summary": "45+ 岁，南充，，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1238,7 +1238,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C001",
@@ -1258,7 +1258,7 @@
       "fields": {
         "key_quote": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。",
         "narrative_choose": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。",
-        "reflection": "这次被拖延影响了状态，但也提醒自己，持续投入比临时冲刺更重要。",
+        "reflection": "甘孜民政岗自考底子薄，工作之余备考时间被县里日常事务挤得很碎，专业班节奏没能完整跟下来。",
         "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1280,7 +1280,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C022",
@@ -1299,7 +1299,7 @@
       "fields": {
         "key_quote": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。",
         "narrative_choose": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。",
-        "reflection": "白天顾工作，晚上顾孩子，能坚持下来，靠的就是不把自己放弃掉。把该补的地方列出来，比一直焦虑有用得多。",
+        "reflection": "国企职员，孩子的妈妈，目标一战上岸。要学习要照顾家庭要上班如何处理？这位同学用 10 个月做到了。",
         "story_summary": "约 37 岁，成都，国央企，本科，选择四川党校，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1321,7 +1321,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C008",
@@ -1339,7 +1339,7 @@
       "fields": {
         "key_quote": "政法岗位单位认可党校学历，政治学专业方向覆盖最广，约 37 岁按党校在职路径稳推上岸。",
         "narrative_choose": "政法岗位单位认可党校学历，政治学专业方向覆盖最广，约 37 岁按党校在职路径稳推上岸。",
-        "reflection": "学政治学时能和工作里的材料、思路对上，后面坚持起来就没那么虚。下次会先把每天的小任务完成，不再等到最后才追。",
+        "reflection": "政法岗位单位认可党校学历，政治学专业方向覆盖最广，约 37 岁按党校在职路径稳推上岸。",
         "story_summary": "约 37 岁，成都，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1361,7 +1361,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C017",
@@ -1379,7 +1379,7 @@
       "fields": {
         "key_quote": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按党校政治学方向一战上岸。",
         "narrative_choose": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按党校政治学方向一战上岸。",
-        "reflection": "单位工作越久，越能感觉到持续学习的重要，不能一直吃老本。",
+        "reflection": "省属国企岗位 约 27 岁，自考本科底子薄但配合度高，按党校政治学方向一战上岸。",
         "story_summary": "约 27 岁，泸州，国央企，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1401,7 +1401,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C016",
@@ -1420,7 +1420,7 @@
       "fields": {
         "key_quote": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，党校政治学方向一战上岸。",
         "narrative_choose": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，党校政治学方向一战上岸。",
-        "reflection": "备考过程让我重新体会到，学习这件事不能只停留在口头上。",
+        "reflection": "高校在职岗位，约 37 岁成教学历配合奖金班节奏，党校政治学方向一战上岸。",
         "story_summary": "约 37 岁，泸州，教育系统，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1442,7 +1442,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C014",
@@ -1460,7 +1460,7 @@
       "fields": {
         "key_quote": "教育系统在职岗位，约 37 岁统考本科底子稳，按党校政治学方向一战上岸。",
         "narrative_choose": "教育系统在职岗位，约 37 岁统考本科底子稳，按党校政治学方向一战上岸。",
-        "reflection": "做教育工作的人更知道学习不能停，这次上岸也算给自己一个交代。",
+        "reflection": "教育系统在职岗位，约 37 岁统考本科底子稳，按党校政治学方向一战上岸。",
         "story_summary": "约 37 岁，成都，教育系统，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1482,7 +1482,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C027",
@@ -1500,7 +1500,7 @@
       "fields": {
         "key_quote": "达州基层公职岗位 约 32 岁，统考本科底子稳，党校政治学方向一战上岸。",
         "narrative_choose": "达州基层公职岗位 约 32 岁，统考本科底子稳，党校政治学方向一战上岸。",
-        "reflection": "这次最大的体会是，基层备考不能等有空，能学一点就要先学一点。",
+        "reflection": "达州基层公职岗位 约 32 岁，统考本科底子稳，党校政治学方向一战上岸。",
         "story_summary": "约 32 岁，达州，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1522,7 +1522,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C029",
@@ -1540,7 +1540,7 @@
       "fields": {
         "key_quote": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，党校经济学方向一战上岸。",
         "narrative_choose": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，党校经济学方向一战上岸。",
-        "reflection": "基层事情多，但越是这样，越要把学习拆小，一点点往前推。",
+        "reflection": "成都基层乡镇岗位 约 27 岁，统考本科底子稳，党校经济学方向一战上岸。",
         "story_summary": "约 27 岁，成都，党政机关，本科，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1562,7 +1562,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C033",
@@ -1582,7 +1582,7 @@
       "fields": {
         "key_quote": "宜宾、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "宜宾、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "问题暴露出来也好，后面再准备，就能把力气用在更关键的地方。下次会先把每天的小任务完成，不再等到最后才追。",
+        "reflection": "宜宾、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 27 岁，宜宾，党政机关，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1604,7 +1604,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C051",
@@ -1625,7 +1625,7 @@
       "fields": {
         "key_quote": "广元、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "广元、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "问题暴露出来也好，后面再准备，就能把力气用在更关键的地方。",
+        "reflection": "广元、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 32 岁，广元，党政机关，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1647,7 +1647,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C053",
@@ -1669,7 +1669,7 @@
       "fields": {
         "key_quote": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "复盘后才明白，持续投入最关键，这个教训会变成下一次的底气。把短板拆开来看，后面复习就不再一团乱。",
+        "reflection": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 27 岁，阿坝，党政机关，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1691,7 +1691,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C058",
@@ -1712,7 +1712,7 @@
       "fields": {
         "key_quote": "宜宾、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "宜宾、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "结果没有达到预期，但真正考过一次，后面就不会再凭感觉准备。把该补的地方列出来，比一直焦虑有用得多。",
+        "reflection": "宜宾、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 32 岁，宜宾，党政机关，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1734,7 +1734,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C063",
@@ -1756,7 +1756,7 @@
       "fields": {
         "key_quote": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "这次结果不理想，但问题已经看清，后面再准备会少走很多弯路。把短板拆开来看，后面复习就不再一团乱。",
+        "reflection": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 32 岁，甘孜，党政机关，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1778,7 +1778,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C064",
@@ -1798,7 +1798,7 @@
       "fields": {
         "key_quote": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "没上岸不代表没收获，至少知道自己卡在哪里，下一步更清楚。",
+        "reflection": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 27 岁，广元，党政机关，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1820,7 +1820,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C075",
@@ -1840,7 +1840,7 @@
       "fields": {
         "key_quote": "攀枝花、约 32 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "攀枝花、约 32 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "备考时每天都不轻松，可真的坚持下来，会发现自己比想象中能扛。这次踩过的坑，后面都会变成提醒自己的经验。",
+        "reflection": "攀枝花、约 32 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 32 岁，攀枝花，党政机关，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1862,7 +1862,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C020",
@@ -1881,7 +1881,7 @@
       "fields": {
         "key_quote": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，党校政治学方向上岸。",
         "narrative_choose": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，党校政治学方向上岸。",
-        "reflection": "单位工作越久，越能感觉到持续学习的重要，不能一直吃老本。把问题看明白了，后面准备就不会再乱抓。",
+        "reflection": "央企岗位 约 32 岁，网教函授学历配合奖金班节奏，党校政治学方向上岸。",
         "story_summary": "约 32 岁，成都，国央企，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1903,7 +1903,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C018",
@@ -1922,7 +1922,7 @@
       "fields": {
         "key_quote": "央企岗位 约 27 岁，统考本科底子稳，专业班党校经济学方向一战上岸。",
         "narrative_choose": "央企岗位 约 27 岁，统考本科底子稳，专业班党校经济学方向一战上岸。",
-        "reflection": "在单位里待久了会更明白，学历和学习能力都是给未来留余地。把短板拆开来看，后面复习就不再一团乱。",
+        "reflection": "央企岗位 约 27 岁，统考本科底子稳，专业班党校经济学方向一战上岸。",
         "story_summary": "约 27 岁，成都，国央企，本科，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1944,7 +1944,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C011",
@@ -1962,7 +1962,7 @@
       "fields": {
         "key_quote": "成都市直政法岗位 约 27 岁，统考本科底子稳，党校政治学一战上岸。",
         "narrative_choose": "成都市直政法岗位 约 27 岁，统考本科底子稳，党校政治学一战上岸。",
-        "reflection": "学政治学时能和工作里的材料、思路对上，后面坚持起来就没那么虚。",
+        "reflection": "成都市直政法岗位 约 27 岁，统考本科底子稳，党校政治学一战上岸。",
         "story_summary": "约 27 岁，成都，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -1984,7 +1984,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C031",
@@ -2006,7 +2006,7 @@
       "fields": {
         "key_quote": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这一路不算轻松，但把每天能学的那点时间抓住，结果就会有变化。",
+        "reflection": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2028,7 +2028,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C037",
@@ -2048,7 +2048,7 @@
       "fields": {
         "key_quote": "南充、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "南充、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。",
+        "reflection": "南充、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，南充，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2070,7 +2070,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C038",
@@ -2091,7 +2091,7 @@
       "fields": {
         "key_quote": "宜宾、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "宜宾、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这次最大的感受是，工作再琐碎，也要给学习留一点固定位置。能复盘出问题，下一次就不是从零开始。",
+        "reflection": "宜宾、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 37 岁，宜宾，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2113,7 +2113,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C039",
@@ -2135,7 +2135,7 @@
       "fields": {
         "key_quote": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "备考过程没有想象中顺，但每天往前一点，最后真的会有结果。",
+        "reflection": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2157,7 +2157,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C040",
@@ -2177,7 +2177,7 @@
       "fields": {
         "key_quote": "德阳、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "德阳、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。后面再学，会先把基础题和核心考点吃透。",
+        "reflection": "德阳、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，德阳，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2199,7 +2199,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C044",
@@ -2221,7 +2221,7 @@
       "fields": {
         "key_quote": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "工作和路程都会消耗人，但只要每天不断一点，最后还是能看到变化。",
+        "reflection": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2243,7 +2243,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C046",
@@ -2267,7 +2267,7 @@
       "fields": {
         "key_quote": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "在甘孜备考不算轻松，但这次让我相信慢慢学也能走到岸上。",
+        "reflection": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 37 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2289,7 +2289,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C048",
@@ -2309,7 +2309,7 @@
       "fields": {
         "key_quote": "资阳、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "资阳、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "每天事情都很细，备考后才发现，越忙越需要提前把学习时间留出来。把该补的地方列出来，比一直焦虑有用得多。",
+        "reflection": "资阳、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，资阳，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2331,7 +2331,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C050",
@@ -2353,7 +2353,7 @@
       "fields": {
         "key_quote": "阿坝、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "阿坝、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "民族地区工作不轻松，能上岸更多靠的是把零碎时间一点点用起来。后面再学，会先把基础题和核心考点吃透。",
+        "reflection": "阿坝、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，阿坝，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2375,7 +2375,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C052",
@@ -2397,7 +2397,7 @@
       "fields": {
         "key_quote": "宜宾、约 42 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "宜宾、约 42 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "真正复盘后才发现，岗位和专业能对上，学习就不只是为了考试。",
+        "reflection": "宜宾、约 42 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 42 岁，宜宾，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2419,7 +2419,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C054",
@@ -2441,7 +2441,7 @@
       "fields": {
         "key_quote": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "在阿坝备考，最现实的办法就是别等整块时间，先学起来。",
+        "reflection": "阿坝、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，阿坝，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2463,7 +2463,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C055",
@@ -2486,7 +2486,7 @@
       "fields": {
         "key_quote": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "工作和路程都会消耗人，但只要每天不断一点，最后还是能看到变化。看清自己的问题后，反而知道该怎么往前走了。",
+        "reflection": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 37 岁，阿坝，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2508,7 +2508,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C056",
@@ -2530,7 +2530,7 @@
       "fields": {
         "key_quote": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "以前总觉得条件不够好，真正开始后才发现，持续跟上比想太多更重要。",
+        "reflection": "甘孜、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2552,7 +2552,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C057",
@@ -2572,7 +2572,7 @@
       "fields": {
         "key_quote": "宜宾、约 32 岁、医疗系统背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "宜宾、约 32 岁、医疗系统背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "医务工作强度大，能坚持学习下来，对自己也是一次重新证明。",
+        "reflection": "宜宾、约 32 岁、医疗系统背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，宜宾，医疗系统，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2594,7 +2594,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C059",
@@ -2616,7 +2616,7 @@
       "fields": {
         "key_quote": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这次最大的收获，是发现只要方向对，零散的时间也能慢慢攒成进度。",
+        "reflection": "甘孜、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，甘孜，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2638,7 +2638,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C060",
@@ -2658,7 +2658,7 @@
       "fields": {
         "key_quote": "眉山、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "眉山、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这次备考让我知道，成年人学习拼的不是热闹，而是能不能持续执行。先把基础补起来，再上考场心里就不会那么虚。",
+        "reflection": "眉山、约 32 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，眉山，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2680,7 +2680,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C062",
@@ -2700,7 +2700,7 @@
       "fields": {
         "key_quote": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "上岸不是突然发生的，前面那些零碎又普通的坚持，最后都会算数。",
+        "reflection": "广元、约 27 岁、党政机关背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，广元，党政机关，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2722,7 +2722,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C067",
@@ -2743,7 +2743,7 @@
       "fields": {
         "key_quote": "绵阳、约 37 岁、医疗系统背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "绵阳、约 37 岁、医疗系统背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "这次让我知道，在职备考不是拼谁时间多，而是谁能把状态找回来。",
+        "reflection": "绵阳、约 37 岁、医疗系统背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 37 岁，绵阳，医疗系统，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2765,7 +2765,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C068",
@@ -2788,7 +2788,7 @@
       "fields": {
         "key_quote": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "在阿坝备考不算轻松，但这次让我相信慢慢学也能走到岸上。这段经历至少让我知道，不能再靠临时硬扛。",
+        "reflection": "阿坝、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 37 岁，阿坝，党政机关，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2810,7 +2810,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C070",
@@ -2830,7 +2830,7 @@
       "fields": {
         "key_quote": "成都、约 37 岁、教育系统背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "成都、约 37 岁、教育系统背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "备考过程让我重新体会到，学习这件事不能只停留在口头上。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "reflection": "成都、约 37 岁、教育系统背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 37 岁，成都，教育系统，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2852,7 +2852,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C072",
@@ -2872,7 +2872,7 @@
       "fields": {
         "key_quote": "遂宁、约 27 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "遂宁、约 27 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "上岸以后回头看，最有用的不是焦虑，而是把每天该做的事情做完。",
+        "reflection": "遂宁、约 27 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 27 岁，遂宁，党政机关，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2894,7 +2894,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C076",
@@ -2915,7 +2915,7 @@
       "fields": {
         "key_quote": "成都、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "成都、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "以前总觉得没时间，真正开始后才知道，时间都是一点点挤出来的。",
+        "reflection": "成都、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 37 岁，成都，党政机关，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2937,7 +2937,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C079",
@@ -2961,7 +2961,7 @@
       "fields": {
         "key_quote": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "在甘孜备考不算轻松，但这次让我相信慢慢学也能走到岸上。",
+        "reflection": "甘孜、约 37 岁、党政机关背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 37 岁，甘孜，党政机关，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -2983,7 +2983,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C021",
@@ -3002,7 +3002,7 @@
       "fields": {
         "key_quote": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。",
         "narrative_choose": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。",
-        "reflection": "真正坚持下来才发现，妈妈的时间都是挤出来的，但每晚多学一点都算数。",
+        "reflection": "阿坝州工作，两个娃妈妈奔波家庭工作之间，一战失利后按 33 法分阶段重新备考。",
         "story_summary": "约 30 岁，阿坝，，本科，选择四川党校，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3024,7 +3024,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C032",
@@ -3045,7 +3045,7 @@
       "fields": {
         "key_quote": "泸州、约 27 岁、国央企背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "泸州、约 27 岁、国央企背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "在单位里待久了会更明白，学历和学习能力都是给未来留余地。把该补的地方列出来，比一直焦虑有用得多。",
+        "reflection": "泸州、约 27 岁、国央企背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，泸州，国央企，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3067,7 +3067,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C065",
@@ -3086,7 +3086,7 @@
       "fields": {
         "key_quote": "绵阳、约 42 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "绵阳、约 42 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "准备不够连续影响了结果，但复盘之后，心态反而更踏实了。看清自己的问题后，反而知道该怎么往前走了。",
+        "reflection": "绵阳、约 42 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 42 岁，绵阳，，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3108,7 +3108,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C066",
@@ -3129,7 +3129,7 @@
       "fields": {
         "key_quote": "凉山、约 37 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
         "narrative_choose": "凉山、约 37 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
-        "reflection": "这次给自己敲了警钟，也让我知道，下次要更早进入状态。",
+        "reflection": "凉山、约 37 岁、背景，选择四川党校 · 政治学，结果为未上岸。",
         "story_summary": "约 37 岁，凉山，，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3151,7 +3151,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C071",
@@ -3171,7 +3171,7 @@
       "fields": {
         "key_quote": "内江、约 27 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "内江、约 27 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "真正准备过才知道，约 27 岁学习也不是晚，只是要比以前更自觉。",
+        "reflection": "内江、约 27 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 27 岁，内江，国央企，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3193,7 +3193,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C074",
@@ -3213,7 +3213,7 @@
       "fields": {
         "key_quote": "宜宾、约 32 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "宜宾、约 32 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "在宜宾边工作边学，最难的是持续，但最有用的也是持续。",
+        "reflection": "宜宾、约 32 岁、国央企背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 32 岁，宜宾，国央企，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3235,7 +3235,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C080",
@@ -3254,7 +3254,7 @@
       "fields": {
         "key_quote": "成都、约 42 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
         "narrative_choose": "成都、约 42 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
-        "reflection": "复盘后才明白，持续投入最关键，这个教训会变成下一次的底气。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "reflection": "成都、约 42 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
         "story_summary": "约 42 岁，成都，，选择四川党校 · 经济学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3276,7 +3276,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C081",
@@ -3295,7 +3295,7 @@
       "fields": {
         "key_quote": "泸州、约 37 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
         "narrative_choose": "泸州、约 37 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
-        "reflection": "这次结果不理想，但问题已经看清，后面再准备会少走很多弯路。",
+        "reflection": "泸州、约 37 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
         "story_summary": "约 37 岁，泸州，，选择四川党校 · 经济学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3317,7 +3317,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C082",
@@ -3337,7 +3337,7 @@
       "fields": {
         "key_quote": "凉山、约 32 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
         "narrative_choose": "凉山、约 32 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
-        "reflection": "没上岸不代表没收获，至少知道自己卡在哪里，下一步更清楚。",
+        "reflection": "凉山、约 32 岁、背景，选择四川党校 · 经济学，结果为未上岸。",
         "story_summary": "约 32 岁，凉山，，选择四川党校 · 经济学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3359,7 +3359,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C012",
@@ -3377,7 +3377,7 @@
       "fields": {
         "key_quote": "医院专技岗工作节奏紧，约 37 岁按党校政治学方向稳推一战上岸。",
         "narrative_choose": "医院专技岗工作节奏紧，约 37 岁按党校政治学方向稳推一战上岸。",
-        "reflection": "这次让我知道，在职备考不是拼谁时间多，而是谁能把状态找回来。能复盘出问题，下一次就不是从零开始。",
+        "reflection": "医院专技岗工作节奏紧，约 37 岁按党校政治学方向稳推一战上岸。",
         "story_summary": "约 37 岁，遂宁，医疗系统，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3399,7 +3399,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C006",
@@ -3418,7 +3418,7 @@
       "fields": {
         "key_quote": "甘孜州县城民政岗，统考本科底子稳，按党校政治学专业方向一战上岸。",
         "narrative_choose": "甘孜州县城民政岗，统考本科底子稳，按党校政治学专业方向一战上岸。",
-        "reflection": "备考过程没有想象中顺，但每天往前一点，最后真的会有结果。",
+        "reflection": "甘孜州县城民政岗，统考本科底子稳，按党校政治学专业方向一战上岸。",
         "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3440,7 +3440,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C010",
@@ -3459,7 +3459,7 @@
       "fields": {
         "key_quote": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。",
         "narrative_choose": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。",
-        "reflection": "前面漏掉的内容会变成压力，但能提前发现问题，本身也是一种收获。下次再准备，会更早进入状态，也更敢坚持到底。",
+        "reflection": "法学方向竞争激烈，没估准节奏，专业班 约 37 岁没坚持完整。",
         "story_summary": "约 37 岁，成都，党政机关，本科，选择四川党校 · 法学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3481,7 +3481,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C015",
@@ -3500,7 +3500,7 @@
       "fields": {
         "key_quote": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。",
         "narrative_choose": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。",
-        "reflection": "中途断了节奏确实吃力，但知道短板在哪里，下次就能更早调整。后面再学，会先把基础题和核心考点吃透。",
+        "reflection": "甘孜高校岗位自考底子薄，专业班节奏 约 30 岁没坚持完整。",
         "story_summary": "约 30 岁，甘孜，教育系统，本科，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3522,7 +3522,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C034",
@@ -3540,7 +3540,7 @@
       "fields": {
         "key_quote": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这段经历让我对自己多了一点信心，原来工作以后也还能重新学进去。",
+        "reflection": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，达州，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3562,7 +3562,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C035",
@@ -3580,7 +3580,7 @@
       "fields": {
         "key_quote": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "真正走完一遍才知道，焦虑解决不了问题，把任务一件件完成才最有用。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "reflection": "达州、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，达州，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3602,7 +3602,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C036",
@@ -3621,7 +3621,7 @@
       "fields": {
         "key_quote": "内江、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "内江、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这次最大的感受是，在职备考不能只靠热情，要把每天该做的事情落下去。",
+        "reflection": "内江、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 37 岁，内江，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3643,7 +3643,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C041",
@@ -3661,7 +3661,7 @@
       "fields": {
         "key_quote": "南充、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "南充、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "这次最大的感受是，在职备考不能只靠热情，要把每天该做的事情落下去。",
+        "reflection": "南充、约 27 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 27 岁，南充，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3683,7 +3683,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C042",
@@ -3702,7 +3702,7 @@
       "fields": {
         "key_quote": "达州、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "达州、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "真正准备过才知道，约 42 岁学习也不是晚，只是要比以前更自觉。这段经历至少让我知道，不能再靠临时硬扛。",
+        "reflection": "达州、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 42 岁，达州，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3724,7 +3724,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C043",
@@ -3743,7 +3743,7 @@
       "fields": {
         "key_quote": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "上岸以后回头看，最有用的不是焦虑，而是把每天该做的事情做完。下次会先把每天的小任务完成，不再等到最后才追。",
+        "reflection": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 42 岁，成都，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3765,7 +3765,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C045",
@@ -3784,7 +3784,7 @@
       "fields": {
         "key_quote": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "在成都边工作边学，最难的是持续，但最有用的也是持续。哪怕结果一般，也比以前更清楚下一步怎么学。",
+        "reflection": "成都、约 42 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 42 岁，成都，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3806,7 +3806,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C047",
@@ -3824,7 +3824,7 @@
       "fields": {
         "key_quote": "宜宾、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "宜宾、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "以前总觉得没时间，真正开始后才知道，时间都是一点点挤出来的。",
+        "reflection": "宜宾、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，宜宾，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3846,7 +3846,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C049",
@@ -3865,7 +3865,7 @@
       "fields": {
         "key_quote": "成都、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "成都、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。",
+        "reflection": "成都、约 37 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 37 岁，成都，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3887,7 +3887,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C061",
@@ -3907,7 +3907,7 @@
       "fields": {
         "key_quote": "凉山、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "narrative_choose": "凉山、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
-        "reflection": "民族地区工作不轻松，能上岸更多靠的是把零碎时间一点点用起来。",
+        "reflection": "凉山、约 32 岁、背景，选择四川党校 · 政治学，结果为上岸。",
         "story_summary": "约 32 岁，凉山，，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3929,7 +3929,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C069",
@@ -3947,7 +3947,7 @@
       "fields": {
         "key_quote": "成都、约 27 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "成都、约 27 岁、背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "在成都边工作边学，最难的是持续，但最有用的也是持续。",
+        "reflection": "成都、约 27 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 27 岁，成都，，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -3969,7 +3969,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C073",
@@ -3987,7 +3987,7 @@
       "fields": {
         "key_quote": "巴中、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "巴中、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "这段经历让我更确定，成年人学习不容易，但开始了就会有变化。能复盘出问题，下一次就不是从零开始。",
+        "reflection": "巴中、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 32 岁，巴中，，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4009,7 +4009,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C077",
@@ -4027,7 +4027,7 @@
       "fields": {
         "key_quote": "宜宾、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "宜宾、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "这次结果让我踏实了一点，至少证明约 32 岁也还能重新学进去。",
+        "reflection": "宜宾、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 32 岁，宜宾，，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4049,7 +4049,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C078",
@@ -4067,7 +4067,7 @@
       "fields": {
         "key_quote": "成都、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "narrative_choose": "成都、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
-        "reflection": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。后面会把时间拆小，不再等完全空下来才开始。",
+        "reflection": "成都、约 32 岁、背景，选择四川党校 · 经济学，结果为上岸。",
         "story_summary": "约 32 岁，成都，，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4089,7 +4089,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C019",
@@ -4107,7 +4107,7 @@
       "fields": {
         "key_quote": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。",
         "narrative_choose": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。",
-        "reflection": "工作一忙学习就容易被冲散，但至少知道了，备考要先把时间留出来。",
+        "reflection": "央企岗位 约 37 岁，工作节奏紧专业班没坚持完整，未上岸。",
         "story_summary": "约 37 岁，成都，国央企，本科，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4129,7 +4129,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C026",
@@ -4148,7 +4148,7 @@
       "fields": {
         "key_quote": "凉山基层公职岗位，民族地区按党校经济学方向走民族专项一战上岸。",
         "narrative_choose": "凉山基层公职岗位，民族地区按党校经济学方向走民族专项一战上岸。",
-        "reflection": "这次最大的收获，是发现只要方向对，零散的时间也能慢慢攒成进度。",
+        "reflection": "凉山基层公职岗位，民族地区按党校经济学方向走民族专项一战上岸。",
         "story_summary": "约 30 岁，凉山，党政机关，本科，选择四川党校 · 经济学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4170,7 +4170,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C028",
@@ -4189,7 +4189,7 @@
       "fields": {
         "key_quote": "南充乡镇服务期内备考，约 27 岁按党校政治学方向一战上岸。",
         "narrative_choose": "南充乡镇服务期内备考，约 27 岁按党校政治学方向一战上岸。",
-        "reflection": "每天的事情都不确定，反而更需要把学习安排得简单、固定、能执行。把短板拆开来看，后面复习就不再一团乱。",
+        "reflection": "南充乡镇服务期内备考，约 27 岁按党校政治学方向一战上岸。",
         "story_summary": "约 27 岁，南充，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4211,7 +4211,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C002",
@@ -4231,7 +4231,7 @@
       "fields": {
         "key_quote": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。",
         "narrative_choose": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。",
-        "reflection": "没坚持完整确实可惜，但这次复盘清楚了，下一次会更有把握。把短板拆开来看，后面复习就不再一团乱。",
+        "reflection": "县级民政日常事务多，备考时间挤得很紧，最后专业班没坚持完整。",
         "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，未上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4253,7 +4253,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C030",
@@ -4272,7 +4272,7 @@
       "fields": {
         "key_quote": "川渝两地同卷过线，按 33 法分阶段稳推党校法学方向一战上岸。",
         "narrative_choose": "川渝两地同卷过线，按 33 法分阶段稳推党校法学方向一战上岸。",
-        "reflection": "这次最大的体会是，基层备考不能等有空，能学一点就要先学一点。把问题看明白了，后面准备就不会再乱抓。",
+        "reflection": "川渝两地同卷过线，按 33 法分阶段稳推党校法学方向一战上岸。",
         "story_summary": "约 32 岁，遂宁，党政机关，本科，选择四川党校 · 法学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4294,7 +4294,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C083",
@@ -4312,7 +4312,7 @@
       "fields": {
         "key_quote": "遂宁、约 32 岁、背景，选择四川党校 · 法学，结果为上岸。",
         "narrative_choose": "遂宁、约 32 岁、背景，选择四川党校 · 法学，结果为上岸。",
-        "reflection": "回头看，真正有用的是那些不起眼的重复，听课、背书、做题都不能省。把该补的地方列出来，比一直焦虑有用得多。",
+        "reflection": "遂宁、约 32 岁、背景，选择四川党校 · 法学，结果为上岸。",
         "story_summary": "约 32 岁，遂宁，，选择四川党校 · 法学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4334,7 +4334,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C003",
@@ -4354,7 +4354,7 @@
       "fields": {
         "key_quote": "阿坝民政岗位走民族专项政策路径，按党校政治学方向一战上岸。",
         "narrative_choose": "阿坝民政岗位走民族专项政策路径，按党校政治学方向一战上岸。",
-        "reflection": "很多时候不是时间够了才学，而是先开始学，时间才会一点点挤出来。",
+        "reflection": "阿坝民政岗位走民族专项政策路径，按党校政治学方向一战上岸。",
         "story_summary": "约 30 岁，阿坝，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4376,7 +4376,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C009",
@@ -4395,7 +4395,7 @@
       "fields": {
         "key_quote": "市直政法岗位，统考本科底子稳，党校政治学方向二战上岸。",
         "narrative_choose": "市直政法岗位，统考本科底子稳，党校政治学方向二战上岸。",
-        "reflection": "二战最明显的变化，是不再乱抓重点，知道该把力气用在哪里。",
+        "reflection": "市直政法岗位，统考本科底子稳，党校政治学方向二战上岸。",
         "story_summary": "约 37 岁，成都，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4417,7 +4417,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C005",
@@ -4436,7 +4436,7 @@
       "fields": {
         "key_quote": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。",
         "narrative_choose": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。",
-        "reflection": "在甘孜边工作边学，确实累，但坚持下来后心里很踏实。后面再学，会先把基础题和核心考点吃透。",
+        "reflection": "甘孜民政岗位备考时间紧，跟着研知道节奏一战顺利上岸。",
         "story_summary": "约 30 岁，甘孜，党政机关，本科，选择四川党校 · 政治学，上岸。",
         "study_method": "",
         "turning_point": ""
@@ -4458,7 +4458,7 @@
       "ai_filled_fields": [
         "reflection"
       ],
-      "ai_fill_note": "真实反馈由 AI 根据该案例已有字段补充；选择原因不进入用户端展示。",
+      "ai_fill_note": "原始报考动机、选择原因、真实反馈重复；此前标记可补充的字段现已回退为来源文本。",
       "human_review_status": "pending",
       "privacy_version": "desensitized_internal",
       "case_id": "C023",
@@ -4477,7 +4477,7 @@
       "fields": {
         "key_quote": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。",
         "narrative_choose": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。",
-        "reflection": "以前总觉得没时间，后来才发现，只要想学，十点后的书桌也算起点。这次经验留下来，后面准备会更有章法。",
+        "reflection": "宝妈 2 个月一战顺利上岸，要点是入班要尽早 + 心态调节。",
         "story_summary": "约 37 岁，宜宾，，本科，选择四川党校，上岸。",
         "study_method": "",
         "turning_point": ""
