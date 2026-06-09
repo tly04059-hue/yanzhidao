@@ -101,7 +101,7 @@
           <view class="section-head section-head-inline">
           <view class="entry-head-shell" @click="toggleResourceSection">
             <view class="section-head-top">
-              <text class="section-head-title">院校/案例/咨询/资料下载</text>
+              <text class="section-head-title">院校/案例/咨询</text>
             </view>
             <view class="entry-toggle">
               <view class="entry-toggle-arrow" :class="{ open: resourceSectionOpen, drift: arrowDriftDown && !resourceSectionOpen }"></view>
@@ -124,10 +124,6 @@
             </view>
             <view class="list-item emphasis" @click="goPage('wechat')">
               <text class="list-item-label">加企业微信1对1咨询</text>
-              <text class="list-item-arrow">→</text>
-            </view>
-            <view class="list-item" @click="goPage('downloads')">
-              <text class="list-item-label">资料下载</text>
               <text class="list-item-arrow">→</text>
             </view>
             <view class="list-item" @click="goPage('data-source')">

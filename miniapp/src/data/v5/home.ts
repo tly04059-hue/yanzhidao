@@ -66,14 +66,13 @@ export const v5HomeContent = {
   },
   otherSection: {
     header: {
-      title: '院校/案例/咨询/资料下载',
-      meta: '查询、说明、联系、资料下载'
+      title: '院校/案例/咨询',
+      meta: '查询、说明、联系'
     } satisfies V5SectionHeader,
     items: [
       { label: '院校库查询', route: 'zk-lib' },
       { label: '1,000+ 同学真实案例', route: 'cases' },
       { label: '1,000+ 同学的川渝分布', route: 'map' },
-      { label: '资料下载', route: 'downloads' },
       { label: '加企业微信1对1咨询', route: 'wechat' },
       { label: '数据来源与说明', route: 'data-source' },
       { label: '使用说明', route: 'usage' },
